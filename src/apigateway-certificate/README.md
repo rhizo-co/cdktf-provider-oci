@@ -1,0 +1,3 @@
+# `oci_apigateway_certificate`
+
+Refer to the Terraform Registory for docs: [`oci_apigateway_certificate`](https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_certificate).
