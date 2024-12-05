@@ -40,13 +40,13 @@ export interface DatabaseManagementExternalExadataStorageConnectorConfig extends
   readonly storageServerId: string;
   /**
   * credential_info block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_external_exadata_storage_connector#credential_info DatabaseManagementExternalExadataStorageConnector#credential_info}
   */
   readonly credentialInfo: DatabaseManagementExternalExadataStorageConnectorCredentialInfo;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_external_exadata_storage_connector#timeouts DatabaseManagementExternalExadataStorageConnector#timeouts}
   */
   readonly timeouts?: DatabaseManagementExternalExadataStorageConnectorTimeouts;
@@ -86,6 +86,49 @@ export function databaseManagementExternalExadataStorageConnectorCredentialInfoT
     ssl_trust_store_type: cdktf.stringToTerraform(struct!.sslTrustStoreType),
     username: cdktf.stringToTerraform(struct!.username),
   }
+}
+
+
+export function databaseManagementExternalExadataStorageConnectorCredentialInfoToHclTerraform(struct?: DatabaseManagementExternalExadataStorageConnectorCredentialInfoOutputReference | DatabaseManagementExternalExadataStorageConnectorCredentialInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ssl_trust_store_location: {
+      value: cdktf.stringToHclTerraform(struct!.sslTrustStoreLocation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ssl_trust_store_password: {
+      value: cdktf.stringToHclTerraform(struct!.sslTrustStorePassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ssl_trust_store_type: {
+      value: cdktf.stringToHclTerraform(struct!.sslTrustStoreType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementExternalExadataStorageConnectorCredentialInfoOutputReference extends cdktf.ComplexObject {
@@ -245,6 +288,37 @@ export function databaseManagementExternalExadataStorageConnectorTimeoutsToTerra
   }
 }
 
+
+export function databaseManagementExternalExadataStorageConnectorTimeoutsToHclTerraform(struct?: DatabaseManagementExternalExadataStorageConnectorTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseManagementExternalExadataStorageConnectorTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -357,6 +431,20 @@ export class DatabaseManagementExternalExadataStorageConnector extends cdktf.Ter
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_external_exadata_storage_connector";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseManagementExternalExadataStorageConnector resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseManagementExternalExadataStorageConnector to import
+  * @param importFromId The id of the existing DatabaseManagementExternalExadataStorageConnector that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_external_exadata_storage_connector#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseManagementExternalExadataStorageConnector to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_external_exadata_storage_connector", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -602,5 +690,67 @@ export class DatabaseManagementExternalExadataStorageConnector extends cdktf.Ter
       credential_info: databaseManagementExternalExadataStorageConnectorCredentialInfoToTerraform(this._credentialInfo.internalValue),
       timeouts: databaseManagementExternalExadataStorageConnectorTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      agent_id: {
+        value: cdktf.stringToHclTerraform(this._agentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_uri: {
+        value: cdktf.stringToHclTerraform(this._connectionUri),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connector_name: {
+        value: cdktf.stringToHclTerraform(this._connectorName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      storage_server_id: {
+        value: cdktf.stringToHclTerraform(this._storageServerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      credential_info: {
+        value: databaseManagementExternalExadataStorageConnectorCredentialInfoToHclTerraform(this._credentialInfo.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseManagementExternalExadataStorageConnectorCredentialInfoList",
+      },
+      timeouts: {
+        value: databaseManagementExternalExadataStorageConnectorTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseManagementExternalExadataStorageConnectorTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

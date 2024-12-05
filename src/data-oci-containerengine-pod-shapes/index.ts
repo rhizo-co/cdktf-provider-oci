@@ -28,7 +28,7 @@ export interface DataOciContainerenginePodShapesConfig extends cdktf.TerraformMe
   readonly name?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/containerengine_pod_shapes#filter DataOciContainerenginePodShapes#filter}
   */
   readonly filter?: DataOciContainerenginePodShapesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciContainerenginePodShapesPodShapesMemoryOptionsToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciContainerenginePodShapesPodShapesMemoryOptionsToHclTerraform(struct?: DataOciContainerenginePodShapesPodShapesMemoryOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciContainerenginePodShapesPodShapesMemoryOptionsOutputReference extends cdktf.ComplexObject {
@@ -129,6 +140,17 @@ export function dataOciContainerenginePodShapesPodShapesNetworkBandwidthOptionsT
   }
 }
 
+
+export function dataOciContainerenginePodShapesPodShapesNetworkBandwidthOptionsToHclTerraform(struct?: DataOciContainerenginePodShapesPodShapesNetworkBandwidthOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciContainerenginePodShapesPodShapesNetworkBandwidthOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -203,6 +225,17 @@ export function dataOciContainerenginePodShapesPodShapesOcpuOptionsToTerraform(s
   }
 }
 
+
+export function dataOciContainerenginePodShapesPodShapesOcpuOptionsToHclTerraform(struct?: DataOciContainerenginePodShapesPodShapesOcpuOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciContainerenginePodShapesPodShapesOcpuOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -270,6 +303,17 @@ export function dataOciContainerenginePodShapesPodShapesToTerraform(struct?: Dat
   }
   return {
   }
+}
+
+
+export function dataOciContainerenginePodShapesPodShapesToHclTerraform(struct?: DataOciContainerenginePodShapesPodShapes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciContainerenginePodShapesPodShapesOutputReference extends cdktf.ComplexObject {
@@ -372,6 +416,37 @@ export function dataOciContainerenginePodShapesFilterToTerraform(struct?: DataOc
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciContainerenginePodShapesFilterToHclTerraform(struct?: DataOciContainerenginePodShapesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciContainerenginePodShapesFilterOutputReference extends cdktf.ComplexObject {
@@ -502,6 +577,20 @@ export class DataOciContainerenginePodShapes extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_containerengine_pod_shapes";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciContainerenginePodShapes resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciContainerenginePodShapes to import
+  * @param importFromId The id of the existing DataOciContainerenginePodShapes that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/containerengine_pod_shapes#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciContainerenginePodShapes to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_containerengine_pod_shapes", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -636,5 +725,43 @@ export class DataOciContainerenginePodShapes extends cdktf.TerraformDataSource {
       name: cdktf.stringToTerraform(this._name),
       filter: cdktf.listMapper(dataOciContainerenginePodShapesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciContainerenginePodShapesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciContainerenginePodShapesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

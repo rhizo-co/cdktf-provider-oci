@@ -68,7 +68,7 @@ export interface DataSafeSqlFirewallPolicyConfig extends cdktf.TerraformMetaArgu
   readonly violationAudit?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_sql_firewall_policy#timeouts DataSafeSqlFirewallPolicy#timeouts}
   */
   readonly timeouts?: DataSafeSqlFirewallPolicyTimeouts;
@@ -98,6 +98,37 @@ export function dataSafeSqlFirewallPolicyTimeoutsToTerraform(struct?: DataSafeSq
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function dataSafeSqlFirewallPolicyTimeoutsToHclTerraform(struct?: DataSafeSqlFirewallPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeSqlFirewallPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -212,6 +243,20 @@ export class DataSafeSqlFirewallPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_sql_firewall_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeSqlFirewallPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeSqlFirewallPolicy to import
+  * @param importFromId The id of the existing DataSafeSqlFirewallPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_sql_firewall_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeSqlFirewallPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_sql_firewall_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -561,5 +606,103 @@ export class DataSafeSqlFirewallPolicy extends cdktf.TerraformResource {
       violation_audit: cdktf.stringToTerraform(this._violationAudit),
       timeouts: dataSafeSqlFirewallPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      allowed_client_ips: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._allowedClientIps),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      allowed_client_os_usernames: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._allowedClientOsUsernames),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      allowed_client_programs: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._allowedClientPrograms),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enforcement_scope: {
+        value: cdktf.stringToHclTerraform(this._enforcementScope),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sql_firewall_policy_id: {
+        value: cdktf.stringToHclTerraform(this._sqlFirewallPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      violation_action: {
+        value: cdktf.stringToHclTerraform(this._violationAction),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      violation_audit: {
+        value: cdktf.stringToHclTerraform(this._violationAudit),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: dataSafeSqlFirewallPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeSqlFirewallPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -49,19 +49,19 @@ export interface IdentityDomainsNetworkPerimeterConfig extends cdktf.TerraformMe
   readonly schemas: string[];
   /**
   * ip_addresses block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_network_perimeter#ip_addresses IdentityDomainsNetworkPerimeter#ip_addresses}
   */
   readonly ipAddresses: IdentityDomainsNetworkPerimeterIpAddresses[] | cdktf.IResolvable;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_network_perimeter#tags IdentityDomainsNetworkPerimeter#tags}
   */
   readonly tags?: IdentityDomainsNetworkPerimeterTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_network_perimeter#timeouts IdentityDomainsNetworkPerimeter#timeouts}
   */
   readonly timeouts?: IdentityDomainsNetworkPerimeterTimeouts;
@@ -76,6 +76,17 @@ export function identityDomainsNetworkPerimeterIdcsCreatedByToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function identityDomainsNetworkPerimeterIdcsCreatedByToHclTerraform(struct?: IdentityDomainsNetworkPerimeterIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsNetworkPerimeterIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -162,6 +173,17 @@ export function identityDomainsNetworkPerimeterIdcsLastModifiedByToTerraform(str
   }
 }
 
+
+export function identityDomainsNetworkPerimeterIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsNetworkPerimeterIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsNetworkPerimeterIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -244,6 +266,17 @@ export function identityDomainsNetworkPerimeterMetaToTerraform(struct?: Identity
   }
   return {
   }
+}
+
+
+export function identityDomainsNetworkPerimeterMetaToHclTerraform(struct?: IdentityDomainsNetworkPerimeterMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsNetworkPerimeterMetaOutputReference extends cdktf.ComplexObject {
@@ -343,6 +376,37 @@ export function identityDomainsNetworkPerimeterIpAddressesToTerraform(struct?: I
     value: cdktf.stringToTerraform(struct!.value),
     version: cdktf.stringToTerraform(struct!.version),
   }
+}
+
+
+export function identityDomainsNetworkPerimeterIpAddressesToHclTerraform(struct?: IdentityDomainsNetworkPerimeterIpAddresses | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    version: {
+      value: cdktf.stringToHclTerraform(struct!.version),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsNetworkPerimeterIpAddressesOutputReference extends cdktf.ComplexObject {
@@ -488,6 +552,31 @@ export function identityDomainsNetworkPerimeterTagsToTerraform(struct?: Identity
   }
 }
 
+
+export function identityDomainsNetworkPerimeterTagsToHclTerraform(struct?: IdentityDomainsNetworkPerimeterTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsNetworkPerimeterTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -611,6 +700,37 @@ export function identityDomainsNetworkPerimeterTimeoutsToTerraform(struct?: Iden
   }
 }
 
+
+export function identityDomainsNetworkPerimeterTimeoutsToHclTerraform(struct?: IdentityDomainsNetworkPerimeterTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsNetworkPerimeterTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -723,6 +843,20 @@ export class IdentityDomainsNetworkPerimeter extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_network_perimeter";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsNetworkPerimeter resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsNetworkPerimeter to import
+  * @param importFromId The id of the existing IdentityDomainsNetworkPerimeter that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_network_perimeter#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsNetworkPerimeter to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_network_perimeter", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1039,5 +1173,91 @@ export class IdentityDomainsNetworkPerimeter extends cdktf.TerraformResource {
       tags: cdktf.listMapper(identityDomainsNetworkPerimeterTagsToTerraform, true)(this._tags.internalValue),
       timeouts: identityDomainsNetworkPerimeterTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_id: {
+        value: cdktf.stringToHclTerraform(this._externalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      ip_addresses: {
+        value: cdktf.listMapperHcl(identityDomainsNetworkPerimeterIpAddressesToHclTerraform, true)(this._ipAddresses.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsNetworkPerimeterIpAddressesList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsNetworkPerimeterTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsNetworkPerimeterTagsList",
+      },
+      timeouts: {
+        value: identityDomainsNetworkPerimeterTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsNetworkPerimeterTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

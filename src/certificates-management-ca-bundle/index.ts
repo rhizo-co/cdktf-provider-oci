@@ -40,7 +40,7 @@ export interface CertificatesManagementCaBundleConfig extends cdktf.TerraformMet
   readonly name: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/certificates_management_ca_bundle#timeouts CertificatesManagementCaBundle#timeouts}
   */
   readonly timeouts?: CertificatesManagementCaBundleTimeouts;
@@ -70,6 +70,37 @@ export function certificatesManagementCaBundleTimeoutsToTerraform(struct?: Certi
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function certificatesManagementCaBundleTimeoutsToHclTerraform(struct?: CertificatesManagementCaBundleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CertificatesManagementCaBundleTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -184,6 +215,20 @@ export class CertificatesManagementCaBundle extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_certificates_management_ca_bundle";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CertificatesManagementCaBundle resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CertificatesManagementCaBundle to import
+  * @param importFromId The id of the existing CertificatesManagementCaBundle that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/certificates_management_ca_bundle#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CertificatesManagementCaBundle to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_certificates_management_ca_bundle", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -375,5 +420,61 @@ export class CertificatesManagementCaBundle extends cdktf.TerraformResource {
       name: cdktf.stringToTerraform(this._name),
       timeouts: certificatesManagementCaBundleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ca_bundle_pem: {
+        value: cdktf.stringToHclTerraform(this._caBundlePem),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: certificatesManagementCaBundleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CertificatesManagementCaBundleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -144,13 +144,13 @@ export interface DatabaseMigrationConnectionConfig extends cdktf.TerraformMetaAr
   readonly wallet?: string;
   /**
   * additional_attributes block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_migration_connection#additional_attributes DatabaseMigrationConnection#additional_attributes}
   */
   readonly additionalAttributes?: DatabaseMigrationConnectionAdditionalAttributes[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_migration_connection#timeouts DatabaseMigrationConnection#timeouts}
   */
   readonly timeouts?: DatabaseMigrationConnectionTimeouts;
@@ -165,6 +165,17 @@ export function databaseMigrationConnectionIngressIpsToTerraform(struct?: Databa
   }
   return {
   }
+}
+
+
+export function databaseMigrationConnectionIngressIpsToHclTerraform(struct?: DatabaseMigrationConnectionIngressIps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseMigrationConnectionIngressIpsOutputReference extends cdktf.ComplexObject {
@@ -239,6 +250,31 @@ export function databaseMigrationConnectionAdditionalAttributesToTerraform(struc
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function databaseMigrationConnectionAdditionalAttributesToHclTerraform(struct?: DatabaseMigrationConnectionAdditionalAttributes | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseMigrationConnectionAdditionalAttributesOutputReference extends cdktf.ComplexObject {
@@ -370,6 +406,37 @@ export function databaseMigrationConnectionTimeoutsToTerraform(struct?: Database
   }
 }
 
+
+export function databaseMigrationConnectionTimeoutsToHclTerraform(struct?: DatabaseMigrationConnectionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseMigrationConnectionTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -482,6 +549,20 @@ export class DatabaseMigrationConnection extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_migration_connection";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseMigrationConnection resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseMigrationConnection to import
+  * @param importFromId The id of the existing DatabaseMigrationConnection that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_migration_connection#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseMigrationConnection to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_migration_connection", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1171,5 +1252,223 @@ export class DatabaseMigrationConnection extends cdktf.TerraformResource {
       additional_attributes: cdktf.listMapper(databaseMigrationConnectionAdditionalAttributesToTerraform, true)(this._additionalAttributes.internalValue),
       timeouts: databaseMigrationConnectionTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_string: {
+        value: cdktf.stringToHclTerraform(this._connectionString),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_type: {
+        value: cdktf.stringToHclTerraform(this._connectionType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_id: {
+        value: cdktf.stringToHclTerraform(this._databaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_name: {
+        value: cdktf.stringToHclTerraform(this._databaseName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_system_id: {
+        value: cdktf.stringToHclTerraform(this._dbSystemId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      host: {
+        value: cdktf.stringToHclTerraform(this._host),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_id: {
+        value: cdktf.stringToHclTerraform(this._keyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      nsg_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._nsgIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      password: {
+        value: cdktf.stringToHclTerraform(this._password),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      port: {
+        value: cdktf.numberToHclTerraform(this._port),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      replication_password: {
+        value: cdktf.stringToHclTerraform(this._replicationPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      replication_username: {
+        value: cdktf.stringToHclTerraform(this._replicationUsername),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      security_protocol: {
+        value: cdktf.stringToHclTerraform(this._securityProtocol),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssh_host: {
+        value: cdktf.stringToHclTerraform(this._sshHost),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssh_key: {
+        value: cdktf.stringToHclTerraform(this._sshKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssh_sudo_location: {
+        value: cdktf.stringToHclTerraform(this._sshSudoLocation),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssh_user: {
+        value: cdktf.stringToHclTerraform(this._sshUser),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssl_ca: {
+        value: cdktf.stringToHclTerraform(this._sslCa),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssl_cert: {
+        value: cdktf.stringToHclTerraform(this._sslCert),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssl_crl: {
+        value: cdktf.stringToHclTerraform(this._sslCrl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssl_key: {
+        value: cdktf.stringToHclTerraform(this._sslKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssl_mode: {
+        value: cdktf.stringToHclTerraform(this._sslMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      technology_type: {
+        value: cdktf.stringToHclTerraform(this._technologyType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      username: {
+        value: cdktf.stringToHclTerraform(this._username),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vault_id: {
+        value: cdktf.stringToHclTerraform(this._vaultId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      wallet: {
+        value: cdktf.stringToHclTerraform(this._wallet),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      additional_attributes: {
+        value: cdktf.listMapperHcl(databaseMigrationConnectionAdditionalAttributesToHclTerraform, true)(this._additionalAttributes.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseMigrationConnectionAdditionalAttributesList",
+      },
+      timeouts: {
+        value: databaseMigrationConnectionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseMigrationConnectionTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

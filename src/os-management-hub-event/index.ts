@@ -32,7 +32,7 @@ export interface OsManagementHubEventConfig extends cdktf.TerraformMetaArguments
   readonly id?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_event#timeouts OsManagementHubEvent#timeouts}
   */
   readonly timeouts?: OsManagementHubEventTimeouts;
@@ -47,6 +47,17 @@ export function osManagementHubEventDataAdditionalDetailsVmcoreToTerraform(struc
   }
   return {
   }
+}
+
+
+export function osManagementHubEventDataAdditionalDetailsVmcoreToHclTerraform(struct?: OsManagementHubEventDataAdditionalDetailsVmcore): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OsManagementHubEventDataAdditionalDetailsVmcoreOutputReference extends cdktf.ComplexObject {
@@ -116,6 +127,17 @@ export function osManagementHubEventDataAdditionalDetailsToTerraform(struct?: Os
   }
   return {
   }
+}
+
+
+export function osManagementHubEventDataAdditionalDetailsToHclTerraform(struct?: OsManagementHubEventDataAdditionalDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OsManagementHubEventDataAdditionalDetailsOutputReference extends cdktf.ComplexObject {
@@ -196,6 +218,17 @@ export function osManagementHubEventDataContentToTerraform(struct?: OsManagement
   }
   return {
   }
+}
+
+
+export function osManagementHubEventDataContentToHclTerraform(struct?: OsManagementHubEventDataContent): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OsManagementHubEventDataContentOutputReference extends cdktf.ComplexObject {
@@ -285,6 +318,17 @@ export function osManagementHubEventDataToTerraform(struct?: OsManagementHubEven
   }
   return {
   }
+}
+
+
+export function osManagementHubEventDataToHclTerraform(struct?: OsManagementHubEventData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OsManagementHubEventDataOutputReference extends cdktf.ComplexObject {
@@ -386,6 +430,17 @@ export function osManagementHubEventSystemDetailsToTerraform(struct?: OsManageme
   }
   return {
   }
+}
+
+
+export function osManagementHubEventSystemDetailsToHclTerraform(struct?: OsManagementHubEventSystemDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OsManagementHubEventSystemDetailsOutputReference extends cdktf.ComplexObject {
@@ -495,6 +550,37 @@ export function osManagementHubEventTimeoutsToTerraform(struct?: OsManagementHub
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function osManagementHubEventTimeoutsToHclTerraform(struct?: OsManagementHubEventTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubEventTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -609,6 +695,20 @@ export class OsManagementHubEvent extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_event";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OsManagementHubEvent resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OsManagementHubEvent to import
+  * @param importFromId The id of the existing OsManagementHubEvent that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_event#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OsManagementHubEvent to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_event", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -823,5 +923,49 @@ export class OsManagementHubEvent extends cdktf.TerraformResource {
       id: cdktf.stringToTerraform(this._id),
       timeouts: osManagementHubEventTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      event_id: {
+        value: cdktf.stringToHclTerraform(this._eventId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: osManagementHubEventTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OsManagementHubEventTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

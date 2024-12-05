@@ -31,6 +31,17 @@ export function dataOciDatabaseMaintenanceRunHistoryDbServersHistoryDetailsDbSer
   }
 }
 
+
+export function dataOciDatabaseMaintenanceRunHistoryDbServersHistoryDetailsDbServerPatchingDetailsToHclTerraform(struct?: DataOciDatabaseMaintenanceRunHistoryDbServersHistoryDetailsDbServerPatchingDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseMaintenanceRunHistoryDbServersHistoryDetailsDbServerPatchingDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -110,6 +121,17 @@ export function dataOciDatabaseMaintenanceRunHistoryDbServersHistoryDetailsToTer
   }
 }
 
+
+export function dataOciDatabaseMaintenanceRunHistoryDbServersHistoryDetailsToHclTerraform(struct?: DataOciDatabaseMaintenanceRunHistoryDbServersHistoryDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseMaintenanceRunHistoryDbServersHistoryDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -183,6 +205,17 @@ export function dataOciDatabaseMaintenanceRunHistoryMaintenanceRunDetailsEstimat
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseMaintenanceRunHistoryMaintenanceRunDetailsEstimatedPatchingTimeToHclTerraform(struct?: DataOciDatabaseMaintenanceRunHistoryMaintenanceRunDetailsEstimatedPatchingTime): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseMaintenanceRunHistoryMaintenanceRunDetailsEstimatedPatchingTimeOutputReference extends cdktf.ComplexObject {
@@ -262,6 +295,17 @@ export function dataOciDatabaseMaintenanceRunHistoryMaintenanceRunDetailsToTerra
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseMaintenanceRunHistoryMaintenanceRunDetailsToHclTerraform(struct?: DataOciDatabaseMaintenanceRunHistoryMaintenanceRunDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseMaintenanceRunHistoryMaintenanceRunDetailsOutputReference extends cdktf.ComplexObject {
@@ -473,6 +517,20 @@ export class DataOciDatabaseMaintenanceRunHistory extends cdktf.TerraformDataSou
   // =================
   public static readonly tfResourceType = "oci_database_maintenance_run_history";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseMaintenanceRunHistory resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseMaintenanceRunHistory to import
+  * @param importFromId The id of the existing DataOciDatabaseMaintenanceRunHistory that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_maintenance_run_history#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseMaintenanceRunHistory to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_maintenance_run_history", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -558,5 +616,25 @@ export class DataOciDatabaseMaintenanceRunHistory extends cdktf.TerraformDataSou
       id: cdktf.stringToTerraform(this._id),
       maintenance_run_history_id: cdktf.stringToTerraform(this._maintenanceRunHistoryId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      maintenance_run_history_id: {
+        value: cdktf.stringToHclTerraform(this._maintenanceRunHistoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

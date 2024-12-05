@@ -36,19 +36,19 @@ export interface FileStorageExportConfig extends cdktf.TerraformMetaArguments {
   readonly path: string;
   /**
   * export_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_export#export_options FileStorageExport#export_options}
   */
   readonly exportOptions?: FileStorageExportExportOptions[] | cdktf.IResolvable;
   /**
   * locks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_export#locks FileStorageExport#locks}
   */
   readonly locks?: FileStorageExportLocks[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_export#timeouts FileStorageExport#timeouts}
   */
   readonly timeouts?: FileStorageExportTimeouts;
@@ -103,6 +103,67 @@ export function fileStorageExportExportOptionsToTerraform(struct?: FileStorageEx
     require_privileged_source_port: cdktf.booleanToTerraform(struct!.requirePrivilegedSourcePort),
     source: cdktf.stringToTerraform(struct!.source),
   }
+}
+
+
+export function fileStorageExportExportOptionsToHclTerraform(struct?: FileStorageExportExportOptions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    access: {
+      value: cdktf.stringToHclTerraform(struct!.access),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    allowed_auth: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedAuth),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    anonymous_gid: {
+      value: cdktf.stringToHclTerraform(struct!.anonymousGid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    anonymous_uid: {
+      value: cdktf.stringToHclTerraform(struct!.anonymousUid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    identity_squash: {
+      value: cdktf.stringToHclTerraform(struct!.identitySquash),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_anonymous_access_allowed: {
+      value: cdktf.booleanToHclTerraform(struct!.isAnonymousAccessAllowed),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    require_privileged_source_port: {
+      value: cdktf.booleanToHclTerraform(struct!.requirePrivilegedSourcePort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    source: {
+      value: cdktf.stringToHclTerraform(struct!.source),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FileStorageExportExportOptionsOutputReference extends cdktf.ComplexObject {
@@ -368,6 +429,43 @@ export function fileStorageExportLocksToTerraform(struct?: FileStorageExportLock
   }
 }
 
+
+export function fileStorageExportLocksToHclTerraform(struct?: FileStorageExportLocks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    message: {
+      value: cdktf.stringToHclTerraform(struct!.message),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    related_resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.relatedResourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_created: {
+      value: cdktf.stringToHclTerraform(struct!.timeCreated),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FileStorageExportLocksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -538,6 +636,37 @@ export function fileStorageExportTimeoutsToTerraform(struct?: FileStorageExportT
   }
 }
 
+
+export function fileStorageExportTimeoutsToHclTerraform(struct?: FileStorageExportTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FileStorageExportTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -650,6 +779,20 @@ export class FileStorageExport extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_file_storage_export";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FileStorageExport resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FileStorageExport to import
+  * @param importFromId The id of the existing FileStorageExport that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_export#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FileStorageExport to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_file_storage_export", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -854,5 +997,67 @@ export class FileStorageExport extends cdktf.TerraformResource {
       locks: cdktf.listMapper(fileStorageExportLocksToTerraform, true)(this._locks.internalValue),
       timeouts: fileStorageExportTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      export_set_id: {
+        value: cdktf.stringToHclTerraform(this._exportSetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      file_system_id: {
+        value: cdktf.stringToHclTerraform(this._fileSystemId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_idmap_groups_for_sys_auth: {
+        value: cdktf.booleanToHclTerraform(this._isIdmapGroupsForSysAuth),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_lock_override: {
+        value: cdktf.booleanToHclTerraform(this._isLockOverride),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      path: {
+        value: cdktf.stringToHclTerraform(this._path),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      export_options: {
+        value: cdktf.listMapperHcl(fileStorageExportExportOptionsToHclTerraform, true)(this._exportOptions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FileStorageExportExportOptionsList",
+      },
+      locks: {
+        value: cdktf.listMapperHcl(fileStorageExportLocksToHclTerraform, true)(this._locks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FileStorageExportLocksList",
+      },
+      timeouts: {
+        value: fileStorageExportTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FileStorageExportTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

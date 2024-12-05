@@ -44,7 +44,7 @@ export interface DatabasePluggableDatabasesRemoteCloneConfig extends cdktf.Terra
   readonly targetTdeWalletPassword?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_pluggable_databases_remote_clone#timeouts DatabasePluggableDatabasesRemoteClone#timeouts}
   */
   readonly timeouts?: DatabasePluggableDatabasesRemoteCloneTimeouts;
@@ -59,6 +59,17 @@ export function databasePluggableDatabasesRemoteCloneConnectionStringsToTerrafor
   }
   return {
   }
+}
+
+
+export function databasePluggableDatabasesRemoteCloneConnectionStringsToHclTerraform(struct?: DatabasePluggableDatabasesRemoteCloneConnectionStrings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabasePluggableDatabasesRemoteCloneConnectionStringsOutputReference extends cdktf.ComplexObject {
@@ -136,6 +147,17 @@ export function databasePluggableDatabasesRemoteClonePdbNodeLevelDetailsToTerraf
   }
 }
 
+
+export function databasePluggableDatabasesRemoteClonePdbNodeLevelDetailsToHclTerraform(struct?: DatabasePluggableDatabasesRemoteClonePdbNodeLevelDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatabasePluggableDatabasesRemoteClonePdbNodeLevelDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -205,6 +227,17 @@ export function databasePluggableDatabasesRemoteClonePluggableDatabaseManagement
   }
 }
 
+
+export function databasePluggableDatabasesRemoteClonePluggableDatabaseManagementConfigToHclTerraform(struct?: DatabasePluggableDatabasesRemoteClonePluggableDatabaseManagementConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatabasePluggableDatabasesRemoteClonePluggableDatabaseManagementConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -267,6 +300,17 @@ export function databasePluggableDatabasesRemoteCloneRefreshableCloneConfigToTer
   }
   return {
   }
+}
+
+
+export function databasePluggableDatabasesRemoteCloneRefreshableCloneConfigToHclTerraform(struct?: DatabasePluggableDatabasesRemoteCloneRefreshableCloneConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabasePluggableDatabasesRemoteCloneRefreshableCloneConfigOutputReference extends cdktf.ComplexObject {
@@ -346,6 +390,37 @@ export function databasePluggableDatabasesRemoteCloneTimeoutsToTerraform(struct?
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databasePluggableDatabasesRemoteCloneTimeoutsToHclTerraform(struct?: DatabasePluggableDatabasesRemoteCloneTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabasePluggableDatabasesRemoteCloneTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -460,6 +535,20 @@ export class DatabasePluggableDatabasesRemoteClone extends cdktf.TerraformResour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_pluggable_databases_remote_clone";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabasePluggableDatabasesRemoteClone resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabasePluggableDatabasesRemoteClone to import
+  * @param importFromId The id of the existing DatabasePluggableDatabasesRemoteClone that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_pluggable_databases_remote_clone#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabasePluggableDatabasesRemoteClone to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_pluggable_databases_remote_clone", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -727,5 +816,67 @@ export class DatabasePluggableDatabasesRemoteClone extends cdktf.TerraformResour
       target_tde_wallet_password: cdktf.stringToTerraform(this._targetTdeWalletPassword),
       timeouts: databasePluggableDatabasesRemoteCloneTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cloned_pdb_name: {
+        value: cdktf.stringToHclTerraform(this._clonedPdbName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pdb_admin_password: {
+        value: cdktf.stringToHclTerraform(this._pdbAdminPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pluggable_database_id: {
+        value: cdktf.stringToHclTerraform(this._pluggableDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      should_pdb_admin_account_be_locked: {
+        value: cdktf.booleanToHclTerraform(this._shouldPdbAdminAccountBeLocked),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      source_container_db_admin_password: {
+        value: cdktf.stringToHclTerraform(this._sourceContainerDbAdminPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_container_database_id: {
+        value: cdktf.stringToHclTerraform(this._targetContainerDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_tde_wallet_password: {
+        value: cdktf.stringToHclTerraform(this._targetTdeWalletPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: databasePluggableDatabasesRemoteCloneTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabasePluggableDatabasesRemoteCloneTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

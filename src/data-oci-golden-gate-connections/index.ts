@@ -48,7 +48,7 @@ export interface DataOciGoldenGateConnectionsConfig extends cdktf.TerraformMetaA
   readonly technologyType?: string[];
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/golden_gate_connections#filter DataOciGoldenGateConnections#filter}
   */
   readonly filter?: DataOciGoldenGateConnectionsFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciGoldenGateConnectionsConnectionCollectionItemsAdditionalA
   }
   return {
   }
+}
+
+
+export function dataOciGoldenGateConnectionsConnectionCollectionItemsAdditionalAttributesToHclTerraform(struct?: DataOciGoldenGateConnectionsConnectionCollectionItemsAdditionalAttributes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGoldenGateConnectionsConnectionCollectionItemsAdditionalAttributesOutputReference extends cdktf.ComplexObject {
@@ -132,6 +143,17 @@ export function dataOciGoldenGateConnectionsConnectionCollectionItemsBootstrapSe
   }
   return {
   }
+}
+
+
+export function dataOciGoldenGateConnectionsConnectionCollectionItemsBootstrapServersToHclTerraform(struct?: DataOciGoldenGateConnectionsConnectionCollectionItemsBootstrapServers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGoldenGateConnectionsConnectionCollectionItemsBootstrapServersOutputReference extends cdktf.ComplexObject {
@@ -208,6 +230,17 @@ export function dataOciGoldenGateConnectionsConnectionCollectionItemsIngressIpsT
   }
 }
 
+
+export function dataOciGoldenGateConnectionsConnectionCollectionItemsIngressIpsToHclTerraform(struct?: DataOciGoldenGateConnectionsConnectionCollectionItemsIngressIps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGoldenGateConnectionsConnectionCollectionItemsIngressIpsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -270,6 +303,17 @@ export function dataOciGoldenGateConnectionsConnectionCollectionItemsLocksToTerr
   }
   return {
   }
+}
+
+
+export function dataOciGoldenGateConnectionsConnectionCollectionItemsLocksToHclTerraform(struct?: DataOciGoldenGateConnectionsConnectionCollectionItemsLocks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGoldenGateConnectionsConnectionCollectionItemsLocksOutputReference extends cdktf.ComplexObject {
@@ -349,6 +393,17 @@ export function dataOciGoldenGateConnectionsConnectionCollectionItemsToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciGoldenGateConnectionsConnectionCollectionItemsToHclTerraform(struct?: DataOciGoldenGateConnectionsConnectionCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGoldenGateConnectionsConnectionCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -937,6 +992,17 @@ export function dataOciGoldenGateConnectionsConnectionCollectionToTerraform(stru
   }
 }
 
+
+export function dataOciGoldenGateConnectionsConnectionCollectionToHclTerraform(struct?: DataOciGoldenGateConnectionsConnectionCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGoldenGateConnectionsConnectionCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1015,6 +1081,37 @@ export function dataOciGoldenGateConnectionsFilterToTerraform(struct?: DataOciGo
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciGoldenGateConnectionsFilterToHclTerraform(struct?: DataOciGoldenGateConnectionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciGoldenGateConnectionsFilterOutputReference extends cdktf.ComplexObject {
@@ -1145,6 +1242,20 @@ export class DataOciGoldenGateConnections extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_golden_gate_connections";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGoldenGateConnections resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGoldenGateConnections to import
+  * @param importFromId The id of the existing DataOciGoldenGateConnections that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/golden_gate_connections#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGoldenGateConnections to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_golden_gate_connections", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1369,5 +1480,73 @@ export class DataOciGoldenGateConnections extends cdktf.TerraformDataSource {
       technology_type: cdktf.listMapper(cdktf.stringToTerraform, false)(this._technologyType),
       filter: cdktf.listMapper(dataOciGoldenGateConnectionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      assignable_deployment_id: {
+        value: cdktf.stringToHclTerraform(this._assignableDeploymentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      assignable_deployment_type: {
+        value: cdktf.stringToHclTerraform(this._assignableDeploymentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      assigned_deployment_id: {
+        value: cdktf.stringToHclTerraform(this._assignedDeploymentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._connectionType),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      technology_type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._technologyType),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciGoldenGateConnectionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciGoldenGateConnectionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

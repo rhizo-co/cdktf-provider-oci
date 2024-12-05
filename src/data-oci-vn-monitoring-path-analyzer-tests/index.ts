@@ -28,7 +28,7 @@ export interface DataOciVnMonitoringPathAnalyzerTestsConfig extends cdktf.Terraf
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/vn_monitoring_path_analyzer_tests#filter DataOciVnMonitoringPathAnalyzerTests#filter}
   */
   readonly filter?: DataOciVnMonitoringPathAnalyzerTestsFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionIt
   }
   return {
   }
+}
+
+
+export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsDestinationEndpointToHclTerraform(struct?: DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsDestinationEndpoint): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsDestinationEndpointOutputReference extends cdktf.ComplexObject {
@@ -154,6 +165,17 @@ export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionIt
   }
 }
 
+
+export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsProtocolParametersToHclTerraform(struct?: DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsProtocolParameters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsProtocolParametersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -238,6 +260,17 @@ export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionIt
   }
 }
 
+
+export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsQueryOptionsToHclTerraform(struct?: DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsQueryOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsQueryOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -300,6 +333,17 @@ export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionIt
   }
   return {
   }
+}
+
+
+export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsSourceEndpointToHclTerraform(struct?: DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsSourceEndpoint): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsSourceEndpointOutputReference extends cdktf.ComplexObject {
@@ -409,6 +453,17 @@ export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionIt
   }
   return {
   }
+}
+
+
+export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsToHclTerraform(struct?: DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -547,6 +602,17 @@ export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionTo
   }
 }
 
+
+export function dataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionToHclTerraform(struct?: DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciVnMonitoringPathAnalyzerTestsPathAnalyzerTestCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -625,6 +691,37 @@ export function dataOciVnMonitoringPathAnalyzerTestsFilterToTerraform(struct?: D
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciVnMonitoringPathAnalyzerTestsFilterToHclTerraform(struct?: DataOciVnMonitoringPathAnalyzerTestsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciVnMonitoringPathAnalyzerTestsFilterOutputReference extends cdktf.ComplexObject {
@@ -755,6 +852,20 @@ export class DataOciVnMonitoringPathAnalyzerTests extends cdktf.TerraformDataSou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_vn_monitoring_path_analyzer_tests";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciVnMonitoringPathAnalyzerTests resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciVnMonitoringPathAnalyzerTests to import
+  * @param importFromId The id of the existing DataOciVnMonitoringPathAnalyzerTests that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/vn_monitoring_path_analyzer_tests#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciVnMonitoringPathAnalyzerTests to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_vn_monitoring_path_analyzer_tests", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -889,5 +1000,43 @@ export class DataOciVnMonitoringPathAnalyzerTests extends cdktf.TerraformDataSou
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciVnMonitoringPathAnalyzerTestsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciVnMonitoringPathAnalyzerTestsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciVnMonitoringPathAnalyzerTestsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

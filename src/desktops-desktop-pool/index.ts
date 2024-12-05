@@ -88,49 +88,49 @@ export interface DesktopsDesktopPoolConfig extends cdktf.TerraformMetaArguments 
   readonly useDedicatedVmHost?: string;
   /**
   * availability_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#availability_policy DesktopsDesktopPool#availability_policy}
   */
   readonly availabilityPolicy: DesktopsDesktopPoolAvailabilityPolicy;
   /**
   * device_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#device_policy DesktopsDesktopPool#device_policy}
   */
   readonly devicePolicy: DesktopsDesktopPoolDevicePolicy;
   /**
   * image block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#image DesktopsDesktopPool#image}
   */
   readonly image: DesktopsDesktopPoolImage;
   /**
   * network_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#network_configuration DesktopsDesktopPool#network_configuration}
   */
   readonly networkConfiguration: DesktopsDesktopPoolNetworkConfiguration;
   /**
   * private_access_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#private_access_details DesktopsDesktopPool#private_access_details}
   */
   readonly privateAccessDetails?: DesktopsDesktopPoolPrivateAccessDetails;
   /**
   * session_lifecycle_actions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#session_lifecycle_actions DesktopsDesktopPool#session_lifecycle_actions}
   */
   readonly sessionLifecycleActions?: DesktopsDesktopPoolSessionLifecycleActions;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#shape_config DesktopsDesktopPool#shape_config}
   */
   readonly shapeConfig?: DesktopsDesktopPoolShapeConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#timeouts DesktopsDesktopPool#timeouts}
   */
   readonly timeouts?: DesktopsDesktopPoolTimeouts;
@@ -155,6 +155,31 @@ export function desktopsDesktopPoolAvailabilityPolicyStartScheduleToTerraform(st
     cron_expression: cdktf.stringToTerraform(struct!.cronExpression),
     timezone: cdktf.stringToTerraform(struct!.timezone),
   }
+}
+
+
+export function desktopsDesktopPoolAvailabilityPolicyStartScheduleToHclTerraform(struct?: DesktopsDesktopPoolAvailabilityPolicyStartScheduleOutputReference | DesktopsDesktopPoolAvailabilityPolicyStartSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cron_expression: {
+      value: cdktf.stringToHclTerraform(struct!.cronExpression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    timezone: {
+      value: cdktf.stringToHclTerraform(struct!.timezone),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DesktopsDesktopPoolAvailabilityPolicyStartScheduleOutputReference extends cdktf.ComplexObject {
@@ -243,6 +268,31 @@ export function desktopsDesktopPoolAvailabilityPolicyStopScheduleToTerraform(str
   }
 }
 
+
+export function desktopsDesktopPoolAvailabilityPolicyStopScheduleToHclTerraform(struct?: DesktopsDesktopPoolAvailabilityPolicyStopScheduleOutputReference | DesktopsDesktopPoolAvailabilityPolicyStopSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cron_expression: {
+      value: cdktf.stringToHclTerraform(struct!.cronExpression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    timezone: {
+      value: cdktf.stringToHclTerraform(struct!.timezone),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DesktopsDesktopPoolAvailabilityPolicyStopScheduleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -310,13 +360,13 @@ export class DesktopsDesktopPoolAvailabilityPolicyStopScheduleOutputReference ex
 export interface DesktopsDesktopPoolAvailabilityPolicy {
   /**
   * start_schedule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#start_schedule DesktopsDesktopPool#start_schedule}
   */
   readonly startSchedule?: DesktopsDesktopPoolAvailabilityPolicyStartSchedule;
   /**
   * stop_schedule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#stop_schedule DesktopsDesktopPool#stop_schedule}
   */
   readonly stopSchedule?: DesktopsDesktopPoolAvailabilityPolicyStopSchedule;
@@ -331,6 +381,31 @@ export function desktopsDesktopPoolAvailabilityPolicyToTerraform(struct?: Deskto
     start_schedule: desktopsDesktopPoolAvailabilityPolicyStartScheduleToTerraform(struct!.startSchedule),
     stop_schedule: desktopsDesktopPoolAvailabilityPolicyStopScheduleToTerraform(struct!.stopSchedule),
   }
+}
+
+
+export function desktopsDesktopPoolAvailabilityPolicyToHclTerraform(struct?: DesktopsDesktopPoolAvailabilityPolicyOutputReference | DesktopsDesktopPoolAvailabilityPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    start_schedule: {
+      value: desktopsDesktopPoolAvailabilityPolicyStartScheduleToHclTerraform(struct!.startSchedule),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DesktopsDesktopPoolAvailabilityPolicyStartScheduleList",
+    },
+    stop_schedule: {
+      value: desktopsDesktopPoolAvailabilityPolicyStopScheduleToHclTerraform(struct!.stopSchedule),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DesktopsDesktopPoolAvailabilityPolicyStopScheduleList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DesktopsDesktopPoolAvailabilityPolicyOutputReference extends cdktf.ComplexObject {
@@ -448,6 +523,61 @@ export function desktopsDesktopPoolDevicePolicyToTerraform(struct?: DesktopsDesk
     is_pointer_enabled: cdktf.booleanToTerraform(struct!.isPointerEnabled),
     is_printing_enabled: cdktf.booleanToTerraform(struct!.isPrintingEnabled),
   }
+}
+
+
+export function desktopsDesktopPoolDevicePolicyToHclTerraform(struct?: DesktopsDesktopPoolDevicePolicyOutputReference | DesktopsDesktopPoolDevicePolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    audio_mode: {
+      value: cdktf.stringToHclTerraform(struct!.audioMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cdm_mode: {
+      value: cdktf.stringToHclTerraform(struct!.cdmMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    clipboard_mode: {
+      value: cdktf.stringToHclTerraform(struct!.clipboardMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_display_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isDisplayEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_keyboard_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isKeyboardEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_pointer_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPointerEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_printing_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPrintingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DesktopsDesktopPoolDevicePolicyOutputReference extends cdktf.ComplexObject {
@@ -636,6 +766,37 @@ export function desktopsDesktopPoolImageToTerraform(struct?: DesktopsDesktopPool
   }
 }
 
+
+export function desktopsDesktopPoolImageToHclTerraform(struct?: DesktopsDesktopPoolImageOutputReference | DesktopsDesktopPoolImage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    image_id: {
+      value: cdktf.stringToHclTerraform(struct!.imageId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_name: {
+      value: cdktf.stringToHclTerraform(struct!.imageName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operating_system: {
+      value: cdktf.stringToHclTerraform(struct!.operatingSystem),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DesktopsDesktopPoolImageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -744,6 +905,31 @@ export function desktopsDesktopPoolNetworkConfigurationToTerraform(struct?: Desk
   }
 }
 
+
+export function desktopsDesktopPoolNetworkConfigurationToHclTerraform(struct?: DesktopsDesktopPoolNetworkConfigurationOutputReference | DesktopsDesktopPoolNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vcn_id: {
+      value: cdktf.stringToHclTerraform(struct!.vcnId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DesktopsDesktopPoolNetworkConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -833,6 +1019,37 @@ export function desktopsDesktopPoolPrivateAccessDetailsToTerraform(struct?: Desk
     private_ip: cdktf.stringToTerraform(struct!.privateIp),
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
   }
+}
+
+
+export function desktopsDesktopPoolPrivateAccessDetailsToHclTerraform(struct?: DesktopsDesktopPoolPrivateAccessDetailsOutputReference | DesktopsDesktopPoolPrivateAccessDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DesktopsDesktopPoolPrivateAccessDetailsOutputReference extends cdktf.ComplexObject {
@@ -956,6 +1173,31 @@ export function desktopsDesktopPoolSessionLifecycleActionsDisconnectToTerraform(
   }
 }
 
+
+export function desktopsDesktopPoolSessionLifecycleActionsDisconnectToHclTerraform(struct?: DesktopsDesktopPoolSessionLifecycleActionsDisconnectOutputReference | DesktopsDesktopPoolSessionLifecycleActionsDisconnect): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    grace_period_in_minutes: {
+      value: cdktf.numberToHclTerraform(struct!.gracePeriodInMinutes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DesktopsDesktopPoolSessionLifecycleActionsDisconnectOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1045,6 +1287,31 @@ export function desktopsDesktopPoolSessionLifecycleActionsInactivityToTerraform(
   }
 }
 
+
+export function desktopsDesktopPoolSessionLifecycleActionsInactivityToHclTerraform(struct?: DesktopsDesktopPoolSessionLifecycleActionsInactivityOutputReference | DesktopsDesktopPoolSessionLifecycleActionsInactivity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    grace_period_in_minutes: {
+      value: cdktf.numberToHclTerraform(struct!.gracePeriodInMinutes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DesktopsDesktopPoolSessionLifecycleActionsInactivityOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1115,13 +1382,13 @@ export class DesktopsDesktopPoolSessionLifecycleActionsInactivityOutputReference
 export interface DesktopsDesktopPoolSessionLifecycleActions {
   /**
   * disconnect block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#disconnect DesktopsDesktopPool#disconnect}
   */
   readonly disconnect?: DesktopsDesktopPoolSessionLifecycleActionsDisconnect;
   /**
   * inactivity block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#inactivity DesktopsDesktopPool#inactivity}
   */
   readonly inactivity?: DesktopsDesktopPoolSessionLifecycleActionsInactivity;
@@ -1136,6 +1403,31 @@ export function desktopsDesktopPoolSessionLifecycleActionsToTerraform(struct?: D
     disconnect: desktopsDesktopPoolSessionLifecycleActionsDisconnectToTerraform(struct!.disconnect),
     inactivity: desktopsDesktopPoolSessionLifecycleActionsInactivityToTerraform(struct!.inactivity),
   }
+}
+
+
+export function desktopsDesktopPoolSessionLifecycleActionsToHclTerraform(struct?: DesktopsDesktopPoolSessionLifecycleActionsOutputReference | DesktopsDesktopPoolSessionLifecycleActions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    disconnect: {
+      value: desktopsDesktopPoolSessionLifecycleActionsDisconnectToHclTerraform(struct!.disconnect),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DesktopsDesktopPoolSessionLifecycleActionsDisconnectList",
+    },
+    inactivity: {
+      value: desktopsDesktopPoolSessionLifecycleActionsInactivityToHclTerraform(struct!.inactivity),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DesktopsDesktopPoolSessionLifecycleActionsInactivityList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DesktopsDesktopPoolSessionLifecycleActionsOutputReference extends cdktf.ComplexObject {
@@ -1233,6 +1525,37 @@ export function desktopsDesktopPoolShapeConfigToTerraform(struct?: DesktopsDeskt
     memory_in_gbs: cdktf.stringToTerraform(struct!.memoryInGbs),
     ocpus: cdktf.stringToTerraform(struct!.ocpus),
   }
+}
+
+
+export function desktopsDesktopPoolShapeConfigToHclTerraform(struct?: DesktopsDesktopPoolShapeConfigOutputReference | DesktopsDesktopPoolShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    baseline_ocpu_utilization: {
+      value: cdktf.stringToHclTerraform(struct!.baselineOcpuUtilization),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    memory_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ocpus: {
+      value: cdktf.stringToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DesktopsDesktopPoolShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -1354,6 +1677,37 @@ export function desktopsDesktopPoolTimeoutsToTerraform(struct?: DesktopsDesktopP
   }
 }
 
+
+export function desktopsDesktopPoolTimeoutsToHclTerraform(struct?: DesktopsDesktopPoolTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DesktopsDesktopPoolTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1466,6 +1820,20 @@ export class DesktopsDesktopPool extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_desktops_desktop_pool";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DesktopsDesktopPool resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DesktopsDesktopPool to import
+  * @param importFromId The id of the existing DesktopsDesktopPool that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/desktops_desktop_pool#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DesktopsDesktopPool to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_desktops_desktop_pool", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1963,5 +2331,175 @@ export class DesktopsDesktopPool extends cdktf.TerraformResource {
       shape_config: desktopsDesktopPoolShapeConfigToTerraform(this._shapeConfig.internalValue),
       timeouts: desktopsDesktopPoolTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      are_privileged_users: {
+        value: cdktf.booleanToHclTerraform(this._arePrivilegedUsers),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      contact_details: {
+        value: cdktf.stringToHclTerraform(this._contactDetails),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_storage_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isStorageEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      maximum_size: {
+        value: cdktf.numberToHclTerraform(this._maximumSize),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      nsg_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._nsgIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      shape_name: {
+        value: cdktf.stringToHclTerraform(this._shapeName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      standby_size: {
+        value: cdktf.numberToHclTerraform(this._standbySize),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      storage_backup_policy_id: {
+        value: cdktf.stringToHclTerraform(this._storageBackupPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      storage_size_in_gbs: {
+        value: cdktf.numberToHclTerraform(this._storageSizeInGbs),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      time_start_scheduled: {
+        value: cdktf.stringToHclTerraform(this._timeStartScheduled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_stop_scheduled: {
+        value: cdktf.stringToHclTerraform(this._timeStopScheduled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      use_dedicated_vm_host: {
+        value: cdktf.stringToHclTerraform(this._useDedicatedVmHost),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      availability_policy: {
+        value: desktopsDesktopPoolAvailabilityPolicyToHclTerraform(this._availabilityPolicy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DesktopsDesktopPoolAvailabilityPolicyList",
+      },
+      device_policy: {
+        value: desktopsDesktopPoolDevicePolicyToHclTerraform(this._devicePolicy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DesktopsDesktopPoolDevicePolicyList",
+      },
+      image: {
+        value: desktopsDesktopPoolImageToHclTerraform(this._image.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DesktopsDesktopPoolImageList",
+      },
+      network_configuration: {
+        value: desktopsDesktopPoolNetworkConfigurationToHclTerraform(this._networkConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DesktopsDesktopPoolNetworkConfigurationList",
+      },
+      private_access_details: {
+        value: desktopsDesktopPoolPrivateAccessDetailsToHclTerraform(this._privateAccessDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DesktopsDesktopPoolPrivateAccessDetailsList",
+      },
+      session_lifecycle_actions: {
+        value: desktopsDesktopPoolSessionLifecycleActionsToHclTerraform(this._sessionLifecycleActions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DesktopsDesktopPoolSessionLifecycleActionsList",
+      },
+      shape_config: {
+        value: desktopsDesktopPoolShapeConfigToHclTerraform(this._shapeConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DesktopsDesktopPoolShapeConfigList",
+      },
+      timeouts: {
+        value: desktopsDesktopPoolTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DesktopsDesktopPoolTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

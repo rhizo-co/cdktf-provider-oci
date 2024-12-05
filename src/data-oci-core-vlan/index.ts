@@ -23,6 +23,20 @@ export class DataOciCoreVlan extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_core_vlan";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreVlan resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreVlan to import
+  * @param importFromId The id of the existing DataOciCoreVlan that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_vlan#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreVlan to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_vlan", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -145,5 +159,19 @@ export class DataOciCoreVlan extends cdktf.TerraformDataSource {
     return {
       vlan_id: cdktf.stringToTerraform(this._vlanId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      vlan_id: {
+        value: cdktf.stringToHclTerraform(this._vlanId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

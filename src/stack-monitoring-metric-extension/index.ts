@@ -44,19 +44,19 @@ export interface StackMonitoringMetricExtensionConfig extends cdktf.TerraformMet
   readonly resourceType: string;
   /**
   * metric_list block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_metric_extension#metric_list StackMonitoringMetricExtension#metric_list}
   */
   readonly metricList: StackMonitoringMetricExtensionMetricListStruct[] | cdktf.IResolvable;
   /**
   * query_properties block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_metric_extension#query_properties StackMonitoringMetricExtension#query_properties}
   */
   readonly queryProperties: StackMonitoringMetricExtensionQueryProperties;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_metric_extension#timeouts StackMonitoringMetricExtension#timeouts}
   */
   readonly timeouts?: StackMonitoringMetricExtensionTimeouts;
@@ -71,6 +71,17 @@ export function stackMonitoringMetricExtensionEnabledOnResourcesToTerraform(stru
   }
   return {
   }
+}
+
+
+export function stackMonitoringMetricExtensionEnabledOnResourcesToHclTerraform(struct?: StackMonitoringMetricExtensionEnabledOnResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class StackMonitoringMetricExtensionEnabledOnResourcesOutputReference extends cdktf.ComplexObject {
@@ -175,6 +186,67 @@ export function stackMonitoringMetricExtensionMetricListStructToTerraform(struct
     name: cdktf.stringToTerraform(struct!.name),
     unit: cdktf.stringToTerraform(struct!.unit),
   }
+}
+
+
+export function stackMonitoringMetricExtensionMetricListStructToHclTerraform(struct?: StackMonitoringMetricExtensionMetricListStruct | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compute_expression: {
+      value: cdktf.stringToHclTerraform(struct!.computeExpression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    data_type: {
+      value: cdktf.stringToHclTerraform(struct!.dataType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_dimension: {
+      value: cdktf.booleanToHclTerraform(struct!.isDimension),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_hidden: {
+      value: cdktf.booleanToHclTerraform(struct!.isHidden),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    metric_category: {
+      value: cdktf.stringToHclTerraform(struct!.metricCategory),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    unit: {
+      value: cdktf.stringToHclTerraform(struct!.unit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMetricExtensionMetricListStructOutputReference extends cdktf.ComplexObject {
@@ -427,6 +499,31 @@ export function stackMonitoringMetricExtensionQueryPropertiesInParamDetailsToTer
   }
 }
 
+
+export function stackMonitoringMetricExtensionQueryPropertiesInParamDetailsToHclTerraform(struct?: StackMonitoringMetricExtensionQueryPropertiesInParamDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    in_param_position: {
+      value: cdktf.numberToHclTerraform(struct!.inParamPosition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    in_param_value: {
+      value: cdktf.stringToHclTerraform(struct!.inParamValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMetricExtensionQueryPropertiesInParamDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -545,6 +642,31 @@ export function stackMonitoringMetricExtensionQueryPropertiesOutParamDetailsToTe
   }
 }
 
+
+export function stackMonitoringMetricExtensionQueryPropertiesOutParamDetailsToHclTerraform(struct?: StackMonitoringMetricExtensionQueryPropertiesOutParamDetailsOutputReference | StackMonitoringMetricExtensionQueryPropertiesOutParamDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    out_param_position: {
+      value: cdktf.numberToHclTerraform(struct!.outParamPosition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    out_param_type: {
+      value: cdktf.stringToHclTerraform(struct!.outParamType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMetricExtensionQueryPropertiesOutParamDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -631,6 +753,31 @@ export function stackMonitoringMetricExtensionQueryPropertiesScriptDetailsToTerr
   }
 }
 
+
+export function stackMonitoringMetricExtensionQueryPropertiesScriptDetailsToHclTerraform(struct?: StackMonitoringMetricExtensionQueryPropertiesScriptDetailsOutputReference | StackMonitoringMetricExtensionQueryPropertiesScriptDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    content: {
+      value: cdktf.stringToHclTerraform(struct!.content),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMetricExtensionQueryPropertiesScriptDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -715,6 +862,31 @@ export function stackMonitoringMetricExtensionQueryPropertiesSqlDetailsToTerrafo
     content: cdktf.stringToTerraform(struct!.content),
     script_file_name: cdktf.stringToTerraform(struct!.scriptFileName),
   }
+}
+
+
+export function stackMonitoringMetricExtensionQueryPropertiesSqlDetailsToHclTerraform(struct?: StackMonitoringMetricExtensionQueryPropertiesSqlDetailsOutputReference | StackMonitoringMetricExtensionQueryPropertiesSqlDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    content: {
+      value: cdktf.stringToHclTerraform(struct!.content),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    script_file_name: {
+      value: cdktf.stringToHclTerraform(struct!.scriptFileName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMetricExtensionQueryPropertiesSqlDetailsOutputReference extends cdktf.ComplexObject {
@@ -831,25 +1003,25 @@ export interface StackMonitoringMetricExtensionQueryProperties {
   readonly startsWith?: string;
   /**
   * in_param_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_metric_extension#in_param_details StackMonitoringMetricExtension#in_param_details}
   */
   readonly inParamDetails?: StackMonitoringMetricExtensionQueryPropertiesInParamDetails[] | cdktf.IResolvable;
   /**
   * out_param_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_metric_extension#out_param_details StackMonitoringMetricExtension#out_param_details}
   */
   readonly outParamDetails?: StackMonitoringMetricExtensionQueryPropertiesOutParamDetails;
   /**
   * script_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_metric_extension#script_details StackMonitoringMetricExtension#script_details}
   */
   readonly scriptDetails?: StackMonitoringMetricExtensionQueryPropertiesScriptDetails;
   /**
   * sql_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_metric_extension#sql_details StackMonitoringMetricExtension#sql_details}
   */
   readonly sqlDetails?: StackMonitoringMetricExtensionQueryPropertiesSqlDetails;
@@ -877,6 +1049,109 @@ export function stackMonitoringMetricExtensionQueryPropertiesToTerraform(struct?
     script_details: stackMonitoringMetricExtensionQueryPropertiesScriptDetailsToTerraform(struct!.scriptDetails),
     sql_details: stackMonitoringMetricExtensionQueryPropertiesSqlDetailsToTerraform(struct!.sqlDetails),
   }
+}
+
+
+export function stackMonitoringMetricExtensionQueryPropertiesToHclTerraform(struct?: StackMonitoringMetricExtensionQueryPropertiesOutputReference | StackMonitoringMetricExtensionQueryProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    arguments: {
+      value: cdktf.stringToHclTerraform(struct!.arguments),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auto_row_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.autoRowPrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    collection_method: {
+      value: cdktf.stringToHclTerraform(struct!.collectionMethod),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    command: {
+      value: cdktf.stringToHclTerraform(struct!.command),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delimiter: {
+      value: cdktf.stringToHclTerraform(struct!.delimiter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    identity_metric: {
+      value: cdktf.stringToHclTerraform(struct!.identityMetric),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_metric_service_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isMetricServiceEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    jmx_attributes: {
+      value: cdktf.stringToHclTerraform(struct!.jmxAttributes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    managed_bean_query: {
+      value: cdktf.stringToHclTerraform(struct!.managedBeanQuery),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    sql_type: {
+      value: cdktf.stringToHclTerraform(struct!.sqlType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    starts_with: {
+      value: cdktf.stringToHclTerraform(struct!.startsWith),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    in_param_details: {
+      value: cdktf.listMapperHcl(stackMonitoringMetricExtensionQueryPropertiesInParamDetailsToHclTerraform, true)(struct!.inParamDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringMetricExtensionQueryPropertiesInParamDetailsList",
+    },
+    out_param_details: {
+      value: stackMonitoringMetricExtensionQueryPropertiesOutParamDetailsToHclTerraform(struct!.outParamDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringMetricExtensionQueryPropertiesOutParamDetailsList",
+    },
+    script_details: {
+      value: stackMonitoringMetricExtensionQueryPropertiesScriptDetailsToHclTerraform(struct!.scriptDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringMetricExtensionQueryPropertiesScriptDetailsList",
+    },
+    sql_details: {
+      value: stackMonitoringMetricExtensionQueryPropertiesSqlDetailsToHclTerraform(struct!.sqlDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringMetricExtensionQueryPropertiesSqlDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMetricExtensionQueryPropertiesOutputReference extends cdktf.ComplexObject {
@@ -1259,6 +1534,37 @@ export function stackMonitoringMetricExtensionTimeoutsToTerraform(struct?: Stack
   }
 }
 
+
+export function stackMonitoringMetricExtensionTimeoutsToHclTerraform(struct?: StackMonitoringMetricExtensionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMetricExtensionTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1371,6 +1677,20 @@ export class StackMonitoringMetricExtension extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_metric_extension";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a StackMonitoringMetricExtension resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the StackMonitoringMetricExtension to import
+  * @param importFromId The id of the existing StackMonitoringMetricExtension that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_metric_extension#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the StackMonitoringMetricExtension to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_metric_extension", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1645,5 +1965,79 @@ export class StackMonitoringMetricExtension extends cdktf.TerraformResource {
       query_properties: stackMonitoringMetricExtensionQueryPropertiesToTerraform(this._queryProperties.internalValue),
       timeouts: stackMonitoringMetricExtensionTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      collection_recurrences: {
+        value: cdktf.stringToHclTerraform(this._collectionRecurrences),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      publish_trigger: {
+        value: cdktf.booleanToHclTerraform(this._publishTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      resource_type: {
+        value: cdktf.stringToHclTerraform(this._resourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metric_list: {
+        value: cdktf.listMapperHcl(stackMonitoringMetricExtensionMetricListStructToHclTerraform, true)(this._metricList.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMetricExtensionMetricListStructList",
+      },
+      query_properties: {
+        value: stackMonitoringMetricExtensionQueryPropertiesToHclTerraform(this._queryProperties.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMetricExtensionQueryPropertiesList",
+      },
+      timeouts: {
+        value: stackMonitoringMetricExtensionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StackMonitoringMetricExtensionTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

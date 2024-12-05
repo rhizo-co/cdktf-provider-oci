@@ -40,7 +40,7 @@ export interface DataOciWaasHttpRedirectsConfig extends cdktf.TerraformMetaArgum
   readonly timeCreatedLessThan?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/waas_http_redirects#filter DataOciWaasHttpRedirects#filter}
   */
   readonly filter?: DataOciWaasHttpRedirectsFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciWaasHttpRedirectsHttpRedirectsTargetToTerraform(struct?: 
   }
   return {
   }
+}
+
+
+export function dataOciWaasHttpRedirectsHttpRedirectsTargetToHclTerraform(struct?: DataOciWaasHttpRedirectsHttpRedirectsTarget): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasHttpRedirectsHttpRedirectsTargetOutputReference extends cdktf.ComplexObject {
@@ -139,6 +150,17 @@ export function dataOciWaasHttpRedirectsHttpRedirectsToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciWaasHttpRedirectsHttpRedirectsToHclTerraform(struct?: DataOciWaasHttpRedirectsHttpRedirects): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasHttpRedirectsHttpRedirectsOutputReference extends cdktf.ComplexObject {
@@ -266,6 +288,37 @@ export function dataOciWaasHttpRedirectsFilterToTerraform(struct?: DataOciWaasHt
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciWaasHttpRedirectsFilterToHclTerraform(struct?: DataOciWaasHttpRedirectsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciWaasHttpRedirectsFilterOutputReference extends cdktf.ComplexObject {
@@ -396,6 +449,20 @@ export class DataOciWaasHttpRedirects extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_waas_http_redirects";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciWaasHttpRedirects resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciWaasHttpRedirects to import
+  * @param importFromId The id of the existing DataOciWaasHttpRedirects that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/waas_http_redirects#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciWaasHttpRedirects to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_waas_http_redirects", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -584,5 +651,61 @@ export class DataOciWaasHttpRedirects extends cdktf.TerraformDataSource {
       time_created_less_than: cdktf.stringToTerraform(this._timeCreatedLessThan),
       filter: cdktf.listMapper(dataOciWaasHttpRedirectsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_names: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._displayNames),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._ids),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      states: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._states),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      time_created_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciWaasHttpRedirectsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciWaasHttpRedirectsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

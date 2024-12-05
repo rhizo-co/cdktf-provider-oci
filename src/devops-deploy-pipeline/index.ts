@@ -36,13 +36,13 @@ export interface DevopsDeployPipelineConfig extends cdktf.TerraformMetaArguments
   readonly projectId: string;
   /**
   * deploy_pipeline_parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_deploy_pipeline#deploy_pipeline_parameters DevopsDeployPipeline#deploy_pipeline_parameters}
   */
   readonly deployPipelineParameters?: DevopsDeployPipelineDeployPipelineParameters;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_deploy_pipeline#timeouts DevopsDeployPipeline#timeouts}
   */
   readonly timeouts?: DevopsDeployPipelineTimeouts;
@@ -57,6 +57,17 @@ export function devopsDeployPipelineDeployPipelineArtifactsItemsDeployPipelineSt
   }
   return {
   }
+}
+
+
+export function devopsDeployPipelineDeployPipelineArtifactsItemsDeployPipelineStagesItemsToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineArtifactsItemsDeployPipelineStagesItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsDeployPipelineDeployPipelineArtifactsItemsDeployPipelineStagesItemsOutputReference extends cdktf.ComplexObject {
@@ -128,6 +139,17 @@ export function devopsDeployPipelineDeployPipelineArtifactsItemsDeployPipelineSt
   }
 }
 
+
+export function devopsDeployPipelineDeployPipelineArtifactsItemsDeployPipelineStagesToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineArtifactsItemsDeployPipelineStages): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsDeployPipelineDeployPipelineArtifactsItemsDeployPipelineStagesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -191,6 +213,17 @@ export function devopsDeployPipelineDeployPipelineArtifactsItemsToTerraform(stru
   }
   return {
   }
+}
+
+
+export function devopsDeployPipelineDeployPipelineArtifactsItemsToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineArtifactsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsDeployPipelineDeployPipelineArtifactsItemsOutputReference extends cdktf.ComplexObject {
@@ -268,6 +301,17 @@ export function devopsDeployPipelineDeployPipelineArtifactsToTerraform(struct?: 
   }
 }
 
+
+export function devopsDeployPipelineDeployPipelineArtifactsToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineArtifacts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsDeployPipelineDeployPipelineArtifactsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -331,6 +375,17 @@ export function devopsDeployPipelineDeployPipelineEnvironmentsItemsDeployPipelin
   }
   return {
   }
+}
+
+
+export function devopsDeployPipelineDeployPipelineEnvironmentsItemsDeployPipelineStagesItemsToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineEnvironmentsItemsDeployPipelineStagesItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsDeployPipelineDeployPipelineEnvironmentsItemsDeployPipelineStagesItemsOutputReference extends cdktf.ComplexObject {
@@ -402,6 +457,17 @@ export function devopsDeployPipelineDeployPipelineEnvironmentsItemsDeployPipelin
   }
 }
 
+
+export function devopsDeployPipelineDeployPipelineEnvironmentsItemsDeployPipelineStagesToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineEnvironmentsItemsDeployPipelineStages): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsDeployPipelineDeployPipelineEnvironmentsItemsDeployPipelineStagesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -465,6 +531,17 @@ export function devopsDeployPipelineDeployPipelineEnvironmentsItemsToTerraform(s
   }
   return {
   }
+}
+
+
+export function devopsDeployPipelineDeployPipelineEnvironmentsItemsToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineEnvironmentsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsDeployPipelineDeployPipelineEnvironmentsItemsOutputReference extends cdktf.ComplexObject {
@@ -540,6 +617,17 @@ export function devopsDeployPipelineDeployPipelineEnvironmentsToTerraform(struct
   }
   return {
   }
+}
+
+
+export function devopsDeployPipelineDeployPipelineEnvironmentsToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineEnvironments): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsDeployPipelineDeployPipelineEnvironmentsOutputReference extends cdktf.ComplexObject {
@@ -620,6 +708,37 @@ export function devopsDeployPipelineDeployPipelineParametersItemsToTerraform(str
     description: cdktf.stringToTerraform(struct!.description),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function devopsDeployPipelineDeployPipelineParametersItemsToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineParametersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default_value: {
+      value: cdktf.stringToHclTerraform(struct!.defaultValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsDeployPipelineDeployPipelineParametersItemsOutputReference extends cdktf.ComplexObject {
@@ -746,7 +865,7 @@ export class DevopsDeployPipelineDeployPipelineParametersItemsList extends cdktf
 export interface DevopsDeployPipelineDeployPipelineParameters {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_deploy_pipeline#items DevopsDeployPipeline#items}
   */
   readonly items: DevopsDeployPipelineDeployPipelineParametersItems[] | cdktf.IResolvable;
@@ -760,6 +879,25 @@ export function devopsDeployPipelineDeployPipelineParametersToTerraform(struct?:
   return {
     items: cdktf.listMapper(devopsDeployPipelineDeployPipelineParametersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function devopsDeployPipelineDeployPipelineParametersToHclTerraform(struct?: DevopsDeployPipelineDeployPipelineParametersOutputReference | DevopsDeployPipelineDeployPipelineParameters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(devopsDeployPipelineDeployPipelineParametersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsDeployPipelineDeployPipelineParametersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsDeployPipelineDeployPipelineParametersOutputReference extends cdktf.ComplexObject {
@@ -832,6 +970,37 @@ export function devopsDeployPipelineTimeoutsToTerraform(struct?: DevopsDeployPip
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function devopsDeployPipelineTimeoutsToHclTerraform(struct?: DevopsDeployPipelineTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsDeployPipelineTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -946,6 +1115,20 @@ export class DevopsDeployPipeline extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_deploy_pipeline";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DevopsDeployPipeline resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DevopsDeployPipeline to import
+  * @param importFromId The id of the existing DevopsDeployPipeline that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_deploy_pipeline#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DevopsDeployPipeline to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_deploy_pipeline", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1171,5 +1354,61 @@ export class DevopsDeployPipeline extends cdktf.TerraformResource {
       deploy_pipeline_parameters: devopsDeployPipelineDeployPipelineParametersToTerraform(this._deployPipelineParameters.internalValue),
       timeouts: devopsDeployPipelineTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      deploy_pipeline_parameters: {
+        value: devopsDeployPipelineDeployPipelineParametersToHclTerraform(this._deployPipelineParameters.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsDeployPipelineDeployPipelineParametersList",
+      },
+      timeouts: {
+        value: devopsDeployPipelineTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DevopsDeployPipelineTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

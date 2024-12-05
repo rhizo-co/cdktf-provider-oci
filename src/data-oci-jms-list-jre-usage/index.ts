@@ -51,6 +51,17 @@ export function dataOciJmsListJreUsageItemsOperatingSystemsToTerraform(struct?: 
   }
 }
 
+
+export function dataOciJmsListJreUsageItemsOperatingSystemsToHclTerraform(struct?: DataOciJmsListJreUsageItemsOperatingSystems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsListJreUsageItemsOperatingSystemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -133,6 +144,17 @@ export function dataOciJmsListJreUsageItemsToTerraform(struct?: DataOciJmsListJr
   }
   return {
   }
+}
+
+
+export function dataOciJmsListJreUsageItemsToHclTerraform(struct?: DataOciJmsListJreUsageItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsListJreUsageItemsOutputReference extends cdktf.ComplexObject {
@@ -288,6 +310,20 @@ export class DataOciJmsListJreUsage extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_list_jre_usage";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsListJreUsage resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsListJreUsage to import
+  * @param importFromId The id of the existing DataOciJmsListJreUsage that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_list_jre_usage#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsListJreUsage to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_list_jre_usage", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -461,5 +497,55 @@ export class DataOciJmsListJreUsage extends cdktf.TerraformDataSource {
       time_end: cdktf.stringToTerraform(this._timeEnd),
       time_start: cdktf.stringToTerraform(this._timeStart),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      application_id: {
+        value: cdktf.stringToHclTerraform(this._applicationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      application_name: {
+        value: cdktf.stringToHclTerraform(this._applicationName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      host_id: {
+        value: cdktf.stringToHclTerraform(this._hostId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_end: {
+        value: cdktf.stringToHclTerraform(this._timeEnd),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_start: {
+        value: cdktf.stringToHclTerraform(this._timeStart),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

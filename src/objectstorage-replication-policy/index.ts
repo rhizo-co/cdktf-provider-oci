@@ -40,7 +40,7 @@ export interface ObjectstorageReplicationPolicyConfig extends cdktf.TerraformMet
   readonly namespace: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_replication_policy#timeouts ObjectstorageReplicationPolicy#timeouts}
   */
   readonly timeouts?: ObjectstorageReplicationPolicyTimeouts;
@@ -70,6 +70,37 @@ export function objectstorageReplicationPolicyTimeoutsToTerraform(struct?: Objec
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function objectstorageReplicationPolicyTimeoutsToHclTerraform(struct?: ObjectstorageReplicationPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ObjectstorageReplicationPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -184,6 +215,20 @@ export class ObjectstorageReplicationPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_objectstorage_replication_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ObjectstorageReplicationPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ObjectstorageReplicationPolicy to import
+  * @param importFromId The id of the existing ObjectstorageReplicationPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_replication_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ObjectstorageReplicationPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_objectstorage_replication_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -374,5 +419,61 @@ export class ObjectstorageReplicationPolicy extends cdktf.TerraformResource {
       namespace: cdktf.stringToTerraform(this._namespace),
       timeouts: objectstorageReplicationPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      delete_object_in_destination_bucket: {
+        value: cdktf.stringToHclTerraform(this._deleteObjectInDestinationBucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      destination_bucket_name: {
+        value: cdktf.stringToHclTerraform(this._destinationBucketName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      destination_region_name: {
+        value: cdktf.stringToHclTerraform(this._destinationRegionName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: objectstorageReplicationPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ObjectstorageReplicationPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

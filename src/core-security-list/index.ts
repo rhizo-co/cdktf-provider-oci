@@ -36,19 +36,19 @@ export interface CoreSecurityListConfig extends cdktf.TerraformMetaArguments {
   readonly vcnId: string;
   /**
   * egress_security_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#egress_security_rules CoreSecurityList#egress_security_rules}
   */
   readonly egressSecurityRules?: CoreSecurityListEgressSecurityRules[] | cdktf.IResolvable;
   /**
   * ingress_security_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#ingress_security_rules CoreSecurityList#ingress_security_rules}
   */
   readonly ingressSecurityRules?: CoreSecurityListIngressSecurityRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#timeouts CoreSecurityList#timeouts}
   */
   readonly timeouts?: CoreSecurityListTimeouts;
@@ -73,6 +73,31 @@ export function coreSecurityListEgressSecurityRulesIcmpOptionsToTerraform(struct
     code: cdktf.numberToTerraform(struct!.code),
     type: cdktf.numberToTerraform(struct!.type),
   }
+}
+
+
+export function coreSecurityListEgressSecurityRulesIcmpOptionsToHclTerraform(struct?: CoreSecurityListEgressSecurityRulesIcmpOptionsOutputReference | CoreSecurityListEgressSecurityRulesIcmpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    code: {
+      value: cdktf.numberToHclTerraform(struct!.code),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.numberToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreSecurityListEgressSecurityRulesIcmpOptionsOutputReference extends cdktf.ComplexObject {
@@ -164,6 +189,31 @@ export function coreSecurityListEgressSecurityRulesTcpOptionsSourcePortRangeToTe
   }
 }
 
+
+export function coreSecurityListEgressSecurityRulesTcpOptionsSourcePortRangeToHclTerraform(struct?: CoreSecurityListEgressSecurityRulesTcpOptionsSourcePortRangeOutputReference | CoreSecurityListEgressSecurityRulesTcpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreSecurityListEgressSecurityRulesTcpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -239,7 +289,7 @@ export interface CoreSecurityListEgressSecurityRulesTcpOptions {
   readonly min?: number;
   /**
   * source_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#source_port_range CoreSecurityList#source_port_range}
   */
   readonly sourcePortRange?: CoreSecurityListEgressSecurityRulesTcpOptionsSourcePortRange;
@@ -255,6 +305,37 @@ export function coreSecurityListEgressSecurityRulesTcpOptionsToTerraform(struct?
     min: cdktf.numberToTerraform(struct!.min),
     source_port_range: coreSecurityListEgressSecurityRulesTcpOptionsSourcePortRangeToTerraform(struct!.sourcePortRange),
   }
+}
+
+
+export function coreSecurityListEgressSecurityRulesTcpOptionsToHclTerraform(struct?: CoreSecurityListEgressSecurityRulesTcpOptionsOutputReference | CoreSecurityListEgressSecurityRulesTcpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    source_port_range: {
+      value: coreSecurityListEgressSecurityRulesTcpOptionsSourcePortRangeToHclTerraform(struct!.sourcePortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListEgressSecurityRulesTcpOptionsSourcePortRangeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreSecurityListEgressSecurityRulesTcpOptionsOutputReference extends cdktf.ComplexObject {
@@ -371,6 +452,31 @@ export function coreSecurityListEgressSecurityRulesUdpOptionsSourcePortRangeToTe
   }
 }
 
+
+export function coreSecurityListEgressSecurityRulesUdpOptionsSourcePortRangeToHclTerraform(struct?: CoreSecurityListEgressSecurityRulesUdpOptionsSourcePortRangeOutputReference | CoreSecurityListEgressSecurityRulesUdpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreSecurityListEgressSecurityRulesUdpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -446,7 +552,7 @@ export interface CoreSecurityListEgressSecurityRulesUdpOptions {
   readonly min?: number;
   /**
   * source_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#source_port_range CoreSecurityList#source_port_range}
   */
   readonly sourcePortRange?: CoreSecurityListEgressSecurityRulesUdpOptionsSourcePortRange;
@@ -462,6 +568,37 @@ export function coreSecurityListEgressSecurityRulesUdpOptionsToTerraform(struct?
     min: cdktf.numberToTerraform(struct!.min),
     source_port_range: coreSecurityListEgressSecurityRulesUdpOptionsSourcePortRangeToTerraform(struct!.sourcePortRange),
   }
+}
+
+
+export function coreSecurityListEgressSecurityRulesUdpOptionsToHclTerraform(struct?: CoreSecurityListEgressSecurityRulesUdpOptionsOutputReference | CoreSecurityListEgressSecurityRulesUdpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    source_port_range: {
+      value: coreSecurityListEgressSecurityRulesUdpOptionsSourcePortRangeToHclTerraform(struct!.sourcePortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListEgressSecurityRulesUdpOptionsSourcePortRangeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreSecurityListEgressSecurityRulesUdpOptionsOutputReference extends cdktf.ComplexObject {
@@ -579,19 +716,19 @@ export interface CoreSecurityListEgressSecurityRules {
   readonly stateless?: boolean | cdktf.IResolvable;
   /**
   * icmp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#icmp_options CoreSecurityList#icmp_options}
   */
   readonly icmpOptions?: CoreSecurityListEgressSecurityRulesIcmpOptions;
   /**
   * tcp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#tcp_options CoreSecurityList#tcp_options}
   */
   readonly tcpOptions?: CoreSecurityListEgressSecurityRulesTcpOptions;
   /**
   * udp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#udp_options CoreSecurityList#udp_options}
   */
   readonly udpOptions?: CoreSecurityListEgressSecurityRulesUdpOptions;
@@ -612,6 +749,67 @@ export function coreSecurityListEgressSecurityRulesToTerraform(struct?: CoreSecu
     tcp_options: coreSecurityListEgressSecurityRulesTcpOptionsToTerraform(struct!.tcpOptions),
     udp_options: coreSecurityListEgressSecurityRulesUdpOptionsToTerraform(struct!.udpOptions),
   }
+}
+
+
+export function coreSecurityListEgressSecurityRulesToHclTerraform(struct?: CoreSecurityListEgressSecurityRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination: {
+      value: cdktf.stringToHclTerraform(struct!.destination),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination_type: {
+      value: cdktf.stringToHclTerraform(struct!.destinationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stateless: {
+      value: cdktf.booleanToHclTerraform(struct!.stateless),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    icmp_options: {
+      value: coreSecurityListEgressSecurityRulesIcmpOptionsToHclTerraform(struct!.icmpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListEgressSecurityRulesIcmpOptionsList",
+    },
+    tcp_options: {
+      value: coreSecurityListEgressSecurityRulesTcpOptionsToHclTerraform(struct!.tcpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListEgressSecurityRulesTcpOptionsList",
+    },
+    udp_options: {
+      value: coreSecurityListEgressSecurityRulesUdpOptionsToHclTerraform(struct!.udpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListEgressSecurityRulesUdpOptionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreSecurityListEgressSecurityRulesOutputReference extends cdktf.ComplexObject {
@@ -864,6 +1062,31 @@ export function coreSecurityListIngressSecurityRulesIcmpOptionsToTerraform(struc
   }
 }
 
+
+export function coreSecurityListIngressSecurityRulesIcmpOptionsToHclTerraform(struct?: CoreSecurityListIngressSecurityRulesIcmpOptionsOutputReference | CoreSecurityListIngressSecurityRulesIcmpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    code: {
+      value: cdktf.numberToHclTerraform(struct!.code),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.numberToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreSecurityListIngressSecurityRulesIcmpOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -953,6 +1176,31 @@ export function coreSecurityListIngressSecurityRulesTcpOptionsSourcePortRangeToT
   }
 }
 
+
+export function coreSecurityListIngressSecurityRulesTcpOptionsSourcePortRangeToHclTerraform(struct?: CoreSecurityListIngressSecurityRulesTcpOptionsSourcePortRangeOutputReference | CoreSecurityListIngressSecurityRulesTcpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreSecurityListIngressSecurityRulesTcpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1028,7 +1276,7 @@ export interface CoreSecurityListIngressSecurityRulesTcpOptions {
   readonly min?: number;
   /**
   * source_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#source_port_range CoreSecurityList#source_port_range}
   */
   readonly sourcePortRange?: CoreSecurityListIngressSecurityRulesTcpOptionsSourcePortRange;
@@ -1044,6 +1292,37 @@ export function coreSecurityListIngressSecurityRulesTcpOptionsToTerraform(struct
     min: cdktf.numberToTerraform(struct!.min),
     source_port_range: coreSecurityListIngressSecurityRulesTcpOptionsSourcePortRangeToTerraform(struct!.sourcePortRange),
   }
+}
+
+
+export function coreSecurityListIngressSecurityRulesTcpOptionsToHclTerraform(struct?: CoreSecurityListIngressSecurityRulesTcpOptionsOutputReference | CoreSecurityListIngressSecurityRulesTcpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    source_port_range: {
+      value: coreSecurityListIngressSecurityRulesTcpOptionsSourcePortRangeToHclTerraform(struct!.sourcePortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListIngressSecurityRulesTcpOptionsSourcePortRangeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreSecurityListIngressSecurityRulesTcpOptionsOutputReference extends cdktf.ComplexObject {
@@ -1160,6 +1439,31 @@ export function coreSecurityListIngressSecurityRulesUdpOptionsSourcePortRangeToT
   }
 }
 
+
+export function coreSecurityListIngressSecurityRulesUdpOptionsSourcePortRangeToHclTerraform(struct?: CoreSecurityListIngressSecurityRulesUdpOptionsSourcePortRangeOutputReference | CoreSecurityListIngressSecurityRulesUdpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreSecurityListIngressSecurityRulesUdpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1235,7 +1539,7 @@ export interface CoreSecurityListIngressSecurityRulesUdpOptions {
   readonly min?: number;
   /**
   * source_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#source_port_range CoreSecurityList#source_port_range}
   */
   readonly sourcePortRange?: CoreSecurityListIngressSecurityRulesUdpOptionsSourcePortRange;
@@ -1251,6 +1555,37 @@ export function coreSecurityListIngressSecurityRulesUdpOptionsToTerraform(struct
     min: cdktf.numberToTerraform(struct!.min),
     source_port_range: coreSecurityListIngressSecurityRulesUdpOptionsSourcePortRangeToTerraform(struct!.sourcePortRange),
   }
+}
+
+
+export function coreSecurityListIngressSecurityRulesUdpOptionsToHclTerraform(struct?: CoreSecurityListIngressSecurityRulesUdpOptionsOutputReference | CoreSecurityListIngressSecurityRulesUdpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    source_port_range: {
+      value: coreSecurityListIngressSecurityRulesUdpOptionsSourcePortRangeToHclTerraform(struct!.sourcePortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListIngressSecurityRulesUdpOptionsSourcePortRangeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreSecurityListIngressSecurityRulesUdpOptionsOutputReference extends cdktf.ComplexObject {
@@ -1368,19 +1703,19 @@ export interface CoreSecurityListIngressSecurityRules {
   readonly stateless?: boolean | cdktf.IResolvable;
   /**
   * icmp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#icmp_options CoreSecurityList#icmp_options}
   */
   readonly icmpOptions?: CoreSecurityListIngressSecurityRulesIcmpOptions;
   /**
   * tcp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#tcp_options CoreSecurityList#tcp_options}
   */
   readonly tcpOptions?: CoreSecurityListIngressSecurityRulesTcpOptions;
   /**
   * udp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#udp_options CoreSecurityList#udp_options}
   */
   readonly udpOptions?: CoreSecurityListIngressSecurityRulesUdpOptions;
@@ -1401,6 +1736,67 @@ export function coreSecurityListIngressSecurityRulesToTerraform(struct?: CoreSec
     tcp_options: coreSecurityListIngressSecurityRulesTcpOptionsToTerraform(struct!.tcpOptions),
     udp_options: coreSecurityListIngressSecurityRulesUdpOptionsToTerraform(struct!.udpOptions),
   }
+}
+
+
+export function coreSecurityListIngressSecurityRulesToHclTerraform(struct?: CoreSecurityListIngressSecurityRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source: {
+      value: cdktf.stringToHclTerraform(struct!.source),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stateless: {
+      value: cdktf.booleanToHclTerraform(struct!.stateless),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    icmp_options: {
+      value: coreSecurityListIngressSecurityRulesIcmpOptionsToHclTerraform(struct!.icmpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListIngressSecurityRulesIcmpOptionsList",
+    },
+    tcp_options: {
+      value: coreSecurityListIngressSecurityRulesTcpOptionsToHclTerraform(struct!.tcpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListIngressSecurityRulesTcpOptionsList",
+    },
+    udp_options: {
+      value: coreSecurityListIngressSecurityRulesUdpOptionsToHclTerraform(struct!.udpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreSecurityListIngressSecurityRulesUdpOptionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreSecurityListIngressSecurityRulesOutputReference extends cdktf.ComplexObject {
@@ -1658,6 +2054,37 @@ export function coreSecurityListTimeoutsToTerraform(struct?: CoreSecurityListTim
   }
 }
 
+
+export function coreSecurityListTimeoutsToHclTerraform(struct?: CoreSecurityListTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreSecurityListTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1770,6 +2197,20 @@ export class CoreSecurityList extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_security_list";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreSecurityList resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreSecurityList to import
+  * @param importFromId The id of the existing CoreSecurityList that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_security_list#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreSecurityList to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_security_list", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1977,5 +2418,67 @@ export class CoreSecurityList extends cdktf.TerraformResource {
       ingress_security_rules: cdktf.listMapper(coreSecurityListIngressSecurityRulesToTerraform, true)(this._ingressSecurityRules.internalValue),
       timeouts: coreSecurityListTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcn_id: {
+        value: cdktf.stringToHclTerraform(this._vcnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      egress_security_rules: {
+        value: cdktf.listMapperHcl(coreSecurityListEgressSecurityRulesToHclTerraform, true)(this._egressSecurityRules.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "CoreSecurityListEgressSecurityRulesList",
+      },
+      ingress_security_rules: {
+        value: cdktf.listMapperHcl(coreSecurityListIngressSecurityRulesToHclTerraform, true)(this._ingressSecurityRules.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "CoreSecurityListIngressSecurityRulesList",
+      },
+      timeouts: {
+        value: coreSecurityListTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreSecurityListTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

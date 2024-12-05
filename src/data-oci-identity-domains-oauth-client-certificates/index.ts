@@ -63,6 +63,17 @@ export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertific
   }
 }
 
+
+export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesIdcsCreatedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -145,6 +156,17 @@ export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertific
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
@@ -231,6 +253,17 @@ export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertific
   }
 }
 
+
+export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesMetaToHclTerraform(struct?: DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesMetaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -315,6 +348,17 @@ export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertific
   }
 }
 
+
+export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesTagsToHclTerraform(struct?: DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -382,6 +426,17 @@ export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertific
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesToHclTerraform(struct?: DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificates): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsOauthClientCertificatesOauthClientCertificatesOutputReference extends cdktf.ComplexObject {
@@ -580,6 +635,20 @@ export class DataOciIdentityDomainsOauthClientCertificates extends cdktf.Terrafo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_oauth_client_certificates";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsOauthClientCertificates resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsOauthClientCertificates to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsOauthClientCertificates that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_oauth_client_certificates#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsOauthClientCertificates to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_oauth_client_certificates", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -819,5 +888,73 @@ export class DataOciIdentityDomainsOauthClientCertificates extends cdktf.Terrafo
       sort_order: cdktf.stringToTerraform(this._sortOrder),
       start_index: cdktf.numberToTerraform(this._startIndex),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      oauth_client_certificate_count: {
+        value: cdktf.numberToHclTerraform(this._oauthClientCertificateCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      oauth_client_certificate_filter: {
+        value: cdktf.stringToHclTerraform(this._oauthClientCertificateFilter),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sort_by: {
+        value: cdktf.stringToHclTerraform(this._sortBy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sort_order: {
+        value: cdktf.stringToHclTerraform(this._sortOrder),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      start_index: {
+        value: cdktf.numberToHclTerraform(this._startIndex),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -42,6 +42,20 @@ export class DataOciContainerengineClusterKubeConfig extends cdktf.TerraformData
   // =================
   public static readonly tfResourceType = "oci_containerengine_cluster_kube_config";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciContainerengineClusterKubeConfig resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciContainerengineClusterKubeConfig to import
+  * @param importFromId The id of the existing DataOciContainerengineClusterKubeConfig that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/containerengine_cluster_kube_config#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciContainerengineClusterKubeConfig to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_containerengine_cluster_kube_config", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -174,5 +188,43 @@ export class DataOciContainerengineClusterKubeConfig extends cdktf.TerraformData
       id: cdktf.stringToTerraform(this._id),
       token_version: cdktf.stringToTerraform(this._tokenVersion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cluster_id: {
+        value: cdktf.stringToHclTerraform(this._clusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      endpoint: {
+        value: cdktf.stringToHclTerraform(this._endpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      expiration: {
+        value: cdktf.numberToHclTerraform(this._expiration),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      token_version: {
+        value: cdktf.stringToHclTerraform(this._tokenVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

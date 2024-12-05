@@ -24,7 +24,7 @@ export interface DataOciMeteringComputationCustomTablesConfig extends cdktf.Terr
   readonly savedReportId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/metering_computation_custom_tables#filter DataOciMeteringComputationCustomTables#filter}
   */
   readonly filter?: DataOciMeteringComputationCustomTablesFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciMeteringComputationCustomTablesCustomTableCollectionItems
   }
   return {
   }
+}
+
+
+export function dataOciMeteringComputationCustomTablesCustomTableCollectionItemsSavedCustomTableGroupByTagToHclTerraform(struct?: DataOciMeteringComputationCustomTablesCustomTableCollectionItemsSavedCustomTableGroupByTag): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMeteringComputationCustomTablesCustomTableCollectionItemsSavedCustomTableGroupByTagOutputReference extends cdktf.ComplexObject {
@@ -113,6 +124,17 @@ export function dataOciMeteringComputationCustomTablesCustomTableCollectionItems
   }
   return {
   }
+}
+
+
+export function dataOciMeteringComputationCustomTablesCustomTableCollectionItemsSavedCustomTableToHclTerraform(struct?: DataOciMeteringComputationCustomTablesCustomTableCollectionItemsSavedCustomTable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMeteringComputationCustomTablesCustomTableCollectionItemsSavedCustomTableOutputReference extends cdktf.ComplexObject {
@@ -205,6 +227,17 @@ export function dataOciMeteringComputationCustomTablesCustomTableCollectionItems
   }
 }
 
+
+export function dataOciMeteringComputationCustomTablesCustomTableCollectionItemsToHclTerraform(struct?: DataOciMeteringComputationCustomTablesCustomTableCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMeteringComputationCustomTablesCustomTableCollectionItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -285,6 +318,17 @@ export function dataOciMeteringComputationCustomTablesCustomTableCollectionToTer
   }
 }
 
+
+export function dataOciMeteringComputationCustomTablesCustomTableCollectionToHclTerraform(struct?: DataOciMeteringComputationCustomTablesCustomTableCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMeteringComputationCustomTablesCustomTableCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -363,6 +407,37 @@ export function dataOciMeteringComputationCustomTablesFilterToTerraform(struct?:
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciMeteringComputationCustomTablesFilterToHclTerraform(struct?: DataOciMeteringComputationCustomTablesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciMeteringComputationCustomTablesFilterOutputReference extends cdktf.ComplexObject {
@@ -494,6 +569,20 @@ export class DataOciMeteringComputationCustomTables extends cdktf.TerraformDataS
   // =================
   public static readonly tfResourceType = "oci_metering_computation_custom_tables";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMeteringComputationCustomTables resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMeteringComputationCustomTables to import
+  * @param importFromId The id of the existing DataOciMeteringComputationCustomTables that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/metering_computation_custom_tables#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMeteringComputationCustomTables to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_metering_computation_custom_tables", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -606,5 +695,37 @@ export class DataOciMeteringComputationCustomTables extends cdktf.TerraformDataS
       saved_report_id: cdktf.stringToTerraform(this._savedReportId),
       filter: cdktf.listMapper(dataOciMeteringComputationCustomTablesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      saved_report_id: {
+        value: cdktf.stringToHclTerraform(this._savedReportId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciMeteringComputationCustomTablesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciMeteringComputationCustomTablesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

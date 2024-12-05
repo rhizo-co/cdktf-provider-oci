@@ -76,13 +76,13 @@ export interface BlockchainBlockchainPlatformConfig extends cdktf.TerraformMetaA
   readonly totalOcpuCapacity?: number;
   /**
   * replicas block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/blockchain_blockchain_platform#replicas BlockchainBlockchainPlatform#replicas}
   */
   readonly replicas?: BlockchainBlockchainPlatformReplicas;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/blockchain_blockchain_platform#timeouts BlockchainBlockchainPlatform#timeouts}
   */
   readonly timeouts?: BlockchainBlockchainPlatformTimeouts;
@@ -97,6 +97,17 @@ export function blockchainBlockchainPlatformComponentDetailsOsnsOcpuAllocationPa
   }
   return {
   }
+}
+
+
+export function blockchainBlockchainPlatformComponentDetailsOsnsOcpuAllocationParamToHclTerraform(struct?: BlockchainBlockchainPlatformComponentDetailsOsnsOcpuAllocationParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class BlockchainBlockchainPlatformComponentDetailsOsnsOcpuAllocationParamOutputReference extends cdktf.ComplexObject {
@@ -161,6 +172,17 @@ export function blockchainBlockchainPlatformComponentDetailsOsnsToTerraform(stru
   }
   return {
   }
+}
+
+
+export function blockchainBlockchainPlatformComponentDetailsOsnsToHclTerraform(struct?: BlockchainBlockchainPlatformComponentDetailsOsns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class BlockchainBlockchainPlatformComponentDetailsOsnsOutputReference extends cdktf.ComplexObject {
@@ -243,6 +265,17 @@ export function blockchainBlockchainPlatformComponentDetailsPeersOcpuAllocationP
   }
 }
 
+
+export function blockchainBlockchainPlatformComponentDetailsPeersOcpuAllocationParamToHclTerraform(struct?: BlockchainBlockchainPlatformComponentDetailsPeersOcpuAllocationParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class BlockchainBlockchainPlatformComponentDetailsPeersOcpuAllocationParamOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -305,6 +338,17 @@ export function blockchainBlockchainPlatformComponentDetailsPeersToTerraform(str
   }
   return {
   }
+}
+
+
+export function blockchainBlockchainPlatformComponentDetailsPeersToHclTerraform(struct?: BlockchainBlockchainPlatformComponentDetailsPeers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class BlockchainBlockchainPlatformComponentDetailsPeersOutputReference extends cdktf.ComplexObject {
@@ -402,6 +446,17 @@ export function blockchainBlockchainPlatformComponentDetailsToTerraform(struct?:
   }
 }
 
+
+export function blockchainBlockchainPlatformComponentDetailsToHclTerraform(struct?: BlockchainBlockchainPlatformComponentDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class BlockchainBlockchainPlatformComponentDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -471,6 +526,17 @@ export function blockchainBlockchainPlatformHostOcpuUtilizationInfoToTerraform(s
   }
   return {
   }
+}
+
+
+export function blockchainBlockchainPlatformHostOcpuUtilizationInfoToHclTerraform(struct?: BlockchainBlockchainPlatformHostOcpuUtilizationInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class BlockchainBlockchainPlatformHostOcpuUtilizationInfoOutputReference extends cdktf.ComplexObject {
@@ -560,6 +626,37 @@ export function blockchainBlockchainPlatformReplicasToTerraform(struct?: Blockch
     console_count: cdktf.numberToTerraform(struct!.consoleCount),
     proxy_count: cdktf.numberToTerraform(struct!.proxyCount),
   }
+}
+
+
+export function blockchainBlockchainPlatformReplicasToHclTerraform(struct?: BlockchainBlockchainPlatformReplicasOutputReference | BlockchainBlockchainPlatformReplicas): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ca_count: {
+      value: cdktf.numberToHclTerraform(struct!.caCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    console_count: {
+      value: cdktf.numberToHclTerraform(struct!.consoleCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    proxy_count: {
+      value: cdktf.numberToHclTerraform(struct!.proxyCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BlockchainBlockchainPlatformReplicasOutputReference extends cdktf.ComplexObject {
@@ -681,6 +778,37 @@ export function blockchainBlockchainPlatformTimeoutsToTerraform(struct?: Blockch
   }
 }
 
+
+export function blockchainBlockchainPlatformTimeoutsToHclTerraform(struct?: BlockchainBlockchainPlatformTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BlockchainBlockchainPlatformTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -793,6 +921,20 @@ export class BlockchainBlockchainPlatform extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_blockchain_blockchain_platform";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a BlockchainBlockchainPlatform resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the BlockchainBlockchainPlatform to import
+  * @param importFromId The id of the existing BlockchainBlockchainPlatform that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/blockchain_blockchain_platform#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the BlockchainBlockchainPlatform to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_blockchain_blockchain_platform", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1200,5 +1342,121 @@ export class BlockchainBlockchainPlatform extends cdktf.TerraformResource {
       replicas: blockchainBlockchainPlatformReplicasToTerraform(this._replicas.internalValue),
       timeouts: blockchainBlockchainPlatformTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ca_cert_archive_text: {
+        value: cdktf.stringToHclTerraform(this._caCertArchiveText),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compute_shape: {
+        value: cdktf.stringToHclTerraform(this._computeShape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      federated_user_id: {
+        value: cdktf.stringToHclTerraform(this._federatedUserId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_access_token: {
+        value: cdktf.stringToHclTerraform(this._idcsAccessToken),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_byol: {
+        value: cdktf.booleanToHclTerraform(this._isByol),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      load_balancer_shape: {
+        value: cdktf.stringToHclTerraform(this._loadBalancerShape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      platform_role: {
+        value: cdktf.stringToHclTerraform(this._platformRole),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      platform_version: {
+        value: cdktf.stringToHclTerraform(this._platformVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      storage_size_in_tbs: {
+        value: cdktf.numberToHclTerraform(this._storageSizeInTbs),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      total_ocpu_capacity: {
+        value: cdktf.numberToHclTerraform(this._totalOcpuCapacity),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      replicas: {
+        value: blockchainBlockchainPlatformReplicasToHclTerraform(this._replicas.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BlockchainBlockchainPlatformReplicasList",
+      },
+      timeouts: {
+        value: blockchainBlockchainPlatformTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "BlockchainBlockchainPlatformTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -44,13 +44,13 @@ export interface ServiceCatalogPrivateApplicationConfig extends cdktf.TerraformM
   readonly shortDescription: string;
   /**
   * package_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_catalog_private_application#package_details ServiceCatalogPrivateApplication#package_details}
   */
   readonly packageDetails: ServiceCatalogPrivateApplicationPackageDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_catalog_private_application#timeouts ServiceCatalogPrivateApplication#timeouts}
   */
   readonly timeouts?: ServiceCatalogPrivateApplicationTimeouts;
@@ -65,6 +65,17 @@ export function serviceCatalogPrivateApplicationLogoToTerraform(struct?: Service
   }
   return {
   }
+}
+
+
+export function serviceCatalogPrivateApplicationLogoToHclTerraform(struct?: ServiceCatalogPrivateApplicationLogo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ServiceCatalogPrivateApplicationLogoOutputReference extends cdktf.ComplexObject {
@@ -154,6 +165,37 @@ export function serviceCatalogPrivateApplicationPackageDetailsToTerraform(struct
     version: cdktf.stringToTerraform(struct!.version),
     zip_file_base64encoded: cdktf.stringToTerraform(struct!.zipFileBase64Encoded),
   }
+}
+
+
+export function serviceCatalogPrivateApplicationPackageDetailsToHclTerraform(struct?: ServiceCatalogPrivateApplicationPackageDetailsOutputReference | ServiceCatalogPrivateApplicationPackageDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    package_type: {
+      value: cdktf.stringToHclTerraform(struct!.packageType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    version: {
+      value: cdktf.stringToHclTerraform(struct!.version),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    zip_file_base64encoded: {
+      value: cdktf.stringToHclTerraform(struct!.zipFileBase64Encoded),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceCatalogPrivateApplicationPackageDetailsOutputReference extends cdktf.ComplexObject {
@@ -269,6 +311,37 @@ export function serviceCatalogPrivateApplicationTimeoutsToTerraform(struct?: Ser
   }
 }
 
+
+export function serviceCatalogPrivateApplicationTimeoutsToHclTerraform(struct?: ServiceCatalogPrivateApplicationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ServiceCatalogPrivateApplicationTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -381,6 +454,20 @@ export class ServiceCatalogPrivateApplication extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_service_catalog_private_application";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ServiceCatalogPrivateApplication resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ServiceCatalogPrivateApplication to import
+  * @param importFromId The id of the existing ServiceCatalogPrivateApplication that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_catalog_private_application#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ServiceCatalogPrivateApplication to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_service_catalog_private_application", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -616,5 +703,73 @@ export class ServiceCatalogPrivateApplication extends cdktf.TerraformResource {
       package_details: serviceCatalogPrivateApplicationPackageDetailsToTerraform(this._packageDetails.internalValue),
       timeouts: serviceCatalogPrivateApplicationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      logo_file_base64encoded: {
+        value: cdktf.stringToHclTerraform(this._logoFileBase64Encoded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      long_description: {
+        value: cdktf.stringToHclTerraform(this._longDescription),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      short_description: {
+        value: cdktf.stringToHclTerraform(this._shortDescription),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      package_details: {
+        value: serviceCatalogPrivateApplicationPackageDetailsToHclTerraform(this._packageDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ServiceCatalogPrivateApplicationPackageDetailsList",
+      },
+      timeouts: {
+        value: serviceCatalogPrivateApplicationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ServiceCatalogPrivateApplicationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

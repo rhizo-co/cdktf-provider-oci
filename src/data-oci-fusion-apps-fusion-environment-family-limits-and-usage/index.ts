@@ -31,6 +31,17 @@ export function dataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageDevelopmen
   }
 }
 
+
+export function dataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageToHclTerraform(struct?: DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageDevelopmentLimitAndUsageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -98,6 +109,17 @@ export function dataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageProduction
   }
   return {
   }
+}
+
+
+export function dataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageToHclTerraform(struct?: DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageProductionLimitAndUsageOutputReference extends cdktf.ComplexObject {
@@ -169,6 +191,17 @@ export function dataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageTestLimitA
   }
 }
 
+
+export function dataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageToHclTerraform(struct?: DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsageTestLimitAndUsageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -236,6 +269,20 @@ export class DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsage extends cdkt
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fusion_apps_fusion_environment_family_limits_and_usage";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsage resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsage to import
+  * @param importFromId The id of the existing DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsage that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fusion_apps_fusion_environment_family_limits_and_usage#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsage to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fusion_apps_fusion_environment_family_limits_and_usage", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -328,5 +375,25 @@ export class DataOciFusionAppsFusionEnvironmentFamilyLimitsAndUsage extends cdkt
       fusion_environment_family_id: cdktf.stringToTerraform(this._fusionEnvironmentFamilyId),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      fusion_environment_family_id: {
+        value: cdktf.stringToHclTerraform(this._fusionEnvironmentFamilyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

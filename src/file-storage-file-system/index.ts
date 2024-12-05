@@ -60,13 +60,13 @@ export interface FileStorageFileSystemConfig extends cdktf.TerraformMetaArgument
   readonly sourceSnapshotId?: string;
   /**
   * locks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_file_system#locks FileStorageFileSystem#locks}
   */
   readonly locks?: FileStorageFileSystemLocks[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_file_system#timeouts FileStorageFileSystem#timeouts}
   */
   readonly timeouts?: FileStorageFileSystemTimeouts;
@@ -81,6 +81,17 @@ export function fileStorageFileSystemSourceDetailsToTerraform(struct?: FileStora
   }
   return {
   }
+}
+
+
+export function fileStorageFileSystemSourceDetailsToHclTerraform(struct?: FileStorageFileSystemSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class FileStorageFileSystemSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -170,6 +181,43 @@ export function fileStorageFileSystemLocksToTerraform(struct?: FileStorageFileSy
     time_created: cdktf.stringToTerraform(struct!.timeCreated),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function fileStorageFileSystemLocksToHclTerraform(struct?: FileStorageFileSystemLocks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    message: {
+      value: cdktf.stringToHclTerraform(struct!.message),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    related_resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.relatedResourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_created: {
+      value: cdktf.stringToHclTerraform(struct!.timeCreated),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FileStorageFileSystemLocksOutputReference extends cdktf.ComplexObject {
@@ -342,6 +390,37 @@ export function fileStorageFileSystemTimeoutsToTerraform(struct?: FileStorageFil
   }
 }
 
+
+export function fileStorageFileSystemTimeoutsToHclTerraform(struct?: FileStorageFileSystemTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FileStorageFileSystemTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -454,6 +533,20 @@ export class FileStorageFileSystem extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_file_storage_file_system";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FileStorageFileSystem resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FileStorageFileSystem to import
+  * @param importFromId The id of the existing FileStorageFileSystem that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_file_system#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FileStorageFileSystem to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_file_storage_file_system", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -792,5 +885,97 @@ export class FileStorageFileSystem extends cdktf.TerraformResource {
       locks: cdktf.listMapper(fileStorageFileSystemLocksToTerraform, true)(this._locks.internalValue),
       timeouts: fileStorageFileSystemTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      clone_attach_status: {
+        value: cdktf.stringToHclTerraform(this._cloneAttachStatus),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      detach_clone_trigger: {
+        value: cdktf.numberToHclTerraform(this._detachCloneTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filesystem_snapshot_policy_id: {
+        value: cdktf.stringToHclTerraform(this._filesystemSnapshotPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_lock_override: {
+        value: cdktf.booleanToHclTerraform(this._isLockOverride),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      kms_key_id: {
+        value: cdktf.stringToHclTerraform(this._kmsKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_snapshot_id: {
+        value: cdktf.stringToHclTerraform(this._sourceSnapshotId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      locks: {
+        value: cdktf.listMapperHcl(fileStorageFileSystemLocksToHclTerraform, true)(this._locks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FileStorageFileSystemLocksList",
+      },
+      timeouts: {
+        value: fileStorageFileSystemTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FileStorageFileSystemTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -60,7 +60,7 @@ export interface ApmSyntheticsOnPremiseVantagePointWorkerConfig extends cdktf.Te
   readonly workerType?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_on_premise_vantage_point_worker#timeouts ApmSyntheticsOnPremiseVantagePointWorker#timeouts}
   */
   readonly timeouts?: ApmSyntheticsOnPremiseVantagePointWorkerTimeouts;
@@ -75,6 +75,17 @@ export function apmSyntheticsOnPremiseVantagePointWorkerIdentityInfoToTerraform(
   }
   return {
   }
+}
+
+
+export function apmSyntheticsOnPremiseVantagePointWorkerIdentityInfoToHclTerraform(struct?: ApmSyntheticsOnPremiseVantagePointWorkerIdentityInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ApmSyntheticsOnPremiseVantagePointWorkerIdentityInfoOutputReference extends cdktf.ComplexObject {
@@ -149,6 +160,17 @@ export function apmSyntheticsOnPremiseVantagePointWorkerMonitorListStructToTerra
   }
   return {
   }
+}
+
+
+export function apmSyntheticsOnPremiseVantagePointWorkerMonitorListStructToHclTerraform(struct?: ApmSyntheticsOnPremiseVantagePointWorkerMonitorListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ApmSyntheticsOnPremiseVantagePointWorkerMonitorListStructOutputReference extends cdktf.ComplexObject {
@@ -233,6 +255,17 @@ export function apmSyntheticsOnPremiseVantagePointWorkerVersionDetailsToTerrafor
   }
   return {
   }
+}
+
+
+export function apmSyntheticsOnPremiseVantagePointWorkerVersionDetailsToHclTerraform(struct?: ApmSyntheticsOnPremiseVantagePointWorkerVersionDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ApmSyntheticsOnPremiseVantagePointWorkerVersionDetailsOutputReference extends cdktf.ComplexObject {
@@ -322,6 +355,37 @@ export function apmSyntheticsOnPremiseVantagePointWorkerTimeoutsToTerraform(stru
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function apmSyntheticsOnPremiseVantagePointWorkerTimeoutsToHclTerraform(struct?: ApmSyntheticsOnPremiseVantagePointWorkerTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsOnPremiseVantagePointWorkerTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -436,6 +500,20 @@ export class ApmSyntheticsOnPremiseVantagePointWorker extends cdktf.TerraformRes
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apm_synthetics_on_premise_vantage_point_worker";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ApmSyntheticsOnPremiseVantagePointWorker resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ApmSyntheticsOnPremiseVantagePointWorker to import
+  * @param importFromId The id of the existing ApmSyntheticsOnPremiseVantagePointWorker that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_on_premise_vantage_point_worker#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ApmSyntheticsOnPremiseVantagePointWorker to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apm_synthetics_on_premise_vantage_point_worker", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -754,5 +832,91 @@ export class ApmSyntheticsOnPremiseVantagePointWorker extends cdktf.TerraformRes
       worker_type: cdktf.stringToTerraform(this._workerType),
       timeouts: apmSyntheticsOnPremiseVantagePointWorkerTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      apm_domain_id: {
+        value: cdktf.stringToHclTerraform(this._apmDomainId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      configuration_details: {
+        value: cdktf.stringToHclTerraform(this._configurationDetails),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      on_premise_vantage_point_id: {
+        value: cdktf.stringToHclTerraform(this._onPremiseVantagePointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      priority: {
+        value: cdktf.numberToHclTerraform(this._priority),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      resource_principal_token_public_key: {
+        value: cdktf.stringToHclTerraform(this._resourcePrincipalTokenPublicKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      version: {
+        value: cdktf.stringToHclTerraform(this._version),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      worker_type: {
+        value: cdktf.stringToHclTerraform(this._workerType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: apmSyntheticsOnPremiseVantagePointWorkerTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ApmSyntheticsOnPremiseVantagePointWorkerTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

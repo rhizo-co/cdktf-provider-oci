@@ -40,7 +40,7 @@ export interface DataOciMysqlChannelsConfig extends cdktf.TerraformMetaArguments
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/mysql_channels#filter DataOciMysqlChannels#filter}
   */
   readonly filter?: DataOciMysqlChannelsFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciMysqlChannelsChannelsSourceAnonymousTransactionsHandlingT
   }
   return {
   }
+}
+
+
+export function dataOciMysqlChannelsChannelsSourceAnonymousTransactionsHandlingToHclTerraform(struct?: DataOciMysqlChannelsChannelsSourceAnonymousTransactionsHandling): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMysqlChannelsChannelsSourceAnonymousTransactionsHandlingOutputReference extends cdktf.ComplexObject {
@@ -136,6 +147,17 @@ export function dataOciMysqlChannelsChannelsSourceSslCaCertificateToTerraform(st
   }
 }
 
+
+export function dataOciMysqlChannelsChannelsSourceSslCaCertificateToHclTerraform(struct?: DataOciMysqlChannelsChannelsSourceSslCaCertificate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMysqlChannelsChannelsSourceSslCaCertificateOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -203,6 +225,17 @@ export function dataOciMysqlChannelsChannelsSourceToTerraform(struct?: DataOciMy
   }
   return {
   }
+}
+
+
+export function dataOciMysqlChannelsChannelsSourceToHclTerraform(struct?: DataOciMysqlChannelsChannelsSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMysqlChannelsChannelsSourceOutputReference extends cdktf.ComplexObject {
@@ -306,6 +339,17 @@ export function dataOciMysqlChannelsChannelsTargetFiltersToTerraform(struct?: Da
   }
 }
 
+
+export function dataOciMysqlChannelsChannelsTargetFiltersToHclTerraform(struct?: DataOciMysqlChannelsChannelsTargetFilters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMysqlChannelsChannelsTargetFiltersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -373,6 +417,17 @@ export function dataOciMysqlChannelsChannelsTargetToTerraform(struct?: DataOciMy
   }
   return {
   }
+}
+
+
+export function dataOciMysqlChannelsChannelsTargetToHclTerraform(struct?: DataOciMysqlChannelsChannelsTarget): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMysqlChannelsChannelsTargetOutputReference extends cdktf.ComplexObject {
@@ -468,6 +523,17 @@ export function dataOciMysqlChannelsChannelsToTerraform(struct?: DataOciMysqlCha
   }
   return {
   }
+}
+
+
+export function dataOciMysqlChannelsChannelsToHclTerraform(struct?: DataOciMysqlChannelsChannels): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMysqlChannelsChannelsOutputReference extends cdktf.ComplexObject {
@@ -613,6 +679,37 @@ export function dataOciMysqlChannelsFilterToTerraform(struct?: DataOciMysqlChann
   }
 }
 
+
+export function dataOciMysqlChannelsFilterToHclTerraform(struct?: DataOciMysqlChannelsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciMysqlChannelsFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -741,6 +838,20 @@ export class DataOciMysqlChannels extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_mysql_channels";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMysqlChannels resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMysqlChannels to import
+  * @param importFromId The id of the existing DataOciMysqlChannels that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/mysql_channels#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMysqlChannels to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_mysql_channels", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -929,5 +1040,61 @@ export class DataOciMysqlChannels extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciMysqlChannelsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      channel_id: {
+        value: cdktf.stringToHclTerraform(this._channelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_system_id: {
+        value: cdktf.stringToHclTerraform(this._dbSystemId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciMysqlChannelsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciMysqlChannelsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

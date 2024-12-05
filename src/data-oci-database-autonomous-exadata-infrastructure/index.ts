@@ -24,6 +24,17 @@ export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowD
   }
 }
 
+
+export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekToHclTerraform(struct?: DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeek): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDaysOfWeekOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -88,6 +99,17 @@ export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowM
   }
 }
 
+
+export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowMonthsToHclTerraform(struct?: DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowMonths): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowMonthsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -150,6 +172,17 @@ export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowT
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowToHclTerraform(struct?: DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindow): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowOutputReference extends cdktf.ComplexObject {
@@ -269,6 +302,17 @@ export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowD
   }
 }
 
+
+export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekToHclTerraform(struct?: DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -333,6 +377,17 @@ export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowD
   }
 }
 
+
+export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDetailsMonthsToHclTerraform(struct?: DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDetailsMonths): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDetailsMonthsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -395,6 +450,17 @@ export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowD
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDetailsToHclTerraform(struct?: DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseAutonomousExadataInfrastructureMaintenanceWindowDetailsOutputReference extends cdktf.ComplexObject {
@@ -512,6 +578,20 @@ export class DataOciDatabaseAutonomousExadataInfrastructure extends cdktf.Terraf
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_exadata_infrastructure";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseAutonomousExadataInfrastructure resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseAutonomousExadataInfrastructure to import
+  * @param importFromId The id of the existing DataOciDatabaseAutonomousExadataInfrastructure that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_autonomous_exadata_infrastructure#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseAutonomousExadataInfrastructure to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_exadata_infrastructure", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -682,5 +762,19 @@ export class DataOciDatabaseAutonomousExadataInfrastructure extends cdktf.Terraf
     return {
       autonomous_exadata_infrastructure_id: cdktf.stringToTerraform(this._autonomousExadataInfrastructureId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      autonomous_exadata_infrastructure_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousExadataInfrastructureId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

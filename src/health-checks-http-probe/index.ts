@@ -52,7 +52,7 @@ export interface HealthChecksHttpProbeConfig extends cdktf.TerraformMetaArgument
   readonly vantagePointNames?: string[];
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/health_checks_http_probe#timeouts HealthChecksHttpProbe#timeouts}
   */
   readonly timeouts?: HealthChecksHttpProbeTimeouts;
@@ -82,6 +82,37 @@ export function healthChecksHttpProbeTimeoutsToTerraform(struct?: HealthChecksHt
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function healthChecksHttpProbeTimeoutsToHclTerraform(struct?: HealthChecksHttpProbeTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class HealthChecksHttpProbeTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -196,6 +227,20 @@ export class HealthChecksHttpProbe extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_health_checks_http_probe";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a HealthChecksHttpProbe resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the HealthChecksHttpProbe to import
+  * @param importFromId The id of the existing HealthChecksHttpProbe that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/health_checks_http_probe#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the HealthChecksHttpProbe to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_health_checks_http_probe", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -441,5 +486,79 @@ export class HealthChecksHttpProbe extends cdktf.TerraformResource {
       vantage_point_names: cdktf.listMapper(cdktf.stringToTerraform, false)(this._vantagePointNames),
       timeouts: healthChecksHttpProbeTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      headers: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._headers),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      method: {
+        value: cdktf.stringToHclTerraform(this._method),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      path: {
+        value: cdktf.stringToHclTerraform(this._path),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      port: {
+        value: cdktf.numberToHclTerraform(this._port),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      protocol: {
+        value: cdktf.stringToHclTerraform(this._protocol),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      targets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._targets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      timeout_in_seconds: {
+        value: cdktf.numberToHclTerraform(this._timeoutInSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      vantage_point_names: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._vantagePointNames),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      timeouts: {
+        value: healthChecksHttpProbeTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "HealthChecksHttpProbeTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

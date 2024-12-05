@@ -40,13 +40,13 @@ export interface DataSafeLibraryMaskingFormatConfig extends cdktf.TerraformMetaA
   readonly sensitiveTypeIds?: string[];
   /**
   * format_entries block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_library_masking_format#format_entries DataSafeLibraryMaskingFormat#format_entries}
   */
   readonly formatEntries: DataSafeLibraryMaskingFormatFormatEntries[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_library_masking_format#timeouts DataSafeLibraryMaskingFormat#timeouts}
   */
   readonly timeouts?: DataSafeLibraryMaskingFormatTimeouts;
@@ -181,6 +181,163 @@ export function dataSafeLibraryMaskingFormatFormatEntriesToTerraform(struct?: Da
     type: cdktf.stringToTerraform(struct!.type),
     user_defined_function: cdktf.stringToTerraform(struct!.userDefinedFunction),
   }
+}
+
+
+export function dataSafeLibraryMaskingFormatFormatEntriesToHclTerraform(struct?: DataSafeLibraryMaskingFormatFormatEntries | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    column_name: {
+      value: cdktf.stringToHclTerraform(struct!.columnName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    end_date: {
+      value: cdktf.stringToHclTerraform(struct!.endDate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    end_length: {
+      value: cdktf.numberToHclTerraform(struct!.endLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    end_value: {
+      value: cdktf.numberToHclTerraform(struct!.endValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    fixed_number: {
+      value: cdktf.numberToHclTerraform(struct!.fixedNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    fixed_string: {
+      value: cdktf.stringToHclTerraform(struct!.fixedString),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    grouping_columns: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.groupingColumns),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    length: {
+      value: cdktf.numberToHclTerraform(struct!.length),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    library_masking_format_id: {
+      value: cdktf.stringToHclTerraform(struct!.libraryMaskingFormatId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pattern: {
+      value: cdktf.stringToHclTerraform(struct!.pattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    post_processing_function: {
+      value: cdktf.stringToHclTerraform(struct!.postProcessingFunction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    random_list: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.randomList),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    regular_expression: {
+      value: cdktf.stringToHclTerraform(struct!.regularExpression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    replace_with: {
+      value: cdktf.stringToHclTerraform(struct!.replaceWith),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    schema_name: {
+      value: cdktf.stringToHclTerraform(struct!.schemaName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    sql_expression: {
+      value: cdktf.stringToHclTerraform(struct!.sqlExpression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    start_date: {
+      value: cdktf.stringToHclTerraform(struct!.startDate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    start_length: {
+      value: cdktf.numberToHclTerraform(struct!.startLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    start_position: {
+      value: cdktf.numberToHclTerraform(struct!.startPosition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    start_value: {
+      value: cdktf.numberToHclTerraform(struct!.startValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    table_name: {
+      value: cdktf.stringToHclTerraform(struct!.tableName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_defined_function: {
+      value: cdktf.stringToHclTerraform(struct!.userDefinedFunction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeLibraryMaskingFormatFormatEntriesOutputReference extends cdktf.ComplexObject {
@@ -793,6 +950,37 @@ export function dataSafeLibraryMaskingFormatTimeoutsToTerraform(struct?: DataSaf
   }
 }
 
+
+export function dataSafeLibraryMaskingFormatTimeoutsToHclTerraform(struct?: DataSafeLibraryMaskingFormatTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataSafeLibraryMaskingFormatTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -905,6 +1093,20 @@ export class DataSafeLibraryMaskingFormat extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_library_masking_format";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeLibraryMaskingFormat resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeLibraryMaskingFormat to import
+  * @param importFromId The id of the existing DataSafeLibraryMaskingFormat that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_library_masking_format#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeLibraryMaskingFormat to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_library_masking_format", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1122,5 +1324,67 @@ export class DataSafeLibraryMaskingFormat extends cdktf.TerraformResource {
       format_entries: cdktf.listMapper(dataSafeLibraryMaskingFormatFormatEntriesToTerraform, true)(this._formatEntries.internalValue),
       timeouts: dataSafeLibraryMaskingFormatTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sensitive_type_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._sensitiveTypeIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      format_entries: {
+        value: cdktf.listMapperHcl(dataSafeLibraryMaskingFormatFormatEntriesToHclTerraform, true)(this._formatEntries.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataSafeLibraryMaskingFormatFormatEntriesList",
+      },
+      timeouts: {
+        value: dataSafeLibraryMaskingFormatTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeLibraryMaskingFormatTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

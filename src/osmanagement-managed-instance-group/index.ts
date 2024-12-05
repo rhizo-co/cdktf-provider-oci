@@ -44,7 +44,7 @@ export interface OsmanagementManagedInstanceGroupConfig extends cdktf.TerraformM
   readonly osFamily?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osmanagement_managed_instance_group#timeouts OsmanagementManagedInstanceGroup#timeouts}
   */
   readonly timeouts?: OsmanagementManagedInstanceGroupTimeouts;
@@ -59,6 +59,17 @@ export function osmanagementManagedInstanceGroupManagedInstancesToTerraform(stru
   }
   return {
   }
+}
+
+
+export function osmanagementManagedInstanceGroupManagedInstancesToHclTerraform(struct?: OsmanagementManagedInstanceGroupManagedInstances): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OsmanagementManagedInstanceGroupManagedInstancesOutputReference extends cdktf.ComplexObject {
@@ -143,6 +154,37 @@ export function osmanagementManagedInstanceGroupTimeoutsToTerraform(struct?: Osm
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function osmanagementManagedInstanceGroupTimeoutsToHclTerraform(struct?: OsmanagementManagedInstanceGroupTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsmanagementManagedInstanceGroupTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -257,6 +299,20 @@ export class OsmanagementManagedInstanceGroup extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_osmanagement_managed_instance_group";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OsmanagementManagedInstanceGroup resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OsmanagementManagedInstanceGroup to import
+  * @param importFromId The id of the existing OsmanagementManagedInstanceGroup that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osmanagement_managed_instance_group#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OsmanagementManagedInstanceGroup to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_osmanagement_managed_instance_group", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -470,5 +526,67 @@ export class OsmanagementManagedInstanceGroup extends cdktf.TerraformResource {
       os_family: cdktf.stringToTerraform(this._osFamily),
       timeouts: osmanagementManagedInstanceGroupTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._managedInstanceIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      os_family: {
+        value: cdktf.stringToHclTerraform(this._osFamily),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: osmanagementManagedInstanceGroupTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OsmanagementManagedInstanceGroupTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

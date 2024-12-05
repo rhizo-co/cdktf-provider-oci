@@ -40,13 +40,13 @@ export interface CoreInstanceConfigurationConfig extends cdktf.TerraformMetaArgu
   readonly source?: string;
   /**
   * instance_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#instance_details CoreInstanceConfiguration#instance_details}
   */
   readonly instanceDetails?: CoreInstanceConfigurationInstanceDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#timeouts CoreInstanceConfiguration#timeouts}
   */
   readonly timeouts?: CoreInstanceConfigurationTimeouts;
@@ -96,6 +96,61 @@ export function coreInstanceConfigurationInstanceDetailsBlockVolumesAttachDetail
     type: cdktf.stringToTerraform(struct!.type),
     use_chap: cdktf.booleanToTerraform(struct!.useChap),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsBlockVolumesAttachDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsBlockVolumesAttachDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsBlockVolumesAttachDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    device: {
+      value: cdktf.stringToHclTerraform(struct!.device),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_pv_encryption_in_transit_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPvEncryptionInTransitEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.isReadOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_shareable: {
+      value: cdktf.booleanToHclTerraform(struct!.isShareable),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    use_chap: {
+      value: cdktf.booleanToHclTerraform(struct!.useChap),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsBlockVolumesAttachDetailsOutputReference extends cdktf.ComplexObject {
@@ -297,6 +352,31 @@ export function coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetail
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePoliciesToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePolicies | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    autotune_type: {
+      value: cdktf.stringToHclTerraform(struct!.autotuneType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_vpus_per_gb: {
+      value: cdktf.stringToHclTerraform(struct!.maxVpusPerGb),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePoliciesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -418,6 +498,31 @@ export function coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetail
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasOutputReference | CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicas): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability_domain: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -508,6 +613,31 @@ export function coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetail
     id: cdktf.stringToTerraform(struct!.id),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -628,19 +758,19 @@ export interface CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetai
   readonly xrcKmsKeyId?: string;
   /**
   * autotune_policies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#autotune_policies CoreInstanceConfiguration#autotune_policies}
   */
   readonly autotunePolicies?: CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePolicies[] | cdktf.IResolvable;
   /**
   * block_volume_replicas block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#block_volume_replicas CoreInstanceConfiguration#block_volume_replicas}
   */
   readonly blockVolumeReplicas?: CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicas;
   /**
   * source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#source_details CoreInstanceConfiguration#source_details}
   */
   readonly sourceDetails?: CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetails;
@@ -668,6 +798,109 @@ export function coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetail
     block_volume_replicas: coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasToTerraform(struct!.blockVolumeReplicas),
     source_details: coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsToTerraform(struct!.sourceDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability_domain: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    backup_policy_id: {
+      value: cdktf.stringToHclTerraform(struct!.backupPolicyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cluster_placement_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.clusterPlacementGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    is_auto_tune_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAutoTuneEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.sizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vpus_per_gb: {
+      value: cdktf.stringToHclTerraform(struct!.vpusPerGb),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    xrc_kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.xrcKmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    autotune_policies: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePoliciesToHclTerraform, true)(struct!.autotunePolicies),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsAutotunePoliciesList",
+    },
+    block_volume_replicas: {
+      value: coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasToHclTerraform(struct!.blockVolumeReplicas),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsBlockVolumeReplicasList",
+    },
+    source_details: {
+      value: coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsToHclTerraform(struct!.sourceDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsSourceDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsOutputReference extends cdktf.ComplexObject {
@@ -1033,13 +1266,13 @@ export interface CoreInstanceConfigurationInstanceDetailsBlockVolumes {
   readonly volumeId?: string;
   /**
   * attach_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#attach_details CoreInstanceConfiguration#attach_details}
   */
   readonly attachDetails?: CoreInstanceConfigurationInstanceDetailsBlockVolumesAttachDetails;
   /**
   * create_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#create_details CoreInstanceConfiguration#create_details}
   */
   readonly createDetails?: CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetails;
@@ -1055,6 +1288,37 @@ export function coreInstanceConfigurationInstanceDetailsBlockVolumesToTerraform(
     attach_details: coreInstanceConfigurationInstanceDetailsBlockVolumesAttachDetailsToTerraform(struct!.attachDetails),
     create_details: coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsToTerraform(struct!.createDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsBlockVolumesToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsBlockVolumes | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    volume_id: {
+      value: cdktf.stringToHclTerraform(struct!.volumeId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    attach_details: {
+      value: coreInstanceConfigurationInstanceDetailsBlockVolumesAttachDetailsToHclTerraform(struct!.attachDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsBlockVolumesAttachDetailsList",
+    },
+    create_details: {
+      value: coreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsToHclTerraform(struct!.createDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsBlockVolumesCreateDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsBlockVolumesOutputReference extends cdktf.ComplexObject {
@@ -1203,6 +1467,31 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    desired_state: {
+      value: cdktf.stringToHclTerraform(struct!.desiredState),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1320,7 +1609,7 @@ export interface CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfi
   readonly isMonitoringDisabled?: boolean | cdktf.IResolvable;
   /**
   * plugins_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#plugins_config CoreInstanceConfiguration#plugins_config}
   */
   readonly pluginsConfig?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfig[] | cdktf.IResolvable;
@@ -1337,6 +1626,43 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig
     is_monitoring_disabled: cdktf.booleanToTerraform(struct!.isMonitoringDisabled),
     plugins_config: cdktf.listMapper(coreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigToTerraform, true)(struct!.pluginsConfig),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    are_all_plugins_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.areAllPluginsDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_management_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isManagementDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_monitoring_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isMonitoringDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    plugins_config: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigToHclTerraform, true)(struct!.pluginsConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigPluginsConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigOutputReference extends cdktf.ComplexObject {
@@ -1475,6 +1801,31 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsAvailabilit
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_live_migration_preferred: {
+      value: cdktf.booleanToHclTerraform(struct!.isLiveMigrationPreferred),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    recovery_action: {
+      value: cdktf.stringToHclTerraform(struct!.recoveryAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1565,6 +1916,31 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicD
     ipv6address: cdktf.stringToTerraform(struct!.ipv6Address),
     ipv6subnet_cidr: cdktf.stringToTerraform(struct!.ipv6SubnetCidr),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ipv6address: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6Address),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6subnet_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6SubnetCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
@@ -1720,7 +2096,7 @@ export interface CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnic
   readonly subnetId?: string;
   /**
   * ipv6address_ipv6subnet_cidr_pair_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#ipv6address_ipv6subnet_cidr_pair_details CoreInstanceConfiguration#ipv6address_ipv6subnet_cidr_pair_details}
   */
   readonly ipv6AddressIpv6SubnetCidrPairDetails?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails[] | cdktf.IResolvable;
@@ -1746,6 +2122,97 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicD
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     ipv6address_ipv6subnet_cidr_pair_details: cdktf.listMapper(coreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    assign_ipv6ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignIpv6Ip),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_private_dns_record: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPrivateDnsRecord),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_public_ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPublicIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    hostname_label: {
+      value: cdktf.stringToHclTerraform(struct!.hostnameLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    security_attributes: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.securityAttributes),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    skip_source_dest_check: {
+      value: cdktf.booleanToHclTerraform(struct!.skipSourceDestCheck),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6address_ipv6subnet_cidr_pair_details: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsOutputReference extends cdktf.ComplexObject {
@@ -2077,6 +2544,25 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsInstanceOpt
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    are_legacy_imds_endpoints_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.areLegacyImdsEndpointsDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2165,6 +2651,55 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptio
     network_type: cdktf.stringToTerraform(struct!.networkType),
     remote_data_volume_type: cdktf.stringToTerraform(struct!.remoteDataVolumeType),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    boot_volume_type: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    firmware: {
+      value: cdktf.stringToHclTerraform(struct!.firmware),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_consistent_volume_naming_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isConsistentVolumeNamingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_pv_encryption_in_transit_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPvEncryptionInTransitEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    network_type: {
+      value: cdktf.stringToHclTerraform(struct!.networkType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    remote_data_volume_type: {
+      value: cdktf.stringToHclTerraform(struct!.remoteDataVolumeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsOutputReference extends cdktf.ComplexObject {
@@ -2395,6 +2930,91 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsPlatformCon
     percentage_of_cores_enabled: cdktf.numberToTerraform(struct!.percentageOfCoresEnabled),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    are_virtual_instructions_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.areVirtualInstructionsEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    config_map: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.configMap),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    is_access_control_service_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAccessControlServiceEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_input_output_memory_management_unit_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isInputOutputMemoryManagementUnitEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_measured_boot_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isMeasuredBootEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_memory_encryption_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isMemoryEncryptionEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_secure_boot_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSecureBootEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_symmetric_multi_threading_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSymmetricMultiThreadingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_trusted_platform_module_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isTrustedPlatformModuleEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    numa_nodes_per_socket: {
+      value: cdktf.stringToHclTerraform(struct!.numaNodesPerSocket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    percentage_of_cores_enabled: {
+      value: cdktf.numberToHclTerraform(struct!.percentageOfCoresEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigOutputReference extends cdktf.ComplexObject {
@@ -2706,6 +3326,31 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptible
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    preserve_boot_volume: {
+      value: cdktf.booleanToHclTerraform(struct!.preserveBootVolume),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2776,7 +3421,7 @@ export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleIns
 export interface CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig {
   /**
   * preemption_action block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#preemption_action CoreInstanceConfiguration#preemption_action}
   */
   readonly preemptionAction?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionAction;
@@ -2790,6 +3435,25 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptible
   return {
     preemption_action: coreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionToTerraform(struct!.preemptionAction),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    preemption_action: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionToHclTerraform(struct!.preemptionAction),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigPreemptionActionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigOutputReference extends cdktf.ComplexObject {
@@ -2875,6 +3539,49 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig
     ocpus: cdktf.numberToTerraform(struct!.ocpus),
     vcpus: cdktf.numberToTerraform(struct!.vcpus),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    baseline_ocpu_utilization: {
+      value: cdktf.stringToHclTerraform(struct!.baselineOcpuUtilization),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    nvmes: {
+      value: cdktf.numberToHclTerraform(struct!.nvmes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    vcpus: {
+      value: cdktf.numberToHclTerraform(struct!.vcpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -3045,6 +3752,43 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetai
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    defined_tags_filter: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTagsFilter),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    operating_system: {
+      value: cdktf.stringToHclTerraform(struct!.operatingSystem),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operating_system_version: {
+      value: cdktf.stringToHclTerraform(struct!.operatingSystemVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3186,7 +3930,7 @@ export interface CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDeta
   readonly sourceType: string;
   /**
   * instance_source_image_filter_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#instance_source_image_filter_details CoreInstanceConfiguration#instance_source_image_filter_details}
   */
   readonly instanceSourceImageFilterDetails?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails;
@@ -3206,6 +3950,61 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetai
     source_type: cdktf.stringToTerraform(struct!.sourceType),
     instance_source_image_filter_details: coreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsToTerraform(struct!.instanceSourceImageFilterDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    boot_volume_id: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    boot_volume_size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    boot_volume_vpus_per_gb: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeVpusPerGb),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_id: {
+      value: cdktf.stringToHclTerraform(struct!.imageId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    instance_source_image_filter_details: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsToHclTerraform(struct!.instanceSourceImageFilterDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -3456,55 +4255,55 @@ export interface CoreInstanceConfigurationInstanceDetailsLaunchDetails {
   readonly shape?: string;
   /**
   * agent_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#agent_config CoreInstanceConfiguration#agent_config}
   */
   readonly agentConfig?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfig;
   /**
   * availability_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#availability_config CoreInstanceConfiguration#availability_config}
   */
   readonly availabilityConfig?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfig;
   /**
   * create_vnic_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#create_vnic_details CoreInstanceConfiguration#create_vnic_details}
   */
   readonly createVnicDetails?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetails;
   /**
   * instance_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#instance_options CoreInstanceConfiguration#instance_options}
   */
   readonly instanceOptions?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptions;
   /**
   * launch_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#launch_options CoreInstanceConfiguration#launch_options}
   */
   readonly launchOptions?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptions;
   /**
   * platform_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#platform_config CoreInstanceConfiguration#platform_config}
   */
   readonly platformConfig?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfig;
   /**
   * preemptible_instance_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#preemptible_instance_config CoreInstanceConfiguration#preemptible_instance_config}
   */
   readonly preemptibleInstanceConfig?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfig;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#shape_config CoreInstanceConfiguration#shape_config}
   */
   readonly shapeConfig?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsShapeConfig;
   /**
   * source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#source_details CoreInstanceConfiguration#source_details}
   */
   readonly sourceDetails?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetails;
@@ -3543,6 +4342,175 @@ export function coreInstanceConfigurationInstanceDetailsLaunchDetailsToTerraform
     shape_config: coreInstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigToTerraform(struct!.shapeConfig),
     source_details: coreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsToTerraform(struct!.sourceDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsLaunchDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsLaunchDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsLaunchDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability_domain: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    capacity_reservation_id: {
+      value: cdktf.stringToHclTerraform(struct!.capacityReservationId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cluster_placement_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.clusterPlacementGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dedicated_vm_host_id: {
+      value: cdktf.stringToHclTerraform(struct!.dedicatedVmHostId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    extended_metadata: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.extendedMetadata),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    fault_domain: {
+      value: cdktf.stringToHclTerraform(struct!.faultDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    ipxe_script: {
+      value: cdktf.stringToHclTerraform(struct!.ipxeScript),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_pv_encryption_in_transit_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPvEncryptionInTransitEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    launch_mode: {
+      value: cdktf.stringToHclTerraform(struct!.launchMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metadata: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.metadata),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    preferred_maintenance_action: {
+      value: cdktf.stringToHclTerraform(struct!.preferredMaintenanceAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    security_attributes: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.securityAttributes),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    agent_config: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigToHclTerraform(struct!.agentConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsAgentConfigList",
+    },
+    availability_config: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigToHclTerraform(struct!.availabilityConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsAvailabilityConfigList",
+    },
+    create_vnic_details: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsToHclTerraform(struct!.createVnicDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsCreateVnicDetailsList",
+    },
+    instance_options: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsToHclTerraform(struct!.instanceOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsInstanceOptionsList",
+    },
+    launch_options: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsToHclTerraform(struct!.launchOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsLaunchOptionsList",
+    },
+    platform_config: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigToHclTerraform(struct!.platformConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsPlatformConfigList",
+    },
+    preemptible_instance_config: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigToHclTerraform(struct!.preemptibleInstanceConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsPreemptibleInstanceConfigList",
+    },
+    shape_config: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsShapeConfigList",
+    },
+    source_details: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsToHclTerraform(struct!.sourceDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsLaunchDetailsOutputReference extends cdktf.ComplexObject {
@@ -4190,6 +5158,61 @@ export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesAttac
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    device: {
+      value: cdktf.stringToHclTerraform(struct!.device),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_pv_encryption_in_transit_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPvEncryptionInTransitEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.isReadOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_shareable: {
+      value: cdktf.booleanToHclTerraform(struct!.isShareable),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    use_chap: {
+      value: cdktf.booleanToHclTerraform(struct!.useChap),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4389,6 +5412,31 @@ export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreat
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePoliciesToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePolicies | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    autotune_type: {
+      value: cdktf.stringToHclTerraform(struct!.autotuneType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_vpus_per_gb: {
+      value: cdktf.stringToHclTerraform(struct!.maxVpusPerGb),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePoliciesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -4510,6 +5558,31 @@ export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreat
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsBlockVolumeReplicasToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsBlockVolumeReplicasOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsBlockVolumeReplicas): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability_domain: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsBlockVolumeReplicasOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4600,6 +5673,31 @@ export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreat
     id: cdktf.stringToTerraform(struct!.id),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -4720,19 +5818,19 @@ export interface CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCrea
   readonly xrcKmsKeyId?: string;
   /**
   * autotune_policies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#autotune_policies CoreInstanceConfiguration#autotune_policies}
   */
   readonly autotunePolicies?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePolicies[] | cdktf.IResolvable;
   /**
   * block_volume_replicas block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#block_volume_replicas CoreInstanceConfiguration#block_volume_replicas}
   */
   readonly blockVolumeReplicas?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsBlockVolumeReplicas;
   /**
   * source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#source_details CoreInstanceConfiguration#source_details}
   */
   readonly sourceDetails?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetails;
@@ -4760,6 +5858,109 @@ export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreat
     block_volume_replicas: coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsBlockVolumeReplicasToTerraform(struct!.blockVolumeReplicas),
     source_details: coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsToTerraform(struct!.sourceDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability_domain: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    backup_policy_id: {
+      value: cdktf.stringToHclTerraform(struct!.backupPolicyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cluster_placement_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.clusterPlacementGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    is_auto_tune_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAutoTuneEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.sizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vpus_per_gb: {
+      value: cdktf.stringToHclTerraform(struct!.vpusPerGb),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    xrc_kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.xrcKmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    autotune_policies: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePoliciesToHclTerraform, true)(struct!.autotunePolicies),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsAutotunePoliciesList",
+    },
+    block_volume_replicas: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsBlockVolumeReplicasToHclTerraform(struct!.blockVolumeReplicas),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsBlockVolumeReplicasList",
+    },
+    source_details: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsToHclTerraform(struct!.sourceDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsSourceDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsOutputReference extends cdktf.ComplexObject {
@@ -5125,13 +6326,13 @@ export interface CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumes {
   readonly volumeId?: string;
   /**
   * attach_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#attach_details CoreInstanceConfiguration#attach_details}
   */
   readonly attachDetails?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetails;
   /**
   * create_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#create_details CoreInstanceConfiguration#create_details}
   */
   readonly createDetails?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetails;
@@ -5147,6 +6348,37 @@ export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesToTer
     attach_details: coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsToTerraform(struct!.attachDetails),
     create_details: coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsToTerraform(struct!.createDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumes | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    volume_id: {
+      value: cdktf.stringToHclTerraform(struct!.volumeId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    attach_details: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsToHclTerraform(struct!.attachDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesAttachDetailsList",
+    },
+    create_details: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsToHclTerraform(struct!.createDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesCreateDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesOutputReference extends cdktf.ComplexObject {
@@ -5295,6 +6527,31 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgen
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfig | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    desired_state: {
+      value: cdktf.stringToHclTerraform(struct!.desiredState),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -5412,7 +6669,7 @@ export interface CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAge
   readonly isMonitoringDisabled?: boolean | cdktf.IResolvable;
   /**
   * plugins_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#plugins_config CoreInstanceConfiguration#plugins_config}
   */
   readonly pluginsConfig?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfig[] | cdktf.IResolvable;
@@ -5429,6 +6686,43 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgen
     is_monitoring_disabled: cdktf.booleanToTerraform(struct!.isMonitoringDisabled),
     plugins_config: cdktf.listMapper(coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigToTerraform, true)(struct!.pluginsConfig),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    are_all_plugins_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.areAllPluginsDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_management_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isManagementDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_monitoring_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isMonitoringDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    plugins_config: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigToHclTerraform, true)(struct!.pluginsConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigPluginsConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigOutputReference extends cdktf.ComplexObject {
@@ -5567,6 +6861,31 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAvai
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityConfigOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_live_migration_preferred: {
+      value: cdktf.booleanToHclTerraform(struct!.isLiveMigrationPreferred),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    recovery_action: {
+      value: cdktf.stringToHclTerraform(struct!.recoveryAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5657,6 +6976,31 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCrea
     ipv6address: cdktf.stringToTerraform(struct!.ipv6Address),
     ipv6subnet_cidr: cdktf.stringToTerraform(struct!.ipv6SubnetCidr),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ipv6address: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6Address),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6subnet_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6SubnetCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
@@ -5812,7 +7156,7 @@ export interface CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCre
   readonly subnetId?: string;
   /**
   * ipv6address_ipv6subnet_cidr_pair_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#ipv6address_ipv6subnet_cidr_pair_details CoreInstanceConfiguration#ipv6address_ipv6subnet_cidr_pair_details}
   */
   readonly ipv6AddressIpv6SubnetCidrPairDetails?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails[] | cdktf.IResolvable;
@@ -5838,6 +7182,97 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCrea
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     ipv6address_ipv6subnet_cidr_pair_details: cdktf.listMapper(coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    assign_ipv6ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignIpv6Ip),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_private_dns_record: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPrivateDnsRecord),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_public_ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPublicIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    hostname_label: {
+      value: cdktf.stringToHclTerraform(struct!.hostnameLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    security_attributes: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.securityAttributes),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    skip_source_dest_check: {
+      value: cdktf.booleanToHclTerraform(struct!.skipSourceDestCheck),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6address_ipv6subnet_cidr_pair_details: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsOutputReference extends cdktf.ComplexObject {
@@ -6169,6 +7604,25 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsInst
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    are_legacy_imds_endpoints_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.areLegacyImdsEndpointsDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6257,6 +7711,55 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsLaun
     network_type: cdktf.stringToTerraform(struct!.networkType),
     remote_data_volume_type: cdktf.stringToTerraform(struct!.remoteDataVolumeType),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    boot_volume_type: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    firmware: {
+      value: cdktf.stringToHclTerraform(struct!.firmware),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_consistent_volume_naming_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isConsistentVolumeNamingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_pv_encryption_in_transit_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPvEncryptionInTransitEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    network_type: {
+      value: cdktf.stringToHclTerraform(struct!.networkType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    remote_data_volume_type: {
+      value: cdktf.stringToHclTerraform(struct!.remoteDataVolumeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsOutputReference extends cdktf.ComplexObject {
@@ -6482,6 +7985,85 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPlat
     percentage_of_cores_enabled: cdktf.numberToTerraform(struct!.percentageOfCoresEnabled),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    are_virtual_instructions_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.areVirtualInstructionsEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_access_control_service_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAccessControlServiceEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_input_output_memory_management_unit_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isInputOutputMemoryManagementUnitEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_measured_boot_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isMeasuredBootEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_memory_encryption_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isMemoryEncryptionEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_secure_boot_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSecureBootEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_symmetric_multi_threading_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSymmetricMultiThreadingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_trusted_platform_module_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isTrustedPlatformModuleEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    numa_nodes_per_socket: {
+      value: cdktf.stringToHclTerraform(struct!.numaNodesPerSocket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    percentage_of_cores_enabled: {
+      value: cdktf.numberToHclTerraform(struct!.percentageOfCoresEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigOutputReference extends cdktf.ComplexObject {
@@ -6771,6 +8353,31 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPree
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionAction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    preserve_boot_volume: {
+      value: cdktf.booleanToHclTerraform(struct!.preserveBootVolume),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6841,7 +8448,7 @@ export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreempt
 export interface CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfig {
   /**
   * preemption_action block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#preemption_action CoreInstanceConfiguration#preemption_action}
   */
   readonly preemptionAction?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionAction;
@@ -6855,6 +8462,25 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPree
   return {
     preemption_action: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionToTerraform(struct!.preemptionAction),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    preemption_action: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionToHclTerraform(struct!.preemptionAction),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigPreemptionActionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigOutputReference extends cdktf.ComplexObject {
@@ -6940,6 +8566,49 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsShap
     ocpus: cdktf.numberToTerraform(struct!.ocpus),
     vcpus: cdktf.numberToTerraform(struct!.vcpus),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    baseline_ocpu_utilization: {
+      value: cdktf.stringToHclTerraform(struct!.baselineOcpuUtilization),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    nvmes: {
+      value: cdktf.numberToHclTerraform(struct!.nvmes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    vcpus: {
+      value: cdktf.numberToHclTerraform(struct!.vcpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -7110,6 +8779,43 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSour
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    defined_tags_filter: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTagsFilter),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    operating_system: {
+      value: cdktf.stringToHclTerraform(struct!.operatingSystem),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operating_system_version: {
+      value: cdktf.stringToHclTerraform(struct!.operatingSystemVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -7251,7 +8957,7 @@ export interface CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSou
   readonly sourceType: string;
   /**
   * instance_source_image_filter_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#instance_source_image_filter_details CoreInstanceConfiguration#instance_source_image_filter_details}
   */
   readonly instanceSourceImageFilterDetails?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails;
@@ -7271,6 +8977,61 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSour
     source_type: cdktf.stringToTerraform(struct!.sourceType),
     instance_source_image_filter_details: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsToTerraform(struct!.instanceSourceImageFilterDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    boot_volume_id: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    boot_volume_size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    boot_volume_vpus_per_gb: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeVpusPerGb),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_id: {
+      value: cdktf.stringToHclTerraform(struct!.imageId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    instance_source_image_filter_details: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsToHclTerraform(struct!.instanceSourceImageFilterDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -7521,55 +9282,55 @@ export interface CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetails {
   readonly shape?: string;
   /**
   * agent_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#agent_config CoreInstanceConfiguration#agent_config}
   */
   readonly agentConfig?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfig;
   /**
   * availability_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#availability_config CoreInstanceConfiguration#availability_config}
   */
   readonly availabilityConfig?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityConfig;
   /**
   * create_vnic_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#create_vnic_details CoreInstanceConfiguration#create_vnic_details}
   */
   readonly createVnicDetails?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetails;
   /**
   * instance_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#instance_options CoreInstanceConfiguration#instance_options}
   */
   readonly instanceOptions?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptions;
   /**
   * launch_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#launch_options CoreInstanceConfiguration#launch_options}
   */
   readonly launchOptions?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptions;
   /**
   * platform_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#platform_config CoreInstanceConfiguration#platform_config}
   */
   readonly platformConfig?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfig;
   /**
   * preemptible_instance_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#preemptible_instance_config CoreInstanceConfiguration#preemptible_instance_config}
   */
   readonly preemptibleInstanceConfig?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfig;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#shape_config CoreInstanceConfiguration#shape_config}
   */
   readonly shapeConfig?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfig;
   /**
   * source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#source_details CoreInstanceConfiguration#source_details}
   */
   readonly sourceDetails?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetails;
@@ -7608,6 +9369,175 @@ export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsToTe
     shape_config: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigToTerraform(struct!.shapeConfig),
     source_details: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsToTerraform(struct!.sourceDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability_domain: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    capacity_reservation_id: {
+      value: cdktf.stringToHclTerraform(struct!.capacityReservationId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cluster_placement_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.clusterPlacementGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dedicated_vm_host_id: {
+      value: cdktf.stringToHclTerraform(struct!.dedicatedVmHostId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    extended_metadata: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.extendedMetadata),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    fault_domain: {
+      value: cdktf.stringToHclTerraform(struct!.faultDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    ipxe_script: {
+      value: cdktf.stringToHclTerraform(struct!.ipxeScript),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_pv_encryption_in_transit_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPvEncryptionInTransitEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    launch_mode: {
+      value: cdktf.stringToHclTerraform(struct!.launchMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metadata: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.metadata),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    preferred_maintenance_action: {
+      value: cdktf.stringToHclTerraform(struct!.preferredMaintenanceAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    security_attributes: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.securityAttributes),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    agent_config: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigToHclTerraform(struct!.agentConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAgentConfigList",
+    },
+    availability_config: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityConfigToHclTerraform(struct!.availabilityConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsAvailabilityConfigList",
+    },
+    create_vnic_details: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsToHclTerraform(struct!.createVnicDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsCreateVnicDetailsList",
+    },
+    instance_options: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsToHclTerraform(struct!.instanceOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsInstanceOptionsList",
+    },
+    launch_options: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsToHclTerraform(struct!.launchOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsLaunchOptionsList",
+    },
+    platform_config: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigToHclTerraform(struct!.platformConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPlatformConfigList",
+    },
+    preemptible_instance_config: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigToHclTerraform(struct!.preemptibleInstanceConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsPreemptibleInstanceConfigList",
+    },
+    shape_config: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsShapeConfigList",
+    },
+    source_details: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsToHclTerraform(struct!.sourceDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsSourceDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsOutputReference extends cdktf.ComplexObject {
@@ -8230,6 +10160,31 @@ export function coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCre
   }
 }
 
+
+export function coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ipv6address: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6Address),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6subnet_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6SubnetCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -8383,7 +10338,7 @@ export interface CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCr
   readonly subnetId?: string;
   /**
   * ipv6address_ipv6subnet_cidr_pair_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#ipv6address_ipv6subnet_cidr_pair_details CoreInstanceConfiguration#ipv6address_ipv6subnet_cidr_pair_details}
   */
   readonly ipv6AddressIpv6SubnetCidrPairDetails?: CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails[] | cdktf.IResolvable;
@@ -8409,6 +10364,97 @@ export function coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCre
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     ipv6address_ipv6subnet_cidr_pair_details: cdktf.listMapper(coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    assign_ipv6ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignIpv6Ip),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_private_dns_record: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPrivateDnsRecord),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_public_ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPublicIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    hostname_label: {
+      value: cdktf.stringToHclTerraform(struct!.hostnameLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    security_attributes: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.securityAttributes),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    skip_source_dest_check: {
+      value: cdktf.booleanToHclTerraform(struct!.skipSourceDestCheck),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6address_ipv6subnet_cidr_pair_details: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsOutputReference extends cdktf.ComplexObject {
@@ -8734,7 +10780,7 @@ export interface CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnics {
   readonly nicIndex?: number;
   /**
   * create_vnic_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#create_vnic_details CoreInstanceConfiguration#create_vnic_details}
   */
   readonly createVnicDetails?: CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetails;
@@ -8750,6 +10796,37 @@ export function coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsToT
     nic_index: cdktf.numberToTerraform(struct!.nicIndex),
     create_vnic_details: coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsToTerraform(struct!.createVnicDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnics | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nic_index: {
+      value: cdktf.numberToHclTerraform(struct!.nicIndex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    create_vnic_details: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsToHclTerraform(struct!.createVnicDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsCreateVnicDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsOutputReference extends cdktf.ComplexObject {
@@ -8879,19 +10956,19 @@ export class CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsList e
 export interface CoreInstanceConfigurationInstanceDetailsOptions {
   /**
   * block_volumes block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#block_volumes CoreInstanceConfiguration#block_volumes}
   */
   readonly blockVolumes?: CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumes[] | cdktf.IResolvable;
   /**
   * launch_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#launch_details CoreInstanceConfiguration#launch_details}
   */
   readonly launchDetails?: CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetails;
   /**
   * secondary_vnics block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#secondary_vnics CoreInstanceConfiguration#secondary_vnics}
   */
   readonly secondaryVnics?: CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnics[] | cdktf.IResolvable;
@@ -8907,6 +10984,37 @@ export function coreInstanceConfigurationInstanceDetailsOptionsToTerraform(struc
     launch_details: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsToTerraform(struct!.launchDetails),
     secondary_vnics: cdktf.listMapper(coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsToTerraform, true)(struct!.secondaryVnics),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsOptionsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOptions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_volumes: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsOptionsBlockVolumesToHclTerraform, true)(struct!.blockVolumes),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsBlockVolumesList",
+    },
+    launch_details: {
+      value: coreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsToHclTerraform(struct!.launchDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsLaunchDetailsList",
+    },
+    secondary_vnics: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsToHclTerraform, true)(struct!.secondaryVnics),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsSecondaryVnicsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOptionsOutputReference extends cdktf.ComplexObject {
@@ -9053,6 +11161,31 @@ export function coreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnic
     ipv6address: cdktf.stringToTerraform(struct!.ipv6Address),
     ipv6subnet_cidr: cdktf.stringToTerraform(struct!.ipv6SubnetCidr),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ipv6address: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6Address),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6subnet_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6SubnetCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
@@ -9208,7 +11341,7 @@ export interface CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVni
   readonly subnetId?: string;
   /**
   * ipv6address_ipv6subnet_cidr_pair_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#ipv6address_ipv6subnet_cidr_pair_details CoreInstanceConfiguration#ipv6address_ipv6subnet_cidr_pair_details}
   */
   readonly ipv6AddressIpv6SubnetCidrPairDetails?: CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails[] | cdktf.IResolvable;
@@ -9234,6 +11367,97 @@ export function coreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnic
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     ipv6address_ipv6subnet_cidr_pair_details: cdktf.listMapper(coreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsOutputReference | CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    assign_ipv6ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignIpv6Ip),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_private_dns_record: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPrivateDnsRecord),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_public_ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPublicIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    hostname_label: {
+      value: cdktf.stringToHclTerraform(struct!.hostnameLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    security_attributes: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.securityAttributes),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    skip_source_dest_check: {
+      value: cdktf.booleanToHclTerraform(struct!.skipSourceDestCheck),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6address_ipv6subnet_cidr_pair_details: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsOutputReference extends cdktf.ComplexObject {
@@ -9559,7 +11783,7 @@ export interface CoreInstanceConfigurationInstanceDetailsSecondaryVnics {
   readonly nicIndex?: number;
   /**
   * create_vnic_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#create_vnic_details CoreInstanceConfiguration#create_vnic_details}
   */
   readonly createVnicDetails?: CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetails;
@@ -9575,6 +11799,37 @@ export function coreInstanceConfigurationInstanceDetailsSecondaryVnicsToTerrafor
     nic_index: cdktf.numberToTerraform(struct!.nicIndex),
     create_vnic_details: coreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsToTerraform(struct!.createVnicDetails),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsSecondaryVnicsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsSecondaryVnics | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nic_index: {
+      value: cdktf.numberToHclTerraform(struct!.nicIndex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    create_vnic_details: {
+      value: coreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsToHclTerraform(struct!.createVnicDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsSecondaryVnicsCreateVnicDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsSecondaryVnicsOutputReference extends cdktf.ComplexObject {
@@ -9708,25 +11963,25 @@ export interface CoreInstanceConfigurationInstanceDetails {
   readonly instanceType: string;
   /**
   * block_volumes block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#block_volumes CoreInstanceConfiguration#block_volumes}
   */
   readonly blockVolumes?: CoreInstanceConfigurationInstanceDetailsBlockVolumes[] | cdktf.IResolvable;
   /**
   * launch_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#launch_details CoreInstanceConfiguration#launch_details}
   */
   readonly launchDetails?: CoreInstanceConfigurationInstanceDetailsLaunchDetails;
   /**
   * options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#options CoreInstanceConfiguration#options}
   */
   readonly options?: CoreInstanceConfigurationInstanceDetailsOptions[] | cdktf.IResolvable;
   /**
   * secondary_vnics block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#secondary_vnics CoreInstanceConfiguration#secondary_vnics}
   */
   readonly secondaryVnics?: CoreInstanceConfigurationInstanceDetailsSecondaryVnics[] | cdktf.IResolvable;
@@ -9744,6 +11999,49 @@ export function coreInstanceConfigurationInstanceDetailsToTerraform(struct?: Cor
     options: cdktf.listMapper(coreInstanceConfigurationInstanceDetailsOptionsToTerraform, true)(struct!.options),
     secondary_vnics: cdktf.listMapper(coreInstanceConfigurationInstanceDetailsSecondaryVnicsToTerraform, true)(struct!.secondaryVnics),
   }
+}
+
+
+export function coreInstanceConfigurationInstanceDetailsToHclTerraform(struct?: CoreInstanceConfigurationInstanceDetailsOutputReference | CoreInstanceConfigurationInstanceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    instance_type: {
+      value: cdktf.stringToHclTerraform(struct!.instanceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_volumes: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsBlockVolumesToHclTerraform, true)(struct!.blockVolumes),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsBlockVolumesList",
+    },
+    launch_details: {
+      value: coreInstanceConfigurationInstanceDetailsLaunchDetailsToHclTerraform(struct!.launchDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsLaunchDetailsList",
+    },
+    options: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsOptionsToHclTerraform, true)(struct!.options),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsOptionsList",
+    },
+    secondary_vnics: {
+      value: cdktf.listMapperHcl(coreInstanceConfigurationInstanceDetailsSecondaryVnicsToHclTerraform, true)(struct!.secondaryVnics),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreInstanceConfigurationInstanceDetailsSecondaryVnicsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreInstanceConfigurationInstanceDetailsOutputReference extends cdktf.ComplexObject {
@@ -9906,6 +12204,37 @@ export function coreInstanceConfigurationTimeoutsToTerraform(struct?: CoreInstan
   }
 }
 
+
+export function coreInstanceConfigurationTimeoutsToHclTerraform(struct?: CoreInstanceConfigurationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreInstanceConfigurationTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -10018,6 +12347,20 @@ export class CoreInstanceConfiguration extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_instance_configuration";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreInstanceConfiguration resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreInstanceConfiguration to import
+  * @param importFromId The id of the existing CoreInstanceConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_instance_configuration#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreInstanceConfiguration to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_instance_configuration", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -10228,5 +12571,67 @@ export class CoreInstanceConfiguration extends cdktf.TerraformResource {
       instance_details: coreInstanceConfigurationInstanceDetailsToTerraform(this._instanceDetails.internalValue),
       timeouts: coreInstanceConfigurationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instance_id: {
+        value: cdktf.stringToHclTerraform(this._instanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source: {
+        value: cdktf.stringToHclTerraform(this._source),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instance_details: {
+        value: coreInstanceConfigurationInstanceDetailsToHclTerraform(this._instanceDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreInstanceConfigurationInstanceDetailsList",
+      },
+      timeouts: {
+        value: coreInstanceConfigurationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreInstanceConfigurationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

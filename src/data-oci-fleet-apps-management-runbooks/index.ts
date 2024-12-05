@@ -44,7 +44,7 @@ export interface DataOciFleetAppsManagementRunbooksConfig extends cdktf.Terrafor
   readonly type?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_runbooks#filter DataOciFleetAppsManagementRunbooks#filter}
   */
   readonly filter?: DataOciFleetAppsManagementRunbooksFilter[] | cdktf.IResolvable;
@@ -59,6 +59,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsExecutionWorkflowDetailsWorkflowStepsToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsExecutionWorkflowDetailsWorkflowSteps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsExecutionWorkflowDetailsWorkflowStepsOutputReference extends cdktf.ComplexObject {
@@ -140,6 +151,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
 }
 
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsExecutionWorkflowDetailsWorkflowToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsExecutionWorkflowDetailsWorkflow): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsExecutionWorkflowDetailsWorkflowOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -215,6 +237,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
 }
 
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsExecutionWorkflowDetailsToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsExecutionWorkflowDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsExecutionWorkflowDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -278,6 +311,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsGroupsPropertiesToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsGroupsProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsGroupsPropertiesOutputReference extends cdktf.ComplexObject {
@@ -352,6 +396,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsGroupsToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsGroups): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsGroupsOutputReference extends cdktf.ComplexObject {
@@ -429,6 +484,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
 }
 
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksOutputVariableMappingsOutputVariableDetailsToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksOutputVariableMappingsOutputVariableDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksOutputVariableMappingsOutputVariableDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -496,6 +562,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksOutputVariableMappingsToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksOutputVariableMappings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksOutputVariableMappingsOutputReference extends cdktf.ComplexObject {
@@ -566,6 +643,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksStepPropertiesToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksStepProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksStepPropertiesOutputReference extends cdktf.ComplexObject {
@@ -640,6 +728,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsContentToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsContent): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsContentOutputReference extends cdktf.ComplexObject {
@@ -726,6 +825,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
 }
 
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsVariablesInputVariables): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsVariablesInputVariablesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -800,6 +910,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
 }
 
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsVariablesToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsVariables): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsVariablesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -868,6 +989,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsExecutionDetailsOutputReference extends cdktf.ComplexObject {
@@ -956,6 +1088,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
 }
 
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsPropertiesToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsPropertiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1023,6 +1166,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksTaskRecordDetailsOutputReference extends cdktf.ComplexObject {
@@ -1131,6 +1285,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
 }
 
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsTasksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1218,6 +1383,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociat
   }
 }
 
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsAssociationsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1298,6 +1474,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionItemsToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -1463,6 +1650,17 @@ export function dataOciFleetAppsManagementRunbooksRunbookCollectionToTerraform(s
   }
 }
 
+
+export function dataOciFleetAppsManagementRunbooksRunbookCollectionToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksRunbookCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementRunbooksRunbookCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1541,6 +1739,37 @@ export function dataOciFleetAppsManagementRunbooksFilterToTerraform(struct?: Dat
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciFleetAppsManagementRunbooksFilterToHclTerraform(struct?: DataOciFleetAppsManagementRunbooksFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciFleetAppsManagementRunbooksFilterOutputReference extends cdktf.ComplexObject {
@@ -1671,6 +1900,20 @@ export class DataOciFleetAppsManagementRunbooks extends cdktf.TerraformDataSourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_runbooks";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFleetAppsManagementRunbooks resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFleetAppsManagementRunbooks to import
+  * @param importFromId The id of the existing DataOciFleetAppsManagementRunbooks that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_runbooks#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFleetAppsManagementRunbooks to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_runbooks", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1880,5 +2123,67 @@ export class DataOciFleetAppsManagementRunbooks extends cdktf.TerraformDataSourc
       type: cdktf.stringToTerraform(this._type),
       filter: cdktf.listMapper(dataOciFleetAppsManagementRunbooksFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      operation: {
+        value: cdktf.stringToHclTerraform(this._operation),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      platform: {
+        value: cdktf.stringToHclTerraform(this._platform),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      runbook_relevance: {
+        value: cdktf.stringToHclTerraform(this._runbookRelevance),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciFleetAppsManagementRunbooksFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciFleetAppsManagementRunbooksFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

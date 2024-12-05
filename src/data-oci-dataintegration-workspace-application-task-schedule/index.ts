@@ -32,6 +32,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleLastRunDet
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleLastRunDetailsParentRefToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleLastRunDetailsParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleLastRunDetailsParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -99,6 +110,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleLastRunDet
   }
   return {
   }
+}
+
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleLastRunDetailsToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleLastRunDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleLastRunDetailsOutputReference extends cdktf.ComplexObject {
@@ -211,6 +233,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataAg
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataAggregatorToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataAggregator): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataAggregatorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -295,6 +328,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataCo
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataCountStatisticsObjectTypeCountListStructToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataCountStatisticsObjectTypeCountListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataCountStatisticsObjectTypeCountListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -364,6 +408,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataCo
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataCountStatisticsToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataCountStatistics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataCountStatisticsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -427,6 +482,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataTo
   }
   return {
   }
+}
+
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleMetadataOutputReference extends cdktf.ComplexObject {
@@ -561,6 +627,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleParentRefT
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleParentRefToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -628,6 +705,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleRegistryMe
   }
   return {
   }
+}
+
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleRegistryMetadataToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleRegistryMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleRegistryMetadataOutputReference extends cdktf.ComplexObject {
@@ -714,6 +802,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRe
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTime): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -786,6 +885,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRe
   }
   return {
   }
+}
+
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsOutputReference extends cdktf.ComplexObject {
@@ -888,6 +998,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRe
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -972,6 +1093,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRe
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListStructToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsObjectTypeCountListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1041,6 +1173,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRe
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatistics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataCountStatisticsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1104,6 +1247,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRe
   }
   return {
   }
+}
+
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefMetadataOutputReference extends cdktf.ComplexObject {
@@ -1238,6 +1392,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRe
   }
 }
 
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefParentRefToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1305,6 +1470,17 @@ export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRe
   }
   return {
   }
+}
+
+
+export function dataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefToHclTerraform(struct?: DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataintegrationWorkspaceApplicationTaskScheduleScheduleRefOutputReference extends cdktf.ComplexObject {
@@ -1432,6 +1608,20 @@ export class DataOciDataintegrationWorkspaceApplicationTaskSchedule extends cdkt
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataintegration_workspace_application_task_schedule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataintegrationWorkspaceApplicationTaskSchedule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataintegrationWorkspaceApplicationTaskSchedule to import
+  * @param importFromId The id of the existing DataOciDataintegrationWorkspaceApplicationTaskSchedule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dataintegration_workspace_application_task_schedule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataintegrationWorkspaceApplicationTaskSchedule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataintegration_workspace_application_task_schedule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1663,5 +1853,31 @@ export class DataOciDataintegrationWorkspaceApplicationTaskSchedule extends cdkt
       task_schedule_key: cdktf.stringToTerraform(this._taskScheduleKey),
       workspace_id: cdktf.stringToTerraform(this._workspaceId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      application_key: {
+        value: cdktf.stringToHclTerraform(this._applicationKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      task_schedule_key: {
+        value: cdktf.stringToHclTerraform(this._taskScheduleKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      workspace_id: {
+        value: cdktf.stringToHclTerraform(this._workspaceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

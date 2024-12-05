@@ -40,7 +40,7 @@ export interface StackMonitoringBaselineableMetricConfig extends cdktf.Terraform
   readonly resourceType?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_baselineable_metric#timeouts StackMonitoringBaselineableMetric#timeouts}
   */
   readonly timeouts?: StackMonitoringBaselineableMetricTimeouts;
@@ -70,6 +70,37 @@ export function stackMonitoringBaselineableMetricTimeoutsToTerraform(struct?: St
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function stackMonitoringBaselineableMetricTimeoutsToHclTerraform(struct?: StackMonitoringBaselineableMetricTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringBaselineableMetricTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -184,6 +215,20 @@ export class StackMonitoringBaselineableMetric extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_baselineable_metric";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a StackMonitoringBaselineableMetric resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the StackMonitoringBaselineableMetric to import
+  * @param importFromId The id of the existing StackMonitoringBaselineableMetric that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_baselineable_metric#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the StackMonitoringBaselineableMetric to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_baselineable_metric", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -413,5 +458,61 @@ export class StackMonitoringBaselineableMetric extends cdktf.TerraformResource {
       resource_type: cdktf.stringToTerraform(this._resourceType),
       timeouts: stackMonitoringBaselineableMetricTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      column: {
+        value: cdktf.stringToHclTerraform(this._column),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_group: {
+        value: cdktf.stringToHclTerraform(this._resourceGroup),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type: {
+        value: cdktf.stringToHclTerraform(this._resourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: stackMonitoringBaselineableMetricTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StackMonitoringBaselineableMetricTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

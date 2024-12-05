@@ -24,6 +24,17 @@ export function dataOciDatabaseKeyStoreAssociatedDatabasesToTerraform(struct?: D
   }
 }
 
+
+export function dataOciDatabaseKeyStoreAssociatedDatabasesToHclTerraform(struct?: DataOciDatabaseKeyStoreAssociatedDatabases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseKeyStoreAssociatedDatabasesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciDatabaseKeyStoreTypeDetailsToTerraform(struct?: DataOciDa
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseKeyStoreTypeDetailsToHclTerraform(struct?: DataOciDatabaseKeyStoreTypeDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseKeyStoreTypeDetailsOutputReference extends cdktf.ComplexObject {
@@ -175,6 +197,20 @@ export class DataOciDatabaseKeyStore extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_key_store";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseKeyStore resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseKeyStore to import
+  * @param importFromId The id of the existing DataOciDatabaseKeyStore that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_key_store#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseKeyStore to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_key_store", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -290,5 +326,19 @@ export class DataOciDatabaseKeyStore extends cdktf.TerraformDataSource {
     return {
       key_store_id: cdktf.stringToTerraform(this._keyStoreId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      key_store_id: {
+        value: cdktf.stringToHclTerraform(this._keyStoreId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,19 +40,19 @@ export interface DatabaseExternalDatabaseConnectorConfig extends cdktf.Terraform
   readonly id?: string;
   /**
   * connection_credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_external_database_connector#connection_credentials DatabaseExternalDatabaseConnector#connection_credentials}
   */
   readonly connectionCredentials: DatabaseExternalDatabaseConnectorConnectionCredentials;
   /**
   * connection_string block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_external_database_connector#connection_string DatabaseExternalDatabaseConnector#connection_string}
   */
   readonly connectionString: DatabaseExternalDatabaseConnectorConnectionString;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_external_database_connector#timeouts DatabaseExternalDatabaseConnector#timeouts}
   */
   readonly timeouts?: DatabaseExternalDatabaseConnectorTimeouts;
@@ -97,6 +97,55 @@ export function databaseExternalDatabaseConnectorConnectionCredentialsToTerrafor
     ssl_secret_id: cdktf.stringToTerraform(struct!.sslSecretId),
     username: cdktf.stringToTerraform(struct!.username),
   }
+}
+
+
+export function databaseExternalDatabaseConnectorConnectionCredentialsToHclTerraform(struct?: DatabaseExternalDatabaseConnectorConnectionCredentialsOutputReference | DatabaseExternalDatabaseConnectorConnectionCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credential_name: {
+      value: cdktf.stringToHclTerraform(struct!.credentialName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    credential_type: {
+      value: cdktf.stringToHclTerraform(struct!.credentialType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ssl_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.sslSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseExternalDatabaseConnectorConnectionCredentialsOutputReference extends cdktf.ComplexObject {
@@ -289,6 +338,43 @@ export function databaseExternalDatabaseConnectorConnectionStringToTerraform(str
   }
 }
 
+
+export function databaseExternalDatabaseConnectorConnectionStringToHclTerraform(struct?: DatabaseExternalDatabaseConnectorConnectionStringOutputReference | DatabaseExternalDatabaseConnectorConnectionString): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hostname: {
+      value: cdktf.stringToHclTerraform(struct!.hostname),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseExternalDatabaseConnectorConnectionStringOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -418,6 +504,37 @@ export function databaseExternalDatabaseConnectorTimeoutsToTerraform(struct?: Da
   }
 }
 
+
+export function databaseExternalDatabaseConnectorTimeoutsToHclTerraform(struct?: DatabaseExternalDatabaseConnectorTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseExternalDatabaseConnectorTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -530,6 +647,20 @@ export class DatabaseExternalDatabaseConnector extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_external_database_connector";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseExternalDatabaseConnector resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseExternalDatabaseConnector to import
+  * @param importFromId The id of the existing DatabaseExternalDatabaseConnector that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_external_database_connector#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseExternalDatabaseConnector to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_external_database_connector", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -766,5 +897,73 @@ export class DatabaseExternalDatabaseConnector extends cdktf.TerraformResource {
       connection_string: databaseExternalDatabaseConnectorConnectionStringToTerraform(this._connectionString.internalValue),
       timeouts: databaseExternalDatabaseConnectorTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      connector_agent_id: {
+        value: cdktf.stringToHclTerraform(this._connectorAgentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connector_type: {
+        value: cdktf.stringToHclTerraform(this._connectorType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_database_id: {
+        value: cdktf.stringToHclTerraform(this._externalDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_credentials: {
+        value: databaseExternalDatabaseConnectorConnectionCredentialsToHclTerraform(this._connectionCredentials.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseExternalDatabaseConnectorConnectionCredentialsList",
+      },
+      connection_string: {
+        value: databaseExternalDatabaseConnectorConnectionStringToHclTerraform(this._connectionString.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseExternalDatabaseConnectorConnectionStringList",
+      },
+      timeouts: {
+        value: databaseExternalDatabaseConnectorTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseExternalDatabaseConnectorTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

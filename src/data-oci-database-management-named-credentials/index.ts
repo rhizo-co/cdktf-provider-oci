@@ -36,7 +36,7 @@ export interface DataOciDatabaseManagementNamedCredentialsConfig extends cdktf.T
   readonly type?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_named_credentials#filter DataOciDatabaseManagementNamedCredentials#filter}
   */
   readonly filter?: DataOciDatabaseManagementNamedCredentialsFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciDatabaseManagementNamedCredentialsNamedCredentialCollecti
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementNamedCredentialsNamedCredentialCollectionItemsContentToHclTerraform(struct?: DataOciDatabaseManagementNamedCredentialsNamedCredentialCollectionItemsContent): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementNamedCredentialsNamedCredentialCollectionItemsContentOutputReference extends cdktf.ComplexObject {
@@ -135,6 +146,17 @@ export function dataOciDatabaseManagementNamedCredentialsNamedCredentialCollecti
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementNamedCredentialsNamedCredentialCollectionItemsToHclTerraform(struct?: DataOciDatabaseManagementNamedCredentialsNamedCredentialCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementNamedCredentialsNamedCredentialCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -275,6 +297,17 @@ export function dataOciDatabaseManagementNamedCredentialsNamedCredentialCollecti
   }
 }
 
+
+export function dataOciDatabaseManagementNamedCredentialsNamedCredentialCollectionToHclTerraform(struct?: DataOciDatabaseManagementNamedCredentialsNamedCredentialCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementNamedCredentialsNamedCredentialCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -353,6 +386,37 @@ export function dataOciDatabaseManagementNamedCredentialsFilterToTerraform(struc
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDatabaseManagementNamedCredentialsFilterToHclTerraform(struct?: DataOciDatabaseManagementNamedCredentialsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatabaseManagementNamedCredentialsFilterOutputReference extends cdktf.ComplexObject {
@@ -483,6 +547,20 @@ export class DataOciDatabaseManagementNamedCredentials extends cdktf.TerraformDa
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_named_credentials";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementNamedCredentials resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementNamedCredentials to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementNamedCredentials that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_named_credentials#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementNamedCredentials to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_named_credentials", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -653,5 +731,55 @@ export class DataOciDatabaseManagementNamedCredentials extends cdktf.TerraformDa
       type: cdktf.stringToTerraform(this._type),
       filter: cdktf.listMapper(dataOciDatabaseManagementNamedCredentialsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      associated_resource: {
+        value: cdktf.stringToHclTerraform(this._associatedResource),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scope: {
+        value: cdktf.stringToHclTerraform(this._scope),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatabaseManagementNamedCredentialsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatabaseManagementNamedCredentialsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

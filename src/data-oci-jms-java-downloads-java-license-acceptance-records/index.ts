@@ -32,7 +32,7 @@ export interface DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsConfig exten
   readonly status?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_java_downloads_java_license_acceptance_records#filter DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecords#filter}
   */
   readonly filter?: DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAc
   }
   return {
   }
+}
+
+
+export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemsCreatedByToHclTerraform(struct?: DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -123,6 +134,17 @@ export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAc
   }
 }
 
+
+export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemsLastUpdatedByToHclTerraform(struct?: DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemsLastUpdatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemsLastUpdatedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -195,6 +217,17 @@ export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAc
   }
   return {
   }
+}
+
+
+export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemsToHclTerraform(struct?: DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -321,6 +354,17 @@ export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAc
   }
 }
 
+
+export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionToHclTerraform(struct?: DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -399,6 +443,37 @@ export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsFilterToTerra
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsFilterToHclTerraform(struct?: DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsFilterOutputReference extends cdktf.ComplexObject {
@@ -529,6 +604,20 @@ export class DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecords extends cdktf.T
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_java_downloads_java_license_acceptance_records";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecords resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecords to import
+  * @param importFromId The id of the existing DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecords that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_java_downloads_java_license_acceptance_records#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecords to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_java_downloads_java_license_acceptance_records", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -681,5 +770,49 @@ export class DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecords extends cdktf.T
       status: cdktf.stringToTerraform(this._status),
       filter: cdktf.listMapper(dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      license_type: {
+        value: cdktf.stringToHclTerraform(this._licenseType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      search_by_user: {
+        value: cdktf.stringToHclTerraform(this._searchByUser),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciJmsJavaDownloadsJavaLicenseAcceptanceRecordsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

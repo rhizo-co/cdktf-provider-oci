@@ -36,19 +36,19 @@ export interface NetworkFirewallNetworkFirewallPolicySecurityRuleConfig extends 
   readonly priorityOrder?: string;
   /**
   * condition block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_security_rule#condition NetworkFirewallNetworkFirewallPolicySecurityRule#condition}
   */
   readonly condition: NetworkFirewallNetworkFirewallPolicySecurityRuleCondition;
   /**
   * position block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_security_rule#position NetworkFirewallNetworkFirewallPolicySecurityRule#position}
   */
   readonly position?: NetworkFirewallNetworkFirewallPolicySecurityRulePosition[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_security_rule#timeouts NetworkFirewallNetworkFirewallPolicySecurityRule#timeouts}
   */
   readonly timeouts?: NetworkFirewallNetworkFirewallPolicySecurityRuleTimeouts;
@@ -88,6 +88,49 @@ export function networkFirewallNetworkFirewallPolicySecurityRuleConditionToTerra
     source_address: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.sourceAddress),
     url: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.url),
   }
+}
+
+
+export function networkFirewallNetworkFirewallPolicySecurityRuleConditionToHclTerraform(struct?: NetworkFirewallNetworkFirewallPolicySecurityRuleConditionOutputReference | NetworkFirewallNetworkFirewallPolicySecurityRuleCondition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    application: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.application),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    destination_address: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.destinationAddress),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    service: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.service),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    source_address: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.sourceAddress),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    url: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.url),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkFirewallNetworkFirewallPolicySecurityRuleConditionOutputReference extends cdktf.ComplexObject {
@@ -248,6 +291,31 @@ export function networkFirewallNetworkFirewallPolicySecurityRulePositionToTerraf
   }
 }
 
+
+export function networkFirewallNetworkFirewallPolicySecurityRulePositionToHclTerraform(struct?: NetworkFirewallNetworkFirewallPolicySecurityRulePosition | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    after_rule: {
+      value: cdktf.stringToHclTerraform(struct!.afterRule),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    before_rule: {
+      value: cdktf.stringToHclTerraform(struct!.beforeRule),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class NetworkFirewallNetworkFirewallPolicySecurityRulePositionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -377,6 +445,37 @@ export function networkFirewallNetworkFirewallPolicySecurityRuleTimeoutsToTerraf
   }
 }
 
+
+export function networkFirewallNetworkFirewallPolicySecurityRuleTimeoutsToHclTerraform(struct?: NetworkFirewallNetworkFirewallPolicySecurityRuleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class NetworkFirewallNetworkFirewallPolicySecurityRuleTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -489,6 +588,20 @@ export class NetworkFirewallNetworkFirewallPolicySecurityRule extends cdktf.Terr
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_network_firewall_network_firewall_policy_security_rule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NetworkFirewallNetworkFirewallPolicySecurityRule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NetworkFirewallNetworkFirewallPolicySecurityRule to import
+  * @param importFromId The id of the existing NetworkFirewallNetworkFirewallPolicySecurityRule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_security_rule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NetworkFirewallNetworkFirewallPolicySecurityRule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_firewall_network_firewall_policy_security_rule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -685,5 +798,67 @@ export class NetworkFirewallNetworkFirewallPolicySecurityRule extends cdktf.Terr
       position: cdktf.listMapper(networkFirewallNetworkFirewallPolicySecurityRulePositionToTerraform, true)(this._position.internalValue),
       timeouts: networkFirewallNetworkFirewallPolicySecurityRuleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      action: {
+        value: cdktf.stringToHclTerraform(this._action),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      inspection: {
+        value: cdktf.stringToHclTerraform(this._inspection),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_firewall_policy_id: {
+        value: cdktf.stringToHclTerraform(this._networkFirewallPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      priority_order: {
+        value: cdktf.stringToHclTerraform(this._priorityOrder),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      condition: {
+        value: networkFirewallNetworkFirewallPolicySecurityRuleConditionToHclTerraform(this._condition.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NetworkFirewallNetworkFirewallPolicySecurityRuleConditionList",
+      },
+      position: {
+        value: cdktf.listMapperHcl(networkFirewallNetworkFirewallPolicySecurityRulePositionToHclTerraform, true)(this._position.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NetworkFirewallNetworkFirewallPolicySecurityRulePositionList",
+      },
+      timeouts: {
+        value: networkFirewallNetworkFirewallPolicySecurityRuleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NetworkFirewallNetworkFirewallPolicySecurityRuleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

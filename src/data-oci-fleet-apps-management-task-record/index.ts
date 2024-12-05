@@ -31,6 +31,17 @@ export function dataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsConte
   }
 }
 
+
+export function dataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsContentToHclTerraform(struct?: DataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsContent): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsContentOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -115,6 +126,17 @@ export function dataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsVaria
   }
 }
 
+
+export function dataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsVariablesInputVariablesToHclTerraform(struct?: DataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsVariablesInputVariables): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsVariablesInputVariablesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -189,6 +211,17 @@ export function dataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsVaria
   }
 }
 
+
+export function dataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsVariablesToHclTerraform(struct?: DataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsVariables): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsVariablesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -257,6 +290,17 @@ export function dataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsToTer
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsToHclTerraform(struct?: DataOciFleetAppsManagementTaskRecordDetailsExecutionDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementTaskRecordDetailsExecutionDetailsOutputReference extends cdktf.ComplexObject {
@@ -345,6 +389,17 @@ export function dataOciFleetAppsManagementTaskRecordDetailsPropertiesToTerraform
   }
 }
 
+
+export function dataOciFleetAppsManagementTaskRecordDetailsPropertiesToHclTerraform(struct?: DataOciFleetAppsManagementTaskRecordDetailsProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementTaskRecordDetailsPropertiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -412,6 +467,17 @@ export function dataOciFleetAppsManagementTaskRecordDetailsToTerraform(struct?: 
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementTaskRecordDetailsToHclTerraform(struct?: DataOciFleetAppsManagementTaskRecordDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementTaskRecordDetailsOutputReference extends cdktf.ComplexObject {
@@ -498,6 +564,20 @@ export class DataOciFleetAppsManagementTaskRecord extends cdktf.TerraformDataSou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_task_record";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFleetAppsManagementTaskRecord resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFleetAppsManagementTaskRecord to import
+  * @param importFromId The id of the existing DataOciFleetAppsManagementTaskRecord that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_task_record#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFleetAppsManagementTaskRecord to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_task_record", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -646,5 +726,25 @@ export class DataOciFleetAppsManagementTaskRecord extends cdktf.TerraformDataSou
       id: cdktf.stringToTerraform(this._id),
       task_record_id: cdktf.stringToTerraform(this._taskRecordId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      task_record_id: {
+        value: cdktf.stringToHclTerraform(this._taskRecordId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

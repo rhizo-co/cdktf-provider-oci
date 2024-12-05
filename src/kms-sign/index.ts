@@ -40,7 +40,7 @@ export interface KmsSignConfig extends cdktf.TerraformMetaArguments {
   readonly signingAlgorithm: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_sign#timeouts KmsSign#timeouts}
   */
   readonly timeouts?: KmsSignTimeouts;
@@ -70,6 +70,37 @@ export function kmsSignTimeoutsToTerraform(struct?: KmsSignTimeouts | cdktf.IRes
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function kmsSignTimeoutsToHclTerraform(struct?: KmsSignTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsSignTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -184,6 +215,20 @@ export class KmsSign extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_kms_sign";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a KmsSign resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the KmsSign to import
+  * @param importFromId The id of the existing KmsSign that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_sign#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the KmsSign to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_sign", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -362,5 +407,61 @@ export class KmsSign extends cdktf.TerraformResource {
       signing_algorithm: cdktf.stringToTerraform(this._signingAlgorithm),
       timeouts: kmsSignTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      crypto_endpoint: {
+        value: cdktf.stringToHclTerraform(this._cryptoEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_id: {
+        value: cdktf.stringToHclTerraform(this._keyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_version_id: {
+        value: cdktf.stringToHclTerraform(this._keyVersionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      message: {
+        value: cdktf.stringToHclTerraform(this._message),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      message_type: {
+        value: cdktf.stringToHclTerraform(this._messageType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      signing_algorithm: {
+        value: cdktf.stringToHclTerraform(this._signingAlgorithm),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: kmsSignTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "KmsSignTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

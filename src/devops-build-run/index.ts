@@ -32,19 +32,19 @@ export interface DevopsBuildRunConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * build_run_arguments block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_run#build_run_arguments DevopsBuildRun#build_run_arguments}
   */
   readonly buildRunArguments?: DevopsBuildRunBuildRunArguments;
   /**
   * commit_info block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_run#commit_info DevopsBuildRun#commit_info}
   */
   readonly commitInfo?: DevopsBuildRunCommitInfo;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_run#timeouts DevopsBuildRun#timeouts}
   */
   readonly timeouts?: DevopsBuildRunTimeouts;
@@ -59,6 +59,17 @@ export function devopsBuildRunBuildOutputsArtifactOverrideParametersItemsToTerra
   }
   return {
   }
+}
+
+
+export function devopsBuildRunBuildOutputsArtifactOverrideParametersItemsToHclTerraform(struct?: DevopsBuildRunBuildOutputsArtifactOverrideParametersItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsBuildRunBuildOutputsArtifactOverrideParametersItemsOutputReference extends cdktf.ComplexObject {
@@ -135,6 +146,17 @@ export function devopsBuildRunBuildOutputsArtifactOverrideParametersToTerraform(
   }
 }
 
+
+export function devopsBuildRunBuildOutputsArtifactOverrideParametersToHclTerraform(struct?: DevopsBuildRunBuildOutputsArtifactOverrideParameters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsBuildRunBuildOutputsArtifactOverrideParametersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -198,6 +220,17 @@ export function devopsBuildRunBuildOutputsDeliveredArtifactsItemsToTerraform(str
   }
   return {
   }
+}
+
+
+export function devopsBuildRunBuildOutputsDeliveredArtifactsItemsToHclTerraform(struct?: DevopsBuildRunBuildOutputsDeliveredArtifactsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsBuildRunBuildOutputsDeliveredArtifactsItemsOutputReference extends cdktf.ComplexObject {
@@ -304,6 +337,17 @@ export function devopsBuildRunBuildOutputsDeliveredArtifactsToTerraform(struct?:
   }
 }
 
+
+export function devopsBuildRunBuildOutputsDeliveredArtifactsToHclTerraform(struct?: DevopsBuildRunBuildOutputsDeliveredArtifacts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsBuildRunBuildOutputsDeliveredArtifactsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -367,6 +411,17 @@ export function devopsBuildRunBuildOutputsExportedVariablesItemsToTerraform(stru
   }
   return {
   }
+}
+
+
+export function devopsBuildRunBuildOutputsExportedVariablesItemsToHclTerraform(struct?: DevopsBuildRunBuildOutputsExportedVariablesItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsBuildRunBuildOutputsExportedVariablesItemsOutputReference extends cdktf.ComplexObject {
@@ -438,6 +493,17 @@ export function devopsBuildRunBuildOutputsExportedVariablesToTerraform(struct?: 
   }
 }
 
+
+export function devopsBuildRunBuildOutputsExportedVariablesToHclTerraform(struct?: DevopsBuildRunBuildOutputsExportedVariables): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsBuildRunBuildOutputsExportedVariablesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -501,6 +567,17 @@ export function devopsBuildRunBuildOutputsVulnerabilityAuditSummaryCollectionIte
   }
   return {
   }
+}
+
+
+export function devopsBuildRunBuildOutputsVulnerabilityAuditSummaryCollectionItemsToHclTerraform(struct?: DevopsBuildRunBuildOutputsVulnerabilityAuditSummaryCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsBuildRunBuildOutputsVulnerabilityAuditSummaryCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -577,6 +654,17 @@ export function devopsBuildRunBuildOutputsVulnerabilityAuditSummaryCollectionToT
   }
 }
 
+
+export function devopsBuildRunBuildOutputsVulnerabilityAuditSummaryCollectionToHclTerraform(struct?: DevopsBuildRunBuildOutputsVulnerabilityAuditSummaryCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsBuildRunBuildOutputsVulnerabilityAuditSummaryCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -640,6 +728,17 @@ export function devopsBuildRunBuildOutputsToTerraform(struct?: DevopsBuildRunBui
   }
   return {
   }
+}
+
+
+export function devopsBuildRunBuildOutputsToHclTerraform(struct?: DevopsBuildRunBuildOutputs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsBuildRunBuildOutputsOutputReference extends cdktf.ComplexObject {
@@ -725,6 +824,17 @@ export function devopsBuildRunBuildRunProgressToTerraform(struct?: DevopsBuildRu
   }
 }
 
+
+export function devopsBuildRunBuildRunProgressToHclTerraform(struct?: DevopsBuildRunBuildRunProgress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsBuildRunBuildRunProgressOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -800,6 +910,17 @@ export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterExcludeFileF
   }
 }
 
+
+export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterExcludeFileFilterToHclTerraform(struct?: DevopsBuildRunBuildRunSourceTriggerInfoActionsFilterExcludeFileFilter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsBuildRunBuildRunSourceTriggerInfoActionsFilterExcludeFileFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -862,6 +983,17 @@ export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterExcludeToTer
   }
   return {
   }
+}
+
+
+export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterExcludeToHclTerraform(struct?: DevopsBuildRunBuildRunSourceTriggerInfoActionsFilterExclude): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsBuildRunBuildRunSourceTriggerInfoActionsFilterExcludeOutputReference extends cdktf.ComplexObject {
@@ -929,6 +1061,17 @@ export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterIncludeFileF
   }
 }
 
+
+export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterIncludeFileFilterToHclTerraform(struct?: DevopsBuildRunBuildRunSourceTriggerInfoActionsFilterIncludeFileFilter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsBuildRunBuildRunSourceTriggerInfoActionsFilterIncludeFileFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -991,6 +1134,17 @@ export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterIncludeToTer
   }
   return {
   }
+}
+
+
+export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterIncludeToHclTerraform(struct?: DevopsBuildRunBuildRunSourceTriggerInfoActionsFilterInclude): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsBuildRunBuildRunSourceTriggerInfoActionsFilterIncludeOutputReference extends cdktf.ComplexObject {
@@ -1071,6 +1225,17 @@ export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterToTerraform(
   }
   return {
   }
+}
+
+
+export function devopsBuildRunBuildRunSourceTriggerInfoActionsFilterToHclTerraform(struct?: DevopsBuildRunBuildRunSourceTriggerInfoActionsFilter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsBuildRunBuildRunSourceTriggerInfoActionsFilterOutputReference extends cdktf.ComplexObject {
@@ -1154,6 +1319,17 @@ export function devopsBuildRunBuildRunSourceTriggerInfoActionsToTerraform(struct
   }
 }
 
+
+export function devopsBuildRunBuildRunSourceTriggerInfoActionsToHclTerraform(struct?: DevopsBuildRunBuildRunSourceTriggerInfoActions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsBuildRunBuildRunSourceTriggerInfoActionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1229,6 +1405,17 @@ export function devopsBuildRunBuildRunSourceTriggerInfoToTerraform(struct?: Devo
   }
 }
 
+
+export function devopsBuildRunBuildRunSourceTriggerInfoToHclTerraform(struct?: DevopsBuildRunBuildRunSourceTriggerInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DevopsBuildRunBuildRunSourceTriggerInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1297,6 +1484,17 @@ export function devopsBuildRunBuildRunSourceToTerraform(struct?: DevopsBuildRunB
   }
   return {
   }
+}
+
+
+export function devopsBuildRunBuildRunSourceToHclTerraform(struct?: DevopsBuildRunBuildRunSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsBuildRunBuildRunSourceOutputReference extends cdktf.ComplexObject {
@@ -1387,6 +1585,31 @@ export function devopsBuildRunBuildRunArgumentsItemsToTerraform(struct?: DevopsB
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function devopsBuildRunBuildRunArgumentsItemsToHclTerraform(struct?: DevopsBuildRunBuildRunArgumentsItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildRunBuildRunArgumentsItemsOutputReference extends cdktf.ComplexObject {
@@ -1488,7 +1711,7 @@ export class DevopsBuildRunBuildRunArgumentsItemsList extends cdktf.ComplexList 
 export interface DevopsBuildRunBuildRunArguments {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_run#items DevopsBuildRun#items}
   */
   readonly items: DevopsBuildRunBuildRunArgumentsItems[] | cdktf.IResolvable;
@@ -1502,6 +1725,25 @@ export function devopsBuildRunBuildRunArgumentsToTerraform(struct?: DevopsBuildR
   return {
     items: cdktf.listMapper(devopsBuildRunBuildRunArgumentsItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function devopsBuildRunBuildRunArgumentsToHclTerraform(struct?: DevopsBuildRunBuildRunArgumentsOutputReference | DevopsBuildRunBuildRunArguments): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(devopsBuildRunBuildRunArgumentsItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsBuildRunBuildRunArgumentsItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildRunBuildRunArgumentsOutputReference extends cdktf.ComplexObject {
@@ -1574,6 +1816,37 @@ export function devopsBuildRunCommitInfoToTerraform(struct?: DevopsBuildRunCommi
     repository_branch: cdktf.stringToTerraform(struct!.repositoryBranch),
     repository_url: cdktf.stringToTerraform(struct!.repositoryUrl),
   }
+}
+
+
+export function devopsBuildRunCommitInfoToHclTerraform(struct?: DevopsBuildRunCommitInfoOutputReference | DevopsBuildRunCommitInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    commit_hash: {
+      value: cdktf.stringToHclTerraform(struct!.commitHash),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repository_branch: {
+      value: cdktf.stringToHclTerraform(struct!.repositoryBranch),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repository_url: {
+      value: cdktf.stringToHclTerraform(struct!.repositoryUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildRunCommitInfoOutputReference extends cdktf.ComplexObject {
@@ -1684,6 +1957,37 @@ export function devopsBuildRunTimeoutsToTerraform(struct?: DevopsBuildRunTimeout
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function devopsBuildRunTimeoutsToHclTerraform(struct?: DevopsBuildRunTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildRunTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -1798,6 +2102,20 @@ export class DevopsBuildRun extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_build_run";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DevopsBuildRun resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DevopsBuildRun to import
+  * @param importFromId The id of the existing DevopsBuildRun that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_run#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DevopsBuildRun to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_build_run", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2034,5 +2352,61 @@ export class DevopsBuildRun extends cdktf.TerraformResource {
       commit_info: devopsBuildRunCommitInfoToTerraform(this._commitInfo.internalValue),
       timeouts: devopsBuildRunTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      build_pipeline_id: {
+        value: cdktf.stringToHclTerraform(this._buildPipelineId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      build_run_arguments: {
+        value: devopsBuildRunBuildRunArgumentsToHclTerraform(this._buildRunArguments.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsBuildRunBuildRunArgumentsList",
+      },
+      commit_info: {
+        value: devopsBuildRunCommitInfoToHclTerraform(this._commitInfo.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsBuildRunCommitInfoList",
+      },
+      timeouts: {
+        value: devopsBuildRunTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DevopsBuildRunTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

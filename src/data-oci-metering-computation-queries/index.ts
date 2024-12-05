@@ -20,7 +20,7 @@ export interface DataOciMeteringComputationQueriesConfig extends cdktf.Terraform
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/metering_computation_queries#filter DataOciMeteringComputationQueries#filter}
   */
   readonly filter?: DataOciMeteringComputationQueriesFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefini
   }
   return {
   }
+}
+
+
+export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionCostAnalysisUiToHclTerraform(struct?: DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionCostAnalysisUi): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionCostAnalysisUiOutputReference extends cdktf.ComplexObject {
@@ -104,6 +115,17 @@ export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefini
   }
   return {
   }
+}
+
+
+export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionReportQueryForecastToHclTerraform(struct?: DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionReportQueryForecast): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionReportQueryForecastOutputReference extends cdktf.ComplexObject {
@@ -180,6 +202,17 @@ export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefini
   }
 }
 
+
+export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionReportQueryGroupByTagToHclTerraform(struct?: DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionReportQueryGroupByTag): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionReportQueryGroupByTagOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -252,6 +285,17 @@ export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefini
   }
   return {
   }
+}
+
+
+export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionReportQueryToHclTerraform(struct?: DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionReportQuery): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionReportQueryOutputReference extends cdktf.ComplexObject {
@@ -375,6 +419,17 @@ export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefini
   }
 }
 
+
+export function dataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionToHclTerraform(struct?: DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMeteringComputationQueriesQueryCollectionItemsQueryDefinitionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -456,6 +511,17 @@ export function dataOciMeteringComputationQueriesQueryCollectionItemsToTerraform
   }
 }
 
+
+export function dataOciMeteringComputationQueriesQueryCollectionItemsToHclTerraform(struct?: DataOciMeteringComputationQueriesQueryCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMeteringComputationQueriesQueryCollectionItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -529,6 +595,17 @@ export function dataOciMeteringComputationQueriesQueryCollectionToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataOciMeteringComputationQueriesQueryCollectionToHclTerraform(struct?: DataOciMeteringComputationQueriesQueryCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMeteringComputationQueriesQueryCollectionOutputReference extends cdktf.ComplexObject {
@@ -609,6 +686,37 @@ export function dataOciMeteringComputationQueriesFilterToTerraform(struct?: Data
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciMeteringComputationQueriesFilterToHclTerraform(struct?: DataOciMeteringComputationQueriesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciMeteringComputationQueriesFilterOutputReference extends cdktf.ComplexObject {
@@ -740,6 +848,20 @@ export class DataOciMeteringComputationQueries extends cdktf.TerraformDataSource
   // =================
   public static readonly tfResourceType = "oci_metering_computation_queries";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMeteringComputationQueries resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMeteringComputationQueries to import
+  * @param importFromId The id of the existing DataOciMeteringComputationQueries that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/metering_computation_queries#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMeteringComputationQueries to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_metering_computation_queries", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -837,5 +959,31 @@ export class DataOciMeteringComputationQueries extends cdktf.TerraformDataSource
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciMeteringComputationQueriesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciMeteringComputationQueriesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciMeteringComputationQueriesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -30,6 +30,20 @@ export class DataOciCoreCrossConnectStatus extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_core_cross_connect_status";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreCrossConnectStatus resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreCrossConnectStatus to import
+  * @param importFromId The id of the existing DataOciCoreCrossConnectStatus that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_cross_connect_status#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreCrossConnectStatus to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_cross_connect_status", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -123,5 +137,25 @@ export class DataOciCoreCrossConnectStatus extends cdktf.TerraformDataSource {
       cross_connect_id: cdktf.stringToTerraform(this._crossConnectId),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cross_connect_id: {
+        value: cdktf.stringToHclTerraform(this._crossConnectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

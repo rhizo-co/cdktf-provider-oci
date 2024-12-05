@@ -64,25 +64,25 @@ export interface FileStorageMountTargetConfig extends cdktf.TerraformMetaArgumen
   readonly subnetId: string;
   /**
   * kerberos block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_mount_target#kerberos FileStorageMountTarget#kerberos}
   */
   readonly kerberos?: FileStorageMountTargetKerberos;
   /**
   * ldap_idmap block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_mount_target#ldap_idmap FileStorageMountTarget#ldap_idmap}
   */
   readonly ldapIdmap?: FileStorageMountTargetLdapIdmap;
   /**
   * locks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_mount_target#locks FileStorageMountTarget#locks}
   */
   readonly locks?: FileStorageMountTargetLocks[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_mount_target#timeouts FileStorageMountTarget#timeouts}
   */
   readonly timeouts?: FileStorageMountTargetTimeouts;
@@ -122,6 +122,49 @@ export function fileStorageMountTargetKerberosToTerraform(struct?: FileStorageMo
     kerberos_realm: cdktf.stringToTerraform(struct!.kerberosRealm),
     key_tab_secret_id: cdktf.stringToTerraform(struct!.keyTabSecretId),
   }
+}
+
+
+export function fileStorageMountTargetKerberosToHclTerraform(struct?: FileStorageMountTargetKerberosOutputReference | FileStorageMountTargetKerberos): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    backup_key_tab_secret_version: {
+      value: cdktf.numberToHclTerraform(struct!.backupKeyTabSecretVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    current_key_tab_secret_version: {
+      value: cdktf.numberToHclTerraform(struct!.currentKeyTabSecretVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_kerberos_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isKerberosEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    kerberos_realm: {
+      value: cdktf.stringToHclTerraform(struct!.kerberosRealm),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_tab_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.keyTabSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FileStorageMountTargetKerberosOutputReference extends cdktf.ComplexObject {
@@ -307,6 +350,67 @@ export function fileStorageMountTargetLdapIdmapToTerraform(struct?: FileStorageM
     schema_type: cdktf.stringToTerraform(struct!.schemaType),
     user_search_base: cdktf.stringToTerraform(struct!.userSearchBase),
   }
+}
+
+
+export function fileStorageMountTargetLdapIdmapToHclTerraform(struct?: FileStorageMountTargetLdapIdmapOutputReference | FileStorageMountTargetLdapIdmap): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cache_lifetime_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.cacheLifetimeSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    cache_refresh_interval_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.cacheRefreshIntervalSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    group_search_base: {
+      value: cdktf.stringToHclTerraform(struct!.groupSearchBase),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    negative_cache_lifetime_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.negativeCacheLifetimeSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    outbound_connector1id: {
+      value: cdktf.stringToHclTerraform(struct!.outboundConnector1Id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    outbound_connector2id: {
+      value: cdktf.stringToHclTerraform(struct!.outboundConnector2Id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    schema_type: {
+      value: cdktf.stringToHclTerraform(struct!.schemaType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_search_base: {
+      value: cdktf.stringToHclTerraform(struct!.userSearchBase),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FileStorageMountTargetLdapIdmapOutputReference extends cdktf.ComplexObject {
@@ -543,6 +647,43 @@ export function fileStorageMountTargetLocksToTerraform(struct?: FileStorageMount
   }
 }
 
+
+export function fileStorageMountTargetLocksToHclTerraform(struct?: FileStorageMountTargetLocks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    message: {
+      value: cdktf.stringToHclTerraform(struct!.message),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    related_resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.relatedResourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_created: {
+      value: cdktf.stringToHclTerraform(struct!.timeCreated),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FileStorageMountTargetLocksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -713,6 +854,37 @@ export function fileStorageMountTargetTimeoutsToTerraform(struct?: FileStorageMo
   }
 }
 
+
+export function fileStorageMountTargetTimeoutsToHclTerraform(struct?: FileStorageMountTargetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FileStorageMountTargetTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -825,6 +997,20 @@ export class FileStorageMountTarget extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_file_storage_mount_target";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FileStorageMountTarget resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FileStorageMountTarget to import
+  * @param importFromId The id of the existing FileStorageMountTarget that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_mount_target#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FileStorageMountTarget to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_file_storage_mount_target", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1203,5 +1389,115 @@ export class FileStorageMountTarget extends cdktf.TerraformResource {
       locks: cdktf.listMapper(fileStorageMountTargetLocksToTerraform, true)(this._locks.internalValue),
       timeouts: fileStorageMountTargetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      hostname_label: {
+        value: cdktf.stringToHclTerraform(this._hostnameLabel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idmap_type: {
+        value: cdktf.stringToHclTerraform(this._idmapType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ip_address: {
+        value: cdktf.stringToHclTerraform(this._ipAddress),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_lock_override: {
+        value: cdktf.booleanToHclTerraform(this._isLockOverride),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      nsg_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._nsgIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      requested_throughput: {
+        value: cdktf.stringToHclTerraform(this._requestedThroughput),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kerberos: {
+        value: fileStorageMountTargetKerberosToHclTerraform(this._kerberos.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FileStorageMountTargetKerberosList",
+      },
+      ldap_idmap: {
+        value: fileStorageMountTargetLdapIdmapToHclTerraform(this._ldapIdmap.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FileStorageMountTargetLdapIdmapList",
+      },
+      locks: {
+        value: cdktf.listMapperHcl(fileStorageMountTargetLocksToHclTerraform, true)(this._locks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FileStorageMountTargetLocksList",
+      },
+      timeouts: {
+        value: fileStorageMountTargetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FileStorageMountTargetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

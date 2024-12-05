@@ -23,6 +23,20 @@ export class DataOciStreamingConnectHarness extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_streaming_connect_harness";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciStreamingConnectHarness resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciStreamingConnectHarness to import
+  * @param importFromId The id of the existing DataOciStreamingConnectHarness that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/streaming_connect_harness#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciStreamingConnectHarness to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_streaming_connect_harness", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -120,5 +134,19 @@ export class DataOciStreamingConnectHarness extends cdktf.TerraformDataSource {
     return {
       connect_harness_id: cdktf.stringToTerraform(this._connectHarnessId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      connect_harness_id: {
+        value: cdktf.stringToHclTerraform(this._connectHarnessId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,7 +40,7 @@ export interface DataOciPsqlBackupsConfig extends cdktf.TerraformMetaArguments {
   readonly timeStarted?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/psql_backups#filter DataOciPsqlBackups#filter}
   */
   readonly filter?: DataOciPsqlBackupsFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciPsqlBackupsBackupCollectionItemsDbSystemDetailsToTerrafor
   }
   return {
   }
+}
+
+
+export function dataOciPsqlBackupsBackupCollectionItemsDbSystemDetailsToHclTerraform(struct?: DataOciPsqlBackupsBackupCollectionItemsDbSystemDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciPsqlBackupsBackupCollectionItemsDbSystemDetailsOutputReference extends cdktf.ComplexObject {
@@ -124,6 +135,17 @@ export function dataOciPsqlBackupsBackupCollectionItemsToTerraform(struct?: Data
   }
   return {
   }
+}
+
+
+export function dataOciPsqlBackupsBackupCollectionItemsToHclTerraform(struct?: DataOciPsqlBackupsBackupCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciPsqlBackupsBackupCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -279,6 +301,17 @@ export function dataOciPsqlBackupsBackupCollectionToTerraform(struct?: DataOciPs
   }
 }
 
+
+export function dataOciPsqlBackupsBackupCollectionToHclTerraform(struct?: DataOciPsqlBackupsBackupCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciPsqlBackupsBackupCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -357,6 +390,37 @@ export function dataOciPsqlBackupsFilterToTerraform(struct?: DataOciPsqlBackupsF
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciPsqlBackupsFilterToHclTerraform(struct?: DataOciPsqlBackupsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciPsqlBackupsFilterOutputReference extends cdktf.ComplexObject {
@@ -487,6 +551,20 @@ export class DataOciPsqlBackups extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_psql_backups";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciPsqlBackups resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciPsqlBackups to import
+  * @param importFromId The id of the existing DataOciPsqlBackups that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/psql_backups#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciPsqlBackups to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_psql_backups", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -678,5 +756,61 @@ export class DataOciPsqlBackups extends cdktf.TerraformDataSource {
       time_started: cdktf.stringToTerraform(this._timeStarted),
       filter: cdktf.listMapper(dataOciPsqlBackupsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      backup_id: {
+        value: cdktf.stringToHclTerraform(this._backupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_ended: {
+        value: cdktf.stringToHclTerraform(this._timeEnded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_started: {
+        value: cdktf.stringToHclTerraform(this._timeStarted),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciPsqlBackupsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciPsqlBackupsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

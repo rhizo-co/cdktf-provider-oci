@@ -32,13 +32,13 @@ export interface BlockchainPeerConfig extends cdktf.TerraformMetaArguments {
   readonly role: string;
   /**
   * ocpu_allocation_param block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/blockchain_peer#ocpu_allocation_param BlockchainPeer#ocpu_allocation_param}
   */
   readonly ocpuAllocationParam: BlockchainPeerOcpuAllocationParam;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/blockchain_peer#timeouts BlockchainPeer#timeouts}
   */
   readonly timeouts?: BlockchainPeerTimeouts;
@@ -58,6 +58,25 @@ export function blockchainPeerOcpuAllocationParamToTerraform(struct?: Blockchain
   return {
     ocpu_allocation_number: cdktf.numberToTerraform(struct!.ocpuAllocationNumber),
   }
+}
+
+
+export function blockchainPeerOcpuAllocationParamToHclTerraform(struct?: BlockchainPeerOcpuAllocationParamOutputReference | BlockchainPeerOcpuAllocationParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ocpu_allocation_number: {
+      value: cdktf.numberToHclTerraform(struct!.ocpuAllocationNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BlockchainPeerOcpuAllocationParamOutputReference extends cdktf.ComplexObject {
@@ -130,6 +149,37 @@ export function blockchainPeerTimeoutsToTerraform(struct?: BlockchainPeerTimeout
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function blockchainPeerTimeoutsToHclTerraform(struct?: BlockchainPeerTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BlockchainPeerTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -244,6 +294,20 @@ export class BlockchainPeer extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_blockchain_peer";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a BlockchainPeer resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the BlockchainPeer to import
+  * @param importFromId The id of the existing BlockchainPeer that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/blockchain_peer#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the BlockchainPeer to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_blockchain_peer", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -414,5 +478,55 @@ export class BlockchainPeer extends cdktf.TerraformResource {
       ocpu_allocation_param: blockchainPeerOcpuAllocationParamToTerraform(this._ocpuAllocationParam.internalValue),
       timeouts: blockchainPeerTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ad: {
+        value: cdktf.stringToHclTerraform(this._ad),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      alias: {
+        value: cdktf.stringToHclTerraform(this._alias),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      blockchain_platform_id: {
+        value: cdktf.stringToHclTerraform(this._blockchainPlatformId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      role: {
+        value: cdktf.stringToHclTerraform(this._role),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocpu_allocation_param: {
+        value: blockchainPeerOcpuAllocationParamToHclTerraform(this._ocpuAllocationParam.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BlockchainPeerOcpuAllocationParamList",
+      },
+      timeouts: {
+        value: blockchainPeerTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "BlockchainPeerTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -36,13 +36,13 @@ export interface CoreComputeCapacityTopologyConfig extends cdktf.TerraformMetaAr
   readonly id?: string;
   /**
   * capacity_source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_topology#capacity_source CoreComputeCapacityTopology#capacity_source}
   */
   readonly capacitySource: CoreComputeCapacityTopologyCapacitySource;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_topology#timeouts CoreComputeCapacityTopology#timeouts}
   */
   readonly timeouts?: CoreComputeCapacityTopologyTimeouts;
@@ -67,6 +67,31 @@ export function coreComputeCapacityTopologyCapacitySourceToTerraform(struct?: Co
     capacity_type: cdktf.stringToTerraform(struct!.capacityType),
     compartment_id: cdktf.stringToTerraform(struct!.compartmentId),
   }
+}
+
+
+export function coreComputeCapacityTopologyCapacitySourceToHclTerraform(struct?: CoreComputeCapacityTopologyCapacitySourceOutputReference | CoreComputeCapacityTopologyCapacitySource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    capacity_type: {
+      value: cdktf.stringToHclTerraform(struct!.capacityType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreComputeCapacityTopologyCapacitySourceOutputReference extends cdktf.ComplexObject {
@@ -161,6 +186,37 @@ export function coreComputeCapacityTopologyTimeoutsToTerraform(struct?: CoreComp
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function coreComputeCapacityTopologyTimeoutsToHclTerraform(struct?: CoreComputeCapacityTopologyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreComputeCapacityTopologyTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -275,6 +331,20 @@ export class CoreComputeCapacityTopology extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_compute_capacity_topology";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreComputeCapacityTopology resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreComputeCapacityTopology to import
+  * @param importFromId The id of the existing CoreComputeCapacityTopology that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_topology#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreComputeCapacityTopology to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_compute_capacity_topology", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -466,5 +536,61 @@ export class CoreComputeCapacityTopology extends cdktf.TerraformResource {
       capacity_source: coreComputeCapacityTopologyCapacitySourceToTerraform(this._capacitySource.internalValue),
       timeouts: coreComputeCapacityTopologyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      capacity_source: {
+        value: coreComputeCapacityTopologyCapacitySourceToHclTerraform(this._capacitySource.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreComputeCapacityTopologyCapacitySourceList",
+      },
+      timeouts: {
+        value: coreComputeCapacityTopologyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreComputeCapacityTopologyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

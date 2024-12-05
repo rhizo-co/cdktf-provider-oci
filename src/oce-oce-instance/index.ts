@@ -84,7 +84,7 @@ export interface OceOceInstanceConfig extends cdktf.TerraformMetaArguments {
   readonly wafPrimaryDomain?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/oce_oce_instance#timeouts OceOceInstance#timeouts}
   */
   readonly timeouts?: OceOceInstanceTimeouts;
@@ -114,6 +114,37 @@ export function oceOceInstanceTimeoutsToTerraform(struct?: OceOceInstanceTimeout
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function oceOceInstanceTimeoutsToHclTerraform(struct?: OceOceInstanceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OceOceInstanceTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -228,6 +259,20 @@ export class OceOceInstance extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_oce_oce_instance";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OceOceInstance resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OceOceInstance to import
+  * @param importFromId The id of the existing OceOceInstance that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/oce_oce_instance#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OceOceInstance to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_oce_oce_instance", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -637,5 +682,127 @@ export class OceOceInstance extends cdktf.TerraformResource {
       waf_primary_domain: cdktf.stringToTerraform(this._wafPrimaryDomain),
       timeouts: oceOceInstanceTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      add_on_features: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._addOnFeatures),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      admin_email: {
+        value: cdktf.stringToHclTerraform(this._adminEmail),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dr_region: {
+        value: cdktf.stringToHclTerraform(this._drRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_access_token: {
+        value: cdktf.stringToHclTerraform(this._idcsAccessToken),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instance_access_type: {
+        value: cdktf.stringToHclTerraform(this._instanceAccessType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instance_license_type: {
+        value: cdktf.stringToHclTerraform(this._instanceLicenseType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instance_usage_type: {
+        value: cdktf.stringToHclTerraform(this._instanceUsageType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_storage_namespace: {
+        value: cdktf.stringToHclTerraform(this._objectStorageNamespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tenancy_id: {
+        value: cdktf.stringToHclTerraform(this._tenancyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tenancy_name: {
+        value: cdktf.stringToHclTerraform(this._tenancyName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      upgrade_schedule: {
+        value: cdktf.stringToHclTerraform(this._upgradeSchedule),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      waf_primary_domain: {
+        value: cdktf.stringToHclTerraform(this._wafPrimaryDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: oceOceInstanceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OceOceInstanceTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

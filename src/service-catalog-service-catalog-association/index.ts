@@ -28,7 +28,7 @@ export interface ServiceCatalogServiceCatalogAssociationConfig extends cdktf.Ter
   readonly serviceCatalogId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_catalog_service_catalog_association#timeouts ServiceCatalogServiceCatalogAssociation#timeouts}
   */
   readonly timeouts?: ServiceCatalogServiceCatalogAssociationTimeouts;
@@ -58,6 +58,37 @@ export function serviceCatalogServiceCatalogAssociationTimeoutsToTerraform(struc
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function serviceCatalogServiceCatalogAssociationTimeoutsToHclTerraform(struct?: ServiceCatalogServiceCatalogAssociationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceCatalogServiceCatalogAssociationTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -172,6 +203,20 @@ export class ServiceCatalogServiceCatalogAssociation extends cdktf.TerraformReso
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_service_catalog_service_catalog_association";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ServiceCatalogServiceCatalogAssociation resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ServiceCatalogServiceCatalogAssociation to import
+  * @param importFromId The id of the existing ServiceCatalogServiceCatalogAssociation that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_catalog_service_catalog_association#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ServiceCatalogServiceCatalogAssociation to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_service_catalog_service_catalog_association", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -302,5 +347,43 @@ export class ServiceCatalogServiceCatalogAssociation extends cdktf.TerraformReso
       service_catalog_id: cdktf.stringToTerraform(this._serviceCatalogId),
       timeouts: serviceCatalogServiceCatalogAssociationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      entity_id: {
+        value: cdktf.stringToHclTerraform(this._entityId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      entity_type: {
+        value: cdktf.stringToHclTerraform(this._entityType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      service_catalog_id: {
+        value: cdktf.stringToHclTerraform(this._serviceCatalogId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: serviceCatalogServiceCatalogAssociationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ServiceCatalogServiceCatalogAssociationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

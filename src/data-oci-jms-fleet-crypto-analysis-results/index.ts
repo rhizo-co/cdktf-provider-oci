@@ -56,7 +56,7 @@ export interface DataOciJmsFleetCryptoAnalysisResultsConfig extends cdktf.Terraf
   readonly timeStart?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_fleet_crypto_analysis_results#filter DataOciJmsFleetCryptoAnalysisResults#filter}
   */
   readonly filter?: DataOciJmsFleetCryptoAnalysisResultsFilter[] | cdktf.IResolvable;
@@ -71,6 +71,17 @@ export function dataOciJmsFleetCryptoAnalysisResultsCryptoAnalysisResultCollecti
   }
   return {
   }
+}
+
+
+export function dataOciJmsFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemsToHclTerraform(struct?: DataOciJmsFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -227,6 +238,17 @@ export function dataOciJmsFleetCryptoAnalysisResultsCryptoAnalysisResultCollecti
   }
 }
 
+
+export function dataOciJmsFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionToHclTerraform(struct?: DataOciJmsFleetCryptoAnalysisResultsCryptoAnalysisResultCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsFleetCryptoAnalysisResultsCryptoAnalysisResultCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -305,6 +327,37 @@ export function dataOciJmsFleetCryptoAnalysisResultsFilterToTerraform(struct?: D
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciJmsFleetCryptoAnalysisResultsFilterToHclTerraform(struct?: DataOciJmsFleetCryptoAnalysisResultsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciJmsFleetCryptoAnalysisResultsFilterOutputReference extends cdktf.ComplexObject {
@@ -435,6 +488,20 @@ export class DataOciJmsFleetCryptoAnalysisResults extends cdktf.TerraformDataSou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_fleet_crypto_analysis_results";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsFleetCryptoAnalysisResults resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsFleetCryptoAnalysisResults to import
+  * @param importFromId The id of the existing DataOciJmsFleetCryptoAnalysisResults that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_fleet_crypto_analysis_results#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsFleetCryptoAnalysisResults to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_fleet_crypto_analysis_results", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -695,5 +762,85 @@ export class DataOciJmsFleetCryptoAnalysisResults extends cdktf.TerraformDataSou
       time_start: cdktf.stringToTerraform(this._timeStart),
       filter: cdktf.listMapper(dataOciJmsFleetCryptoAnalysisResultsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      aggregation_mode: {
+        value: cdktf.stringToHclTerraform(this._aggregationMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      finding_count: {
+        value: cdktf.numberToHclTerraform(this._findingCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      finding_count_greater_than: {
+        value: cdktf.numberToHclTerraform(this._findingCountGreaterThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      fleet_id: {
+        value: cdktf.stringToHclTerraform(this._fleetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      host_name: {
+        value: cdktf.stringToHclTerraform(this._hostName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_id: {
+        value: cdktf.stringToHclTerraform(this._managedInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      non_compliant_finding_count: {
+        value: cdktf.numberToHclTerraform(this._nonCompliantFindingCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      non_compliant_finding_count_greater_than: {
+        value: cdktf.numberToHclTerraform(this._nonCompliantFindingCountGreaterThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      time_end: {
+        value: cdktf.stringToHclTerraform(this._timeEnd),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_start: {
+        value: cdktf.stringToHclTerraform(this._timeStart),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciJmsFleetCryptoAnalysisResultsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciJmsFleetCryptoAnalysisResultsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

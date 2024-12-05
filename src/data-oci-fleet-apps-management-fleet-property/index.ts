@@ -27,6 +27,20 @@ export class DataOciFleetAppsManagementFleetProperty extends cdktf.TerraformData
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_fleet_property";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFleetAppsManagementFleetProperty resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFleetAppsManagementFleetProperty to import
+  * @param importFromId The id of the existing DataOciFleetAppsManagementFleetProperty that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_fleet_property#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFleetAppsManagementFleetProperty to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_fleet_property", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -158,5 +172,25 @@ export class DataOciFleetAppsManagementFleetProperty extends cdktf.TerraformData
       fleet_id: cdktf.stringToTerraform(this._fleetId),
       fleet_property_id: cdktf.stringToTerraform(this._fleetPropertyId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      fleet_id: {
+        value: cdktf.stringToHclTerraform(this._fleetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fleet_property_id: {
+        value: cdktf.stringToHclTerraform(this._fleetPropertyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

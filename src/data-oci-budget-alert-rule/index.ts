@@ -27,6 +27,20 @@ export class DataOciBudgetAlertRule extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_budget_alert_rule";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciBudgetAlertRule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciBudgetAlertRule to import
+  * @param importFromId The id of the existing DataOciBudgetAlertRule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/budget_alert_rule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciBudgetAlertRule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_budget_alert_rule", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -169,5 +183,25 @@ export class DataOciBudgetAlertRule extends cdktf.TerraformDataSource {
       alert_rule_id: cdktf.stringToTerraform(this._alertRuleId),
       budget_id: cdktf.stringToTerraform(this._budgetId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      alert_rule_id: {
+        value: cdktf.stringToHclTerraform(this._alertRuleId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      budget_id: {
+        value: cdktf.stringToHclTerraform(this._budgetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

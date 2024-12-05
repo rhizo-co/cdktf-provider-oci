@@ -44,7 +44,7 @@ export interface FunctionsInvokeFunctionConfig extends cdktf.TerraformMetaArgume
   readonly invokeFunctionBodyBase64Encoded?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/functions_invoke_function#timeouts FunctionsInvokeFunction#timeouts}
   */
   readonly timeouts?: FunctionsInvokeFunctionTimeouts;
@@ -74,6 +74,37 @@ export function functionsInvokeFunctionTimeoutsToTerraform(struct?: FunctionsInv
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function functionsInvokeFunctionTimeoutsToHclTerraform(struct?: FunctionsInvokeFunctionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FunctionsInvokeFunctionTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -188,6 +219,20 @@ export class FunctionsInvokeFunction extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_functions_invoke_function";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FunctionsInvokeFunction resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FunctionsInvokeFunction to import
+  * @param importFromId The id of the existing FunctionsInvokeFunction that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/functions_invoke_function#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FunctionsInvokeFunction to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_functions_invoke_function", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -398,5 +443,67 @@ export class FunctionsInvokeFunction extends cdktf.TerraformResource {
       invoke_function_body_base64_encoded: cdktf.stringToTerraform(this._invokeFunctionBodyBase64Encoded),
       timeouts: functionsInvokeFunctionTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      base64_encode_content: {
+        value: cdktf.booleanToHclTerraform(this._base64EncodeContent),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      fn_intent: {
+        value: cdktf.stringToHclTerraform(this._fnIntent),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fn_invoke_type: {
+        value: cdktf.stringToHclTerraform(this._fnInvokeType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      function_id: {
+        value: cdktf.stringToHclTerraform(this._functionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      input_body_source_path: {
+        value: cdktf.stringToHclTerraform(this._inputBodySourcePath),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      invoke_function_body: {
+        value: cdktf.stringToHclTerraform(this._invokeFunctionBody),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      invoke_function_body_base64_encoded: {
+        value: cdktf.stringToHclTerraform(this._invokeFunctionBodyBase64Encoded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: functionsInvokeFunctionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FunctionsInvokeFunctionTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

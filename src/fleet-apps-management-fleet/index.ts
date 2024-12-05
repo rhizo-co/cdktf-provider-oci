@@ -64,19 +64,19 @@ export interface FleetAppsManagementFleetConfig extends cdktf.TerraformMetaArgum
   readonly resourceSelectionType?: string;
   /**
   * notification_preferences block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_fleet#notification_preferences FleetAppsManagementFleet#notification_preferences}
   */
   readonly notificationPreferences?: FleetAppsManagementFleetNotificationPreferences;
   /**
   * rule_selection_criteria block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_fleet#rule_selection_criteria FleetAppsManagementFleet#rule_selection_criteria}
   */
   readonly ruleSelectionCriteria?: FleetAppsManagementFleetRuleSelectionCriteria;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_fleet#timeouts FleetAppsManagementFleet#timeouts}
   */
   readonly timeouts?: FleetAppsManagementFleetTimeouts;
@@ -106,6 +106,37 @@ export function fleetAppsManagementFleetNotificationPreferencesPreferencesToTerr
     on_topology_modification: cdktf.booleanToTerraform(struct!.onTopologyModification),
     on_upcoming_schedule: cdktf.booleanToTerraform(struct!.onUpcomingSchedule),
   }
+}
+
+
+export function fleetAppsManagementFleetNotificationPreferencesPreferencesToHclTerraform(struct?: FleetAppsManagementFleetNotificationPreferencesPreferencesOutputReference | FleetAppsManagementFleetNotificationPreferencesPreferences): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    on_job_failure: {
+      value: cdktf.booleanToHclTerraform(struct!.onJobFailure),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    on_topology_modification: {
+      value: cdktf.booleanToHclTerraform(struct!.onTopologyModification),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    on_upcoming_schedule: {
+      value: cdktf.booleanToHclTerraform(struct!.onUpcomingSchedule),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementFleetNotificationPreferencesPreferencesOutputReference extends cdktf.ComplexObject {
@@ -211,7 +242,7 @@ export interface FleetAppsManagementFleetNotificationPreferences {
   readonly topicId: string;
   /**
   * preferences block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_fleet#preferences FleetAppsManagementFleet#preferences}
   */
   readonly preferences?: FleetAppsManagementFleetNotificationPreferencesPreferences;
@@ -227,6 +258,37 @@ export function fleetAppsManagementFleetNotificationPreferencesToTerraform(struc
     topic_id: cdktf.stringToTerraform(struct!.topicId),
     preferences: fleetAppsManagementFleetNotificationPreferencesPreferencesToTerraform(struct!.preferences),
   }
+}
+
+
+export function fleetAppsManagementFleetNotificationPreferencesToHclTerraform(struct?: FleetAppsManagementFleetNotificationPreferencesOutputReference | FleetAppsManagementFleetNotificationPreferences): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    topic_id: {
+      value: cdktf.stringToHclTerraform(struct!.topicId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    preferences: {
+      value: fleetAppsManagementFleetNotificationPreferencesPreferencesToHclTerraform(struct!.preferences),
+      isBlock: true,
+      type: "list",
+      storageClassType: "FleetAppsManagementFleetNotificationPreferencesPreferencesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementFleetNotificationPreferencesOutputReference extends cdktf.ComplexObject {
@@ -340,6 +402,37 @@ export function fleetAppsManagementFleetRuleSelectionCriteriaRulesConditionsToTe
     attr_key: cdktf.stringToTerraform(struct!.attrKey),
     attr_value: cdktf.stringToTerraform(struct!.attrValue),
   }
+}
+
+
+export function fleetAppsManagementFleetRuleSelectionCriteriaRulesConditionsToHclTerraform(struct?: FleetAppsManagementFleetRuleSelectionCriteriaRulesConditions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    attr_group: {
+      value: cdktf.stringToHclTerraform(struct!.attrGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    attr_key: {
+      value: cdktf.stringToHclTerraform(struct!.attrKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    attr_value: {
+      value: cdktf.stringToHclTerraform(struct!.attrValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementFleetRuleSelectionCriteriaRulesConditionsOutputReference extends cdktf.ComplexObject {
@@ -472,7 +565,7 @@ export interface FleetAppsManagementFleetRuleSelectionCriteriaRules {
   readonly resourceCompartmentId: string;
   /**
   * conditions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_fleet#conditions FleetAppsManagementFleet#conditions}
   */
   readonly conditions: FleetAppsManagementFleetRuleSelectionCriteriaRulesConditions[] | cdktf.IResolvable;
@@ -489,6 +582,43 @@ export function fleetAppsManagementFleetRuleSelectionCriteriaRulesToTerraform(st
     resource_compartment_id: cdktf.stringToTerraform(struct!.resourceCompartmentId),
     conditions: cdktf.listMapper(fleetAppsManagementFleetRuleSelectionCriteriaRulesConditionsToTerraform, true)(struct!.conditions),
   }
+}
+
+
+export function fleetAppsManagementFleetRuleSelectionCriteriaRulesToHclTerraform(struct?: FleetAppsManagementFleetRuleSelectionCriteriaRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    basis: {
+      value: cdktf.stringToHclTerraform(struct!.basis),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.resourceCompartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    conditions: {
+      value: cdktf.listMapperHcl(fleetAppsManagementFleetRuleSelectionCriteriaRulesConditionsToHclTerraform, true)(struct!.conditions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "FleetAppsManagementFleetRuleSelectionCriteriaRulesConditionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementFleetRuleSelectionCriteriaRulesOutputReference extends cdktf.ComplexObject {
@@ -635,7 +765,7 @@ export interface FleetAppsManagementFleetRuleSelectionCriteria {
   readonly matchCondition: string;
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_fleet#rules FleetAppsManagementFleet#rules}
   */
   readonly rules: FleetAppsManagementFleetRuleSelectionCriteriaRules[] | cdktf.IResolvable;
@@ -650,6 +780,31 @@ export function fleetAppsManagementFleetRuleSelectionCriteriaToTerraform(struct?
     match_condition: cdktf.stringToTerraform(struct!.matchCondition),
     rules: cdktf.listMapper(fleetAppsManagementFleetRuleSelectionCriteriaRulesToTerraform, true)(struct!.rules),
   }
+}
+
+
+export function fleetAppsManagementFleetRuleSelectionCriteriaToHclTerraform(struct?: FleetAppsManagementFleetRuleSelectionCriteriaOutputReference | FleetAppsManagementFleetRuleSelectionCriteria): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_condition: {
+      value: cdktf.stringToHclTerraform(struct!.matchCondition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rules: {
+      value: cdktf.listMapperHcl(fleetAppsManagementFleetRuleSelectionCriteriaRulesToHclTerraform, true)(struct!.rules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "FleetAppsManagementFleetRuleSelectionCriteriaRulesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementFleetRuleSelectionCriteriaOutputReference extends cdktf.ComplexObject {
@@ -741,6 +896,37 @@ export function fleetAppsManagementFleetTimeoutsToTerraform(struct?: FleetAppsMa
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function fleetAppsManagementFleetTimeoutsToHclTerraform(struct?: FleetAppsManagementFleetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementFleetTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -855,6 +1041,20 @@ export class FleetAppsManagementFleet extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_fleet";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FleetAppsManagementFleet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FleetAppsManagementFleet to import
+  * @param importFromId The id of the existing FleetAppsManagementFleet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_fleet#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FleetAppsManagementFleet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_fleet", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1209,5 +1409,109 @@ export class FleetAppsManagementFleet extends cdktf.TerraformResource {
       rule_selection_criteria: fleetAppsManagementFleetRuleSelectionCriteriaToTerraform(this._ruleSelectionCriteria.internalValue),
       timeouts: fleetAppsManagementFleetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      application_type: {
+        value: cdktf.stringToHclTerraform(this._applicationType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      environment_type: {
+        value: cdktf.stringToHclTerraform(this._environmentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fleet_type: {
+        value: cdktf.stringToHclTerraform(this._fleetType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      group_type: {
+        value: cdktf.stringToHclTerraform(this._groupType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_target_auto_confirm: {
+        value: cdktf.booleanToHclTerraform(this._isTargetAutoConfirm),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      products: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._products),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      resource_selection_type: {
+        value: cdktf.stringToHclTerraform(this._resourceSelectionType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      notification_preferences: {
+        value: fleetAppsManagementFleetNotificationPreferencesToHclTerraform(this._notificationPreferences.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetAppsManagementFleetNotificationPreferencesList",
+      },
+      rule_selection_criteria: {
+        value: fleetAppsManagementFleetRuleSelectionCriteriaToHclTerraform(this._ruleSelectionCriteria.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetAppsManagementFleetRuleSelectionCriteriaList",
+      },
+      timeouts: {
+        value: fleetAppsManagementFleetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FleetAppsManagementFleetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

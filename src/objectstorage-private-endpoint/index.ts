@@ -57,13 +57,13 @@ export interface ObjectstoragePrivateEndpointConfig extends cdktf.TerraformMetaA
   readonly subnetId: string;
   /**
   * access_targets block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_private_endpoint#access_targets ObjectstoragePrivateEndpoint#access_targets}
   */
   readonly accessTargets: ObjectstoragePrivateEndpointAccessTargets[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_private_endpoint#timeouts ObjectstoragePrivateEndpoint#timeouts}
   */
   readonly timeouts?: ObjectstoragePrivateEndpointTimeouts;
@@ -93,6 +93,37 @@ export function objectstoragePrivateEndpointAccessTargetsToTerraform(struct?: Ob
     compartment_id: cdktf.stringToTerraform(struct!.compartmentId),
     namespace: cdktf.stringToTerraform(struct!.namespace),
   }
+}
+
+
+export function objectstoragePrivateEndpointAccessTargetsToHclTerraform(struct?: ObjectstoragePrivateEndpointAccessTargets | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ObjectstoragePrivateEndpointAccessTargetsOutputReference extends cdktf.ComplexObject {
@@ -237,6 +268,37 @@ export function objectstoragePrivateEndpointTimeoutsToTerraform(struct?: Objects
   }
 }
 
+
+export function objectstoragePrivateEndpointTimeoutsToHclTerraform(struct?: ObjectstoragePrivateEndpointTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ObjectstoragePrivateEndpointTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -349,6 +411,20 @@ export class ObjectstoragePrivateEndpoint extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_objectstorage_private_endpoint";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ObjectstoragePrivateEndpoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ObjectstoragePrivateEndpoint to import
+  * @param importFromId The id of the existing ObjectstoragePrivateEndpoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_private_endpoint#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ObjectstoragePrivateEndpoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_objectstorage_private_endpoint", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -649,5 +725,97 @@ export class ObjectstoragePrivateEndpoint extends cdktf.TerraformResource {
       access_targets: cdktf.listMapper(objectstoragePrivateEndpointAccessTargetsToTerraform, true)(this._accessTargets.internalValue),
       timeouts: objectstoragePrivateEndpointTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      additional_prefixes: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._additionalPrefixes),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      fqdns: {
+        value: cdktf.hashMapperHcl(cdktf.hashMapperHcl(cdktf.hashMapperHcl(cdktf.stringToHclTerraform)))(this._fqdns),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMapMapMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      nsg_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._nsgIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      prefix: {
+        value: cdktf.stringToHclTerraform(this._prefix),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      private_endpoint_ip: {
+        value: cdktf.stringToHclTerraform(this._privateEndpointIp),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      access_targets: {
+        value: cdktf.listMapperHcl(objectstoragePrivateEndpointAccessTargetsToHclTerraform, true)(this._accessTargets.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ObjectstoragePrivateEndpointAccessTargetsList",
+      },
+      timeouts: {
+        value: objectstoragePrivateEndpointTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ObjectstoragePrivateEndpointTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

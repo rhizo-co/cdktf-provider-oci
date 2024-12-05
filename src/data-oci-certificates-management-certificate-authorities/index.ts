@@ -36,7 +36,7 @@ export interface DataOciCertificatesManagementCertificateAuthoritiesConfig exten
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/certificates_management_certificate_authorities#filter DataOciCertificatesManagementCertificateAuthorities#filter}
   */
   readonly filter?: DataOciCertificatesManagementCertificateAuthoritiesFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityConfigSubjectToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityConfigSubject): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityConfigSubjectOutputReference extends cdktf.ComplexObject {
@@ -197,6 +208,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityConfigValidityToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityConfigValidity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityConfigValidityOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -264,6 +286,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityConfigToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityConfigOutputReference extends cdktf.ComplexObject {
@@ -357,6 +390,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityRulesToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateAuthorityRulesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -429,6 +473,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateRevocationListDetailsObjectStorageConfigToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateRevocationListDetailsObjectStorageConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateRevocationListDetailsObjectStorageConfigOutputReference extends cdktf.ComplexObject {
@@ -505,6 +560,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateRevocationListDetailsToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateRevocationListDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCertificateRevocationListDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -573,6 +639,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCurrentVersionRevocationStatusToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCurrentVersionRevocationStatus): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCurrentVersionRevocationStatusOutputReference extends cdktf.ComplexObject {
@@ -644,6 +721,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCurrentVersionValidityToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCurrentVersionValidity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCurrentVersionValidityOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -711,6 +799,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCurrentVersionToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCurrentVersion): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsCurrentVersionOutputReference extends cdktf.ComplexObject {
@@ -822,6 +921,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsSubjectToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsSubject): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsSubjectOutputReference extends cdktf.ComplexObject {
@@ -966,6 +1076,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -1129,6 +1250,17 @@ export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAu
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateAuthoritiesCertificateAuthorityCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1207,6 +1339,37 @@ export function dataOciCertificatesManagementCertificateAuthoritiesFilterToTerra
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateAuthoritiesFilterToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthoritiesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCertificatesManagementCertificateAuthoritiesFilterOutputReference extends cdktf.ComplexObject {
@@ -1337,6 +1500,20 @@ export class DataOciCertificatesManagementCertificateAuthorities extends cdktf.T
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_certificates_management_certificate_authorities";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCertificatesManagementCertificateAuthorities resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCertificatesManagementCertificateAuthorities to import
+  * @param importFromId The id of the existing DataOciCertificatesManagementCertificateAuthorities that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/certificates_management_certificate_authorities#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCertificatesManagementCertificateAuthorities to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_certificates_management_certificate_authorities", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1510,5 +1687,55 @@ export class DataOciCertificatesManagementCertificateAuthorities extends cdktf.T
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciCertificatesManagementCertificateAuthoritiesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      certificate_authority_id: {
+        value: cdktf.stringToHclTerraform(this._certificateAuthorityId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      issuer_certificate_authority_id: {
+        value: cdktf.stringToHclTerraform(this._issuerCertificateAuthorityId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCertificatesManagementCertificateAuthoritiesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCertificatesManagementCertificateAuthoritiesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

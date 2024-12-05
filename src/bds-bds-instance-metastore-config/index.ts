@@ -44,7 +44,7 @@ export interface BdsBdsInstanceMetastoreConfigConfig extends cdktf.TerraformMeta
   readonly metastoreId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_metastore_config#timeouts BdsBdsInstanceMetastoreConfig#timeouts}
   */
   readonly timeouts?: BdsBdsInstanceMetastoreConfigTimeouts;
@@ -74,6 +74,37 @@ export function bdsBdsInstanceMetastoreConfigTimeoutsToTerraform(struct?: BdsBds
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function bdsBdsInstanceMetastoreConfigTimeoutsToHclTerraform(struct?: BdsBdsInstanceMetastoreConfigTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceMetastoreConfigTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -188,6 +219,20 @@ export class BdsBdsInstanceMetastoreConfig extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_bds_bds_instance_metastore_config";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a BdsBdsInstanceMetastoreConfig resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the BdsBdsInstanceMetastoreConfig to import
+  * @param importFromId The id of the existing BdsBdsInstanceMetastoreConfig that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_metastore_config#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the BdsBdsInstanceMetastoreConfig to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_bds_bds_instance_metastore_config", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -396,5 +441,67 @@ export class BdsBdsInstanceMetastoreConfig extends cdktf.TerraformResource {
       metastore_id: cdktf.stringToTerraform(this._metastoreId),
       timeouts: bdsBdsInstanceMetastoreConfigTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      activate_trigger: {
+        value: cdktf.numberToHclTerraform(this._activateTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      bds_api_key_id: {
+        value: cdktf.stringToHclTerraform(this._bdsApiKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      bds_api_key_passphrase: {
+        value: cdktf.stringToHclTerraform(this._bdsApiKeyPassphrase),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      bds_instance_id: {
+        value: cdktf.stringToHclTerraform(this._bdsInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_admin_password: {
+        value: cdktf.stringToHclTerraform(this._clusterAdminPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metastore_id: {
+        value: cdktf.stringToHclTerraform(this._metastoreId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: bdsBdsInstanceMetastoreConfigTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "BdsBdsInstanceMetastoreConfigTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

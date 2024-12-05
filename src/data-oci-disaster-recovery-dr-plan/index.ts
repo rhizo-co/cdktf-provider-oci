@@ -24,6 +24,17 @@ export function dataOciDisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepObjec
   }
 }
 
+
+export function dataOciDisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepObjectStorageScriptLocationToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepObjectStorageScriptLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepObjectStorageScriptLocationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -96,6 +107,17 @@ export function dataOciDisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepToTer
   }
   return {
   }
+}
+
+
+export function dataOciDisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStep): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepOutputReference extends cdktf.ComplexObject {
@@ -203,6 +225,17 @@ export function dataOciDisasterRecoveryDrPlanPlanGroupsStepsToTerraform(struct?:
   }
 }
 
+
+export function dataOciDisasterRecoveryDrPlanPlanGroupsStepsToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanPlanGroupsSteps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDisasterRecoveryDrPlanPlanGroupsStepsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -308,6 +341,17 @@ export function dataOciDisasterRecoveryDrPlanPlanGroupsToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciDisasterRecoveryDrPlanPlanGroupsToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanPlanGroups): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDisasterRecoveryDrPlanPlanGroupsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -391,6 +435,20 @@ export class DataOciDisasterRecoveryDrPlan extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_disaster_recovery_dr_plan";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDisasterRecoveryDrPlan resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDisasterRecoveryDrPlan to import
+  * @param importFromId The id of the existing DataOciDisasterRecoveryDrPlan that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/disaster_recovery_dr_plan#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDisasterRecoveryDrPlan to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_disaster_recovery_dr_plan", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -526,5 +584,19 @@ export class DataOciDisasterRecoveryDrPlan extends cdktf.TerraformDataSource {
     return {
       dr_plan_id: cdktf.stringToTerraform(this._drPlanId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      dr_plan_id: {
+        value: cdktf.stringToHclTerraform(this._drPlanId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -35,6 +35,17 @@ export function dataOciIdentityTagStandardTagNamespaceTemplateTagDefinitionTempl
   }
 }
 
+
+export function dataOciIdentityTagStandardTagNamespaceTemplateTagDefinitionTemplatesToHclTerraform(struct?: DataOciIdentityTagStandardTagNamespaceTemplateTagDefinitionTemplates): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityTagStandardTagNamespaceTemplateTagDefinitionTemplatesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -122,6 +133,20 @@ export class DataOciIdentityTagStandardTagNamespaceTemplate extends cdktf.Terraf
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_tag_standard_tag_namespace_template";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityTagStandardTagNamespaceTemplate resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityTagStandardTagNamespaceTemplate to import
+  * @param importFromId The id of the existing DataOciIdentityTagStandardTagNamespaceTemplate that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_tag_standard_tag_namespace_template#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityTagStandardTagNamespaceTemplate to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_tag_standard_tag_namespace_template", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -227,5 +252,31 @@ export class DataOciIdentityTagStandardTagNamespaceTemplate extends cdktf.Terraf
       id: cdktf.stringToTerraform(this._id),
       standard_tag_namespace_name: cdktf.stringToTerraform(this._standardTagNamespaceName),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      standard_tag_namespace_name: {
+        value: cdktf.stringToHclTerraform(this._standardTagNamespaceName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

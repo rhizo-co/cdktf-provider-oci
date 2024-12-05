@@ -24,6 +24,17 @@ export function dataOciDatabaseExadataInfrastructureContactsToTerraform(struct?:
   }
 }
 
+
+export function dataOciDatabaseExadataInfrastructureContactsToHclTerraform(struct?: DataOciDatabaseExadataInfrastructureContacts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseExadataInfrastructureContactsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -108,6 +119,17 @@ export function dataOciDatabaseExadataInfrastructureDefinedFileSystemConfigurati
   }
 }
 
+
+export function dataOciDatabaseExadataInfrastructureDefinedFileSystemConfigurationsToHclTerraform(struct?: DataOciDatabaseExadataInfrastructureDefinedFileSystemConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseExadataInfrastructureDefinedFileSystemConfigurationsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -187,6 +209,17 @@ export function dataOciDatabaseExadataInfrastructureMaintenanceWindowDaysOfWeekT
   }
 }
 
+
+export function dataOciDatabaseExadataInfrastructureMaintenanceWindowDaysOfWeekToHclTerraform(struct?: DataOciDatabaseExadataInfrastructureMaintenanceWindowDaysOfWeek): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseExadataInfrastructureMaintenanceWindowDaysOfWeekOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -251,6 +284,17 @@ export function dataOciDatabaseExadataInfrastructureMaintenanceWindowMonthsToTer
   }
 }
 
+
+export function dataOciDatabaseExadataInfrastructureMaintenanceWindowMonthsToHclTerraform(struct?: DataOciDatabaseExadataInfrastructureMaintenanceWindowMonths): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseExadataInfrastructureMaintenanceWindowMonthsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -313,6 +357,17 @@ export function dataOciDatabaseExadataInfrastructureMaintenanceWindowToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseExadataInfrastructureMaintenanceWindowToHclTerraform(struct?: DataOciDatabaseExadataInfrastructureMaintenanceWindow): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseExadataInfrastructureMaintenanceWindowOutputReference extends cdktf.ComplexObject {
@@ -432,6 +487,17 @@ export function dataOciDatabaseExadataInfrastructureNetworkBondingModeDetailsToT
   }
 }
 
+
+export function dataOciDatabaseExadataInfrastructureNetworkBondingModeDetailsToHclTerraform(struct?: DataOciDatabaseExadataInfrastructureNetworkBondingModeDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseExadataInfrastructureNetworkBondingModeDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -504,6 +570,20 @@ export class DataOciDatabaseExadataInfrastructure extends cdktf.TerraformDataSou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_exadata_infrastructure";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseExadataInfrastructure resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseExadataInfrastructure to import
+  * @param importFromId The id of the existing DataOciDatabaseExadataInfrastructure that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_exadata_infrastructure#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseExadataInfrastructure to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_exadata_infrastructure", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -811,5 +891,19 @@ export class DataOciDatabaseExadataInfrastructure extends cdktf.TerraformDataSou
     return {
       exadata_infrastructure_id: cdktf.stringToTerraform(this._exadataInfrastructureId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      exadata_infrastructure_id: {
+        value: cdktf.stringToHclTerraform(this._exadataInfrastructureId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

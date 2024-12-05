@@ -64,13 +64,13 @@ export interface RecoveryProtectedDatabaseConfig extends cdktf.TerraformMetaArgu
   readonly subscriptionId?: string;
   /**
   * recovery_service_subnets block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/recovery_protected_database#recovery_service_subnets RecoveryProtectedDatabase#recovery_service_subnets}
   */
   readonly recoveryServiceSubnets: RecoveryProtectedDatabaseRecoveryServiceSubnets[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/recovery_protected_database#timeouts RecoveryProtectedDatabase#timeouts}
   */
   readonly timeouts?: RecoveryProtectedDatabaseTimeouts;
@@ -85,6 +85,17 @@ export function recoveryProtectedDatabaseMetricsToTerraform(struct?: RecoveryPro
   }
   return {
   }
+}
+
+
+export function recoveryProtectedDatabaseMetricsToHclTerraform(struct?: RecoveryProtectedDatabaseMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class RecoveryProtectedDatabaseMetricsOutputReference extends cdktf.ComplexObject {
@@ -189,6 +200,25 @@ export function recoveryProtectedDatabaseRecoveryServiceSubnetsToTerraform(struc
   return {
     recovery_service_subnet_id: cdktf.stringToTerraform(struct!.recoveryServiceSubnetId),
   }
+}
+
+
+export function recoveryProtectedDatabaseRecoveryServiceSubnetsToHclTerraform(struct?: RecoveryProtectedDatabaseRecoveryServiceSubnets | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    recovery_service_subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.recoveryServiceSubnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class RecoveryProtectedDatabaseRecoveryServiceSubnetsOutputReference extends cdktf.ComplexObject {
@@ -298,6 +328,37 @@ export function recoveryProtectedDatabaseTimeoutsToTerraform(struct?: RecoveryPr
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function recoveryProtectedDatabaseTimeoutsToHclTerraform(struct?: RecoveryProtectedDatabaseTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class RecoveryProtectedDatabaseTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -412,6 +473,20 @@ export class RecoveryProtectedDatabase extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_recovery_protected_database";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a RecoveryProtectedDatabase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the RecoveryProtectedDatabase to import
+  * @param importFromId The id of the existing RecoveryProtectedDatabase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/recovery_protected_database#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the RecoveryProtectedDatabase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_recovery_protected_database", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -762,5 +837,103 @@ export class RecoveryProtectedDatabase extends cdktf.TerraformResource {
       recovery_service_subnets: cdktf.listMapper(recoveryProtectedDatabaseRecoveryServiceSubnetsToTerraform, true)(this._recoveryServiceSubnets.internalValue),
       timeouts: recoveryProtectedDatabaseTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_id: {
+        value: cdktf.stringToHclTerraform(this._databaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_size: {
+        value: cdktf.stringToHclTerraform(this._databaseSize),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_unique_name: {
+        value: cdktf.stringToHclTerraform(this._dbUniqueName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      deletion_schedule: {
+        value: cdktf.stringToHclTerraform(this._deletionSchedule),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_redo_logs_shipped: {
+        value: cdktf.booleanToHclTerraform(this._isRedoLogsShipped),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      password: {
+        value: cdktf.stringToHclTerraform(this._password),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      protection_policy_id: {
+        value: cdktf.stringToHclTerraform(this._protectionPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subscription_id: {
+        value: cdktf.stringToHclTerraform(this._subscriptionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      recovery_service_subnets: {
+        value: cdktf.listMapperHcl(recoveryProtectedDatabaseRecoveryServiceSubnetsToHclTerraform, true)(this._recoveryServiceSubnets.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "RecoveryProtectedDatabaseRecoveryServiceSubnetsList",
+      },
+      timeouts: {
+        value: recoveryProtectedDatabaseTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "RecoveryProtectedDatabaseTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

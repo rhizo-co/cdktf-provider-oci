@@ -36,7 +36,7 @@ export interface DataOciClusterPlacementGroupsClusterPlacementGroupsConfig exten
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cluster_placement_groups_cluster_placement_groups#filter DataOciClusterPlacementGroupsClusterPlacementGroups#filter}
   */
   readonly filter?: DataOciClusterPlacementGroupsClusterPlacementGroupsFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacem
   }
   return {
   }
+}
+
+
+export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsCapabilitiesItemsToHclTerraform(struct?: DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsCapabilitiesItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsCapabilitiesItemsOutputReference extends cdktf.ComplexObject {
@@ -122,6 +133,17 @@ export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacem
   }
 }
 
+
+export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsCapabilitiesToHclTerraform(struct?: DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsCapabilities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsCapabilitiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -185,6 +207,17 @@ export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacem
   }
   return {
   }
+}
+
+
+export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsPlacementInstructionToHclTerraform(struct?: DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsPlacementInstruction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsPlacementInstructionOutputReference extends cdktf.ComplexObject {
@@ -254,6 +287,17 @@ export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacem
   }
   return {
   }
+}
+
+
+export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsToHclTerraform(struct?: DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -400,6 +444,17 @@ export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacem
   }
 }
 
+
+export function dataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionToHclTerraform(struct?: DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciClusterPlacementGroupsClusterPlacementGroupsClusterPlacementGroupCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -478,6 +533,37 @@ export function dataOciClusterPlacementGroupsClusterPlacementGroupsFilterToTerra
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciClusterPlacementGroupsClusterPlacementGroupsFilterToHclTerraform(struct?: DataOciClusterPlacementGroupsClusterPlacementGroupsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciClusterPlacementGroupsClusterPlacementGroupsFilterOutputReference extends cdktf.ComplexObject {
@@ -608,6 +694,20 @@ export class DataOciClusterPlacementGroupsClusterPlacementGroups extends cdktf.T
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cluster_placement_groups_cluster_placement_groups";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciClusterPlacementGroupsClusterPlacementGroups resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciClusterPlacementGroupsClusterPlacementGroups to import
+  * @param importFromId The id of the existing DataOciClusterPlacementGroupsClusterPlacementGroups that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cluster_placement_groups_cluster_placement_groups#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciClusterPlacementGroupsClusterPlacementGroups to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cluster_placement_groups_cluster_placement_groups", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -781,5 +881,55 @@ export class DataOciClusterPlacementGroupsClusterPlacementGroups extends cdktf.T
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciClusterPlacementGroupsClusterPlacementGroupsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ad: {
+        value: cdktf.stringToHclTerraform(this._ad),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciClusterPlacementGroupsClusterPlacementGroupsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciClusterPlacementGroupsClusterPlacementGroupsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

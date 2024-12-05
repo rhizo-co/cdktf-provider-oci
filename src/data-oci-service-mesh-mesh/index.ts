@@ -24,6 +24,17 @@ export function dataOciServiceMeshMeshCertificateAuthoritiesToTerraform(struct?:
   }
 }
 
+
+export function dataOciServiceMeshMeshCertificateAuthoritiesToHclTerraform(struct?: DataOciServiceMeshMeshCertificateAuthorities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciServiceMeshMeshCertificateAuthoritiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -88,6 +99,17 @@ export function dataOciServiceMeshMeshMtlsToTerraform(struct?: DataOciServiceMes
   }
 }
 
+
+export function dataOciServiceMeshMeshMtlsToHclTerraform(struct?: DataOciServiceMeshMeshMtls): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciServiceMeshMeshMtlsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -150,6 +172,20 @@ export class DataOciServiceMeshMesh extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_service_mesh_mesh";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciServiceMeshMesh resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciServiceMeshMesh to import
+  * @param importFromId The id of the existing DataOciServiceMeshMesh that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/service_mesh_mesh#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciServiceMeshMesh to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_service_mesh_mesh", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -276,5 +312,19 @@ export class DataOciServiceMeshMesh extends cdktf.TerraformDataSource {
     return {
       mesh_id: cdktf.stringToTerraform(this._meshId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      mesh_id: {
+        value: cdktf.stringToHclTerraform(this._meshId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

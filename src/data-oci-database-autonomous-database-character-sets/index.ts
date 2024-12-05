@@ -28,7 +28,7 @@ export interface DataOciDatabaseAutonomousDatabaseCharacterSetsConfig extends cd
   readonly isShared?: boolean | cdktf.IResolvable;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_autonomous_database_character_sets#filter DataOciDatabaseAutonomousDatabaseCharacterSets#filter}
   */
   readonly filter?: DataOciDatabaseAutonomousDatabaseCharacterSetsFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciDatabaseAutonomousDatabaseCharacterSetsAutonomousDatabase
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseAutonomousDatabaseCharacterSetsAutonomousDatabaseCharacterSetsToHclTerraform(struct?: DataOciDatabaseAutonomousDatabaseCharacterSetsAutonomousDatabaseCharacterSets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseAutonomousDatabaseCharacterSetsAutonomousDatabaseCharacterSetsOutputReference extends cdktf.ComplexObject {
@@ -122,6 +133,37 @@ export function dataOciDatabaseAutonomousDatabaseCharacterSetsFilterToTerraform(
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDatabaseAutonomousDatabaseCharacterSetsFilterToHclTerraform(struct?: DataOciDatabaseAutonomousDatabaseCharacterSetsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatabaseAutonomousDatabaseCharacterSetsFilterOutputReference extends cdktf.ComplexObject {
@@ -252,6 +294,20 @@ export class DataOciDatabaseAutonomousDatabaseCharacterSets extends cdktf.Terraf
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_database_character_sets";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseAutonomousDatabaseCharacterSets resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseAutonomousDatabaseCharacterSets to import
+  * @param importFromId The id of the existing DataOciDatabaseAutonomousDatabaseCharacterSets that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_autonomous_database_character_sets#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseAutonomousDatabaseCharacterSets to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_database_character_sets", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -389,5 +445,43 @@ export class DataOciDatabaseAutonomousDatabaseCharacterSets extends cdktf.Terraf
       is_shared: cdktf.booleanToTerraform(this._isShared),
       filter: cdktf.listMapper(dataOciDatabaseAutonomousDatabaseCharacterSetsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      character_set_type: {
+        value: cdktf.stringToHclTerraform(this._characterSetType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_dedicated: {
+        value: cdktf.booleanToHclTerraform(this._isDedicated),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_shared: {
+        value: cdktf.booleanToHclTerraform(this._isShared),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatabaseAutonomousDatabaseCharacterSetsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatabaseAutonomousDatabaseCharacterSetsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -64,19 +64,19 @@ export interface LoadBalancerConfig extends cdktf.TerraformMetaArguments {
   readonly subnetIds: string[];
   /**
   * reserved_ips block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer#reserved_ips LoadBalancer#reserved_ips}
   */
   readonly reservedIps?: LoadBalancerReservedIps[] | cdktf.IResolvable;
   /**
   * shape_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer#shape_details LoadBalancer#shape_details}
   */
   readonly shapeDetails?: LoadBalancerShapeDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer#timeouts LoadBalancer#timeouts}
   */
   readonly timeouts?: LoadBalancerTimeouts;
@@ -91,6 +91,17 @@ export function loadBalancerIpAddressDetailsReservedIpToTerraform(struct?: LoadB
   }
   return {
   }
+}
+
+
+export function loadBalancerIpAddressDetailsReservedIpToHclTerraform(struct?: LoadBalancerIpAddressDetailsReservedIp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class LoadBalancerIpAddressDetailsReservedIpOutputReference extends cdktf.ComplexObject {
@@ -155,6 +166,17 @@ export function loadBalancerIpAddressDetailsToTerraform(struct?: LoadBalancerIpA
   }
   return {
   }
+}
+
+
+export function loadBalancerIpAddressDetailsToHclTerraform(struct?: LoadBalancerIpAddressDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class LoadBalancerIpAddressDetailsOutputReference extends cdktf.ComplexObject {
@@ -238,6 +260,25 @@ export function loadBalancerReservedIpsToTerraform(struct?: LoadBalancerReserved
   return {
     id: cdktf.stringToTerraform(struct!.id),
   }
+}
+
+
+export function loadBalancerReservedIpsToHclTerraform(struct?: LoadBalancerReservedIps | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoadBalancerReservedIpsOutputReference extends cdktf.ComplexObject {
@@ -342,6 +383,31 @@ export function loadBalancerShapeDetailsToTerraform(struct?: LoadBalancerShapeDe
   }
 }
 
+
+export function loadBalancerShapeDetailsToHclTerraform(struct?: LoadBalancerShapeDetailsOutputReference | LoadBalancerShapeDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    maximum_bandwidth_in_mbps: {
+      value: cdktf.numberToHclTerraform(struct!.maximumBandwidthInMbps),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    minimum_bandwidth_in_mbps: {
+      value: cdktf.numberToHclTerraform(struct!.minimumBandwidthInMbps),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoadBalancerShapeDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -431,6 +497,37 @@ export function loadBalancerTimeoutsToTerraform(struct?: LoadBalancerTimeouts | 
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function loadBalancerTimeoutsToHclTerraform(struct?: LoadBalancerTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoadBalancerTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -545,6 +642,20 @@ export class LoadBalancer extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_load_balancer";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LoadBalancer resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LoadBalancer to import
+  * @param importFromId The id of the existing LoadBalancer that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LoadBalancer to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_load_balancer", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -889,5 +1000,109 @@ export class LoadBalancer extends cdktf.TerraformResource {
       shape_details: loadBalancerShapeDetailsToTerraform(this._shapeDetails.internalValue),
       timeouts: loadBalancerTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ip_mode: {
+        value: cdktf.stringToHclTerraform(this._ipMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_delete_protection_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isDeleteProtectionEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_private: {
+        value: cdktf.booleanToHclTerraform(this._isPrivate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_request_id_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isRequestIdEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      network_security_group_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._networkSecurityGroupIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      request_id_header: {
+        value: cdktf.stringToHclTerraform(this._requestIdHeader),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      shape: {
+        value: cdktf.stringToHclTerraform(this._shape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._subnetIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      reserved_ips: {
+        value: cdktf.listMapperHcl(loadBalancerReservedIpsToHclTerraform, true)(this._reservedIps.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LoadBalancerReservedIpsList",
+      },
+      shape_details: {
+        value: loadBalancerShapeDetailsToHclTerraform(this._shapeDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LoadBalancerShapeDetailsList",
+      },
+      timeouts: {
+        value: loadBalancerTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LoadBalancerTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

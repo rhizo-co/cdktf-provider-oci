@@ -96,25 +96,25 @@ export interface DatabaseVmClusterConfig extends cdktf.TerraformMetaArguments {
   readonly vmClusterNetworkId: string;
   /**
   * cloud_automation_update_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster#cloud_automation_update_details DatabaseVmCluster#cloud_automation_update_details}
   */
   readonly cloudAutomationUpdateDetails?: DatabaseVmClusterCloudAutomationUpdateDetails;
   /**
   * data_collection_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster#data_collection_options DatabaseVmCluster#data_collection_options}
   */
   readonly dataCollectionOptions?: DatabaseVmClusterDataCollectionOptions;
   /**
   * file_system_configuration_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster#file_system_configuration_details DatabaseVmCluster#file_system_configuration_details}
   */
   readonly fileSystemConfigurationDetails?: DatabaseVmClusterFileSystemConfigurationDetails[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster#timeouts DatabaseVmCluster#timeouts}
   */
   readonly timeouts?: DatabaseVmClusterTimeouts;
@@ -139,6 +139,31 @@ export function databaseVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePref
     apply_update_preferred_end_time: cdktf.stringToTerraform(struct!.applyUpdatePreferredEndTime),
     apply_update_preferred_start_time: cdktf.stringToTerraform(struct!.applyUpdatePreferredStartTime),
   }
+}
+
+
+export function databaseVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceToHclTerraform(struct?: DatabaseVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceOutputReference | DatabaseVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    apply_update_preferred_end_time: {
+      value: cdktf.stringToHclTerraform(struct!.applyUpdatePreferredEndTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    apply_update_preferred_start_time: {
+      value: cdktf.stringToHclTerraform(struct!.applyUpdatePreferredStartTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceOutputReference extends cdktf.ComplexObject {
@@ -233,6 +258,31 @@ export function databaseVmClusterCloudAutomationUpdateDetailsFreezePeriodToTerra
   }
 }
 
+
+export function databaseVmClusterCloudAutomationUpdateDetailsFreezePeriodToHclTerraform(struct?: DatabaseVmClusterCloudAutomationUpdateDetailsFreezePeriodOutputReference | DatabaseVmClusterCloudAutomationUpdateDetailsFreezePeriod): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    freeze_period_end_time: {
+      value: cdktf.stringToHclTerraform(struct!.freezePeriodEndTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeze_period_start_time: {
+      value: cdktf.stringToHclTerraform(struct!.freezePeriodStartTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseVmClusterCloudAutomationUpdateDetailsFreezePeriodOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -314,13 +364,13 @@ export interface DatabaseVmClusterCloudAutomationUpdateDetails {
   readonly isFreezePeriodEnabled?: boolean | cdktf.IResolvable;
   /**
   * apply_update_time_preference block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster#apply_update_time_preference DatabaseVmCluster#apply_update_time_preference}
   */
   readonly applyUpdateTimePreference?: DatabaseVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference;
   /**
   * freeze_period block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster#freeze_period DatabaseVmCluster#freeze_period}
   */
   readonly freezePeriod?: DatabaseVmClusterCloudAutomationUpdateDetailsFreezePeriod;
@@ -337,6 +387,43 @@ export function databaseVmClusterCloudAutomationUpdateDetailsToTerraform(struct?
     apply_update_time_preference: databaseVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceToTerraform(struct!.applyUpdateTimePreference),
     freeze_period: databaseVmClusterCloudAutomationUpdateDetailsFreezePeriodToTerraform(struct!.freezePeriod),
   }
+}
+
+
+export function databaseVmClusterCloudAutomationUpdateDetailsToHclTerraform(struct?: DatabaseVmClusterCloudAutomationUpdateDetailsOutputReference | DatabaseVmClusterCloudAutomationUpdateDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_early_adoption_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEarlyAdoptionEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_freeze_period_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isFreezePeriodEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    apply_update_time_preference: {
+      value: databaseVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceToHclTerraform(struct!.applyUpdateTimePreference),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceList",
+    },
+    freeze_period: {
+      value: databaseVmClusterCloudAutomationUpdateDetailsFreezePeriodToHclTerraform(struct!.freezePeriod),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseVmClusterCloudAutomationUpdateDetailsFreezePeriodList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseVmClusterCloudAutomationUpdateDetailsOutputReference extends cdktf.ComplexObject {
@@ -480,6 +567,37 @@ export function databaseVmClusterDataCollectionOptionsToTerraform(struct?: Datab
   }
 }
 
+
+export function databaseVmClusterDataCollectionOptionsToHclTerraform(struct?: DatabaseVmClusterDataCollectionOptionsOutputReference | DatabaseVmClusterDataCollectionOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_diagnostics_events_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isDiagnosticsEventsEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_health_monitoring_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isHealthMonitoringEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_incident_logs_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isIncidentLogsEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseVmClusterDataCollectionOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -592,6 +710,31 @@ export function databaseVmClusterFileSystemConfigurationDetailsToTerraform(struc
     file_system_size_gb: cdktf.numberToTerraform(struct!.fileSystemSizeGb),
     mount_point: cdktf.stringToTerraform(struct!.mountPoint),
   }
+}
+
+
+export function databaseVmClusterFileSystemConfigurationDetailsToHclTerraform(struct?: DatabaseVmClusterFileSystemConfigurationDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    file_system_size_gb: {
+      value: cdktf.numberToHclTerraform(struct!.fileSystemSizeGb),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mount_point: {
+      value: cdktf.stringToHclTerraform(struct!.mountPoint),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseVmClusterFileSystemConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -723,6 +866,37 @@ export function databaseVmClusterTimeoutsToTerraform(struct?: DatabaseVmClusterT
   }
 }
 
+
+export function databaseVmClusterTimeoutsToHclTerraform(struct?: DatabaseVmClusterTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseVmClusterTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -835,6 +1009,20 @@ export class DatabaseVmCluster extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_vm_cluster";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseVmCluster resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseVmCluster to import
+  * @param importFromId The id of the existing DatabaseVmCluster that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseVmCluster to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_vm_cluster", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1345,5 +1533,163 @@ export class DatabaseVmCluster extends cdktf.TerraformResource {
       file_system_configuration_details: cdktf.listMapper(databaseVmClusterFileSystemConfigurationDetailsToTerraform, true)(this._fileSystemConfigurationDetails.internalValue),
       timeouts: databaseVmClusterTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cpu_core_count: {
+        value: cdktf.numberToHclTerraform(this._cpuCoreCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      data_storage_size_in_gb: {
+        value: cdktf.numberToHclTerraform(this._dataStorageSizeInGb),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      data_storage_size_in_tbs: {
+        value: cdktf.numberToHclTerraform(this._dataStorageSizeInTbs),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      db_node_storage_size_in_gbs: {
+        value: cdktf.numberToHclTerraform(this._dbNodeStorageSizeInGbs),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      db_servers: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._dbServers),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      exadata_infrastructure_id: {
+        value: cdktf.stringToHclTerraform(this._exadataInfrastructureId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      gi_version: {
+        value: cdktf.stringToHclTerraform(this._giVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_local_backup_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isLocalBackupEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_sparse_diskgroup_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isSparseDiskgroupEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      license_model: {
+        value: cdktf.stringToHclTerraform(this._licenseModel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      memory_size_in_gbs: {
+        value: cdktf.numberToHclTerraform(this._memorySizeInGbs),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      ocpu_count: {
+        value: cdktf.numberToHclTerraform(this._ocpuCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      ssh_public_keys: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._sshPublicKeys),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      system_version: {
+        value: cdktf.stringToHclTerraform(this._systemVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_zone: {
+        value: cdktf.stringToHclTerraform(this._timeZone),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vm_cluster_network_id: {
+        value: cdktf.stringToHclTerraform(this._vmClusterNetworkId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cloud_automation_update_details: {
+        value: databaseVmClusterCloudAutomationUpdateDetailsToHclTerraform(this._cloudAutomationUpdateDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseVmClusterCloudAutomationUpdateDetailsList",
+      },
+      data_collection_options: {
+        value: databaseVmClusterDataCollectionOptionsToHclTerraform(this._dataCollectionOptions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseVmClusterDataCollectionOptionsList",
+      },
+      file_system_configuration_details: {
+        value: cdktf.listMapperHcl(databaseVmClusterFileSystemConfigurationDetailsToHclTerraform, true)(this._fileSystemConfigurationDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseVmClusterFileSystemConfigurationDetailsList",
+      },
+      timeouts: {
+        value: databaseVmClusterTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseVmClusterTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

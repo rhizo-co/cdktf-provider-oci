@@ -36,13 +36,13 @@ export interface CoreDefaultRouteTableConfig extends cdktf.TerraformMetaArgument
   readonly manageDefaultResourceId: string;
   /**
   * route_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_default_route_table#route_rules CoreDefaultRouteTable#route_rules}
   */
   readonly routeRules?: CoreDefaultRouteTableRouteRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_default_route_table#timeouts CoreDefaultRouteTable#timeouts}
   */
   readonly timeouts?: CoreDefaultRouteTableTimeouts;
@@ -87,6 +87,55 @@ export function coreDefaultRouteTableRouteRulesToTerraform(struct?: CoreDefaultR
     network_entity_id: cdktf.stringToTerraform(struct!.networkEntityId),
     route_type: cdktf.stringToTerraform(struct!.routeType),
   }
+}
+
+
+export function coreDefaultRouteTableRouteRulesToHclTerraform(struct?: CoreDefaultRouteTableRouteRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cidr_block: {
+      value: cdktf.stringToHclTerraform(struct!.cidrBlock),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination: {
+      value: cdktf.stringToHclTerraform(struct!.destination),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination_type: {
+      value: cdktf.stringToHclTerraform(struct!.destinationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    network_entity_id: {
+      value: cdktf.stringToHclTerraform(struct!.networkEntityId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    route_type: {
+      value: cdktf.stringToHclTerraform(struct!.routeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreDefaultRouteTableRouteRulesOutputReference extends cdktf.ComplexObject {
@@ -303,6 +352,37 @@ export function coreDefaultRouteTableTimeoutsToTerraform(struct?: CoreDefaultRou
   }
 }
 
+
+export function coreDefaultRouteTableTimeoutsToHclTerraform(struct?: CoreDefaultRouteTableTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreDefaultRouteTableTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -415,6 +495,20 @@ export class CoreDefaultRouteTable extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_default_route_table";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreDefaultRouteTable resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreDefaultRouteTable to import
+  * @param importFromId The id of the existing CoreDefaultRouteTable that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_default_route_table#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreDefaultRouteTable to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_default_route_table", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -607,5 +701,61 @@ export class CoreDefaultRouteTable extends cdktf.TerraformResource {
       route_rules: cdktf.listMapper(coreDefaultRouteTableRouteRulesToTerraform, true)(this._routeRules.internalValue),
       timeouts: coreDefaultRouteTableTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      manage_default_resource_id: {
+        value: cdktf.stringToHclTerraform(this._manageDefaultResourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      route_rules: {
+        value: cdktf.listMapperHcl(coreDefaultRouteTableRouteRulesToHclTerraform, true)(this._routeRules.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "CoreDefaultRouteTableRouteRulesList",
+      },
+      timeouts: {
+        value: coreDefaultRouteTableTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreDefaultRouteTableTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

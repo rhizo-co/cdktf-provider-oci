@@ -52,25 +52,25 @@ export interface FusionAppsFusionEnvironmentConfig extends cdktf.TerraformMetaAr
   readonly kmsKeyId?: string;
   /**
   * create_fusion_environment_admin_user_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment#create_fusion_environment_admin_user_details FusionAppsFusionEnvironment#create_fusion_environment_admin_user_details}
   */
   readonly createFusionEnvironmentAdminUserDetails: FusionAppsFusionEnvironmentCreateFusionEnvironmentAdminUserDetails;
   /**
   * maintenance_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment#maintenance_policy FusionAppsFusionEnvironment#maintenance_policy}
   */
   readonly maintenancePolicy?: FusionAppsFusionEnvironmentMaintenancePolicy;
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment#rules FusionAppsFusionEnvironment#rules}
   */
   readonly rules?: FusionAppsFusionEnvironmentRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment#timeouts FusionAppsFusionEnvironment#timeouts}
   */
   readonly timeouts?: FusionAppsFusionEnvironmentTimeouts;
@@ -85,6 +85,17 @@ export function fusionAppsFusionEnvironmentKmsKeyInfoToTerraform(struct?: Fusion
   }
   return {
   }
+}
+
+
+export function fusionAppsFusionEnvironmentKmsKeyInfoToHclTerraform(struct?: FusionAppsFusionEnvironmentKmsKeyInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class FusionAppsFusionEnvironmentKmsKeyInfoOutputReference extends cdktf.ComplexObject {
@@ -179,6 +190,17 @@ export function fusionAppsFusionEnvironmentRefreshToTerraform(struct?: FusionApp
   }
   return {
   }
+}
+
+
+export function fusionAppsFusionEnvironmentRefreshToHclTerraform(struct?: FusionAppsFusionEnvironmentRefresh): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class FusionAppsFusionEnvironmentRefreshOutputReference extends cdktf.ComplexObject {
@@ -278,6 +300,49 @@ export function fusionAppsFusionEnvironmentCreateFusionEnvironmentAdminUserDetai
     password: cdktf.stringToTerraform(struct!.password),
     username: cdktf.stringToTerraform(struct!.username),
   }
+}
+
+
+export function fusionAppsFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsToHclTerraform(struct?: FusionAppsFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutputReference | FusionAppsFusionEnvironmentCreateFusionEnvironmentAdminUserDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    email_address: {
+      value: cdktf.stringToHclTerraform(struct!.emailAddress),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    first_name: {
+      value: cdktf.stringToHclTerraform(struct!.firstName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    last_name: {
+      value: cdktf.stringToHclTerraform(struct!.lastName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FusionAppsFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsOutputReference extends cdktf.ComplexObject {
@@ -416,6 +481,17 @@ export function fusionAppsFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBegi
   }
 }
 
+
+export function fusionAppsFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimesToHclTerraform(struct?: FusionAppsFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class FusionAppsFusionEnvironmentMaintenancePolicyQuarterlyUpgradeBeginTimesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -493,6 +569,31 @@ export function fusionAppsFusionEnvironmentMaintenancePolicyToTerraform(struct?:
     environment_maintenance_override: cdktf.stringToTerraform(struct!.environmentMaintenanceOverride),
     monthly_patching_override: cdktf.stringToTerraform(struct!.monthlyPatchingOverride),
   }
+}
+
+
+export function fusionAppsFusionEnvironmentMaintenancePolicyToHclTerraform(struct?: FusionAppsFusionEnvironmentMaintenancePolicyOutputReference | FusionAppsFusionEnvironmentMaintenancePolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    environment_maintenance_override: {
+      value: cdktf.stringToHclTerraform(struct!.environmentMaintenanceOverride),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    monthly_patching_override: {
+      value: cdktf.stringToHclTerraform(struct!.monthlyPatchingOverride),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FusionAppsFusionEnvironmentMaintenancePolicyOutputReference extends cdktf.ComplexObject {
@@ -591,6 +692,31 @@ export function fusionAppsFusionEnvironmentRulesConditionsToTerraform(struct?: F
     attribute_name: cdktf.stringToTerraform(struct!.attributeName),
     attribute_value: cdktf.stringToTerraform(struct!.attributeValue),
   }
+}
+
+
+export function fusionAppsFusionEnvironmentRulesConditionsToHclTerraform(struct?: FusionAppsFusionEnvironmentRulesConditions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    attribute_name: {
+      value: cdktf.stringToHclTerraform(struct!.attributeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    attribute_value: {
+      value: cdktf.stringToHclTerraform(struct!.attributeValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FusionAppsFusionEnvironmentRulesConditionsOutputReference extends cdktf.ComplexObject {
@@ -700,7 +826,7 @@ export interface FusionAppsFusionEnvironmentRules {
   readonly description?: string;
   /**
   * conditions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment#conditions FusionAppsFusionEnvironment#conditions}
   */
   readonly conditions: FusionAppsFusionEnvironmentRulesConditions[] | cdktf.IResolvable;
@@ -716,6 +842,37 @@ export function fusionAppsFusionEnvironmentRulesToTerraform(struct?: FusionAppsF
     description: cdktf.stringToTerraform(struct!.description),
     conditions: cdktf.listMapper(fusionAppsFusionEnvironmentRulesConditionsToTerraform, true)(struct!.conditions),
   }
+}
+
+
+export function fusionAppsFusionEnvironmentRulesToHclTerraform(struct?: FusionAppsFusionEnvironmentRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    conditions: {
+      value: cdktf.listMapperHcl(fusionAppsFusionEnvironmentRulesConditionsToHclTerraform, true)(struct!.conditions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "FusionAppsFusionEnvironmentRulesConditionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FusionAppsFusionEnvironmentRulesOutputReference extends cdktf.ComplexObject {
@@ -863,6 +1020,37 @@ export function fusionAppsFusionEnvironmentTimeoutsToTerraform(struct?: FusionAp
   }
 }
 
+
+export function fusionAppsFusionEnvironmentTimeoutsToHclTerraform(struct?: FusionAppsFusionEnvironmentTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FusionAppsFusionEnvironmentTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -975,6 +1163,20 @@ export class FusionAppsFusionEnvironment extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fusion_apps_fusion_environment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FusionAppsFusionEnvironment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FusionAppsFusionEnvironment to import
+  * @param importFromId The id of the existing FusionAppsFusionEnvironment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FusionAppsFusionEnvironment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fusion_apps_fusion_environment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1335,5 +1537,97 @@ export class FusionAppsFusionEnvironment extends cdktf.TerraformResource {
       rules: cdktf.listMapper(fusionAppsFusionEnvironmentRulesToTerraform, true)(this._rules.internalValue),
       timeouts: fusionAppsFusionEnvironmentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      additional_language_packs: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._additionalLanguagePacks),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dns_prefix: {
+        value: cdktf.stringToHclTerraform(this._dnsPrefix),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      fusion_environment_family_id: {
+        value: cdktf.stringToHclTerraform(this._fusionEnvironmentFamilyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fusion_environment_type: {
+        value: cdktf.stringToHclTerraform(this._fusionEnvironmentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kms_key_id: {
+        value: cdktf.stringToHclTerraform(this._kmsKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      create_fusion_environment_admin_user_details: {
+        value: fusionAppsFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsToHclTerraform(this._createFusionEnvironmentAdminUserDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FusionAppsFusionEnvironmentCreateFusionEnvironmentAdminUserDetailsList",
+      },
+      maintenance_policy: {
+        value: fusionAppsFusionEnvironmentMaintenancePolicyToHclTerraform(this._maintenancePolicy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FusionAppsFusionEnvironmentMaintenancePolicyList",
+      },
+      rules: {
+        value: cdktf.listMapperHcl(fusionAppsFusionEnvironmentRulesToHclTerraform, true)(this._rules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FusionAppsFusionEnvironmentRulesList",
+      },
+      timeouts: {
+        value: fusionAppsFusionEnvironmentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FusionAppsFusionEnvironmentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

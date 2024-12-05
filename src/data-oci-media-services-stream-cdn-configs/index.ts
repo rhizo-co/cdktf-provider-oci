@@ -28,7 +28,7 @@ export interface DataOciMediaServicesStreamCdnConfigsConfig extends cdktf.Terraf
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/media_services_stream_cdn_configs#filter DataOciMediaServicesStreamCdnConfigs#filter}
   */
   readonly filter?: DataOciMediaServicesStreamCdnConfigsFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionIte
   }
   return {
   }
+}
+
+
+export function dataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionItemsConfigToHclTerraform(struct?: DataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionItemsConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionItemsConfigOutputReference extends cdktf.ComplexObject {
@@ -164,6 +175,17 @@ export function dataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionIte
   }
 }
 
+
+export function dataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionItemsLocksToHclTerraform(struct?: DataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionItemsLocks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionItemsLocksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -246,6 +268,17 @@ export function dataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionIte
   }
   return {
   }
+}
+
+
+export function dataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionItemsToHclTerraform(struct?: DataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -387,6 +420,17 @@ export function dataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionToT
   }
 }
 
+
+export function dataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionToHclTerraform(struct?: DataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMediaServicesStreamCdnConfigsStreamCdnConfigCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -465,6 +509,37 @@ export function dataOciMediaServicesStreamCdnConfigsFilterToTerraform(struct?: D
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciMediaServicesStreamCdnConfigsFilterToHclTerraform(struct?: DataOciMediaServicesStreamCdnConfigsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciMediaServicesStreamCdnConfigsFilterOutputReference extends cdktf.ComplexObject {
@@ -595,6 +670,20 @@ export class DataOciMediaServicesStreamCdnConfigs extends cdktf.TerraformDataSou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_media_services_stream_cdn_configs";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMediaServicesStreamCdnConfigs resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMediaServicesStreamCdnConfigs to import
+  * @param importFromId The id of the existing DataOciMediaServicesStreamCdnConfigs that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/media_services_stream_cdn_configs#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMediaServicesStreamCdnConfigs to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_media_services_stream_cdn_configs", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -729,5 +818,43 @@ export class DataOciMediaServicesStreamCdnConfigs extends cdktf.TerraformDataSou
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciMediaServicesStreamCdnConfigsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      distribution_channel_id: {
+        value: cdktf.stringToHclTerraform(this._distributionChannelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciMediaServicesStreamCdnConfigsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciMediaServicesStreamCdnConfigsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

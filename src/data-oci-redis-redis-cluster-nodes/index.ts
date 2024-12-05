@@ -24,7 +24,7 @@ export interface DataOciRedisRedisClusterNodesConfig extends cdktf.TerraformMeta
   readonly redisClusterId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/redis_redis_cluster_nodes#filter DataOciRedisRedisClusterNodes#filter}
   */
   readonly filter?: DataOciRedisRedisClusterNodesFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciRedisRedisClusterNodesRedisNodeCollectionItemsToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciRedisRedisClusterNodesRedisNodeCollectionItemsToHclTerraform(struct?: DataOciRedisRedisClusterNodesRedisNodeCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciRedisRedisClusterNodesRedisNodeCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -125,6 +136,17 @@ export function dataOciRedisRedisClusterNodesRedisNodeCollectionToTerraform(stru
   }
 }
 
+
+export function dataOciRedisRedisClusterNodesRedisNodeCollectionToHclTerraform(struct?: DataOciRedisRedisClusterNodesRedisNodeCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciRedisRedisClusterNodesRedisNodeCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -203,6 +225,37 @@ export function dataOciRedisRedisClusterNodesFilterToTerraform(struct?: DataOciR
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciRedisRedisClusterNodesFilterToHclTerraform(struct?: DataOciRedisRedisClusterNodesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciRedisRedisClusterNodesFilterOutputReference extends cdktf.ComplexObject {
@@ -334,6 +387,20 @@ export class DataOciRedisRedisClusterNodes extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_redis_redis_cluster_nodes";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciRedisRedisClusterNodes resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciRedisRedisClusterNodes to import
+  * @param importFromId The id of the existing DataOciRedisRedisClusterNodes that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/redis_redis_cluster_nodes#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciRedisRedisClusterNodes to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_redis_redis_cluster_nodes", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -449,5 +516,37 @@ export class DataOciRedisRedisClusterNodes extends cdktf.TerraformDataSource {
       redis_cluster_id: cdktf.stringToTerraform(this._redisClusterId),
       filter: cdktf.listMapper(dataOciRedisRedisClusterNodesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      redis_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._redisClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciRedisRedisClusterNodesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciRedisRedisClusterNodesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

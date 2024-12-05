@@ -36,7 +36,7 @@ export interface DataOciPsqlDefaultConfigurationsConfig extends cdktf.TerraformM
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/psql_default_configurations#filter DataOciPsqlDefaultConfigurations#filter}
   */
   readonly filter?: DataOciPsqlDefaultConfigurationsFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionIt
   }
   return {
   }
+}
+
+
+export function dataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionItemsConfigurationDetailsItemsToHclTerraform(struct?: DataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionItemsConfigurationDetailsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionItemsConfigurationDetailsItemsOutputReference extends cdktf.ComplexObject {
@@ -147,6 +158,17 @@ export function dataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionIt
   }
 }
 
+
+export function dataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionItemsConfigurationDetailsToHclTerraform(struct?: DataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionItemsConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionItemsConfigurationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -210,6 +232,17 @@ export function dataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionIt
   }
   return {
   }
+}
+
+
+export function dataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionItemsToHclTerraform(struct?: DataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -332,6 +365,17 @@ export function dataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionTo
   }
 }
 
+
+export function dataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionToHclTerraform(struct?: DataOciPsqlDefaultConfigurationsDefaultConfigurationCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciPsqlDefaultConfigurationsDefaultConfigurationCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -410,6 +454,37 @@ export function dataOciPsqlDefaultConfigurationsFilterToTerraform(struct?: DataO
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciPsqlDefaultConfigurationsFilterToHclTerraform(struct?: DataOciPsqlDefaultConfigurationsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciPsqlDefaultConfigurationsFilterOutputReference extends cdktf.ComplexObject {
@@ -540,6 +615,20 @@ export class DataOciPsqlDefaultConfigurations extends cdktf.TerraformDataSource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_psql_default_configurations";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciPsqlDefaultConfigurations resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciPsqlDefaultConfigurations to import
+  * @param importFromId The id of the existing DataOciPsqlDefaultConfigurations that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/psql_default_configurations#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciPsqlDefaultConfigurations to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_psql_default_configurations", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -713,5 +802,55 @@ export class DataOciPsqlDefaultConfigurations extends cdktf.TerraformDataSource 
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciPsqlDefaultConfigurationsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      configuration_id: {
+        value: cdktf.stringToHclTerraform(this._configurationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_version: {
+        value: cdktf.stringToHclTerraform(this._dbVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      shape: {
+        value: cdktf.stringToHclTerraform(this._shape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciPsqlDefaultConfigurationsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciPsqlDefaultConfigurationsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

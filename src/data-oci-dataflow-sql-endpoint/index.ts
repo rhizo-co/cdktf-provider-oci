@@ -24,6 +24,17 @@ export function dataOciDataflowSqlEndpointDriverShapeConfigToTerraform(struct?: 
   }
 }
 
+
+export function dataOciDataflowSqlEndpointDriverShapeConfigToHclTerraform(struct?: DataOciDataflowSqlEndpointDriverShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataflowSqlEndpointDriverShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -93,6 +104,17 @@ export function dataOciDataflowSqlEndpointExecutorShapeConfigToTerraform(struct?
   }
 }
 
+
+export function dataOciDataflowSqlEndpointExecutorShapeConfigToHclTerraform(struct?: DataOciDataflowSqlEndpointExecutorShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataflowSqlEndpointExecutorShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -160,6 +182,17 @@ export function dataOciDataflowSqlEndpointNetworkConfigurationAccessControlRules
   }
   return {
   }
+}
+
+
+export function dataOciDataflowSqlEndpointNetworkConfigurationAccessControlRulesToHclTerraform(struct?: DataOciDataflowSqlEndpointNetworkConfigurationAccessControlRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataflowSqlEndpointNetworkConfigurationAccessControlRulesOutputReference extends cdktf.ComplexObject {
@@ -234,6 +267,17 @@ export function dataOciDataflowSqlEndpointNetworkConfigurationToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciDataflowSqlEndpointNetworkConfigurationToHclTerraform(struct?: DataOciDataflowSqlEndpointNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataflowSqlEndpointNetworkConfigurationOutputReference extends cdktf.ComplexObject {
@@ -329,6 +373,20 @@ export class DataOciDataflowSqlEndpoint extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataflow_sql_endpoint";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataflowSqlEndpoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataflowSqlEndpoint to import
+  * @param importFromId The id of the existing DataOciDataflowSqlEndpoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dataflow_sql_endpoint#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataflowSqlEndpoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataflow_sql_endpoint", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -512,5 +570,19 @@ export class DataOciDataflowSqlEndpoint extends cdktf.TerraformDataSource {
     return {
       sql_endpoint_id: cdktf.stringToTerraform(this._sqlEndpointId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      sql_endpoint_id: {
+        value: cdktf.stringToHclTerraform(this._sqlEndpointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

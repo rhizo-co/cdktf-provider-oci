@@ -24,7 +24,7 @@ export interface DataSafeSetSecurityAssessmentBaselineConfig extends cdktf.Terra
   readonly securityAssessmentId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_set_security_assessment_baseline#timeouts DataSafeSetSecurityAssessmentBaseline#timeouts}
   */
   readonly timeouts?: DataSafeSetSecurityAssessmentBaselineTimeouts;
@@ -54,6 +54,37 @@ export function dataSafeSetSecurityAssessmentBaselineTimeoutsToTerraform(struct?
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function dataSafeSetSecurityAssessmentBaselineTimeoutsToHclTerraform(struct?: DataSafeSetSecurityAssessmentBaselineTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeSetSecurityAssessmentBaselineTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -169,6 +200,20 @@ export class DataSafeSetSecurityAssessmentBaseline extends cdktf.TerraformResour
   // =================
   public static readonly tfResourceType = "oci_data_safe_set_security_assessment_baseline";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeSetSecurityAssessmentBaseline resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeSetSecurityAssessmentBaseline to import
+  * @param importFromId The id of the existing DataSafeSetSecurityAssessmentBaseline that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_set_security_assessment_baseline#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeSetSecurityAssessmentBaseline to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_set_security_assessment_baseline", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -278,5 +323,37 @@ export class DataSafeSetSecurityAssessmentBaseline extends cdktf.TerraformResour
       security_assessment_id: cdktf.stringToTerraform(this._securityAssessmentId),
       timeouts: dataSafeSetSecurityAssessmentBaselineTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      assessment_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._assessmentIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      security_assessment_id: {
+        value: cdktf.stringToHclTerraform(this._securityAssessmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: dataSafeSetSecurityAssessmentBaselineTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeSetSecurityAssessmentBaselineTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

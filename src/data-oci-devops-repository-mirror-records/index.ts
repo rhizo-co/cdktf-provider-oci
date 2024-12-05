@@ -20,7 +20,7 @@ export interface DataOciDevopsRepositoryMirrorRecordsConfig extends cdktf.Terraf
   readonly repositoryId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_repository_mirror_records#filter DataOciDevopsRepositoryMirrorRecords#filter}
   */
   readonly filter?: DataOciDevopsRepositoryMirrorRecordsFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciDevopsRepositoryMirrorRecordsRepositoryMirrorRecordCollec
   }
   return {
   }
+}
+
+
+export function dataOciDevopsRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemsToHclTerraform(struct?: DataOciDevopsRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsRepositoryMirrorRecordsRepositoryMirrorRecordCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -127,6 +138,17 @@ export function dataOciDevopsRepositoryMirrorRecordsRepositoryMirrorRecordCollec
   }
 }
 
+
+export function dataOciDevopsRepositoryMirrorRecordsRepositoryMirrorRecordCollectionToHclTerraform(struct?: DataOciDevopsRepositoryMirrorRecordsRepositoryMirrorRecordCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsRepositoryMirrorRecordsRepositoryMirrorRecordCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -205,6 +227,37 @@ export function dataOciDevopsRepositoryMirrorRecordsFilterToTerraform(struct?: D
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDevopsRepositoryMirrorRecordsFilterToHclTerraform(struct?: DataOciDevopsRepositoryMirrorRecordsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDevopsRepositoryMirrorRecordsFilterOutputReference extends cdktf.ComplexObject {
@@ -336,6 +389,20 @@ export class DataOciDevopsRepositoryMirrorRecords extends cdktf.TerraformDataSou
   // =================
   public static readonly tfResourceType = "oci_devops_repository_mirror_records";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDevopsRepositoryMirrorRecords resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDevopsRepositoryMirrorRecords to import
+  * @param importFromId The id of the existing DataOciDevopsRepositoryMirrorRecords that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_repository_mirror_records#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDevopsRepositoryMirrorRecords to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_repository_mirror_records", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -433,5 +500,31 @@ export class DataOciDevopsRepositoryMirrorRecords extends cdktf.TerraformDataSou
       repository_id: cdktf.stringToTerraform(this._repositoryId),
       filter: cdktf.listMapper(dataOciDevopsRepositoryMirrorRecordsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      repository_id: {
+        value: cdktf.stringToHclTerraform(this._repositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDevopsRepositoryMirrorRecordsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDevopsRepositoryMirrorRecordsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

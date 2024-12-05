@@ -48,13 +48,13 @@ export interface DevopsTriggerConfig extends cdktf.TerraformMetaArguments {
   readonly triggerSource: string;
   /**
   * actions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_trigger#actions DevopsTrigger#actions}
   */
   readonly actions: DevopsTriggerActions[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_trigger#timeouts DevopsTrigger#timeouts}
   */
   readonly timeouts?: DevopsTriggerTimeouts;
@@ -74,6 +74,25 @@ export function devopsTriggerActionsFilterExcludeFileFilterToTerraform(struct?: 
   return {
     file_paths: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.filePaths),
   }
+}
+
+
+export function devopsTriggerActionsFilterExcludeFileFilterToHclTerraform(struct?: DevopsTriggerActionsFilterExcludeFileFilterOutputReference | DevopsTriggerActionsFilterExcludeFileFilter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    file_paths: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.filePaths),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsTriggerActionsFilterExcludeFileFilterOutputReference extends cdktf.ComplexObject {
@@ -127,7 +146,7 @@ export class DevopsTriggerActionsFilterExcludeFileFilterOutputReference extends 
 export interface DevopsTriggerActionsFilterExclude {
   /**
   * file_filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_trigger#file_filter DevopsTrigger#file_filter}
   */
   readonly fileFilter?: DevopsTriggerActionsFilterExcludeFileFilter;
@@ -141,6 +160,25 @@ export function devopsTriggerActionsFilterExcludeToTerraform(struct?: DevopsTrig
   return {
     file_filter: devopsTriggerActionsFilterExcludeFileFilterToTerraform(struct!.fileFilter),
   }
+}
+
+
+export function devopsTriggerActionsFilterExcludeToHclTerraform(struct?: DevopsTriggerActionsFilterExcludeOutputReference | DevopsTriggerActionsFilterExclude): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    file_filter: {
+      value: devopsTriggerActionsFilterExcludeFileFilterToHclTerraform(struct!.fileFilter),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsTriggerActionsFilterExcludeFileFilterList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsTriggerActionsFilterExcludeOutputReference extends cdktf.ComplexObject {
@@ -208,6 +246,25 @@ export function devopsTriggerActionsFilterIncludeFileFilterToTerraform(struct?: 
   }
 }
 
+
+export function devopsTriggerActionsFilterIncludeFileFilterToHclTerraform(struct?: DevopsTriggerActionsFilterIncludeFileFilterOutputReference | DevopsTriggerActionsFilterIncludeFileFilter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    file_paths: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.filePaths),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DevopsTriggerActionsFilterIncludeFileFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -271,7 +328,7 @@ export interface DevopsTriggerActionsFilterInclude {
   readonly repositoryName?: string;
   /**
   * file_filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_trigger#file_filter DevopsTrigger#file_filter}
   */
   readonly fileFilter?: DevopsTriggerActionsFilterIncludeFileFilter;
@@ -288,6 +345,43 @@ export function devopsTriggerActionsFilterIncludeToTerraform(struct?: DevopsTrig
     repository_name: cdktf.stringToTerraform(struct!.repositoryName),
     file_filter: devopsTriggerActionsFilterIncludeFileFilterToTerraform(struct!.fileFilter),
   }
+}
+
+
+export function devopsTriggerActionsFilterIncludeToHclTerraform(struct?: DevopsTriggerActionsFilterIncludeOutputReference | DevopsTriggerActionsFilterInclude): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    base_ref: {
+      value: cdktf.stringToHclTerraform(struct!.baseRef),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    head_ref: {
+      value: cdktf.stringToHclTerraform(struct!.headRef),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repository_name: {
+      value: cdktf.stringToHclTerraform(struct!.repositoryName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    file_filter: {
+      value: devopsTriggerActionsFilterIncludeFileFilterToHclTerraform(struct!.fileFilter),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsTriggerActionsFilterIncludeFileFilterList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsTriggerActionsFilterIncludeOutputReference extends cdktf.ComplexObject {
@@ -415,13 +509,13 @@ export interface DevopsTriggerActionsFilter {
   readonly triggerSource: string;
   /**
   * exclude block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_trigger#exclude DevopsTrigger#exclude}
   */
   readonly exclude?: DevopsTriggerActionsFilterExclude;
   /**
   * include block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_trigger#include DevopsTrigger#include}
   */
   readonly include?: DevopsTriggerActionsFilterInclude;
@@ -438,6 +532,43 @@ export function devopsTriggerActionsFilterToTerraform(struct?: DevopsTriggerActi
     exclude: devopsTriggerActionsFilterExcludeToTerraform(struct!.exclude),
     include: devopsTriggerActionsFilterIncludeToTerraform(struct!.include),
   }
+}
+
+
+export function devopsTriggerActionsFilterToHclTerraform(struct?: DevopsTriggerActionsFilterOutputReference | DevopsTriggerActionsFilter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    events: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.events),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    trigger_source: {
+      value: cdktf.stringToHclTerraform(struct!.triggerSource),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    exclude: {
+      value: devopsTriggerActionsFilterExcludeToHclTerraform(struct!.exclude),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsTriggerActionsFilterExcludeList",
+    },
+    include: {
+      value: devopsTriggerActionsFilterIncludeToHclTerraform(struct!.include),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsTriggerActionsFilterIncludeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsTriggerActionsFilterOutputReference extends cdktf.ComplexObject {
@@ -562,7 +693,7 @@ export interface DevopsTriggerActions {
   readonly type: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_trigger#filter DevopsTrigger#filter}
   */
   readonly filter?: DevopsTriggerActionsFilter;
@@ -578,6 +709,37 @@ export function devopsTriggerActionsToTerraform(struct?: DevopsTriggerActions | 
     type: cdktf.stringToTerraform(struct!.type),
     filter: devopsTriggerActionsFilterToTerraform(struct!.filter),
   }
+}
+
+
+export function devopsTriggerActionsToHclTerraform(struct?: DevopsTriggerActions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    build_pipeline_id: {
+      value: cdktf.stringToHclTerraform(struct!.buildPipelineId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    filter: {
+      value: devopsTriggerActionsFilterToHclTerraform(struct!.filter),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsTriggerActionsFilterList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsTriggerActionsOutputReference extends cdktf.ComplexObject {
@@ -725,6 +887,37 @@ export function devopsTriggerTimeoutsToTerraform(struct?: DevopsTriggerTimeouts 
   }
 }
 
+
+export function devopsTriggerTimeoutsToHclTerraform(struct?: DevopsTriggerTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DevopsTriggerTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -837,6 +1030,20 @@ export class DevopsTrigger extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_trigger";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DevopsTrigger resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DevopsTrigger to import
+  * @param importFromId The id of the existing DevopsTrigger that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_trigger#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DevopsTrigger to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_trigger", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1103,5 +1310,79 @@ export class DevopsTrigger extends cdktf.TerraformResource {
       actions: cdktf.listMapper(devopsTriggerActionsToTerraform, true)(this._actions.internalValue),
       timeouts: devopsTriggerTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      connection_id: {
+        value: cdktf.stringToHclTerraform(this._connectionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      repository_id: {
+        value: cdktf.stringToHclTerraform(this._repositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      trigger_source: {
+        value: cdktf.stringToHclTerraform(this._triggerSource),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      actions: {
+        value: cdktf.listMapperHcl(devopsTriggerActionsToHclTerraform, true)(this._actions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsTriggerActionsList",
+      },
+      timeouts: {
+        value: devopsTriggerTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DevopsTriggerTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

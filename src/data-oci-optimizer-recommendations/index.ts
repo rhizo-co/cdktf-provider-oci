@@ -52,7 +52,7 @@ export interface DataOciOptimizerRecommendationsConfig extends cdktf.TerraformMe
   readonly status?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/optimizer_recommendations#filter DataOciOptimizerRecommendations#filter}
   */
   readonly filter?: DataOciOptimizerRecommendationsFilter[] | cdktf.IResolvable;
@@ -67,6 +67,17 @@ export function dataOciOptimizerRecommendationsRecommendationCollectionItemsReso
   }
   return {
   }
+}
+
+
+export function dataOciOptimizerRecommendationsRecommendationCollectionItemsResourceCountsToHclTerraform(struct?: DataOciOptimizerRecommendationsRecommendationCollectionItemsResourceCounts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOptimizerRecommendationsRecommendationCollectionItemsResourceCountsOutputReference extends cdktf.ComplexObject {
@@ -138,6 +149,17 @@ export function dataOciOptimizerRecommendationsRecommendationCollectionItemsSupp
   }
 }
 
+
+export function dataOciOptimizerRecommendationsRecommendationCollectionItemsSupportedLevelsItemsToHclTerraform(struct?: DataOciOptimizerRecommendationsRecommendationCollectionItemsSupportedLevelsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerRecommendationsRecommendationCollectionItemsSupportedLevelsItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -200,6 +222,17 @@ export function dataOciOptimizerRecommendationsRecommendationCollectionItemsSupp
   }
   return {
   }
+}
+
+
+export function dataOciOptimizerRecommendationsRecommendationCollectionItemsSupportedLevelsToHclTerraform(struct?: DataOciOptimizerRecommendationsRecommendationCollectionItemsSupportedLevels): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOptimizerRecommendationsRecommendationCollectionItemsSupportedLevelsOutputReference extends cdktf.ComplexObject {
@@ -265,6 +298,17 @@ export function dataOciOptimizerRecommendationsRecommendationCollectionItemsToTe
   }
   return {
   }
+}
+
+
+export function dataOciOptimizerRecommendationsRecommendationCollectionItemsToHclTerraform(struct?: DataOciOptimizerRecommendationsRecommendationCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOptimizerRecommendationsRecommendationCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -414,6 +458,17 @@ export function dataOciOptimizerRecommendationsRecommendationCollectionToTerrafo
   }
 }
 
+
+export function dataOciOptimizerRecommendationsRecommendationCollectionToHclTerraform(struct?: DataOciOptimizerRecommendationsRecommendationCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerRecommendationsRecommendationCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -492,6 +547,37 @@ export function dataOciOptimizerRecommendationsFilterToTerraform(struct?: DataOc
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOptimizerRecommendationsFilterToHclTerraform(struct?: DataOciOptimizerRecommendationsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOptimizerRecommendationsFilterOutputReference extends cdktf.ComplexObject {
@@ -622,6 +708,20 @@ export class DataOciOptimizerRecommendations extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_optimizer_recommendations";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOptimizerRecommendations resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOptimizerRecommendations to import
+  * @param importFromId The id of the existing DataOciOptimizerRecommendations that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/optimizer_recommendations#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOptimizerRecommendations to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_optimizer_recommendations", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -861,5 +961,79 @@ export class DataOciOptimizerRecommendations extends cdktf.TerraformDataSource {
       status: cdktf.stringToTerraform(this._status),
       filter: cdktf.listMapper(dataOciOptimizerRecommendationsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      category_id: {
+        value: cdktf.stringToHclTerraform(this._categoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      category_name: {
+        value: cdktf.stringToHclTerraform(this._categoryName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      child_tenancy_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._childTenancyIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      include_organization: {
+        value: cdktf.booleanToHclTerraform(this._includeOrganization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOptimizerRecommendationsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOptimizerRecommendationsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

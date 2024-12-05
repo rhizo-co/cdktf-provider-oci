@@ -36,7 +36,7 @@ export interface DatabaseMigrationJobConfig extends cdktf.TerraformMetaArguments
   readonly suspendTrigger?: number;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_migration_job#timeouts DatabaseMigrationJob#timeouts}
   */
   readonly timeouts?: DatabaseMigrationJobTimeouts;
@@ -51,6 +51,17 @@ export function databaseMigrationJobParameterFileVersionsToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function databaseMigrationJobParameterFileVersionsToHclTerraform(struct?: DatabaseMigrationJobParameterFileVersions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseMigrationJobParameterFileVersionsOutputReference extends cdktf.ComplexObject {
@@ -160,6 +171,17 @@ export function databaseMigrationJobProgressPhasesExtractToTerraform(struct?: Da
   }
 }
 
+
+export function databaseMigrationJobProgressPhasesExtractToHclTerraform(struct?: DatabaseMigrationJobProgressPhasesExtract): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatabaseMigrationJobProgressPhasesExtractOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -227,6 +249,17 @@ export function databaseMigrationJobProgressPhasesLogLocationToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function databaseMigrationJobProgressPhasesLogLocationToHclTerraform(struct?: DatabaseMigrationJobProgressPhasesLogLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseMigrationJobProgressPhasesLogLocationOutputReference extends cdktf.ComplexObject {
@@ -301,6 +334,17 @@ export function databaseMigrationJobProgressPhasesToTerraform(struct?: DatabaseM
   }
   return {
   }
+}
+
+
+export function databaseMigrationJobProgressPhasesToHclTerraform(struct?: DatabaseMigrationJobProgressPhases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseMigrationJobProgressPhasesOutputReference extends cdktf.ComplexObject {
@@ -419,6 +463,17 @@ export function databaseMigrationJobProgressToTerraform(struct?: DatabaseMigrati
   }
 }
 
+
+export function databaseMigrationJobProgressToHclTerraform(struct?: DatabaseMigrationJobProgress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatabaseMigrationJobProgressOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -492,6 +547,17 @@ export function databaseMigrationJobUnsupportedObjectsToTerraform(struct?: Datab
   }
   return {
   }
+}
+
+
+export function databaseMigrationJobUnsupportedObjectsToHclTerraform(struct?: DatabaseMigrationJobUnsupportedObjects): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseMigrationJobUnsupportedObjectsOutputReference extends cdktf.ComplexObject {
@@ -581,6 +647,37 @@ export function databaseMigrationJobTimeoutsToTerraform(struct?: DatabaseMigrati
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseMigrationJobTimeoutsToHclTerraform(struct?: DatabaseMigrationJobTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseMigrationJobTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -695,6 +792,20 @@ export class DatabaseMigrationJob extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_migration_job";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseMigrationJob resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseMigrationJob to import
+  * @param importFromId The id of the existing DatabaseMigrationJob that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_migration_job#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseMigrationJob to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_migration_job", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -913,5 +1024,55 @@ export class DatabaseMigrationJob extends cdktf.TerraformResource {
       suspend_trigger: cdktf.numberToTerraform(this._suspendTrigger),
       timeouts: databaseMigrationJobTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      job_id: {
+        value: cdktf.stringToHclTerraform(this._jobId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      suspend_trigger: {
+        value: cdktf.numberToHclTerraform(this._suspendTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      timeouts: {
+        value: databaseMigrationJobTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseMigrationJobTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

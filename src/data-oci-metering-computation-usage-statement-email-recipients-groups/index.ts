@@ -24,7 +24,7 @@ export interface DataOciMeteringComputationUsageStatementEmailRecipientsGroupsCo
   readonly subscriptionId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/metering_computation_usage_statement_email_recipients_groups#filter DataOciMeteringComputationUsageStatementEmailRecipientsGroups#filter}
   */
   readonly filter?: DataOciMeteringComputationUsageStatementEmailRecipientsGroupsFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciMeteringComputationUsageStatementEmailRecipientsGroupsEma
   }
   return {
   }
+}
+
+
+export function dataOciMeteringComputationUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemsRecipientsListStructToHclTerraform(struct?: DataOciMeteringComputationUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemsRecipientsListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMeteringComputationUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemsRecipientsListStructOutputReference extends cdktf.ComplexObject {
@@ -118,6 +129,17 @@ export function dataOciMeteringComputationUsageStatementEmailRecipientsGroupsEma
   }
   return {
   }
+}
+
+
+export function dataOciMeteringComputationUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemsToHclTerraform(struct?: DataOciMeteringComputationUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMeteringComputationUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -210,6 +232,17 @@ export function dataOciMeteringComputationUsageStatementEmailRecipientsGroupsEma
   }
 }
 
+
+export function dataOciMeteringComputationUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionToHclTerraform(struct?: DataOciMeteringComputationUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMeteringComputationUsageStatementEmailRecipientsGroupsEmailRecipientsGroupCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -288,6 +321,37 @@ export function dataOciMeteringComputationUsageStatementEmailRecipientsGroupsFil
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciMeteringComputationUsageStatementEmailRecipientsGroupsFilterToHclTerraform(struct?: DataOciMeteringComputationUsageStatementEmailRecipientsGroupsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciMeteringComputationUsageStatementEmailRecipientsGroupsFilterOutputReference extends cdktf.ComplexObject {
@@ -419,6 +483,20 @@ export class DataOciMeteringComputationUsageStatementEmailRecipientsGroups exten
   // =================
   public static readonly tfResourceType = "oci_metering_computation_usage_statement_email_recipients_groups";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMeteringComputationUsageStatementEmailRecipientsGroups resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMeteringComputationUsageStatementEmailRecipientsGroups to import
+  * @param importFromId The id of the existing DataOciMeteringComputationUsageStatementEmailRecipientsGroups that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/metering_computation_usage_statement_email_recipients_groups#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMeteringComputationUsageStatementEmailRecipientsGroups to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_metering_computation_usage_statement_email_recipients_groups", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -531,5 +609,37 @@ export class DataOciMeteringComputationUsageStatementEmailRecipientsGroups exten
       subscription_id: cdktf.stringToTerraform(this._subscriptionId),
       filter: cdktf.listMapper(dataOciMeteringComputationUsageStatementEmailRecipientsGroupsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subscription_id: {
+        value: cdktf.stringToHclTerraform(this._subscriptionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciMeteringComputationUsageStatementEmailRecipientsGroupsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciMeteringComputationUsageStatementEmailRecipientsGroupsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

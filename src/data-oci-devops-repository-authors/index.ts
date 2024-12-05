@@ -24,7 +24,7 @@ export interface DataOciDevopsRepositoryAuthorsConfig extends cdktf.TerraformMet
   readonly repositoryId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_repository_authors#filter DataOciDevopsRepositoryAuthors#filter}
   */
   readonly filter?: DataOciDevopsRepositoryAuthorsFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciDevopsRepositoryAuthorsRepositoryAuthorCollectionItemsToT
   }
   return {
   }
+}
+
+
+export function dataOciDevopsRepositoryAuthorsRepositoryAuthorCollectionItemsToHclTerraform(struct?: DataOciDevopsRepositoryAuthorsRepositoryAuthorCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsRepositoryAuthorsRepositoryAuthorCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -123,6 +134,17 @@ export function dataOciDevopsRepositoryAuthorsRepositoryAuthorCollectionToTerraf
   }
 }
 
+
+export function dataOciDevopsRepositoryAuthorsRepositoryAuthorCollectionToHclTerraform(struct?: DataOciDevopsRepositoryAuthorsRepositoryAuthorCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsRepositoryAuthorsRepositoryAuthorCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -201,6 +223,37 @@ export function dataOciDevopsRepositoryAuthorsFilterToTerraform(struct?: DataOci
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDevopsRepositoryAuthorsFilterToHclTerraform(struct?: DataOciDevopsRepositoryAuthorsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDevopsRepositoryAuthorsFilterOutputReference extends cdktf.ComplexObject {
@@ -332,6 +385,20 @@ export class DataOciDevopsRepositoryAuthors extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_devops_repository_authors";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDevopsRepositoryAuthors resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDevopsRepositoryAuthors to import
+  * @param importFromId The id of the existing DataOciDevopsRepositoryAuthors that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_repository_authors#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDevopsRepositoryAuthors to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_repository_authors", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -447,5 +514,37 @@ export class DataOciDevopsRepositoryAuthors extends cdktf.TerraformDataSource {
       repository_id: cdktf.stringToTerraform(this._repositoryId),
       filter: cdktf.listMapper(dataOciDevopsRepositoryAuthorsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ref_name: {
+        value: cdktf.stringToHclTerraform(this._refName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      repository_id: {
+        value: cdktf.stringToHclTerraform(this._repositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDevopsRepositoryAuthorsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDevopsRepositoryAuthorsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

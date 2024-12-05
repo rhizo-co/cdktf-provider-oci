@@ -24,6 +24,17 @@ export function dataOciDataflowPoolConfigurationsShapeConfigToTerraform(struct?:
   }
 }
 
+
+export function dataOciDataflowPoolConfigurationsShapeConfigToHclTerraform(struct?: DataOciDataflowPoolConfigurationsShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataflowPoolConfigurationsShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciDataflowPoolConfigurationsToTerraform(struct?: DataOciDat
   }
   return {
   }
+}
+
+
+export function dataOciDataflowPoolConfigurationsToHclTerraform(struct?: DataOciDataflowPoolConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataflowPoolConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -173,6 +195,17 @@ export function dataOciDataflowPoolPoolMetricsActivelyUsedNodeCountToTerraform(s
   }
 }
 
+
+export function dataOciDataflowPoolPoolMetricsActivelyUsedNodeCountToHclTerraform(struct?: DataOciDataflowPoolPoolMetricsActivelyUsedNodeCount): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataflowPoolPoolMetricsActivelyUsedNodeCountOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -240,6 +273,17 @@ export function dataOciDataflowPoolPoolMetricsToTerraform(struct?: DataOciDatafl
   }
   return {
   }
+}
+
+
+export function dataOciDataflowPoolPoolMetricsToHclTerraform(struct?: DataOciDataflowPoolPoolMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataflowPoolPoolMetricsOutputReference extends cdktf.ComplexObject {
@@ -332,6 +376,17 @@ export function dataOciDataflowPoolSchedulesToTerraform(struct?: DataOciDataflow
   }
 }
 
+
+export function dataOciDataflowPoolSchedulesToHclTerraform(struct?: DataOciDataflowPoolSchedules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataflowPoolSchedulesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -404,6 +459,20 @@ export class DataOciDataflowPool extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataflow_pool";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataflowPool resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataflowPool to import
+  * @param importFromId The id of the existing DataOciDataflowPool that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dataflow_pool#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataflowPool to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataflow_pool", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -545,5 +614,19 @@ export class DataOciDataflowPool extends cdktf.TerraformDataSource {
     return {
       pool_id: cdktf.stringToTerraform(this._poolId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      pool_id: {
+        value: cdktf.stringToHclTerraform(this._poolId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

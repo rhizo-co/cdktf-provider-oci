@@ -30,6 +30,20 @@ export class DataOciNetworkLoadBalancerNetworkLoadBalancerHealth extends cdktf.T
   // =================
   public static readonly tfResourceType = "oci_network_load_balancer_network_load_balancer_health";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciNetworkLoadBalancerNetworkLoadBalancerHealth resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciNetworkLoadBalancerNetworkLoadBalancerHealth to import
+  * @param importFromId The id of the existing DataOciNetworkLoadBalancerNetworkLoadBalancerHealth that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/network_load_balancer_network_load_balancer_health#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciNetworkLoadBalancerNetworkLoadBalancerHealth to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_load_balancer_network_load_balancer_health", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -128,5 +142,25 @@ export class DataOciNetworkLoadBalancerNetworkLoadBalancerHealth extends cdktf.T
       id: cdktf.stringToTerraform(this._id),
       network_load_balancer_id: cdktf.stringToTerraform(this._networkLoadBalancerId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_load_balancer_id: {
+        value: cdktf.stringToHclTerraform(this._networkLoadBalancerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

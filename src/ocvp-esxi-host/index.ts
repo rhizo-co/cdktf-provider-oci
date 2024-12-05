@@ -76,7 +76,7 @@ export interface OcvpEsxiHostConfig extends cdktf.TerraformMetaArguments {
   readonly sddcId?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ocvp_esxi_host#timeouts OcvpEsxiHost#timeouts}
   */
   readonly timeouts?: OcvpEsxiHostTimeouts;
@@ -96,6 +96,25 @@ export function ocvpEsxiHostTimeoutsToTerraform(struct?: OcvpEsxiHostTimeouts | 
   return {
     create: cdktf.stringToTerraform(struct!.create),
   }
+}
+
+
+export function ocvpEsxiHostTimeoutsToHclTerraform(struct?: OcvpEsxiHostTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OcvpEsxiHostTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -166,6 +185,20 @@ export class OcvpEsxiHost extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ocvp_esxi_host";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OcvpEsxiHost resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OcvpEsxiHost to import
+  * @param importFromId The id of the existing OcvpEsxiHost that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ocvp_esxi_host#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OcvpEsxiHost to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ocvp_esxi_host", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -588,5 +621,115 @@ export class OcvpEsxiHost extends cdktf.TerraformResource {
       sddc_id: cdktf.stringToTerraform(this._sddcId),
       timeouts: ocvpEsxiHostTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      billing_donor_host_id: {
+        value: cdktf.stringToHclTerraform(this._billingDonorHostId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      capacity_reservation_id: {
+        value: cdktf.stringToHclTerraform(this._capacityReservationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_id: {
+        value: cdktf.stringToHclTerraform(this._clusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compute_availability_domain: {
+        value: cdktf.stringToHclTerraform(this._computeAvailabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      current_sku: {
+        value: cdktf.stringToHclTerraform(this._currentSku),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      esxi_software_version: {
+        value: cdktf.stringToHclTerraform(this._esxiSoftwareVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      failed_esxi_host_id: {
+        value: cdktf.stringToHclTerraform(this._failedEsxiHostId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      host_ocpu_count: {
+        value: cdktf.numberToHclTerraform(this._hostOcpuCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      host_shape_name: {
+        value: cdktf.stringToHclTerraform(this._hostShapeName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      next_sku: {
+        value: cdktf.stringToHclTerraform(this._nextSku),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      non_upgraded_esxi_host_id: {
+        value: cdktf.stringToHclTerraform(this._nonUpgradedEsxiHostId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sddc_id: {
+        value: cdktf.stringToHclTerraform(this._sddcId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: ocvpEsxiHostTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OcvpEsxiHostTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

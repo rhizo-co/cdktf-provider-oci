@@ -28,7 +28,7 @@ export interface DataOciLoggingLogSavedSearchesConfig extends cdktf.TerraformMet
   readonly name?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/logging_log_saved_searches#filter DataOciLoggingLogSavedSearches#filter}
   */
   readonly filter?: DataOciLoggingLogSavedSearchesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciLoggingLogSavedSearchesLogSavedSearchSummaryCollectionIte
   }
   return {
   }
+}
+
+
+export function dataOciLoggingLogSavedSearchesLogSavedSearchSummaryCollectionItemsToHclTerraform(struct?: DataOciLoggingLogSavedSearchesLogSavedSearchSummaryCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciLoggingLogSavedSearchesLogSavedSearchSummaryCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -156,6 +167,17 @@ export function dataOciLoggingLogSavedSearchesLogSavedSearchSummaryCollectionToT
   }
 }
 
+
+export function dataOciLoggingLogSavedSearchesLogSavedSearchSummaryCollectionToHclTerraform(struct?: DataOciLoggingLogSavedSearchesLogSavedSearchSummaryCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciLoggingLogSavedSearchesLogSavedSearchSummaryCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -234,6 +256,37 @@ export function dataOciLoggingLogSavedSearchesFilterToTerraform(struct?: DataOci
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciLoggingLogSavedSearchesFilterToHclTerraform(struct?: DataOciLoggingLogSavedSearchesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciLoggingLogSavedSearchesFilterOutputReference extends cdktf.ComplexObject {
@@ -364,6 +417,20 @@ export class DataOciLoggingLogSavedSearches extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_logging_log_saved_searches";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLoggingLogSavedSearches resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLoggingLogSavedSearches to import
+  * @param importFromId The id of the existing DataOciLoggingLogSavedSearches that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/logging_log_saved_searches#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLoggingLogSavedSearches to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_logging_log_saved_searches", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -498,5 +565,43 @@ export class DataOciLoggingLogSavedSearches extends cdktf.TerraformDataSource {
       name: cdktf.stringToTerraform(this._name),
       filter: cdktf.listMapper(dataOciLoggingLogSavedSearchesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      log_saved_search_id: {
+        value: cdktf.stringToHclTerraform(this._logSavedSearchId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciLoggingLogSavedSearchesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciLoggingLogSavedSearchesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

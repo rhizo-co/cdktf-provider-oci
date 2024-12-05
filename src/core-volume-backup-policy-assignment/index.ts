@@ -28,7 +28,7 @@ export interface CoreVolumeBackupPolicyAssignmentConfig extends cdktf.TerraformM
   readonly xrcKmsKeyId?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_volume_backup_policy_assignment#timeouts CoreVolumeBackupPolicyAssignment#timeouts}
   */
   readonly timeouts?: CoreVolumeBackupPolicyAssignmentTimeouts;
@@ -58,6 +58,37 @@ export function coreVolumeBackupPolicyAssignmentTimeoutsToTerraform(struct?: Cor
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function coreVolumeBackupPolicyAssignmentTimeoutsToHclTerraform(struct?: CoreVolumeBackupPolicyAssignmentTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreVolumeBackupPolicyAssignmentTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -172,6 +203,20 @@ export class CoreVolumeBackupPolicyAssignment extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_volume_backup_policy_assignment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreVolumeBackupPolicyAssignment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreVolumeBackupPolicyAssignment to import
+  * @param importFromId The id of the existing CoreVolumeBackupPolicyAssignment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_volume_backup_policy_assignment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreVolumeBackupPolicyAssignment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_volume_backup_policy_assignment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -302,5 +347,43 @@ export class CoreVolumeBackupPolicyAssignment extends cdktf.TerraformResource {
       xrc_kms_key_id: cdktf.stringToTerraform(this._xrcKmsKeyId),
       timeouts: coreVolumeBackupPolicyAssignmentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      asset_id: {
+        value: cdktf.stringToHclTerraform(this._assetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      policy_id: {
+        value: cdktf.stringToHclTerraform(this._policyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      xrc_kms_key_id: {
+        value: cdktf.stringToHclTerraform(this._xrcKmsKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: coreVolumeBackupPolicyAssignmentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreVolumeBackupPolicyAssignmentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

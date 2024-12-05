@@ -36,13 +36,13 @@ export interface DatabaseKeyStoreConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_key_store#timeouts DatabaseKeyStore#timeouts}
   */
   readonly timeouts?: DatabaseKeyStoreTimeouts;
   /**
   * type_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_key_store#type_details DatabaseKeyStore#type_details}
   */
   readonly typeDetails: DatabaseKeyStoreTypeDetails;
@@ -57,6 +57,17 @@ export function databaseKeyStoreAssociatedDatabasesToTerraform(struct?: Database
   }
   return {
   }
+}
+
+
+export function databaseKeyStoreAssociatedDatabasesToHclTerraform(struct?: DatabaseKeyStoreAssociatedDatabases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseKeyStoreAssociatedDatabasesOutputReference extends cdktf.ComplexObject {
@@ -141,6 +152,37 @@ export function databaseKeyStoreTimeoutsToTerraform(struct?: DatabaseKeyStoreTim
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseKeyStoreTimeoutsToHclTerraform(struct?: DatabaseKeyStoreTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseKeyStoreTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -282,6 +324,49 @@ export function databaseKeyStoreTypeDetailsToTerraform(struct?: DatabaseKeyStore
   }
 }
 
+
+export function databaseKeyStoreTypeDetailsToHclTerraform(struct?: DatabaseKeyStoreTypeDetailsOutputReference | DatabaseKeyStoreTypeDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    admin_username: {
+      value: cdktf.stringToHclTerraform(struct!.adminUsername),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connection_ips: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.connectionIps),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vault_id: {
+      value: cdktf.stringToHclTerraform(struct!.vaultId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseKeyStoreTypeDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -413,6 +498,20 @@ export class DatabaseKeyStore extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_key_store";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseKeyStore resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseKeyStore to import
+  * @param importFromId The id of the existing DatabaseKeyStore that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_key_store#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseKeyStore to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_key_store", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -610,5 +709,61 @@ export class DatabaseKeyStore extends cdktf.TerraformResource {
       timeouts: databaseKeyStoreTimeoutsToTerraform(this._timeouts.internalValue),
       type_details: databaseKeyStoreTypeDetailsToTerraform(this._typeDetails.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      confirm_details_trigger: {
+        value: cdktf.numberToHclTerraform(this._confirmDetailsTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: databaseKeyStoreTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseKeyStoreTimeouts",
+      },
+      type_details: {
+        value: databaseKeyStoreTypeDetailsToHclTerraform(this._typeDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseKeyStoreTypeDetailsList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

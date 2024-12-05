@@ -64,43 +64,43 @@ export interface DevopsBuildPipelineStageConfig extends cdktf.TerraformMetaArgum
   readonly stageExecutionTimeoutInSeconds?: number;
   /**
   * build_pipeline_stage_predecessor_collection block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#build_pipeline_stage_predecessor_collection DevopsBuildPipelineStage#build_pipeline_stage_predecessor_collection}
   */
   readonly buildPipelineStagePredecessorCollection: DevopsBuildPipelineStageBuildPipelineStagePredecessorCollection;
   /**
   * build_runner_shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#build_runner_shape_config DevopsBuildPipelineStage#build_runner_shape_config}
   */
   readonly buildRunnerShapeConfig?: DevopsBuildPipelineStageBuildRunnerShapeConfig;
   /**
   * build_source_collection block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#build_source_collection DevopsBuildPipelineStage#build_source_collection}
   */
   readonly buildSourceCollection?: DevopsBuildPipelineStageBuildSourceCollection;
   /**
   * deliver_artifact_collection block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#deliver_artifact_collection DevopsBuildPipelineStage#deliver_artifact_collection}
   */
   readonly deliverArtifactCollection?: DevopsBuildPipelineStageDeliverArtifactCollection;
   /**
   * private_access_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#private_access_config DevopsBuildPipelineStage#private_access_config}
   */
   readonly privateAccessConfig?: DevopsBuildPipelineStagePrivateAccessConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#timeouts DevopsBuildPipelineStage#timeouts}
   */
   readonly timeouts?: DevopsBuildPipelineStageTimeouts;
   /**
   * wait_criteria block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#wait_criteria DevopsBuildPipelineStage#wait_criteria}
   */
   readonly waitCriteria?: DevopsBuildPipelineStageWaitCriteria;
@@ -123,6 +123,25 @@ export function devopsBuildPipelineStageBuildPipelineStagePredecessorCollectionI
   return {
     id: cdktf.stringToTerraform(struct!.id),
   }
+}
+
+
+export function devopsBuildPipelineStageBuildPipelineStagePredecessorCollectionItemsToHclTerraform(struct?: DevopsBuildPipelineStageBuildPipelineStagePredecessorCollectionItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildPipelineStageBuildPipelineStagePredecessorCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -205,7 +224,7 @@ export class DevopsBuildPipelineStageBuildPipelineStagePredecessorCollectionItem
 export interface DevopsBuildPipelineStageBuildPipelineStagePredecessorCollection {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#items DevopsBuildPipelineStage#items}
   */
   readonly items: DevopsBuildPipelineStageBuildPipelineStagePredecessorCollectionItems[] | cdktf.IResolvable;
@@ -219,6 +238,25 @@ export function devopsBuildPipelineStageBuildPipelineStagePredecessorCollectionT
   return {
     items: cdktf.listMapper(devopsBuildPipelineStageBuildPipelineStagePredecessorCollectionItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function devopsBuildPipelineStageBuildPipelineStagePredecessorCollectionToHclTerraform(struct?: DevopsBuildPipelineStageBuildPipelineStagePredecessorCollectionOutputReference | DevopsBuildPipelineStageBuildPipelineStagePredecessorCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(devopsBuildPipelineStageBuildPipelineStagePredecessorCollectionItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsBuildPipelineStageBuildPipelineStagePredecessorCollectionItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildPipelineStageBuildPipelineStagePredecessorCollectionOutputReference extends cdktf.ComplexObject {
@@ -291,6 +329,37 @@ export function devopsBuildPipelineStageBuildRunnerShapeConfigToTerraform(struct
     memory_in_gbs: cdktf.numberToTerraform(struct!.memoryInGbs),
     ocpus: cdktf.numberToTerraform(struct!.ocpus),
   }
+}
+
+
+export function devopsBuildPipelineStageBuildRunnerShapeConfigToHclTerraform(struct?: DevopsBuildPipelineStageBuildRunnerShapeConfigOutputReference | DevopsBuildPipelineStageBuildRunnerShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    build_runner_type: {
+      value: cdktf.stringToHclTerraform(struct!.buildRunnerType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildPipelineStageBuildRunnerShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -422,6 +491,55 @@ export function devopsBuildPipelineStageBuildSourceCollectionItemsToTerraform(st
     repository_id: cdktf.stringToTerraform(struct!.repositoryId),
     repository_url: cdktf.stringToTerraform(struct!.repositoryUrl),
   }
+}
+
+
+export function devopsBuildPipelineStageBuildSourceCollectionItemsToHclTerraform(struct?: DevopsBuildPipelineStageBuildSourceCollectionItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    branch: {
+      value: cdktf.stringToHclTerraform(struct!.branch),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connection_id: {
+      value: cdktf.stringToHclTerraform(struct!.connectionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connection_type: {
+      value: cdktf.stringToHclTerraform(struct!.connectionType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repository_id: {
+      value: cdktf.stringToHclTerraform(struct!.repositoryId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repository_url: {
+      value: cdktf.stringToHclTerraform(struct!.repositoryUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildPipelineStageBuildSourceCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -614,7 +732,7 @@ export class DevopsBuildPipelineStageBuildSourceCollectionItemsList extends cdkt
 export interface DevopsBuildPipelineStageBuildSourceCollection {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#items DevopsBuildPipelineStage#items}
   */
   readonly items?: DevopsBuildPipelineStageBuildSourceCollectionItems[] | cdktf.IResolvable;
@@ -628,6 +746,25 @@ export function devopsBuildPipelineStageBuildSourceCollectionToTerraform(struct?
   return {
     items: cdktf.listMapper(devopsBuildPipelineStageBuildSourceCollectionItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function devopsBuildPipelineStageBuildSourceCollectionToHclTerraform(struct?: DevopsBuildPipelineStageBuildSourceCollectionOutputReference | DevopsBuildPipelineStageBuildSourceCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(devopsBuildPipelineStageBuildSourceCollectionItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsBuildPipelineStageBuildSourceCollectionItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildPipelineStageBuildSourceCollectionOutputReference extends cdktf.ComplexObject {
@@ -698,6 +835,31 @@ export function devopsBuildPipelineStageDeliverArtifactCollectionItemsToTerrafor
     artifact_id: cdktf.stringToTerraform(struct!.artifactId),
     artifact_name: cdktf.stringToTerraform(struct!.artifactName),
   }
+}
+
+
+export function devopsBuildPipelineStageDeliverArtifactCollectionItemsToHclTerraform(struct?: DevopsBuildPipelineStageDeliverArtifactCollectionItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    artifact_id: {
+      value: cdktf.stringToHclTerraform(struct!.artifactId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    artifact_name: {
+      value: cdktf.stringToHclTerraform(struct!.artifactName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildPipelineStageDeliverArtifactCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -805,7 +967,7 @@ export class DevopsBuildPipelineStageDeliverArtifactCollectionItemsList extends 
 export interface DevopsBuildPipelineStageDeliverArtifactCollection {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#items DevopsBuildPipelineStage#items}
   */
   readonly items?: DevopsBuildPipelineStageDeliverArtifactCollectionItems[] | cdktf.IResolvable;
@@ -819,6 +981,25 @@ export function devopsBuildPipelineStageDeliverArtifactCollectionToTerraform(str
   return {
     items: cdktf.listMapper(devopsBuildPipelineStageDeliverArtifactCollectionItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function devopsBuildPipelineStageDeliverArtifactCollectionToHclTerraform(struct?: DevopsBuildPipelineStageDeliverArtifactCollectionOutputReference | DevopsBuildPipelineStageDeliverArtifactCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(devopsBuildPipelineStageDeliverArtifactCollectionItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsBuildPipelineStageDeliverArtifactCollectionItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildPipelineStageDeliverArtifactCollectionOutputReference extends cdktf.ComplexObject {
@@ -894,6 +1075,37 @@ export function devopsBuildPipelineStagePrivateAccessConfigToTerraform(struct?: 
     nsg_ids: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.nsgIds),
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
   }
+}
+
+
+export function devopsBuildPipelineStagePrivateAccessConfigToHclTerraform(struct?: DevopsBuildPipelineStagePrivateAccessConfigOutputReference | DevopsBuildPipelineStagePrivateAccessConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    network_channel_type: {
+      value: cdktf.stringToHclTerraform(struct!.networkChannelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildPipelineStagePrivateAccessConfigOutputReference extends cdktf.ComplexObject {
@@ -1007,6 +1219,37 @@ export function devopsBuildPipelineStageTimeoutsToTerraform(struct?: DevopsBuild
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function devopsBuildPipelineStageTimeoutsToHclTerraform(struct?: DevopsBuildPipelineStageTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsBuildPipelineStageTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -1133,6 +1376,31 @@ export function devopsBuildPipelineStageWaitCriteriaToTerraform(struct?: DevopsB
   }
 }
 
+
+export function devopsBuildPipelineStageWaitCriteriaToHclTerraform(struct?: DevopsBuildPipelineStageWaitCriteriaOutputReference | DevopsBuildPipelineStageWaitCriteria): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    wait_duration: {
+      value: cdktf.stringToHclTerraform(struct!.waitDuration),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    wait_type: {
+      value: cdktf.stringToHclTerraform(struct!.waitType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DevopsBuildPipelineStageWaitCriteriaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1207,6 +1475,20 @@ export class DevopsBuildPipelineStage extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_build_pipeline_stage";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DevopsBuildPipelineStage resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DevopsBuildPipelineStage to import
+  * @param importFromId The id of the existing DevopsBuildPipelineStage that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_build_pipeline_stage#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DevopsBuildPipelineStage to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_build_pipeline_stage", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1635,5 +1917,133 @@ export class DevopsBuildPipelineStage extends cdktf.TerraformResource {
       timeouts: devopsBuildPipelineStageTimeoutsToTerraform(this._timeouts.internalValue),
       wait_criteria: devopsBuildPipelineStageWaitCriteriaToTerraform(this._waitCriteria.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      build_pipeline_id: {
+        value: cdktf.stringToHclTerraform(this._buildPipelineId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      build_pipeline_stage_type: {
+        value: cdktf.stringToHclTerraform(this._buildPipelineStageType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      build_spec_file: {
+        value: cdktf.stringToHclTerraform(this._buildSpecFile),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      deploy_pipeline_id: {
+        value: cdktf.stringToHclTerraform(this._deployPipelineId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      image: {
+        value: cdktf.stringToHclTerraform(this._image),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_pass_all_parameters_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isPassAllParametersEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      primary_build_source: {
+        value: cdktf.stringToHclTerraform(this._primaryBuildSource),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      stage_execution_timeout_in_seconds: {
+        value: cdktf.numberToHclTerraform(this._stageExecutionTimeoutInSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      build_pipeline_stage_predecessor_collection: {
+        value: devopsBuildPipelineStageBuildPipelineStagePredecessorCollectionToHclTerraform(this._buildPipelineStagePredecessorCollection.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsBuildPipelineStageBuildPipelineStagePredecessorCollectionList",
+      },
+      build_runner_shape_config: {
+        value: devopsBuildPipelineStageBuildRunnerShapeConfigToHclTerraform(this._buildRunnerShapeConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsBuildPipelineStageBuildRunnerShapeConfigList",
+      },
+      build_source_collection: {
+        value: devopsBuildPipelineStageBuildSourceCollectionToHclTerraform(this._buildSourceCollection.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsBuildPipelineStageBuildSourceCollectionList",
+      },
+      deliver_artifact_collection: {
+        value: devopsBuildPipelineStageDeliverArtifactCollectionToHclTerraform(this._deliverArtifactCollection.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsBuildPipelineStageDeliverArtifactCollectionList",
+      },
+      private_access_config: {
+        value: devopsBuildPipelineStagePrivateAccessConfigToHclTerraform(this._privateAccessConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsBuildPipelineStagePrivateAccessConfigList",
+      },
+      timeouts: {
+        value: devopsBuildPipelineStageTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DevopsBuildPipelineStageTimeouts",
+      },
+      wait_criteria: {
+        value: devopsBuildPipelineStageWaitCriteriaToHclTerraform(this._waitCriteria.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsBuildPipelineStageWaitCriteriaList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

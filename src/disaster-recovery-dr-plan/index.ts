@@ -36,7 +36,7 @@ export interface DisasterRecoveryDrPlanConfig extends cdktf.TerraformMetaArgumen
   readonly type: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/disaster_recovery_dr_plan#timeouts DisasterRecoveryDrPlan#timeouts}
   */
   readonly timeouts?: DisasterRecoveryDrPlanTimeouts;
@@ -51,6 +51,17 @@ export function disasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepObjectStorag
   }
   return {
   }
+}
+
+
+export function disasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepObjectStorageScriptLocationToHclTerraform(struct?: DisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepObjectStorageScriptLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepObjectStorageScriptLocationOutputReference extends cdktf.ComplexObject {
@@ -125,6 +136,17 @@ export function disasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepToTerraform(
   }
   return {
   }
+}
+
+
+export function disasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepToHclTerraform(struct?: DisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStep): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DisasterRecoveryDrPlanPlanGroupsStepsUserDefinedStepOutputReference extends cdktf.ComplexObject {
@@ -232,6 +254,17 @@ export function disasterRecoveryDrPlanPlanGroupsStepsToTerraform(struct?: Disast
   }
 }
 
+
+export function disasterRecoveryDrPlanPlanGroupsStepsToHclTerraform(struct?: DisasterRecoveryDrPlanPlanGroupsSteps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DisasterRecoveryDrPlanPlanGroupsStepsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -337,6 +370,17 @@ export function disasterRecoveryDrPlanPlanGroupsToTerraform(struct?: DisasterRec
   }
 }
 
+
+export function disasterRecoveryDrPlanPlanGroupsToHclTerraform(struct?: DisasterRecoveryDrPlanPlanGroups): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DisasterRecoveryDrPlanPlanGroupsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -435,6 +479,37 @@ export function disasterRecoveryDrPlanTimeoutsToTerraform(struct?: DisasterRecov
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function disasterRecoveryDrPlanTimeoutsToHclTerraform(struct?: DisasterRecoveryDrPlanTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DisasterRecoveryDrPlanTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -549,6 +624,20 @@ export class DisasterRecoveryDrPlan extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_disaster_recovery_dr_plan";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DisasterRecoveryDrPlan resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DisasterRecoveryDrPlan to import
+  * @param importFromId The id of the existing DisasterRecoveryDrPlan that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/disaster_recovery_dr_plan#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DisasterRecoveryDrPlan to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_disaster_recovery_dr_plan", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -754,5 +843,55 @@ export class DisasterRecoveryDrPlan extends cdktf.TerraformResource {
       type: cdktf.stringToTerraform(this._type),
       timeouts: disasterRecoveryDrPlanTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dr_protection_group_id: {
+        value: cdktf.stringToHclTerraform(this._drProtectionGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: disasterRecoveryDrPlanTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DisasterRecoveryDrPlanTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

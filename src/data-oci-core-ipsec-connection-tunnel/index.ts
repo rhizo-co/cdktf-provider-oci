@@ -28,6 +28,17 @@ export function dataOciCoreIpsecConnectionTunnelBgpSessionInfoToTerraform(struct
   }
 }
 
+
+export function dataOciCoreIpsecConnectionTunnelBgpSessionInfoToHclTerraform(struct?: DataOciCoreIpsecConnectionTunnelBgpSessionInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreIpsecConnectionTunnelBgpSessionInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -54,11 +65,6 @@ export class DataOciCoreIpsecConnectionTunnelBgpSessionInfoOutputReference exten
     else {
       this.isEmptyObject = Object.keys(value).length === 0;
     }
-  }
-
-  // bgp_ipv6_state - computed: true, optional: false, required: false
-  public get bgpIpv6State() {
-    return this.getStringAttribute('bgp_ipv6_state');
   }
 
   // bgp_ipv6state - computed: true, optional: false, required: false
@@ -132,6 +138,17 @@ export function dataOciCoreIpsecConnectionTunnelDpdConfigToTerraform(struct?: Da
   }
 }
 
+
+export function dataOciCoreIpsecConnectionTunnelDpdConfigToHclTerraform(struct?: DataOciCoreIpsecConnectionTunnelDpdConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreIpsecConnectionTunnelDpdConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -201,6 +218,17 @@ export function dataOciCoreIpsecConnectionTunnelEncryptionDomainConfigToTerrafor
   }
 }
 
+
+export function dataOciCoreIpsecConnectionTunnelEncryptionDomainConfigToHclTerraform(struct?: DataOciCoreIpsecConnectionTunnelEncryptionDomainConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreIpsecConnectionTunnelEncryptionDomainConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -268,6 +296,17 @@ export function dataOciCoreIpsecConnectionTunnelPhaseOneDetailsToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciCoreIpsecConnectionTunnelPhaseOneDetailsToHclTerraform(struct?: DataOciCoreIpsecConnectionTunnelPhaseOneDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreIpsecConnectionTunnelPhaseOneDetailsOutputReference extends cdktf.ComplexObject {
@@ -387,6 +426,17 @@ export function dataOciCoreIpsecConnectionTunnelPhaseTwoDetailsToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciCoreIpsecConnectionTunnelPhaseTwoDetailsToHclTerraform(struct?: DataOciCoreIpsecConnectionTunnelPhaseTwoDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreIpsecConnectionTunnelPhaseTwoDetailsOutputReference extends cdktf.ComplexObject {
@@ -511,6 +561,20 @@ export class DataOciCoreIpsecConnectionTunnel extends cdktf.TerraformDataSource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_ipsec_connection_tunnel";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreIpsecConnectionTunnel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreIpsecConnectionTunnel to import
+  * @param importFromId The id of the existing DataOciCoreIpsecConnectionTunnel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_ipsec_connection_tunnel#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreIpsecConnectionTunnel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_ipsec_connection_tunnel", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -697,5 +761,25 @@ export class DataOciCoreIpsecConnectionTunnel extends cdktf.TerraformDataSource 
       ipsec_id: cdktf.stringToTerraform(this._ipsecId),
       tunnel_id: cdktf.stringToTerraform(this._tunnelId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ipsec_id: {
+        value: cdktf.stringToHclTerraform(this._ipsecId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tunnel_id: {
+        value: cdktf.stringToHclTerraform(this._tunnelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

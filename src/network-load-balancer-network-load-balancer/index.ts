@@ -72,13 +72,13 @@ export interface NetworkLoadBalancerNetworkLoadBalancerConfig extends cdktf.Terr
   readonly subnetIpv6Cidr?: string;
   /**
   * reserved_ips block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_network_load_balancer#reserved_ips NetworkLoadBalancerNetworkLoadBalancer#reserved_ips}
   */
   readonly reservedIps?: NetworkLoadBalancerNetworkLoadBalancerReservedIps[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_network_load_balancer#timeouts NetworkLoadBalancerNetworkLoadBalancer#timeouts}
   */
   readonly timeouts?: NetworkLoadBalancerNetworkLoadBalancerTimeouts;
@@ -93,6 +93,17 @@ export function networkLoadBalancerNetworkLoadBalancerIpAddressesReservedIpToTer
   }
   return {
   }
+}
+
+
+export function networkLoadBalancerNetworkLoadBalancerIpAddressesReservedIpToHclTerraform(struct?: NetworkLoadBalancerNetworkLoadBalancerIpAddressesReservedIp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class NetworkLoadBalancerNetworkLoadBalancerIpAddressesReservedIpOutputReference extends cdktf.ComplexObject {
@@ -157,6 +168,17 @@ export function networkLoadBalancerNetworkLoadBalancerIpAddressesToTerraform(str
   }
   return {
   }
+}
+
+
+export function networkLoadBalancerNetworkLoadBalancerIpAddressesToHclTerraform(struct?: NetworkLoadBalancerNetworkLoadBalancerIpAddresses): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class NetworkLoadBalancerNetworkLoadBalancerIpAddressesOutputReference extends cdktf.ComplexObject {
@@ -245,6 +267,25 @@ export function networkLoadBalancerNetworkLoadBalancerReservedIpsToTerraform(str
   return {
     id: cdktf.stringToTerraform(struct!.id),
   }
+}
+
+
+export function networkLoadBalancerNetworkLoadBalancerReservedIpsToHclTerraform(struct?: NetworkLoadBalancerNetworkLoadBalancerReservedIps | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkLoadBalancerNetworkLoadBalancerReservedIpsOutputReference extends cdktf.ComplexObject {
@@ -352,6 +393,37 @@ export function networkLoadBalancerNetworkLoadBalancerTimeoutsToTerraform(struct
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function networkLoadBalancerNetworkLoadBalancerTimeoutsToHclTerraform(struct?: NetworkLoadBalancerNetworkLoadBalancerTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkLoadBalancerNetworkLoadBalancerTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -466,6 +538,20 @@ export class NetworkLoadBalancerNetworkLoadBalancer extends cdktf.TerraformResou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_network_load_balancer_network_load_balancer";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NetworkLoadBalancerNetworkLoadBalancer resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NetworkLoadBalancerNetworkLoadBalancer to import
+  * @param importFromId The id of the existing NetworkLoadBalancerNetworkLoadBalancer that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_network_load_balancer#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NetworkLoadBalancerNetworkLoadBalancer to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_load_balancer_network_load_balancer", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -836,5 +922,115 @@ export class NetworkLoadBalancerNetworkLoadBalancer extends cdktf.TerraformResou
       reserved_ips: cdktf.listMapper(networkLoadBalancerNetworkLoadBalancerReservedIpsToTerraform, true)(this._reservedIps.internalValue),
       timeouts: networkLoadBalancerNetworkLoadBalancerTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      assigned_ipv6: {
+        value: cdktf.stringToHclTerraform(this._assignedIpv6),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      assigned_private_ipv4: {
+        value: cdktf.stringToHclTerraform(this._assignedPrivateIpv4),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_preserve_source_destination: {
+        value: cdktf.booleanToHclTerraform(this._isPreserveSourceDestination),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_private: {
+        value: cdktf.booleanToHclTerraform(this._isPrivate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_symmetric_hash_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isSymmetricHashEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      network_security_group_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._networkSecurityGroupIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      nlb_ip_version: {
+        value: cdktf.stringToHclTerraform(this._nlbIpVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      security_attributes: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._securityAttributes),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_ipv6cidr: {
+        value: cdktf.stringToHclTerraform(this._subnetIpv6Cidr),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      reserved_ips: {
+        value: cdktf.listMapperHcl(networkLoadBalancerNetworkLoadBalancerReservedIpsToHclTerraform, true)(this._reservedIps.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NetworkLoadBalancerNetworkLoadBalancerReservedIpsList",
+      },
+      timeouts: {
+        value: networkLoadBalancerNetworkLoadBalancerTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NetworkLoadBalancerNetworkLoadBalancerTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

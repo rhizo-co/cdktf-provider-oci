@@ -60,13 +60,13 @@ export interface OpsiOpsiConfigurationConfig extends cdktf.TerraformMetaArgument
   readonly systemTags?: { [key: string]: string };
   /**
   * config_items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_opsi_configuration#config_items OpsiOpsiConfiguration#config_items}
   */
   readonly configItems?: OpsiOpsiConfigurationConfigItems[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_opsi_configuration#timeouts OpsiOpsiConfiguration#timeouts}
   */
   readonly timeouts?: OpsiOpsiConfigurationTimeouts;
@@ -81,6 +81,17 @@ export function opsiOpsiConfigurationConfigItemsMetadataUnitDetailsToTerraform(s
   }
   return {
   }
+}
+
+
+export function opsiOpsiConfigurationConfigItemsMetadataUnitDetailsToHclTerraform(struct?: OpsiOpsiConfigurationConfigItemsMetadataUnitDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OpsiOpsiConfigurationConfigItemsMetadataUnitDetailsOutputReference extends cdktf.ComplexObject {
@@ -150,6 +161,17 @@ export function opsiOpsiConfigurationConfigItemsMetadataValueInputDetailsToTerra
   }
   return {
   }
+}
+
+
+export function opsiOpsiConfigurationConfigItemsMetadataValueInputDetailsToHclTerraform(struct?: OpsiOpsiConfigurationConfigItemsMetadataValueInputDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OpsiOpsiConfigurationConfigItemsMetadataValueInputDetailsOutputReference extends cdktf.ComplexObject {
@@ -229,6 +251,17 @@ export function opsiOpsiConfigurationConfigItemsMetadataToTerraform(struct?: Ops
   }
   return {
   }
+}
+
+
+export function opsiOpsiConfigurationConfigItemsMetadataToHclTerraform(struct?: OpsiOpsiConfigurationConfigItemsMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OpsiOpsiConfigurationConfigItemsMetadataOutputReference extends cdktf.ComplexObject {
@@ -335,6 +368,37 @@ export function opsiOpsiConfigurationConfigItemsToTerraform(struct?: OpsiOpsiCon
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function opsiOpsiConfigurationConfigItemsToHclTerraform(struct?: OpsiOpsiConfigurationConfigItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_item_type: {
+      value: cdktf.stringToHclTerraform(struct!.configItemType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OpsiOpsiConfigurationConfigItemsOutputReference extends cdktf.ComplexObject {
@@ -501,6 +565,37 @@ export function opsiOpsiConfigurationTimeoutsToTerraform(struct?: OpsiOpsiConfig
   }
 }
 
+
+export function opsiOpsiConfigurationTimeoutsToHclTerraform(struct?: OpsiOpsiConfigurationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OpsiOpsiConfigurationTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -613,6 +708,20 @@ export class OpsiOpsiConfiguration extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_opsi_opsi_configuration";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OpsiOpsiConfiguration resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OpsiOpsiConfiguration to import
+  * @param importFromId The id of the existing OpsiOpsiConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_opsi_configuration#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OpsiOpsiConfiguration to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_opsi_configuration", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -923,5 +1032,97 @@ export class OpsiOpsiConfiguration extends cdktf.TerraformResource {
       config_items: cdktf.listMapper(opsiOpsiConfigurationConfigItemsToTerraform, true)(this._configItems.internalValue),
       timeouts: opsiOpsiConfigurationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      config_item_custom_status: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._configItemCustomStatus),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      config_item_field: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._configItemField),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      config_items_applicable_context: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._configItemsApplicableContext),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opsi_config_field: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._opsiConfigField),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      opsi_config_type: {
+        value: cdktf.stringToHclTerraform(this._opsiConfigType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      system_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._systemTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      config_items: {
+        value: cdktf.listMapperHcl(opsiOpsiConfigurationConfigItemsToHclTerraform, true)(this._configItems.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OpsiOpsiConfigurationConfigItemsList",
+      },
+      timeouts: {
+        value: opsiOpsiConfigurationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OpsiOpsiConfigurationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

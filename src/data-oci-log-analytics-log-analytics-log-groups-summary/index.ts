@@ -34,6 +34,20 @@ export class DataOciLogAnalyticsLogAnalyticsLogGroupsSummary extends cdktf.Terra
   // =================
   public static readonly tfResourceType = "oci_log_analytics_log_analytics_log_groups_summary";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLogAnalyticsLogAnalyticsLogGroupsSummary resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLogAnalyticsLogAnalyticsLogGroupsSummary to import
+  * @param importFromId The id of the existing DataOciLogAnalyticsLogAnalyticsLogGroupsSummary that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/log_analytics_log_analytics_log_groups_summary#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLogAnalyticsLogAnalyticsLogGroupsSummary to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_log_analytics_log_groups_summary", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -127,5 +141,31 @@ export class DataOciLogAnalyticsLogAnalyticsLogGroupsSummary extends cdktf.Terra
       id: cdktf.stringToTerraform(this._id),
       namespace: cdktf.stringToTerraform(this._namespace),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,7 +40,7 @@ export interface DataOciFunctionsPbfListingsConfig extends cdktf.TerraformMetaAr
   readonly trigger?: string[];
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/functions_pbf_listings#filter DataOciFunctionsPbfListings#filter}
   */
   readonly filter?: DataOciFunctionsPbfListingsFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciFunctionsPbfListingsPbfListingsCollectionItemsPublisherDe
   }
   return {
   }
+}
+
+
+export function dataOciFunctionsPbfListingsPbfListingsCollectionItemsPublisherDetailsToHclTerraform(struct?: DataOciFunctionsPbfListingsPbfListingsCollectionItemsPublisherDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFunctionsPbfListingsPbfListingsCollectionItemsPublisherDetailsOutputReference extends cdktf.ComplexObject {
@@ -121,6 +132,17 @@ export function dataOciFunctionsPbfListingsPbfListingsCollectionItemsTriggersToT
   }
 }
 
+
+export function dataOciFunctionsPbfListingsPbfListingsCollectionItemsTriggersToHclTerraform(struct?: DataOciFunctionsPbfListingsPbfListingsCollectionItemsTriggers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFunctionsPbfListingsPbfListingsCollectionItemsTriggersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -183,6 +205,17 @@ export function dataOciFunctionsPbfListingsPbfListingsCollectionItemsToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciFunctionsPbfListingsPbfListingsCollectionItemsToHclTerraform(struct?: DataOciFunctionsPbfListingsPbfListingsCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFunctionsPbfListingsPbfListingsCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -304,6 +337,17 @@ export function dataOciFunctionsPbfListingsPbfListingsCollectionToTerraform(stru
   }
 }
 
+
+export function dataOciFunctionsPbfListingsPbfListingsCollectionToHclTerraform(struct?: DataOciFunctionsPbfListingsPbfListingsCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFunctionsPbfListingsPbfListingsCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -382,6 +426,37 @@ export function dataOciFunctionsPbfListingsFilterToTerraform(struct?: DataOciFun
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciFunctionsPbfListingsFilterToHclTerraform(struct?: DataOciFunctionsPbfListingsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciFunctionsPbfListingsFilterOutputReference extends cdktf.ComplexObject {
@@ -512,6 +587,20 @@ export class DataOciFunctionsPbfListings extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_functions_pbf_listings";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFunctionsPbfListings resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFunctionsPbfListings to import
+  * @param importFromId The id of the existing DataOciFunctionsPbfListings that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/functions_pbf_listings#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFunctionsPbfListings to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_functions_pbf_listings", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -703,5 +792,61 @@ export class DataOciFunctionsPbfListings extends cdktf.TerraformDataSource {
       trigger: cdktf.listMapper(cdktf.stringToTerraform, false)(this._trigger),
       filter: cdktf.listMapper(dataOciFunctionsPbfListingsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name_contains: {
+        value: cdktf.stringToHclTerraform(this._nameContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name_starts_with: {
+        value: cdktf.stringToHclTerraform(this._nameStartsWith),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pbf_listing_id: {
+        value: cdktf.stringToHclTerraform(this._pbfListingId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      trigger: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._trigger),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciFunctionsPbfListingsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciFunctionsPbfListingsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

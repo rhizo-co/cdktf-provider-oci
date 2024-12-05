@@ -32,31 +32,31 @@ export interface LoadBalancerBackendsetConfig extends cdktf.TerraformMetaArgumen
   readonly policy: string;
   /**
   * health_checker block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_backendset#health_checker LoadBalancerBackendset#health_checker}
   */
   readonly healthChecker: LoadBalancerBackendsetHealthChecker;
   /**
   * lb_cookie_session_persistence_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_backendset#lb_cookie_session_persistence_configuration LoadBalancerBackendset#lb_cookie_session_persistence_configuration}
   */
   readonly lbCookieSessionPersistenceConfiguration?: LoadBalancerBackendsetLbCookieSessionPersistenceConfiguration;
   /**
   * session_persistence_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_backendset#session_persistence_configuration LoadBalancerBackendset#session_persistence_configuration}
   */
   readonly sessionPersistenceConfiguration?: LoadBalancerBackendsetSessionPersistenceConfiguration;
   /**
   * ssl_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_backendset#ssl_configuration LoadBalancerBackendset#ssl_configuration}
   */
   readonly sslConfiguration?: LoadBalancerBackendsetSslConfiguration;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_backendset#timeouts LoadBalancerBackendset#timeouts}
   */
   readonly timeouts?: LoadBalancerBackendsetTimeouts;
@@ -71,6 +71,17 @@ export function loadBalancerBackendsetBackendToTerraform(struct?: LoadBalancerBa
   }
   return {
   }
+}
+
+
+export function loadBalancerBackendsetBackendToHclTerraform(struct?: LoadBalancerBackendsetBackend): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class LoadBalancerBackendsetBackendOutputReference extends cdktf.ComplexObject {
@@ -215,6 +226,73 @@ export function loadBalancerBackendsetHealthCheckerToTerraform(struct?: LoadBala
     timeout_in_millis: cdktf.numberToTerraform(struct!.timeoutInMillis),
     url_path: cdktf.stringToTerraform(struct!.urlPath),
   }
+}
+
+
+export function loadBalancerBackendsetHealthCheckerToHclTerraform(struct?: LoadBalancerBackendsetHealthCheckerOutputReference | LoadBalancerBackendsetHealthChecker): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    interval_ms: {
+      value: cdktf.numberToHclTerraform(struct!.intervalMs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_force_plain_text: {
+      value: cdktf.booleanToHclTerraform(struct!.isForcePlainText),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    response_body_regex: {
+      value: cdktf.stringToHclTerraform(struct!.responseBodyRegex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    retries: {
+      value: cdktf.numberToHclTerraform(struct!.retries),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    return_code: {
+      value: cdktf.numberToHclTerraform(struct!.returnCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    timeout_in_millis: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutInMillis),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    url_path: {
+      value: cdktf.stringToHclTerraform(struct!.urlPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoadBalancerBackendsetHealthCheckerOutputReference extends cdktf.ComplexObject {
@@ -485,6 +563,61 @@ export function loadBalancerBackendsetLbCookieSessionPersistenceConfigurationToT
   }
 }
 
+
+export function loadBalancerBackendsetLbCookieSessionPersistenceConfigurationToHclTerraform(struct?: LoadBalancerBackendsetLbCookieSessionPersistenceConfigurationOutputReference | LoadBalancerBackendsetLbCookieSessionPersistenceConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cookie_name: {
+      value: cdktf.stringToHclTerraform(struct!.cookieName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    disable_fallback: {
+      value: cdktf.booleanToHclTerraform(struct!.disableFallback),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    domain: {
+      value: cdktf.stringToHclTerraform(struct!.domain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_http_only: {
+      value: cdktf.booleanToHclTerraform(struct!.isHttpOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_secure: {
+      value: cdktf.booleanToHclTerraform(struct!.isSecure),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_age_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.maxAgeInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoadBalancerBackendsetLbCookieSessionPersistenceConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -687,6 +820,31 @@ export function loadBalancerBackendsetSessionPersistenceConfigurationToTerraform
   }
 }
 
+
+export function loadBalancerBackendsetSessionPersistenceConfigurationToHclTerraform(struct?: LoadBalancerBackendsetSessionPersistenceConfigurationOutputReference | LoadBalancerBackendsetSessionPersistenceConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cookie_name: {
+      value: cdktf.stringToHclTerraform(struct!.cookieName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    disable_fallback: {
+      value: cdktf.booleanToHclTerraform(struct!.disableFallback),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoadBalancerBackendsetSessionPersistenceConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -804,6 +962,67 @@ export function loadBalancerBackendsetSslConfigurationToTerraform(struct?: LoadB
     verify_depth: cdktf.numberToTerraform(struct!.verifyDepth),
     verify_peer_certificate: cdktf.booleanToTerraform(struct!.verifyPeerCertificate),
   }
+}
+
+
+export function loadBalancerBackendsetSslConfigurationToHclTerraform(struct?: LoadBalancerBackendsetSslConfigurationOutputReference | LoadBalancerBackendsetSslConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    certificate_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.certificateIds),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    certificate_name: {
+      value: cdktf.stringToHclTerraform(struct!.certificateName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cipher_suite_name: {
+      value: cdktf.stringToHclTerraform(struct!.cipherSuiteName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    protocols: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.protocols),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    server_order_preference: {
+      value: cdktf.stringToHclTerraform(struct!.serverOrderPreference),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    trusted_certificate_authority_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.trustedCertificateAuthorityIds),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    verify_depth: {
+      value: cdktf.numberToHclTerraform(struct!.verifyDepth),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    verify_peer_certificate: {
+      value: cdktf.booleanToHclTerraform(struct!.verifyPeerCertificate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoadBalancerBackendsetSslConfigurationOutputReference extends cdktf.ComplexObject {
@@ -1035,6 +1254,37 @@ export function loadBalancerBackendsetTimeoutsToTerraform(struct?: LoadBalancerB
   }
 }
 
+
+export function loadBalancerBackendsetTimeoutsToHclTerraform(struct?: LoadBalancerBackendsetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoadBalancerBackendsetTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1147,6 +1397,20 @@ export class LoadBalancerBackendset extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_load_balancer_backendset";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LoadBalancerBackendset resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LoadBalancerBackendset to import
+  * @param importFromId The id of the existing LoadBalancerBackendset that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_backendset#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LoadBalancerBackendset to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_load_balancer_backendset", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1367,5 +1631,73 @@ export class LoadBalancerBackendset extends cdktf.TerraformResource {
       ssl_configuration: loadBalancerBackendsetSslConfigurationToTerraform(this._sslConfiguration.internalValue),
       timeouts: loadBalancerBackendsetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      backend_max_connections: {
+        value: cdktf.numberToHclTerraform(this._backendMaxConnections),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      load_balancer_id: {
+        value: cdktf.stringToHclTerraform(this._loadBalancerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      policy: {
+        value: cdktf.stringToHclTerraform(this._policy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      health_checker: {
+        value: loadBalancerBackendsetHealthCheckerToHclTerraform(this._healthChecker.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LoadBalancerBackendsetHealthCheckerList",
+      },
+      lb_cookie_session_persistence_configuration: {
+        value: loadBalancerBackendsetLbCookieSessionPersistenceConfigurationToHclTerraform(this._lbCookieSessionPersistenceConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LoadBalancerBackendsetLbCookieSessionPersistenceConfigurationList",
+      },
+      session_persistence_configuration: {
+        value: loadBalancerBackendsetSessionPersistenceConfigurationToHclTerraform(this._sessionPersistenceConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LoadBalancerBackendsetSessionPersistenceConfigurationList",
+      },
+      ssl_configuration: {
+        value: loadBalancerBackendsetSslConfigurationToHclTerraform(this._sslConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LoadBalancerBackendsetSslConfigurationList",
+      },
+      timeouts: {
+        value: loadBalancerBackendsetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LoadBalancerBackendsetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,6 +24,17 @@ export function dataOciCloudBridgeAgentPluginListStructToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciCloudBridgeAgentPluginListStructToHclTerraform(struct?: DataOciCloudBridgeAgentPluginListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudBridgeAgentPluginListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -128,6 +139,20 @@ export class DataOciCloudBridgeAgent extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_bridge_agent";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCloudBridgeAgent resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCloudBridgeAgent to import
+  * @param importFromId The id of the existing DataOciCloudBridgeAgent that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_bridge_agent#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCloudBridgeAgent to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_bridge_agent", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -283,5 +308,19 @@ export class DataOciCloudBridgeAgent extends cdktf.TerraformDataSource {
     return {
       agent_id: cdktf.stringToTerraform(this._agentId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      agent_id: {
+        value: cdktf.stringToHclTerraform(this._agentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

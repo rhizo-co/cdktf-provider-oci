@@ -38,6 +38,20 @@ export class DataOciDatabaseManagementManagedDatabaseSqlPlanBaseline extends cdk
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_database_sql_plan_baseline";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementManagedDatabaseSqlPlanBaseline resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementManagedDatabaseSqlPlanBaseline to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementManagedDatabaseSqlPlanBaseline that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_database_sql_plan_baseline#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementManagedDatabaseSqlPlanBaseline to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_database_sql_plan_baseline", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -219,5 +233,37 @@ export class DataOciDatabaseManagementManagedDatabaseSqlPlanBaseline extends cdk
       opc_named_credential_id: cdktf.stringToTerraform(this._opcNamedCredentialId),
       plan_name: cdktf.stringToTerraform(this._planName),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opc_named_credential_id: {
+        value: cdktf.stringToHclTerraform(this._opcNamedCredentialId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      plan_name: {
+        value: cdktf.stringToHclTerraform(this._planName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

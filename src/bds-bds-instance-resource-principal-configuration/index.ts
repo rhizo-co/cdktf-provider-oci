@@ -36,7 +36,7 @@ export interface BdsBdsInstanceResourcePrincipalConfigurationConfig extends cdkt
   readonly sessionTokenLifeSpanDurationInHours?: number;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_resource_principal_configuration#timeouts BdsBdsInstanceResourcePrincipalConfiguration#timeouts}
   */
   readonly timeouts?: BdsBdsInstanceResourcePrincipalConfigurationTimeouts;
@@ -66,6 +66,37 @@ export function bdsBdsInstanceResourcePrincipalConfigurationTimeoutsToTerraform(
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function bdsBdsInstanceResourcePrincipalConfigurationTimeoutsToHclTerraform(struct?: BdsBdsInstanceResourcePrincipalConfigurationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceResourcePrincipalConfigurationTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -180,6 +211,20 @@ export class BdsBdsInstanceResourcePrincipalConfiguration extends cdktf.Terrafor
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_bds_bds_instance_resource_principal_configuration";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a BdsBdsInstanceResourcePrincipalConfiguration resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the BdsBdsInstanceResourcePrincipalConfiguration to import
+  * @param importFromId The id of the existing BdsBdsInstanceResourcePrincipalConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_resource_principal_configuration#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the BdsBdsInstanceResourcePrincipalConfiguration to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_bds_bds_instance_resource_principal_configuration", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -363,5 +408,55 @@ export class BdsBdsInstanceResourcePrincipalConfiguration extends cdktf.Terrafor
       session_token_life_span_duration_in_hours: cdktf.numberToTerraform(this._sessionTokenLifeSpanDurationInHours),
       timeouts: bdsBdsInstanceResourcePrincipalConfigurationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bds_instance_id: {
+        value: cdktf.stringToHclTerraform(this._bdsInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_admin_password: {
+        value: cdktf.stringToHclTerraform(this._clusterAdminPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      force_refresh_resource_principal_trigger: {
+        value: cdktf.numberToHclTerraform(this._forceRefreshResourcePrincipalTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      session_token_life_span_duration_in_hours: {
+        value: cdktf.numberToHclTerraform(this._sessionTokenLifeSpanDurationInHours),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      timeouts: {
+        value: bdsBdsInstanceResourcePrincipalConfigurationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "BdsBdsInstanceResourcePrincipalConfigurationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,7 +40,7 @@ export interface DataOciJmsFleetPerformanceTuningAnalysisResultsConfig extends c
   readonly timeStart?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_fleet_performance_tuning_analysis_results#filter DataOciJmsFleetPerformanceTuningAnalysisResults#filter}
   */
   readonly filter?: DataOciJmsFleetPerformanceTuningAnalysisResultsFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciJmsFleetPerformanceTuningAnalysisResultsPerformanceTuning
   }
   return {
   }
+}
+
+
+export function dataOciJmsFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemsToHclTerraform(struct?: DataOciJmsFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -201,6 +212,17 @@ export function dataOciJmsFleetPerformanceTuningAnalysisResultsPerformanceTuning
   }
 }
 
+
+export function dataOciJmsFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionToHclTerraform(struct?: DataOciJmsFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsFleetPerformanceTuningAnalysisResultsPerformanceTuningAnalysisResultCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -279,6 +301,37 @@ export function dataOciJmsFleetPerformanceTuningAnalysisResultsFilterToTerraform
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciJmsFleetPerformanceTuningAnalysisResultsFilterToHclTerraform(struct?: DataOciJmsFleetPerformanceTuningAnalysisResultsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciJmsFleetPerformanceTuningAnalysisResultsFilterOutputReference extends cdktf.ComplexObject {
@@ -409,6 +462,20 @@ export class DataOciJmsFleetPerformanceTuningAnalysisResults extends cdktf.Terra
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_fleet_performance_tuning_analysis_results";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsFleetPerformanceTuningAnalysisResults resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsFleetPerformanceTuningAnalysisResults to import
+  * @param importFromId The id of the existing DataOciJmsFleetPerformanceTuningAnalysisResults that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_fleet_performance_tuning_analysis_results#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsFleetPerformanceTuningAnalysisResults to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_fleet_performance_tuning_analysis_results", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -597,5 +664,61 @@ export class DataOciJmsFleetPerformanceTuningAnalysisResults extends cdktf.Terra
       time_start: cdktf.stringToTerraform(this._timeStart),
       filter: cdktf.listMapper(dataOciJmsFleetPerformanceTuningAnalysisResultsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      application_id: {
+        value: cdktf.stringToHclTerraform(this._applicationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fleet_id: {
+        value: cdktf.stringToHclTerraform(this._fleetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      host_name: {
+        value: cdktf.stringToHclTerraform(this._hostName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_id: {
+        value: cdktf.stringToHclTerraform(this._managedInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_end: {
+        value: cdktf.stringToHclTerraform(this._timeEnd),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_start: {
+        value: cdktf.stringToHclTerraform(this._timeStart),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciJmsFleetPerformanceTuningAnalysisResultsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciJmsFleetPerformanceTuningAnalysisResultsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

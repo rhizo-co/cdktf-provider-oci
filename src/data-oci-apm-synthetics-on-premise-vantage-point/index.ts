@@ -28,6 +28,17 @@ export function dataOciApmSyntheticsOnPremiseVantagePointWorkersSummaryAvailable
   }
 }
 
+
+export function dataOciApmSyntheticsOnPremiseVantagePointWorkersSummaryAvailableCapabilitiesToHclTerraform(struct?: DataOciApmSyntheticsOnPremiseVantagePointWorkersSummaryAvailableCapabilities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciApmSyntheticsOnPremiseVantagePointWorkersSummaryAvailableCapabilitiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -95,6 +106,17 @@ export function dataOciApmSyntheticsOnPremiseVantagePointWorkersSummaryToTerrafo
   }
   return {
   }
+}
+
+
+export function dataOciApmSyntheticsOnPremiseVantagePointWorkersSummaryToHclTerraform(struct?: DataOciApmSyntheticsOnPremiseVantagePointWorkersSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciApmSyntheticsOnPremiseVantagePointWorkersSummaryOutputReference extends cdktf.ComplexObject {
@@ -185,6 +207,20 @@ export class DataOciApmSyntheticsOnPremiseVantagePoint extends cdktf.TerraformDa
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apm_synthetics_on_premise_vantage_point";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciApmSyntheticsOnPremiseVantagePoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciApmSyntheticsOnPremiseVantagePoint to import
+  * @param importFromId The id of the existing DataOciApmSyntheticsOnPremiseVantagePoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/apm_synthetics_on_premise_vantage_point#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciApmSyntheticsOnPremiseVantagePoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apm_synthetics_on_premise_vantage_point", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -309,5 +345,25 @@ export class DataOciApmSyntheticsOnPremiseVantagePoint extends cdktf.TerraformDa
       apm_domain_id: cdktf.stringToTerraform(this._apmDomainId),
       on_premise_vantage_point_id: cdktf.stringToTerraform(this._onPremiseVantagePointId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      apm_domain_id: {
+        value: cdktf.stringToHclTerraform(this._apmDomainId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      on_premise_vantage_point_id: {
+        value: cdktf.stringToHclTerraform(this._onPremiseVantagePointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

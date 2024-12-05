@@ -24,7 +24,7 @@ export interface DataOciCoreVirtualCircuitPublicPrefixesAConfig extends cdktf.Te
   readonly virtualCircuitId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_virtual_circuit_public_prefixes#filter DataOciCoreVirtualCircuitPublicPrefixesA#filter}
   */
   readonly filter?: DataOciCoreVirtualCircuitPublicPrefixesFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciCoreVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefi
   }
   return {
   }
+}
+
+
+export function dataOciCoreVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixesToHclTerraform(struct?: DataOciCoreVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreVirtualCircuitPublicPrefixesVirtualCircuitPublicPrefixesOutputReference extends cdktf.ComplexObject {
@@ -123,6 +134,37 @@ export function dataOciCoreVirtualCircuitPublicPrefixesFilterToTerraform(struct?
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCoreVirtualCircuitPublicPrefixesFilterToHclTerraform(struct?: DataOciCoreVirtualCircuitPublicPrefixesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCoreVirtualCircuitPublicPrefixesFilterOutputReference extends cdktf.ComplexObject {
@@ -254,6 +296,20 @@ export class DataOciCoreVirtualCircuitPublicPrefixesA extends cdktf.TerraformDat
   // =================
   public static readonly tfResourceType = "oci_core_virtual_circuit_public_prefixes";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreVirtualCircuitPublicPrefixesA resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreVirtualCircuitPublicPrefixesA to import
+  * @param importFromId The id of the existing DataOciCoreVirtualCircuitPublicPrefixesA that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_virtual_circuit_public_prefixes#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreVirtualCircuitPublicPrefixesA to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_virtual_circuit_public_prefixes", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -369,5 +425,37 @@ export class DataOciCoreVirtualCircuitPublicPrefixesA extends cdktf.TerraformDat
       virtual_circuit_id: cdktf.stringToTerraform(this._virtualCircuitId),
       filter: cdktf.listMapper(dataOciCoreVirtualCircuitPublicPrefixesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      verification_state: {
+        value: cdktf.stringToHclTerraform(this._verificationState),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      virtual_circuit_id: {
+        value: cdktf.stringToHclTerraform(this._virtualCircuitId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCoreVirtualCircuitPublicPrefixesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCoreVirtualCircuitPublicPrefixesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -64,13 +64,13 @@ export interface ObjectstorageBucketConfig extends cdktf.TerraformMetaArguments 
   readonly versioning?: string;
   /**
   * retention_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_bucket#retention_rules ObjectstorageBucket#retention_rules}
   */
   readonly retentionRules?: ObjectstorageBucketRetentionRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_bucket#timeouts ObjectstorageBucket#timeouts}
   */
   readonly timeouts?: ObjectstorageBucketTimeouts;
@@ -95,6 +95,31 @@ export function objectstorageBucketRetentionRulesDurationToTerraform(struct?: Ob
     time_amount: cdktf.stringToTerraform(struct!.timeAmount),
     time_unit: cdktf.stringToTerraform(struct!.timeUnit),
   }
+}
+
+
+export function objectstorageBucketRetentionRulesDurationToHclTerraform(struct?: ObjectstorageBucketRetentionRulesDurationOutputReference | ObjectstorageBucketRetentionRulesDuration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    time_amount: {
+      value: cdktf.stringToHclTerraform(struct!.timeAmount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_unit: {
+      value: cdktf.stringToHclTerraform(struct!.timeUnit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ObjectstorageBucketRetentionRulesDurationOutputReference extends cdktf.ComplexObject {
@@ -172,7 +197,7 @@ export interface ObjectstorageBucketRetentionRules {
   readonly timeRuleLocked?: string;
   /**
   * duration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_bucket#duration ObjectstorageBucket#duration}
   */
   readonly duration?: ObjectstorageBucketRetentionRulesDuration;
@@ -188,6 +213,37 @@ export function objectstorageBucketRetentionRulesToTerraform(struct?: Objectstor
     time_rule_locked: cdktf.stringToTerraform(struct!.timeRuleLocked),
     duration: objectstorageBucketRetentionRulesDurationToTerraform(struct!.duration),
   }
+}
+
+
+export function objectstorageBucketRetentionRulesToHclTerraform(struct?: ObjectstorageBucketRetentionRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_rule_locked: {
+      value: cdktf.stringToHclTerraform(struct!.timeRuleLocked),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    duration: {
+      value: objectstorageBucketRetentionRulesDurationToHclTerraform(struct!.duration),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ObjectstorageBucketRetentionRulesDurationList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ObjectstorageBucketRetentionRulesOutputReference extends cdktf.ComplexObject {
@@ -353,6 +409,37 @@ export function objectstorageBucketTimeoutsToTerraform(struct?: ObjectstorageBuc
   }
 }
 
+
+export function objectstorageBucketTimeoutsToHclTerraform(struct?: ObjectstorageBucketTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ObjectstorageBucketTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -465,6 +552,20 @@ export class ObjectstorageBucket extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_objectstorage_bucket";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ObjectstorageBucket resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ObjectstorageBucket to import
+  * @param importFromId The id of the existing ObjectstorageBucket that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_bucket#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ObjectstorageBucket to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_objectstorage_bucket", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -812,5 +913,103 @@ export class ObjectstorageBucket extends cdktf.TerraformResource {
       retention_rules: cdktf.listMapper(objectstorageBucketRetentionRulesToTerraform, true)(this._retentionRules.internalValue),
       timeouts: objectstorageBucketTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      access_type: {
+        value: cdktf.stringToHclTerraform(this._accessType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      auto_tiering: {
+        value: cdktf.stringToHclTerraform(this._autoTiering),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kms_key_id: {
+        value: cdktf.stringToHclTerraform(this._kmsKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._metadata),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_events_enabled: {
+        value: cdktf.booleanToHclTerraform(this._objectEventsEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      storage_tier: {
+        value: cdktf.stringToHclTerraform(this._storageTier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      versioning: {
+        value: cdktf.stringToHclTerraform(this._versioning),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      retention_rules: {
+        value: cdktf.listMapperHcl(objectstorageBucketRetentionRulesToHclTerraform, true)(this._retentionRules.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "ObjectstorageBucketRetentionRulesList",
+      },
+      timeouts: {
+        value: objectstorageBucketTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ObjectstorageBucketTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

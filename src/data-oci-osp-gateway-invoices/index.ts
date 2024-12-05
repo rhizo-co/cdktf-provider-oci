@@ -56,7 +56,7 @@ export interface DataOciOspGatewayInvoicesConfig extends cdktf.TerraformMetaArgu
   readonly type?: string[];
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/osp_gateway_invoices#filter DataOciOspGatewayInvoices#filter}
   */
   readonly filter?: DataOciOspGatewayInvoicesFilter[] | cdktf.IResolvable;
@@ -71,6 +71,17 @@ export function dataOciOspGatewayInvoicesInvoiceCollectionItemsBillToAddressCoun
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayInvoicesInvoiceCollectionItemsBillToAddressCountryToHclTerraform(struct?: DataOciOspGatewayInvoicesInvoiceCollectionItemsBillToAddressCountry): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayInvoicesInvoiceCollectionItemsBillToAddressCountryOutputReference extends cdktf.ComplexObject {
@@ -155,6 +166,17 @@ export function dataOciOspGatewayInvoicesInvoiceCollectionItemsBillToAddressToTe
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayInvoicesInvoiceCollectionItemsBillToAddressToHclTerraform(struct?: DataOciOspGatewayInvoicesInvoiceCollectionItemsBillToAddress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayInvoicesInvoiceCollectionItemsBillToAddressOutputReference extends cdktf.ComplexObject {
@@ -287,6 +309,17 @@ export function dataOciOspGatewayInvoicesInvoiceCollectionItemsCurrencyToTerrafo
   }
 }
 
+
+export function dataOciOspGatewayInvoicesInvoiceCollectionItemsCurrencyToHclTerraform(struct?: DataOciOspGatewayInvoicesInvoiceCollectionItemsCurrency): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayInvoicesInvoiceCollectionItemsCurrencyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -369,6 +402,17 @@ export function dataOciOspGatewayInvoicesInvoiceCollectionItemsLastPaymentDetail
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayInvoicesInvoiceCollectionItemsLastPaymentDetailToHclTerraform(struct?: DataOciOspGatewayInvoicesInvoiceCollectionItemsLastPaymentDetail): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayInvoicesInvoiceCollectionItemsLastPaymentDetailOutputReference extends cdktf.ComplexObject {
@@ -498,6 +542,17 @@ export function dataOciOspGatewayInvoicesInvoiceCollectionItemsToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayInvoicesInvoiceCollectionItemsToHclTerraform(struct?: DataOciOspGatewayInvoicesInvoiceCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayInvoicesInvoiceCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -712,6 +767,17 @@ export function dataOciOspGatewayInvoicesInvoiceCollectionToTerraform(struct?: D
   }
 }
 
+
+export function dataOciOspGatewayInvoicesInvoiceCollectionToHclTerraform(struct?: DataOciOspGatewayInvoicesInvoiceCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayInvoicesInvoiceCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -790,6 +856,37 @@ export function dataOciOspGatewayInvoicesFilterToTerraform(struct?: DataOciOspGa
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOspGatewayInvoicesFilterToHclTerraform(struct?: DataOciOspGatewayInvoicesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOspGatewayInvoicesFilterOutputReference extends cdktf.ComplexObject {
@@ -920,6 +1017,20 @@ export class DataOciOspGatewayInvoices extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_osp_gateway_invoices";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOspGatewayInvoices resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOspGatewayInvoices to import
+  * @param importFromId The id of the existing DataOciOspGatewayInvoices that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/osp_gateway_invoices#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOspGatewayInvoices to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_osp_gateway_invoices", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1177,5 +1288,85 @@ export class DataOciOspGatewayInvoices extends cdktf.TerraformDataSource {
       type: cdktf.listMapper(cdktf.stringToTerraform, false)(this._type),
       filter: cdktf.listMapper(dataOciOspGatewayInvoicesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      invoice_id: {
+        value: cdktf.stringToHclTerraform(this._invoiceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      osp_home_region: {
+        value: cdktf.stringToHclTerraform(this._ospHomeRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      search_text: {
+        value: cdktf.stringToHclTerraform(this._searchText),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._status),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      time_invoice_end: {
+        value: cdktf.stringToHclTerraform(this._timeInvoiceEnd),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_invoice_start: {
+        value: cdktf.stringToHclTerraform(this._timeInvoiceStart),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_payment_end: {
+        value: cdktf.stringToHclTerraform(this._timePaymentEnd),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_payment_start: {
+        value: cdktf.stringToHclTerraform(this._timePaymentStart),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._type),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOspGatewayInvoicesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOspGatewayInvoicesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,6 +24,17 @@ export function dataOciGenerativeAiAgentDataSourceDataSourceConfigObjectStorageP
   }
 }
 
+
+export function dataOciGenerativeAiAgentDataSourceDataSourceConfigObjectStoragePrefixesToHclTerraform(struct?: DataOciGenerativeAiAgentDataSourceDataSourceConfigObjectStoragePrefixes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGenerativeAiAgentDataSourceDataSourceConfigObjectStoragePrefixesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -98,6 +109,17 @@ export function dataOciGenerativeAiAgentDataSourceDataSourceConfigToTerraform(st
   }
 }
 
+
+export function dataOciGenerativeAiAgentDataSourceDataSourceConfigToHclTerraform(struct?: DataOciGenerativeAiAgentDataSourceDataSourceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGenerativeAiAgentDataSourceDataSourceConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -166,6 +188,20 @@ export class DataOciGenerativeAiAgentDataSource extends cdktf.TerraformDataSourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_generative_ai_agent_data_source";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGenerativeAiAgentDataSource resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGenerativeAiAgentDataSource to import
+  * @param importFromId The id of the existing DataOciGenerativeAiAgentDataSource that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/generative_ai_agent_data_source#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGenerativeAiAgentDataSource to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_generative_ai_agent_data_source", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -291,5 +327,19 @@ export class DataOciGenerativeAiAgentDataSource extends cdktf.TerraformDataSourc
     return {
       data_source_id: cdktf.stringToTerraform(this._dataSourceId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      data_source_id: {
+        value: cdktf.stringToHclTerraform(this._dataSourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -32,7 +32,7 @@ export interface DataOciDataSafeSqlFirewallViolationsConfig extends cdktf.Terraf
   readonly scimQuery?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sql_firewall_violations#filter DataOciDataSafeSqlFirewallViolations#filter}
   */
   readonly filter?: DataOciDataSafeSqlFirewallViolationsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciDataSafeSqlFirewallViolationsSqlFirewallViolationsCollect
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSqlFirewallViolationsSqlFirewallViolationsCollectionItemsToHclTerraform(struct?: DataOciDataSafeSqlFirewallViolationsSqlFirewallViolationsCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSqlFirewallViolationsSqlFirewallViolationsCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -193,6 +204,17 @@ export function dataOciDataSafeSqlFirewallViolationsSqlFirewallViolationsCollect
   }
 }
 
+
+export function dataOciDataSafeSqlFirewallViolationsSqlFirewallViolationsCollectionToHclTerraform(struct?: DataOciDataSafeSqlFirewallViolationsSqlFirewallViolationsCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeSqlFirewallViolationsSqlFirewallViolationsCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -271,6 +293,37 @@ export function dataOciDataSafeSqlFirewallViolationsFilterToTerraform(struct?: D
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeSqlFirewallViolationsFilterToHclTerraform(struct?: DataOciDataSafeSqlFirewallViolationsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeSqlFirewallViolationsFilterOutputReference extends cdktf.ComplexObject {
@@ -401,6 +454,20 @@ export class DataOciDataSafeSqlFirewallViolations extends cdktf.TerraformDataSou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_sql_firewall_violations";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeSqlFirewallViolations resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeSqlFirewallViolations to import
+  * @param importFromId The id of the existing DataOciDataSafeSqlFirewallViolations that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sql_firewall_violations#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeSqlFirewallViolations to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_sql_firewall_violations", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -553,5 +620,49 @@ export class DataOciDataSafeSqlFirewallViolations extends cdktf.TerraformDataSou
       scim_query: cdktf.stringToTerraform(this._scimQuery),
       filter: cdktf.listMapper(dataOciDataSafeSqlFirewallViolationsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      access_level: {
+        value: cdktf.stringToHclTerraform(this._accessLevel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scim_query: {
+        value: cdktf.stringToHclTerraform(this._scimQuery),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeSqlFirewallViolationsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeSqlFirewallViolationsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,7 +24,7 @@ export interface OsManagementHubManagementStationMirrorSynchronizeManagementConf
   readonly mirrorId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_management_station_mirror_synchronize_management#timeouts OsManagementHubManagementStationMirrorSynchronizeManagement#timeouts}
   */
   readonly timeouts?: OsManagementHubManagementStationMirrorSynchronizeManagementTimeouts;
@@ -54,6 +54,37 @@ export function osManagementHubManagementStationMirrorSynchronizeManagementTimeo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function osManagementHubManagementStationMirrorSynchronizeManagementTimeoutsToHclTerraform(struct?: OsManagementHubManagementStationMirrorSynchronizeManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubManagementStationMirrorSynchronizeManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -169,6 +200,20 @@ export class OsManagementHubManagementStationMirrorSynchronizeManagement extends
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_management_station_mirror_synchronize_management";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OsManagementHubManagementStationMirrorSynchronizeManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OsManagementHubManagementStationMirrorSynchronizeManagement to import
+  * @param importFromId The id of the existing OsManagementHubManagementStationMirrorSynchronizeManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_management_station_mirror_synchronize_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OsManagementHubManagementStationMirrorSynchronizeManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_management_station_mirror_synchronize_management", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -275,5 +320,37 @@ export class OsManagementHubManagementStationMirrorSynchronizeManagement extends
       mirror_id: cdktf.stringToTerraform(this._mirrorId),
       timeouts: osManagementHubManagementStationMirrorSynchronizeManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      management_station_id: {
+        value: cdktf.stringToHclTerraform(this._managementStationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      mirror_id: {
+        value: cdktf.stringToHclTerraform(this._mirrorId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: osManagementHubManagementStationMirrorSynchronizeManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OsManagementHubManagementStationMirrorSynchronizeManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

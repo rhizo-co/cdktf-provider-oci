@@ -24,6 +24,17 @@ export function dataOciDatascienceModelBackupOperationDetailsToTerraform(struct?
   }
 }
 
+
+export function dataOciDatascienceModelBackupOperationDetailsToHclTerraform(struct?: DataOciDatascienceModelBackupOperationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceModelBackupOperationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -98,6 +109,17 @@ export function dataOciDatascienceModelBackupSettingToTerraform(struct?: DataOci
   }
 }
 
+
+export function dataOciDatascienceModelBackupSettingToHclTerraform(struct?: DataOciDatascienceModelBackupSetting): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceModelBackupSettingOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -170,6 +192,17 @@ export function dataOciDatascienceModelCustomMetadataListStructToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceModelCustomMetadataListStructToHclTerraform(struct?: DataOciDatascienceModelCustomMetadataListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceModelCustomMetadataListStructOutputReference extends cdktf.ComplexObject {
@@ -251,6 +284,17 @@ export function dataOciDatascienceModelDefinedMetadataListStructToTerraform(stru
   }
 }
 
+
+export function dataOciDatascienceModelDefinedMetadataListStructToHclTerraform(struct?: DataOciDatascienceModelDefinedMetadataListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceModelDefinedMetadataListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -328,6 +372,17 @@ export function dataOciDatascienceModelRetentionOperationDetailsToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceModelRetentionOperationDetailsToHclTerraform(struct?: DataOciDatascienceModelRetentionOperationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceModelRetentionOperationDetailsOutputReference extends cdktf.ComplexObject {
@@ -419,6 +474,17 @@ export function dataOciDatascienceModelRetentionSettingToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciDatascienceModelRetentionSettingToHclTerraform(struct?: DataOciDatascienceModelRetentionSetting): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceModelRetentionSettingOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -491,6 +557,20 @@ export class DataOciDatascienceModel extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_model";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatascienceModel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatascienceModel to import
+  * @param importFromId The id of the existing DataOciDatascienceModel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/datascience_model#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatascienceModel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_model", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -695,5 +775,19 @@ export class DataOciDatascienceModel extends cdktf.TerraformDataSource {
     return {
       model_id: cdktf.stringToTerraform(this._modelId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      model_id: {
+        value: cdktf.stringToHclTerraform(this._modelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

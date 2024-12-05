@@ -36,7 +36,7 @@ export interface DataOciDatasciencePipelineRunsConfig extends cdktf.TerraformMet
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/datascience_pipeline_runs#filter DataOciDatasciencePipelineRuns#filter}
   */
   readonly filter?: DataOciDatasciencePipelineRunsFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciDatasciencePipelineRunsPipelineRunsConfigurationDetailsTo
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineRunsPipelineRunsConfigurationDetailsToHclTerraform(struct?: DataOciDatasciencePipelineRunsPipelineRunsConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineRunsPipelineRunsConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -133,6 +144,17 @@ export function dataOciDatasciencePipelineRunsPipelineRunsConfigurationOverrideD
   }
 }
 
+
+export function dataOciDatasciencePipelineRunsPipelineRunsConfigurationOverrideDetailsToHclTerraform(struct?: DataOciDatasciencePipelineRunsPipelineRunsConfigurationOverrideDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatasciencePipelineRunsPipelineRunsConfigurationOverrideDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -211,6 +233,17 @@ export function dataOciDatasciencePipelineRunsPipelineRunsLogConfigurationOverri
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineRunsPipelineRunsLogConfigurationOverrideDetailsToHclTerraform(struct?: DataOciDatasciencePipelineRunsPipelineRunsLogConfigurationOverrideDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineRunsPipelineRunsLogConfigurationOverrideDetailsOutputReference extends cdktf.ComplexObject {
@@ -292,6 +325,17 @@ export function dataOciDatasciencePipelineRunsPipelineRunsLogDetailsToTerraform(
   }
 }
 
+
+export function dataOciDatasciencePipelineRunsPipelineRunsLogDetailsToHclTerraform(struct?: DataOciDatasciencePipelineRunsPipelineRunsLogDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatasciencePipelineRunsPipelineRunsLogDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -359,6 +403,17 @@ export function dataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsSte
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsStepConfigurationDetailsToHclTerraform(struct?: DataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsStepConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsStepConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -434,6 +489,17 @@ export function dataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsSte
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsStepContainerConfigurationDetailsToHclTerraform(struct?: DataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsStepContainerConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsStepContainerConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -525,6 +591,17 @@ export function dataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsToT
   }
 }
 
+
+export function dataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsToHclTerraform(struct?: DataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatasciencePipelineRunsPipelineRunsStepOverrideDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -599,6 +676,17 @@ export function dataOciDatasciencePipelineRunsPipelineRunsStepRunsToTerraform(st
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineRunsPipelineRunsStepRunsToHclTerraform(struct?: DataOciDatasciencePipelineRunsPipelineRunsStepRuns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineRunsPipelineRunsStepRunsOutputReference extends cdktf.ComplexObject {
@@ -693,6 +781,17 @@ export function dataOciDatasciencePipelineRunsPipelineRunsToTerraform(struct?: D
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineRunsPipelineRunsToHclTerraform(struct?: DataOciDatasciencePipelineRunsPipelineRuns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineRunsPipelineRunsOutputReference extends cdktf.ComplexObject {
@@ -893,6 +992,37 @@ export function dataOciDatasciencePipelineRunsFilterToTerraform(struct?: DataOci
   }
 }
 
+
+export function dataOciDatasciencePipelineRunsFilterToHclTerraform(struct?: DataOciDatasciencePipelineRunsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciDatasciencePipelineRunsFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1021,6 +1151,20 @@ export class DataOciDatasciencePipelineRuns extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_pipeline_runs";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatasciencePipelineRuns resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatasciencePipelineRuns to import
+  * @param importFromId The id of the existing DataOciDatasciencePipelineRuns that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/datascience_pipeline_runs#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatasciencePipelineRuns to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_pipeline_runs", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1191,5 +1335,55 @@ export class DataOciDatasciencePipelineRuns extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciDatasciencePipelineRunsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      created_by: {
+        value: cdktf.stringToHclTerraform(this._createdBy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pipeline_id: {
+        value: cdktf.stringToHclTerraform(this._pipelineId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatasciencePipelineRunsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatasciencePipelineRunsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

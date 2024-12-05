@@ -35,6 +35,17 @@ export function dataOciManagementAgentManagementAgentPluginCountItemsDimensionsT
   }
 }
 
+
+export function dataOciManagementAgentManagementAgentPluginCountItemsDimensionsToHclTerraform(struct?: DataOciManagementAgentManagementAgentPluginCountItemsDimensions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciManagementAgentManagementAgentPluginCountItemsDimensionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -102,6 +113,17 @@ export function dataOciManagementAgentManagementAgentPluginCountItemsToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciManagementAgentManagementAgentPluginCountItemsToHclTerraform(struct?: DataOciManagementAgentManagementAgentPluginCountItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciManagementAgentManagementAgentPluginCountItemsOutputReference extends cdktf.ComplexObject {
@@ -172,6 +194,20 @@ export class DataOciManagementAgentManagementAgentPluginCount extends cdktf.Terr
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_management_agent_management_agent_plugin_count";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciManagementAgentManagementAgentPluginCount resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciManagementAgentManagementAgentPluginCount to import
+  * @param importFromId The id of the existing DataOciManagementAgentManagementAgentPluginCount that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/management_agent_management_agent_plugin_count#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciManagementAgentManagementAgentPluginCount to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_management_agent_management_agent_plugin_count", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -267,5 +303,31 @@ export class DataOciManagementAgentManagementAgentPluginCount extends cdktf.Terr
       group_by: cdktf.stringToTerraform(this._groupBy),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      group_by: {
+        value: cdktf.stringToHclTerraform(this._groupBy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -44,7 +44,7 @@ export interface DatascienceModelProvenanceConfig extends cdktf.TerraformMetaArg
   readonly trainingScript?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model_provenance#timeouts DatascienceModelProvenance#timeouts}
   */
   readonly timeouts?: DatascienceModelProvenanceTimeouts;
@@ -74,6 +74,37 @@ export function datascienceModelProvenanceTimeoutsToTerraform(struct?: Datascien
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function datascienceModelProvenanceTimeoutsToHclTerraform(struct?: DatascienceModelProvenanceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatascienceModelProvenanceTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -188,6 +219,20 @@ export class DatascienceModelProvenance extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_model_provenance";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatascienceModelProvenance resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatascienceModelProvenance to import
+  * @param importFromId The id of the existing DatascienceModelProvenance that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model_provenance#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatascienceModelProvenance to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_model_provenance", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -388,5 +433,67 @@ export class DatascienceModelProvenance extends cdktf.TerraformResource {
       training_script: cdktf.stringToTerraform(this._trainingScript),
       timeouts: datascienceModelProvenanceTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      git_branch: {
+        value: cdktf.stringToHclTerraform(this._gitBranch),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      git_commit: {
+        value: cdktf.stringToHclTerraform(this._gitCommit),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_id: {
+        value: cdktf.stringToHclTerraform(this._modelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      repository_url: {
+        value: cdktf.stringToHclTerraform(this._repositoryUrl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      script_dir: {
+        value: cdktf.stringToHclTerraform(this._scriptDir),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      training_id: {
+        value: cdktf.stringToHclTerraform(this._trainingId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      training_script: {
+        value: cdktf.stringToHclTerraform(this._trainingScript),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: datascienceModelProvenanceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatascienceModelProvenanceTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

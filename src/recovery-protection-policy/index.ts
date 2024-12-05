@@ -44,7 +44,7 @@ export interface RecoveryProtectionPolicyConfig extends cdktf.TerraformMetaArgum
   readonly policyLockedDateTime?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/recovery_protection_policy#timeouts RecoveryProtectionPolicy#timeouts}
   */
   readonly timeouts?: RecoveryProtectionPolicyTimeouts;
@@ -74,6 +74,37 @@ export function recoveryProtectionPolicyTimeoutsToTerraform(struct?: RecoveryPro
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function recoveryProtectionPolicyTimeoutsToHclTerraform(struct?: RecoveryProtectionPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class RecoveryProtectionPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -188,6 +219,20 @@ export class RecoveryProtectionPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_recovery_protection_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a RecoveryProtectionPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the RecoveryProtectionPolicy to import
+  * @param importFromId The id of the existing RecoveryProtectionPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/recovery_protection_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the RecoveryProtectionPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_recovery_protection_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -413,5 +458,67 @@ export class RecoveryProtectionPolicy extends cdktf.TerraformResource {
       policy_locked_date_time: cdktf.stringToTerraform(this._policyLockedDateTime),
       timeouts: recoveryProtectionPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      backup_retention_period_in_days: {
+        value: cdktf.numberToHclTerraform(this._backupRetentionPeriodInDays),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      must_enforce_cloud_locality: {
+        value: cdktf.booleanToHclTerraform(this._mustEnforceCloudLocality),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      policy_locked_date_time: {
+        value: cdktf.stringToHclTerraform(this._policyLockedDateTime),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: recoveryProtectionPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "RecoveryProtectionPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

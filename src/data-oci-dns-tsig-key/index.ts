@@ -23,6 +23,20 @@ export class DataOciDnsTsigKey extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_dns_tsig_key";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDnsTsigKey resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDnsTsigKey to import
+  * @param importFromId The id of the existing DataOciDnsTsigKey that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dns_tsig_key#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDnsTsigKey to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dns_tsig_key", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -135,5 +149,19 @@ export class DataOciDnsTsigKey extends cdktf.TerraformDataSource {
     return {
       tsig_key_id: cdktf.stringToTerraform(this._tsigKeyId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      tsig_key_id: {
+        value: cdktf.stringToHclTerraform(this._tsigKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

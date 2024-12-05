@@ -23,6 +23,20 @@ export class DataOciEmailEmailDomain extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_email_email_domain";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciEmailEmailDomain resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciEmailEmailDomain to import
+  * @param importFromId The id of the existing DataOciEmailEmailDomain that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/email_email_domain#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciEmailEmailDomain to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_email_email_domain", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -146,5 +160,19 @@ export class DataOciEmailEmailDomain extends cdktf.TerraformDataSource {
     return {
       email_domain_id: cdktf.stringToTerraform(this._emailDomainId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      email_domain_id: {
+        value: cdktf.stringToHclTerraform(this._emailDomainId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

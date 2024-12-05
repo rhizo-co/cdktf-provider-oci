@@ -30,6 +30,20 @@ export class DataOciApigatewayApiContent extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_apigateway_api_content";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciApigatewayApiContent resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciApigatewayApiContent to import
+  * @param importFromId The id of the existing DataOciApigatewayApiContent that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/apigateway_api_content#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciApigatewayApiContent to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apigateway_api_content", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -108,5 +122,25 @@ export class DataOciApigatewayApiContent extends cdktf.TerraformDataSource {
       api_id: cdktf.stringToTerraform(this._apiId),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      api_id: {
+        value: cdktf.stringToHclTerraform(this._apiId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -52,7 +52,7 @@ export interface DataOciFleetAppsManagementInventoryResourcesConfig extends cdkt
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_inventory_resources#filter DataOciFleetAppsManagementInventoryResources#filter}
   */
   readonly filter?: DataOciFleetAppsManagementInventoryResourcesFilter[] | cdktf.IResolvable;
@@ -67,6 +67,17 @@ export function dataOciFleetAppsManagementInventoryResourcesInventoryResourceCol
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementInventoryResourcesInventoryResourceCollectionItemsToHclTerraform(struct?: DataOciFleetAppsManagementInventoryResourcesInventoryResourceCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementInventoryResourcesInventoryResourceCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -191,6 +202,17 @@ export function dataOciFleetAppsManagementInventoryResourcesInventoryResourceCol
   }
 }
 
+
+export function dataOciFleetAppsManagementInventoryResourcesInventoryResourceCollectionToHclTerraform(struct?: DataOciFleetAppsManagementInventoryResourcesInventoryResourceCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementInventoryResourcesInventoryResourceCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -269,6 +291,37 @@ export function dataOciFleetAppsManagementInventoryResourcesFilterToTerraform(st
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciFleetAppsManagementInventoryResourcesFilterToHclTerraform(struct?: DataOciFleetAppsManagementInventoryResourcesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciFleetAppsManagementInventoryResourcesFilterOutputReference extends cdktf.ComplexObject {
@@ -399,6 +452,20 @@ export class DataOciFleetAppsManagementInventoryResources extends cdktf.Terrafor
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_inventory_resources";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFleetAppsManagementInventoryResources resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFleetAppsManagementInventoryResources to import
+  * @param importFromId The id of the existing DataOciFleetAppsManagementInventoryResources that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_inventory_resources#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFleetAppsManagementInventoryResources to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_inventory_resources", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -638,5 +705,79 @@ export class DataOciFleetAppsManagementInventoryResources extends cdktf.Terrafor
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciFleetAppsManagementInventoryResourcesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tag_equals: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._definedTagEquals),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tag_equals: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._freeformTagEquals),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      inventory_properties: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._inventoryProperties),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      matching_criteria: {
+        value: cdktf.stringToHclTerraform(this._matchingCriteria),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_compartment_id: {
+        value: cdktf.stringToHclTerraform(this._resourceCompartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_region: {
+        value: cdktf.stringToHclTerraform(this._resourceRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciFleetAppsManagementInventoryResourcesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciFleetAppsManagementInventoryResourcesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

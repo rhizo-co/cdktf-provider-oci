@@ -34,6 +34,20 @@ export class DataOciDatabaseVmClusterPatchHistoryEntry extends cdktf.TerraformDa
   // =================
   public static readonly tfResourceType = "oci_database_vm_cluster_patch_history_entry";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseVmClusterPatchHistoryEntry resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseVmClusterPatchHistoryEntry to import
+  * @param importFromId The id of the existing DataOciDatabaseVmClusterPatchHistoryEntry that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_vm_cluster_patch_history_entry#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseVmClusterPatchHistoryEntry to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_vm_cluster_patch_history_entry", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -152,5 +166,31 @@ export class DataOciDatabaseVmClusterPatchHistoryEntry extends cdktf.TerraformDa
       patch_history_entry_id: cdktf.stringToTerraform(this._patchHistoryEntryId),
       vm_cluster_id: cdktf.stringToTerraform(this._vmClusterId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      patch_history_entry_id: {
+        value: cdktf.stringToHclTerraform(this._patchHistoryEntryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._vmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

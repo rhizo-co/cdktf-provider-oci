@@ -32,7 +32,7 @@ export interface DataOciDevopsDeployStagesConfig extends cdktf.TerraformMetaArgu
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_deploy_stages#filter DataOciDevopsDeployStages#filter}
   */
   readonly filter?: DataOciDevopsDeployStagesFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsApprovalPolic
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsApprovalPolicyToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsApprovalPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsApprovalPolicyOutputReference extends cdktf.ComplexObject {
@@ -118,6 +129,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsBlueBackendIp
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsBlueBackendIpsToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsBlueBackendIps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsBlueBackendIpsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -180,6 +202,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsBlueGreenStra
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsBlueGreenStrategyToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsBlueGreenStrategy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsBlueGreenStrategyOutputReference extends cdktf.ComplexObject {
@@ -261,6 +294,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsCanaryStrateg
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsCanaryStrategyToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsCanaryStrategy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsCanaryStrategyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -333,6 +377,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsContainerConf
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsContainerConfigNetworkChannelToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsContainerConfigNetworkChannel): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsContainerConfigNetworkChannelOutputReference extends cdktf.ComplexObject {
@@ -409,6 +464,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsContainerConf
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsContainerConfigShapeConfigToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsContainerConfigShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsContainerConfigShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -476,6 +542,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsContainerConf
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsContainerConfigToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsContainerConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsContainerConfigOutputReference extends cdktf.ComplexObject {
@@ -569,6 +646,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsDeployStagePr
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsDeployStagePredecessorCollectionItemsToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsDeployStagePredecessorCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsDeployStagePredecessorCollectionItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -631,6 +719,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsDeployStagePr
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsDeployStagePredecessorCollectionToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsDeployStagePredecessorCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsDeployStagePredecessorCollectionOutputReference extends cdktf.ComplexObject {
@@ -696,6 +795,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsFailurePolicy
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsFailurePolicyToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsFailurePolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsFailurePolicyOutputReference extends cdktf.ComplexObject {
@@ -772,6 +882,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsGreenBackendI
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsGreenBackendIpsToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsGreenBackendIps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsGreenBackendIpsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -834,6 +955,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsLoadBalancerC
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsLoadBalancerConfigToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsLoadBalancerConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsLoadBalancerConfigOutputReference extends cdktf.ComplexObject {
@@ -915,6 +1047,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsProductionLoa
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsProductionLoadBalancerConfigToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsProductionLoadBalancerConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsProductionLoadBalancerConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -994,6 +1137,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsRollbackPolic
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsRollbackPolicyToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsRollbackPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsRollbackPolicyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1056,6 +1210,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsRolloutPolicy
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsRolloutPolicyToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsRolloutPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsRolloutPolicyOutputReference extends cdktf.ComplexObject {
@@ -1142,6 +1307,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsSetStringItem
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsSetStringItemsToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsSetStringItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsSetStringItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1211,6 +1387,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsSetStringToTe
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsSetStringToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsSetString): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsSetStringOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1274,6 +1461,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsSetValuesItem
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsSetValuesItemsToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsSetValuesItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsSetValuesItemsOutputReference extends cdktf.ComplexObject {
@@ -1345,6 +1543,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsSetValuesToTe
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsSetValuesToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsSetValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsSetValuesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1408,6 +1617,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsTestLoadBalan
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsTestLoadBalancerConfigToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsTestLoadBalancerConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsTestLoadBalancerConfigOutputReference extends cdktf.ComplexObject {
@@ -1489,6 +1709,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsWaitCriteriaT
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsWaitCriteriaToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItemsWaitCriteria): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsWaitCriteriaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1556,6 +1787,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionItemsToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployStagesDeployStageCollectionItemsToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployStagesDeployStageCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -1992,6 +2234,17 @@ export function dataOciDevopsDeployStagesDeployStageCollectionToTerraform(struct
   }
 }
 
+
+export function dataOciDevopsDeployStagesDeployStageCollectionToHclTerraform(struct?: DataOciDevopsDeployStagesDeployStageCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployStagesDeployStageCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2070,6 +2323,37 @@ export function dataOciDevopsDeployStagesFilterToTerraform(struct?: DataOciDevop
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDevopsDeployStagesFilterToHclTerraform(struct?: DataOciDevopsDeployStagesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDevopsDeployStagesFilterOutputReference extends cdktf.ComplexObject {
@@ -2200,6 +2484,20 @@ export class DataOciDevopsDeployStages extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_deploy_stages";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDevopsDeployStages resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDevopsDeployStages to import
+  * @param importFromId The id of the existing DataOciDevopsDeployStages that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_deploy_stages#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDevopsDeployStages to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_deploy_stages", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2355,5 +2653,49 @@ export class DataOciDevopsDeployStages extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciDevopsDeployStagesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      deploy_pipeline_id: {
+        value: cdktf.stringToHclTerraform(this._deployPipelineId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDevopsDeployStagesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDevopsDeployStagesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

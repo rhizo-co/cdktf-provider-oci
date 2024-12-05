@@ -80,37 +80,37 @@ export interface ApmSyntheticsMonitorConfig extends cdktf.TerraformMetaArguments
   readonly timeoutInSeconds?: number;
   /**
   * availability_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#availability_configuration ApmSyntheticsMonitor#availability_configuration}
   */
   readonly availabilityConfiguration?: ApmSyntheticsMonitorAvailabilityConfiguration;
   /**
   * configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#configuration ApmSyntheticsMonitor#configuration}
   */
   readonly configuration?: ApmSyntheticsMonitorConfiguration;
   /**
   * maintenance_window_schedule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#maintenance_window_schedule ApmSyntheticsMonitor#maintenance_window_schedule}
   */
   readonly maintenanceWindowSchedule?: ApmSyntheticsMonitorMaintenanceWindowSchedule;
   /**
   * script_parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#script_parameters ApmSyntheticsMonitor#script_parameters}
   */
   readonly scriptParameters?: ApmSyntheticsMonitorScriptParameters[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#timeouts ApmSyntheticsMonitor#timeouts}
   */
   readonly timeouts?: ApmSyntheticsMonitorTimeouts;
   /**
   * vantage_points block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#vantage_points ApmSyntheticsMonitor#vantage_points}
   */
   readonly vantagePoints: ApmSyntheticsMonitorVantagePoints[] | cdktf.IResolvable;
@@ -135,6 +135,31 @@ export function apmSyntheticsMonitorAvailabilityConfigurationToTerraform(struct?
     max_allowed_failures_per_interval: cdktf.numberToTerraform(struct!.maxAllowedFailuresPerInterval),
     min_allowed_runs_per_interval: cdktf.numberToTerraform(struct!.minAllowedRunsPerInterval),
   }
+}
+
+
+export function apmSyntheticsMonitorAvailabilityConfigurationToHclTerraform(struct?: ApmSyntheticsMonitorAvailabilityConfigurationOutputReference | ApmSyntheticsMonitorAvailabilityConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max_allowed_failures_per_interval: {
+      value: cdktf.numberToHclTerraform(struct!.maxAllowedFailuresPerInterval),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min_allowed_runs_per_interval: {
+      value: cdktf.numberToHclTerraform(struct!.minAllowedRunsPerInterval),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorAvailabilityConfigurationOutputReference extends cdktf.ComplexObject {
@@ -229,6 +254,31 @@ export function apmSyntheticsMonitorConfigurationClientCertificateDetailsClientC
   }
 }
 
+
+export function apmSyntheticsMonitorConfigurationClientCertificateDetailsClientCertificateToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationClientCertificateDetailsClientCertificateOutputReference | ApmSyntheticsMonitorConfigurationClientCertificateDetailsClientCertificate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    content: {
+      value: cdktf.stringToHclTerraform(struct!.content),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    file_name: {
+      value: cdktf.stringToHclTerraform(struct!.fileName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsMonitorConfigurationClientCertificateDetailsClientCertificateOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -321,6 +371,31 @@ export function apmSyntheticsMonitorConfigurationClientCertificateDetailsPrivate
   }
 }
 
+
+export function apmSyntheticsMonitorConfigurationClientCertificateDetailsPrivateKeyToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationClientCertificateDetailsPrivateKeyOutputReference | ApmSyntheticsMonitorConfigurationClientCertificateDetailsPrivateKey): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    content: {
+      value: cdktf.stringToHclTerraform(struct!.content),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    file_name: {
+      value: cdktf.stringToHclTerraform(struct!.fileName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsMonitorConfigurationClientCertificateDetailsPrivateKeyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -394,13 +469,13 @@ export class ApmSyntheticsMonitorConfigurationClientCertificateDetailsPrivateKey
 export interface ApmSyntheticsMonitorConfigurationClientCertificateDetails {
   /**
   * client_certificate block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#client_certificate ApmSyntheticsMonitor#client_certificate}
   */
   readonly clientCertificate?: ApmSyntheticsMonitorConfigurationClientCertificateDetailsClientCertificate;
   /**
   * private_key block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#private_key ApmSyntheticsMonitor#private_key}
   */
   readonly privateKey?: ApmSyntheticsMonitorConfigurationClientCertificateDetailsPrivateKey;
@@ -415,6 +490,31 @@ export function apmSyntheticsMonitorConfigurationClientCertificateDetailsToTerra
     client_certificate: apmSyntheticsMonitorConfigurationClientCertificateDetailsClientCertificateToTerraform(struct!.clientCertificate),
     private_key: apmSyntheticsMonitorConfigurationClientCertificateDetailsPrivateKeyToTerraform(struct!.privateKey),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationClientCertificateDetailsToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationClientCertificateDetailsOutputReference | ApmSyntheticsMonitorConfigurationClientCertificateDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    client_certificate: {
+      value: apmSyntheticsMonitorConfigurationClientCertificateDetailsClientCertificateToHclTerraform(struct!.clientCertificate),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationClientCertificateDetailsClientCertificateList",
+    },
+    private_key: {
+      value: apmSyntheticsMonitorConfigurationClientCertificateDetailsPrivateKeyToHclTerraform(struct!.privateKey),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationClientCertificateDetailsPrivateKeyList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationClientCertificateDetailsOutputReference extends cdktf.ComplexObject {
@@ -512,6 +612,37 @@ export function apmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsPa
     password_type: cdktf.stringToTerraform(struct!.passwordType),
     vault_secret_id: cdktf.stringToTerraform(struct!.vaultSecretId),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsPasswordToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsPasswordOutputReference | ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsPassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_type: {
+      value: cdktf.stringToHclTerraform(struct!.passwordType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vault_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.vaultSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsPasswordOutputReference extends cdktf.ComplexObject {
@@ -613,7 +744,7 @@ export interface ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetails 
   readonly username?: string;
   /**
   * password block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#password ApmSyntheticsMonitor#password}
   */
   readonly password?: ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsPassword;
@@ -628,6 +759,31 @@ export function apmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsTo
     username: cdktf.stringToTerraform(struct!.username),
     password: apmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsPasswordToTerraform(struct!.password),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsOutputReference | ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password: {
+      value: apmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsPasswordToHclTerraform(struct!.password),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsPasswordList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsOutputReference extends cdktf.ComplexObject {
@@ -722,6 +878,31 @@ export function apmSyntheticsMonitorConfigurationDatabaseWalletDetailsToTerrafor
   }
 }
 
+
+export function apmSyntheticsMonitorConfigurationDatabaseWalletDetailsToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationDatabaseWalletDetailsOutputReference | ApmSyntheticsMonitorConfigurationDatabaseWalletDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    database_wallet: {
+      value: cdktf.stringToHclTerraform(struct!.databaseWallet),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service_name: {
+      value: cdktf.stringToHclTerraform(struct!.serviceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsMonitorConfigurationDatabaseWalletDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -812,6 +993,31 @@ export function apmSyntheticsMonitorConfigurationDnsConfigurationToTerraform(str
     is_override_dns: cdktf.booleanToTerraform(struct!.isOverrideDns),
     override_dns_ip: cdktf.stringToTerraform(struct!.overrideDnsIp),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationDnsConfigurationToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationDnsConfigurationOutputReference | ApmSyntheticsMonitorConfigurationDnsConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_override_dns: {
+      value: cdktf.booleanToHclTerraform(struct!.isOverrideDns),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    override_dns_ip: {
+      value: cdktf.stringToHclTerraform(struct!.overrideDnsIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationDnsConfigurationOutputReference extends cdktf.ComplexObject {
@@ -909,6 +1115,37 @@ export function apmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsPa
     password_type: cdktf.stringToTerraform(struct!.passwordType),
     vault_secret_id: cdktf.stringToTerraform(struct!.vaultSecretId),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsPasswordToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsPasswordOutputReference | ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsPassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_type: {
+      value: cdktf.stringToHclTerraform(struct!.passwordType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vault_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.vaultSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsPasswordOutputReference extends cdktf.ComplexObject {
@@ -1010,7 +1247,7 @@ export interface ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetails 
   readonly username?: string;
   /**
   * password block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#password ApmSyntheticsMonitor#password}
   */
   readonly password?: ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsPassword;
@@ -1025,6 +1262,31 @@ export function apmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsTo
     username: cdktf.stringToTerraform(struct!.username),
     password: apmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsPasswordToTerraform(struct!.password),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsOutputReference | ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password: {
+      value: apmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsPasswordToHclTerraform(struct!.password),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsPasswordList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsOutputReference extends cdktf.ComplexObject {
@@ -1132,6 +1394,49 @@ export function apmSyntheticsMonitorConfigurationNetworkConfigurationToTerraform
     protocol: cdktf.stringToTerraform(struct!.protocol),
     transmission_rate: cdktf.numberToTerraform(struct!.transmissionRate),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationNetworkConfigurationToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationNetworkConfigurationOutputReference | ApmSyntheticsMonitorConfigurationNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    number_of_hops: {
+      value: cdktf.numberToHclTerraform(struct!.numberOfHops),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    probe_mode: {
+      value: cdktf.stringToHclTerraform(struct!.probeMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    probe_per_hop: {
+      value: cdktf.numberToHclTerraform(struct!.probePerHop),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    transmission_rate: {
+      value: cdktf.numberToHclTerraform(struct!.transmissionRate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationNetworkConfigurationOutputReference extends cdktf.ComplexObject {
@@ -1292,6 +1597,31 @@ export function apmSyntheticsMonitorConfigurationReqAuthenticationDetailsAuthHea
   }
 }
 
+
+export function apmSyntheticsMonitorConfigurationReqAuthenticationDetailsAuthHeadersToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationReqAuthenticationDetailsAuthHeaders | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    header_name: {
+      value: cdktf.stringToHclTerraform(struct!.headerName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    header_value: {
+      value: cdktf.stringToHclTerraform(struct!.headerValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsMonitorConfigurationReqAuthenticationDetailsAuthHeadersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1425,7 +1755,7 @@ export interface ApmSyntheticsMonitorConfigurationReqAuthenticationDetails {
   readonly oauthScheme?: string;
   /**
   * auth_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#auth_headers ApmSyntheticsMonitor#auth_headers}
   */
   readonly authHeaders?: ApmSyntheticsMonitorConfigurationReqAuthenticationDetailsAuthHeaders[] | cdktf.IResolvable;
@@ -1446,6 +1776,67 @@ export function apmSyntheticsMonitorConfigurationReqAuthenticationDetailsToTerra
     oauth_scheme: cdktf.stringToTerraform(struct!.oauthScheme),
     auth_headers: cdktf.listMapper(apmSyntheticsMonitorConfigurationReqAuthenticationDetailsAuthHeadersToTerraform, true)(struct!.authHeaders),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationReqAuthenticationDetailsToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationReqAuthenticationDetailsOutputReference | ApmSyntheticsMonitorConfigurationReqAuthenticationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    auth_request_method: {
+      value: cdktf.stringToHclTerraform(struct!.authRequestMethod),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auth_request_post_body: {
+      value: cdktf.stringToHclTerraform(struct!.authRequestPostBody),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auth_token: {
+      value: cdktf.stringToHclTerraform(struct!.authToken),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auth_url: {
+      value: cdktf.stringToHclTerraform(struct!.authUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auth_user_name: {
+      value: cdktf.stringToHclTerraform(struct!.authUserName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auth_user_password: {
+      value: cdktf.stringToHclTerraform(struct!.authUserPassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    oauth_scheme: {
+      value: cdktf.stringToHclTerraform(struct!.oauthScheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auth_headers: {
+      value: cdktf.listMapperHcl(apmSyntheticsMonitorConfigurationReqAuthenticationDetailsAuthHeadersToHclTerraform, true)(struct!.authHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationReqAuthenticationDetailsAuthHeadersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationReqAuthenticationDetailsOutputReference extends cdktf.ComplexObject {
@@ -1672,6 +2063,31 @@ export function apmSyntheticsMonitorConfigurationRequestHeadersToTerraform(struc
   }
 }
 
+
+export function apmSyntheticsMonitorConfigurationRequestHeadersToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationRequestHeaders | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    header_name: {
+      value: cdktf.stringToHclTerraform(struct!.headerName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    header_value: {
+      value: cdktf.stringToHclTerraform(struct!.headerValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsMonitorConfigurationRequestHeadersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1796,6 +2212,31 @@ export function apmSyntheticsMonitorConfigurationRequestQueryParamsToTerraform(s
   }
 }
 
+
+export function apmSyntheticsMonitorConfigurationRequestQueryParamsToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationRequestQueryParams | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    param_name: {
+      value: cdktf.stringToHclTerraform(struct!.paramName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    param_value: {
+      value: cdktf.stringToHclTerraform(struct!.paramValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsMonitorConfigurationRequestQueryParamsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1913,6 +2354,25 @@ export function apmSyntheticsMonitorConfigurationVerifyTextsToTerraform(struct?:
   return {
     text: cdktf.stringToTerraform(struct!.text),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationVerifyTextsToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationVerifyTexts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    text: {
+      value: cdktf.stringToHclTerraform(struct!.text),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationVerifyTextsOutputReference extends cdktf.ComplexObject {
@@ -2094,61 +2554,61 @@ export interface ApmSyntheticsMonitorConfiguration {
   readonly verifyResponseContent?: string;
   /**
   * client_certificate_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#client_certificate_details ApmSyntheticsMonitor#client_certificate_details}
   */
   readonly clientCertificateDetails?: ApmSyntheticsMonitorConfigurationClientCertificateDetails;
   /**
   * database_authentication_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#database_authentication_details ApmSyntheticsMonitor#database_authentication_details}
   */
   readonly databaseAuthenticationDetails?: ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetails;
   /**
   * database_wallet_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#database_wallet_details ApmSyntheticsMonitor#database_wallet_details}
   */
   readonly databaseWalletDetails?: ApmSyntheticsMonitorConfigurationDatabaseWalletDetails;
   /**
   * dns_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#dns_configuration ApmSyntheticsMonitor#dns_configuration}
   */
   readonly dnsConfiguration?: ApmSyntheticsMonitorConfigurationDnsConfiguration;
   /**
   * ftp_basic_authentication_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#ftp_basic_authentication_details ApmSyntheticsMonitor#ftp_basic_authentication_details}
   */
   readonly ftpBasicAuthenticationDetails?: ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetails;
   /**
   * network_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#network_configuration ApmSyntheticsMonitor#network_configuration}
   */
   readonly networkConfiguration?: ApmSyntheticsMonitorConfigurationNetworkConfiguration;
   /**
   * req_authentication_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#req_authentication_details ApmSyntheticsMonitor#req_authentication_details}
   */
   readonly reqAuthenticationDetails?: ApmSyntheticsMonitorConfigurationReqAuthenticationDetails;
   /**
   * request_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#request_headers ApmSyntheticsMonitor#request_headers}
   */
   readonly requestHeaders?: ApmSyntheticsMonitorConfigurationRequestHeaders[] | cdktf.IResolvable;
   /**
   * request_query_params block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#request_query_params ApmSyntheticsMonitor#request_query_params}
   */
   readonly requestQueryParams?: ApmSyntheticsMonitorConfigurationRequestQueryParams[] | cdktf.IResolvable;
   /**
   * verify_texts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#verify_texts ApmSyntheticsMonitor#verify_texts}
   */
   readonly verifyTexts?: ApmSyntheticsMonitorConfigurationVerifyTexts[] | cdktf.IResolvable;
@@ -2195,6 +2655,223 @@ export function apmSyntheticsMonitorConfigurationToTerraform(struct?: ApmSynthet
     request_query_params: cdktf.listMapper(apmSyntheticsMonitorConfigurationRequestQueryParamsToTerraform, true)(struct!.requestQueryParams),
     verify_texts: cdktf.listMapper(apmSyntheticsMonitorConfigurationVerifyTextsToTerraform, true)(struct!.verifyTexts),
   }
+}
+
+
+export function apmSyntheticsMonitorConfigurationToHclTerraform(struct?: ApmSyntheticsMonitorConfigurationOutputReference | ApmSyntheticsMonitorConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_type: {
+      value: cdktf.stringToHclTerraform(struct!.configType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connection_string: {
+      value: cdktf.stringToHclTerraform(struct!.connectionString),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    database_connection_type: {
+      value: cdktf.stringToHclTerraform(struct!.databaseConnectionType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    database_role: {
+      value: cdktf.stringToHclTerraform(struct!.databaseRole),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    database_type: {
+      value: cdktf.stringToHclTerraform(struct!.databaseType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    download_size_limit_in_bytes: {
+      value: cdktf.numberToHclTerraform(struct!.downloadSizeLimitInBytes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ftp_protocol: {
+      value: cdktf.stringToHclTerraform(struct!.ftpProtocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ftp_request_type: {
+      value: cdktf.stringToHclTerraform(struct!.ftpRequestType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_active_mode: {
+      value: cdktf.booleanToHclTerraform(struct!.isActiveMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_certificate_validation_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isCertificateValidationEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_default_snapshot_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isDefaultSnapshotEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_failure_retried: {
+      value: cdktf.booleanToHclTerraform(struct!.isFailureRetried),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_query_recursive: {
+      value: cdktf.booleanToHclTerraform(struct!.isQueryRecursive),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_redirection_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isRedirectionEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name_server: {
+      value: cdktf.stringToHclTerraform(struct!.nameServer),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query: {
+      value: cdktf.stringToHclTerraform(struct!.query),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    record_type: {
+      value: cdktf.stringToHclTerraform(struct!.recordType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    req_authentication_scheme: {
+      value: cdktf.stringToHclTerraform(struct!.reqAuthenticationScheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    request_method: {
+      value: cdktf.stringToHclTerraform(struct!.requestMethod),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    request_post_body: {
+      value: cdktf.stringToHclTerraform(struct!.requestPostBody),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    upload_file_size_in_bytes: {
+      value: cdktf.numberToHclTerraform(struct!.uploadFileSizeInBytes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    verify_response_codes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.verifyResponseCodes),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    verify_response_content: {
+      value: cdktf.stringToHclTerraform(struct!.verifyResponseContent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_certificate_details: {
+      value: apmSyntheticsMonitorConfigurationClientCertificateDetailsToHclTerraform(struct!.clientCertificateDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationClientCertificateDetailsList",
+    },
+    database_authentication_details: {
+      value: apmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsToHclTerraform(struct!.databaseAuthenticationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationDatabaseAuthenticationDetailsList",
+    },
+    database_wallet_details: {
+      value: apmSyntheticsMonitorConfigurationDatabaseWalletDetailsToHclTerraform(struct!.databaseWalletDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationDatabaseWalletDetailsList",
+    },
+    dns_configuration: {
+      value: apmSyntheticsMonitorConfigurationDnsConfigurationToHclTerraform(struct!.dnsConfiguration),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationDnsConfigurationList",
+    },
+    ftp_basic_authentication_details: {
+      value: apmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsToHclTerraform(struct!.ftpBasicAuthenticationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationFtpBasicAuthenticationDetailsList",
+    },
+    network_configuration: {
+      value: apmSyntheticsMonitorConfigurationNetworkConfigurationToHclTerraform(struct!.networkConfiguration),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationNetworkConfigurationList",
+    },
+    req_authentication_details: {
+      value: apmSyntheticsMonitorConfigurationReqAuthenticationDetailsToHclTerraform(struct!.reqAuthenticationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationReqAuthenticationDetailsList",
+    },
+    request_headers: {
+      value: cdktf.listMapperHcl(apmSyntheticsMonitorConfigurationRequestHeadersToHclTerraform, true)(struct!.requestHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationRequestHeadersList",
+    },
+    request_query_params: {
+      value: cdktf.listMapperHcl(apmSyntheticsMonitorConfigurationRequestQueryParamsToHclTerraform, true)(struct!.requestQueryParams),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationRequestQueryParamsList",
+    },
+    verify_texts: {
+      value: cdktf.listMapperHcl(apmSyntheticsMonitorConfigurationVerifyTextsToHclTerraform, true)(struct!.verifyTexts),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApmSyntheticsMonitorConfigurationVerifyTextsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorConfigurationOutputReference extends cdktf.ComplexObject {
@@ -2993,6 +3670,31 @@ export function apmSyntheticsMonitorMaintenanceWindowScheduleToTerraform(struct?
   }
 }
 
+
+export function apmSyntheticsMonitorMaintenanceWindowScheduleToHclTerraform(struct?: ApmSyntheticsMonitorMaintenanceWindowScheduleOutputReference | ApmSyntheticsMonitorMaintenanceWindowSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    time_ended: {
+      value: cdktf.stringToHclTerraform(struct!.timeEnded),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_started: {
+      value: cdktf.stringToHclTerraform(struct!.timeStarted),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsMonitorMaintenanceWindowScheduleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3075,6 +3777,17 @@ export function apmSyntheticsMonitorScriptParametersMonitorScriptParameterToTerr
   }
 }
 
+
+export function apmSyntheticsMonitorScriptParametersMonitorScriptParameterToHclTerraform(struct?: ApmSyntheticsMonitorScriptParametersMonitorScriptParameter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class ApmSyntheticsMonitorScriptParametersMonitorScriptParameterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3152,6 +3865,31 @@ export function apmSyntheticsMonitorScriptParametersToTerraform(struct?: ApmSynt
     param_name: cdktf.stringToTerraform(struct!.paramName),
     param_value: cdktf.stringToTerraform(struct!.paramValue),
   }
+}
+
+
+export function apmSyntheticsMonitorScriptParametersToHclTerraform(struct?: ApmSyntheticsMonitorScriptParameters | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    param_name: {
+      value: cdktf.stringToHclTerraform(struct!.paramName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    param_value: {
+      value: cdktf.stringToHclTerraform(struct!.paramValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsMonitorScriptParametersOutputReference extends cdktf.ComplexObject {
@@ -3293,6 +4031,37 @@ export function apmSyntheticsMonitorTimeoutsToTerraform(struct?: ApmSyntheticsMo
   }
 }
 
+
+export function apmSyntheticsMonitorTimeoutsToHclTerraform(struct?: ApmSyntheticsMonitorTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsMonitorTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -3417,6 +4186,31 @@ export function apmSyntheticsMonitorVantagePointsToTerraform(struct?: ApmSynthet
   }
 }
 
+
+export function apmSyntheticsMonitorVantagePointsToHclTerraform(struct?: ApmSyntheticsMonitorVantagePoints | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsMonitorVantagePointsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -3531,6 +4325,20 @@ export class ApmSyntheticsMonitor extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apm_synthetics_monitor";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ApmSyntheticsMonitor resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ApmSyntheticsMonitor to import
+  * @param importFromId The id of the existing ApmSyntheticsMonitor that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_monitor#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ApmSyntheticsMonitor to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apm_synthetics_monitor", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -3996,5 +4804,151 @@ export class ApmSyntheticsMonitor extends cdktf.TerraformResource {
       timeouts: apmSyntheticsMonitorTimeoutsToTerraform(this._timeouts.internalValue),
       vantage_points: cdktf.listMapper(apmSyntheticsMonitorVantagePointsToTerraform, true)(this._vantagePoints.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      apm_domain_id: {
+        value: cdktf.stringToHclTerraform(this._apmDomainId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      batch_interval_in_seconds: {
+        value: cdktf.numberToHclTerraform(this._batchIntervalInSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_ipv6: {
+        value: cdktf.booleanToHclTerraform(this._isIpv6),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_run_now: {
+        value: cdktf.booleanToHclTerraform(this._isRunNow),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_run_once: {
+        value: cdktf.booleanToHclTerraform(this._isRunOnce),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      monitor_type: {
+        value: cdktf.stringToHclTerraform(this._monitorType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      repeat_interval_in_seconds: {
+        value: cdktf.numberToHclTerraform(this._repeatIntervalInSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      scheduling_policy: {
+        value: cdktf.stringToHclTerraform(this._schedulingPolicy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      script_id: {
+        value: cdktf.stringToHclTerraform(this._scriptId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      script_name: {
+        value: cdktf.stringToHclTerraform(this._scriptName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target: {
+        value: cdktf.stringToHclTerraform(this._target),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeout_in_seconds: {
+        value: cdktf.numberToHclTerraform(this._timeoutInSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      availability_configuration: {
+        value: apmSyntheticsMonitorAvailabilityConfigurationToHclTerraform(this._availabilityConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApmSyntheticsMonitorAvailabilityConfigurationList",
+      },
+      configuration: {
+        value: apmSyntheticsMonitorConfigurationToHclTerraform(this._configuration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApmSyntheticsMonitorConfigurationList",
+      },
+      maintenance_window_schedule: {
+        value: apmSyntheticsMonitorMaintenanceWindowScheduleToHclTerraform(this._maintenanceWindowSchedule.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApmSyntheticsMonitorMaintenanceWindowScheduleList",
+      },
+      script_parameters: {
+        value: cdktf.listMapperHcl(apmSyntheticsMonitorScriptParametersToHclTerraform, true)(this._scriptParameters.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApmSyntheticsMonitorScriptParametersList",
+      },
+      timeouts: {
+        value: apmSyntheticsMonitorTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ApmSyntheticsMonitorTimeouts",
+      },
+      vantage_points: {
+        value: cdktf.listMapperHcl(apmSyntheticsMonitorVantagePointsToHclTerraform, true)(this._vantagePoints.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApmSyntheticsMonitorVantagePointsList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

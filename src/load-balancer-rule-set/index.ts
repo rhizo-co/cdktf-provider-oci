@@ -24,13 +24,13 @@ export interface LoadBalancerRuleSetConfig extends cdktf.TerraformMetaArguments 
   readonly name: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_rule_set#items LoadBalancerRuleSet#items}
   */
   readonly items: LoadBalancerRuleSetItems[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_rule_set#timeouts LoadBalancerRuleSet#timeouts}
   */
   readonly timeouts?: LoadBalancerRuleSetTimeouts;
@@ -60,6 +60,37 @@ export function loadBalancerRuleSetItemsConditionsToTerraform(struct?: LoadBalan
     attribute_value: cdktf.stringToTerraform(struct!.attributeValue),
     operator: cdktf.stringToTerraform(struct!.operator),
   }
+}
+
+
+export function loadBalancerRuleSetItemsConditionsToHclTerraform(struct?: LoadBalancerRuleSetItemsConditions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    attribute_name: {
+      value: cdktf.stringToHclTerraform(struct!.attributeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    attribute_value: {
+      value: cdktf.stringToHclTerraform(struct!.attributeValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoadBalancerRuleSetItemsConditionsOutputReference extends cdktf.ComplexObject {
@@ -202,6 +233,31 @@ export function loadBalancerRuleSetItemsIpMaxConnectionsToTerraform(struct?: Loa
   }
 }
 
+
+export function loadBalancerRuleSetItemsIpMaxConnectionsToHclTerraform(struct?: LoadBalancerRuleSetItemsIpMaxConnections | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ip_addresses: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.ipAddresses),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    max_connections: {
+      value: cdktf.numberToHclTerraform(struct!.maxConnections),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoadBalancerRuleSetItemsIpMaxConnectionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -339,6 +395,49 @@ export function loadBalancerRuleSetItemsRedirectUriToTerraform(struct?: LoadBala
     protocol: cdktf.stringToTerraform(struct!.protocol),
     query: cdktf.stringToTerraform(struct!.query),
   }
+}
+
+
+export function loadBalancerRuleSetItemsRedirectUriToHclTerraform(struct?: LoadBalancerRuleSetItemsRedirectUriOutputReference | LoadBalancerRuleSetItemsRedirectUri): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query: {
+      value: cdktf.stringToHclTerraform(struct!.query),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoadBalancerRuleSetItemsRedirectUriOutputReference extends cdktf.ComplexObject {
@@ -528,19 +627,19 @@ export interface LoadBalancerRuleSetItems {
   readonly value?: string;
   /**
   * conditions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_rule_set#conditions LoadBalancerRuleSet#conditions}
   */
   readonly conditions?: LoadBalancerRuleSetItemsConditions[] | cdktf.IResolvable;
   /**
   * ip_max_connections block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_rule_set#ip_max_connections LoadBalancerRuleSet#ip_max_connections}
   */
   readonly ipMaxConnections?: LoadBalancerRuleSetItemsIpMaxConnections[] | cdktf.IResolvable;
   /**
   * redirect_uri block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_rule_set#redirect_uri LoadBalancerRuleSet#redirect_uri}
   */
   readonly redirectUri?: LoadBalancerRuleSetItemsRedirectUri;
@@ -568,6 +667,109 @@ export function loadBalancerRuleSetItemsToTerraform(struct?: LoadBalancerRuleSet
     ip_max_connections: cdktf.listMapper(loadBalancerRuleSetItemsIpMaxConnectionsToTerraform, true)(struct!.ipMaxConnections),
     redirect_uri: loadBalancerRuleSetItemsRedirectUriToTerraform(struct!.redirectUri),
   }
+}
+
+
+export function loadBalancerRuleSetItemsToHclTerraform(struct?: LoadBalancerRuleSetItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    allowed_methods: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedMethods),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    are_invalid_characters_allowed: {
+      value: cdktf.booleanToHclTerraform(struct!.areInvalidCharactersAllowed),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    default_max_connections: {
+      value: cdktf.numberToHclTerraform(struct!.defaultMaxConnections),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    header: {
+      value: cdktf.stringToHclTerraform(struct!.header),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_large_header_size_in_kb: {
+      value: cdktf.numberToHclTerraform(struct!.httpLargeHeaderSizeInKb),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    prefix: {
+      value: cdktf.stringToHclTerraform(struct!.prefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    response_code: {
+      value: cdktf.numberToHclTerraform(struct!.responseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    status_code: {
+      value: cdktf.numberToHclTerraform(struct!.statusCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    suffix: {
+      value: cdktf.stringToHclTerraform(struct!.suffix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    conditions: {
+      value: cdktf.listMapperHcl(loadBalancerRuleSetItemsConditionsToHclTerraform, true)(struct!.conditions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoadBalancerRuleSetItemsConditionsList",
+    },
+    ip_max_connections: {
+      value: cdktf.listMapperHcl(loadBalancerRuleSetItemsIpMaxConnectionsToHclTerraform, true)(struct!.ipMaxConnections),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoadBalancerRuleSetItemsIpMaxConnectionsList",
+    },
+    redirect_uri: {
+      value: loadBalancerRuleSetItemsRedirectUriToHclTerraform(struct!.redirectUri),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoadBalancerRuleSetItemsRedirectUriList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoadBalancerRuleSetItemsOutputReference extends cdktf.ComplexObject {
@@ -982,6 +1184,37 @@ export function loadBalancerRuleSetTimeoutsToTerraform(struct?: LoadBalancerRule
   }
 }
 
+
+export function loadBalancerRuleSetTimeoutsToHclTerraform(struct?: LoadBalancerRuleSetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoadBalancerRuleSetTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1094,6 +1327,20 @@ export class LoadBalancerRuleSet extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_load_balancer_rule_set";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LoadBalancerRuleSet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LoadBalancerRuleSet to import
+  * @param importFromId The id of the existing LoadBalancerRuleSet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/load_balancer_rule_set#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LoadBalancerRuleSet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_load_balancer_rule_set", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1221,5 +1468,43 @@ export class LoadBalancerRuleSet extends cdktf.TerraformResource {
       items: cdktf.listMapper(loadBalancerRuleSetItemsToTerraform, true)(this._items.internalValue),
       timeouts: loadBalancerRuleSetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      load_balancer_id: {
+        value: cdktf.stringToHclTerraform(this._loadBalancerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      items: {
+        value: cdktf.listMapperHcl(loadBalancerRuleSetItemsToHclTerraform, true)(this._items.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "LoadBalancerRuleSetItemsList",
+      },
+      timeouts: {
+        value: loadBalancerRuleSetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LoadBalancerRuleSetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

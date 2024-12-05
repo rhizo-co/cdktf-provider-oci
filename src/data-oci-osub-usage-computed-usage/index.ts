@@ -43,6 +43,17 @@ export function dataOciOsubUsageComputedUsageParentProductToTerraform(struct?: D
   }
 }
 
+
+export function dataOciOsubUsageComputedUsageParentProductToHclTerraform(struct?: DataOciOsubUsageComputedUsageParentProduct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOsubUsageComputedUsageParentProductOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -137,6 +148,17 @@ export function dataOciOsubUsageComputedUsageProductToTerraform(struct?: DataOci
   }
 }
 
+
+export function dataOciOsubUsageComputedUsageProductToHclTerraform(struct?: DataOciOsubUsageComputedUsageProduct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOsubUsageComputedUsageProductOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -229,6 +251,20 @@ export class DataOciOsubUsageComputedUsage extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_osub_usage_computed_usage";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOsubUsageComputedUsage resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOsubUsageComputedUsage to import
+  * @param importFromId The id of the existing DataOciOsubUsageComputedUsage that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/osub_usage_computed_usage#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOsubUsageComputedUsage to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_osub_usage_computed_usage", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -476,5 +512,43 @@ export class DataOciOsubUsageComputedUsage extends cdktf.TerraformDataSource {
       id: cdktf.stringToTerraform(this._id),
       x_one_origin_region: cdktf.stringToTerraform(this._xOneOriginRegion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      computed_usage_id: {
+        value: cdktf.stringToHclTerraform(this._computedUsageId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fields: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._fields),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      x_one_origin_region: {
+        value: cdktf.stringToHclTerraform(this._xOneOriginRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,7 +40,7 @@ export interface DatascienceModelArtifactImportConfig extends cdktf.TerraformMet
   readonly namespace: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model_artifact_import#timeouts DatascienceModelArtifactImport#timeouts}
   */
   readonly timeouts?: DatascienceModelArtifactImportTimeouts;
@@ -70,6 +70,37 @@ export function datascienceModelArtifactImportTimeoutsToTerraform(struct?: Datas
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function datascienceModelArtifactImportTimeoutsToHclTerraform(struct?: DatascienceModelArtifactImportTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatascienceModelArtifactImportTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -184,6 +215,20 @@ export class DatascienceModelArtifactImport extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_model_artifact_import";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatascienceModelArtifactImport resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatascienceModelArtifactImport to import
+  * @param importFromId The id of the existing DatascienceModelArtifactImport that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model_artifact_import#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatascienceModelArtifactImport to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_model_artifact_import", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -351,5 +396,61 @@ export class DatascienceModelArtifactImport extends cdktf.TerraformResource {
       namespace: cdktf.stringToTerraform(this._namespace),
       timeouts: datascienceModelArtifactImportTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      artifact_source_type: {
+        value: cdktf.stringToHclTerraform(this._artifactSourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      destination_bucket: {
+        value: cdktf.stringToHclTerraform(this._destinationBucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      destination_object_name: {
+        value: cdktf.stringToHclTerraform(this._destinationObjectName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      destination_region: {
+        value: cdktf.stringToHclTerraform(this._destinationRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_id: {
+        value: cdktf.stringToHclTerraform(this._modelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: datascienceModelArtifactImportTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatascienceModelArtifactImportTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

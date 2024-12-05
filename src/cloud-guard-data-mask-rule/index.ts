@@ -52,13 +52,13 @@ export interface CloudGuardDataMaskRuleConfig extends cdktf.TerraformMetaArgumen
   readonly state?: string;
   /**
   * target_selected block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_data_mask_rule#target_selected CloudGuardDataMaskRule#target_selected}
   */
   readonly targetSelected: CloudGuardDataMaskRuleTargetSelected;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_data_mask_rule#timeouts CloudGuardDataMaskRule#timeouts}
   */
   readonly timeouts?: CloudGuardDataMaskRuleTimeouts;
@@ -83,6 +83,31 @@ export function cloudGuardDataMaskRuleTargetSelectedToTerraform(struct?: CloudGu
     kind: cdktf.stringToTerraform(struct!.kind),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function cloudGuardDataMaskRuleTargetSelectedToHclTerraform(struct?: CloudGuardDataMaskRuleTargetSelectedOutputReference | CloudGuardDataMaskRuleTargetSelected): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDataMaskRuleTargetSelectedOutputReference extends cdktf.ComplexObject {
@@ -177,6 +202,37 @@ export function cloudGuardDataMaskRuleTimeoutsToTerraform(struct?: CloudGuardDat
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function cloudGuardDataMaskRuleTimeoutsToHclTerraform(struct?: CloudGuardDataMaskRuleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDataMaskRuleTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -291,6 +347,20 @@ export class CloudGuardDataMaskRule extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_guard_data_mask_rule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CloudGuardDataMaskRule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CloudGuardDataMaskRule to import
+  * @param importFromId The id of the existing CloudGuardDataMaskRule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_data_mask_rule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CloudGuardDataMaskRule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_guard_data_mask_rule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -554,5 +624,85 @@ export class CloudGuardDataMaskRule extends cdktf.TerraformResource {
       target_selected: cloudGuardDataMaskRuleTargetSelectedToTerraform(this._targetSelected.internalValue),
       timeouts: cloudGuardDataMaskRuleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      data_mask_categories: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._dataMaskCategories),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      data_mask_rule_status: {
+        value: cdktf.stringToHclTerraform(this._dataMaskRuleStatus),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      iam_group_id: {
+        value: cdktf.stringToHclTerraform(this._iamGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_selected: {
+        value: cloudGuardDataMaskRuleTargetSelectedToHclTerraform(this._targetSelected.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudGuardDataMaskRuleTargetSelectedList",
+      },
+      timeouts: {
+        value: cloudGuardDataMaskRuleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CloudGuardDataMaskRuleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

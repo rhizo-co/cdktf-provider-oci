@@ -1,0 +1,2553 @@
+# `dataOciAiDocumentProjects` Submodule <a name="`dataOciAiDocumentProjects` Submodule" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects"></a>
+
+## Constructs <a name="Constructs" id="Constructs"></a>
+
+### DataOciAiDocumentProjects <a name="DataOciAiDocumentProjects" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects"></a>
+
+Represents a {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects oci_ai_document_projects}.
+
+#### Initializers <a name="Initializers" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjects;
+
+DataOciAiDocumentProjects.Builder.create(Construct scope, java.lang.String id)
+//  .connection(SSHProvisionerConnection)
+//  .connection(WinrmProvisionerConnection)
+//  .count(java.lang.Number)
+//  .count(TerraformCount)
+//  .dependsOn(java.util.List<ITerraformDependable>)
+//  .forEach(ITerraformIterator)
+//  .lifecycle(TerraformResourceLifecycle)
+//  .provider(TerraformProvider)
+//  .provisioners(java.util.List<FileProvisioner)
+//  .provisioners(LocalExecProvisioner)
+//  .provisioners(RemoteExecProvisioner>)
+//  .compartmentId(java.lang.String)
+//  .displayName(java.lang.String)
+//  .filter(IResolvable)
+//  .filter(java.util.List<DataOciAiDocumentProjectsFilter>)
+//  .id(java.lang.String)
+//  .state(java.lang.String)
+    .build();
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.scope">scope</a></code> | <code>software.constructs.Construct</code> | The scope in which to define this construct. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | The scoped construct ID. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.compartmentId">compartmentId</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#compartment_id DataOciAiDocumentProjects#compartment_id}. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.displayName">displayName</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#display_name DataOciAiDocumentProjects#display_name}. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.filter">filter</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>></code> | filter block. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#id DataOciAiDocumentProjects#id}. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.state">state</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#state DataOciAiDocumentProjects#state}. |
+
+---
+
+##### `scope`<sup>Required</sup> <a name="scope" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.scope"></a>
+
+- *Type:* software.constructs.Construct
+
+The scope in which to define this construct.
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.id"></a>
+
+- *Type:* java.lang.String
+
+The scoped construct ID.
+
+Must be unique amongst siblings in the same scope
+
+---
+
+##### `connection`<sup>Optional</sup> <a name="connection" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.connection"></a>
+
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+
+---
+
+##### `count`<sup>Optional</sup> <a name="count" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.count"></a>
+
+- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+
+---
+
+##### `dependsOn`<sup>Optional</sup> <a name="dependsOn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.dependsOn"></a>
+
+- *Type:* java.util.List<com.hashicorp.cdktf.ITerraformDependable>
+
+---
+
+##### `forEach`<sup>Optional</sup> <a name="forEach" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.forEach"></a>
+
+- *Type:* com.hashicorp.cdktf.ITerraformIterator
+
+---
+
+##### `lifecycle`<sup>Optional</sup> <a name="lifecycle" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.lifecycle"></a>
+
+- *Type:* com.hashicorp.cdktf.TerraformResourceLifecycle
+
+---
+
+##### `provider`<sup>Optional</sup> <a name="provider" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.provider"></a>
+
+- *Type:* com.hashicorp.cdktf.TerraformProvider
+
+---
+
+##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.provisioners"></a>
+
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+
+---
+
+##### `compartmentId`<sup>Optional</sup> <a name="compartmentId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.compartmentId"></a>
+
+- *Type:* java.lang.String
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#compartment_id DataOciAiDocumentProjects#compartment_id}.
+
+---
+
+##### `displayName`<sup>Optional</sup> <a name="displayName" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.displayName"></a>
+
+- *Type:* java.lang.String
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#display_name DataOciAiDocumentProjects#display_name}.
+
+---
+
+##### `filter`<sup>Optional</sup> <a name="filter" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.filter"></a>
+
+- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>>
+
+filter block.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#filter DataOciAiDocumentProjects#filter}
+
+---
+
+##### `id`<sup>Optional</sup> <a name="id" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.id"></a>
+
+- *Type:* java.lang.String
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#id DataOciAiDocumentProjects#id}.
+
+Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+
+---
+
+##### `state`<sup>Optional</sup> <a name="state" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.Initializer.parameter.state"></a>
+
+- *Type:* java.lang.String
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#state DataOciAiDocumentProjects#state}.
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.toString">toString</a></code> | Returns a string representation of this construct. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.addOverride">addOverride</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.overrideLogicalId">overrideLogicalId</a></code> | Overrides the auto-generated logical ID with a specific ID. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetOverrideLogicalId">resetOverrideLogicalId</a></code> | Resets a previously passed logical Id to use the auto-generated logical id again. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.toHclTerraform">toHclTerraform</a></code> | Adds this resource to the terraform JSON output. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.toMetadata">toMetadata</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.toTerraform">toTerraform</a></code> | Adds this resource to the terraform JSON output. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getAnyMapAttribute">getAnyMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getBooleanAttribute">getBooleanAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getBooleanMapAttribute">getBooleanMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getListAttribute">getListAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getNumberAttribute">getNumberAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getNumberListAttribute">getNumberListAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getNumberMapAttribute">getNumberMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getStringAttribute">getStringAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getStringMapAttribute">getStringMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.interpolationForAttribute">interpolationForAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.putFilter">putFilter</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetCompartmentId">resetCompartmentId</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetDisplayName">resetDisplayName</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetFilter">resetFilter</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetId">resetId</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetState">resetState</a></code> | *No description.* |
+
+---
+
+##### `toString` <a name="toString" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.toString"></a>
+
+```java
+public java.lang.String toString()
+```
+
+Returns a string representation of this construct.
+
+##### `addOverride` <a name="addOverride" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.addOverride"></a>
+
+```java
+public void addOverride(java.lang.String path, java.lang.Object value)
+```
+
+###### `path`<sup>Required</sup> <a name="path" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.addOverride.parameter.path"></a>
+
+- *Type:* java.lang.String
+
+---
+
+###### `value`<sup>Required</sup> <a name="value" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.addOverride.parameter.value"></a>
+
+- *Type:* java.lang.Object
+
+---
+
+##### `overrideLogicalId` <a name="overrideLogicalId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.overrideLogicalId"></a>
+
+```java
+public void overrideLogicalId(java.lang.String newLogicalId)
+```
+
+Overrides the auto-generated logical ID with a specific ID.
+
+###### `newLogicalId`<sup>Required</sup> <a name="newLogicalId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.overrideLogicalId.parameter.newLogicalId"></a>
+
+- *Type:* java.lang.String
+
+The new logical ID to use for this stack element.
+
+---
+
+##### `resetOverrideLogicalId` <a name="resetOverrideLogicalId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetOverrideLogicalId"></a>
+
+```java
+public void resetOverrideLogicalId()
+```
+
+Resets a previously passed logical Id to use the auto-generated logical id again.
+
+##### `toHclTerraform` <a name="toHclTerraform" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.toHclTerraform"></a>
+
+```java
+public java.lang.Object toHclTerraform()
+```
+
+Adds this resource to the terraform JSON output.
+
+##### `toMetadata` <a name="toMetadata" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.toMetadata"></a>
+
+```java
+public java.lang.Object toMetadata()
+```
+
+##### `toTerraform` <a name="toTerraform" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.toTerraform"></a>
+
+```java
+public java.lang.Object toTerraform()
+```
+
+Adds this resource to the terraform JSON output.
+
+##### `getAnyMapAttribute` <a name="getAnyMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getAnyMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Object> getAnyMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getAnyMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getBooleanAttribute` <a name="getBooleanAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getBooleanAttribute"></a>
+
+```java
+public IResolvable getBooleanAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getBooleanAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getBooleanMapAttribute` <a name="getBooleanMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getBooleanMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Boolean> getBooleanMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getBooleanMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getListAttribute` <a name="getListAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getListAttribute"></a>
+
+```java
+public java.util.List<java.lang.String> getListAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberAttribute` <a name="getNumberAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getNumberAttribute"></a>
+
+```java
+public java.lang.Number getNumberAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getNumberAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberListAttribute` <a name="getNumberListAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getNumberListAttribute"></a>
+
+```java
+public java.util.List<java.lang.Number> getNumberListAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getNumberListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberMapAttribute` <a name="getNumberMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getNumberMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Number> getNumberMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getNumberMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getStringAttribute` <a name="getStringAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getStringAttribute"></a>
+
+```java
+public java.lang.String getStringAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getStringAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getStringMapAttribute` <a name="getStringMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getStringMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.getStringMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `interpolationForAttribute` <a name="interpolationForAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.interpolationForAttribute"></a>
+
+```java
+public IResolvable interpolationForAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.interpolationForAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `putFilter` <a name="putFilter" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.putFilter"></a>
+
+```java
+public void putFilter(IResolvable OR java.util.List<DataOciAiDocumentProjectsFilter> value)
+```
+
+###### `value`<sup>Required</sup> <a name="value" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.putFilter.parameter.value"></a>
+
+- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>>
+
+---
+
+##### `resetCompartmentId` <a name="resetCompartmentId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetCompartmentId"></a>
+
+```java
+public void resetCompartmentId()
+```
+
+##### `resetDisplayName` <a name="resetDisplayName" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetDisplayName"></a>
+
+```java
+public void resetDisplayName()
+```
+
+##### `resetFilter` <a name="resetFilter" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetFilter"></a>
+
+```java
+public void resetFilter()
+```
+
+##### `resetId` <a name="resetId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetId"></a>
+
+```java
+public void resetId()
+```
+
+##### `resetState` <a name="resetState" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.resetState"></a>
+
+```java
+public void resetState()
+```
+
+#### Static Functions <a name="Static Functions" id="Static Functions"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.isConstruct">isConstruct</a></code> | Checks if `x` is a construct. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.isTerraformElement">isTerraformElement</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.isTerraformDataSource">isTerraformDataSource</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.generateConfigForImport">generateConfigForImport</a></code> | Generates CDKTF code for importing a DataOciAiDocumentProjects resource upon running "cdktf plan <stack-name>". |
+
+---
+
+##### `isConstruct` <a name="isConstruct" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.isConstruct"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjects;
+
+DataOciAiDocumentProjects.isConstruct(java.lang.Object x)
+```
+
+Checks if `x` is a construct.
+
+Use this method instead of `instanceof` to properly detect `Construct`
+instances, even when the construct library is symlinked.
+
+Explanation: in JavaScript, multiple copies of the `constructs` library on
+disk are seen as independent, completely different libraries. As a
+consequence, the class `Construct` in each copy of the `constructs` library
+is seen as a different class, and an instance of one class will not test as
+`instanceof` the other class. `npm install` will not create installations
+like this, but users may manually symlink construct libraries together or
+use a monorepo tool: in those cases, multiple copies of the `constructs`
+library can be accidentally installed, and `instanceof` will behave
+unpredictably. It is safest to avoid using `instanceof`, and using
+this type-testing method instead.
+
+###### `x`<sup>Required</sup> <a name="x" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.isConstruct.parameter.x"></a>
+
+- *Type:* java.lang.Object
+
+Any object.
+
+---
+
+##### `isTerraformElement` <a name="isTerraformElement" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.isTerraformElement"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjects;
+
+DataOciAiDocumentProjects.isTerraformElement(java.lang.Object x)
+```
+
+###### `x`<sup>Required</sup> <a name="x" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.isTerraformElement.parameter.x"></a>
+
+- *Type:* java.lang.Object
+
+---
+
+##### `isTerraformDataSource` <a name="isTerraformDataSource" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.isTerraformDataSource"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjects;
+
+DataOciAiDocumentProjects.isTerraformDataSource(java.lang.Object x)
+```
+
+###### `x`<sup>Required</sup> <a name="x" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.isTerraformDataSource.parameter.x"></a>
+
+- *Type:* java.lang.Object
+
+---
+
+##### `generateConfigForImport` <a name="generateConfigForImport" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.generateConfigForImport"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjects;
+
+DataOciAiDocumentProjects.generateConfigForImport(Construct scope, java.lang.String importToId, java.lang.String importFromId),DataOciAiDocumentProjects.generateConfigForImport(Construct scope, java.lang.String importToId, java.lang.String importFromId, TerraformProvider provider)
+```
+
+Generates CDKTF code for importing a DataOciAiDocumentProjects resource upon running "cdktf plan <stack-name>".
+
+###### `scope`<sup>Required</sup> <a name="scope" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.generateConfigForImport.parameter.scope"></a>
+
+- *Type:* software.constructs.Construct
+
+The scope in which to define this construct.
+
+---
+
+###### `importToId`<sup>Required</sup> <a name="importToId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.generateConfigForImport.parameter.importToId"></a>
+
+- *Type:* java.lang.String
+
+The construct id used in the generated config for the DataOciAiDocumentProjects to import.
+
+---
+
+###### `importFromId`<sup>Required</sup> <a name="importFromId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.generateConfigForImport.parameter.importFromId"></a>
+
+- *Type:* java.lang.String
+
+The id of the existing DataOciAiDocumentProjects that should be imported.
+
+Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#import import section} in the documentation of this resource for the id to use
+
+---
+
+###### `provider`<sup>Optional</sup> <a name="provider" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.generateConfigForImport.parameter.provider"></a>
+
+- *Type:* com.hashicorp.cdktf.TerraformProvider
+
+? Optional instance of the provider where the DataOciAiDocumentProjects to import is found.
+
+---
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.node">node</a></code> | <code>software.constructs.Node</code> | The tree node. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.cdktfStack">cdktfStack</a></code> | <code>com.hashicorp.cdktf.TerraformStack</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.friendlyUniqueId">friendlyUniqueId</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.terraformMetaArguments">terraformMetaArguments</a></code> | <code>java.util.Map<java.lang.String, java.lang.Object></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.terraformResourceType">terraformResourceType</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.terraformGeneratorMetadata">terraformGeneratorMetadata</a></code> | <code>com.hashicorp.cdktf.TerraformProviderGeneratorMetadata</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.dependsOn">dependsOn</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.filter">filter</a></code> | <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList">DataOciAiDocumentProjectsFilterList</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.projectCollection">projectCollection</a></code> | <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList">DataOciAiDocumentProjectsProjectCollectionList</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.compartmentIdInput">compartmentIdInput</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.displayNameInput">displayNameInput</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.filterInput">filterInput</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.idInput">idInput</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.stateInput">stateInput</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.compartmentId">compartmentId</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.displayName">displayName</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.id">id</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.state">state</a></code> | <code>java.lang.String</code> | *No description.* |
+
+---
+
+##### `node`<sup>Required</sup> <a name="node" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.node"></a>
+
+```java
+public Node getNode();
+```
+
+- *Type:* software.constructs.Node
+
+The tree node.
+
+---
+
+##### `cdktfStack`<sup>Required</sup> <a name="cdktfStack" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.cdktfStack"></a>
+
+```java
+public TerraformStack getCdktfStack();
+```
+
+- *Type:* com.hashicorp.cdktf.TerraformStack
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.fqn"></a>
+
+```java
+public java.lang.String getFqn();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `friendlyUniqueId`<sup>Required</sup> <a name="friendlyUniqueId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.friendlyUniqueId"></a>
+
+```java
+public java.lang.String getFriendlyUniqueId();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `terraformMetaArguments`<sup>Required</sup> <a name="terraformMetaArguments" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.terraformMetaArguments"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Object> getTerraformMetaArguments();
+```
+
+- *Type:* java.util.Map<java.lang.String, java.lang.Object>
+
+---
+
+##### `terraformResourceType`<sup>Required</sup> <a name="terraformResourceType" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.terraformResourceType"></a>
+
+```java
+public java.lang.String getTerraformResourceType();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `terraformGeneratorMetadata`<sup>Optional</sup> <a name="terraformGeneratorMetadata" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.terraformGeneratorMetadata"></a>
+
+```java
+public TerraformProviderGeneratorMetadata getTerraformGeneratorMetadata();
+```
+
+- *Type:* com.hashicorp.cdktf.TerraformProviderGeneratorMetadata
+
+---
+
+##### `count`<sup>Optional</sup> <a name="count" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.count"></a>
+
+```java
+public java.lang.Object getCount();
+```
+
+- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+
+---
+
+##### `dependsOn`<sup>Optional</sup> <a name="dependsOn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.dependsOn"></a>
+
+```java
+public java.util.List<java.lang.String> getDependsOn();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+---
+
+##### `forEach`<sup>Optional</sup> <a name="forEach" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.forEach"></a>
+
+```java
+public ITerraformIterator getForEach();
+```
+
+- *Type:* com.hashicorp.cdktf.ITerraformIterator
+
+---
+
+##### `lifecycle`<sup>Optional</sup> <a name="lifecycle" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.lifecycle"></a>
+
+```java
+public TerraformResourceLifecycle getLifecycle();
+```
+
+- *Type:* com.hashicorp.cdktf.TerraformResourceLifecycle
+
+---
+
+##### `provider`<sup>Optional</sup> <a name="provider" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.provider"></a>
+
+```java
+public TerraformProvider getProvider();
+```
+
+- *Type:* com.hashicorp.cdktf.TerraformProvider
+
+---
+
+##### `filter`<sup>Required</sup> <a name="filter" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.filter"></a>
+
+```java
+public DataOciAiDocumentProjectsFilterList getFilter();
+```
+
+- *Type:* <a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList">DataOciAiDocumentProjectsFilterList</a>
+
+---
+
+##### `projectCollection`<sup>Required</sup> <a name="projectCollection" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.projectCollection"></a>
+
+```java
+public DataOciAiDocumentProjectsProjectCollectionList getProjectCollection();
+```
+
+- *Type:* <a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList">DataOciAiDocumentProjectsProjectCollectionList</a>
+
+---
+
+##### `compartmentIdInput`<sup>Optional</sup> <a name="compartmentIdInput" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.compartmentIdInput"></a>
+
+```java
+public java.lang.String getCompartmentIdInput();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `displayNameInput`<sup>Optional</sup> <a name="displayNameInput" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.displayNameInput"></a>
+
+```java
+public java.lang.String getDisplayNameInput();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `filterInput`<sup>Optional</sup> <a name="filterInput" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.filterInput"></a>
+
+```java
+public java.lang.Object getFilterInput();
+```
+
+- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>>
+
+---
+
+##### `idInput`<sup>Optional</sup> <a name="idInput" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.idInput"></a>
+
+```java
+public java.lang.String getIdInput();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `stateInput`<sup>Optional</sup> <a name="stateInput" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.stateInput"></a>
+
+```java
+public java.lang.String getStateInput();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `compartmentId`<sup>Required</sup> <a name="compartmentId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.compartmentId"></a>
+
+```java
+public java.lang.String getCompartmentId();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `displayName`<sup>Required</sup> <a name="displayName" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.displayName"></a>
+
+```java
+public java.lang.String getDisplayName();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.id"></a>
+
+```java
+public java.lang.String getId();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `state`<sup>Required</sup> <a name="state" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.state"></a>
+
+```java
+public java.lang.String getState();
+```
+
+- *Type:* java.lang.String
+
+---
+
+#### Constants <a name="Constants" id="Constants"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.tfResourceType">tfResourceType</a></code> | <code>java.lang.String</code> | *No description.* |
+
+---
+
+##### `tfResourceType`<sup>Required</sup> <a name="tfResourceType" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjects.property.tfResourceType"></a>
+
+```java
+public java.lang.String getTfResourceType();
+```
+
+- *Type:* java.lang.String
+
+---
+
+## Structs <a name="Structs" id="Structs"></a>
+
+### DataOciAiDocumentProjectsConfig <a name="DataOciAiDocumentProjectsConfig" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig"></a>
+
+#### Initializer <a name="Initializer" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsConfig;
+
+DataOciAiDocumentProjectsConfig.builder()
+//  .connection(SSHProvisionerConnection)
+//  .connection(WinrmProvisionerConnection)
+//  .count(java.lang.Number)
+//  .count(TerraformCount)
+//  .dependsOn(java.util.List<ITerraformDependable>)
+//  .forEach(ITerraformIterator)
+//  .lifecycle(TerraformResourceLifecycle)
+//  .provider(TerraformProvider)
+//  .provisioners(java.util.List<FileProvisioner)
+//  .provisioners(LocalExecProvisioner)
+//  .provisioners(RemoteExecProvisioner>)
+//  .compartmentId(java.lang.String)
+//  .displayName(java.lang.String)
+//  .filter(IResolvable)
+//  .filter(java.util.List<DataOciAiDocumentProjectsFilter>)
+//  .id(java.lang.String)
+//  .state(java.lang.String)
+    .build();
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.connection">connection</a></code> | <code>com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.count">count</a></code> | <code>java.lang.Number OR com.hashicorp.cdktf.TerraformCount</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.dependsOn">dependsOn</a></code> | <code>java.util.List<com.hashicorp.cdktf.ITerraformDependable></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.forEach">forEach</a></code> | <code>com.hashicorp.cdktf.ITerraformIterator</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.lifecycle">lifecycle</a></code> | <code>com.hashicorp.cdktf.TerraformResourceLifecycle</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.provider">provider</a></code> | <code>com.hashicorp.cdktf.TerraformProvider</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.provisioners">provisioners</a></code> | <code>java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.compartmentId">compartmentId</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#compartment_id DataOciAiDocumentProjects#compartment_id}. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.displayName">displayName</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#display_name DataOciAiDocumentProjects#display_name}. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.filter">filter</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>></code> | filter block. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.id">id</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#id DataOciAiDocumentProjects#id}. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.state">state</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#state DataOciAiDocumentProjects#state}. |
+
+---
+
+##### `connection`<sup>Optional</sup> <a name="connection" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.connection"></a>
+
+```java
+public java.lang.Object getConnection();
+```
+
+- *Type:* com.hashicorp.cdktf.SSHProvisionerConnection OR com.hashicorp.cdktf.WinrmProvisionerConnection
+
+---
+
+##### `count`<sup>Optional</sup> <a name="count" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.count"></a>
+
+```java
+public java.lang.Object getCount();
+```
+
+- *Type:* java.lang.Number OR com.hashicorp.cdktf.TerraformCount
+
+---
+
+##### `dependsOn`<sup>Optional</sup> <a name="dependsOn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.dependsOn"></a>
+
+```java
+public java.util.List<ITerraformDependable> getDependsOn();
+```
+
+- *Type:* java.util.List<com.hashicorp.cdktf.ITerraformDependable>
+
+---
+
+##### `forEach`<sup>Optional</sup> <a name="forEach" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.forEach"></a>
+
+```java
+public ITerraformIterator getForEach();
+```
+
+- *Type:* com.hashicorp.cdktf.ITerraformIterator
+
+---
+
+##### `lifecycle`<sup>Optional</sup> <a name="lifecycle" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.lifecycle"></a>
+
+```java
+public TerraformResourceLifecycle getLifecycle();
+```
+
+- *Type:* com.hashicorp.cdktf.TerraformResourceLifecycle
+
+---
+
+##### `provider`<sup>Optional</sup> <a name="provider" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.provider"></a>
+
+```java
+public TerraformProvider getProvider();
+```
+
+- *Type:* com.hashicorp.cdktf.TerraformProvider
+
+---
+
+##### `provisioners`<sup>Optional</sup> <a name="provisioners" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.provisioners"></a>
+
+```java
+public java.lang.Object getProvisioners();
+```
+
+- *Type:* java.util.List<com.hashicorp.cdktf.FileProvisioner OR com.hashicorp.cdktf.LocalExecProvisioner OR com.hashicorp.cdktf.RemoteExecProvisioner>
+
+---
+
+##### `compartmentId`<sup>Optional</sup> <a name="compartmentId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.compartmentId"></a>
+
+```java
+public java.lang.String getCompartmentId();
+```
+
+- *Type:* java.lang.String
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#compartment_id DataOciAiDocumentProjects#compartment_id}.
+
+---
+
+##### `displayName`<sup>Optional</sup> <a name="displayName" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.displayName"></a>
+
+```java
+public java.lang.String getDisplayName();
+```
+
+- *Type:* java.lang.String
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#display_name DataOciAiDocumentProjects#display_name}.
+
+---
+
+##### `filter`<sup>Optional</sup> <a name="filter" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.filter"></a>
+
+```java
+public java.lang.Object getFilter();
+```
+
+- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>>
+
+filter block.
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#filter DataOciAiDocumentProjects#filter}
+
+---
+
+##### `id`<sup>Optional</sup> <a name="id" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.id"></a>
+
+```java
+public java.lang.String getId();
+```
+
+- *Type:* java.lang.String
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#id DataOciAiDocumentProjects#id}.
+
+Please be aware that the id field is automatically added to all resources in Terraform providers using a Terraform provider SDK version below 2.
+If you experience problems setting this value it might not be settable. Please take a look at the provider documentation to ensure it should be settable.
+
+---
+
+##### `state`<sup>Optional</sup> <a name="state" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsConfig.property.state"></a>
+
+```java
+public java.lang.String getState();
+```
+
+- *Type:* java.lang.String
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#state DataOciAiDocumentProjects#state}.
+
+---
+
+### DataOciAiDocumentProjectsFilter <a name="DataOciAiDocumentProjectsFilter" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter"></a>
+
+#### Initializer <a name="Initializer" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsFilter;
+
+DataOciAiDocumentProjectsFilter.builder()
+    .name(java.lang.String)
+    .values(java.util.List<java.lang.String>)
+//  .regex(java.lang.Boolean)
+//  .regex(IResolvable)
+    .build();
+```
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter.property.name">name</a></code> | <code>java.lang.String</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#name DataOciAiDocumentProjects#name}. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter.property.values">values</a></code> | <code>java.util.List<java.lang.String></code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#values DataOciAiDocumentProjects#values}. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter.property.regex">regex</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#regex DataOciAiDocumentProjects#regex}. |
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter.property.name"></a>
+
+```java
+public java.lang.String getName();
+```
+
+- *Type:* java.lang.String
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#name DataOciAiDocumentProjects#name}.
+
+---
+
+##### `values`<sup>Required</sup> <a name="values" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter.property.values"></a>
+
+```java
+public java.util.List<java.lang.String> getValues();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#values DataOciAiDocumentProjects#values}.
+
+---
+
+##### `regex`<sup>Optional</sup> <a name="regex" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter.property.regex"></a>
+
+```java
+public java.lang.Object getRegex();
+```
+
+- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+
+Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_projects#regex DataOciAiDocumentProjects#regex}.
+
+---
+
+### DataOciAiDocumentProjectsProjectCollection <a name="DataOciAiDocumentProjectsProjectCollection" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollection"></a>
+
+#### Initializer <a name="Initializer" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollection.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsProjectCollection;
+
+DataOciAiDocumentProjectsProjectCollection.builder()
+    .build();
+```
+
+
+### DataOciAiDocumentProjectsProjectCollectionItems <a name="DataOciAiDocumentProjectsProjectCollectionItems" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItems"></a>
+
+#### Initializer <a name="Initializer" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItems.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsProjectCollectionItems;
+
+DataOciAiDocumentProjectsProjectCollectionItems.builder()
+    .build();
+```
+
+
+## Classes <a name="Classes" id="Classes"></a>
+
+### DataOciAiDocumentProjectsFilterList <a name="DataOciAiDocumentProjectsFilterList" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList"></a>
+
+#### Initializers <a name="Initializers" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsFilterList;
+
+new DataOciAiDocumentProjectsFilterList(IInterpolatingParent terraformResource, java.lang.String terraformAttribute, java.lang.Boolean wrapsSet);
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.Initializer.parameter.terraformResource">terraformResource</a></code> | <code>com.hashicorp.cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.Initializer.parameter.terraformAttribute">terraformAttribute</a></code> | <code>java.lang.String</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.Initializer.parameter.wrapsSet">wrapsSet</a></code> | <code>java.lang.Boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `terraformResource`<sup>Required</sup> <a name="terraformResource" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.Initializer.parameter.terraformResource"></a>
+
+- *Type:* com.hashicorp.cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `wrapsSet`<sup>Required</sup> <a name="wrapsSet" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.Initializer.parameter.wrapsSet"></a>
+
+- *Type:* java.lang.Boolean
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.allWithMapKey">allWithMapKey</a></code> | Creating an iterator for this complex list. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.computeFqn">computeFqn</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.toString">toString</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.get">get</a></code> | *No description.* |
+
+---
+
+##### `allWithMapKey` <a name="allWithMapKey" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.allWithMapKey"></a>
+
+```java
+public DynamicListTerraformIterator allWithMapKey(java.lang.String mapKeyAttributeName)
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `computeFqn` <a name="computeFqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.computeFqn"></a>
+
+```java
+public java.lang.String computeFqn()
+```
+
+##### `resolve` <a name="resolve" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.resolve"></a>
+
+```java
+public java.lang.Object resolve(IResolveContext _context)
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.resolve.parameter._context"></a>
+
+- *Type:* com.hashicorp.cdktf.IResolveContext
+
+---
+
+##### `toString` <a name="toString" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.toString"></a>
+
+```java
+public java.lang.String toString()
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `get` <a name="get" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.get"></a>
+
+```java
+public DataOciAiDocumentProjectsFilterOutputReference get(java.lang.Number index)
+```
+
+###### `index`<sup>Required</sup> <a name="index" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.get.parameter.index"></a>
+
+- *Type:* java.lang.Number
+
+the index of the item to return.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>></code> | *No description.* |
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.property.creationStack"></a>
+
+```java
+public java.util.List<java.lang.String> getCreationStack();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.property.fqn"></a>
+
+```java
+public java.lang.String getFqn();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterList.property.internalValue"></a>
+
+```java
+public java.lang.Object getInternalValue();
+```
+
+- *Type:* com.hashicorp.cdktf.IResolvable OR java.util.List<<a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>>
+
+---
+
+
+### DataOciAiDocumentProjectsFilterOutputReference <a name="DataOciAiDocumentProjectsFilterOutputReference" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference"></a>
+
+#### Initializers <a name="Initializers" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsFilterOutputReference;
+
+new DataOciAiDocumentProjectsFilterOutputReference(IInterpolatingParent terraformResource, java.lang.String terraformAttribute, java.lang.Number complexObjectIndex, java.lang.Boolean complexObjectIsFromSet);
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.Initializer.parameter.terraformResource">terraformResource</a></code> | <code>com.hashicorp.cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.Initializer.parameter.terraformAttribute">terraformAttribute</a></code> | <code>java.lang.String</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.Initializer.parameter.complexObjectIndex">complexObjectIndex</a></code> | <code>java.lang.Number</code> | the index of this item in the list. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.Initializer.parameter.complexObjectIsFromSet">complexObjectIsFromSet</a></code> | <code>java.lang.Boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `terraformResource`<sup>Required</sup> <a name="terraformResource" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.Initializer.parameter.terraformResource"></a>
+
+- *Type:* com.hashicorp.cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `complexObjectIndex`<sup>Required</sup> <a name="complexObjectIndex" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.Initializer.parameter.complexObjectIndex"></a>
+
+- *Type:* java.lang.Number
+
+the index of this item in the list.
+
+---
+
+##### `complexObjectIsFromSet`<sup>Required</sup> <a name="complexObjectIsFromSet" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.Initializer.parameter.complexObjectIsFromSet"></a>
+
+- *Type:* java.lang.Boolean
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.computeFqn">computeFqn</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getAnyMapAttribute">getAnyMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getBooleanAttribute">getBooleanAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getBooleanMapAttribute">getBooleanMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getListAttribute">getListAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getNumberAttribute">getNumberAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getNumberListAttribute">getNumberListAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getNumberMapAttribute">getNumberMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getStringAttribute">getStringAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getStringMapAttribute">getStringMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.interpolationForAttribute">interpolationForAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.toString">toString</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.resetRegex">resetRegex</a></code> | *No description.* |
+
+---
+
+##### `computeFqn` <a name="computeFqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.computeFqn"></a>
+
+```java
+public java.lang.String computeFqn()
+```
+
+##### `getAnyMapAttribute` <a name="getAnyMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getAnyMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Object> getAnyMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getAnyMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getBooleanAttribute` <a name="getBooleanAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getBooleanAttribute"></a>
+
+```java
+public IResolvable getBooleanAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getBooleanAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getBooleanMapAttribute` <a name="getBooleanMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getBooleanMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Boolean> getBooleanMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getBooleanMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getListAttribute` <a name="getListAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getListAttribute"></a>
+
+```java
+public java.util.List<java.lang.String> getListAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberAttribute` <a name="getNumberAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getNumberAttribute"></a>
+
+```java
+public java.lang.Number getNumberAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getNumberAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberListAttribute` <a name="getNumberListAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getNumberListAttribute"></a>
+
+```java
+public java.util.List<java.lang.Number> getNumberListAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getNumberListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberMapAttribute` <a name="getNumberMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getNumberMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Number> getNumberMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getNumberMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getStringAttribute` <a name="getStringAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getStringAttribute"></a>
+
+```java
+public java.lang.String getStringAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getStringAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getStringMapAttribute` <a name="getStringMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getStringMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.getStringMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `interpolationForAttribute` <a name="interpolationForAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.interpolationForAttribute"></a>
+
+```java
+public IResolvable interpolationForAttribute(java.lang.String property)
+```
+
+###### `property`<sup>Required</sup> <a name="property" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.interpolationForAttribute.parameter.property"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `resolve` <a name="resolve" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.resolve"></a>
+
+```java
+public java.lang.Object resolve(IResolveContext _context)
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.resolve.parameter._context"></a>
+
+- *Type:* com.hashicorp.cdktf.IResolveContext
+
+---
+
+##### `toString` <a name="toString" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.toString"></a>
+
+```java
+public java.lang.String toString()
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `resetRegex` <a name="resetRegex" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.resetRegex"></a>
+
+```java
+public void resetRegex()
+```
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.nameInput">nameInput</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.regexInput">regexInput</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.valuesInput">valuesInput</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.name">name</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.regex">regex</a></code> | <code>java.lang.Boolean OR com.hashicorp.cdktf.IResolvable</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.values">values</a></code> | <code>java.util.List<java.lang.String></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.internalValue">internalValue</a></code> | <code>com.hashicorp.cdktf.IResolvable OR <a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a></code> | *No description.* |
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.creationStack"></a>
+
+```java
+public java.util.List<java.lang.String> getCreationStack();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.fqn"></a>
+
+```java
+public java.lang.String getFqn();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `nameInput`<sup>Optional</sup> <a name="nameInput" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.nameInput"></a>
+
+```java
+public java.lang.String getNameInput();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `regexInput`<sup>Optional</sup> <a name="regexInput" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.regexInput"></a>
+
+```java
+public java.lang.Object getRegexInput();
+```
+
+- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+
+---
+
+##### `valuesInput`<sup>Optional</sup> <a name="valuesInput" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.valuesInput"></a>
+
+```java
+public java.util.List<java.lang.String> getValuesInput();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+---
+
+##### `name`<sup>Required</sup> <a name="name" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.name"></a>
+
+```java
+public java.lang.String getName();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `regex`<sup>Required</sup> <a name="regex" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.regex"></a>
+
+```java
+public java.lang.Object getRegex();
+```
+
+- *Type:* java.lang.Boolean OR com.hashicorp.cdktf.IResolvable
+
+---
+
+##### `values`<sup>Required</sup> <a name="values" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.values"></a>
+
+```java
+public java.util.List<java.lang.String> getValues();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+---
+
+##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilterOutputReference.property.internalValue"></a>
+
+```java
+public java.lang.Object getInternalValue();
+```
+
+- *Type:* com.hashicorp.cdktf.IResolvable OR <a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsFilter">DataOciAiDocumentProjectsFilter</a>
+
+---
+
+
+### DataOciAiDocumentProjectsProjectCollectionItemsList <a name="DataOciAiDocumentProjectsProjectCollectionItemsList" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList"></a>
+
+#### Initializers <a name="Initializers" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsProjectCollectionItemsList;
+
+new DataOciAiDocumentProjectsProjectCollectionItemsList(IInterpolatingParent terraformResource, java.lang.String terraformAttribute, java.lang.Boolean wrapsSet);
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.Initializer.parameter.terraformResource">terraformResource</a></code> | <code>com.hashicorp.cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.Initializer.parameter.terraformAttribute">terraformAttribute</a></code> | <code>java.lang.String</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.Initializer.parameter.wrapsSet">wrapsSet</a></code> | <code>java.lang.Boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `terraformResource`<sup>Required</sup> <a name="terraformResource" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.Initializer.parameter.terraformResource"></a>
+
+- *Type:* com.hashicorp.cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `wrapsSet`<sup>Required</sup> <a name="wrapsSet" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.Initializer.parameter.wrapsSet"></a>
+
+- *Type:* java.lang.Boolean
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.allWithMapKey">allWithMapKey</a></code> | Creating an iterator for this complex list. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.computeFqn">computeFqn</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.toString">toString</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.get">get</a></code> | *No description.* |
+
+---
+
+##### `allWithMapKey` <a name="allWithMapKey" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.allWithMapKey"></a>
+
+```java
+public DynamicListTerraformIterator allWithMapKey(java.lang.String mapKeyAttributeName)
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `computeFqn` <a name="computeFqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.computeFqn"></a>
+
+```java
+public java.lang.String computeFqn()
+```
+
+##### `resolve` <a name="resolve" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.resolve"></a>
+
+```java
+public java.lang.Object resolve(IResolveContext _context)
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.resolve.parameter._context"></a>
+
+- *Type:* com.hashicorp.cdktf.IResolveContext
+
+---
+
+##### `toString` <a name="toString" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.toString"></a>
+
+```java
+public java.lang.String toString()
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `get` <a name="get" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.get"></a>
+
+```java
+public DataOciAiDocumentProjectsProjectCollectionItemsOutputReference get(java.lang.Number index)
+```
+
+###### `index`<sup>Required</sup> <a name="index" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.get.parameter.index"></a>
+
+- *Type:* java.lang.Number
+
+the index of the item to return.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.property.creationStack"></a>
+
+```java
+public java.util.List<java.lang.String> getCreationStack();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList.property.fqn"></a>
+
+```java
+public java.lang.String getFqn();
+```
+
+- *Type:* java.lang.String
+
+---
+
+
+### DataOciAiDocumentProjectsProjectCollectionItemsOutputReference <a name="DataOciAiDocumentProjectsProjectCollectionItemsOutputReference" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference"></a>
+
+#### Initializers <a name="Initializers" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference;
+
+new DataOciAiDocumentProjectsProjectCollectionItemsOutputReference(IInterpolatingParent terraformResource, java.lang.String terraformAttribute, java.lang.Number complexObjectIndex, java.lang.Boolean complexObjectIsFromSet);
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.Initializer.parameter.terraformResource">terraformResource</a></code> | <code>com.hashicorp.cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.Initializer.parameter.terraformAttribute">terraformAttribute</a></code> | <code>java.lang.String</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.Initializer.parameter.complexObjectIndex">complexObjectIndex</a></code> | <code>java.lang.Number</code> | the index of this item in the list. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.Initializer.parameter.complexObjectIsFromSet">complexObjectIsFromSet</a></code> | <code>java.lang.Boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `terraformResource`<sup>Required</sup> <a name="terraformResource" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.Initializer.parameter.terraformResource"></a>
+
+- *Type:* com.hashicorp.cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `complexObjectIndex`<sup>Required</sup> <a name="complexObjectIndex" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.Initializer.parameter.complexObjectIndex"></a>
+
+- *Type:* java.lang.Number
+
+the index of this item in the list.
+
+---
+
+##### `complexObjectIsFromSet`<sup>Required</sup> <a name="complexObjectIsFromSet" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.Initializer.parameter.complexObjectIsFromSet"></a>
+
+- *Type:* java.lang.Boolean
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.computeFqn">computeFqn</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getAnyMapAttribute">getAnyMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getBooleanAttribute">getBooleanAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getBooleanMapAttribute">getBooleanMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getListAttribute">getListAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getNumberAttribute">getNumberAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getNumberListAttribute">getNumberListAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getNumberMapAttribute">getNumberMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getStringAttribute">getStringAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getStringMapAttribute">getStringMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.interpolationForAttribute">interpolationForAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.toString">toString</a></code> | Return a string representation of this resolvable object. |
+
+---
+
+##### `computeFqn` <a name="computeFqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.computeFqn"></a>
+
+```java
+public java.lang.String computeFqn()
+```
+
+##### `getAnyMapAttribute` <a name="getAnyMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getAnyMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Object> getAnyMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getAnyMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getBooleanAttribute` <a name="getBooleanAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getBooleanAttribute"></a>
+
+```java
+public IResolvable getBooleanAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getBooleanAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getBooleanMapAttribute` <a name="getBooleanMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getBooleanMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Boolean> getBooleanMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getBooleanMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getListAttribute` <a name="getListAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getListAttribute"></a>
+
+```java
+public java.util.List<java.lang.String> getListAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberAttribute` <a name="getNumberAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getNumberAttribute"></a>
+
+```java
+public java.lang.Number getNumberAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getNumberAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberListAttribute` <a name="getNumberListAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getNumberListAttribute"></a>
+
+```java
+public java.util.List<java.lang.Number> getNumberListAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getNumberListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberMapAttribute` <a name="getNumberMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getNumberMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Number> getNumberMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getNumberMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getStringAttribute` <a name="getStringAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getStringAttribute"></a>
+
+```java
+public java.lang.String getStringAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getStringAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getStringMapAttribute` <a name="getStringMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getStringMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.getStringMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `interpolationForAttribute` <a name="interpolationForAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.interpolationForAttribute"></a>
+
+```java
+public IResolvable interpolationForAttribute(java.lang.String property)
+```
+
+###### `property`<sup>Required</sup> <a name="property" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.interpolationForAttribute.parameter.property"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `resolve` <a name="resolve" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.resolve"></a>
+
+```java
+public java.lang.Object resolve(IResolveContext _context)
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.resolve.parameter._context"></a>
+
+- *Type:* com.hashicorp.cdktf.IResolveContext
+
+---
+
+##### `toString` <a name="toString" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.toString"></a>
+
+```java
+public java.lang.String toString()
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.compartmentId">compartmentId</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.definedTags">definedTags</a></code> | <code>com.hashicorp.cdktf.StringMap</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.description">description</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.displayName">displayName</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.freeformTags">freeformTags</a></code> | <code>com.hashicorp.cdktf.StringMap</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.id">id</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.lifecycleDetails">lifecycleDetails</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.state">state</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.systemTags">systemTags</a></code> | <code>com.hashicorp.cdktf.StringMap</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.timeCreated">timeCreated</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.timeUpdated">timeUpdated</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItems">DataOciAiDocumentProjectsProjectCollectionItems</a></code> | *No description.* |
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.creationStack"></a>
+
+```java
+public java.util.List<java.lang.String> getCreationStack();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.fqn"></a>
+
+```java
+public java.lang.String getFqn();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `compartmentId`<sup>Required</sup> <a name="compartmentId" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.compartmentId"></a>
+
+```java
+public java.lang.String getCompartmentId();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `definedTags`<sup>Required</sup> <a name="definedTags" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.definedTags"></a>
+
+```java
+public StringMap getDefinedTags();
+```
+
+- *Type:* com.hashicorp.cdktf.StringMap
+
+---
+
+##### `description`<sup>Required</sup> <a name="description" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.description"></a>
+
+```java
+public java.lang.String getDescription();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `displayName`<sup>Required</sup> <a name="displayName" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.displayName"></a>
+
+```java
+public java.lang.String getDisplayName();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `freeformTags`<sup>Required</sup> <a name="freeformTags" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.freeformTags"></a>
+
+```java
+public StringMap getFreeformTags();
+```
+
+- *Type:* com.hashicorp.cdktf.StringMap
+
+---
+
+##### `id`<sup>Required</sup> <a name="id" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.id"></a>
+
+```java
+public java.lang.String getId();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `lifecycleDetails`<sup>Required</sup> <a name="lifecycleDetails" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.lifecycleDetails"></a>
+
+```java
+public java.lang.String getLifecycleDetails();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `state`<sup>Required</sup> <a name="state" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.state"></a>
+
+```java
+public java.lang.String getState();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `systemTags`<sup>Required</sup> <a name="systemTags" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.systemTags"></a>
+
+```java
+public StringMap getSystemTags();
+```
+
+- *Type:* com.hashicorp.cdktf.StringMap
+
+---
+
+##### `timeCreated`<sup>Required</sup> <a name="timeCreated" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.timeCreated"></a>
+
+```java
+public java.lang.String getTimeCreated();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `timeUpdated`<sup>Required</sup> <a name="timeUpdated" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.timeUpdated"></a>
+
+```java
+public java.lang.String getTimeUpdated();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsOutputReference.property.internalValue"></a>
+
+```java
+public DataOciAiDocumentProjectsProjectCollectionItems getInternalValue();
+```
+
+- *Type:* <a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItems">DataOciAiDocumentProjectsProjectCollectionItems</a>
+
+---
+
+
+### DataOciAiDocumentProjectsProjectCollectionList <a name="DataOciAiDocumentProjectsProjectCollectionList" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList"></a>
+
+#### Initializers <a name="Initializers" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsProjectCollectionList;
+
+new DataOciAiDocumentProjectsProjectCollectionList(IInterpolatingParent terraformResource, java.lang.String terraformAttribute, java.lang.Boolean wrapsSet);
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.Initializer.parameter.terraformResource">terraformResource</a></code> | <code>com.hashicorp.cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.Initializer.parameter.terraformAttribute">terraformAttribute</a></code> | <code>java.lang.String</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.Initializer.parameter.wrapsSet">wrapsSet</a></code> | <code>java.lang.Boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `terraformResource`<sup>Required</sup> <a name="terraformResource" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.Initializer.parameter.terraformResource"></a>
+
+- *Type:* com.hashicorp.cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `wrapsSet`<sup>Required</sup> <a name="wrapsSet" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.Initializer.parameter.wrapsSet"></a>
+
+- *Type:* java.lang.Boolean
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.allWithMapKey">allWithMapKey</a></code> | Creating an iterator for this complex list. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.computeFqn">computeFqn</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.toString">toString</a></code> | Return a string representation of this resolvable object. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.get">get</a></code> | *No description.* |
+
+---
+
+##### `allWithMapKey` <a name="allWithMapKey" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.allWithMapKey"></a>
+
+```java
+public DynamicListTerraformIterator allWithMapKey(java.lang.String mapKeyAttributeName)
+```
+
+Creating an iterator for this complex list.
+
+The list will be converted into a map with the mapKeyAttributeName as the key.
+
+###### `mapKeyAttributeName`<sup>Required</sup> <a name="mapKeyAttributeName" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.allWithMapKey.parameter.mapKeyAttributeName"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `computeFqn` <a name="computeFqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.computeFqn"></a>
+
+```java
+public java.lang.String computeFqn()
+```
+
+##### `resolve` <a name="resolve" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.resolve"></a>
+
+```java
+public java.lang.Object resolve(IResolveContext _context)
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.resolve.parameter._context"></a>
+
+- *Type:* com.hashicorp.cdktf.IResolveContext
+
+---
+
+##### `toString` <a name="toString" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.toString"></a>
+
+```java
+public java.lang.String toString()
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+##### `get` <a name="get" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.get"></a>
+
+```java
+public DataOciAiDocumentProjectsProjectCollectionOutputReference get(java.lang.Number index)
+```
+
+###### `index`<sup>Required</sup> <a name="index" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.get.parameter.index"></a>
+
+- *Type:* java.lang.Number
+
+the index of the item to return.
+
+---
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.property.creationStack"></a>
+
+```java
+public java.util.List<java.lang.String> getCreationStack();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionList.property.fqn"></a>
+
+```java
+public java.lang.String getFqn();
+```
+
+- *Type:* java.lang.String
+
+---
+
+
+### DataOciAiDocumentProjectsProjectCollectionOutputReference <a name="DataOciAiDocumentProjectsProjectCollectionOutputReference" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference"></a>
+
+#### Initializers <a name="Initializers" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.Initializer"></a>
+
+```java
+import com.hashicorp.cdktf.providers.oci.data_oci_ai_document_projects.DataOciAiDocumentProjectsProjectCollectionOutputReference;
+
+new DataOciAiDocumentProjectsProjectCollectionOutputReference(IInterpolatingParent terraformResource, java.lang.String terraformAttribute, java.lang.Number complexObjectIndex, java.lang.Boolean complexObjectIsFromSet);
+```
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.Initializer.parameter.terraformResource">terraformResource</a></code> | <code>com.hashicorp.cdktf.IInterpolatingParent</code> | The parent resource. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.Initializer.parameter.terraformAttribute">terraformAttribute</a></code> | <code>java.lang.String</code> | The attribute on the parent resource this class is referencing. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.Initializer.parameter.complexObjectIndex">complexObjectIndex</a></code> | <code>java.lang.Number</code> | the index of this item in the list. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.Initializer.parameter.complexObjectIsFromSet">complexObjectIsFromSet</a></code> | <code>java.lang.Boolean</code> | whether the list is wrapping a set (will add tolist() to be able to access an item via an index). |
+
+---
+
+##### `terraformResource`<sup>Required</sup> <a name="terraformResource" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.Initializer.parameter.terraformResource"></a>
+
+- *Type:* com.hashicorp.cdktf.IInterpolatingParent
+
+The parent resource.
+
+---
+
+##### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.Initializer.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+The attribute on the parent resource this class is referencing.
+
+---
+
+##### `complexObjectIndex`<sup>Required</sup> <a name="complexObjectIndex" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.Initializer.parameter.complexObjectIndex"></a>
+
+- *Type:* java.lang.Number
+
+the index of this item in the list.
+
+---
+
+##### `complexObjectIsFromSet`<sup>Required</sup> <a name="complexObjectIsFromSet" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.Initializer.parameter.complexObjectIsFromSet"></a>
+
+- *Type:* java.lang.Boolean
+
+whether the list is wrapping a set (will add tolist() to be able to access an item via an index).
+
+---
+
+#### Methods <a name="Methods" id="Methods"></a>
+
+| **Name** | **Description** |
+| --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.computeFqn">computeFqn</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getAnyMapAttribute">getAnyMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getBooleanAttribute">getBooleanAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getBooleanMapAttribute">getBooleanMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getListAttribute">getListAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getNumberAttribute">getNumberAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getNumberListAttribute">getNumberListAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getNumberMapAttribute">getNumberMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getStringAttribute">getStringAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getStringMapAttribute">getStringMapAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.interpolationForAttribute">interpolationForAttribute</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.resolve">resolve</a></code> | Produce the Token's value at resolution time. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.toString">toString</a></code> | Return a string representation of this resolvable object. |
+
+---
+
+##### `computeFqn` <a name="computeFqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.computeFqn"></a>
+
+```java
+public java.lang.String computeFqn()
+```
+
+##### `getAnyMapAttribute` <a name="getAnyMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getAnyMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Object> getAnyMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getAnyMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getBooleanAttribute` <a name="getBooleanAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getBooleanAttribute"></a>
+
+```java
+public IResolvable getBooleanAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getBooleanAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getBooleanMapAttribute` <a name="getBooleanMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getBooleanMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Boolean> getBooleanMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getBooleanMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getListAttribute` <a name="getListAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getListAttribute"></a>
+
+```java
+public java.util.List<java.lang.String> getListAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberAttribute` <a name="getNumberAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getNumberAttribute"></a>
+
+```java
+public java.lang.Number getNumberAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getNumberAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberListAttribute` <a name="getNumberListAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getNumberListAttribute"></a>
+
+```java
+public java.util.List<java.lang.Number> getNumberListAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getNumberListAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getNumberMapAttribute` <a name="getNumberMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getNumberMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.Number> getNumberMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getNumberMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getStringAttribute` <a name="getStringAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getStringAttribute"></a>
+
+```java
+public java.lang.String getStringAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getStringAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `getStringMapAttribute` <a name="getStringMapAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getStringMapAttribute"></a>
+
+```java
+public java.util.Map<java.lang.String, java.lang.String> getStringMapAttribute(java.lang.String terraformAttribute)
+```
+
+###### `terraformAttribute`<sup>Required</sup> <a name="terraformAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.getStringMapAttribute.parameter.terraformAttribute"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `interpolationForAttribute` <a name="interpolationForAttribute" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.interpolationForAttribute"></a>
+
+```java
+public IResolvable interpolationForAttribute(java.lang.String property)
+```
+
+###### `property`<sup>Required</sup> <a name="property" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.interpolationForAttribute.parameter.property"></a>
+
+- *Type:* java.lang.String
+
+---
+
+##### `resolve` <a name="resolve" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.resolve"></a>
+
+```java
+public java.lang.Object resolve(IResolveContext _context)
+```
+
+Produce the Token's value at resolution time.
+
+###### `_context`<sup>Required</sup> <a name="_context" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.resolve.parameter._context"></a>
+
+- *Type:* com.hashicorp.cdktf.IResolveContext
+
+---
+
+##### `toString` <a name="toString" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.toString"></a>
+
+```java
+public java.lang.String toString()
+```
+
+Return a string representation of this resolvable object.
+
+Returns a reversible string representation.
+
+
+#### Properties <a name="Properties" id="Properties"></a>
+
+| **Name** | **Type** | **Description** |
+| --- | --- | --- |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.property.creationStack">creationStack</a></code> | <code>java.util.List<java.lang.String></code> | The creation stack of this resolvable which will be appended to errors thrown during resolution. |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.property.fqn">fqn</a></code> | <code>java.lang.String</code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.property.items">items</a></code> | <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList">DataOciAiDocumentProjectsProjectCollectionItemsList</a></code> | *No description.* |
+| <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.property.internalValue">internalValue</a></code> | <code><a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollection">DataOciAiDocumentProjectsProjectCollection</a></code> | *No description.* |
+
+---
+
+##### `creationStack`<sup>Required</sup> <a name="creationStack" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.property.creationStack"></a>
+
+```java
+public java.util.List<java.lang.String> getCreationStack();
+```
+
+- *Type:* java.util.List<java.lang.String>
+
+The creation stack of this resolvable which will be appended to errors thrown during resolution.
+
+If this returns an empty array the stack will not be attached.
+
+---
+
+##### `fqn`<sup>Required</sup> <a name="fqn" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.property.fqn"></a>
+
+```java
+public java.lang.String getFqn();
+```
+
+- *Type:* java.lang.String
+
+---
+
+##### `items`<sup>Required</sup> <a name="items" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.property.items"></a>
+
+```java
+public DataOciAiDocumentProjectsProjectCollectionItemsList getItems();
+```
+
+- *Type:* <a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionItemsList">DataOciAiDocumentProjectsProjectCollectionItemsList</a>
+
+---
+
+##### `internalValue`<sup>Optional</sup> <a name="internalValue" id="rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollectionOutputReference.property.internalValue"></a>
+
+```java
+public DataOciAiDocumentProjectsProjectCollection getInternalValue();
+```
+
+- *Type:* <a href="#rhizo-co-terraform-provider-oci.dataOciAiDocumentProjects.DataOciAiDocumentProjectsProjectCollection">DataOciAiDocumentProjectsProjectCollection</a>
+
+---
+
+
+

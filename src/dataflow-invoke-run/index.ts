@@ -104,31 +104,31 @@ export interface DataflowInvokeRunConfig extends cdktf.TerraformMetaArguments {
   readonly warehouseBucketUri?: string;
   /**
   * application_log_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_invoke_run#application_log_config DataflowInvokeRun#application_log_config}
   */
   readonly applicationLogConfig?: DataflowInvokeRunApplicationLogConfig;
   /**
   * driver_shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_invoke_run#driver_shape_config DataflowInvokeRun#driver_shape_config}
   */
   readonly driverShapeConfig?: DataflowInvokeRunDriverShapeConfig;
   /**
   * executor_shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_invoke_run#executor_shape_config DataflowInvokeRun#executor_shape_config}
   */
   readonly executorShapeConfig?: DataflowInvokeRunExecutorShapeConfig;
   /**
   * parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_invoke_run#parameters DataflowInvokeRun#parameters}
   */
   readonly parameters?: DataflowInvokeRunParameters[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_invoke_run#timeouts DataflowInvokeRun#timeouts}
   */
   readonly timeouts?: DataflowInvokeRunTimeouts;
@@ -153,6 +153,31 @@ export function dataflowInvokeRunApplicationLogConfigToTerraform(struct?: Datafl
     log_group_id: cdktf.stringToTerraform(struct!.logGroupId),
     log_id: cdktf.stringToTerraform(struct!.logId),
   }
+}
+
+
+export function dataflowInvokeRunApplicationLogConfigToHclTerraform(struct?: DataflowInvokeRunApplicationLogConfigOutputReference | DataflowInvokeRunApplicationLogConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    log_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.logGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_id: {
+      value: cdktf.stringToHclTerraform(struct!.logId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataflowInvokeRunApplicationLogConfigOutputReference extends cdktf.ComplexObject {
@@ -239,6 +264,31 @@ export function dataflowInvokeRunDriverShapeConfigToTerraform(struct?: DataflowI
     memory_in_gbs: cdktf.numberToTerraform(struct!.memoryInGbs),
     ocpus: cdktf.numberToTerraform(struct!.ocpus),
   }
+}
+
+
+export function dataflowInvokeRunDriverShapeConfigToHclTerraform(struct?: DataflowInvokeRunDriverShapeConfigOutputReference | DataflowInvokeRunDriverShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataflowInvokeRunDriverShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -333,6 +383,31 @@ export function dataflowInvokeRunExecutorShapeConfigToTerraform(struct?: Dataflo
   }
 }
 
+
+export function dataflowInvokeRunExecutorShapeConfigToHclTerraform(struct?: DataflowInvokeRunExecutorShapeConfigOutputReference | DataflowInvokeRunExecutorShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataflowInvokeRunExecutorShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -423,6 +498,31 @@ export function dataflowInvokeRunParametersToTerraform(struct?: DataflowInvokeRu
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function dataflowInvokeRunParametersToHclTerraform(struct?: DataflowInvokeRunParameters | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataflowInvokeRunParametersOutputReference extends cdktf.ComplexObject {
@@ -548,6 +648,37 @@ export function dataflowInvokeRunTimeoutsToTerraform(struct?: DataflowInvokeRunT
   }
 }
 
+
+export function dataflowInvokeRunTimeoutsToHclTerraform(struct?: DataflowInvokeRunTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataflowInvokeRunTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -660,6 +791,20 @@ export class DataflowInvokeRun extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataflow_invoke_run";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataflowInvokeRun resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataflowInvokeRun to import
+  * @param importFromId The id of the existing DataflowInvokeRun that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_invoke_run#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataflowInvokeRun to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataflow_invoke_run", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1297,5 +1442,181 @@ export class DataflowInvokeRun extends cdktf.TerraformResource {
       parameters: cdktf.listMapper(dataflowInvokeRunParametersToTerraform, true)(this._parameters.internalValue),
       timeouts: dataflowInvokeRunTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      application_id: {
+        value: cdktf.stringToHclTerraform(this._applicationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      archive_uri: {
+        value: cdktf.stringToHclTerraform(this._archiveUri),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      arguments: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._arguments),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      asynchronous: {
+        value: cdktf.booleanToHclTerraform(this._asynchronous),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      configuration: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._configuration),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      driver_shape: {
+        value: cdktf.stringToHclTerraform(this._driverShape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      execute: {
+        value: cdktf.stringToHclTerraform(this._execute),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      executor_shape: {
+        value: cdktf.stringToHclTerraform(this._executorShape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idle_timeout_in_minutes: {
+        value: cdktf.stringToHclTerraform(this._idleTimeoutInMinutes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      logs_bucket_uri: {
+        value: cdktf.stringToHclTerraform(this._logsBucketUri),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      max_duration_in_minutes: {
+        value: cdktf.stringToHclTerraform(this._maxDurationInMinutes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metastore_id: {
+        value: cdktf.stringToHclTerraform(this._metastoreId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      num_executors: {
+        value: cdktf.numberToHclTerraform(this._numExecutors),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      opc_parent_rpt_url: {
+        value: cdktf.stringToHclTerraform(this._opcParentRptUrl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pool_id: {
+        value: cdktf.stringToHclTerraform(this._poolId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      spark_version: {
+        value: cdktf.stringToHclTerraform(this._sparkVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      warehouse_bucket_uri: {
+        value: cdktf.stringToHclTerraform(this._warehouseBucketUri),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      application_log_config: {
+        value: dataflowInvokeRunApplicationLogConfigToHclTerraform(this._applicationLogConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataflowInvokeRunApplicationLogConfigList",
+      },
+      driver_shape_config: {
+        value: dataflowInvokeRunDriverShapeConfigToHclTerraform(this._driverShapeConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataflowInvokeRunDriverShapeConfigList",
+      },
+      executor_shape_config: {
+        value: dataflowInvokeRunExecutorShapeConfigToHclTerraform(this._executorShapeConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataflowInvokeRunExecutorShapeConfigList",
+      },
+      parameters: {
+        value: cdktf.listMapperHcl(dataflowInvokeRunParametersToHclTerraform, true)(this._parameters.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataflowInvokeRunParametersList",
+      },
+      timeouts: {
+        value: dataflowInvokeRunTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataflowInvokeRunTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

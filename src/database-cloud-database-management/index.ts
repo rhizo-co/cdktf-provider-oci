@@ -52,13 +52,13 @@ export interface DatabaseCloudDatabaseManagementConfig extends cdktf.TerraformMe
   readonly sslSecretId?: string;
   /**
   * credentialdetails block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_cloud_database_management#credentialdetails DatabaseCloudDatabaseManagement#credentialdetails}
   */
   readonly credentialdetails: DatabaseCloudDatabaseManagementCredentialdetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_cloud_database_management#timeouts DatabaseCloudDatabaseManagement#timeouts}
   */
   readonly timeouts?: DatabaseCloudDatabaseManagementTimeouts;
@@ -83,6 +83,31 @@ export function databaseCloudDatabaseManagementCredentialdetailsToTerraform(stru
     password_secret_id: cdktf.stringToTerraform(struct!.passwordSecretId),
     user_name: cdktf.stringToTerraform(struct!.userName),
   }
+}
+
+
+export function databaseCloudDatabaseManagementCredentialdetailsToHclTerraform(struct?: DatabaseCloudDatabaseManagementCredentialdetailsOutputReference | DatabaseCloudDatabaseManagementCredentialdetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.passwordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_name: {
+      value: cdktf.stringToHclTerraform(struct!.userName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseCloudDatabaseManagementCredentialdetailsOutputReference extends cdktf.ComplexObject {
@@ -174,6 +199,37 @@ export function databaseCloudDatabaseManagementTimeoutsToTerraform(struct?: Data
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseCloudDatabaseManagementTimeoutsToHclTerraform(struct?: DatabaseCloudDatabaseManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseCloudDatabaseManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -288,6 +344,20 @@ export class DatabaseCloudDatabaseManagement extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_cloud_database_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseCloudDatabaseManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseCloudDatabaseManagement to import
+  * @param importFromId The id of the existing DatabaseCloudDatabaseManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_cloud_database_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseCloudDatabaseManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_cloud_database_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -527,5 +597,85 @@ export class DatabaseCloudDatabaseManagement extends cdktf.TerraformResource {
       credentialdetails: databaseCloudDatabaseManagementCredentialdetailsToTerraform(this._credentialdetails.internalValue),
       timeouts: databaseCloudDatabaseManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      database_id: {
+        value: cdktf.stringToHclTerraform(this._databaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enable_management: {
+        value: cdktf.booleanToHclTerraform(this._enableManagement),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      management_type: {
+        value: cdktf.stringToHclTerraform(this._managementType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      port: {
+        value: cdktf.numberToHclTerraform(this._port),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      private_end_point_id: {
+        value: cdktf.stringToHclTerraform(this._privateEndPointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      protocol: {
+        value: cdktf.stringToHclTerraform(this._protocol),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      role: {
+        value: cdktf.stringToHclTerraform(this._role),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      service_name: {
+        value: cdktf.stringToHclTerraform(this._serviceName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssl_secret_id: {
+        value: cdktf.stringToHclTerraform(this._sslSecretId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      credentialdetails: {
+        value: databaseCloudDatabaseManagementCredentialdetailsToHclTerraform(this._credentialdetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseCloudDatabaseManagementCredentialdetailsList",
+      },
+      timeouts: {
+        value: databaseCloudDatabaseManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseCloudDatabaseManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

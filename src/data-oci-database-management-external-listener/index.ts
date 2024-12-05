@@ -24,6 +24,17 @@ export function dataOciDatabaseManagementExternalListenerEndpointsToTerraform(st
   }
 }
 
+
+export function dataOciDatabaseManagementExternalListenerEndpointsToHclTerraform(struct?: DataOciDatabaseManagementExternalListenerEndpoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalListenerEndpointsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -108,6 +119,17 @@ export function dataOciDatabaseManagementExternalListenerServicedAsmsToTerraform
   }
 }
 
+
+export function dataOciDatabaseManagementExternalListenerServicedAsmsToHclTerraform(struct?: DataOciDatabaseManagementExternalListenerServicedAsms): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalListenerServicedAsmsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -180,6 +202,17 @@ export function dataOciDatabaseManagementExternalListenerServicedDatabasesToTerr
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalListenerServicedDatabasesToHclTerraform(struct?: DataOciDatabaseManagementExternalListenerServicedDatabases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalListenerServicedDatabasesOutputReference extends cdktf.ComplexObject {
@@ -274,6 +307,20 @@ export class DataOciDatabaseManagementExternalListener extends cdktf.TerraformDa
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_external_listener";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementExternalListener resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementExternalListener to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementExternalListener that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_external_listener#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementExternalListener to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_external_listener", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -477,5 +524,19 @@ export class DataOciDatabaseManagementExternalListener extends cdktf.TerraformDa
     return {
       external_listener_id: cdktf.stringToTerraform(this._externalListenerId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      external_listener_id: {
+        value: cdktf.stringToHclTerraform(this._externalListenerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

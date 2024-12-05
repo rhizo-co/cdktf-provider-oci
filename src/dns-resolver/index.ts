@@ -40,19 +40,19 @@ export interface DnsResolverConfig extends cdktf.TerraformMetaArguments {
   readonly scope?: string;
   /**
   * attached_views block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_resolver#attached_views DnsResolver#attached_views}
   */
   readonly attachedViews?: DnsResolverAttachedViews[] | cdktf.IResolvable;
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_resolver#rules DnsResolver#rules}
   */
   readonly rules?: DnsResolverRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_resolver#timeouts DnsResolver#timeouts}
   */
   readonly timeouts?: DnsResolverTimeouts;
@@ -67,6 +67,17 @@ export function dnsResolverEndpointsToTerraform(struct?: DnsResolverEndpoints): 
   }
   return {
   }
+}
+
+
+export function dnsResolverEndpointsToHclTerraform(struct?: DnsResolverEndpoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DnsResolverEndpointsOutputReference extends cdktf.ComplexObject {
@@ -193,6 +204,25 @@ export function dnsResolverAttachedViewsToTerraform(struct?: DnsResolverAttached
   }
 }
 
+
+export function dnsResolverAttachedViewsToHclTerraform(struct?: DnsResolverAttachedViews | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    view_id: {
+      value: cdktf.stringToHclTerraform(struct!.viewId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DnsResolverAttachedViewsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -305,6 +335,49 @@ export function dnsResolverRulesToTerraform(struct?: DnsResolverRules | cdktf.IR
     qname_cover_conditions: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.qnameCoverConditions),
     source_endpoint_name: cdktf.stringToTerraform(struct!.sourceEndpointName),
   }
+}
+
+
+export function dnsResolverRulesToHclTerraform(struct?: DnsResolverRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_address_conditions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.clientAddressConditions),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    destination_addresses: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.destinationAddresses),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    qname_cover_conditions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.qnameCoverConditions),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    source_endpoint_name: {
+      value: cdktf.stringToHclTerraform(struct!.sourceEndpointName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DnsResolverRulesOutputReference extends cdktf.ComplexObject {
@@ -493,6 +566,37 @@ export function dnsResolverTimeoutsToTerraform(struct?: DnsResolverTimeouts | cd
   }
 }
 
+
+export function dnsResolverTimeoutsToHclTerraform(struct?: DnsResolverTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DnsResolverTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -605,6 +709,20 @@ export class DnsResolver extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dns_resolver";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DnsResolver resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DnsResolver to import
+  * @param importFromId The id of the existing DnsResolver that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_resolver#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DnsResolver to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dns_resolver", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -864,5 +982,73 @@ export class DnsResolver extends cdktf.TerraformResource {
       rules: cdktf.listMapper(dnsResolverRulesToTerraform, true)(this._rules.internalValue),
       timeouts: dnsResolverTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resolver_id: {
+        value: cdktf.stringToHclTerraform(this._resolverId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scope: {
+        value: cdktf.stringToHclTerraform(this._scope),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      attached_views: {
+        value: cdktf.listMapperHcl(dnsResolverAttachedViewsToHclTerraform, true)(this._attachedViews.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DnsResolverAttachedViewsList",
+      },
+      rules: {
+        value: cdktf.listMapperHcl(dnsResolverRulesToHclTerraform, true)(this._rules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DnsResolverRulesList",
+      },
+      timeouts: {
+        value: dnsResolverTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DnsResolverTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

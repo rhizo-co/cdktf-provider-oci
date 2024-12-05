@@ -52,13 +52,13 @@ export interface DatabaseDatabaseConfig extends cdktf.TerraformMetaArguments {
   readonly vaultId?: string;
   /**
   * database block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_database#database DatabaseDatabase#database}
   */
   readonly database: DatabaseDatabaseDatabase;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_database#timeouts DatabaseDatabase#timeouts}
   */
   readonly timeouts?: DatabaseDatabaseTimeouts;
@@ -73,6 +73,17 @@ export function databaseDatabaseConnectionStringsToTerraform(struct?: DatabaseDa
   }
   return {
   }
+}
+
+
+export function databaseDatabaseConnectionStringsToHclTerraform(struct?: DatabaseDatabaseConnectionStrings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseDatabaseConnectionStringsOutputReference extends cdktf.ComplexObject {
@@ -150,6 +161,17 @@ export function databaseDatabaseDatabaseManagementConfigToTerraform(struct?: Dat
   }
 }
 
+
+export function databaseDatabaseDatabaseManagementConfigToHclTerraform(struct?: DatabaseDatabaseDatabaseManagementConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatabaseDatabaseDatabaseManagementConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -217,6 +239,17 @@ export function databaseDatabaseDbBackupConfigBackupDestinationDetailsToTerrafor
   }
   return {
   }
+}
+
+
+export function databaseDatabaseDbBackupConfigBackupDestinationDetailsToHclTerraform(struct?: DatabaseDatabaseDbBackupConfigBackupDestinationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseDatabaseDbBackupConfigBackupDestinationDetailsOutputReference extends cdktf.ComplexObject {
@@ -296,6 +329,17 @@ export function databaseDatabaseDbBackupConfigToTerraform(struct?: DatabaseDatab
   }
   return {
   }
+}
+
+
+export function databaseDatabaseDbBackupConfigToHclTerraform(struct?: DatabaseDatabaseDbBackupConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseDatabaseDbBackupConfigOutputReference extends cdktf.ComplexObject {
@@ -419,6 +463,43 @@ export function databaseDatabaseDatabaseDbBackupConfigBackupDestinationDetailsTo
     type: cdktf.stringToTerraform(struct!.type),
     vpc_user: cdktf.stringToTerraform(struct!.vpcUser),
   }
+}
+
+
+export function databaseDatabaseDatabaseDbBackupConfigBackupDestinationDetailsToHclTerraform(struct?: DatabaseDatabaseDatabaseDbBackupConfigBackupDestinationDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dbrs_policy_id: {
+      value: cdktf.stringToHclTerraform(struct!.dbrsPolicyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vpc_user: {
+      value: cdktf.stringToHclTerraform(struct!.vpcUser),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseDatabaseDatabaseDbBackupConfigBackupDestinationDetailsOutputReference extends cdktf.ComplexObject {
@@ -598,7 +679,7 @@ export interface DatabaseDatabaseDatabaseDbBackupConfig {
   readonly runImmediateFullBackup?: boolean | cdktf.IResolvable;
   /**
   * backup_destination_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_database#backup_destination_details DatabaseDatabase#backup_destination_details}
   */
   readonly backupDestinationDetails?: DatabaseDatabaseDatabaseDbBackupConfigBackupDestinationDetails[] | cdktf.IResolvable;
@@ -619,6 +700,67 @@ export function databaseDatabaseDatabaseDbBackupConfigToTerraform(struct?: Datab
     run_immediate_full_backup: cdktf.booleanToTerraform(struct!.runImmediateFullBackup),
     backup_destination_details: cdktf.listMapper(databaseDatabaseDatabaseDbBackupConfigBackupDestinationDetailsToTerraform, true)(struct!.backupDestinationDetails),
   }
+}
+
+
+export function databaseDatabaseDatabaseDbBackupConfigToHclTerraform(struct?: DatabaseDatabaseDatabaseDbBackupConfigOutputReference | DatabaseDatabaseDatabaseDbBackupConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    auto_backup_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.autoBackupEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    auto_backup_window: {
+      value: cdktf.stringToHclTerraform(struct!.autoBackupWindow),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auto_full_backup_day: {
+      value: cdktf.stringToHclTerraform(struct!.autoFullBackupDay),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    auto_full_backup_window: {
+      value: cdktf.stringToHclTerraform(struct!.autoFullBackupWindow),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    backup_deletion_policy: {
+      value: cdktf.stringToHclTerraform(struct!.backupDeletionPolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    recovery_window_in_days: {
+      value: cdktf.numberToHclTerraform(struct!.recoveryWindowInDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    run_immediate_full_backup: {
+      value: cdktf.booleanToHclTerraform(struct!.runImmediateFullBackup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    backup_destination_details: {
+      value: cdktf.listMapperHcl(databaseDatabaseDatabaseDbBackupConfigBackupDestinationDetailsToHclTerraform, true)(struct!.backupDestinationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseDatabaseDatabaseDbBackupConfigBackupDestinationDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseDatabaseDatabaseDbBackupConfigOutputReference extends cdktf.ComplexObject {
@@ -898,7 +1040,7 @@ export interface DatabaseDatabaseDatabase {
   readonly vaultId?: string;
   /**
   * db_backup_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_database#db_backup_config DatabaseDatabase#db_backup_config}
   */
   readonly dbBackupConfig?: DatabaseDatabaseDatabaseDbBackupConfig;
@@ -930,6 +1072,133 @@ export function databaseDatabaseDatabaseToTerraform(struct?: DatabaseDatabaseDat
     vault_id: cdktf.stringToTerraform(struct!.vaultId),
     db_backup_config: databaseDatabaseDatabaseDbBackupConfigToTerraform(struct!.dbBackupConfig),
   }
+}
+
+
+export function databaseDatabaseDatabaseToHclTerraform(struct?: DatabaseDatabaseDatabaseOutputReference | DatabaseDatabaseDatabase): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    admin_password: {
+      value: cdktf.stringToHclTerraform(struct!.adminPassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    backup_id: {
+      value: cdktf.stringToHclTerraform(struct!.backupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    backup_tde_password: {
+      value: cdktf.stringToHclTerraform(struct!.backupTdePassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    character_set: {
+      value: cdktf.stringToHclTerraform(struct!.characterSet),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    database_software_image_id: {
+      value: cdktf.stringToHclTerraform(struct!.databaseSoftwareImageId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    db_name: {
+      value: cdktf.stringToHclTerraform(struct!.dbName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    db_unique_name: {
+      value: cdktf.stringToHclTerraform(struct!.dbUniqueName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    db_workload: {
+      value: cdktf.stringToHclTerraform(struct!.dbWorkload),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kms_key_version_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyVersionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ncharacter_set: {
+      value: cdktf.stringToHclTerraform(struct!.ncharacterSet),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pdb_name: {
+      value: cdktf.stringToHclTerraform(struct!.pdbName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pluggable_databases: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.pluggableDatabases),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    sid_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.sidPrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tde_wallet_password: {
+      value: cdktf.stringToHclTerraform(struct!.tdeWalletPassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vault_id: {
+      value: cdktf.stringToHclTerraform(struct!.vaultId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    db_backup_config: {
+      value: databaseDatabaseDatabaseDbBackupConfigToHclTerraform(struct!.dbBackupConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseDatabaseDatabaseDbBackupConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseDatabaseDatabaseOutputReference extends cdktf.ComplexObject {
@@ -1397,6 +1666,37 @@ export function databaseDatabaseTimeoutsToTerraform(struct?: DatabaseDatabaseTim
   }
 }
 
+
+export function databaseDatabaseTimeoutsToHclTerraform(struct?: DatabaseDatabaseTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseDatabaseTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1509,6 +1809,20 @@ export class DatabaseDatabase extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_database";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseDatabase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseDatabase to import
+  * @param importFromId The id of the existing DatabaseDatabase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_database#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseDatabase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_database", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1887,5 +2201,85 @@ export class DatabaseDatabase extends cdktf.TerraformResource {
       database: databaseDatabaseDatabaseToTerraform(this._database.internalValue),
       timeouts: databaseDatabaseTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      db_home_id: {
+        value: cdktf.stringToHclTerraform(this._dbHomeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_version: {
+        value: cdktf.stringToHclTerraform(this._dbVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_store_id: {
+        value: cdktf.stringToHclTerraform(this._keyStoreId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kms_key_id: {
+        value: cdktf.stringToHclTerraform(this._kmsKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kms_key_migration: {
+        value: cdktf.booleanToHclTerraform(this._kmsKeyMigration),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      kms_key_rotation: {
+        value: cdktf.numberToHclTerraform(this._kmsKeyRotation),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      kms_key_version_id: {
+        value: cdktf.stringToHclTerraform(this._kmsKeyVersionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source: {
+        value: cdktf.stringToHclTerraform(this._source),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vault_id: {
+        value: cdktf.stringToHclTerraform(this._vaultId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database: {
+        value: databaseDatabaseDatabaseToHclTerraform(this._database.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseDatabaseDatabaseList",
+      },
+      timeouts: {
+        value: databaseDatabaseTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseDatabaseTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

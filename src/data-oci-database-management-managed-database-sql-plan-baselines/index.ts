@@ -72,7 +72,7 @@ export interface DataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesConfig 
   readonly sqlText?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_database_sql_plan_baselines#filter DataOciDatabaseManagementManagedDatabaseSqlPlanBaselines#filter}
   */
   readonly filter?: DataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesFilter[] | cdktf.IResolvable;
@@ -87,6 +87,17 @@ export function dataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesSqlPlanB
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -228,6 +239,17 @@ export function dataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesSqlPlanB
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesSqlPlanBaselineCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -306,6 +328,37 @@ export function dataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesFilterTo
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesFilterToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesFilterOutputReference extends cdktf.ComplexObject {
@@ -436,6 +489,20 @@ export class DataOciDatabaseManagementManagedDatabaseSqlPlanBaselines extends cd
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_database_sql_plan_baselines";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementManagedDatabaseSqlPlanBaselines resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementManagedDatabaseSqlPlanBaselines to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementManagedDatabaseSqlPlanBaselines that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_database_sql_plan_baselines#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementManagedDatabaseSqlPlanBaselines to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_database_sql_plan_baselines", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -768,5 +835,109 @@ export class DataOciDatabaseManagementManagedDatabaseSqlPlanBaselines extends cd
       sql_text: cdktf.stringToTerraform(this._sqlText),
       filter: cdktf.listMapper(dataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_accepted: {
+        value: cdktf.booleanToHclTerraform(this._isAccepted),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_adaptive: {
+        value: cdktf.booleanToHclTerraform(this._isAdaptive),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_auto_purged: {
+        value: cdktf.booleanToHclTerraform(this._isAutoPurged),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_fixed: {
+        value: cdktf.booleanToHclTerraform(this._isFixed),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_never_executed: {
+        value: cdktf.booleanToHclTerraform(this._isNeverExecuted),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_reproduced: {
+        value: cdktf.booleanToHclTerraform(this._isReproduced),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      limit: {
+        value: cdktf.numberToHclTerraform(this._limit),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opc_named_credential_id: {
+        value: cdktf.stringToHclTerraform(this._opcNamedCredentialId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      origin: {
+        value: cdktf.stringToHclTerraform(this._origin),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      plan_name: {
+        value: cdktf.stringToHclTerraform(this._planName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sql_handle: {
+        value: cdktf.stringToHclTerraform(this._sqlHandle),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sql_text: {
+        value: cdktf.stringToHclTerraform(this._sqlText),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatabaseManagementManagedDatabaseSqlPlanBaselinesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

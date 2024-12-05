@@ -32,13 +32,13 @@ export interface SecurityAttributeSecurityAttributeConfig extends cdktf.Terrafor
   readonly securityAttributeNamespaceId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/security_attribute_security_attribute#timeouts SecurityAttributeSecurityAttribute#timeouts}
   */
   readonly timeouts?: SecurityAttributeSecurityAttributeTimeouts;
   /**
   * validator block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/security_attribute_security_attribute#validator SecurityAttributeSecurityAttribute#validator}
   */
   readonly validator?: SecurityAttributeSecurityAttributeValidator;
@@ -68,6 +68,37 @@ export function securityAttributeSecurityAttributeTimeoutsToTerraform(struct?: S
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function securityAttributeSecurityAttributeTimeoutsToHclTerraform(struct?: SecurityAttributeSecurityAttributeTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class SecurityAttributeSecurityAttributeTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -194,6 +225,31 @@ export function securityAttributeSecurityAttributeValidatorToTerraform(struct?: 
   }
 }
 
+
+export function securityAttributeSecurityAttributeValidatorToHclTerraform(struct?: SecurityAttributeSecurityAttributeValidatorOutputReference | SecurityAttributeSecurityAttributeValidator): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    validator_type: {
+      value: cdktf.stringToHclTerraform(struct!.validatorType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class SecurityAttributeSecurityAttributeValidatorOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -271,6 +327,20 @@ export class SecurityAttributeSecurityAttribute extends cdktf.TerraformResource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_security_attribute_security_attribute";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a SecurityAttributeSecurityAttribute resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the SecurityAttributeSecurityAttribute to import
+  * @param importFromId The id of the existing SecurityAttributeSecurityAttribute that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/security_attribute_security_attribute#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the SecurityAttributeSecurityAttribute to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_security_attribute_security_attribute", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -454,5 +524,55 @@ export class SecurityAttributeSecurityAttribute extends cdktf.TerraformResource 
       timeouts: securityAttributeSecurityAttributeTimeoutsToTerraform(this._timeouts.internalValue),
       validator: securityAttributeSecurityAttributeValidatorToTerraform(this._validator.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_retired: {
+        value: cdktf.booleanToHclTerraform(this._isRetired),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      security_attribute_namespace_id: {
+        value: cdktf.stringToHclTerraform(this._securityAttributeNamespaceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: securityAttributeSecurityAttributeTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "SecurityAttributeSecurityAttributeTimeouts",
+      },
+      validator: {
+        value: securityAttributeSecurityAttributeValidatorToHclTerraform(this._validator.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "SecurityAttributeSecurityAttributeValidatorList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

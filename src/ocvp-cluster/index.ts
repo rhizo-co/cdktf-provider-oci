@@ -76,19 +76,19 @@ export interface OcvpClusterConfig extends cdktf.TerraformMetaArguments {
   readonly workloadNetworkCidr?: string;
   /**
   * datastores block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ocvp_cluster#datastores OcvpCluster#datastores}
   */
   readonly datastores?: OcvpClusterDatastores[] | cdktf.IResolvable;
   /**
   * network_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ocvp_cluster#network_configuration OcvpCluster#network_configuration}
   */
   readonly networkConfiguration: OcvpClusterNetworkConfiguration;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ocvp_cluster#timeouts OcvpCluster#timeouts}
   */
   readonly timeouts?: OcvpClusterTimeouts;
@@ -103,6 +103,17 @@ export function ocvpClusterUpgradeLicensesToTerraform(struct?: OcvpClusterUpgrad
   }
   return {
   }
+}
+
+
+export function ocvpClusterUpgradeLicensesToHclTerraform(struct?: OcvpClusterUpgradeLicenses): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OcvpClusterUpgradeLicensesOutputReference extends cdktf.ComplexObject {
@@ -172,6 +183,17 @@ export function ocvpClusterVsphereUpgradeObjectsToTerraform(struct?: OcvpCluster
   }
   return {
   }
+}
+
+
+export function ocvpClusterVsphereUpgradeObjectsToHclTerraform(struct?: OcvpClusterVsphereUpgradeObjects): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OcvpClusterVsphereUpgradeObjectsOutputReference extends cdktf.ComplexObject {
@@ -251,6 +273,31 @@ export function ocvpClusterDatastoresToTerraform(struct?: OcvpClusterDatastores 
     block_volume_ids: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.blockVolumeIds),
     datastore_type: cdktf.stringToTerraform(struct!.datastoreType),
   }
+}
+
+
+export function ocvpClusterDatastoresToHclTerraform(struct?: OcvpClusterDatastores | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_volume_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.blockVolumeIds),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    datastore_type: {
+      value: cdktf.stringToHclTerraform(struct!.datastoreType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OcvpClusterDatastoresOutputReference extends cdktf.ComplexObject {
@@ -419,6 +466,85 @@ export function ocvpClusterNetworkConfigurationToTerraform(struct?: OcvpClusterN
     vsan_vlan_id: cdktf.stringToTerraform(struct!.vsanVlanId),
     vsphere_vlan_id: cdktf.stringToTerraform(struct!.vsphereVlanId),
   }
+}
+
+
+export function ocvpClusterNetworkConfigurationToHclTerraform(struct?: OcvpClusterNetworkConfigurationOutputReference | OcvpClusterNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hcx_vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.hcxVlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsx_edge_uplink1vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.nsxEdgeUplink1VlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsx_edge_uplink2vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.nsxEdgeUplink2VlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsx_edge_vtep_vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.nsxEdgeVtepVlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsx_vtep_vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.nsxVtepVlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    provisioning_subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.provisioningSubnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    provisioning_vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.provisioningVlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    replication_vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.replicationVlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vmotion_vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.vmotionVlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vsan_vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.vsanVlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vsphere_vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.vsphereVlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OcvpClusterNetworkConfigurationOutputReference extends cdktf.ComplexObject {
@@ -701,6 +827,37 @@ export function ocvpClusterTimeoutsToTerraform(struct?: OcvpClusterTimeouts | cd
   }
 }
 
+
+export function ocvpClusterTimeoutsToHclTerraform(struct?: OcvpClusterTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OcvpClusterTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -813,6 +970,20 @@ export class OcvpCluster extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ocvp_cluster";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OcvpCluster resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OcvpCluster to import
+  * @param importFromId The id of the existing OcvpCluster that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ocvp_cluster#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OcvpCluster to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ocvp_cluster", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1226,5 +1397,127 @@ export class OcvpCluster extends cdktf.TerraformResource {
       network_configuration: ocvpClusterNetworkConfigurationToTerraform(this._networkConfiguration.internalValue),
       timeouts: ocvpClusterTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      capacity_reservation_id: {
+        value: cdktf.stringToHclTerraform(this._capacityReservationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compute_availability_domain: {
+        value: cdktf.stringToHclTerraform(this._computeAvailabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      esxi_hosts_count: {
+        value: cdktf.numberToHclTerraform(this._esxiHostsCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      esxi_software_version: {
+        value: cdktf.stringToHclTerraform(this._esxiSoftwareVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      initial_commitment: {
+        value: cdktf.stringToHclTerraform(this._initialCommitment),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      initial_host_ocpu_count: {
+        value: cdktf.numberToHclTerraform(this._initialHostOcpuCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      initial_host_shape_name: {
+        value: cdktf.stringToHclTerraform(this._initialHostShapeName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instance_display_name_prefix: {
+        value: cdktf.stringToHclTerraform(this._instanceDisplayNamePrefix),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_shielded_instance_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isShieldedInstanceEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      sddc_id: {
+        value: cdktf.stringToHclTerraform(this._sddcId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vmware_software_version: {
+        value: cdktf.stringToHclTerraform(this._vmwareSoftwareVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      workload_network_cidr: {
+        value: cdktf.stringToHclTerraform(this._workloadNetworkCidr),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      datastores: {
+        value: cdktf.listMapperHcl(ocvpClusterDatastoresToHclTerraform, true)(this._datastores.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OcvpClusterDatastoresList",
+      },
+      network_configuration: {
+        value: ocvpClusterNetworkConfigurationToHclTerraform(this._networkConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OcvpClusterNetworkConfigurationList",
+      },
+      timeouts: {
+        value: ocvpClusterTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OcvpClusterTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

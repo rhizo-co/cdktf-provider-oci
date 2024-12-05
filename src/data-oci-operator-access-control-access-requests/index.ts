@@ -40,7 +40,7 @@ export interface DataOciOperatorAccessControlAccessRequestsConfig extends cdktf.
   readonly timeStart?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/operator_access_control_access_requests#filter DataOciOperatorAccessControlAccessRequests#filter}
   */
   readonly filter?: DataOciOperatorAccessControlAccessRequestsFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciOperatorAccessControlAccessRequestsAccessRequestCollectio
   }
   return {
   }
+}
+
+
+export function dataOciOperatorAccessControlAccessRequestsAccessRequestCollectionItemsApproverDetailsToHclTerraform(struct?: DataOciOperatorAccessControlAccessRequestsAccessRequestCollectionItemsApproverDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOperatorAccessControlAccessRequestsAccessRequestCollectionItemsApproverDetailsOutputReference extends cdktf.ComplexObject {
@@ -146,6 +157,17 @@ export function dataOciOperatorAccessControlAccessRequestsAccessRequestCollectio
   }
 }
 
+
+export function dataOciOperatorAccessControlAccessRequestsAccessRequestCollectionItemsExtensionApproverDetailsToHclTerraform(struct?: DataOciOperatorAccessControlAccessRequestsAccessRequestCollectionItemsExtensionApproverDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOperatorAccessControlAccessRequestsAccessRequestCollectionItemsExtensionApproverDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -233,6 +255,17 @@ export function dataOciOperatorAccessControlAccessRequestsAccessRequestCollectio
   }
   return {
   }
+}
+
+
+export function dataOciOperatorAccessControlAccessRequestsAccessRequestCollectionItemsToHclTerraform(struct?: DataOciOperatorAccessControlAccessRequestsAccessRequestCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOperatorAccessControlAccessRequestsAccessRequestCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -488,6 +521,17 @@ export function dataOciOperatorAccessControlAccessRequestsAccessRequestCollectio
   }
 }
 
+
+export function dataOciOperatorAccessControlAccessRequestsAccessRequestCollectionToHclTerraform(struct?: DataOciOperatorAccessControlAccessRequestsAccessRequestCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOperatorAccessControlAccessRequestsAccessRequestCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -566,6 +610,37 @@ export function dataOciOperatorAccessControlAccessRequestsFilterToTerraform(stru
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOperatorAccessControlAccessRequestsFilterToHclTerraform(struct?: DataOciOperatorAccessControlAccessRequestsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOperatorAccessControlAccessRequestsFilterOutputReference extends cdktf.ComplexObject {
@@ -696,6 +771,20 @@ export class DataOciOperatorAccessControlAccessRequests extends cdktf.TerraformD
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_operator_access_control_access_requests";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOperatorAccessControlAccessRequests resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOperatorAccessControlAccessRequests to import
+  * @param importFromId The id of the existing DataOciOperatorAccessControlAccessRequests that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/operator_access_control_access_requests#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOperatorAccessControlAccessRequests to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_operator_access_control_access_requests", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -884,5 +973,61 @@ export class DataOciOperatorAccessControlAccessRequests extends cdktf.TerraformD
       time_start: cdktf.stringToTerraform(this._timeStart),
       filter: cdktf.listMapper(dataOciOperatorAccessControlAccessRequestsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_name: {
+        value: cdktf.stringToHclTerraform(this._resourceName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type: {
+        value: cdktf.stringToHclTerraform(this._resourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_end: {
+        value: cdktf.stringToHclTerraform(this._timeEnd),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_start: {
+        value: cdktf.stringToHclTerraform(this._timeStart),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOperatorAccessControlAccessRequestsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOperatorAccessControlAccessRequestsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

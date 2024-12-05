@@ -28,7 +28,7 @@ export interface DevopsRepositoryProtectedBranchManagementConfig extends cdktf.T
   readonly repositoryId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository_protected_branch_management#timeouts DevopsRepositoryProtectedBranchManagement#timeouts}
   */
   readonly timeouts?: DevopsRepositoryProtectedBranchManagementTimeouts;
@@ -58,6 +58,37 @@ export function devopsRepositoryProtectedBranchManagementTimeoutsToTerraform(str
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function devopsRepositoryProtectedBranchManagementTimeoutsToHclTerraform(struct?: DevopsRepositoryProtectedBranchManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsRepositoryProtectedBranchManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -172,6 +203,20 @@ export class DevopsRepositoryProtectedBranchManagement extends cdktf.TerraformRe
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_repository_protected_branch_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DevopsRepositoryProtectedBranchManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DevopsRepositoryProtectedBranchManagement to import
+  * @param importFromId The id of the existing DevopsRepositoryProtectedBranchManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository_protected_branch_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DevopsRepositoryProtectedBranchManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_repository_protected_branch_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -303,5 +348,43 @@ export class DevopsRepositoryProtectedBranchManagement extends cdktf.TerraformRe
       repository_id: cdktf.stringToTerraform(this._repositoryId),
       timeouts: devopsRepositoryProtectedBranchManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      branch_name: {
+        value: cdktf.stringToHclTerraform(this._branchName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      protection_levels: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._protectionLevels),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      repository_id: {
+        value: cdktf.stringToHclTerraform(this._repositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: devopsRepositoryProtectedBranchManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DevopsRepositoryProtectedBranchManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

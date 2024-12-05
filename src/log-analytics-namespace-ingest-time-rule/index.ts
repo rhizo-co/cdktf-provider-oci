@@ -40,19 +40,19 @@ export interface LogAnalyticsNamespaceIngestTimeRuleConfig extends cdktf.Terrafo
   readonly namespace: string;
   /**
   * actions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_ingest_time_rule#actions LogAnalyticsNamespaceIngestTimeRule#actions}
   */
   readonly actions: LogAnalyticsNamespaceIngestTimeRuleActions[] | cdktf.IResolvable;
   /**
   * conditions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_ingest_time_rule#conditions LogAnalyticsNamespaceIngestTimeRule#conditions}
   */
   readonly conditions: LogAnalyticsNamespaceIngestTimeRuleConditions;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_ingest_time_rule#timeouts LogAnalyticsNamespaceIngestTimeRule#timeouts}
   */
   readonly timeouts?: LogAnalyticsNamespaceIngestTimeRuleTimeouts;
@@ -97,6 +97,55 @@ export function logAnalyticsNamespaceIngestTimeRuleActionsToTerraform(struct?: L
     resource_group: cdktf.stringToTerraform(struct!.resourceGroup),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function logAnalyticsNamespaceIngestTimeRuleActionsToHclTerraform(struct?: LogAnalyticsNamespaceIngestTimeRuleActions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dimensions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.dimensions),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    metric_name: {
+      value: cdktf.stringToHclTerraform(struct!.metricName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_group: {
+      value: cdktf.stringToHclTerraform(struct!.resourceGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsNamespaceIngestTimeRuleActionsOutputReference extends cdktf.ComplexObject {
@@ -304,6 +353,37 @@ export function logAnalyticsNamespaceIngestTimeRuleConditionsAdditionalCondition
   }
 }
 
+
+export function logAnalyticsNamespaceIngestTimeRuleConditionsAdditionalConditionsToHclTerraform(struct?: LogAnalyticsNamespaceIngestTimeRuleConditionsAdditionalConditions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    condition_field: {
+      value: cdktf.stringToHclTerraform(struct!.conditionField),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition_operator: {
+      value: cdktf.stringToHclTerraform(struct!.conditionOperator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition_value: {
+      value: cdktf.stringToHclTerraform(struct!.conditionValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LogAnalyticsNamespaceIngestTimeRuleConditionsAdditionalConditionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -438,7 +518,7 @@ export interface LogAnalyticsNamespaceIngestTimeRuleConditions {
   readonly kind: string;
   /**
   * additional_conditions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_ingest_time_rule#additional_conditions LogAnalyticsNamespaceIngestTimeRule#additional_conditions}
   */
   readonly additionalConditions?: LogAnalyticsNamespaceIngestTimeRuleConditionsAdditionalConditions[] | cdktf.IResolvable;
@@ -456,6 +536,49 @@ export function logAnalyticsNamespaceIngestTimeRuleConditionsToTerraform(struct?
     kind: cdktf.stringToTerraform(struct!.kind),
     additional_conditions: cdktf.listMapper(logAnalyticsNamespaceIngestTimeRuleConditionsAdditionalConditionsToTerraform, true)(struct!.additionalConditions),
   }
+}
+
+
+export function logAnalyticsNamespaceIngestTimeRuleConditionsToHclTerraform(struct?: LogAnalyticsNamespaceIngestTimeRuleConditionsOutputReference | LogAnalyticsNamespaceIngestTimeRuleConditions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    field_name: {
+      value: cdktf.stringToHclTerraform(struct!.fieldName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_operator: {
+      value: cdktf.stringToHclTerraform(struct!.fieldOperator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_value: {
+      value: cdktf.stringToHclTerraform(struct!.fieldValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    additional_conditions: {
+      value: cdktf.listMapperHcl(logAnalyticsNamespaceIngestTimeRuleConditionsAdditionalConditionsToHclTerraform, true)(struct!.additionalConditions),
+      isBlock: true,
+      type: "set",
+      storageClassType: "LogAnalyticsNamespaceIngestTimeRuleConditionsAdditionalConditionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsNamespaceIngestTimeRuleConditionsOutputReference extends cdktf.ComplexObject {
@@ -609,6 +732,37 @@ export function logAnalyticsNamespaceIngestTimeRuleTimeoutsToTerraform(struct?: 
   }
 }
 
+
+export function logAnalyticsNamespaceIngestTimeRuleTimeoutsToHclTerraform(struct?: LogAnalyticsNamespaceIngestTimeRuleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LogAnalyticsNamespaceIngestTimeRuleTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -721,6 +875,20 @@ export class LogAnalyticsNamespaceIngestTimeRule extends cdktf.TerraformResource
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_log_analytics_namespace_ingest_time_rule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LogAnalyticsNamespaceIngestTimeRule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LogAnalyticsNamespaceIngestTimeRule to import
+  * @param importFromId The id of the existing LogAnalyticsNamespaceIngestTimeRule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_ingest_time_rule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LogAnalyticsNamespaceIngestTimeRule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_namespace_ingest_time_rule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -952,5 +1120,73 @@ export class LogAnalyticsNamespaceIngestTimeRule extends cdktf.TerraformResource
       conditions: logAnalyticsNamespaceIngestTimeRuleConditionsToTerraform(this._conditions.internalValue),
       timeouts: logAnalyticsNamespaceIngestTimeRuleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      actions: {
+        value: cdktf.listMapperHcl(logAnalyticsNamespaceIngestTimeRuleActionsToHclTerraform, true)(this._actions.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "LogAnalyticsNamespaceIngestTimeRuleActionsList",
+      },
+      conditions: {
+        value: logAnalyticsNamespaceIngestTimeRuleConditionsToHclTerraform(this._conditions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LogAnalyticsNamespaceIngestTimeRuleConditionsList",
+      },
+      timeouts: {
+        value: logAnalyticsNamespaceIngestTimeRuleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LogAnalyticsNamespaceIngestTimeRuleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

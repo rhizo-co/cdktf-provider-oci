@@ -39,6 +39,17 @@ export function dataOciOnesubscriptionComputedUsageParentProductToTerraform(stru
   }
 }
 
+
+export function dataOciOnesubscriptionComputedUsageParentProductToHclTerraform(struct?: DataOciOnesubscriptionComputedUsageParentProduct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionComputedUsageParentProductOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -133,6 +144,17 @@ export function dataOciOnesubscriptionComputedUsageProductToTerraform(struct?: D
   }
 }
 
+
+export function dataOciOnesubscriptionComputedUsageProductToHclTerraform(struct?: DataOciOnesubscriptionComputedUsageProduct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionComputedUsageProductOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -225,6 +247,20 @@ export class DataOciOnesubscriptionComputedUsage extends cdktf.TerraformDataSour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_onesubscription_computed_usage";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOnesubscriptionComputedUsage resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOnesubscriptionComputedUsage to import
+  * @param importFromId The id of the existing DataOciOnesubscriptionComputedUsage that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/onesubscription_computed_usage#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOnesubscriptionComputedUsage to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_onesubscription_computed_usage", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -454,5 +490,37 @@ export class DataOciOnesubscriptionComputedUsage extends cdktf.TerraformDataSour
       fields: cdktf.listMapper(cdktf.stringToTerraform, false)(this._fields),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      computed_usage_id: {
+        value: cdktf.stringToHclTerraform(this._computedUsageId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fields: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._fields),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

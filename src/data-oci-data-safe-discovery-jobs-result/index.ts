@@ -28,6 +28,17 @@ export function dataOciDataSafeDiscoveryJobsResultModifiedAttributesToTerraform(
   }
 }
 
+
+export function dataOciDataSafeDiscoveryJobsResultModifiedAttributesToHclTerraform(struct?: DataOciDataSafeDiscoveryJobsResultModifiedAttributes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeDiscoveryJobsResultModifiedAttributesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -95,6 +106,20 @@ export class DataOciDataSafeDiscoveryJobsResult extends cdktf.TerraformDataSourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_discovery_jobs_result";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeDiscoveryJobsResult resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeDiscoveryJobsResult to import
+  * @param importFromId The id of the existing DataOciDataSafeDiscoveryJobsResult that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_discovery_jobs_result#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeDiscoveryJobsResult to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_discovery_jobs_result", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -267,5 +292,25 @@ export class DataOciDataSafeDiscoveryJobsResult extends cdktf.TerraformDataSourc
       discovery_job_id: cdktf.stringToTerraform(this._discoveryJobId),
       result_key: cdktf.stringToTerraform(this._resultKey),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      discovery_job_id: {
+        value: cdktf.stringToHclTerraform(this._discoveryJobId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      result_key: {
+        value: cdktf.stringToHclTerraform(this._resultKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

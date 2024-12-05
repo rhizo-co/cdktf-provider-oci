@@ -40,13 +40,13 @@ export interface ServiceMeshAccessPolicyConfig extends cdktf.TerraformMetaArgume
   readonly name: string;
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_access_policy#rules ServiceMeshAccessPolicy#rules}
   */
   readonly rules: ServiceMeshAccessPolicyRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_access_policy#timeouts ServiceMeshAccessPolicy#timeouts}
   */
   readonly timeouts?: ServiceMeshAccessPolicyTimeouts;
@@ -96,6 +96,61 @@ export function serviceMeshAccessPolicyRulesDestinationToTerraform(struct?: Serv
     type: cdktf.stringToTerraform(struct!.type),
     virtual_service_id: cdktf.stringToTerraform(struct!.virtualServiceId),
   }
+}
+
+
+export function serviceMeshAccessPolicyRulesDestinationToHclTerraform(struct?: ServiceMeshAccessPolicyRulesDestinationOutputReference | ServiceMeshAccessPolicyRulesDestination): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hostnames: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.hostnames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    ingress_gateway_id: {
+      value: cdktf.stringToHclTerraform(struct!.ingressGatewayId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ip_addresses: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.ipAddresses),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    ports: {
+      value: cdktf.listMapperHcl(cdktf.numberToHclTerraform, false)(struct!.ports),
+      isBlock: false,
+      type: "list",
+      storageClassType: "numberList",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    virtual_service_id: {
+      value: cdktf.stringToHclTerraform(struct!.virtualServiceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshAccessPolicyRulesDestinationOutputReference extends cdktf.ComplexObject {
@@ -322,6 +377,61 @@ export function serviceMeshAccessPolicyRulesSourceToTerraform(struct?: ServiceMe
   }
 }
 
+
+export function serviceMeshAccessPolicyRulesSourceToHclTerraform(struct?: ServiceMeshAccessPolicyRulesSourceOutputReference | ServiceMeshAccessPolicyRulesSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hostnames: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.hostnames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    ingress_gateway_id: {
+      value: cdktf.stringToHclTerraform(struct!.ingressGatewayId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ip_addresses: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.ipAddresses),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    ports: {
+      value: cdktf.listMapperHcl(cdktf.numberToHclTerraform, false)(struct!.ports),
+      isBlock: false,
+      type: "list",
+      storageClassType: "numberList",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    virtual_service_id: {
+      value: cdktf.stringToHclTerraform(struct!.virtualServiceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ServiceMeshAccessPolicyRulesSourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -506,13 +616,13 @@ export interface ServiceMeshAccessPolicyRules {
   readonly action: string;
   /**
   * destination block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_access_policy#destination ServiceMeshAccessPolicy#destination}
   */
   readonly destination: ServiceMeshAccessPolicyRulesDestination;
   /**
   * source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_access_policy#source ServiceMeshAccessPolicy#source}
   */
   readonly source: ServiceMeshAccessPolicyRulesSource;
@@ -528,6 +638,37 @@ export function serviceMeshAccessPolicyRulesToTerraform(struct?: ServiceMeshAcce
     destination: serviceMeshAccessPolicyRulesDestinationToTerraform(struct!.destination),
     source: serviceMeshAccessPolicyRulesSourceToTerraform(struct!.source),
   }
+}
+
+
+export function serviceMeshAccessPolicyRulesToHclTerraform(struct?: ServiceMeshAccessPolicyRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination: {
+      value: serviceMeshAccessPolicyRulesDestinationToHclTerraform(struct!.destination),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ServiceMeshAccessPolicyRulesDestinationList",
+    },
+    source: {
+      value: serviceMeshAccessPolicyRulesSourceToHclTerraform(struct!.source),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ServiceMeshAccessPolicyRulesSourceList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshAccessPolicyRulesOutputReference extends cdktf.ComplexObject {
@@ -672,6 +813,37 @@ export function serviceMeshAccessPolicyTimeoutsToTerraform(struct?: ServiceMeshA
   }
 }
 
+
+export function serviceMeshAccessPolicyTimeoutsToHclTerraform(struct?: ServiceMeshAccessPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ServiceMeshAccessPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -784,6 +956,20 @@ export class ServiceMeshAccessPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_service_mesh_access_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ServiceMeshAccessPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ServiceMeshAccessPolicy to import
+  * @param importFromId The id of the existing ServiceMeshAccessPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_access_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ServiceMeshAccessPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_service_mesh_access_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1001,5 +1187,67 @@ export class ServiceMeshAccessPolicy extends cdktf.TerraformResource {
       rules: cdktf.listMapper(serviceMeshAccessPolicyRulesToTerraform, true)(this._rules.internalValue),
       timeouts: serviceMeshAccessPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      mesh_id: {
+        value: cdktf.stringToHclTerraform(this._meshId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      rules: {
+        value: cdktf.listMapperHcl(serviceMeshAccessPolicyRulesToHclTerraform, true)(this._rules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ServiceMeshAccessPolicyRulesList",
+      },
+      timeouts: {
+        value: serviceMeshAccessPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ServiceMeshAccessPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -36,31 +36,31 @@ export interface VnMonitoringPathAnalyzerTestConfig extends cdktf.TerraformMetaA
   readonly protocol: number;
   /**
   * destination_endpoint block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vn_monitoring_path_analyzer_test#destination_endpoint VnMonitoringPathAnalyzerTest#destination_endpoint}
   */
   readonly destinationEndpoint: VnMonitoringPathAnalyzerTestDestinationEndpoint;
   /**
   * protocol_parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vn_monitoring_path_analyzer_test#protocol_parameters VnMonitoringPathAnalyzerTest#protocol_parameters}
   */
   readonly protocolParameters?: VnMonitoringPathAnalyzerTestProtocolParameters;
   /**
   * query_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vn_monitoring_path_analyzer_test#query_options VnMonitoringPathAnalyzerTest#query_options}
   */
   readonly queryOptions?: VnMonitoringPathAnalyzerTestQueryOptions;
   /**
   * source_endpoint block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vn_monitoring_path_analyzer_test#source_endpoint VnMonitoringPathAnalyzerTest#source_endpoint}
   */
   readonly sourceEndpoint: VnMonitoringPathAnalyzerTestSourceEndpoint;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vn_monitoring_path_analyzer_test#timeouts VnMonitoringPathAnalyzerTest#timeouts}
   */
   readonly timeouts?: VnMonitoringPathAnalyzerTestTimeouts;
@@ -120,6 +120,73 @@ export function vnMonitoringPathAnalyzerTestDestinationEndpointToTerraform(struc
     vlan_id: cdktf.stringToTerraform(struct!.vlanId),
     vnic_id: cdktf.stringToTerraform(struct!.vnicId),
   }
+}
+
+
+export function vnMonitoringPathAnalyzerTestDestinationEndpointToHclTerraform(struct?: VnMonitoringPathAnalyzerTestDestinationEndpointOutputReference | VnMonitoringPathAnalyzerTestDestinationEndpoint): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    address: {
+      value: cdktf.stringToHclTerraform(struct!.address),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    instance_id: {
+      value: cdktf.stringToHclTerraform(struct!.instanceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    listener_id: {
+      value: cdktf.stringToHclTerraform(struct!.listenerId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    load_balancer_id: {
+      value: cdktf.stringToHclTerraform(struct!.loadBalancerId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    network_load_balancer_id: {
+      value: cdktf.stringToHclTerraform(struct!.networkLoadBalancerId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.vlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vnic_id: {
+      value: cdktf.stringToHclTerraform(struct!.vnicId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class VnMonitoringPathAnalyzerTestDestinationEndpointOutputReference extends cdktf.ComplexObject {
@@ -385,6 +452,49 @@ export function vnMonitoringPathAnalyzerTestProtocolParametersToTerraform(struct
   }
 }
 
+
+export function vnMonitoringPathAnalyzerTestProtocolParametersToHclTerraform(struct?: VnMonitoringPathAnalyzerTestProtocolParametersOutputReference | VnMonitoringPathAnalyzerTestProtocolParameters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination_port: {
+      value: cdktf.numberToHclTerraform(struct!.destinationPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    icmp_code: {
+      value: cdktf.numberToHclTerraform(struct!.icmpCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    icmp_type: {
+      value: cdktf.numberToHclTerraform(struct!.icmpType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    source_port: {
+      value: cdktf.numberToHclTerraform(struct!.sourcePort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class VnMonitoringPathAnalyzerTestProtocolParametersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -535,6 +645,25 @@ export function vnMonitoringPathAnalyzerTestQueryOptionsToTerraform(struct?: VnM
   }
 }
 
+
+export function vnMonitoringPathAnalyzerTestQueryOptionsToHclTerraform(struct?: VnMonitoringPathAnalyzerTestQueryOptionsOutputReference | VnMonitoringPathAnalyzerTestQueryOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_bi_directional_analysis: {
+      value: cdktf.booleanToHclTerraform(struct!.isBiDirectionalAnalysis),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class VnMonitoringPathAnalyzerTestQueryOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -638,6 +767,73 @@ export function vnMonitoringPathAnalyzerTestSourceEndpointToTerraform(struct?: V
     vlan_id: cdktf.stringToTerraform(struct!.vlanId),
     vnic_id: cdktf.stringToTerraform(struct!.vnicId),
   }
+}
+
+
+export function vnMonitoringPathAnalyzerTestSourceEndpointToHclTerraform(struct?: VnMonitoringPathAnalyzerTestSourceEndpointOutputReference | VnMonitoringPathAnalyzerTestSourceEndpoint): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    address: {
+      value: cdktf.stringToHclTerraform(struct!.address),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    instance_id: {
+      value: cdktf.stringToHclTerraform(struct!.instanceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    listener_id: {
+      value: cdktf.stringToHclTerraform(struct!.listenerId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    load_balancer_id: {
+      value: cdktf.stringToHclTerraform(struct!.loadBalancerId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    network_load_balancer_id: {
+      value: cdktf.stringToHclTerraform(struct!.networkLoadBalancerId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.vlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vnic_id: {
+      value: cdktf.stringToHclTerraform(struct!.vnicId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class VnMonitoringPathAnalyzerTestSourceEndpointOutputReference extends cdktf.ComplexObject {
@@ -893,6 +1089,37 @@ export function vnMonitoringPathAnalyzerTestTimeoutsToTerraform(struct?: VnMonit
   }
 }
 
+
+export function vnMonitoringPathAnalyzerTestTimeoutsToHclTerraform(struct?: VnMonitoringPathAnalyzerTestTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class VnMonitoringPathAnalyzerTestTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1005,6 +1232,20 @@ export class VnMonitoringPathAnalyzerTest extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_vn_monitoring_path_analyzer_test";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a VnMonitoringPathAnalyzerTest resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the VnMonitoringPathAnalyzerTest to import
+  * @param importFromId The id of the existing VnMonitoringPathAnalyzerTest that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vn_monitoring_path_analyzer_test#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the VnMonitoringPathAnalyzerTest to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_vn_monitoring_path_analyzer_test", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1253,5 +1494,79 @@ export class VnMonitoringPathAnalyzerTest extends cdktf.TerraformResource {
       source_endpoint: vnMonitoringPathAnalyzerTestSourceEndpointToTerraform(this._sourceEndpoint.internalValue),
       timeouts: vnMonitoringPathAnalyzerTestTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      protocol: {
+        value: cdktf.numberToHclTerraform(this._protocol),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      destination_endpoint: {
+        value: vnMonitoringPathAnalyzerTestDestinationEndpointToHclTerraform(this._destinationEndpoint.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "VnMonitoringPathAnalyzerTestDestinationEndpointList",
+      },
+      protocol_parameters: {
+        value: vnMonitoringPathAnalyzerTestProtocolParametersToHclTerraform(this._protocolParameters.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "VnMonitoringPathAnalyzerTestProtocolParametersList",
+      },
+      query_options: {
+        value: vnMonitoringPathAnalyzerTestQueryOptionsToHclTerraform(this._queryOptions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "VnMonitoringPathAnalyzerTestQueryOptionsList",
+      },
+      source_endpoint: {
+        value: vnMonitoringPathAnalyzerTestSourceEndpointToHclTerraform(this._sourceEndpoint.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "VnMonitoringPathAnalyzerTestSourceEndpointList",
+      },
+      timeouts: {
+        value: vnMonitoringPathAnalyzerTestTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "VnMonitoringPathAnalyzerTestTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

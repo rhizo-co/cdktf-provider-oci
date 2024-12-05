@@ -24,7 +24,7 @@ export interface CoreAppCatalogListingResourceVersionAgreementConfig extends cdk
   readonly listingResourceVersion: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_app_catalog_listing_resource_version_agreement#timeouts CoreAppCatalogListingResourceVersionAgreement#timeouts}
   */
   readonly timeouts?: CoreAppCatalogListingResourceVersionAgreementTimeouts;
@@ -54,6 +54,37 @@ export function coreAppCatalogListingResourceVersionAgreementTimeoutsToTerraform
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function coreAppCatalogListingResourceVersionAgreementTimeoutsToHclTerraform(struct?: CoreAppCatalogListingResourceVersionAgreementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreAppCatalogListingResourceVersionAgreementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -168,6 +199,20 @@ export class CoreAppCatalogListingResourceVersionAgreement extends cdktf.Terrafo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_app_catalog_listing_resource_version_agreement";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreAppCatalogListingResourceVersionAgreement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreAppCatalogListingResourceVersionAgreement to import
+  * @param importFromId The id of the existing CoreAppCatalogListingResourceVersionAgreement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_app_catalog_listing_resource_version_agreement#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreAppCatalogListingResourceVersionAgreement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_app_catalog_listing_resource_version_agreement", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -295,5 +340,37 @@ export class CoreAppCatalogListingResourceVersionAgreement extends cdktf.Terrafo
       listing_resource_version: cdktf.stringToTerraform(this._listingResourceVersion),
       timeouts: coreAppCatalogListingResourceVersionAgreementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      listing_id: {
+        value: cdktf.stringToHclTerraform(this._listingId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      listing_resource_version: {
+        value: cdktf.stringToHclTerraform(this._listingResourceVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: coreAppCatalogListingResourceVersionAgreementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreAppCatalogListingResourceVersionAgreementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

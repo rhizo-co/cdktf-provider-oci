@@ -20,13 +20,13 @@ export interface DatabaseVmClusterRemoveVirtualMachineConfig extends cdktf.Terra
   readonly vmClusterId: string;
   /**
   * db_servers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster_remove_virtual_machine#db_servers DatabaseVmClusterRemoveVirtualMachine#db_servers}
   */
   readonly dbServers: DatabaseVmClusterRemoveVirtualMachineDbServers[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster_remove_virtual_machine#timeouts DatabaseVmClusterRemoveVirtualMachine#timeouts}
   */
   readonly timeouts?: DatabaseVmClusterRemoveVirtualMachineTimeouts;
@@ -41,6 +41,17 @@ export function databaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetail
   }
   return {
   }
+}
+
+
+export function databaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetailsApplyUpdateTimePreferenceToHclTerraform(struct?: DatabaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetailsApplyUpdateTimePreference): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetailsApplyUpdateTimePreferenceOutputReference extends cdktf.ComplexObject {
@@ -112,6 +123,17 @@ export function databaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetail
   }
 }
 
+
+export function databaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetailsFreezePeriodToHclTerraform(struct?: DatabaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetailsFreezePeriod): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatabaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetailsFreezePeriodOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -179,6 +201,17 @@ export function databaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetail
   }
   return {
   }
+}
+
+
+export function databaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetailsToHclTerraform(struct?: DatabaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseVmClusterRemoveVirtualMachineCloudAutomationUpdateDetailsOutputReference extends cdktf.ComplexObject {
@@ -262,6 +295,17 @@ export function databaseVmClusterRemoveVirtualMachineDataCollectionOptionsToTerr
   }
 }
 
+
+export function databaseVmClusterRemoveVirtualMachineDataCollectionOptionsToHclTerraform(struct?: DatabaseVmClusterRemoveVirtualMachineDataCollectionOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatabaseVmClusterRemoveVirtualMachineDataCollectionOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -336,6 +380,17 @@ export function databaseVmClusterRemoveVirtualMachineFileSystemConfigurationDeta
   }
 }
 
+
+export function databaseVmClusterRemoveVirtualMachineFileSystemConfigurationDetailsToHclTerraform(struct?: DatabaseVmClusterRemoveVirtualMachineFileSystemConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatabaseVmClusterRemoveVirtualMachineFileSystemConfigurationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -408,6 +463,25 @@ export function databaseVmClusterRemoveVirtualMachineDbServersToTerraform(struct
   return {
     db_server_id: cdktf.stringToTerraform(struct!.dbServerId),
   }
+}
+
+
+export function databaseVmClusterRemoveVirtualMachineDbServersToHclTerraform(struct?: DatabaseVmClusterRemoveVirtualMachineDbServers | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    db_server_id: {
+      value: cdktf.stringToHclTerraform(struct!.dbServerId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseVmClusterRemoveVirtualMachineDbServersOutputReference extends cdktf.ComplexObject {
@@ -512,6 +586,37 @@ export function databaseVmClusterRemoveVirtualMachineTimeoutsToTerraform(struct?
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseVmClusterRemoveVirtualMachineTimeoutsToHclTerraform(struct?: DatabaseVmClusterRemoveVirtualMachineTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseVmClusterRemoveVirtualMachineTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -626,6 +731,20 @@ export class DatabaseVmClusterRemoveVirtualMachine extends cdktf.TerraformResour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_vm_cluster_remove_virtual_machine";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseVmClusterRemoveVirtualMachine resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseVmClusterRemoveVirtualMachine to import
+  * @param importFromId The id of the existing DatabaseVmClusterRemoveVirtualMachine that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_vm_cluster_remove_virtual_machine#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseVmClusterRemoveVirtualMachine to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_vm_cluster_remove_virtual_machine", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -868,5 +987,37 @@ export class DatabaseVmClusterRemoveVirtualMachine extends cdktf.TerraformResour
       db_servers: cdktf.listMapper(databaseVmClusterRemoveVirtualMachineDbServersToTerraform, true)(this._dbServers.internalValue),
       timeouts: databaseVmClusterRemoveVirtualMachineTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._vmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_servers: {
+        value: cdktf.listMapperHcl(databaseVmClusterRemoveVirtualMachineDbServersToHclTerraform, true)(this._dbServers.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseVmClusterRemoveVirtualMachineDbServersList",
+      },
+      timeouts: {
+        value: databaseVmClusterRemoveVirtualMachineTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseVmClusterRemoveVirtualMachineTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

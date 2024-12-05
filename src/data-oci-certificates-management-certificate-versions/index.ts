@@ -24,7 +24,7 @@ export interface DataOciCertificatesManagementCertificateVersionsConfig extends 
   readonly versionNumber?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/certificates_management_certificate_versions#filter DataOciCertificatesManagementCertificateVersions#filter}
   */
   readonly filter?: DataOciCertificatesManagementCertificateVersionsFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciCertificatesManagementCertificateVersionsCertificateVersi
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsRevocationStatusToHclTerraform(struct?: DataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsRevocationStatus): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsRevocationStatusOutputReference extends cdktf.ComplexObject {
@@ -110,6 +121,17 @@ export function dataOciCertificatesManagementCertificateVersionsCertificateVersi
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsSubjectAlternativeNamesToHclTerraform(struct?: DataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsSubjectAlternativeNames): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsSubjectAlternativeNamesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -179,6 +201,17 @@ export function dataOciCertificatesManagementCertificateVersionsCertificateVersi
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsValidityToHclTerraform(struct?: DataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsValidity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsValidityOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -246,6 +279,17 @@ export function dataOciCertificatesManagementCertificateVersionsCertificateVersi
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsToHclTerraform(struct?: DataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -365,6 +409,17 @@ export function dataOciCertificatesManagementCertificateVersionsCertificateVersi
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionToHclTerraform(struct?: DataOciCertificatesManagementCertificateVersionsCertificateVersionCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateVersionsCertificateVersionCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -443,6 +498,37 @@ export function dataOciCertificatesManagementCertificateVersionsFilterToTerrafor
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateVersionsFilterToHclTerraform(struct?: DataOciCertificatesManagementCertificateVersionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCertificatesManagementCertificateVersionsFilterOutputReference extends cdktf.ComplexObject {
@@ -574,6 +660,20 @@ export class DataOciCertificatesManagementCertificateVersions extends cdktf.Terr
   // =================
   public static readonly tfResourceType = "oci_certificates_management_certificate_versions";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCertificatesManagementCertificateVersions resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCertificatesManagementCertificateVersions to import
+  * @param importFromId The id of the existing DataOciCertificatesManagementCertificateVersions that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/certificates_management_certificate_versions#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCertificatesManagementCertificateVersions to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_certificates_management_certificate_versions", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -689,5 +789,37 @@ export class DataOciCertificatesManagementCertificateVersions extends cdktf.Terr
       version_number: cdktf.stringToTerraform(this._versionNumber),
       filter: cdktf.listMapper(dataOciCertificatesManagementCertificateVersionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      certificate_id: {
+        value: cdktf.stringToHclTerraform(this._certificateId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      version_number: {
+        value: cdktf.stringToHclTerraform(this._versionNumber),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCertificatesManagementCertificateVersionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCertificatesManagementCertificateVersionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

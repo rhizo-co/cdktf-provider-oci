@@ -20,7 +20,7 @@ export interface DataOciFusionAppsFusionEnvironmentAdminUsersConfig extends cdkt
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fusion_apps_fusion_environment_admin_users#filter DataOciFusionAppsFusionEnvironmentAdminUsers#filter}
   */
   readonly filter?: DataOciFusionAppsFusionEnvironmentAdminUsersFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionI
   }
   return {
   }
+}
+
+
+export function dataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionItemsItemsToHclTerraform(struct?: DataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionItemsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionItemsItemsOutputReference extends cdktf.ComplexObject {
@@ -114,6 +125,17 @@ export function dataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionI
   }
   return {
   }
+}
+
+
+export function dataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionItemsToHclTerraform(struct?: DataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -216,6 +238,17 @@ export function dataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionT
   }
 }
 
+
+export function dataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionToHclTerraform(struct?: DataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFusionAppsFusionEnvironmentAdminUsersAdminUserCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -294,6 +327,37 @@ export function dataOciFusionAppsFusionEnvironmentAdminUsersFilterToTerraform(st
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciFusionAppsFusionEnvironmentAdminUsersFilterToHclTerraform(struct?: DataOciFusionAppsFusionEnvironmentAdminUsersFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciFusionAppsFusionEnvironmentAdminUsersFilterOutputReference extends cdktf.ComplexObject {
@@ -425,6 +489,20 @@ export class DataOciFusionAppsFusionEnvironmentAdminUsers extends cdktf.Terrafor
   // =================
   public static readonly tfResourceType = "oci_fusion_apps_fusion_environment_admin_users";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFusionAppsFusionEnvironmentAdminUsers resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFusionAppsFusionEnvironmentAdminUsers to import
+  * @param importFromId The id of the existing DataOciFusionAppsFusionEnvironmentAdminUsers that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fusion_apps_fusion_environment_admin_users#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFusionAppsFusionEnvironmentAdminUsers to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fusion_apps_fusion_environment_admin_users", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -522,5 +600,31 @@ export class DataOciFusionAppsFusionEnvironmentAdminUsers extends cdktf.Terrafor
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciFusionAppsFusionEnvironmentAdminUsersFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      fusion_environment_id: {
+        value: cdktf.stringToHclTerraform(this._fusionEnvironmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciFusionAppsFusionEnvironmentAdminUsersFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciFusionAppsFusionEnvironmentAdminUsersFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -32,7 +32,7 @@ export interface DataOciCoreSecurityListsConfig extends cdktf.TerraformMetaArgum
   readonly vcnId?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_security_lists#filter DataOciCoreSecurityLists#filter}
   */
   readonly filter?: DataOciCoreSecurityListsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesIcmpOpti
   }
   return {
   }
+}
+
+
+export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesIcmpOptionsToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsEgressSecurityRulesIcmpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreSecurityListsSecurityListsEgressSecurityRulesIcmpOptionsOutputReference extends cdktf.ComplexObject {
@@ -118,6 +129,17 @@ export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesTcpOptio
   }
 }
 
+
+export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesTcpOptionsSourcePortRangeToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsEgressSecurityRulesTcpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreSecurityListsSecurityListsEgressSecurityRulesTcpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -185,6 +207,17 @@ export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesTcpOptio
   }
   return {
   }
+}
+
+
+export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesTcpOptionsToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsEgressSecurityRulesTcpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreSecurityListsSecurityListsEgressSecurityRulesTcpOptionsOutputReference extends cdktf.ComplexObject {
@@ -262,6 +295,17 @@ export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesUdpOptio
   }
 }
 
+
+export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesUdpOptionsSourcePortRangeToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsEgressSecurityRulesUdpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreSecurityListsSecurityListsEgressSecurityRulesUdpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -329,6 +373,17 @@ export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesUdpOptio
   }
   return {
   }
+}
+
+
+export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesUdpOptionsToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsEgressSecurityRulesUdpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreSecurityListsSecurityListsEgressSecurityRulesUdpOptionsOutputReference extends cdktf.ComplexObject {
@@ -404,6 +459,17 @@ export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciCoreSecurityListsSecurityListsEgressSecurityRulesToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsEgressSecurityRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreSecurityListsSecurityListsEgressSecurityRulesOutputReference extends cdktf.ComplexObject {
@@ -508,6 +574,17 @@ export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesIcmpOpt
   }
 }
 
+
+export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesIcmpOptionsToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsIngressSecurityRulesIcmpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreSecurityListsSecurityListsIngressSecurityRulesIcmpOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -577,6 +654,17 @@ export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesTcpOpti
   }
 }
 
+
+export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesTcpOptionsSourcePortRangeToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsIngressSecurityRulesTcpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreSecurityListsSecurityListsIngressSecurityRulesTcpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -644,6 +732,17 @@ export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesTcpOpti
   }
   return {
   }
+}
+
+
+export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesTcpOptionsToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsIngressSecurityRulesTcpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreSecurityListsSecurityListsIngressSecurityRulesTcpOptionsOutputReference extends cdktf.ComplexObject {
@@ -721,6 +820,17 @@ export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesUdpOpti
   }
 }
 
+
+export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesUdpOptionsSourcePortRangeToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsIngressSecurityRulesUdpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreSecurityListsSecurityListsIngressSecurityRulesUdpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -788,6 +898,17 @@ export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesUdpOpti
   }
   return {
   }
+}
+
+
+export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesUdpOptionsToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsIngressSecurityRulesUdpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreSecurityListsSecurityListsIngressSecurityRulesUdpOptionsOutputReference extends cdktf.ComplexObject {
@@ -863,6 +984,17 @@ export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesToTerra
   }
   return {
   }
+}
+
+
+export function dataOciCoreSecurityListsSecurityListsIngressSecurityRulesToHclTerraform(struct?: DataOciCoreSecurityListsSecurityListsIngressSecurityRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreSecurityListsSecurityListsIngressSecurityRulesOutputReference extends cdktf.ComplexObject {
@@ -965,6 +1097,17 @@ export function dataOciCoreSecurityListsSecurityListsToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciCoreSecurityListsSecurityListsToHclTerraform(struct?: DataOciCoreSecurityListsSecurityLists): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreSecurityListsSecurityListsOutputReference extends cdktf.ComplexObject {
@@ -1095,6 +1238,37 @@ export function dataOciCoreSecurityListsFilterToTerraform(struct?: DataOciCoreSe
   }
 }
 
+
+export function dataOciCoreSecurityListsFilterToHclTerraform(struct?: DataOciCoreSecurityListsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciCoreSecurityListsFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1223,6 +1397,20 @@ export class DataOciCoreSecurityLists extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_security_lists";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreSecurityLists resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreSecurityLists to import
+  * @param importFromId The id of the existing DataOciCoreSecurityLists that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_security_lists#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreSecurityLists to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_security_lists", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1375,5 +1563,49 @@ export class DataOciCoreSecurityLists extends cdktf.TerraformDataSource {
       vcn_id: cdktf.stringToTerraform(this._vcnId),
       filter: cdktf.listMapper(dataOciCoreSecurityListsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcn_id: {
+        value: cdktf.stringToHclTerraform(this._vcnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCoreSecurityListsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCoreSecurityListsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -28,6 +28,17 @@ export function dataOciLoadBalancerRuleSetItemsConditionsToTerraform(struct?: Da
   }
 }
 
+
+export function dataOciLoadBalancerRuleSetItemsConditionsToHclTerraform(struct?: DataOciLoadBalancerRuleSetItemsConditions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciLoadBalancerRuleSetItemsConditionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -102,6 +113,17 @@ export function dataOciLoadBalancerRuleSetItemsIpMaxConnectionsToTerraform(struc
   }
 }
 
+
+export function dataOciLoadBalancerRuleSetItemsIpMaxConnectionsToHclTerraform(struct?: DataOciLoadBalancerRuleSetItemsIpMaxConnections): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciLoadBalancerRuleSetItemsIpMaxConnectionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -169,6 +191,17 @@ export function dataOciLoadBalancerRuleSetItemsRedirectUriToTerraform(struct?: D
   }
   return {
   }
+}
+
+
+export function dataOciLoadBalancerRuleSetItemsRedirectUriToHclTerraform(struct?: DataOciLoadBalancerRuleSetItemsRedirectUri): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciLoadBalancerRuleSetItemsRedirectUriOutputReference extends cdktf.ComplexObject {
@@ -253,6 +286,17 @@ export function dataOciLoadBalancerRuleSetItemsToTerraform(struct?: DataOciLoadB
   }
   return {
   }
+}
+
+
+export function dataOciLoadBalancerRuleSetItemsToHclTerraform(struct?: DataOciLoadBalancerRuleSetItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciLoadBalancerRuleSetItemsOutputReference extends cdktf.ComplexObject {
@@ -391,6 +435,20 @@ export class DataOciLoadBalancerRuleSet extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_load_balancer_rule_set";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLoadBalancerRuleSet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLoadBalancerRuleSet to import
+  * @param importFromId The id of the existing DataOciLoadBalancerRuleSet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/load_balancer_rule_set#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLoadBalancerRuleSet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_load_balancer_rule_set", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -477,5 +535,25 @@ export class DataOciLoadBalancerRuleSet extends cdktf.TerraformDataSource {
       load_balancer_id: cdktf.stringToTerraform(this._loadBalancerId),
       name: cdktf.stringToTerraform(this._name),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      load_balancer_id: {
+        value: cdktf.stringToHclTerraform(this._loadBalancerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

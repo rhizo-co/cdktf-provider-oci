@@ -68,7 +68,7 @@ export interface DataOciDnsZonesConfig extends cdktf.TerraformMetaArguments {
   readonly zoneType?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dns_zones#filter DataOciDnsZones#filter}
   */
   readonly filter?: DataOciDnsZonesFilter[] | cdktf.IResolvable;
@@ -83,6 +83,17 @@ export function dataOciDnsZonesZonesDnssecConfigKskDnssecKeyVersionsDsDataToTerr
   }
   return {
   }
+}
+
+
+export function dataOciDnsZonesZonesDnssecConfigKskDnssecKeyVersionsDsDataToHclTerraform(struct?: DataOciDnsZonesZonesDnssecConfigKskDnssecKeyVersionsDsData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDnsZonesZonesDnssecConfigKskDnssecKeyVersionsDsDataOutputReference extends cdktf.ComplexObject {
@@ -152,6 +163,17 @@ export function dataOciDnsZonesZonesDnssecConfigKskDnssecKeyVersionsToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciDnsZonesZonesDnssecConfigKskDnssecKeyVersionsToHclTerraform(struct?: DataOciDnsZonesZonesDnssecConfigKskDnssecKeyVersions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDnsZonesZonesDnssecConfigKskDnssecKeyVersionsOutputReference extends cdktf.ComplexObject {
@@ -284,6 +306,17 @@ export function dataOciDnsZonesZonesDnssecConfigZskDnssecKeyVersionsToTerraform(
   }
 }
 
+
+export function dataOciDnsZonesZonesDnssecConfigZskDnssecKeyVersionsToHclTerraform(struct?: DataOciDnsZonesZonesDnssecConfigZskDnssecKeyVersions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDnsZonesZonesDnssecConfigZskDnssecKeyVersionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -408,6 +441,17 @@ export function dataOciDnsZonesZonesDnssecConfigToTerraform(struct?: DataOciDnsZ
   }
 }
 
+
+export function dataOciDnsZonesZonesDnssecConfigToHclTerraform(struct?: DataOciDnsZonesZonesDnssecConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDnsZonesZonesDnssecConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -477,6 +521,17 @@ export function dataOciDnsZonesZonesExternalDownstreamsToTerraform(struct?: Data
   }
   return {
   }
+}
+
+
+export function dataOciDnsZonesZonesExternalDownstreamsToHclTerraform(struct?: DataOciDnsZonesZonesExternalDownstreams): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDnsZonesZonesExternalDownstreamsOutputReference extends cdktf.ComplexObject {
@@ -553,6 +608,17 @@ export function dataOciDnsZonesZonesExternalMastersToTerraform(struct?: DataOciD
   }
 }
 
+
+export function dataOciDnsZonesZonesExternalMastersToHclTerraform(struct?: DataOciDnsZonesZonesExternalMasters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDnsZonesZonesExternalMastersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -627,6 +693,17 @@ export function dataOciDnsZonesZonesNameserversToTerraform(struct?: DataOciDnsZo
   }
 }
 
+
+export function dataOciDnsZonesZonesNameserversToHclTerraform(struct?: DataOciDnsZonesZonesNameservers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDnsZonesZonesNameserversOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -689,6 +766,17 @@ export function dataOciDnsZonesZonesZoneTransferServersToTerraform(struct?: Data
   }
   return {
   }
+}
+
+
+export function dataOciDnsZonesZonesZoneTransferServersToHclTerraform(struct?: DataOciDnsZonesZonesZoneTransferServers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDnsZonesZonesZoneTransferServersOutputReference extends cdktf.ComplexObject {
@@ -768,6 +856,17 @@ export function dataOciDnsZonesZonesToTerraform(struct?: DataOciDnsZonesZones): 
   }
   return {
   }
+}
+
+
+export function dataOciDnsZonesZonesToHclTerraform(struct?: DataOciDnsZonesZones): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDnsZonesZonesOutputReference extends cdktf.ComplexObject {
@@ -951,6 +1050,37 @@ export function dataOciDnsZonesFilterToTerraform(struct?: DataOciDnsZonesFilter 
   }
 }
 
+
+export function dataOciDnsZonesFilterToHclTerraform(struct?: DataOciDnsZonesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciDnsZonesFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1079,6 +1209,20 @@ export class DataOciDnsZones extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dns_zones";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDnsZones resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDnsZones to import
+  * @param importFromId The id of the existing DataOciDnsZones that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dns_zones#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDnsZones to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dns_zones", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1393,5 +1537,103 @@ export class DataOciDnsZones extends cdktf.TerraformDataSource {
       zone_type: cdktf.stringToTerraform(this._zoneType),
       filter: cdktf.listMapper(dataOciDnsZonesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dnssec_state: {
+        value: cdktf.stringToHclTerraform(this._dnssecState),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name_contains: {
+        value: cdktf.stringToHclTerraform(this._nameContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scope: {
+        value: cdktf.stringToHclTerraform(this._scope),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sort_by: {
+        value: cdktf.stringToHclTerraform(this._sortBy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sort_order: {
+        value: cdktf.stringToHclTerraform(this._sortOrder),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tsig_key_id: {
+        value: cdktf.stringToHclTerraform(this._tsigKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      view_id: {
+        value: cdktf.stringToHclTerraform(this._viewId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      zone_type: {
+        value: cdktf.stringToHclTerraform(this._zoneType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDnsZonesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDnsZonesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

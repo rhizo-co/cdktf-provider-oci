@@ -48,19 +48,19 @@ export interface ApigatewayGatewayConfig extends cdktf.TerraformMetaArguments {
   readonly subnetId: string;
   /**
   * ca_bundles block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_gateway#ca_bundles ApigatewayGateway#ca_bundles}
   */
   readonly caBundles?: ApigatewayGatewayCaBundles[] | cdktf.IResolvable;
   /**
   * response_cache_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_gateway#response_cache_details ApigatewayGateway#response_cache_details}
   */
   readonly responseCacheDetails?: ApigatewayGatewayResponseCacheDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_gateway#timeouts ApigatewayGateway#timeouts}
   */
   readonly timeouts?: ApigatewayGatewayTimeouts;
@@ -75,6 +75,17 @@ export function apigatewayGatewayIpAddressesToTerraform(struct?: ApigatewayGatew
   }
   return {
   }
+}
+
+
+export function apigatewayGatewayIpAddressesToHclTerraform(struct?: ApigatewayGatewayIpAddresses): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ApigatewayGatewayIpAddressesOutputReference extends cdktf.ComplexObject {
@@ -154,6 +165,37 @@ export function apigatewayGatewayCaBundlesToTerraform(struct?: ApigatewayGateway
     certificate_authority_id: cdktf.stringToTerraform(struct!.certificateAuthorityId),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function apigatewayGatewayCaBundlesToHclTerraform(struct?: ApigatewayGatewayCaBundles | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ca_bundle_id: {
+      value: cdktf.stringToHclTerraform(struct!.caBundleId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    certificate_authority_id: {
+      value: cdktf.stringToHclTerraform(struct!.certificateAuthorityId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayGatewayCaBundlesOutputReference extends cdktf.ComplexObject {
@@ -299,6 +341,31 @@ export function apigatewayGatewayResponseCacheDetailsServersToTerraform(struct?:
   }
 }
 
+
+export function apigatewayGatewayResponseCacheDetailsServersToHclTerraform(struct?: ApigatewayGatewayResponseCacheDetailsServers | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host: {
+      value: cdktf.stringToHclTerraform(struct!.host),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayGatewayResponseCacheDetailsServersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -436,7 +503,7 @@ export interface ApigatewayGatewayResponseCacheDetails {
   readonly type: string;
   /**
   * servers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_gateway#servers ApigatewayGateway#servers}
   */
   readonly servers?: ApigatewayGatewayResponseCacheDetailsServers[] | cdktf.IResolvable;
@@ -458,6 +525,73 @@ export function apigatewayGatewayResponseCacheDetailsToTerraform(struct?: Apigat
     type: cdktf.stringToTerraform(struct!.type),
     servers: cdktf.listMapper(apigatewayGatewayResponseCacheDetailsServersToTerraform, true)(struct!.servers),
   }
+}
+
+
+export function apigatewayGatewayResponseCacheDetailsToHclTerraform(struct?: ApigatewayGatewayResponseCacheDetailsOutputReference | ApigatewayGatewayResponseCacheDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    authentication_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.authenticationSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    authentication_secret_version_number: {
+      value: cdktf.stringToHclTerraform(struct!.authenticationSecretVersionNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connect_timeout_in_ms: {
+      value: cdktf.numberToHclTerraform(struct!.connectTimeoutInMs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_ssl_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSslEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_ssl_verify_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSslVerifyDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    read_timeout_in_ms: {
+      value: cdktf.numberToHclTerraform(struct!.readTimeoutInMs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    send_timeout_in_ms: {
+      value: cdktf.numberToHclTerraform(struct!.sendTimeoutInMs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    servers: {
+      value: cdktf.listMapperHcl(apigatewayGatewayResponseCacheDetailsServersToHclTerraform, true)(struct!.servers),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayGatewayResponseCacheDetailsServersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayGatewayResponseCacheDetailsOutputReference extends cdktf.ComplexObject {
@@ -708,6 +842,37 @@ export function apigatewayGatewayTimeoutsToTerraform(struct?: ApigatewayGatewayT
   }
 }
 
+
+export function apigatewayGatewayTimeoutsToHclTerraform(struct?: ApigatewayGatewayTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayGatewayTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -820,6 +985,20 @@ export class ApigatewayGateway extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apigateway_gateway";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ApigatewayGateway resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ApigatewayGateway to import
+  * @param importFromId The id of the existing ApigatewayGateway that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_gateway#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ApigatewayGateway to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apigateway_gateway", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1099,5 +1278,85 @@ export class ApigatewayGateway extends cdktf.TerraformResource {
       response_cache_details: apigatewayGatewayResponseCacheDetailsToTerraform(this._responseCacheDetails.internalValue),
       timeouts: apigatewayGatewayTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      certificate_id: {
+        value: cdktf.stringToHclTerraform(this._certificateId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      endpoint_type: {
+        value: cdktf.stringToHclTerraform(this._endpointType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_security_group_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._networkSecurityGroupIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ca_bundles: {
+        value: cdktf.listMapperHcl(apigatewayGatewayCaBundlesToHclTerraform, true)(this._caBundles.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApigatewayGatewayCaBundlesList",
+      },
+      response_cache_details: {
+        value: apigatewayGatewayResponseCacheDetailsToHclTerraform(this._responseCacheDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApigatewayGatewayResponseCacheDetailsList",
+      },
+      timeouts: {
+        value: apigatewayGatewayTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ApigatewayGatewayTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

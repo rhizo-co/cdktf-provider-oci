@@ -88,7 +88,7 @@ export interface GoldenGateDatabaseRegistrationConfig extends cdktf.TerraformMet
   readonly wallet?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/golden_gate_database_registration#timeouts GoldenGateDatabaseRegistration#timeouts}
   */
   readonly timeouts?: GoldenGateDatabaseRegistrationTimeouts;
@@ -118,6 +118,37 @@ export function goldenGateDatabaseRegistrationTimeoutsToTerraform(struct?: Golde
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function goldenGateDatabaseRegistrationTimeoutsToHclTerraform(struct?: GoldenGateDatabaseRegistrationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GoldenGateDatabaseRegistrationTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -232,6 +263,20 @@ export class GoldenGateDatabaseRegistration extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_golden_gate_database_registration";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a GoldenGateDatabaseRegistration resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the GoldenGateDatabaseRegistration to import
+  * @param importFromId The id of the existing GoldenGateDatabaseRegistration that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/golden_gate_database_registration#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the GoldenGateDatabaseRegistration to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_golden_gate_database_registration", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -651,5 +696,133 @@ export class GoldenGateDatabaseRegistration extends cdktf.TerraformResource {
       wallet: cdktf.stringToTerraform(this._wallet),
       timeouts: goldenGateDatabaseRegistrationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      alias_name: {
+        value: cdktf.stringToHclTerraform(this._aliasName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_string: {
+        value: cdktf.stringToHclTerraform(this._connectionString),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_id: {
+        value: cdktf.stringToHclTerraform(this._databaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fqdn: {
+        value: cdktf.stringToHclTerraform(this._fqdn),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ip_address: {
+        value: cdktf.stringToHclTerraform(this._ipAddress),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_id: {
+        value: cdktf.stringToHclTerraform(this._keyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      password: {
+        value: cdktf.stringToHclTerraform(this._password),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      secret_compartment_id: {
+        value: cdktf.stringToHclTerraform(this._secretCompartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      session_mode: {
+        value: cdktf.stringToHclTerraform(this._sessionMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      username: {
+        value: cdktf.stringToHclTerraform(this._username),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vault_id: {
+        value: cdktf.stringToHclTerraform(this._vaultId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      wallet: {
+        value: cdktf.stringToHclTerraform(this._wallet),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: goldenGateDatabaseRegistrationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "GoldenGateDatabaseRegistrationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

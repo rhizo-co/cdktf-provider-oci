@@ -35,6 +35,17 @@ export function dataOciMarketplaceListingBannerToTerraform(struct?: DataOciMarke
   }
 }
 
+
+export function dataOciMarketplaceListingBannerToHclTerraform(struct?: DataOciMarketplaceListingBanner): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMarketplaceListingBannerOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -114,6 +125,17 @@ export function dataOciMarketplaceListingDocumentationLinksToTerraform(struct?: 
   }
 }
 
+
+export function dataOciMarketplaceListingDocumentationLinksToHclTerraform(struct?: DataOciMarketplaceListingDocumentationLinks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMarketplaceListingDocumentationLinksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -186,6 +208,17 @@ export function dataOciMarketplaceListingIconToTerraform(struct?: DataOciMarketp
   }
   return {
   }
+}
+
+
+export function dataOciMarketplaceListingIconToHclTerraform(struct?: DataOciMarketplaceListingIcon): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMarketplaceListingIconOutputReference extends cdktf.ComplexObject {
@@ -267,6 +300,17 @@ export function dataOciMarketplaceListingLanguagesToTerraform(struct?: DataOciMa
   }
 }
 
+
+export function dataOciMarketplaceListingLanguagesToHclTerraform(struct?: DataOciMarketplaceListingLanguages): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMarketplaceListingLanguagesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -334,6 +378,17 @@ export function dataOciMarketplaceListingLinksToTerraform(struct?: DataOciMarket
   }
   return {
   }
+}
+
+
+export function dataOciMarketplaceListingLinksToHclTerraform(struct?: DataOciMarketplaceListingLinks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMarketplaceListingLinksOutputReference extends cdktf.ComplexObject {
@@ -405,6 +460,17 @@ export function dataOciMarketplaceListingPublisherLinksToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciMarketplaceListingPublisherLinksToHclTerraform(struct?: DataOciMarketplaceListingPublisherLinks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMarketplaceListingPublisherLinksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -472,6 +538,17 @@ export function dataOciMarketplaceListingPublisherLogoToTerraform(struct?: DataO
   }
   return {
   }
+}
+
+
+export function dataOciMarketplaceListingPublisherLogoToHclTerraform(struct?: DataOciMarketplaceListingPublisherLogo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMarketplaceListingPublisherLogoOutputReference extends cdktf.ComplexObject {
@@ -551,6 +628,17 @@ export function dataOciMarketplaceListingPublisherToTerraform(struct?: DataOciMa
   }
   return {
   }
+}
+
+
+export function dataOciMarketplaceListingPublisherToHclTerraform(struct?: DataOciMarketplaceListingPublisher): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMarketplaceListingPublisherOutputReference extends cdktf.ComplexObject {
@@ -664,6 +752,17 @@ export function dataOciMarketplaceListingRegionsCountriesToTerraform(struct?: Da
   }
 }
 
+
+export function dataOciMarketplaceListingRegionsCountriesToHclTerraform(struct?: DataOciMarketplaceListingRegionsCountries): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMarketplaceListingRegionsCountriesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -731,6 +830,17 @@ export function dataOciMarketplaceListingRegionsToTerraform(struct?: DataOciMark
   }
   return {
   }
+}
+
+
+export function dataOciMarketplaceListingRegionsToHclTerraform(struct?: DataOciMarketplaceListingRegions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMarketplaceListingRegionsOutputReference extends cdktf.ComplexObject {
@@ -806,6 +916,17 @@ export function dataOciMarketplaceListingScreenshotsToTerraform(struct?: DataOci
   }
   return {
   }
+}
+
+
+export function dataOciMarketplaceListingScreenshotsToHclTerraform(struct?: DataOciMarketplaceListingScreenshots): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMarketplaceListingScreenshotsOutputReference extends cdktf.ComplexObject {
@@ -892,6 +1013,17 @@ export function dataOciMarketplaceListingSupportContactsToTerraform(struct?: Dat
   }
 }
 
+
+export function dataOciMarketplaceListingSupportContactsToHclTerraform(struct?: DataOciMarketplaceListingSupportContacts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMarketplaceListingSupportContactsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -971,6 +1103,17 @@ export function dataOciMarketplaceListingSupportLinksToTerraform(struct?: DataOc
   }
 }
 
+
+export function dataOciMarketplaceListingSupportLinksToHclTerraform(struct?: DataOciMarketplaceListingSupportLinks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMarketplaceListingSupportLinksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1040,6 +1183,17 @@ export function dataOciMarketplaceListingSupportedOperatingSystemsToTerraform(st
   }
 }
 
+
+export function dataOciMarketplaceListingSupportedOperatingSystemsToHclTerraform(struct?: DataOciMarketplaceListingSupportedOperatingSystems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMarketplaceListingSupportedOperatingSystemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1102,6 +1256,17 @@ export function dataOciMarketplaceListingVideosToTerraform(struct?: DataOciMarke
   }
   return {
   }
+}
+
+
+export function dataOciMarketplaceListingVideosToHclTerraform(struct?: DataOciMarketplaceListingVideos): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMarketplaceListingVideosOutputReference extends cdktf.ComplexObject {
@@ -1171,6 +1336,20 @@ export class DataOciMarketplaceListing extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_marketplace_listing";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMarketplaceListing resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMarketplaceListing to import
+  * @param importFromId The id of the existing DataOciMarketplaceListing that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/marketplace_listing#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMarketplaceListing to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_marketplace_listing", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1420,5 +1599,31 @@ export class DataOciMarketplaceListing extends cdktf.TerraformDataSource {
       id: cdktf.stringToTerraform(this._id),
       listing_id: cdktf.stringToTerraform(this._listingId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      listing_id: {
+        value: cdktf.stringToHclTerraform(this._listingId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

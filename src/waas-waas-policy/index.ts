@@ -40,31 +40,31 @@ export interface WaasWaasPolicyConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * origin_groups block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#origin_groups WaasWaasPolicy#origin_groups}
   */
   readonly originGroups?: WaasWaasPolicyOriginGroups[] | cdktf.IResolvable;
   /**
   * origins block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#origins WaasWaasPolicy#origins}
   */
   readonly origins?: WaasWaasPolicyOrigins[] | cdktf.IResolvable;
   /**
   * policy_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#policy_config WaasWaasPolicy#policy_config}
   */
   readonly policyConfig?: WaasWaasPolicyPolicyConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#timeouts WaasWaasPolicy#timeouts}
   */
   readonly timeouts?: WaasWaasPolicyTimeouts;
   /**
   * waf_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#waf_config WaasWaasPolicy#waf_config}
   */
   readonly wafConfig?: WaasWaasPolicyWafConfig;
@@ -89,6 +89,31 @@ export function waasWaasPolicyOriginGroupsOriginGroupToTerraform(struct?: WaasWa
     origin: cdktf.stringToTerraform(struct!.origin),
     weight: cdktf.numberToTerraform(struct!.weight),
   }
+}
+
+
+export function waasWaasPolicyOriginGroupsOriginGroupToHclTerraform(struct?: WaasWaasPolicyOriginGroupsOriginGroup | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    origin: {
+      value: cdktf.stringToHclTerraform(struct!.origin),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    weight: {
+      value: cdktf.numberToHclTerraform(struct!.weight),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyOriginGroupsOriginGroupOutputReference extends cdktf.ComplexObject {
@@ -197,7 +222,7 @@ export interface WaasWaasPolicyOriginGroups {
   readonly label: string;
   /**
   * origin_group block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#origin_group WaasWaasPolicy#origin_group}
   */
   readonly originGroup: WaasWaasPolicyOriginGroupsOriginGroup[] | cdktf.IResolvable;
@@ -212,6 +237,31 @@ export function waasWaasPolicyOriginGroupsToTerraform(struct?: WaasWaasPolicyOri
     label: cdktf.stringToTerraform(struct!.label),
     origin_group: cdktf.listMapper(waasWaasPolicyOriginGroupsOriginGroupToTerraform, true)(struct!.originGroup),
   }
+}
+
+
+export function waasWaasPolicyOriginGroupsToHclTerraform(struct?: WaasWaasPolicyOriginGroups | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    label: {
+      value: cdktf.stringToHclTerraform(struct!.label),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    origin_group: {
+      value: cdktf.listMapperHcl(waasWaasPolicyOriginGroupsOriginGroupToHclTerraform, true)(struct!.originGroup),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyOriginGroupsOriginGroupList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyOriginGroupsOutputReference extends cdktf.ComplexObject {
@@ -332,6 +382,31 @@ export function waasWaasPolicyOriginsCustomHeadersToTerraform(struct?: WaasWaasP
   }
 }
 
+
+export function waasWaasPolicyOriginsCustomHeadersToHclTerraform(struct?: WaasWaasPolicyOriginsCustomHeaders | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyOriginsCustomHeadersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -447,7 +522,7 @@ export interface WaasWaasPolicyOrigins {
   readonly uri: string;
   /**
   * custom_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#custom_headers WaasWaasPolicy#custom_headers}
   */
   readonly customHeaders?: WaasWaasPolicyOriginsCustomHeaders[] | cdktf.IResolvable;
@@ -465,6 +540,49 @@ export function waasWaasPolicyOriginsToTerraform(struct?: WaasWaasPolicyOrigins 
     uri: cdktf.stringToTerraform(struct!.uri),
     custom_headers: cdktf.listMapper(waasWaasPolicyOriginsCustomHeadersToTerraform, true)(struct!.customHeaders),
   }
+}
+
+
+export function waasWaasPolicyOriginsToHclTerraform(struct?: WaasWaasPolicyOrigins | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    http_port: {
+      value: cdktf.numberToHclTerraform(struct!.httpPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    https_port: {
+      value: cdktf.numberToHclTerraform(struct!.httpsPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    label: {
+      value: cdktf.stringToHclTerraform(struct!.label),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    custom_headers: {
+      value: cdktf.listMapperHcl(waasWaasPolicyOriginsCustomHeadersToHclTerraform, true)(struct!.customHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyOriginsCustomHeadersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyOriginsOutputReference extends cdktf.ComplexObject {
@@ -694,6 +812,85 @@ export function waasWaasPolicyPolicyConfigHealthChecksToTerraform(struct?: WaasW
     timeout_in_seconds: cdktf.numberToTerraform(struct!.timeoutInSeconds),
     unhealthy_threshold: cdktf.numberToTerraform(struct!.unhealthyThreshold),
   }
+}
+
+
+export function waasWaasPolicyPolicyConfigHealthChecksToHclTerraform(struct?: WaasWaasPolicyPolicyConfigHealthChecksOutputReference | WaasWaasPolicyPolicyConfigHealthChecks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    expected_response_code_group: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.expectedResponseCodeGroup),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    expected_response_text: {
+      value: cdktf.stringToHclTerraform(struct!.expectedResponseText),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    headers: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.headers),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    healthy_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.healthyThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    interval_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.intervalInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_response_text_check_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isResponseTextCheckEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    method: {
+      value: cdktf.stringToHclTerraform(struct!.method),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    timeout_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    unhealthy_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.unhealthyThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyPolicyConfigHealthChecksOutputReference extends cdktf.ComplexObject {
@@ -996,6 +1193,43 @@ export function waasWaasPolicyPolicyConfigLoadBalancingMethodToTerraform(struct?
   }
 }
 
+
+export function waasWaasPolicyPolicyConfigLoadBalancingMethodToHclTerraform(struct?: WaasWaasPolicyPolicyConfigLoadBalancingMethodOutputReference | WaasWaasPolicyPolicyConfigLoadBalancingMethod): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    domain: {
+      value: cdktf.stringToHclTerraform(struct!.domain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    expiration_time_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.expirationTimeInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    method: {
+      value: cdktf.stringToHclTerraform(struct!.method),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyPolicyConfigLoadBalancingMethodOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1158,13 +1392,13 @@ export interface WaasWaasPolicyPolicyConfig {
   readonly websocketPathPrefixes?: string[];
   /**
   * health_checks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#health_checks WaasWaasPolicy#health_checks}
   */
   readonly healthChecks?: WaasWaasPolicyPolicyConfigHealthChecks;
   /**
   * load_balancing_method block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#load_balancing_method WaasWaasPolicy#load_balancing_method}
   */
   readonly loadBalancingMethod?: WaasWaasPolicyPolicyConfigLoadBalancingMethod;
@@ -1191,6 +1425,103 @@ export function waasWaasPolicyPolicyConfigToTerraform(struct?: WaasWaasPolicyPol
     health_checks: waasWaasPolicyPolicyConfigHealthChecksToTerraform(struct!.healthChecks),
     load_balancing_method: waasWaasPolicyPolicyConfigLoadBalancingMethodToTerraform(struct!.loadBalancingMethod),
   }
+}
+
+
+export function waasWaasPolicyPolicyConfigToHclTerraform(struct?: WaasWaasPolicyPolicyConfigOutputReference | WaasWaasPolicyPolicyConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    certificate_id: {
+      value: cdktf.stringToHclTerraform(struct!.certificateId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cipher_group: {
+      value: cdktf.stringToHclTerraform(struct!.cipherGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_address_header: {
+      value: cdktf.stringToHclTerraform(struct!.clientAddressHeader),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_behind_cdn: {
+      value: cdktf.booleanToHclTerraform(struct!.isBehindCdn),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_cache_control_respected: {
+      value: cdktf.booleanToHclTerraform(struct!.isCacheControlRespected),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_https_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isHttpsEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_https_forced: {
+      value: cdktf.booleanToHclTerraform(struct!.isHttpsForced),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_origin_compression_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isOriginCompressionEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_response_buffering_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isResponseBufferingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_sni_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSniEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    tls_protocols: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.tlsProtocols),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    websocket_path_prefixes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.websocketPathPrefixes),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    health_checks: {
+      value: waasWaasPolicyPolicyConfigHealthChecksToHclTerraform(struct!.healthChecks),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyPolicyConfigHealthChecksList",
+    },
+    load_balancing_method: {
+      value: waasWaasPolicyPolicyConfigLoadBalancingMethodToHclTerraform(struct!.loadBalancingMethod),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyPolicyConfigLoadBalancingMethodList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyPolicyConfigOutputReference extends cdktf.ComplexObject {
@@ -1554,6 +1885,37 @@ export function waasWaasPolicyTimeoutsToTerraform(struct?: WaasWaasPolicyTimeout
   }
 }
 
+
+export function waasWaasPolicyTimeoutsToHclTerraform(struct?: WaasWaasPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1681,6 +2043,37 @@ export function waasWaasPolicyWafConfigAccessRulesCriteriaToTerraform(struct?: W
     is_case_sensitive: cdktf.booleanToTerraform(struct!.isCaseSensitive),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function waasWaasPolicyWafConfigAccessRulesCriteriaToHclTerraform(struct?: WaasWaasPolicyWafConfigAccessRulesCriteria | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_case_sensitive: {
+      value: cdktf.booleanToHclTerraform(struct!.isCaseSensitive),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigAccessRulesCriteriaOutputReference extends cdktf.ComplexObject {
@@ -1826,6 +2219,37 @@ export function waasWaasPolicyWafConfigAccessRulesResponseHeaderManipulationToTe
     header: cdktf.stringToTerraform(struct!.header),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function waasWaasPolicyWafConfigAccessRulesResponseHeaderManipulationToHclTerraform(struct?: WaasWaasPolicyWafConfigAccessRulesResponseHeaderManipulation | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    header: {
+      value: cdktf.stringToHclTerraform(struct!.header),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigAccessRulesResponseHeaderManipulationOutputReference extends cdktf.ComplexObject {
@@ -2005,13 +2429,13 @@ export interface WaasWaasPolicyWafConfigAccessRules {
   readonly redirectUrl?: string;
   /**
   * criteria block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#criteria WaasWaasPolicy#criteria}
   */
   readonly criteria: WaasWaasPolicyWafConfigAccessRulesCriteria[] | cdktf.IResolvable;
   /**
   * response_header_manipulation block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#response_header_manipulation WaasWaasPolicy#response_header_manipulation}
   */
   readonly responseHeaderManipulation?: WaasWaasPolicyWafConfigAccessRulesResponseHeaderManipulation[] | cdktf.IResolvable;
@@ -2040,6 +2464,115 @@ export function waasWaasPolicyWafConfigAccessRulesToTerraform(struct?: WaasWaasP
     criteria: cdktf.listMapper(waasWaasPolicyWafConfigAccessRulesCriteriaToTerraform, true)(struct!.criteria),
     response_header_manipulation: cdktf.listMapper(waasWaasPolicyWafConfigAccessRulesResponseHeaderManipulationToTerraform, true)(struct!.responseHeaderManipulation),
   }
+}
+
+
+export function waasWaasPolicyWafConfigAccessRulesToHclTerraform(struct?: WaasWaasPolicyWafConfigAccessRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_action: {
+      value: cdktf.stringToHclTerraform(struct!.blockAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_code: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_description: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageDescription),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_message: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageMessage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_response_code: {
+      value: cdktf.numberToHclTerraform(struct!.blockResponseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    bypass_challenges: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.bypassChallenges),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    captcha_footer: {
+      value: cdktf.stringToHclTerraform(struct!.captchaFooter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_header: {
+      value: cdktf.stringToHclTerraform(struct!.captchaHeader),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_submit_label: {
+      value: cdktf.stringToHclTerraform(struct!.captchaSubmitLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_title: {
+      value: cdktf.stringToHclTerraform(struct!.captchaTitle),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    redirect_response_code: {
+      value: cdktf.stringToHclTerraform(struct!.redirectResponseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    redirect_url: {
+      value: cdktf.stringToHclTerraform(struct!.redirectUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    criteria: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigAccessRulesCriteriaToHclTerraform, true)(struct!.criteria),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigAccessRulesCriteriaList",
+    },
+    response_header_manipulation: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigAccessRulesResponseHeaderManipulationToHclTerraform, true)(struct!.responseHeaderManipulation),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigAccessRulesResponseHeaderManipulationList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigAccessRulesOutputReference extends cdktf.ComplexObject {
@@ -2475,6 +3008,43 @@ export function waasWaasPolicyWafConfigAddressRateLimitingToTerraform(struct?: W
   }
 }
 
+
+export function waasWaasPolicyWafConfigAddressRateLimitingToHclTerraform(struct?: WaasWaasPolicyWafConfigAddressRateLimitingOutputReference | WaasWaasPolicyWafConfigAddressRateLimiting): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_rate_per_address: {
+      value: cdktf.numberToHclTerraform(struct!.allowedRatePerAddress),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    block_response_code: {
+      value: cdktf.numberToHclTerraform(struct!.blockResponseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_delayed_count_per_address: {
+      value: cdktf.numberToHclTerraform(struct!.maxDelayedCountPerAddress),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigAddressRateLimitingOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2608,6 +3178,31 @@ export function waasWaasPolicyWafConfigCachingRulesCriteriaToTerraform(struct?: 
   }
 }
 
+
+export function waasWaasPolicyWafConfigCachingRulesCriteriaToHclTerraform(struct?: WaasWaasPolicyWafConfigCachingRulesCriteria | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigCachingRulesCriteriaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2731,7 +3326,7 @@ export interface WaasWaasPolicyWafConfigCachingRules {
   readonly name: string;
   /**
   * criteria block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#criteria WaasWaasPolicy#criteria}
   */
   readonly criteria: WaasWaasPolicyWafConfigCachingRulesCriteria[] | cdktf.IResolvable;
@@ -2751,6 +3346,61 @@ export function waasWaasPolicyWafConfigCachingRulesToTerraform(struct?: WaasWaas
     name: cdktf.stringToTerraform(struct!.name),
     criteria: cdktf.listMapper(waasWaasPolicyWafConfigCachingRulesCriteriaToTerraform, true)(struct!.criteria),
   }
+}
+
+
+export function waasWaasPolicyWafConfigCachingRulesToHclTerraform(struct?: WaasWaasPolicyWafConfigCachingRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    caching_duration: {
+      value: cdktf.stringToHclTerraform(struct!.cachingDuration),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_caching_duration: {
+      value: cdktf.stringToHclTerraform(struct!.clientCachingDuration),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_client_caching_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isClientCachingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    criteria: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigCachingRulesCriteriaToHclTerraform, true)(struct!.criteria),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigCachingRulesCriteriaList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigCachingRulesOutputReference extends cdktf.ComplexObject {
@@ -3003,6 +3653,61 @@ export function waasWaasPolicyWafConfigCaptchasToTerraform(struct?: WaasWaasPoli
   }
 }
 
+
+export function waasWaasPolicyWafConfigCaptchasToHclTerraform(struct?: WaasWaasPolicyWafConfigCaptchas | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    failure_message: {
+      value: cdktf.stringToHclTerraform(struct!.failureMessage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    footer_text: {
+      value: cdktf.stringToHclTerraform(struct!.footerText),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    header_text: {
+      value: cdktf.stringToHclTerraform(struct!.headerText),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    session_expiration_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.sessionExpirationInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    submit_label: {
+      value: cdktf.stringToHclTerraform(struct!.submitLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    title: {
+      value: cdktf.stringToHclTerraform(struct!.title),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    url: {
+      value: cdktf.stringToHclTerraform(struct!.url),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigCaptchasOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -3222,6 +3927,31 @@ export function waasWaasPolicyWafConfigCustomProtectionRulesExclusionsToTerrafor
   }
 }
 
+
+export function waasWaasPolicyWafConfigCustomProtectionRulesExclusionsToHclTerraform(struct?: WaasWaasPolicyWafConfigCustomProtectionRulesExclusions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    exclusions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.exclusions),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    target: {
+      value: cdktf.stringToHclTerraform(struct!.target),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigCustomProtectionRulesExclusionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -3338,7 +4068,7 @@ export interface WaasWaasPolicyWafConfigCustomProtectionRules {
   readonly id?: string;
   /**
   * exclusions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#exclusions WaasWaasPolicy#exclusions}
   */
   readonly exclusions?: WaasWaasPolicyWafConfigCustomProtectionRulesExclusions[] | cdktf.IResolvable;
@@ -3354,6 +4084,37 @@ export function waasWaasPolicyWafConfigCustomProtectionRulesToTerraform(struct?:
     id: cdktf.stringToTerraform(struct!.id),
     exclusions: cdktf.listMapper(waasWaasPolicyWafConfigCustomProtectionRulesExclusionsToTerraform, true)(struct!.exclusions),
   }
+}
+
+
+export function waasWaasPolicyWafConfigCustomProtectionRulesToHclTerraform(struct?: WaasWaasPolicyWafConfigCustomProtectionRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    exclusions: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigCustomProtectionRulesExclusionsToHclTerraform, true)(struct!.exclusions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigCustomProtectionRulesExclusionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigCustomProtectionRulesOutputReference extends cdktf.ComplexObject {
@@ -3535,6 +4296,73 @@ export function waasWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettin
     captcha_submit_label: cdktf.stringToTerraform(struct!.captchaSubmitLabel),
     captcha_title: cdktf.stringToTerraform(struct!.captchaTitle),
   }
+}
+
+
+export function waasWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsToHclTerraform(struct?: WaasWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutputReference | WaasWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_action: {
+      value: cdktf.stringToHclTerraform(struct!.blockAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_code: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_description: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageDescription),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_message: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageMessage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_response_code: {
+      value: cdktf.numberToHclTerraform(struct!.blockResponseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    captcha_footer: {
+      value: cdktf.stringToHclTerraform(struct!.captchaFooter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_header: {
+      value: cdktf.stringToHclTerraform(struct!.captchaHeader),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_submit_label: {
+      value: cdktf.stringToHclTerraform(struct!.captchaSubmitLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_title: {
+      value: cdktf.stringToHclTerraform(struct!.captchaTitle),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutputReference extends cdktf.ComplexObject {
@@ -3792,7 +4620,7 @@ export interface WaasWaasPolicyWafConfigDeviceFingerprintChallenge {
   readonly maxAddressCountExpirationInSeconds?: number;
   /**
   * challenge_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#challenge_settings WaasWaasPolicy#challenge_settings}
   */
   readonly challengeSettings?: WaasWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettings;
@@ -3813,6 +4641,67 @@ export function waasWaasPolicyWafConfigDeviceFingerprintChallengeToTerraform(str
     max_address_count_expiration_in_seconds: cdktf.numberToTerraform(struct!.maxAddressCountExpirationInSeconds),
     challenge_settings: waasWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsToTerraform(struct!.challengeSettings),
   }
+}
+
+
+export function waasWaasPolicyWafConfigDeviceFingerprintChallengeToHclTerraform(struct?: WaasWaasPolicyWafConfigDeviceFingerprintChallengeOutputReference | WaasWaasPolicyWafConfigDeviceFingerprintChallenge): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    action_expiration_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.actionExpirationInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    failure_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    failure_threshold_expiration_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.failureThresholdExpirationInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_address_count: {
+      value: cdktf.numberToHclTerraform(struct!.maxAddressCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_address_count_expiration_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.maxAddressCountExpirationInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    challenge_settings: {
+      value: waasWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsToHclTerraform(struct!.challengeSettings),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigDeviceFingerprintChallengeChallengeSettingsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigDeviceFingerprintChallengeOutputReference extends cdktf.ComplexObject {
@@ -4071,6 +4960,73 @@ export function waasWaasPolicyWafConfigHumanInteractionChallengeChallengeSetting
   }
 }
 
+
+export function waasWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsToHclTerraform(struct?: WaasWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutputReference | WaasWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_action: {
+      value: cdktf.stringToHclTerraform(struct!.blockAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_code: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_description: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageDescription),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_message: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageMessage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_response_code: {
+      value: cdktf.numberToHclTerraform(struct!.blockResponseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    captcha_footer: {
+      value: cdktf.stringToHclTerraform(struct!.captchaFooter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_header: {
+      value: cdktf.stringToHclTerraform(struct!.captchaHeader),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_submit_label: {
+      value: cdktf.stringToHclTerraform(struct!.captchaSubmitLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_title: {
+      value: cdktf.stringToHclTerraform(struct!.captchaTitle),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4317,6 +5273,31 @@ export function waasWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderToT
   }
 }
 
+
+export function waasWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderToHclTerraform(struct?: WaasWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputReference | WaasWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4416,13 +5397,13 @@ export interface WaasWaasPolicyWafConfigHumanInteractionChallenge {
   readonly recordingPeriodInSeconds?: number;
   /**
   * challenge_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#challenge_settings WaasWaasPolicy#challenge_settings}
   */
   readonly challengeSettings?: WaasWaasPolicyWafConfigHumanInteractionChallengeChallengeSettings;
   /**
   * set_http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#set_http_header WaasWaasPolicy#set_http_header}
   */
   readonly setHttpHeader?: WaasWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeader;
@@ -4445,6 +5426,79 @@ export function waasWaasPolicyWafConfigHumanInteractionChallengeToTerraform(stru
     challenge_settings: waasWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsToTerraform(struct!.challengeSettings),
     set_http_header: waasWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderToTerraform(struct!.setHttpHeader),
   }
+}
+
+
+export function waasWaasPolicyWafConfigHumanInteractionChallengeToHclTerraform(struct?: WaasWaasPolicyWafConfigHumanInteractionChallengeOutputReference | WaasWaasPolicyWafConfigHumanInteractionChallenge): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    action_expiration_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.actionExpirationInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    failure_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    failure_threshold_expiration_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.failureThresholdExpirationInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    interaction_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.interactionThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_nat_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isNatEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    recording_period_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.recordingPeriodInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    challenge_settings: {
+      value: waasWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsToHclTerraform(struct!.challengeSettings),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigHumanInteractionChallengeChallengeSettingsList",
+    },
+    set_http_header: {
+      value: waasWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderToHclTerraform(struct!.setHttpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigHumanInteractionChallengeSetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigHumanInteractionChallengeOutputReference extends cdktf.ComplexObject {
@@ -4747,6 +5801,73 @@ export function waasWaasPolicyWafConfigJsChallengeChallengeSettingsToTerraform(s
   }
 }
 
+
+export function waasWaasPolicyWafConfigJsChallengeChallengeSettingsToHclTerraform(struct?: WaasWaasPolicyWafConfigJsChallengeChallengeSettingsOutputReference | WaasWaasPolicyWafConfigJsChallengeChallengeSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_action: {
+      value: cdktf.stringToHclTerraform(struct!.blockAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_code: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_description: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageDescription),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_message: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageMessage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_response_code: {
+      value: cdktf.numberToHclTerraform(struct!.blockResponseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    captcha_footer: {
+      value: cdktf.stringToHclTerraform(struct!.captchaFooter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_header: {
+      value: cdktf.stringToHclTerraform(struct!.captchaHeader),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_submit_label: {
+      value: cdktf.stringToHclTerraform(struct!.captchaSubmitLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    captcha_title: {
+      value: cdktf.stringToHclTerraform(struct!.captchaTitle),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigJsChallengeChallengeSettingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4998,6 +6119,37 @@ export function waasWaasPolicyWafConfigJsChallengeCriteriaToTerraform(struct?: W
   }
 }
 
+
+export function waasWaasPolicyWafConfigJsChallengeCriteriaToHclTerraform(struct?: WaasWaasPolicyWafConfigJsChallengeCriteria | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_case_sensitive: {
+      value: cdktf.booleanToHclTerraform(struct!.isCaseSensitive),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigJsChallengeCriteriaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -5138,6 +6290,31 @@ export function waasWaasPolicyWafConfigJsChallengeSetHttpHeaderToTerraform(struc
   }
 }
 
+
+export function waasWaasPolicyWafConfigJsChallengeSetHttpHeaderToHclTerraform(struct?: WaasWaasPolicyWafConfigJsChallengeSetHttpHeaderOutputReference | WaasWaasPolicyWafConfigJsChallengeSetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigJsChallengeSetHttpHeaderOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5229,19 +6406,19 @@ export interface WaasWaasPolicyWafConfigJsChallenge {
   readonly isNatEnabled?: boolean | cdktf.IResolvable;
   /**
   * challenge_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#challenge_settings WaasWaasPolicy#challenge_settings}
   */
   readonly challengeSettings?: WaasWaasPolicyWafConfigJsChallengeChallengeSettings;
   /**
   * criteria block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#criteria WaasWaasPolicy#criteria}
   */
   readonly criteria?: WaasWaasPolicyWafConfigJsChallengeCriteria[] | cdktf.IResolvable;
   /**
   * set_http_header block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#set_http_header WaasWaasPolicy#set_http_header}
   */
   readonly setHttpHeader?: WaasWaasPolicyWafConfigJsChallengeSetHttpHeader;
@@ -5263,6 +6440,73 @@ export function waasWaasPolicyWafConfigJsChallengeToTerraform(struct?: WaasWaasP
     criteria: cdktf.listMapper(waasWaasPolicyWafConfigJsChallengeCriteriaToTerraform, true)(struct!.criteria),
     set_http_header: waasWaasPolicyWafConfigJsChallengeSetHttpHeaderToTerraform(struct!.setHttpHeader),
   }
+}
+
+
+export function waasWaasPolicyWafConfigJsChallengeToHclTerraform(struct?: WaasWaasPolicyWafConfigJsChallengeOutputReference | WaasWaasPolicyWafConfigJsChallenge): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    action_expiration_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.actionExpirationInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    are_redirects_challenged: {
+      value: cdktf.booleanToHclTerraform(struct!.areRedirectsChallenged),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    failure_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_nat_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isNatEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    challenge_settings: {
+      value: waasWaasPolicyWafConfigJsChallengeChallengeSettingsToHclTerraform(struct!.challengeSettings),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigJsChallengeChallengeSettingsList",
+    },
+    criteria: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigJsChallengeCriteriaToHclTerraform, true)(struct!.criteria),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigJsChallengeCriteriaList",
+    },
+    set_http_header: {
+      value: waasWaasPolicyWafConfigJsChallengeSetHttpHeaderToHclTerraform(struct!.setHttpHeader),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigJsChallengeSetHttpHeaderList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigJsChallengeOutputReference extends cdktf.ComplexObject {
@@ -5561,6 +6805,97 @@ export function waasWaasPolicyWafConfigProtectionSettingsToTerraform(struct?: Wa
     media_types: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.mediaTypes),
     recommendations_period_in_days: cdktf.numberToTerraform(struct!.recommendationsPeriodInDays),
   }
+}
+
+
+export function waasWaasPolicyWafConfigProtectionSettingsToHclTerraform(struct?: WaasWaasPolicyWafConfigProtectionSettingsOutputReference | WaasWaasPolicyWafConfigProtectionSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_http_methods: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedHttpMethods),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    block_action: {
+      value: cdktf.stringToHclTerraform(struct!.blockAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_code: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_description: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageDescription),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_error_page_message: {
+      value: cdktf.stringToHclTerraform(struct!.blockErrorPageMessage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    block_response_code: {
+      value: cdktf.numberToHclTerraform(struct!.blockResponseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_response_inspected: {
+      value: cdktf.booleanToHclTerraform(struct!.isResponseInspected),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_argument_count: {
+      value: cdktf.numberToHclTerraform(struct!.maxArgumentCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_name_length_per_argument: {
+      value: cdktf.numberToHclTerraform(struct!.maxNameLengthPerArgument),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_response_size_in_ki_b: {
+      value: cdktf.numberToHclTerraform(struct!.maxResponseSizeInKiB),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_total_name_length_of_arguments: {
+      value: cdktf.numberToHclTerraform(struct!.maxTotalNameLengthOfArguments),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    media_types: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.mediaTypes),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    recommendations_period_in_days: {
+      value: cdktf.numberToHclTerraform(struct!.recommendationsPeriodInDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigProtectionSettingsOutputReference extends cdktf.ComplexObject {
@@ -5902,6 +7237,37 @@ export function waasWaasPolicyWafConfigWhitelistsToTerraform(struct?: WaasWaasPo
   }
 }
 
+
+export function waasWaasPolicyWafConfigWhitelistsToHclTerraform(struct?: WaasWaasPolicyWafConfigWhitelists | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    address_lists: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.addressLists),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    addresses: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.addresses),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaasWaasPolicyWafConfigWhitelistsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -6034,61 +7400,61 @@ export interface WaasWaasPolicyWafConfig {
   readonly originGroups?: string[];
   /**
   * access_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#access_rules WaasWaasPolicy#access_rules}
   */
   readonly accessRules?: WaasWaasPolicyWafConfigAccessRules[] | cdktf.IResolvable;
   /**
   * address_rate_limiting block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#address_rate_limiting WaasWaasPolicy#address_rate_limiting}
   */
   readonly addressRateLimiting?: WaasWaasPolicyWafConfigAddressRateLimiting;
   /**
   * caching_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#caching_rules WaasWaasPolicy#caching_rules}
   */
   readonly cachingRules?: WaasWaasPolicyWafConfigCachingRules[] | cdktf.IResolvable;
   /**
   * captchas block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#captchas WaasWaasPolicy#captchas}
   */
   readonly captchas?: WaasWaasPolicyWafConfigCaptchas[] | cdktf.IResolvable;
   /**
   * custom_protection_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#custom_protection_rules WaasWaasPolicy#custom_protection_rules}
   */
   readonly customProtectionRules?: WaasWaasPolicyWafConfigCustomProtectionRules[] | cdktf.IResolvable;
   /**
   * device_fingerprint_challenge block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#device_fingerprint_challenge WaasWaasPolicy#device_fingerprint_challenge}
   */
   readonly deviceFingerprintChallenge?: WaasWaasPolicyWafConfigDeviceFingerprintChallenge;
   /**
   * human_interaction_challenge block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#human_interaction_challenge WaasWaasPolicy#human_interaction_challenge}
   */
   readonly humanInteractionChallenge?: WaasWaasPolicyWafConfigHumanInteractionChallenge;
   /**
   * js_challenge block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#js_challenge WaasWaasPolicy#js_challenge}
   */
   readonly jsChallenge?: WaasWaasPolicyWafConfigJsChallenge;
   /**
   * protection_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#protection_settings WaasWaasPolicy#protection_settings}
   */
   readonly protectionSettings?: WaasWaasPolicyWafConfigProtectionSettings;
   /**
   * whitelists block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#whitelists WaasWaasPolicy#whitelists}
   */
   readonly whitelists?: WaasWaasPolicyWafConfigWhitelists[] | cdktf.IResolvable;
@@ -6113,6 +7479,91 @@ export function waasWaasPolicyWafConfigToTerraform(struct?: WaasWaasPolicyWafCon
     protection_settings: waasWaasPolicyWafConfigProtectionSettingsToTerraform(struct!.protectionSettings),
     whitelists: cdktf.listMapper(waasWaasPolicyWafConfigWhitelistsToTerraform, true)(struct!.whitelists),
   }
+}
+
+
+export function waasWaasPolicyWafConfigToHclTerraform(struct?: WaasWaasPolicyWafConfigOutputReference | WaasWaasPolicyWafConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    origin: {
+      value: cdktf.stringToHclTerraform(struct!.origin),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    origin_groups: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.originGroups),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    access_rules: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigAccessRulesToHclTerraform, true)(struct!.accessRules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigAccessRulesList",
+    },
+    address_rate_limiting: {
+      value: waasWaasPolicyWafConfigAddressRateLimitingToHclTerraform(struct!.addressRateLimiting),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigAddressRateLimitingList",
+    },
+    caching_rules: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigCachingRulesToHclTerraform, true)(struct!.cachingRules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigCachingRulesList",
+    },
+    captchas: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigCaptchasToHclTerraform, true)(struct!.captchas),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigCaptchasList",
+    },
+    custom_protection_rules: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigCustomProtectionRulesToHclTerraform, true)(struct!.customProtectionRules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigCustomProtectionRulesList",
+    },
+    device_fingerprint_challenge: {
+      value: waasWaasPolicyWafConfigDeviceFingerprintChallengeToHclTerraform(struct!.deviceFingerprintChallenge),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigDeviceFingerprintChallengeList",
+    },
+    human_interaction_challenge: {
+      value: waasWaasPolicyWafConfigHumanInteractionChallengeToHclTerraform(struct!.humanInteractionChallenge),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigHumanInteractionChallengeList",
+    },
+    js_challenge: {
+      value: waasWaasPolicyWafConfigJsChallengeToHclTerraform(struct!.jsChallenge),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigJsChallengeList",
+    },
+    protection_settings: {
+      value: waasWaasPolicyWafConfigProtectionSettingsToHclTerraform(struct!.protectionSettings),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigProtectionSettingsList",
+    },
+    whitelists: {
+      value: cdktf.listMapperHcl(waasWaasPolicyWafConfigWhitelistsToHclTerraform, true)(struct!.whitelists),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaasWaasPolicyWafConfigWhitelistsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaasWaasPolicyWafConfigOutputReference extends cdktf.ComplexObject {
@@ -6416,6 +7867,20 @@ export class WaasWaasPolicy extends cdktf.TerraformResource {
   // =================
   public static readonly tfResourceType = "oci_waas_waas_policy";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a WaasWaasPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the WaasWaasPolicy to import
+  * @param importFromId The id of the existing WaasWaasPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waas_waas_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the WaasWaasPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_waas_waas_policy", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -6681,5 +8146,85 @@ export class WaasWaasPolicy extends cdktf.TerraformResource {
       timeouts: waasWaasPolicyTimeoutsToTerraform(this._timeouts.internalValue),
       waf_config: waasWaasPolicyWafConfigToTerraform(this._wafConfig.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      additional_domains: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._additionalDomains),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      domain: {
+        value: cdktf.stringToHclTerraform(this._domain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      origin_groups: {
+        value: cdktf.listMapperHcl(waasWaasPolicyOriginGroupsToHclTerraform, true)(this._originGroups.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "WaasWaasPolicyOriginGroupsList",
+      },
+      origins: {
+        value: cdktf.listMapperHcl(waasWaasPolicyOriginsToHclTerraform, true)(this._origins.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "WaasWaasPolicyOriginsList",
+      },
+      policy_config: {
+        value: waasWaasPolicyPolicyConfigToHclTerraform(this._policyConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WaasWaasPolicyPolicyConfigList",
+      },
+      timeouts: {
+        value: waasWaasPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "WaasWaasPolicyTimeouts",
+      },
+      waf_config: {
+        value: waasWaasPolicyWafConfigToHclTerraform(this._wafConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WaasWaasPolicyWafConfigList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

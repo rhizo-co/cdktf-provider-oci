@@ -32,7 +32,7 @@ export interface DataOciFileStorageSnapshotsConfig extends cdktf.TerraformMetaAr
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/file_storage_snapshots#filter DataOciFileStorageSnapshots#filter}
   */
   readonly filter?: DataOciFileStorageSnapshotsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciFileStorageSnapshotsSnapshotsLocksToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function dataOciFileStorageSnapshotsSnapshotsLocksToHclTerraform(struct?: DataOciFileStorageSnapshotsSnapshotsLocks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFileStorageSnapshotsSnapshotsLocksOutputReference extends cdktf.ComplexObject {
@@ -126,6 +137,17 @@ export function dataOciFileStorageSnapshotsSnapshotsToTerraform(struct?: DataOci
   }
   return {
   }
+}
+
+
+export function dataOciFileStorageSnapshotsSnapshotsToHclTerraform(struct?: DataOciFileStorageSnapshotsSnapshots): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFileStorageSnapshotsSnapshotsOutputReference extends cdktf.ComplexObject {
@@ -285,6 +307,37 @@ export function dataOciFileStorageSnapshotsFilterToTerraform(struct?: DataOciFil
   }
 }
 
+
+export function dataOciFileStorageSnapshotsFilterToHclTerraform(struct?: DataOciFileStorageSnapshotsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciFileStorageSnapshotsFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -413,6 +466,20 @@ export class DataOciFileStorageSnapshots extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_file_storage_snapshots";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFileStorageSnapshots resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFileStorageSnapshots to import
+  * @param importFromId The id of the existing DataOciFileStorageSnapshots that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/file_storage_snapshots#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFileStorageSnapshots to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_file_storage_snapshots", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -568,5 +635,49 @@ export class DataOciFileStorageSnapshots extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciFileStorageSnapshotsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      file_system_id: {
+        value: cdktf.stringToHclTerraform(this._fileSystemId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filesystem_snapshot_policy_id: {
+        value: cdktf.stringToHclTerraform(this._filesystemSnapshotPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciFileStorageSnapshotsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciFileStorageSnapshotsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

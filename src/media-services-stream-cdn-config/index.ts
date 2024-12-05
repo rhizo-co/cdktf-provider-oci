@@ -40,19 +40,19 @@ export interface MediaServicesStreamCdnConfigConfig extends cdktf.TerraformMetaA
   readonly isLockOverride?: boolean | cdktf.IResolvable;
   /**
   * config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/media_services_stream_cdn_config#config MediaServicesStreamCdnConfig#config}
   */
   readonly config: MediaServicesStreamCdnConfigConfigA;
   /**
   * locks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/media_services_stream_cdn_config#locks MediaServicesStreamCdnConfig#locks}
   */
   readonly locks?: MediaServicesStreamCdnConfigLocks[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/media_services_stream_cdn_config#timeouts MediaServicesStreamCdnConfig#timeouts}
   */
   readonly timeouts?: MediaServicesStreamCdnConfigTimeouts;
@@ -127,6 +127,91 @@ export function mediaServicesStreamCdnConfigConfigAToTerraform(struct?: MediaSer
     origin_auth_sign_type: cdktf.stringToTerraform(struct!.originAuthSignType),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function mediaServicesStreamCdnConfigConfigAToHclTerraform(struct?: MediaServicesStreamCdnConfigConfigAOutputReference | MediaServicesStreamCdnConfigConfigA): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    edge_hostname: {
+      value: cdktf.stringToHclTerraform(struct!.edgeHostname),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    edge_path_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.edgePathPrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    edge_token_key: {
+      value: cdktf.stringToHclTerraform(struct!.edgeTokenKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    edge_token_salt: {
+      value: cdktf.stringToHclTerraform(struct!.edgeTokenSalt),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_edge_token_auth: {
+      value: cdktf.booleanToHclTerraform(struct!.isEdgeTokenAuth),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    origin_auth_secret_key_a: {
+      value: cdktf.stringToHclTerraform(struct!.originAuthSecretKeyA),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    origin_auth_secret_key_b: {
+      value: cdktf.stringToHclTerraform(struct!.originAuthSecretKeyB),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    origin_auth_secret_key_nonce_a: {
+      value: cdktf.stringToHclTerraform(struct!.originAuthSecretKeyNonceA),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    origin_auth_secret_key_nonce_b: {
+      value: cdktf.stringToHclTerraform(struct!.originAuthSecretKeyNonceB),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    origin_auth_sign_encryption: {
+      value: cdktf.stringToHclTerraform(struct!.originAuthSignEncryption),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    origin_auth_sign_type: {
+      value: cdktf.stringToHclTerraform(struct!.originAuthSignType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MediaServicesStreamCdnConfigConfigAOutputReference extends cdktf.ComplexObject {
@@ -453,6 +538,49 @@ export function mediaServicesStreamCdnConfigLocksToTerraform(struct?: MediaServi
   }
 }
 
+
+export function mediaServicesStreamCdnConfigLocksToHclTerraform(struct?: MediaServicesStreamCdnConfigLocks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    message: {
+      value: cdktf.stringToHclTerraform(struct!.message),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    related_resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.relatedResourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_created: {
+      value: cdktf.stringToHclTerraform(struct!.timeCreated),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MediaServicesStreamCdnConfigLocksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -642,6 +770,37 @@ export function mediaServicesStreamCdnConfigTimeoutsToTerraform(struct?: MediaSe
   }
 }
 
+
+export function mediaServicesStreamCdnConfigTimeoutsToHclTerraform(struct?: MediaServicesStreamCdnConfigTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MediaServicesStreamCdnConfigTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -754,6 +913,20 @@ export class MediaServicesStreamCdnConfig extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_media_services_stream_cdn_config";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a MediaServicesStreamCdnConfig resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the MediaServicesStreamCdnConfig to import
+  * @param importFromId The id of the existing MediaServicesStreamCdnConfig that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/media_services_stream_cdn_config#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the MediaServicesStreamCdnConfig to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_media_services_stream_cdn_config", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -997,5 +1170,73 @@ export class MediaServicesStreamCdnConfig extends cdktf.TerraformResource {
       locks: cdktf.listMapper(mediaServicesStreamCdnConfigLocksToTerraform, true)(this._locks.internalValue),
       timeouts: mediaServicesStreamCdnConfigTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      distribution_channel_id: {
+        value: cdktf.stringToHclTerraform(this._distributionChannelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_lock_override: {
+        value: cdktf.booleanToHclTerraform(this._isLockOverride),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      config: {
+        value: mediaServicesStreamCdnConfigConfigAToHclTerraform(this._config.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MediaServicesStreamCdnConfigConfigAList",
+      },
+      locks: {
+        value: cdktf.listMapperHcl(mediaServicesStreamCdnConfigLocksToHclTerraform, true)(this._locks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MediaServicesStreamCdnConfigLocksList",
+      },
+      timeouts: {
+        value: mediaServicesStreamCdnConfigTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "MediaServicesStreamCdnConfigTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

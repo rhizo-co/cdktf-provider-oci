@@ -23,6 +23,20 @@ export class DataOciStackMonitoringBaselineableMetric extends cdktf.TerraformDat
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_baselineable_metric";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciStackMonitoringBaselineableMetric resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciStackMonitoringBaselineableMetric to import
+  * @param importFromId The id of the existing DataOciStackMonitoringBaselineableMetric that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_baselineable_metric#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciStackMonitoringBaselineableMetric to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_baselineable_metric", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -166,5 +180,19 @@ export class DataOciStackMonitoringBaselineableMetric extends cdktf.TerraformDat
     return {
       baselineable_metric_id: cdktf.stringToTerraform(this._baselineableMetricId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      baselineable_metric_id: {
+        value: cdktf.stringToHclTerraform(this._baselineableMetricId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

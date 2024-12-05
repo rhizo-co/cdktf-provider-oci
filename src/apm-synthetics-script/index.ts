@@ -44,13 +44,13 @@ export interface ApmSyntheticsScriptConfig extends cdktf.TerraformMetaArguments 
   readonly id?: string;
   /**
   * parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_script#parameters ApmSyntheticsScript#parameters}
   */
   readonly parameters?: ApmSyntheticsScriptParameters[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_script#timeouts ApmSyntheticsScript#timeouts}
   */
   readonly timeouts?: ApmSyntheticsScriptTimeouts;
@@ -65,6 +65,17 @@ export function apmSyntheticsScriptMonitorStatusCountMapToTerraform(struct?: Apm
   }
   return {
   }
+}
+
+
+export function apmSyntheticsScriptMonitorStatusCountMapToHclTerraform(struct?: ApmSyntheticsScriptMonitorStatusCountMap): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ApmSyntheticsScriptMonitorStatusCountMapOutputReference extends cdktf.ComplexObject {
@@ -144,6 +155,17 @@ export function apmSyntheticsScriptParametersScriptParameterToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function apmSyntheticsScriptParametersScriptParameterToHclTerraform(struct?: ApmSyntheticsScriptParametersScriptParameter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ApmSyntheticsScriptParametersScriptParameterOutputReference extends cdktf.ComplexObject {
@@ -233,6 +255,37 @@ export function apmSyntheticsScriptParametersToTerraform(struct?: ApmSyntheticsS
     param_name: cdktf.stringToTerraform(struct!.paramName),
     param_value: cdktf.stringToTerraform(struct!.paramValue),
   }
+}
+
+
+export function apmSyntheticsScriptParametersToHclTerraform(struct?: ApmSyntheticsScriptParameters | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_secret: {
+      value: cdktf.booleanToHclTerraform(struct!.isSecret),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    param_name: {
+      value: cdktf.stringToHclTerraform(struct!.paramName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    param_value: {
+      value: cdktf.stringToHclTerraform(struct!.paramValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsScriptParametersOutputReference extends cdktf.ComplexObject {
@@ -394,6 +447,37 @@ export function apmSyntheticsScriptTimeoutsToTerraform(struct?: ApmSyntheticsScr
   }
 }
 
+
+export function apmSyntheticsScriptTimeoutsToHclTerraform(struct?: ApmSyntheticsScriptTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsScriptTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -506,6 +590,20 @@ export class ApmSyntheticsScript extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apm_synthetics_script";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ApmSyntheticsScript resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ApmSyntheticsScript to import
+  * @param importFromId The id of the existing ApmSyntheticsScript that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_script#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ApmSyntheticsScript to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apm_synthetics_script", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -741,5 +839,73 @@ export class ApmSyntheticsScript extends cdktf.TerraformResource {
       parameters: cdktf.listMapper(apmSyntheticsScriptParametersToTerraform, true)(this._parameters.internalValue),
       timeouts: apmSyntheticsScriptTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      apm_domain_id: {
+        value: cdktf.stringToHclTerraform(this._apmDomainId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content: {
+        value: cdktf.stringToHclTerraform(this._content),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content_file_name: {
+        value: cdktf.stringToHclTerraform(this._contentFileName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content_type: {
+        value: cdktf.stringToHclTerraform(this._contentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      parameters: {
+        value: cdktf.listMapperHcl(apmSyntheticsScriptParametersToHclTerraform, true)(this._parameters.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApmSyntheticsScriptParametersList",
+      },
+      timeouts: {
+        value: apmSyntheticsScriptTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ApmSyntheticsScriptTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

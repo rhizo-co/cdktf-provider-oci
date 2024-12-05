@@ -64,43 +64,43 @@ export interface StackMonitoringMonitoredResourceConfig extends cdktf.TerraformM
   readonly type: string;
   /**
   * additional_aliases block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#additional_aliases StackMonitoringMonitoredResource#additional_aliases}
   */
   readonly additionalAliases?: StackMonitoringMonitoredResourceAdditionalAliases[] | cdktf.IResolvable;
   /**
   * additional_credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#additional_credentials StackMonitoringMonitoredResource#additional_credentials}
   */
   readonly additionalCredentials?: StackMonitoringMonitoredResourceAdditionalCredentials[] | cdktf.IResolvable;
   /**
   * aliases block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#aliases StackMonitoringMonitoredResource#aliases}
   */
   readonly aliases?: StackMonitoringMonitoredResourceAliases;
   /**
   * credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#credentials StackMonitoringMonitoredResource#credentials}
   */
   readonly credentials?: StackMonitoringMonitoredResourceCredentials;
   /**
   * database_connection_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#database_connection_details StackMonitoringMonitoredResource#database_connection_details}
   */
   readonly databaseConnectionDetails?: StackMonitoringMonitoredResourceDatabaseConnectionDetails;
   /**
   * properties block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#properties StackMonitoringMonitoredResource#properties}
   */
   readonly properties?: StackMonitoringMonitoredResourceProperties[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#timeouts StackMonitoringMonitoredResource#timeouts}
   */
   readonly timeouts?: StackMonitoringMonitoredResourceTimeouts;
@@ -130,6 +130,37 @@ export function stackMonitoringMonitoredResourceAdditionalAliasesCredentialToTer
     service: cdktf.stringToTerraform(struct!.service),
     source: cdktf.stringToTerraform(struct!.source),
   }
+}
+
+
+export function stackMonitoringMonitoredResourceAdditionalAliasesCredentialToHclTerraform(struct?: StackMonitoringMonitoredResourceAdditionalAliasesCredentialOutputReference | StackMonitoringMonitoredResourceAdditionalAliasesCredential): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source: {
+      value: cdktf.stringToHclTerraform(struct!.source),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMonitoredResourceAdditionalAliasesCredentialOutputReference extends cdktf.ComplexObject {
@@ -226,7 +257,7 @@ export interface StackMonitoringMonitoredResourceAdditionalAliases {
   readonly source: string;
   /**
   * credential block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#credential StackMonitoringMonitoredResource#credential}
   */
   readonly credential: StackMonitoringMonitoredResourceAdditionalAliasesCredential;
@@ -242,6 +273,37 @@ export function stackMonitoringMonitoredResourceAdditionalAliasesToTerraform(str
     source: cdktf.stringToTerraform(struct!.source),
     credential: stackMonitoringMonitoredResourceAdditionalAliasesCredentialToTerraform(struct!.credential),
   }
+}
+
+
+export function stackMonitoringMonitoredResourceAdditionalAliasesToHclTerraform(struct?: StackMonitoringMonitoredResourceAdditionalAliases | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source: {
+      value: cdktf.stringToHclTerraform(struct!.source),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    credential: {
+      value: stackMonitoringMonitoredResourceAdditionalAliasesCredentialToHclTerraform(struct!.credential),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringMonitoredResourceAdditionalAliasesCredentialList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMonitoredResourceAdditionalAliasesOutputReference extends cdktf.ComplexObject {
@@ -381,6 +443,31 @@ export function stackMonitoringMonitoredResourceAdditionalCredentialsPropertiesT
   }
 }
 
+
+export function stackMonitoringMonitoredResourceAdditionalCredentialsPropertiesToHclTerraform(struct?: StackMonitoringMonitoredResourceAdditionalCredentialsProperties | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMonitoredResourceAdditionalCredentialsPropertiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -510,7 +597,7 @@ export interface StackMonitoringMonitoredResourceAdditionalCredentials {
   readonly type?: string;
   /**
   * properties block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#properties StackMonitoringMonitoredResource#properties}
   */
   readonly properties?: StackMonitoringMonitoredResourceAdditionalCredentialsProperties[] | cdktf.IResolvable;
@@ -530,6 +617,61 @@ export function stackMonitoringMonitoredResourceAdditionalCredentialsToTerraform
     type: cdktf.stringToTerraform(struct!.type),
     properties: cdktf.listMapper(stackMonitoringMonitoredResourceAdditionalCredentialsPropertiesToTerraform, true)(struct!.properties),
   }
+}
+
+
+export function stackMonitoringMonitoredResourceAdditionalCredentialsToHclTerraform(struct?: StackMonitoringMonitoredResourceAdditionalCredentials | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credential_type: {
+      value: cdktf.stringToHclTerraform(struct!.credentialType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_id: {
+      value: cdktf.stringToHclTerraform(struct!.keyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source: {
+      value: cdktf.stringToHclTerraform(struct!.source),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    properties: {
+      value: cdktf.listMapperHcl(stackMonitoringMonitoredResourceAdditionalCredentialsPropertiesToHclTerraform, true)(struct!.properties),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringMonitoredResourceAdditionalCredentialsPropertiesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMonitoredResourceAdditionalCredentialsOutputReference extends cdktf.ComplexObject {
@@ -771,6 +913,37 @@ export function stackMonitoringMonitoredResourceAliasesCredentialToTerraform(str
   }
 }
 
+
+export function stackMonitoringMonitoredResourceAliasesCredentialToHclTerraform(struct?: StackMonitoringMonitoredResourceAliasesCredentialOutputReference | StackMonitoringMonitoredResourceAliasesCredential): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source: {
+      value: cdktf.stringToHclTerraform(struct!.source),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMonitoredResourceAliasesCredentialOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -865,7 +1038,7 @@ export interface StackMonitoringMonitoredResourceAliases {
   readonly source: string;
   /**
   * credential block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#credential StackMonitoringMonitoredResource#credential}
   */
   readonly credential: StackMonitoringMonitoredResourceAliasesCredential;
@@ -881,6 +1054,37 @@ export function stackMonitoringMonitoredResourceAliasesToTerraform(struct?: Stac
     source: cdktf.stringToTerraform(struct!.source),
     credential: stackMonitoringMonitoredResourceAliasesCredentialToTerraform(struct!.credential),
   }
+}
+
+
+export function stackMonitoringMonitoredResourceAliasesToHclTerraform(struct?: StackMonitoringMonitoredResourceAliasesOutputReference | StackMonitoringMonitoredResourceAliases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source: {
+      value: cdktf.stringToHclTerraform(struct!.source),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    credential: {
+      value: stackMonitoringMonitoredResourceAliasesCredentialToHclTerraform(struct!.credential),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringMonitoredResourceAliasesCredentialList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMonitoredResourceAliasesOutputReference extends cdktf.ComplexObject {
@@ -986,6 +1190,31 @@ export function stackMonitoringMonitoredResourceCredentialsPropertiesToTerraform
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function stackMonitoringMonitoredResourceCredentialsPropertiesToHclTerraform(struct?: StackMonitoringMonitoredResourceCredentialsProperties | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMonitoredResourceCredentialsPropertiesOutputReference extends cdktf.ComplexObject {
@@ -1117,7 +1346,7 @@ export interface StackMonitoringMonitoredResourceCredentials {
   readonly type?: string;
   /**
   * properties block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#properties StackMonitoringMonitoredResource#properties}
   */
   readonly properties?: StackMonitoringMonitoredResourceCredentialsProperties[] | cdktf.IResolvable;
@@ -1137,6 +1366,61 @@ export function stackMonitoringMonitoredResourceCredentialsToTerraform(struct?: 
     type: cdktf.stringToTerraform(struct!.type),
     properties: cdktf.listMapper(stackMonitoringMonitoredResourceCredentialsPropertiesToTerraform, true)(struct!.properties),
   }
+}
+
+
+export function stackMonitoringMonitoredResourceCredentialsToHclTerraform(struct?: StackMonitoringMonitoredResourceCredentialsOutputReference | StackMonitoringMonitoredResourceCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credential_type: {
+      value: cdktf.stringToHclTerraform(struct!.credentialType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_id: {
+      value: cdktf.stringToHclTerraform(struct!.keyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source: {
+      value: cdktf.stringToHclTerraform(struct!.source),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    properties: {
+      value: cdktf.listMapperHcl(stackMonitoringMonitoredResourceCredentialsPropertiesToHclTerraform, true)(struct!.properties),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringMonitoredResourceCredentialsPropertiesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMonitoredResourceCredentialsOutputReference extends cdktf.ComplexObject {
@@ -1366,6 +1650,61 @@ export function stackMonitoringMonitoredResourceDatabaseConnectionDetailsToTerra
   }
 }
 
+
+export function stackMonitoringMonitoredResourceDatabaseConnectionDetailsToHclTerraform(struct?: StackMonitoringMonitoredResourceDatabaseConnectionDetailsOutputReference | StackMonitoringMonitoredResourceDatabaseConnectionDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    connector_id: {
+      value: cdktf.stringToHclTerraform(struct!.connectorId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    db_id: {
+      value: cdktf.stringToHclTerraform(struct!.dbId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    db_unique_name: {
+      value: cdktf.stringToHclTerraform(struct!.dbUniqueName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service_name: {
+      value: cdktf.stringToHclTerraform(struct!.serviceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ssl_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.sslSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMonitoredResourceDatabaseConnectionDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1559,6 +1898,31 @@ export function stackMonitoringMonitoredResourcePropertiesToTerraform(struct?: S
   }
 }
 
+
+export function stackMonitoringMonitoredResourcePropertiesToHclTerraform(struct?: StackMonitoringMonitoredResourceProperties | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMonitoredResourcePropertiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1688,6 +2052,37 @@ export function stackMonitoringMonitoredResourceTimeoutsToTerraform(struct?: Sta
   }
 }
 
+
+export function stackMonitoringMonitoredResourceTimeoutsToHclTerraform(struct?: StackMonitoringMonitoredResourceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMonitoredResourceTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1800,6 +2195,20 @@ export class StackMonitoringMonitoredResource extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_monitored_resource";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a StackMonitoringMonitoredResource resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the StackMonitoringMonitoredResource to import
+  * @param importFromId The id of the existing StackMonitoringMonitoredResource that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resource#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the StackMonitoringMonitoredResource to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_monitored_resource", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2228,5 +2637,133 @@ export class StackMonitoringMonitoredResource extends cdktf.TerraformResource {
       properties: cdktf.listMapper(stackMonitoringMonitoredResourcePropertiesToTerraform, true)(this._properties.internalValue),
       timeouts: stackMonitoringMonitoredResourceTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_id: {
+        value: cdktf.stringToHclTerraform(this._externalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_resource_id: {
+        value: cdktf.stringToHclTerraform(this._externalResourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      host_name: {
+        value: cdktf.stringToHclTerraform(this._hostName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      license: {
+        value: cdktf.stringToHclTerraform(this._license),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      management_agent_id: {
+        value: cdktf.stringToHclTerraform(this._managementAgentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_time_zone: {
+        value: cdktf.stringToHclTerraform(this._resourceTimeZone),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      additional_aliases: {
+        value: cdktf.listMapperHcl(stackMonitoringMonitoredResourceAdditionalAliasesToHclTerraform, true)(this._additionalAliases.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMonitoredResourceAdditionalAliasesList",
+      },
+      additional_credentials: {
+        value: cdktf.listMapperHcl(stackMonitoringMonitoredResourceAdditionalCredentialsToHclTerraform, true)(this._additionalCredentials.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMonitoredResourceAdditionalCredentialsList",
+      },
+      aliases: {
+        value: stackMonitoringMonitoredResourceAliasesToHclTerraform(this._aliases.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMonitoredResourceAliasesList",
+      },
+      credentials: {
+        value: stackMonitoringMonitoredResourceCredentialsToHclTerraform(this._credentials.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMonitoredResourceCredentialsList",
+      },
+      database_connection_details: {
+        value: stackMonitoringMonitoredResourceDatabaseConnectionDetailsToHclTerraform(this._databaseConnectionDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMonitoredResourceDatabaseConnectionDetailsList",
+      },
+      properties: {
+        value: cdktf.listMapperHcl(stackMonitoringMonitoredResourcePropertiesToHclTerraform, true)(this._properties.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMonitoredResourcePropertiesList",
+      },
+      timeouts: {
+        value: stackMonitoringMonitoredResourceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StackMonitoringMonitoredResourceTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

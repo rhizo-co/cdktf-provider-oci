@@ -40,13 +40,13 @@ export interface CoreImageConfig extends cdktf.TerraformMetaArguments {
   readonly launchMode?: string;
   /**
   * image_source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_image#image_source_details CoreImage#image_source_details}
   */
   readonly imageSourceDetails?: CoreImageImageSourceDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_image#timeouts CoreImage#timeouts}
   */
   readonly timeouts?: CoreImageTimeouts;
@@ -61,6 +61,17 @@ export function coreImageAgentFeaturesToTerraform(struct?: CoreImageAgentFeature
   }
   return {
   }
+}
+
+
+export function coreImageAgentFeaturesToHclTerraform(struct?: CoreImageAgentFeatures): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CoreImageAgentFeaturesOutputReference extends cdktf.ComplexObject {
@@ -130,6 +141,17 @@ export function coreImageLaunchOptionsToTerraform(struct?: CoreImageLaunchOption
   }
   return {
   }
+}
+
+
+export function coreImageLaunchOptionsToHclTerraform(struct?: CoreImageLaunchOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CoreImageLaunchOptionsOutputReference extends cdktf.ComplexObject {
@@ -259,6 +281,67 @@ export function coreImageImageSourceDetailsToTerraform(struct?: CoreImageImageSo
     source_type: cdktf.stringToTerraform(struct!.sourceType),
     source_uri: cdktf.stringToTerraform(struct!.sourceUri),
   }
+}
+
+
+export function coreImageImageSourceDetailsToHclTerraform(struct?: CoreImageImageSourceDetailsOutputReference | CoreImageImageSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket_name: {
+      value: cdktf.stringToHclTerraform(struct!.bucketName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace_name: {
+      value: cdktf.stringToHclTerraform(struct!.namespaceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_name: {
+      value: cdktf.stringToHclTerraform(struct!.objectName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operating_system: {
+      value: cdktf.stringToHclTerraform(struct!.operatingSystem),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operating_system_version: {
+      value: cdktf.stringToHclTerraform(struct!.operatingSystemVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_image_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceImageType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_uri: {
+      value: cdktf.stringToHclTerraform(struct!.sourceUri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreImageImageSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -487,6 +570,37 @@ export function coreImageTimeoutsToTerraform(struct?: CoreImageTimeouts | cdktf.
   }
 }
 
+
+export function coreImageTimeoutsToHclTerraform(struct?: CoreImageTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreImageTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -599,6 +713,20 @@ export class CoreImage extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_image";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreImage resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreImage to import
+  * @param importFromId The id of the existing CoreImage that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_image#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreImage to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_image", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -856,5 +984,67 @@ export class CoreImage extends cdktf.TerraformResource {
       image_source_details: coreImageImageSourceDetailsToTerraform(this._imageSourceDetails.internalValue),
       timeouts: coreImageTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instance_id: {
+        value: cdktf.stringToHclTerraform(this._instanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      launch_mode: {
+        value: cdktf.stringToHclTerraform(this._launchMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      image_source_details: {
+        value: coreImageImageSourceDetailsToHclTerraform(this._imageSourceDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreImageImageSourceDetailsList",
+      },
+      timeouts: {
+        value: coreImageTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreImageTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

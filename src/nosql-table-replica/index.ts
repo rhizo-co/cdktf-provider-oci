@@ -36,7 +36,7 @@ export interface NosqlTableReplicaConfig extends cdktf.TerraformMetaArguments {
   readonly tableNameOrId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/nosql_table_replica#timeouts NosqlTableReplica#timeouts}
   */
   readonly timeouts?: NosqlTableReplicaTimeouts;
@@ -66,6 +66,37 @@ export function nosqlTableReplicaTimeoutsToTerraform(struct?: NosqlTableReplicaT
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function nosqlTableReplicaTimeoutsToHclTerraform(struct?: NosqlTableReplicaTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NosqlTableReplicaTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -180,6 +211,20 @@ export class NosqlTableReplica extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_nosql_table_replica";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NosqlTableReplica resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NosqlTableReplica to import
+  * @param importFromId The id of the existing NosqlTableReplica that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/nosql_table_replica#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NosqlTableReplica to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_nosql_table_replica", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -341,5 +386,55 @@ export class NosqlTableReplica extends cdktf.TerraformResource {
       table_name_or_id: cdktf.stringToTerraform(this._tableNameOrId),
       timeouts: nosqlTableReplicaTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      max_read_units: {
+        value: cdktf.numberToHclTerraform(this._maxReadUnits),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      max_write_units: {
+        value: cdktf.numberToHclTerraform(this._maxWriteUnits),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      region: {
+        value: cdktf.stringToHclTerraform(this._region),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      table_name_or_id: {
+        value: cdktf.stringToHclTerraform(this._tableNameOrId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: nosqlTableReplicaTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NosqlTableReplicaTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

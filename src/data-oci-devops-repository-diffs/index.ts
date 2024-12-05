@@ -36,7 +36,7 @@ export interface DataOciDevopsRepositoryDiffsConfig extends cdktf.TerraformMetaA
   readonly targetVersion: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_repository_diffs#filter DataOciDevopsRepositoryDiffs#filter}
   */
   readonly filter?: DataOciDevopsRepositoryDiffsFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciDevopsRepositoryDiffsDiffCollectionItemsChangesDiffSectio
   }
   return {
   }
+}
+
+
+export function dataOciDevopsRepositoryDiffsDiffCollectionItemsChangesDiffSectionsLinesToHclTerraform(struct?: DataOciDevopsRepositoryDiffsDiffCollectionItemsChangesDiffSectionsLines): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsRepositoryDiffsDiffCollectionItemsChangesDiffSectionsLinesOutputReference extends cdktf.ComplexObject {
@@ -132,6 +143,17 @@ export function dataOciDevopsRepositoryDiffsDiffCollectionItemsChangesDiffSectio
   }
 }
 
+
+export function dataOciDevopsRepositoryDiffsDiffCollectionItemsChangesDiffSectionsToHclTerraform(struct?: DataOciDevopsRepositoryDiffsDiffCollectionItemsChangesDiffSections): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsRepositoryDiffsDiffCollectionItemsChangesDiffSectionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -200,6 +222,17 @@ export function dataOciDevopsRepositoryDiffsDiffCollectionItemsChangesToTerrafor
   }
   return {
   }
+}
+
+
+export function dataOciDevopsRepositoryDiffsDiffCollectionItemsChangesToHclTerraform(struct?: DataOciDevopsRepositoryDiffsDiffCollectionItemsChanges): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsRepositoryDiffsDiffCollectionItemsChangesOutputReference extends cdktf.ComplexObject {
@@ -285,6 +318,17 @@ export function dataOciDevopsRepositoryDiffsDiffCollectionItemsToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciDevopsRepositoryDiffsDiffCollectionItemsToHclTerraform(struct?: DataOciDevopsRepositoryDiffsDiffCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsRepositoryDiffsDiffCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -393,6 +437,17 @@ export function dataOciDevopsRepositoryDiffsDiffCollectionToTerraform(struct?: D
   }
 }
 
+
+export function dataOciDevopsRepositoryDiffsDiffCollectionToHclTerraform(struct?: DataOciDevopsRepositoryDiffsDiffCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsRepositoryDiffsDiffCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -471,6 +526,37 @@ export function dataOciDevopsRepositoryDiffsFilterToTerraform(struct?: DataOciDe
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDevopsRepositoryDiffsFilterToHclTerraform(struct?: DataOciDevopsRepositoryDiffsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDevopsRepositoryDiffsFilterOutputReference extends cdktf.ComplexObject {
@@ -601,6 +687,20 @@ export class DataOciDevopsRepositoryDiffs extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_repository_diffs";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDevopsRepositoryDiffs resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDevopsRepositoryDiffs to import
+  * @param importFromId The id of the existing DataOciDevopsRepositoryDiffs that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_repository_diffs#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDevopsRepositoryDiffs to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_repository_diffs", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -765,5 +865,55 @@ export class DataOciDevopsRepositoryDiffs extends cdktf.TerraformDataSource {
       target_version: cdktf.stringToTerraform(this._targetVersion),
       filter: cdktf.listMapper(dataOciDevopsRepositoryDiffsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      base_version: {
+        value: cdktf.stringToHclTerraform(this._baseVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_comparison_from_merge_base: {
+        value: cdktf.booleanToHclTerraform(this._isComparisonFromMergeBase),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      repository_id: {
+        value: cdktf.stringToHclTerraform(this._repositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_repository_id: {
+        value: cdktf.stringToHclTerraform(this._targetRepositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_version: {
+        value: cdktf.stringToHclTerraform(this._targetVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDevopsRepositoryDiffsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDevopsRepositoryDiffsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

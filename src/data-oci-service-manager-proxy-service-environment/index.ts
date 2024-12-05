@@ -35,6 +35,17 @@ export function dataOciServiceManagerProxyServiceEnvironmentServiceDefinitionToT
   }
 }
 
+
+export function dataOciServiceManagerProxyServiceEnvironmentServiceDefinitionToHclTerraform(struct?: DataOciServiceManagerProxyServiceEnvironmentServiceDefinition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciServiceManagerProxyServiceEnvironmentServiceDefinitionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -109,6 +120,17 @@ export function dataOciServiceManagerProxyServiceEnvironmentServiceEnvironmentEn
   }
 }
 
+
+export function dataOciServiceManagerProxyServiceEnvironmentServiceEnvironmentEndpointsToHclTerraform(struct?: DataOciServiceManagerProxyServiceEnvironmentServiceEnvironmentEndpoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciServiceManagerProxyServiceEnvironmentServiceEnvironmentEndpointsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -181,6 +203,20 @@ export class DataOciServiceManagerProxyServiceEnvironment extends cdktf.Terrafor
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_service_manager_proxy_service_environment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciServiceManagerProxyServiceEnvironment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciServiceManagerProxyServiceEnvironment to import
+  * @param importFromId The id of the existing DataOciServiceManagerProxyServiceEnvironment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/service_manager_proxy_service_environment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciServiceManagerProxyServiceEnvironment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_service_manager_proxy_service_environment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -297,5 +333,31 @@ export class DataOciServiceManagerProxyServiceEnvironment extends cdktf.Terrafor
       id: cdktf.stringToTerraform(this._id),
       service_environment_id: cdktf.stringToTerraform(this._serviceEnvironmentId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      service_environment_id: {
+        value: cdktf.stringToHclTerraform(this._serviceEnvironmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -48,7 +48,7 @@ export interface DataOciMonitoringAlarmSuppressionsConfig extends cdktf.Terrafor
   readonly targetType?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/monitoring_alarm_suppressions#filter DataOciMonitoringAlarmSuppressions#filter}
   */
   readonly filter?: DataOciMonitoringAlarmSuppressionsFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItem
   }
   return {
   }
+}
+
+
+export function dataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItemsAlarmSuppressionTargetToHclTerraform(struct?: DataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItemsAlarmSuppressionTarget): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItemsAlarmSuppressionTargetOutputReference extends cdktf.ComplexObject {
@@ -144,6 +155,17 @@ export function dataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItem
   }
 }
 
+
+export function dataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItemsSuppressionConditionsToHclTerraform(struct?: DataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItemsSuppressionConditions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItemsSuppressionConditionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -216,6 +238,17 @@ export function dataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItem
   }
   return {
   }
+}
+
+
+export function dataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItemsToHclTerraform(struct?: DataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -357,6 +390,17 @@ export function dataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionToTe
   }
 }
 
+
+export function dataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionToHclTerraform(struct?: DataOciMonitoringAlarmSuppressionsAlarmSuppressionCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMonitoringAlarmSuppressionsAlarmSuppressionCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -435,6 +479,37 @@ export function dataOciMonitoringAlarmSuppressionsFilterToTerraform(struct?: Dat
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciMonitoringAlarmSuppressionsFilterToHclTerraform(struct?: DataOciMonitoringAlarmSuppressionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciMonitoringAlarmSuppressionsFilterOutputReference extends cdktf.ComplexObject {
@@ -565,6 +640,20 @@ export class DataOciMonitoringAlarmSuppressions extends cdktf.TerraformDataSourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_monitoring_alarm_suppressions";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMonitoringAlarmSuppressions resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMonitoringAlarmSuppressions to import
+  * @param importFromId The id of the existing DataOciMonitoringAlarmSuppressions that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/monitoring_alarm_suppressions#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMonitoringAlarmSuppressions to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_monitoring_alarm_suppressions", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -792,5 +881,73 @@ export class DataOciMonitoringAlarmSuppressions extends cdktf.TerraformDataSourc
       target_type: cdktf.stringToTerraform(this._targetType),
       filter: cdktf.listMapper(dataOciMonitoringAlarmSuppressionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      alarm_id: {
+        value: cdktf.stringToHclTerraform(this._alarmId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_all_suppressions: {
+        value: cdktf.booleanToHclTerraform(this._isAllSuppressions),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      level: {
+        value: cdktf.stringToHclTerraform(this._level),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_type: {
+        value: cdktf.stringToHclTerraform(this._targetType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciMonitoringAlarmSuppressionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciMonitoringAlarmSuppressionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

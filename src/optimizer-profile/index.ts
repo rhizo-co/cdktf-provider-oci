@@ -40,25 +40,25 @@ export interface OptimizerProfileConfig extends cdktf.TerraformMetaArguments {
   readonly name: string;
   /**
   * levels_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/optimizer_profile#levels_configuration OptimizerProfile#levels_configuration}
   */
   readonly levelsConfiguration: OptimizerProfileLevelsConfiguration;
   /**
   * target_compartments block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/optimizer_profile#target_compartments OptimizerProfile#target_compartments}
   */
   readonly targetCompartments?: OptimizerProfileTargetCompartments;
   /**
   * target_tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/optimizer_profile#target_tags OptimizerProfile#target_tags}
   */
   readonly targetTags?: OptimizerProfileTargetTags;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/optimizer_profile#timeouts OptimizerProfile#timeouts}
   */
   readonly timeouts?: OptimizerProfileTimeouts;
@@ -83,6 +83,31 @@ export function optimizerProfileLevelsConfigurationItemsToTerraform(struct?: Opt
     level: cdktf.stringToTerraform(struct!.level),
     recommendation_id: cdktf.stringToTerraform(struct!.recommendationId),
   }
+}
+
+
+export function optimizerProfileLevelsConfigurationItemsToHclTerraform(struct?: OptimizerProfileLevelsConfigurationItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    level: {
+      value: cdktf.stringToHclTerraform(struct!.level),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    recommendation_id: {
+      value: cdktf.stringToHclTerraform(struct!.recommendationId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OptimizerProfileLevelsConfigurationItemsOutputReference extends cdktf.ComplexObject {
@@ -190,7 +215,7 @@ export class OptimizerProfileLevelsConfigurationItemsList extends cdktf.ComplexL
 export interface OptimizerProfileLevelsConfiguration {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/optimizer_profile#items OptimizerProfile#items}
   */
   readonly items?: OptimizerProfileLevelsConfigurationItems[] | cdktf.IResolvable;
@@ -204,6 +229,25 @@ export function optimizerProfileLevelsConfigurationToTerraform(struct?: Optimize
   return {
     items: cdktf.listMapper(optimizerProfileLevelsConfigurationItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function optimizerProfileLevelsConfigurationToHclTerraform(struct?: OptimizerProfileLevelsConfigurationOutputReference | OptimizerProfileLevelsConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(optimizerProfileLevelsConfigurationItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OptimizerProfileLevelsConfigurationItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OptimizerProfileLevelsConfigurationOutputReference extends cdktf.ComplexObject {
@@ -269,6 +313,25 @@ export function optimizerProfileTargetCompartmentsToTerraform(struct?: Optimizer
   return {
     items: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.items),
   }
+}
+
+
+export function optimizerProfileTargetCompartmentsToHclTerraform(struct?: OptimizerProfileTargetCompartmentsOutputReference | OptimizerProfileTargetCompartments): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.items),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OptimizerProfileTargetCompartmentsOutputReference extends cdktf.ComplexObject {
@@ -346,6 +409,43 @@ export function optimizerProfileTargetTagsItemsToTerraform(struct?: OptimizerPro
     tag_value_type: cdktf.stringToTerraform(struct!.tagValueType),
     tag_values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.tagValues),
   }
+}
+
+
+export function optimizerProfileTargetTagsItemsToHclTerraform(struct?: OptimizerProfileTargetTagsItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    tag_definition_name: {
+      value: cdktf.stringToHclTerraform(struct!.tagDefinitionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tag_namespace_name: {
+      value: cdktf.stringToHclTerraform(struct!.tagNamespaceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tag_value_type: {
+      value: cdktf.stringToHclTerraform(struct!.tagValueType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tag_values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.tagValues),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OptimizerProfileTargetTagsItemsOutputReference extends cdktf.ComplexObject {
@@ -488,7 +588,7 @@ export class OptimizerProfileTargetTagsItemsList extends cdktf.ComplexList {
 export interface OptimizerProfileTargetTags {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/optimizer_profile#items OptimizerProfile#items}
   */
   readonly items: OptimizerProfileTargetTagsItems[] | cdktf.IResolvable;
@@ -502,6 +602,25 @@ export function optimizerProfileTargetTagsToTerraform(struct?: OptimizerProfileT
   return {
     items: cdktf.listMapper(optimizerProfileTargetTagsItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function optimizerProfileTargetTagsToHclTerraform(struct?: OptimizerProfileTargetTagsOutputReference | OptimizerProfileTargetTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(optimizerProfileTargetTagsItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OptimizerProfileTargetTagsItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OptimizerProfileTargetTagsOutputReference extends cdktf.ComplexObject {
@@ -574,6 +693,37 @@ export function optimizerProfileTimeoutsToTerraform(struct?: OptimizerProfileTim
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function optimizerProfileTimeoutsToHclTerraform(struct?: OptimizerProfileTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OptimizerProfileTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -688,6 +838,20 @@ export class OptimizerProfile extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_optimizer_profile";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OptimizerProfile resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OptimizerProfile to import
+  * @param importFromId The id of the existing OptimizerProfile that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/optimizer_profile#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OptimizerProfile to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_optimizer_profile", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -936,5 +1100,79 @@ export class OptimizerProfile extends cdktf.TerraformResource {
       target_tags: optimizerProfileTargetTagsToTerraform(this._targetTags.internalValue),
       timeouts: optimizerProfileTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      aggregation_interval_in_days: {
+        value: cdktf.numberToHclTerraform(this._aggregationIntervalInDays),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      levels_configuration: {
+        value: optimizerProfileLevelsConfigurationToHclTerraform(this._levelsConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OptimizerProfileLevelsConfigurationList",
+      },
+      target_compartments: {
+        value: optimizerProfileTargetCompartmentsToHclTerraform(this._targetCompartments.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OptimizerProfileTargetCompartmentsList",
+      },
+      target_tags: {
+        value: optimizerProfileTargetTagsToHclTerraform(this._targetTags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OptimizerProfileTargetTagsList",
+      },
+      timeouts: {
+        value: optimizerProfileTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OptimizerProfileTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -44,7 +44,7 @@ export interface AnalyticsAnalyticsInstanceVanityUrlConfig extends cdktf.Terrafo
   readonly publicCertificate: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/analytics_analytics_instance_vanity_url#timeouts AnalyticsAnalyticsInstanceVanityUrl#timeouts}
   */
   readonly timeouts?: AnalyticsAnalyticsInstanceVanityUrlTimeouts;
@@ -74,6 +74,37 @@ export function analyticsAnalyticsInstanceVanityUrlTimeoutsToTerraform(struct?: 
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function analyticsAnalyticsInstanceVanityUrlTimeoutsToHclTerraform(struct?: AnalyticsAnalyticsInstanceVanityUrlTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AnalyticsAnalyticsInstanceVanityUrlTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -188,6 +219,20 @@ export class AnalyticsAnalyticsInstanceVanityUrl extends cdktf.TerraformResource
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_analytics_analytics_instance_vanity_url";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a AnalyticsAnalyticsInstanceVanityUrl resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the AnalyticsAnalyticsInstanceVanityUrl to import
+  * @param importFromId The id of the existing AnalyticsAnalyticsInstanceVanityUrl that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/analytics_analytics_instance_vanity_url#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the AnalyticsAnalyticsInstanceVanityUrl to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_analytics_analytics_instance_vanity_url", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -376,5 +421,67 @@ export class AnalyticsAnalyticsInstanceVanityUrl extends cdktf.TerraformResource
       public_certificate: cdktf.stringToTerraform(this._publicCertificate),
       timeouts: analyticsAnalyticsInstanceVanityUrlTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      analytics_instance_id: {
+        value: cdktf.stringToHclTerraform(this._analyticsInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ca_certificate: {
+        value: cdktf.stringToHclTerraform(this._caCertificate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      hosts: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._hosts),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      passphrase: {
+        value: cdktf.stringToHclTerraform(this._passphrase),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      private_key: {
+        value: cdktf.stringToHclTerraform(this._privateKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      public_certificate: {
+        value: cdktf.stringToHclTerraform(this._publicCertificate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: analyticsAnalyticsInstanceVanityUrlTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "AnalyticsAnalyticsInstanceVanityUrlTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -32,7 +32,7 @@ export interface DataOciDisasterRecoveryDrPlanExecutionsConfig extends cdktf.Ter
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/disaster_recovery_dr_plan_executions#filter DataOciDisasterRecoveryDrPlanExecutions#filter}
   */
   readonly filter?: DataOciDisasterRecoveryDrPlanExecutionsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollection
   }
   return {
   }
+}
+
+
+export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsExecutionOptionsToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsExecutionOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsExecutionOptionsOutputReference extends cdktf.ComplexObject {
@@ -123,6 +134,17 @@ export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollection
   }
 }
 
+
+export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsGroupExecutionsStepExecutionsLogLocationToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsGroupExecutionsStepExecutionsLogLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsGroupExecutionsStepExecutionsLogLocationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -195,6 +217,17 @@ export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollection
   }
   return {
   }
+}
+
+
+export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsGroupExecutionsStepExecutionsToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsGroupExecutionsStepExecutions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsGroupExecutionsStepExecutionsOutputReference extends cdktf.ComplexObject {
@@ -307,6 +340,17 @@ export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollection
   }
 }
 
+
+export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsGroupExecutionsToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsGroupExecutions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsGroupExecutionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -412,6 +456,17 @@ export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollection
   }
 }
 
+
+export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsLogLocationToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsLogLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsLogLocationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -484,6 +539,17 @@ export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollection
   }
   return {
   }
+}
+
+
+export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -656,6 +722,17 @@ export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollection
   }
 }
 
+
+export function dataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDisasterRecoveryDrPlanExecutionsDrPlanExecutionCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -734,6 +811,37 @@ export function dataOciDisasterRecoveryDrPlanExecutionsFilterToTerraform(struct?
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDisasterRecoveryDrPlanExecutionsFilterToHclTerraform(struct?: DataOciDisasterRecoveryDrPlanExecutionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDisasterRecoveryDrPlanExecutionsFilterOutputReference extends cdktf.ComplexObject {
@@ -864,6 +972,20 @@ export class DataOciDisasterRecoveryDrPlanExecutions extends cdktf.TerraformData
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_disaster_recovery_dr_plan_executions";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDisasterRecoveryDrPlanExecutions resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDisasterRecoveryDrPlanExecutions to import
+  * @param importFromId The id of the existing DataOciDisasterRecoveryDrPlanExecutions that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/disaster_recovery_dr_plan_executions#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDisasterRecoveryDrPlanExecutions to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_disaster_recovery_dr_plan_executions", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1016,5 +1138,49 @@ export class DataOciDisasterRecoveryDrPlanExecutions extends cdktf.TerraformData
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciDisasterRecoveryDrPlanExecutionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dr_plan_execution_id: {
+        value: cdktf.stringToHclTerraform(this._drPlanExecutionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dr_protection_group_id: {
+        value: cdktf.stringToHclTerraform(this._drProtectionGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDisasterRecoveryDrPlanExecutionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDisasterRecoveryDrPlanExecutionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -28,13 +28,13 @@ export interface BdsBdsInstancePatchActionConfig extends cdktf.TerraformMetaArgu
   readonly version: string;
   /**
   * patching_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_patch_action#patching_config BdsBdsInstancePatchAction#patching_config}
   */
   readonly patchingConfig?: BdsBdsInstancePatchActionPatchingConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_patch_action#timeouts BdsBdsInstancePatchAction#timeouts}
   */
   readonly timeouts?: BdsBdsInstancePatchActionTimeouts;
@@ -69,6 +69,43 @@ export function bdsBdsInstancePatchActionPatchingConfigToTerraform(struct?: BdsB
     wait_time_between_batch_in_seconds: cdktf.numberToTerraform(struct!.waitTimeBetweenBatchInSeconds),
     wait_time_between_domain_in_seconds: cdktf.numberToTerraform(struct!.waitTimeBetweenDomainInSeconds),
   }
+}
+
+
+export function bdsBdsInstancePatchActionPatchingConfigToHclTerraform(struct?: BdsBdsInstancePatchActionPatchingConfigOutputReference | BdsBdsInstancePatchActionPatchingConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    batch_size: {
+      value: cdktf.numberToHclTerraform(struct!.batchSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    patching_config_strategy: {
+      value: cdktf.stringToHclTerraform(struct!.patchingConfigStrategy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    wait_time_between_batch_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.waitTimeBetweenBatchInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    wait_time_between_domain_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.waitTimeBetweenDomainInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstancePatchActionPatchingConfigOutputReference extends cdktf.ComplexObject {
@@ -209,6 +246,37 @@ export function bdsBdsInstancePatchActionTimeoutsToTerraform(struct?: BdsBdsInst
   }
 }
 
+
+export function bdsBdsInstancePatchActionTimeoutsToHclTerraform(struct?: BdsBdsInstancePatchActionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BdsBdsInstancePatchActionTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -321,6 +389,20 @@ export class BdsBdsInstancePatchAction extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_bds_bds_instance_patch_action";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a BdsBdsInstancePatchAction resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the BdsBdsInstancePatchAction to import
+  * @param importFromId The id of the existing BdsBdsInstancePatchAction that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_patch_action#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the BdsBdsInstancePatchAction to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_bds_bds_instance_patch_action", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -461,5 +543,49 @@ export class BdsBdsInstancePatchAction extends cdktf.TerraformResource {
       patching_config: bdsBdsInstancePatchActionPatchingConfigToTerraform(this._patchingConfig.internalValue),
       timeouts: bdsBdsInstancePatchActionTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bds_instance_id: {
+        value: cdktf.stringToHclTerraform(this._bdsInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_admin_password: {
+        value: cdktf.stringToHclTerraform(this._clusterAdminPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      version: {
+        value: cdktf.stringToHclTerraform(this._version),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      patching_config: {
+        value: bdsBdsInstancePatchActionPatchingConfigToHclTerraform(this._patchingConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstancePatchActionPatchingConfigList",
+      },
+      timeouts: {
+        value: bdsBdsInstancePatchActionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "BdsBdsInstancePatchActionTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

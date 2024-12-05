@@ -27,6 +27,20 @@ export class DataOciBdsBdsInstanceResourcePrincipalConfiguration extends cdktf.T
   // =================
   public static readonly tfResourceType = "oci_bds_bds_instance_resource_principal_configuration";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciBdsBdsInstanceResourcePrincipalConfiguration resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciBdsBdsInstanceResourcePrincipalConfiguration to import
+  * @param importFromId The id of the existing DataOciBdsBdsInstanceResourcePrincipalConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/bds_bds_instance_resource_principal_configuration#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciBdsBdsInstanceResourcePrincipalConfiguration to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_bds_bds_instance_resource_principal_configuration", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -147,5 +161,25 @@ export class DataOciBdsBdsInstanceResourcePrincipalConfiguration extends cdktf.T
       bds_instance_id: cdktf.stringToTerraform(this._bdsInstanceId),
       resource_principal_configuration_id: cdktf.stringToTerraform(this._resourcePrincipalConfigurationId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bds_instance_id: {
+        value: cdktf.stringToHclTerraform(this._bdsInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_principal_configuration_id: {
+        value: cdktf.stringToHclTerraform(this._resourcePrincipalConfigurationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

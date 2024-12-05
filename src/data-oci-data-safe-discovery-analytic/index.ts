@@ -47,6 +47,17 @@ export function dataOciDataSafeDiscoveryAnalyticItemsDimensionsToTerraform(struc
   }
 }
 
+
+export function dataOciDataSafeDiscoveryAnalyticItemsDimensionsToHclTerraform(struct?: DataOciDataSafeDiscoveryAnalyticItemsDimensions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeDiscoveryAnalyticItemsDimensionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -114,6 +125,17 @@ export function dataOciDataSafeDiscoveryAnalyticItemsToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeDiscoveryAnalyticItemsToHclTerraform(struct?: DataOciDataSafeDiscoveryAnalyticItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeDiscoveryAnalyticItemsOutputReference extends cdktf.ComplexObject {
@@ -189,6 +211,20 @@ export class DataOciDataSafeDiscoveryAnalytic extends cdktf.TerraformDataSource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_discovery_analytic";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeDiscoveryAnalytic resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeDiscoveryAnalytic to import
+  * @param importFromId The id of the existing DataOciDataSafeDiscoveryAnalytic that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_discovery_analytic#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeDiscoveryAnalytic to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_discovery_analytic", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -341,5 +377,49 @@ export class DataOciDataSafeDiscoveryAnalytic extends cdktf.TerraformDataSource 
       sensitive_data_model_id: cdktf.stringToTerraform(this._sensitiveDataModelId),
       target_id: cdktf.stringToTerraform(this._targetId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      group_by: {
+        value: cdktf.stringToHclTerraform(this._groupBy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sensitive_data_model_id: {
+        value: cdktf.stringToHclTerraform(this._sensitiveDataModelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_id: {
+        value: cdktf.stringToHclTerraform(this._targetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

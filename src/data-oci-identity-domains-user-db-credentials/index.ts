@@ -71,6 +71,17 @@ export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsIdcsCrea
   }
 }
 
+
+export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsIdcsCreatedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -153,6 +164,17 @@ export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsIdcsLast
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
@@ -239,6 +261,17 @@ export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsMetaToTe
   }
 }
 
+
+export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsMetaToHclTerraform(struct?: DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsMetaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -323,6 +356,17 @@ export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsTagsToTe
   }
 }
 
+
+export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsTagsToHclTerraform(struct?: DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -392,6 +436,17 @@ export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsUrnietfp
   }
 }
 
+
+export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsUrnietfparamsscimschemasoracleidcsextensionselfChangeUserToHclTerraform(struct?: DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsUrnietfparamsscimschemasoracleidcsextensionselfChangeUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -454,6 +509,17 @@ export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsUserToTe
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsUserToHclTerraform(struct?: DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsUserOutputReference extends cdktf.ComplexObject {
@@ -538,6 +604,17 @@ export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserDbCredentialsUserDbCredentialsToHclTerraform(struct?: DataOciIdentityDomainsUserDbCredentialsUserDbCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserDbCredentialsUserDbCredentialsOutputReference extends cdktf.ComplexObject {
@@ -753,6 +830,20 @@ export class DataOciIdentityDomainsUserDbCredentials extends cdktf.TerraformData
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_user_db_credentials";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsUserDbCredentials resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsUserDbCredentials to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsUserDbCredentials that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_user_db_credentials#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsUserDbCredentials to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_user_db_credentials", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1028,5 +1119,85 @@ export class DataOciIdentityDomainsUserDbCredentials extends cdktf.TerraformData
       user_db_credential_count: cdktf.numberToTerraform(this._userDbCredentialCount),
       user_db_credential_filter: cdktf.stringToTerraform(this._userDbCredentialFilter),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sort_by: {
+        value: cdktf.stringToHclTerraform(this._sortBy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sort_order: {
+        value: cdktf.stringToHclTerraform(this._sortOrder),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      start_index: {
+        value: cdktf.numberToHclTerraform(this._startIndex),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      user_db_credential_count: {
+        value: cdktf.numberToHclTerraform(this._userDbCredentialCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      user_db_credential_filter: {
+        value: cdktf.stringToHclTerraform(this._userDbCredentialFilter),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

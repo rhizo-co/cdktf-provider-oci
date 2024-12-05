@@ -72,7 +72,7 @@ export interface DataSafeSqlCollectionConfig extends cdktf.TerraformMetaArgument
   readonly targetId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_sql_collection#timeouts DataSafeSqlCollection#timeouts}
   */
   readonly timeouts?: DataSafeSqlCollectionTimeouts;
@@ -102,6 +102,37 @@ export function dataSafeSqlCollectionTimeoutsToTerraform(struct?: DataSafeSqlCol
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function dataSafeSqlCollectionTimeoutsToHclTerraform(struct?: DataSafeSqlCollectionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeSqlCollectionTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -216,6 +247,20 @@ export class DataSafeSqlCollection extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_sql_collection";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeSqlCollection resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeSqlCollection to import
+  * @param importFromId The id of the existing DataSafeSqlCollection that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_sql_collection#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeSqlCollection to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_sql_collection", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -572,5 +617,109 @@ export class DataSafeSqlCollection extends cdktf.TerraformResource {
       target_id: cdktf.stringToTerraform(this._targetId),
       timeouts: dataSafeSqlCollectionTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_user_name: {
+        value: cdktf.stringToHclTerraform(this._dbUserName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      generate_sql_firewall_policy_trigger: {
+        value: cdktf.booleanToHclTerraform(this._generateSqlFirewallPolicyTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      purge_logs_trigger: {
+        value: cdktf.booleanToHclTerraform(this._purgeLogsTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      refresh_log_insights_trigger: {
+        value: cdktf.booleanToHclTerraform(this._refreshLogInsightsTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      sql_level: {
+        value: cdktf.stringToHclTerraform(this._sqlLevel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      start_trigger: {
+        value: cdktf.booleanToHclTerraform(this._startTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      stop_trigger: {
+        value: cdktf.booleanToHclTerraform(this._stopTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      target_id: {
+        value: cdktf.stringToHclTerraform(this._targetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: dataSafeSqlCollectionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeSqlCollectionTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

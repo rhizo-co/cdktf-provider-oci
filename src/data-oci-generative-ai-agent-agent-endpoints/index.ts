@@ -32,7 +32,7 @@ export interface DataOciGenerativeAiAgentAgentEndpointsConfig extends cdktf.Terr
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/generative_ai_agent_agent_endpoints#filter DataOciGenerativeAiAgentAgentEndpoints#filter}
   */
   readonly filter?: DataOciGenerativeAiAgentAgentEndpointsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionIte
   }
   return {
   }
+}
+
+
+export function dataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionItemsContentModerationConfigToHclTerraform(struct?: DataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionItemsContentModerationConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionItemsContentModerationConfigOutputReference extends cdktf.ComplexObject {
@@ -118,6 +129,17 @@ export function dataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionIte
   }
 }
 
+
+export function dataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionItemsSessionConfigToHclTerraform(struct?: DataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionItemsSessionConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionItemsSessionConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -180,6 +202,17 @@ export function dataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionIte
   }
   return {
   }
+}
+
+
+export function dataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionItemsToHclTerraform(struct?: DataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -331,6 +364,17 @@ export function dataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionToT
   }
 }
 
+
+export function dataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionToHclTerraform(struct?: DataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGenerativeAiAgentAgentEndpointsAgentEndpointCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -409,6 +453,37 @@ export function dataOciGenerativeAiAgentAgentEndpointsFilterToTerraform(struct?:
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciGenerativeAiAgentAgentEndpointsFilterToHclTerraform(struct?: DataOciGenerativeAiAgentAgentEndpointsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciGenerativeAiAgentAgentEndpointsFilterOutputReference extends cdktf.ComplexObject {
@@ -539,6 +614,20 @@ export class DataOciGenerativeAiAgentAgentEndpoints extends cdktf.TerraformDataS
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_generative_ai_agent_agent_endpoints";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGenerativeAiAgentAgentEndpoints resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGenerativeAiAgentAgentEndpoints to import
+  * @param importFromId The id of the existing DataOciGenerativeAiAgentAgentEndpoints that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/generative_ai_agent_agent_endpoints#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGenerativeAiAgentAgentEndpoints to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_generative_ai_agent_agent_endpoints", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -694,5 +783,49 @@ export class DataOciGenerativeAiAgentAgentEndpoints extends cdktf.TerraformDataS
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciGenerativeAiAgentAgentEndpointsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      agent_id: {
+        value: cdktf.stringToHclTerraform(this._agentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciGenerativeAiAgentAgentEndpointsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciGenerativeAiAgentAgentEndpointsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -32,13 +32,13 @@ export interface ApigatewayUsagePlanConfig extends cdktf.TerraformMetaArguments 
   readonly id?: string;
   /**
   * entitlements block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_usage_plan#entitlements ApigatewayUsagePlan#entitlements}
   */
   readonly entitlements: ApigatewayUsagePlanEntitlements[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_usage_plan#timeouts ApigatewayUsagePlan#timeouts}
   */
   readonly timeouts?: ApigatewayUsagePlanTimeouts;
@@ -73,6 +73,43 @@ export function apigatewayUsagePlanEntitlementsQuotaToTerraform(struct?: Apigate
     unit: cdktf.stringToTerraform(struct!.unit),
     value: cdktf.numberToTerraform(struct!.value),
   }
+}
+
+
+export function apigatewayUsagePlanEntitlementsQuotaToHclTerraform(struct?: ApigatewayUsagePlanEntitlementsQuotaOutputReference | ApigatewayUsagePlanEntitlementsQuota): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    operation_on_breach: {
+      value: cdktf.stringToHclTerraform(struct!.operationOnBreach),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    reset_policy: {
+      value: cdktf.stringToHclTerraform(struct!.resetPolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    unit: {
+      value: cdktf.stringToHclTerraform(struct!.unit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.numberToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayUsagePlanEntitlementsQuotaOutputReference extends cdktf.ComplexObject {
@@ -199,6 +236,31 @@ export function apigatewayUsagePlanEntitlementsRateLimitToTerraform(struct?: Api
   }
 }
 
+
+export function apigatewayUsagePlanEntitlementsRateLimitToHclTerraform(struct?: ApigatewayUsagePlanEntitlementsRateLimitOutputReference | ApigatewayUsagePlanEntitlementsRateLimit): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    unit: {
+      value: cdktf.stringToHclTerraform(struct!.unit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.numberToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayUsagePlanEntitlementsRateLimitOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -278,6 +340,25 @@ export function apigatewayUsagePlanEntitlementsTargetsToTerraform(struct?: Apiga
   return {
     deployment_id: cdktf.stringToTerraform(struct!.deploymentId),
   }
+}
+
+
+export function apigatewayUsagePlanEntitlementsTargetsToHclTerraform(struct?: ApigatewayUsagePlanEntitlementsTargets | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    deployment_id: {
+      value: cdktf.stringToHclTerraform(struct!.deploymentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayUsagePlanEntitlementsTargetsOutputReference extends cdktf.ComplexObject {
@@ -368,19 +449,19 @@ export interface ApigatewayUsagePlanEntitlements {
   readonly name: string;
   /**
   * quota block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_usage_plan#quota ApigatewayUsagePlan#quota}
   */
   readonly quota?: ApigatewayUsagePlanEntitlementsQuota;
   /**
   * rate_limit block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_usage_plan#rate_limit ApigatewayUsagePlan#rate_limit}
   */
   readonly rateLimit?: ApigatewayUsagePlanEntitlementsRateLimit;
   /**
   * targets block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_usage_plan#targets ApigatewayUsagePlan#targets}
   */
   readonly targets?: ApigatewayUsagePlanEntitlementsTargets[] | cdktf.IResolvable;
@@ -398,6 +479,49 @@ export function apigatewayUsagePlanEntitlementsToTerraform(struct?: ApigatewayUs
     rate_limit: apigatewayUsagePlanEntitlementsRateLimitToTerraform(struct!.rateLimit),
     targets: cdktf.listMapper(apigatewayUsagePlanEntitlementsTargetsToTerraform, true)(struct!.targets),
   }
+}
+
+
+export function apigatewayUsagePlanEntitlementsToHclTerraform(struct?: ApigatewayUsagePlanEntitlements | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    quota: {
+      value: apigatewayUsagePlanEntitlementsQuotaToHclTerraform(struct!.quota),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayUsagePlanEntitlementsQuotaList",
+    },
+    rate_limit: {
+      value: apigatewayUsagePlanEntitlementsRateLimitToHclTerraform(struct!.rateLimit),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayUsagePlanEntitlementsRateLimitList",
+    },
+    targets: {
+      value: cdktf.listMapperHcl(apigatewayUsagePlanEntitlementsTargetsToHclTerraform, true)(struct!.targets),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayUsagePlanEntitlementsTargetsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayUsagePlanEntitlementsOutputReference extends cdktf.ComplexObject {
@@ -592,6 +716,37 @@ export function apigatewayUsagePlanTimeoutsToTerraform(struct?: ApigatewayUsageP
   }
 }
 
+
+export function apigatewayUsagePlanTimeoutsToHclTerraform(struct?: ApigatewayUsagePlanTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayUsagePlanTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -704,6 +859,20 @@ export class ApigatewayUsagePlan extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apigateway_usage_plan";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ApigatewayUsagePlan resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ApigatewayUsagePlan to import
+  * @param importFromId The id of the existing ApigatewayUsagePlan that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_usage_plan#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ApigatewayUsagePlan to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apigateway_usage_plan", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -885,5 +1054,55 @@ export class ApigatewayUsagePlan extends cdktf.TerraformResource {
       entitlements: cdktf.listMapper(apigatewayUsagePlanEntitlementsToTerraform, true)(this._entitlements.internalValue),
       timeouts: apigatewayUsagePlanTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      entitlements: {
+        value: cdktf.listMapperHcl(apigatewayUsagePlanEntitlementsToHclTerraform, true)(this._entitlements.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApigatewayUsagePlanEntitlementsList",
+      },
+      timeouts: {
+        value: apigatewayUsagePlanTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ApigatewayUsagePlanTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

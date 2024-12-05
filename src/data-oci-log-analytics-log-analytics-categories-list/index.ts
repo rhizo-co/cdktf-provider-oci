@@ -43,6 +43,17 @@ export function dataOciLogAnalyticsLogAnalyticsCategoriesListItemsToTerraform(st
   }
 }
 
+
+export function dataOciLogAnalyticsLogAnalyticsCategoriesListItemsToHclTerraform(struct?: DataOciLogAnalyticsLogAnalyticsCategoriesListItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciLogAnalyticsLogAnalyticsCategoriesListItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -125,6 +136,20 @@ export class DataOciLogAnalyticsLogAnalyticsCategoriesList extends cdktf.Terrafo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_log_analytics_log_analytics_categories_list";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLogAnalyticsLogAnalyticsCategoriesList resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLogAnalyticsLogAnalyticsCategoriesList to import
+  * @param importFromId The id of the existing DataOciLogAnalyticsLogAnalyticsCategoriesList that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/log_analytics_log_analytics_categories_list#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLogAnalyticsLogAnalyticsCategoriesList to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_log_analytics_categories_list", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -259,5 +284,43 @@ export class DataOciLogAnalyticsLogAnalyticsCategoriesList extends cdktf.Terrafo
       name: cdktf.stringToTerraform(this._name),
       namespace: cdktf.stringToTerraform(this._namespace),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      category_display_text: {
+        value: cdktf.stringToHclTerraform(this._categoryDisplayText),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      category_type: {
+        value: cdktf.stringToHclTerraform(this._categoryType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

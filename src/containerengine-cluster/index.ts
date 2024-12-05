@@ -48,31 +48,31 @@ export interface ContainerengineClusterConfig extends cdktf.TerraformMetaArgumen
   readonly vcnId: string;
   /**
   * cluster_pod_network_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#cluster_pod_network_options ContainerengineCluster#cluster_pod_network_options}
   */
   readonly clusterPodNetworkOptions?: ContainerengineClusterClusterPodNetworkOptions[] | cdktf.IResolvable;
   /**
   * endpoint_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#endpoint_config ContainerengineCluster#endpoint_config}
   */
   readonly endpointConfig?: ContainerengineClusterEndpointConfig;
   /**
   * image_policy_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#image_policy_config ContainerengineCluster#image_policy_config}
   */
   readonly imagePolicyConfig?: ContainerengineClusterImagePolicyConfig;
   /**
   * options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#options ContainerengineCluster#options}
   */
   readonly options?: ContainerengineClusterOptions;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#timeouts ContainerengineCluster#timeouts}
   */
   readonly timeouts?: ContainerengineClusterTimeouts;
@@ -87,6 +87,17 @@ export function containerengineClusterEndpointsToTerraform(struct?: Containereng
   }
   return {
   }
+}
+
+
+export function containerengineClusterEndpointsToHclTerraform(struct?: ContainerengineClusterEndpoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ContainerengineClusterEndpointsOutputReference extends cdktf.ComplexObject {
@@ -166,6 +177,17 @@ export function containerengineClusterMetadataToTerraform(struct?: Containerengi
   }
   return {
   }
+}
+
+
+export function containerengineClusterMetadataToHclTerraform(struct?: ContainerengineClusterMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ContainerengineClusterMetadataOutputReference extends cdktf.ComplexObject {
@@ -282,6 +304,25 @@ export function containerengineClusterClusterPodNetworkOptionsToTerraform(struct
   }
 }
 
+
+export function containerengineClusterClusterPodNetworkOptionsToHclTerraform(struct?: ContainerengineClusterClusterPodNetworkOptions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cni_type: {
+      value: cdktf.stringToHclTerraform(struct!.cniType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerengineClusterClusterPodNetworkOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -384,6 +425,37 @@ export function containerengineClusterEndpointConfigToTerraform(struct?: Contain
     nsg_ids: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.nsgIds),
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
   }
+}
+
+
+export function containerengineClusterEndpointConfigToHclTerraform(struct?: ContainerengineClusterEndpointConfigOutputReference | ContainerengineClusterEndpointConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_public_ip_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPublicIpEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerengineClusterEndpointConfigOutputReference extends cdktf.ComplexObject {
@@ -492,6 +564,25 @@ export function containerengineClusterImagePolicyConfigKeyDetailsToTerraform(str
   }
 }
 
+
+export function containerengineClusterImagePolicyConfigKeyDetailsToHclTerraform(struct?: ContainerengineClusterImagePolicyConfigKeyDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerengineClusterImagePolicyConfigKeyDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -579,7 +670,7 @@ export interface ContainerengineClusterImagePolicyConfig {
   readonly isPolicyEnabled?: boolean | cdktf.IResolvable;
   /**
   * key_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#key_details ContainerengineCluster#key_details}
   */
   readonly keyDetails?: ContainerengineClusterImagePolicyConfigKeyDetails[] | cdktf.IResolvable;
@@ -594,6 +685,31 @@ export function containerengineClusterImagePolicyConfigToTerraform(struct?: Cont
     is_policy_enabled: cdktf.booleanToTerraform(struct!.isPolicyEnabled),
     key_details: cdktf.listMapper(containerengineClusterImagePolicyConfigKeyDetailsToTerraform, true)(struct!.keyDetails),
   }
+}
+
+
+export function containerengineClusterImagePolicyConfigToHclTerraform(struct?: ContainerengineClusterImagePolicyConfigOutputReference | ContainerengineClusterImagePolicyConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_policy_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPolicyEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key_details: {
+      value: cdktf.listMapperHcl(containerengineClusterImagePolicyConfigKeyDetailsToHclTerraform, true)(struct!.keyDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerengineClusterImagePolicyConfigKeyDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerengineClusterImagePolicyConfigOutputReference extends cdktf.ComplexObject {
@@ -688,6 +804,31 @@ export function containerengineClusterOptionsAddOnsToTerraform(struct?: Containe
   }
 }
 
+
+export function containerengineClusterOptionsAddOnsToHclTerraform(struct?: ContainerengineClusterOptionsAddOnsOutputReference | ContainerengineClusterOptionsAddOns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_kubernetes_dashboard_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isKubernetesDashboardEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_tiller_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isTillerEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerengineClusterOptionsAddOnsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -775,6 +916,25 @@ export function containerengineClusterOptionsAdmissionControllerOptionsToTerrafo
   }
 }
 
+
+export function containerengineClusterOptionsAdmissionControllerOptionsToHclTerraform(struct?: ContainerengineClusterOptionsAdmissionControllerOptionsOutputReference | ContainerengineClusterOptionsAdmissionControllerOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_pod_security_policy_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPodSecurityPolicyEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerengineClusterOptionsAdmissionControllerOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -843,6 +1003,31 @@ export function containerengineClusterOptionsKubernetesNetworkConfigToTerraform(
     pods_cidr: cdktf.stringToTerraform(struct!.podsCidr),
     services_cidr: cdktf.stringToTerraform(struct!.servicesCidr),
   }
+}
+
+
+export function containerengineClusterOptionsKubernetesNetworkConfigToHclTerraform(struct?: ContainerengineClusterOptionsKubernetesNetworkConfigOutputReference | ContainerengineClusterOptionsKubernetesNetworkConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    pods_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.podsCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    services_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.servicesCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerengineClusterOptionsKubernetesNetworkConfigOutputReference extends cdktf.ComplexObject {
@@ -932,6 +1117,25 @@ export function containerengineClusterOptionsOpenIdConnectDiscoveryToTerraform(s
   }
 }
 
+
+export function containerengineClusterOptionsOpenIdConnectDiscoveryToHclTerraform(struct?: ContainerengineClusterOptionsOpenIdConnectDiscoveryOutputReference | ContainerengineClusterOptionsOpenIdConnectDiscovery): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_open_id_connect_discovery_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isOpenIdConnectDiscoveryEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerengineClusterOptionsOpenIdConnectDiscoveryOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1000,6 +1204,31 @@ export function containerengineClusterOptionsOpenIdConnectTokenAuthenticationCon
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function containerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsToHclTerraform(struct?: ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaims | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsOutputReference extends cdktf.ComplexObject {
@@ -1143,7 +1372,7 @@ export interface ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationCo
   readonly usernamePrefix?: string;
   /**
   * required_claims block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#required_claims ContainerengineCluster#required_claims}
   */
   readonly requiredClaims?: ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaims[] | cdktf.IResolvable;
@@ -1166,6 +1395,79 @@ export function containerengineClusterOptionsOpenIdConnectTokenAuthenticationCon
     username_prefix: cdktf.stringToTerraform(struct!.usernamePrefix),
     required_claims: cdktf.listMapper(containerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsToTerraform, true)(struct!.requiredClaims),
   }
+}
+
+
+export function containerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigToHclTerraform(struct?: ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigOutputReference | ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ca_certificate: {
+      value: cdktf.stringToHclTerraform(struct!.caCertificate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    groups_claim: {
+      value: cdktf.stringToHclTerraform(struct!.groupsClaim),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    groups_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.groupsPrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_open_id_connect_auth_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isOpenIdConnectAuthEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    issuer_url: {
+      value: cdktf.stringToHclTerraform(struct!.issuerUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    signing_algorithms: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.signingAlgorithms),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    username_claim: {
+      value: cdktf.stringToHclTerraform(struct!.usernameClaim),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.usernamePrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    required_claims: {
+      value: cdktf.listMapperHcl(containerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsToHclTerraform, true)(struct!.requiredClaims),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigRequiredClaimsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigOutputReference extends cdktf.ComplexObject {
@@ -1433,6 +1735,31 @@ export function containerengineClusterOptionsPersistentVolumeConfigToTerraform(s
   }
 }
 
+
+export function containerengineClusterOptionsPersistentVolumeConfigToHclTerraform(struct?: ContainerengineClusterOptionsPersistentVolumeConfigOutputReference | ContainerengineClusterOptionsPersistentVolumeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerengineClusterOptionsPersistentVolumeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1525,6 +1852,31 @@ export function containerengineClusterOptionsServiceLbConfigToTerraform(struct?:
   }
 }
 
+
+export function containerengineClusterOptionsServiceLbConfigToHclTerraform(struct?: ContainerengineClusterOptionsServiceLbConfigOutputReference | ContainerengineClusterOptionsServiceLbConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerengineClusterOptionsServiceLbConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1602,43 +1954,43 @@ export interface ContainerengineClusterOptions {
   readonly serviceLbSubnetIds?: string[];
   /**
   * add_ons block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#add_ons ContainerengineCluster#add_ons}
   */
   readonly addOns?: ContainerengineClusterOptionsAddOns;
   /**
   * admission_controller_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#admission_controller_options ContainerengineCluster#admission_controller_options}
   */
   readonly admissionControllerOptions?: ContainerengineClusterOptionsAdmissionControllerOptions;
   /**
   * kubernetes_network_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#kubernetes_network_config ContainerengineCluster#kubernetes_network_config}
   */
   readonly kubernetesNetworkConfig?: ContainerengineClusterOptionsKubernetesNetworkConfig;
   /**
   * open_id_connect_discovery block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#open_id_connect_discovery ContainerengineCluster#open_id_connect_discovery}
   */
   readonly openIdConnectDiscovery?: ContainerengineClusterOptionsOpenIdConnectDiscovery;
   /**
   * open_id_connect_token_authentication_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#open_id_connect_token_authentication_config ContainerengineCluster#open_id_connect_token_authentication_config}
   */
   readonly openIdConnectTokenAuthenticationConfig?: ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationConfig;
   /**
   * persistent_volume_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#persistent_volume_config ContainerengineCluster#persistent_volume_config}
   */
   readonly persistentVolumeConfig?: ContainerengineClusterOptionsPersistentVolumeConfig;
   /**
   * service_lb_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#service_lb_config ContainerengineCluster#service_lb_config}
   */
   readonly serviceLbConfig?: ContainerengineClusterOptionsServiceLbConfig;
@@ -1659,6 +2011,67 @@ export function containerengineClusterOptionsToTerraform(struct?: Containerengin
     persistent_volume_config: containerengineClusterOptionsPersistentVolumeConfigToTerraform(struct!.persistentVolumeConfig),
     service_lb_config: containerengineClusterOptionsServiceLbConfigToTerraform(struct!.serviceLbConfig),
   }
+}
+
+
+export function containerengineClusterOptionsToHclTerraform(struct?: ContainerengineClusterOptionsOutputReference | ContainerengineClusterOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    service_lb_subnet_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.serviceLbSubnetIds),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    add_ons: {
+      value: containerengineClusterOptionsAddOnsToHclTerraform(struct!.addOns),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerengineClusterOptionsAddOnsList",
+    },
+    admission_controller_options: {
+      value: containerengineClusterOptionsAdmissionControllerOptionsToHclTerraform(struct!.admissionControllerOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerengineClusterOptionsAdmissionControllerOptionsList",
+    },
+    kubernetes_network_config: {
+      value: containerengineClusterOptionsKubernetesNetworkConfigToHclTerraform(struct!.kubernetesNetworkConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerengineClusterOptionsKubernetesNetworkConfigList",
+    },
+    open_id_connect_discovery: {
+      value: containerengineClusterOptionsOpenIdConnectDiscoveryToHclTerraform(struct!.openIdConnectDiscovery),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerengineClusterOptionsOpenIdConnectDiscoveryList",
+    },
+    open_id_connect_token_authentication_config: {
+      value: containerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigToHclTerraform(struct!.openIdConnectTokenAuthenticationConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerengineClusterOptionsOpenIdConnectTokenAuthenticationConfigList",
+    },
+    persistent_volume_config: {
+      value: containerengineClusterOptionsPersistentVolumeConfigToHclTerraform(struct!.persistentVolumeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerengineClusterOptionsPersistentVolumeConfigList",
+    },
+    service_lb_config: {
+      value: containerengineClusterOptionsServiceLbConfigToHclTerraform(struct!.serviceLbConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerengineClusterOptionsServiceLbConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerengineClusterOptionsOutputReference extends cdktf.ComplexObject {
@@ -1890,6 +2303,37 @@ export function containerengineClusterTimeoutsToTerraform(struct?: Containerengi
   }
 }
 
+
+export function containerengineClusterTimeoutsToHclTerraform(struct?: ContainerengineClusterTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerengineClusterTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2002,6 +2446,20 @@ export class ContainerengineCluster extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_containerengine_cluster";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ContainerengineCluster resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ContainerengineCluster to import
+  * @param importFromId The id of the existing ContainerengineCluster that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ContainerengineCluster to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_containerengine_cluster", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2315,5 +2773,97 @@ export class ContainerengineCluster extends cdktf.TerraformResource {
       options: containerengineClusterOptionsToTerraform(this._options.internalValue),
       timeouts: containerengineClusterTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kms_key_id: {
+        value: cdktf.stringToHclTerraform(this._kmsKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kubernetes_version: {
+        value: cdktf.stringToHclTerraform(this._kubernetesVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcn_id: {
+        value: cdktf.stringToHclTerraform(this._vcnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_pod_network_options: {
+        value: cdktf.listMapperHcl(containerengineClusterClusterPodNetworkOptionsToHclTerraform, true)(this._clusterPodNetworkOptions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerengineClusterClusterPodNetworkOptionsList",
+      },
+      endpoint_config: {
+        value: containerengineClusterEndpointConfigToHclTerraform(this._endpointConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerengineClusterEndpointConfigList",
+      },
+      image_policy_config: {
+        value: containerengineClusterImagePolicyConfigToHclTerraform(this._imagePolicyConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerengineClusterImagePolicyConfigList",
+      },
+      options: {
+        value: containerengineClusterOptionsToHclTerraform(this._options.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerengineClusterOptionsList",
+      },
+      timeouts: {
+        value: containerengineClusterTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ContainerengineClusterTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

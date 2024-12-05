@@ -40,13 +40,13 @@ export interface DnsRrsetConfig extends cdktf.TerraformMetaArguments {
   readonly zoneNameOrId: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_rrset#items DnsRrset#items}
   */
   readonly items?: DnsRrsetItems[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_rrset#timeouts DnsRrset#timeouts}
   */
   readonly timeouts?: DnsRrsetTimeouts;
@@ -81,6 +81,43 @@ export function dnsRrsetItemsToTerraform(struct?: DnsRrsetItems | cdktf.IResolva
     rtype: cdktf.stringToTerraform(struct!.rtype),
     ttl: cdktf.numberToTerraform(struct!.ttl),
   }
+}
+
+
+export function dnsRrsetItemsToHclTerraform(struct?: DnsRrsetItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    domain: {
+      value: cdktf.stringToHclTerraform(struct!.domain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rdata: {
+      value: cdktf.stringToHclTerraform(struct!.rdata),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rtype: {
+      value: cdktf.stringToHclTerraform(struct!.rtype),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ttl: {
+      value: cdktf.numberToHclTerraform(struct!.ttl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DnsRrsetItemsOutputReference extends cdktf.ComplexObject {
@@ -259,6 +296,37 @@ export function dnsRrsetTimeoutsToTerraform(struct?: DnsRrsetTimeouts | cdktf.IR
   }
 }
 
+
+export function dnsRrsetTimeoutsToHclTerraform(struct?: DnsRrsetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DnsRrsetTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -371,6 +439,20 @@ export class DnsRrset extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dns_rrset";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DnsRrset resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DnsRrset to import
+  * @param importFromId The id of the existing DnsRrset that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_rrset#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DnsRrset to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dns_rrset", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -565,5 +647,67 @@ export class DnsRrset extends cdktf.TerraformResource {
       items: cdktf.listMapper(dnsRrsetItemsToTerraform, true)(this._items.internalValue),
       timeouts: dnsRrsetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      domain: {
+        value: cdktf.stringToHclTerraform(this._domain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      rtype: {
+        value: cdktf.stringToHclTerraform(this._rtype),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scope: {
+        value: cdktf.stringToHclTerraform(this._scope),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      view_id: {
+        value: cdktf.stringToHclTerraform(this._viewId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      zone_name_or_id: {
+        value: cdktf.stringToHclTerraform(this._zoneNameOrId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      items: {
+        value: cdktf.listMapperHcl(dnsRrsetItemsToHclTerraform, true)(this._items.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DnsRrsetItemsList",
+      },
+      timeouts: {
+        value: dnsRrsetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DnsRrsetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

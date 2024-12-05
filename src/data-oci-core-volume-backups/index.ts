@@ -36,7 +36,7 @@ export interface DataOciCoreVolumeBackupsConfig extends cdktf.TerraformMetaArgum
   readonly volumeId?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_volume_backups#filter DataOciCoreVolumeBackups#filter}
   */
   readonly filter?: DataOciCoreVolumeBackupsFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciCoreVolumeBackupsVolumeBackupsSourceDetailsToTerraform(st
   }
   return {
   }
+}
+
+
+export function dataOciCoreVolumeBackupsVolumeBackupsSourceDetailsToHclTerraform(struct?: DataOciCoreVolumeBackupsVolumeBackupsSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreVolumeBackupsVolumeBackupsSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -125,6 +136,17 @@ export function dataOciCoreVolumeBackupsVolumeBackupsToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciCoreVolumeBackupsVolumeBackupsToHclTerraform(struct?: DataOciCoreVolumeBackupsVolumeBackups): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreVolumeBackupsVolumeBackupsOutputReference extends cdktf.ComplexObject {
@@ -305,6 +327,37 @@ export function dataOciCoreVolumeBackupsFilterToTerraform(struct?: DataOciCoreVo
   }
 }
 
+
+export function dataOciCoreVolumeBackupsFilterToHclTerraform(struct?: DataOciCoreVolumeBackupsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciCoreVolumeBackupsFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -433,6 +486,20 @@ export class DataOciCoreVolumeBackups extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_volume_backups";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreVolumeBackups resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreVolumeBackups to import
+  * @param importFromId The id of the existing DataOciCoreVolumeBackups that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_volume_backups#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreVolumeBackups to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_volume_backups", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -603,5 +670,55 @@ export class DataOciCoreVolumeBackups extends cdktf.TerraformDataSource {
       volume_id: cdktf.stringToTerraform(this._volumeId),
       filter: cdktf.listMapper(dataOciCoreVolumeBackupsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_volume_backup_id: {
+        value: cdktf.stringToHclTerraform(this._sourceVolumeBackupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      volume_id: {
+        value: cdktf.stringToHclTerraform(this._volumeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCoreVolumeBackupsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCoreVolumeBackupsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -60,19 +60,19 @@ export interface ResourceSchedulerScheduleConfig extends cdktf.TerraformMetaArgu
   readonly timeStarts?: string;
   /**
   * resource_filters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/resource_scheduler_schedule#resource_filters ResourceSchedulerSchedule#resource_filters}
   */
   readonly resourceFilters?: ResourceSchedulerScheduleResourceFilters[] | cdktf.IResolvable;
   /**
   * resources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/resource_scheduler_schedule#resources ResourceSchedulerSchedule#resources}
   */
   readonly resources?: ResourceSchedulerScheduleResources[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/resource_scheduler_schedule#timeouts ResourceSchedulerSchedule#timeouts}
   */
   readonly timeouts?: ResourceSchedulerScheduleTimeouts;
@@ -102,6 +102,37 @@ export function resourceSchedulerScheduleResourceFiltersValueToTerraform(struct?
     tag_key: cdktf.stringToTerraform(struct!.tagKey),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function resourceSchedulerScheduleResourceFiltersValueToHclTerraform(struct?: ResourceSchedulerScheduleResourceFiltersValue | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tag_key: {
+      value: cdktf.stringToHclTerraform(struct!.tagKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ResourceSchedulerScheduleResourceFiltersValueOutputReference extends cdktf.ComplexObject {
@@ -243,7 +274,7 @@ export interface ResourceSchedulerScheduleResourceFilters {
   readonly shouldIncludeChildCompartments?: boolean | cdktf.IResolvable;
   /**
   * value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/resource_scheduler_schedule#value ResourceSchedulerSchedule#value}
   */
   readonly value?: ResourceSchedulerScheduleResourceFiltersValue[] | cdktf.IResolvable;
@@ -260,6 +291,43 @@ export function resourceSchedulerScheduleResourceFiltersToTerraform(struct?: Res
     should_include_child_compartments: cdktf.booleanToTerraform(struct!.shouldIncludeChildCompartments),
     value: cdktf.listMapper(resourceSchedulerScheduleResourceFiltersValueToTerraform, true)(struct!.value),
   }
+}
+
+
+export function resourceSchedulerScheduleResourceFiltersToHclTerraform(struct?: ResourceSchedulerScheduleResourceFilters | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    attribute: {
+      value: cdktf.stringToHclTerraform(struct!.attribute),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    should_include_child_compartments: {
+      value: cdktf.booleanToHclTerraform(struct!.shouldIncludeChildCompartments),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    value: {
+      value: cdktf.listMapperHcl(resourceSchedulerScheduleResourceFiltersValueToHclTerraform, true)(struct!.value),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ResourceSchedulerScheduleResourceFiltersValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ResourceSchedulerScheduleResourceFiltersOutputReference extends cdktf.ComplexObject {
@@ -430,6 +498,31 @@ export function resourceSchedulerScheduleResourcesToTerraform(struct?: ResourceS
   }
 }
 
+
+export function resourceSchedulerScheduleResourcesToHclTerraform(struct?: ResourceSchedulerScheduleResources | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metadata: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.metadata),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ResourceSchedulerScheduleResourcesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -556,6 +649,37 @@ export function resourceSchedulerScheduleTimeoutsToTerraform(struct?: ResourceSc
   }
 }
 
+
+export function resourceSchedulerScheduleTimeoutsToHclTerraform(struct?: ResourceSchedulerScheduleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ResourceSchedulerScheduleTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -668,6 +792,20 @@ export class ResourceSchedulerSchedule extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_resource_scheduler_schedule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ResourceSchedulerSchedule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ResourceSchedulerSchedule to import
+  * @param importFromId The id of the existing ResourceSchedulerSchedule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/resource_scheduler_schedule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ResourceSchedulerSchedule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_resource_scheduler_schedule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -993,5 +1131,103 @@ export class ResourceSchedulerSchedule extends cdktf.TerraformResource {
       resources: cdktf.listMapper(resourceSchedulerScheduleResourcesToTerraform, true)(this._resources.internalValue),
       timeouts: resourceSchedulerScheduleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      action: {
+        value: cdktf.stringToHclTerraform(this._action),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      recurrence_details: {
+        value: cdktf.stringToHclTerraform(this._recurrenceDetails),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      recurrence_type: {
+        value: cdktf.stringToHclTerraform(this._recurrenceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_ends: {
+        value: cdktf.stringToHclTerraform(this._timeEnds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_starts: {
+        value: cdktf.stringToHclTerraform(this._timeStarts),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_filters: {
+        value: cdktf.listMapperHcl(resourceSchedulerScheduleResourceFiltersToHclTerraform, true)(this._resourceFilters.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ResourceSchedulerScheduleResourceFiltersList",
+      },
+      resources: {
+        value: cdktf.listMapperHcl(resourceSchedulerScheduleResourcesToHclTerraform, true)(this._resources.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ResourceSchedulerScheduleResourcesList",
+      },
+      timeouts: {
+        value: resourceSchedulerScheduleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ResourceSchedulerScheduleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

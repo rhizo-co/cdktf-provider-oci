@@ -44,19 +44,19 @@ export interface MysqlMysqlConfigurationConfig extends cdktf.TerraformMetaArgume
   readonly shapeName: string;
   /**
   * init_variables block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/mysql_mysql_configuration#init_variables MysqlMysqlConfiguration#init_variables}
   */
   readonly initVariables?: MysqlMysqlConfigurationInitVariables;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/mysql_mysql_configuration#timeouts MysqlMysqlConfiguration#timeouts}
   */
   readonly timeouts?: MysqlMysqlConfigurationTimeouts;
   /**
   * variables block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/mysql_mysql_configuration#variables MysqlMysqlConfiguration#variables}
   */
   readonly variables?: MysqlMysqlConfigurationVariables;
@@ -76,6 +76,25 @@ export function mysqlMysqlConfigurationInitVariablesToTerraform(struct?: MysqlMy
   return {
     lower_case_table_names: cdktf.stringToTerraform(struct!.lowerCaseTableNames),
   }
+}
+
+
+export function mysqlMysqlConfigurationInitVariablesToHclTerraform(struct?: MysqlMysqlConfigurationInitVariablesOutputReference | MysqlMysqlConfigurationInitVariables): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    lower_case_table_names: {
+      value: cdktf.stringToHclTerraform(struct!.lowerCaseTableNames),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MysqlMysqlConfigurationInitVariablesOutputReference extends cdktf.ComplexObject {
@@ -151,6 +170,37 @@ export function mysqlMysqlConfigurationTimeoutsToTerraform(struct?: MysqlMysqlCo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function mysqlMysqlConfigurationTimeoutsToHclTerraform(struct?: MysqlMysqlConfigurationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MysqlMysqlConfigurationTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -660,6 +710,493 @@ export function mysqlMysqlConfigurationVariablesToTerraform(struct?: MysqlMysqlC
     transaction_isolation: cdktf.stringToTerraform(struct!.transactionIsolation),
     wait_timeout: cdktf.numberToTerraform(struct!.waitTimeout),
   }
+}
+
+
+export function mysqlMysqlConfigurationVariablesToHclTerraform(struct?: MysqlMysqlConfigurationVariablesOutputReference | MysqlMysqlConfigurationVariables): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    autocommit: {
+      value: cdktf.booleanToHclTerraform(struct!.autocommit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    big_tables: {
+      value: cdktf.booleanToHclTerraform(struct!.bigTables),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    binlog_expire_logs_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.binlogExpireLogsSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    binlog_row_metadata: {
+      value: cdktf.stringToHclTerraform(struct!.binlogRowMetadata),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    binlog_row_value_options: {
+      value: cdktf.stringToHclTerraform(struct!.binlogRowValueOptions),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    binlog_transaction_compression: {
+      value: cdktf.booleanToHclTerraform(struct!.binlogTransactionCompression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    completion_type: {
+      value: cdktf.stringToHclTerraform(struct!.completionType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connect_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.connectTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    connection_memory_chunk_size: {
+      value: cdktf.numberToHclTerraform(struct!.connectionMemoryChunkSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    connection_memory_limit: {
+      value: cdktf.stringToHclTerraform(struct!.connectionMemoryLimit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cte_max_recursion_depth: {
+      value: cdktf.stringToHclTerraform(struct!.cteMaxRecursionDepth),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    default_authentication_plugin: {
+      value: cdktf.stringToHclTerraform(struct!.defaultAuthenticationPlugin),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    foreign_key_checks: {
+      value: cdktf.booleanToHclTerraform(struct!.foreignKeyChecks),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    generated_random_password_length: {
+      value: cdktf.numberToHclTerraform(struct!.generatedRandomPasswordLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    global_connection_memory_limit: {
+      value: cdktf.stringToHclTerraform(struct!.globalConnectionMemoryLimit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    global_connection_memory_tracking: {
+      value: cdktf.booleanToHclTerraform(struct!.globalConnectionMemoryTracking),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    group_replication_consistency: {
+      value: cdktf.stringToHclTerraform(struct!.groupReplicationConsistency),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    information_schema_stats_expiry: {
+      value: cdktf.numberToHclTerraform(struct!.informationSchemaStatsExpiry),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    innodb_buffer_pool_dump_pct: {
+      value: cdktf.numberToHclTerraform(struct!.innodbBufferPoolDumpPct),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    innodb_buffer_pool_instances: {
+      value: cdktf.numberToHclTerraform(struct!.innodbBufferPoolInstances),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    innodb_buffer_pool_size: {
+      value: cdktf.stringToHclTerraform(struct!.innodbBufferPoolSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    innodb_ddl_buffer_size: {
+      value: cdktf.stringToHclTerraform(struct!.innodbDdlBufferSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    innodb_ddl_threads: {
+      value: cdktf.numberToHclTerraform(struct!.innodbDdlThreads),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    innodb_ft_enable_stopword: {
+      value: cdktf.booleanToHclTerraform(struct!.innodbFtEnableStopword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    innodb_ft_max_token_size: {
+      value: cdktf.numberToHclTerraform(struct!.innodbFtMaxTokenSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    innodb_ft_min_token_size: {
+      value: cdktf.numberToHclTerraform(struct!.innodbFtMinTokenSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    innodb_ft_num_word_optimize: {
+      value: cdktf.numberToHclTerraform(struct!.innodbFtNumWordOptimize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    innodb_ft_result_cache_limit: {
+      value: cdktf.stringToHclTerraform(struct!.innodbFtResultCacheLimit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    innodb_ft_server_stopword_table: {
+      value: cdktf.stringToHclTerraform(struct!.innodbFtServerStopwordTable),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    innodb_lock_wait_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.innodbLockWaitTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    innodb_log_writer_threads: {
+      value: cdktf.booleanToHclTerraform(struct!.innodbLogWriterThreads),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    innodb_max_purge_lag: {
+      value: cdktf.stringToHclTerraform(struct!.innodbMaxPurgeLag),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    innodb_max_purge_lag_delay: {
+      value: cdktf.numberToHclTerraform(struct!.innodbMaxPurgeLagDelay),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    innodb_stats_persistent_sample_pages: {
+      value: cdktf.stringToHclTerraform(struct!.innodbStatsPersistentSamplePages),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    innodb_stats_transient_sample_pages: {
+      value: cdktf.stringToHclTerraform(struct!.innodbStatsTransientSamplePages),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    interactive_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.interactiveTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    local_infile: {
+      value: cdktf.booleanToHclTerraform(struct!.localInfile),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    mandatory_roles: {
+      value: cdktf.stringToHclTerraform(struct!.mandatoryRoles),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_allowed_packet: {
+      value: cdktf.numberToHclTerraform(struct!.maxAllowedPacket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_binlog_cache_size: {
+      value: cdktf.stringToHclTerraform(struct!.maxBinlogCacheSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_connect_errors: {
+      value: cdktf.stringToHclTerraform(struct!.maxConnectErrors),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_connections: {
+      value: cdktf.numberToHclTerraform(struct!.maxConnections),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_execution_time: {
+      value: cdktf.stringToHclTerraform(struct!.maxExecutionTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_heap_table_size: {
+      value: cdktf.stringToHclTerraform(struct!.maxHeapTableSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_prepared_stmt_count: {
+      value: cdktf.numberToHclTerraform(struct!.maxPreparedStmtCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysql_firewall_mode: {
+      value: cdktf.booleanToHclTerraform(struct!.mysqlFirewallMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    mysql_zstd_default_compression_level: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlZstdDefaultCompressionLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_connect_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxConnectTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_deflate_default_compression_level: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxDeflateDefaultCompressionLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_deflate_max_client_compression_level: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxDeflateMaxClientCompressionLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_document_id_unique_prefix: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxDocumentIdUniquePrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_enable_hello_notice: {
+      value: cdktf.booleanToHclTerraform(struct!.mysqlxEnableHelloNotice),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    mysqlx_idle_worker_thread_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxIdleWorkerThreadTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_interactive_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxInteractiveTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_lz4default_compression_level: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxLz4DefaultCompressionLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_lz4max_client_compression_level: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxLz4MaxClientCompressionLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_max_allowed_packet: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxMaxAllowedPacket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_min_worker_threads: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxMinWorkerThreads),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_read_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxReadTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_wait_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxWaitTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_write_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxWriteTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_zstd_default_compression_level: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxZstdDefaultCompressionLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    mysqlx_zstd_max_client_compression_level: {
+      value: cdktf.numberToHclTerraform(struct!.mysqlxZstdMaxClientCompressionLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    net_read_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.netReadTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    net_write_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.netWriteTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    parser_max_mem_size: {
+      value: cdktf.stringToHclTerraform(struct!.parserMaxMemSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query_alloc_block_size: {
+      value: cdktf.stringToHclTerraform(struct!.queryAllocBlockSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query_prealloc_size: {
+      value: cdktf.stringToHclTerraform(struct!.queryPreallocSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regexp_time_limit: {
+      value: cdktf.numberToHclTerraform(struct!.regexpTimeLimit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    sort_buffer_size: {
+      value: cdktf.stringToHclTerraform(struct!.sortBufferSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    sql_mode: {
+      value: cdktf.stringToHclTerraform(struct!.sqlMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    sql_require_primary_key: {
+      value: cdktf.booleanToHclTerraform(struct!.sqlRequirePrimaryKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    sql_warnings: {
+      value: cdktf.booleanToHclTerraform(struct!.sqlWarnings),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    thread_pool_dedicated_listeners: {
+      value: cdktf.booleanToHclTerraform(struct!.threadPoolDedicatedListeners),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    thread_pool_max_transactions_limit: {
+      value: cdktf.numberToHclTerraform(struct!.threadPoolMaxTransactionsLimit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    time_zone: {
+      value: cdktf.stringToHclTerraform(struct!.timeZone),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tmp_table_size: {
+      value: cdktf.stringToHclTerraform(struct!.tmpTableSize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    transaction_isolation: {
+      value: cdktf.stringToHclTerraform(struct!.transactionIsolation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    wait_timeout: {
+      value: cdktf.numberToHclTerraform(struct!.waitTimeout),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MysqlMysqlConfigurationVariablesOutputReference extends cdktf.ComplexObject {
@@ -2437,6 +2974,20 @@ export class MysqlMysqlConfiguration extends cdktf.TerraformResource {
   // =================
   public static readonly tfResourceType = "oci_mysql_mysql_configuration";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a MysqlMysqlConfiguration resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the MysqlMysqlConfiguration to import
+  * @param importFromId The id of the existing MysqlMysqlConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/mysql_mysql_configuration#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the MysqlMysqlConfiguration to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_mysql_mysql_configuration", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -2689,5 +3240,79 @@ export class MysqlMysqlConfiguration extends cdktf.TerraformResource {
       timeouts: mysqlMysqlConfigurationTimeoutsToTerraform(this._timeouts.internalValue),
       variables: mysqlMysqlConfigurationVariablesToTerraform(this._variables.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      parent_configuration_id: {
+        value: cdktf.stringToHclTerraform(this._parentConfigurationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      shape_name: {
+        value: cdktf.stringToHclTerraform(this._shapeName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      init_variables: {
+        value: mysqlMysqlConfigurationInitVariablesToHclTerraform(this._initVariables.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MysqlMysqlConfigurationInitVariablesList",
+      },
+      timeouts: {
+        value: mysqlMysqlConfigurationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "MysqlMysqlConfigurationTimeouts",
+      },
+      variables: {
+        value: mysqlMysqlConfigurationVariablesToHclTerraform(this._variables.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MysqlMysqlConfigurationVariablesList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

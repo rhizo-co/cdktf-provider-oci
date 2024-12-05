@@ -36,7 +36,7 @@ export interface DataOciDatabaseManagementManagedDatabasesDatabaseParametersConf
   readonly source?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_databases_database_parameters#filter DataOciDatabaseManagementManagedDatabasesDatabaseParameters#filter}
   */
   readonly filter?: DataOciDatabaseManagementManagedDatabasesDatabaseParametersFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciDatabaseManagementManagedDatabasesDatabaseParametersDatab
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemsAllowedValuesToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemsAllowedValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemsAllowedValuesOutputReference extends cdktf.ComplexObject {
@@ -125,6 +136,17 @@ export function dataOciDatabaseManagementManagedDatabasesDatabaseParametersDatab
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabasesDatabaseParametersDatabaseParametersCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabasesDatabaseParametersDatabaseParametersCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -302,6 +324,17 @@ export function dataOciDatabaseManagementManagedDatabasesDatabaseParametersDatab
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabasesDatabaseParametersDatabaseParametersCollectionToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabasesDatabaseParametersDatabaseParametersCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabasesDatabaseParametersDatabaseParametersCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -400,6 +433,37 @@ export function dataOciDatabaseManagementManagedDatabasesDatabaseParametersFilte
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabasesDatabaseParametersFilterToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabasesDatabaseParametersFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatabaseManagementManagedDatabasesDatabaseParametersFilterOutputReference extends cdktf.ComplexObject {
@@ -530,6 +594,20 @@ export class DataOciDatabaseManagementManagedDatabasesDatabaseParameters extends
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_databases_database_parameters";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementManagedDatabasesDatabaseParameters resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementManagedDatabasesDatabaseParameters to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementManagedDatabasesDatabaseParameters that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_databases_database_parameters#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementManagedDatabasesDatabaseParameters to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_databases_database_parameters", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -700,5 +778,55 @@ export class DataOciDatabaseManagementManagedDatabasesDatabaseParameters extends
       source: cdktf.stringToTerraform(this._source),
       filter: cdktf.listMapper(dataOciDatabaseManagementManagedDatabasesDatabaseParametersFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_allowed_values_included: {
+        value: cdktf.booleanToHclTerraform(this._isAllowedValuesIncluded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opc_named_credential_id: {
+        value: cdktf.stringToHclTerraform(this._opcNamedCredentialId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source: {
+        value: cdktf.stringToHclTerraform(this._source),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatabaseManagementManagedDatabasesDatabaseParametersFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatabaseManagementManagedDatabasesDatabaseParametersFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -36,7 +36,7 @@ export interface DataOciCloudMigrationsMigrationPlansConfig extends cdktf.Terraf
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_migrations_migration_plans#filter DataOciCloudMigrationsMigrationPlans#filter}
   */
   readonly filter?: DataOciCloudMigrationsMigrationPlansFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems
   }
   return {
   }
+}
+
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostComputeToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostCompute): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostComputeOutputReference extends cdktf.ComplexObject {
@@ -167,6 +178,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems
   }
 }
 
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostOsImageToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostOsImage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostOsImageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -234,6 +256,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems
   }
   return {
   }
+}
+
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostStorageVolumesToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostStorageVolumes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostStorageVolumesOutputReference extends cdktf.ComplexObject {
@@ -315,6 +348,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems
   }
 }
 
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostStorageToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostStorage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostStorageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -388,6 +432,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems
   }
   return {
   }
+}
+
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCost): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsTotalEstimatedCostOutputReference extends cdktf.ComplexObject {
@@ -487,6 +542,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems
   }
 }
 
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStats): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsMigrationPlanStatsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -560,6 +626,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems
   }
   return {
   }
+}
+
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsStrategiesToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsStrategies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsStrategiesOutputReference extends cdktf.ComplexObject {
@@ -649,6 +726,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems
   }
   return {
   }
+}
+
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsTargetEnvironmentsToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsTargetEnvironments): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsTargetEnvironmentsOutputReference extends cdktf.ComplexObject {
@@ -753,6 +841,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems
   }
   return {
   }
+}
+
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -906,6 +1005,17 @@ export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionToTer
   }
 }
 
+
+export function dataOciCloudMigrationsMigrationPlansMigrationPlanCollectionToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansMigrationPlanCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudMigrationsMigrationPlansMigrationPlanCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -984,6 +1094,37 @@ export function dataOciCloudMigrationsMigrationPlansFilterToTerraform(struct?: D
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCloudMigrationsMigrationPlansFilterToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlansFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCloudMigrationsMigrationPlansFilterOutputReference extends cdktf.ComplexObject {
@@ -1114,6 +1255,20 @@ export class DataOciCloudMigrationsMigrationPlans extends cdktf.TerraformDataSou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_migrations_migration_plans";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCloudMigrationsMigrationPlans resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCloudMigrationsMigrationPlans to import
+  * @param importFromId The id of the existing DataOciCloudMigrationsMigrationPlans that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_migrations_migration_plans#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCloudMigrationsMigrationPlans to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_migrations_migration_plans", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1287,5 +1442,55 @@ export class DataOciCloudMigrationsMigrationPlans extends cdktf.TerraformDataSou
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciCloudMigrationsMigrationPlansFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      migration_id: {
+        value: cdktf.stringToHclTerraform(this._migrationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      migration_plan_id: {
+        value: cdktf.stringToHclTerraform(this._migrationPlanId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCloudMigrationsMigrationPlansFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCloudMigrationsMigrationPlansFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

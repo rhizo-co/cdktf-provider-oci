@@ -32,6 +32,17 @@ export function dataOciKmsKeyVersionExternalKeyReferenceDetailsToTerraform(struc
   }
 }
 
+
+export function dataOciKmsKeyVersionExternalKeyReferenceDetailsToHclTerraform(struct?: DataOciKmsKeyVersionExternalKeyReferenceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciKmsKeyVersionExternalKeyReferenceDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -101,6 +112,17 @@ export function dataOciKmsKeyVersionReplicaDetailsToTerraform(struct?: DataOciKm
   }
 }
 
+
+export function dataOciKmsKeyVersionReplicaDetailsToHclTerraform(struct?: DataOciKmsKeyVersionReplicaDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciKmsKeyVersionReplicaDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -163,6 +185,20 @@ export class DataOciKmsKeyVersion extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_kms_key_version";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciKmsKeyVersion resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciKmsKeyVersion to import
+  * @param importFromId The id of the existing DataOciKmsKeyVersion that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/kms_key_version#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciKmsKeyVersion to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_key_version", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -321,5 +357,31 @@ export class DataOciKmsKeyVersion extends cdktf.TerraformDataSource {
       key_version_id: cdktf.stringToTerraform(this._keyVersionId),
       management_endpoint: cdktf.stringToTerraform(this._managementEndpoint),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      key_id: {
+        value: cdktf.stringToHclTerraform(this._keyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_version_id: {
+        value: cdktf.stringToHclTerraform(this._keyVersionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      management_endpoint: {
+        value: cdktf.stringToHclTerraform(this._managementEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

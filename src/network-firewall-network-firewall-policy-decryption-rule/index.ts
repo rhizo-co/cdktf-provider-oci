@@ -40,19 +40,19 @@ export interface NetworkFirewallNetworkFirewallPolicyDecryptionRuleConfig extend
   readonly secret?: string;
   /**
   * condition block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_decryption_rule#condition NetworkFirewallNetworkFirewallPolicyDecryptionRule#condition}
   */
   readonly condition: NetworkFirewallNetworkFirewallPolicyDecryptionRuleCondition;
   /**
   * position block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_decryption_rule#position NetworkFirewallNetworkFirewallPolicyDecryptionRule#position}
   */
   readonly position?: NetworkFirewallNetworkFirewallPolicyDecryptionRulePosition;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_decryption_rule#timeouts NetworkFirewallNetworkFirewallPolicyDecryptionRule#timeouts}
   */
   readonly timeouts?: NetworkFirewallNetworkFirewallPolicyDecryptionRuleTimeouts;
@@ -77,6 +77,31 @@ export function networkFirewallNetworkFirewallPolicyDecryptionRuleConditionToTer
     destination_address: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.destinationAddress),
     source_address: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.sourceAddress),
   }
+}
+
+
+export function networkFirewallNetworkFirewallPolicyDecryptionRuleConditionToHclTerraform(struct?: NetworkFirewallNetworkFirewallPolicyDecryptionRuleConditionOutputReference | NetworkFirewallNetworkFirewallPolicyDecryptionRuleCondition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination_address: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.destinationAddress),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    source_address: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.sourceAddress),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkFirewallNetworkFirewallPolicyDecryptionRuleConditionOutputReference extends cdktf.ComplexObject {
@@ -169,6 +194,31 @@ export function networkFirewallNetworkFirewallPolicyDecryptionRulePositionToTerr
     after_rule: cdktf.stringToTerraform(struct!.afterRule),
     before_rule: cdktf.stringToTerraform(struct!.beforeRule),
   }
+}
+
+
+export function networkFirewallNetworkFirewallPolicyDecryptionRulePositionToHclTerraform(struct?: NetworkFirewallNetworkFirewallPolicyDecryptionRulePositionOutputReference | NetworkFirewallNetworkFirewallPolicyDecryptionRulePosition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    after_rule: {
+      value: cdktf.stringToHclTerraform(struct!.afterRule),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    before_rule: {
+      value: cdktf.stringToHclTerraform(struct!.beforeRule),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkFirewallNetworkFirewallPolicyDecryptionRulePositionOutputReference extends cdktf.ComplexObject {
@@ -266,6 +316,37 @@ export function networkFirewallNetworkFirewallPolicyDecryptionRuleTimeoutsToTerr
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function networkFirewallNetworkFirewallPolicyDecryptionRuleTimeoutsToHclTerraform(struct?: NetworkFirewallNetworkFirewallPolicyDecryptionRuleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkFirewallNetworkFirewallPolicyDecryptionRuleTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -380,6 +461,20 @@ export class NetworkFirewallNetworkFirewallPolicyDecryptionRule extends cdktf.Te
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_network_firewall_network_firewall_policy_decryption_rule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NetworkFirewallNetworkFirewallPolicyDecryptionRule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NetworkFirewallNetworkFirewallPolicyDecryptionRule to import
+  * @param importFromId The id of the existing NetworkFirewallNetworkFirewallPolicyDecryptionRule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_decryption_rule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NetworkFirewallNetworkFirewallPolicyDecryptionRule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_firewall_network_firewall_policy_decryption_rule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -594,5 +689,73 @@ export class NetworkFirewallNetworkFirewallPolicyDecryptionRule extends cdktf.Te
       position: networkFirewallNetworkFirewallPolicyDecryptionRulePositionToTerraform(this._position.internalValue),
       timeouts: networkFirewallNetworkFirewallPolicyDecryptionRuleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      action: {
+        value: cdktf.stringToHclTerraform(this._action),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      decryption_profile: {
+        value: cdktf.stringToHclTerraform(this._decryptionProfile),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_firewall_policy_id: {
+        value: cdktf.stringToHclTerraform(this._networkFirewallPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      priority_order: {
+        value: cdktf.stringToHclTerraform(this._priorityOrder),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      secret: {
+        value: cdktf.stringToHclTerraform(this._secret),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      condition: {
+        value: networkFirewallNetworkFirewallPolicyDecryptionRuleConditionToHclTerraform(this._condition.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NetworkFirewallNetworkFirewallPolicyDecryptionRuleConditionList",
+      },
+      position: {
+        value: networkFirewallNetworkFirewallPolicyDecryptionRulePositionToHclTerraform(this._position.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NetworkFirewallNetworkFirewallPolicyDecryptionRulePositionList",
+      },
+      timeouts: {
+        value: networkFirewallNetworkFirewallPolicyDecryptionRuleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NetworkFirewallNetworkFirewallPolicyDecryptionRuleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

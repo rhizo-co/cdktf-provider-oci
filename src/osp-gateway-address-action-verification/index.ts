@@ -128,7 +128,7 @@ export interface OspGatewayAddressActionVerificationConfig extends cdktf.Terrafo
   readonly streetNumber?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_address_action_verification#timeouts OspGatewayAddressActionVerification#timeouts}
   */
   readonly timeouts?: OspGatewayAddressActionVerificationTimeouts;
@@ -143,6 +143,17 @@ export function ospGatewayAddressActionVerificationAddressToTerraform(struct?: O
   }
   return {
   }
+}
+
+
+export function ospGatewayAddressActionVerificationAddressToHclTerraform(struct?: OspGatewayAddressActionVerificationAddress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OspGatewayAddressActionVerificationAddressOutputReference extends cdktf.ComplexObject {
@@ -349,6 +360,37 @@ export function ospGatewayAddressActionVerificationTimeoutsToTerraform(struct?: 
   }
 }
 
+
+export function ospGatewayAddressActionVerificationTimeoutsToHclTerraform(struct?: OspGatewayAddressActionVerificationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OspGatewayAddressActionVerificationTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -461,6 +503,20 @@ export class OspGatewayAddressActionVerification extends cdktf.TerraformResource
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_osp_gateway_address_action_verification";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OspGatewayAddressActionVerification resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OspGatewayAddressActionVerification to import
+  * @param importFromId The id of the existing OspGatewayAddressActionVerification that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_address_action_verification#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OspGatewayAddressActionVerification to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_osp_gateway_address_action_verification", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1052,5 +1108,193 @@ export class OspGatewayAddressActionVerification extends cdktf.TerraformResource
       street_number: cdktf.stringToTerraform(this._streetNumber),
       timeouts: ospGatewayAddressActionVerificationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      address_key: {
+        value: cdktf.stringToHclTerraform(this._addressKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      city: {
+        value: cdktf.stringToHclTerraform(this._city),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      company_name: {
+        value: cdktf.stringToHclTerraform(this._companyName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      contributor_class: {
+        value: cdktf.stringToHclTerraform(this._contributorClass),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      country: {
+        value: cdktf.stringToHclTerraform(this._country),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      county: {
+        value: cdktf.stringToHclTerraform(this._county),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      department_name: {
+        value: cdktf.stringToHclTerraform(this._departmentName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      email_address: {
+        value: cdktf.stringToHclTerraform(this._emailAddress),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      first_name: {
+        value: cdktf.stringToHclTerraform(this._firstName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      internal_number: {
+        value: cdktf.stringToHclTerraform(this._internalNumber),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      job_title: {
+        value: cdktf.stringToHclTerraform(this._jobTitle),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      last_name: {
+        value: cdktf.stringToHclTerraform(this._lastName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      line1: {
+        value: cdktf.stringToHclTerraform(this._line1),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      line2: {
+        value: cdktf.stringToHclTerraform(this._line2),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      line3: {
+        value: cdktf.stringToHclTerraform(this._line3),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      line4: {
+        value: cdktf.stringToHclTerraform(this._line4),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      middle_name: {
+        value: cdktf.stringToHclTerraform(this._middleName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      municipal_inscription: {
+        value: cdktf.stringToHclTerraform(this._municipalInscription),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      osp_home_region: {
+        value: cdktf.stringToHclTerraform(this._ospHomeRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      phone_country_code: {
+        value: cdktf.stringToHclTerraform(this._phoneCountryCode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      phone_number: {
+        value: cdktf.stringToHclTerraform(this._phoneNumber),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      postal_code: {
+        value: cdktf.stringToHclTerraform(this._postalCode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      province: {
+        value: cdktf.stringToHclTerraform(this._province),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state_inscription: {
+        value: cdktf.stringToHclTerraform(this._stateInscription),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      street_name: {
+        value: cdktf.stringToHclTerraform(this._streetName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      street_number: {
+        value: cdktf.stringToHclTerraform(this._streetNumber),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: ospGatewayAddressActionVerificationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OspGatewayAddressActionVerificationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

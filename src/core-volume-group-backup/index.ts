@@ -40,13 +40,13 @@ export interface CoreVolumeGroupBackupConfig extends cdktf.TerraformMetaArgument
   readonly volumeGroupId?: string;
   /**
   * source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_volume_group_backup#source_details CoreVolumeGroupBackup#source_details}
   */
   readonly sourceDetails?: CoreVolumeGroupBackupSourceDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_volume_group_backup#timeouts CoreVolumeGroupBackup#timeouts}
   */
   readonly timeouts?: CoreVolumeGroupBackupTimeouts;
@@ -76,6 +76,37 @@ export function coreVolumeGroupBackupSourceDetailsToTerraform(struct?: CoreVolum
     region: cdktf.stringToTerraform(struct!.region),
     volume_group_backup_id: cdktf.stringToTerraform(struct!.volumeGroupBackupId),
   }
+}
+
+
+export function coreVolumeGroupBackupSourceDetailsToHclTerraform(struct?: CoreVolumeGroupBackupSourceDetailsOutputReference | CoreVolumeGroupBackupSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    region: {
+      value: cdktf.stringToHclTerraform(struct!.region),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    volume_group_backup_id: {
+      value: cdktf.stringToHclTerraform(struct!.volumeGroupBackupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreVolumeGroupBackupSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -191,6 +222,37 @@ export function coreVolumeGroupBackupTimeoutsToTerraform(struct?: CoreVolumeGrou
   }
 }
 
+
+export function coreVolumeGroupBackupTimeoutsToHclTerraform(struct?: CoreVolumeGroupBackupTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreVolumeGroupBackupTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -303,6 +365,20 @@ export class CoreVolumeGroupBackup extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_volume_group_backup";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreVolumeGroupBackup resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreVolumeGroupBackup to import
+  * @param importFromId The id of the existing CoreVolumeGroupBackup that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_volume_group_backup#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreVolumeGroupBackup to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_volume_group_backup", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -561,5 +637,67 @@ export class CoreVolumeGroupBackup extends cdktf.TerraformResource {
       source_details: coreVolumeGroupBackupSourceDetailsToTerraform(this._sourceDetails.internalValue),
       timeouts: coreVolumeGroupBackupTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      volume_group_id: {
+        value: cdktf.stringToHclTerraform(this._volumeGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_details: {
+        value: coreVolumeGroupBackupSourceDetailsToHclTerraform(this._sourceDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreVolumeGroupBackupSourceDetailsList",
+      },
+      timeouts: {
+        value: coreVolumeGroupBackupTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreVolumeGroupBackupTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

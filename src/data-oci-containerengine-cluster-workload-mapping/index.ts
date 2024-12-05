@@ -27,6 +27,20 @@ export class DataOciContainerengineClusterWorkloadMapping extends cdktf.Terrafor
   // =================
   public static readonly tfResourceType = "oci_containerengine_cluster_workload_mapping";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciContainerengineClusterWorkloadMapping resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciContainerengineClusterWorkloadMapping to import
+  * @param importFromId The id of the existing DataOciContainerengineClusterWorkloadMapping that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/containerengine_cluster_workload_mapping#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciContainerengineClusterWorkloadMapping to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_containerengine_cluster_workload_mapping", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -139,5 +153,25 @@ export class DataOciContainerengineClusterWorkloadMapping extends cdktf.Terrafor
       cluster_id: cdktf.stringToTerraform(this._clusterId),
       workload_mapping_id: cdktf.stringToTerraform(this._workloadMappingId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cluster_id: {
+        value: cdktf.stringToHclTerraform(this._clusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      workload_mapping_id: {
+        value: cdktf.stringToHclTerraform(this._workloadMappingId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

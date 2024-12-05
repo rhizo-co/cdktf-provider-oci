@@ -44,13 +44,13 @@ export interface DataSafeDatabaseSecurityConfigConfig extends cdktf.TerraformMet
   readonly refreshTrigger?: number;
   /**
   * sql_firewall_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_database_security_config#sql_firewall_config DataSafeDatabaseSecurityConfig#sql_firewall_config}
   */
   readonly sqlFirewallConfig?: DataSafeDatabaseSecurityConfigSqlFirewallConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_database_security_config#timeouts DataSafeDatabaseSecurityConfig#timeouts}
   */
   readonly timeouts?: DataSafeDatabaseSecurityConfigTimeouts;
@@ -80,6 +80,37 @@ export function dataSafeDatabaseSecurityConfigSqlFirewallConfigToTerraform(struc
     status: cdktf.stringToTerraform(struct!.status),
     violation_log_auto_purge: cdktf.stringToTerraform(struct!.violationLogAutoPurge),
   }
+}
+
+
+export function dataSafeDatabaseSecurityConfigSqlFirewallConfigToHclTerraform(struct?: DataSafeDatabaseSecurityConfigSqlFirewallConfigOutputReference | DataSafeDatabaseSecurityConfigSqlFirewallConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    exclude_job: {
+      value: cdktf.stringToHclTerraform(struct!.excludeJob),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    status: {
+      value: cdktf.stringToHclTerraform(struct!.status),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    violation_log_auto_purge: {
+      value: cdktf.stringToHclTerraform(struct!.violationLogAutoPurge),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeDatabaseSecurityConfigSqlFirewallConfigOutputReference extends cdktf.ComplexObject {
@@ -206,6 +237,37 @@ export function dataSafeDatabaseSecurityConfigTimeoutsToTerraform(struct?: DataS
   }
 }
 
+
+export function dataSafeDatabaseSecurityConfigTimeoutsToHclTerraform(struct?: DataSafeDatabaseSecurityConfigTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataSafeDatabaseSecurityConfigTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -318,6 +380,20 @@ export class DataSafeDatabaseSecurityConfig extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_database_security_config";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeDatabaseSecurityConfig resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeDatabaseSecurityConfig to import
+  * @param importFromId The id of the existing DataSafeDatabaseSecurityConfig that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_database_security_config#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeDatabaseSecurityConfig to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_database_security_config", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -572,5 +648,73 @@ export class DataSafeDatabaseSecurityConfig extends cdktf.TerraformResource {
       sql_firewall_config: dataSafeDatabaseSecurityConfigSqlFirewallConfigToTerraform(this._sqlFirewallConfig.internalValue),
       timeouts: dataSafeDatabaseSecurityConfigTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_security_config_id: {
+        value: cdktf.stringToHclTerraform(this._databaseSecurityConfigId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      refresh_trigger: {
+        value: cdktf.numberToHclTerraform(this._refreshTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      sql_firewall_config: {
+        value: dataSafeDatabaseSecurityConfigSqlFirewallConfigToHclTerraform(this._sqlFirewallConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataSafeDatabaseSecurityConfigSqlFirewallConfigList",
+      },
+      timeouts: {
+        value: dataSafeDatabaseSecurityConfigTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeDatabaseSecurityConfigTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

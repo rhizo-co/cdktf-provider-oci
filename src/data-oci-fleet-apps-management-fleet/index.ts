@@ -24,6 +24,17 @@ export function dataOciFleetAppsManagementFleetNotificationPreferencesPreference
   }
 }
 
+
+export function dataOciFleetAppsManagementFleetNotificationPreferencesPreferencesToHclTerraform(struct?: DataOciFleetAppsManagementFleetNotificationPreferencesPreferences): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementFleetNotificationPreferencesPreferencesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -96,6 +107,17 @@ export function dataOciFleetAppsManagementFleetNotificationPreferencesToTerrafor
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementFleetNotificationPreferencesToHclTerraform(struct?: DataOciFleetAppsManagementFleetNotificationPreferences): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementFleetNotificationPreferencesOutputReference extends cdktf.ComplexObject {
@@ -173,6 +195,17 @@ export function dataOciFleetAppsManagementFleetRuleSelectionCriteriaRulesConditi
   }
 }
 
+
+export function dataOciFleetAppsManagementFleetRuleSelectionCriteriaRulesConditionsToHclTerraform(struct?: DataOciFleetAppsManagementFleetRuleSelectionCriteriaRulesConditions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementFleetRuleSelectionCriteriaRulesConditionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -245,6 +278,17 @@ export function dataOciFleetAppsManagementFleetRuleSelectionCriteriaRulesToTerra
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementFleetRuleSelectionCriteriaRulesToHclTerraform(struct?: DataOciFleetAppsManagementFleetRuleSelectionCriteriaRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementFleetRuleSelectionCriteriaRulesOutputReference extends cdktf.ComplexObject {
@@ -327,6 +371,17 @@ export function dataOciFleetAppsManagementFleetRuleSelectionCriteriaToTerraform(
   }
 }
 
+
+export function dataOciFleetAppsManagementFleetRuleSelectionCriteriaToHclTerraform(struct?: DataOciFleetAppsManagementFleetRuleSelectionCriteria): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementFleetRuleSelectionCriteriaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -395,6 +450,20 @@ export class DataOciFleetAppsManagementFleet extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_fleet";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFleetAppsManagementFleet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFleetAppsManagementFleet to import
+  * @param importFromId The id of the existing DataOciFleetAppsManagementFleet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_fleet#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFleetAppsManagementFleet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_fleet", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -561,5 +630,19 @@ export class DataOciFleetAppsManagementFleet extends cdktf.TerraformDataSource {
     return {
       fleet_id: cdktf.stringToTerraform(this._fleetId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      fleet_id: {
+        value: cdktf.stringToHclTerraform(this._fleetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

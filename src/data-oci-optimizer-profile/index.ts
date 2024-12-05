@@ -24,6 +24,17 @@ export function dataOciOptimizerProfileLevelsConfigurationItemsToTerraform(struc
   }
 }
 
+
+export function dataOciOptimizerProfileLevelsConfigurationItemsToHclTerraform(struct?: DataOciOptimizerProfileLevelsConfigurationItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerProfileLevelsConfigurationItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -93,6 +104,17 @@ export function dataOciOptimizerProfileLevelsConfigurationToTerraform(struct?: D
   }
 }
 
+
+export function dataOciOptimizerProfileLevelsConfigurationToHclTerraform(struct?: DataOciOptimizerProfileLevelsConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerProfileLevelsConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -158,6 +180,17 @@ export function dataOciOptimizerProfileTargetCompartmentsToTerraform(struct?: Da
   }
 }
 
+
+export function dataOciOptimizerProfileTargetCompartmentsToHclTerraform(struct?: DataOciOptimizerProfileTargetCompartments): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerProfileTargetCompartmentsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -220,6 +253,17 @@ export function dataOciOptimizerProfileTargetTagsItemsToTerraform(struct?: DataO
   }
   return {
   }
+}
+
+
+export function dataOciOptimizerProfileTargetTagsItemsToHclTerraform(struct?: DataOciOptimizerProfileTargetTagsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOptimizerProfileTargetTagsItemsOutputReference extends cdktf.ComplexObject {
@@ -301,6 +345,17 @@ export function dataOciOptimizerProfileTargetTagsToTerraform(struct?: DataOciOpt
   }
 }
 
+
+export function dataOciOptimizerProfileTargetTagsToHclTerraform(struct?: DataOciOptimizerProfileTargetTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerProfileTargetTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -364,6 +419,20 @@ export class DataOciOptimizerProfile extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_optimizer_profile";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOptimizerProfile resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOptimizerProfile to import
+  * @param importFromId The id of the existing DataOciOptimizerProfile that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/optimizer_profile#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOptimizerProfile to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_optimizer_profile", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -496,5 +565,19 @@ export class DataOciOptimizerProfile extends cdktf.TerraformDataSource {
     return {
       profile_id: cdktf.stringToTerraform(this._profileId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      profile_id: {
+        value: cdktf.stringToHclTerraform(this._profileId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

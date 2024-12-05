@@ -28,19 +28,19 @@ export interface DatabaseManagementManagedDatabasesResetDatabaseParameterConfig 
   readonly scope: string;
   /**
   * credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_managed_databases_reset_database_parameter#credentials DatabaseManagementManagedDatabasesResetDatabaseParameter#credentials}
   */
   readonly credentials?: DatabaseManagementManagedDatabasesResetDatabaseParameterCredentials;
   /**
   * database_credential block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_managed_databases_reset_database_parameter#database_credential DatabaseManagementManagedDatabasesResetDatabaseParameter#database_credential}
   */
   readonly databaseCredential?: DatabaseManagementManagedDatabasesResetDatabaseParameterDatabaseCredential;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_managed_databases_reset_database_parameter#timeouts DatabaseManagementManagedDatabasesResetDatabaseParameter#timeouts}
   */
   readonly timeouts?: DatabaseManagementManagedDatabasesResetDatabaseParameterTimeouts;
@@ -75,6 +75,43 @@ export function databaseManagementManagedDatabasesResetDatabaseParameterCredenti
     secret_id: cdktf.stringToTerraform(struct!.secretId),
     user_name: cdktf.stringToTerraform(struct!.userName),
   }
+}
+
+
+export function databaseManagementManagedDatabasesResetDatabaseParameterCredentialsToHclTerraform(struct?: DatabaseManagementManagedDatabasesResetDatabaseParameterCredentialsOutputReference | DatabaseManagementManagedDatabasesResetDatabaseParameterCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_name: {
+      value: cdktf.stringToHclTerraform(struct!.userName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementManagedDatabasesResetDatabaseParameterCredentialsOutputReference extends cdktf.ComplexObject {
@@ -231,6 +268,55 @@ export function databaseManagementManagedDatabasesResetDatabaseParameterDatabase
     role: cdktf.stringToTerraform(struct!.role),
     username: cdktf.stringToTerraform(struct!.username),
   }
+}
+
+
+export function databaseManagementManagedDatabasesResetDatabaseParameterDatabaseCredentialToHclTerraform(struct?: DatabaseManagementManagedDatabasesResetDatabaseParameterDatabaseCredentialOutputReference | DatabaseManagementManagedDatabasesResetDatabaseParameterDatabaseCredential): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credential_type: {
+      value: cdktf.stringToHclTerraform(struct!.credentialType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    named_credential_id: {
+      value: cdktf.stringToHclTerraform(struct!.namedCredentialId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.passwordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementManagedDatabasesResetDatabaseParameterDatabaseCredentialOutputReference extends cdktf.ComplexObject {
@@ -415,6 +501,37 @@ export function databaseManagementManagedDatabasesResetDatabaseParameterTimeouts
   }
 }
 
+
+export function databaseManagementManagedDatabasesResetDatabaseParameterTimeoutsToHclTerraform(struct?: DatabaseManagementManagedDatabasesResetDatabaseParameterTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseManagementManagedDatabasesResetDatabaseParameterTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -527,6 +644,20 @@ export class DatabaseManagementManagedDatabasesResetDatabaseParameter extends cd
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_databases_reset_database_parameter";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseManagementManagedDatabasesResetDatabaseParameter resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseManagementManagedDatabasesResetDatabaseParameter to import
+  * @param importFromId The id of the existing DatabaseManagementManagedDatabasesResetDatabaseParameter that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_managed_databases_reset_database_parameter#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseManagementManagedDatabasesResetDatabaseParameter to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_databases_reset_database_parameter", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -685,5 +816,55 @@ export class DatabaseManagementManagedDatabasesResetDatabaseParameter extends cd
       database_credential: databaseManagementManagedDatabasesResetDatabaseParameterDatabaseCredentialToTerraform(this._databaseCredential.internalValue),
       timeouts: databaseManagementManagedDatabasesResetDatabaseParameterTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      parameters: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._parameters),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      scope: {
+        value: cdktf.stringToHclTerraform(this._scope),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      credentials: {
+        value: databaseManagementManagedDatabasesResetDatabaseParameterCredentialsToHclTerraform(this._credentials.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseManagementManagedDatabasesResetDatabaseParameterCredentialsList",
+      },
+      database_credential: {
+        value: databaseManagementManagedDatabasesResetDatabaseParameterDatabaseCredentialToHclTerraform(this._databaseCredential.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseManagementManagedDatabasesResetDatabaseParameterDatabaseCredentialList",
+      },
+      timeouts: {
+        value: databaseManagementManagedDatabasesResetDatabaseParameterTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseManagementManagedDatabasesResetDatabaseParameterTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

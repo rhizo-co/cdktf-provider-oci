@@ -64,7 +64,7 @@ export interface DataOciMediaServicesMediaAssetsConfig extends cdktf.TerraformMe
   readonly type?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/media_services_media_assets#filter DataOciMediaServicesMediaAssets#filter}
   */
   readonly filter?: DataOciMediaServicesMediaAssetsFilter[] | cdktf.IResolvable;
@@ -79,6 +79,17 @@ export function dataOciMediaServicesMediaAssetsMediaAssetCollectionItemsLocksToT
   }
   return {
   }
+}
+
+
+export function dataOciMediaServicesMediaAssetsMediaAssetCollectionItemsLocksToHclTerraform(struct?: DataOciMediaServicesMediaAssetsMediaAssetCollectionItemsLocks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMediaServicesMediaAssetsMediaAssetCollectionItemsLocksOutputReference extends cdktf.ComplexObject {
@@ -165,6 +176,17 @@ export function dataOciMediaServicesMediaAssetsMediaAssetCollectionItemsMediaAss
   }
 }
 
+
+export function dataOciMediaServicesMediaAssetsMediaAssetCollectionItemsMediaAssetTagsToHclTerraform(struct?: DataOciMediaServicesMediaAssetsMediaAssetCollectionItemsMediaAssetTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMediaServicesMediaAssetsMediaAssetCollectionItemsMediaAssetTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -234,6 +256,17 @@ export function dataOciMediaServicesMediaAssetsMediaAssetCollectionItemsMetadata
   }
 }
 
+
+export function dataOciMediaServicesMediaAssetsMediaAssetCollectionItemsMetadataToHclTerraform(struct?: DataOciMediaServicesMediaAssetsMediaAssetCollectionItemsMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMediaServicesMediaAssetsMediaAssetCollectionItemsMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -296,6 +329,17 @@ export function dataOciMediaServicesMediaAssetsMediaAssetCollectionItemsToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciMediaServicesMediaAssetsMediaAssetCollectionItemsToHclTerraform(struct?: DataOciMediaServicesMediaAssetsMediaAssetCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMediaServicesMediaAssetsMediaAssetCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -488,6 +532,17 @@ export function dataOciMediaServicesMediaAssetsMediaAssetCollectionToTerraform(s
   }
 }
 
+
+export function dataOciMediaServicesMediaAssetsMediaAssetCollectionToHclTerraform(struct?: DataOciMediaServicesMediaAssetsMediaAssetCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMediaServicesMediaAssetsMediaAssetCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -566,6 +621,37 @@ export function dataOciMediaServicesMediaAssetsFilterToTerraform(struct?: DataOc
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciMediaServicesMediaAssetsFilterToHclTerraform(struct?: DataOciMediaServicesMediaAssetsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciMediaServicesMediaAssetsFilterOutputReference extends cdktf.ComplexObject {
@@ -696,6 +782,20 @@ export class DataOciMediaServicesMediaAssets extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_media_services_media_assets";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMediaServicesMediaAssets resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMediaServicesMediaAssets to import
+  * @param importFromId The id of the existing DataOciMediaServicesMediaAssets that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/media_services_media_assets#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMediaServicesMediaAssets to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_media_services_media_assets", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -995,5 +1095,97 @@ export class DataOciMediaServicesMediaAssets extends cdktf.TerraformDataSource {
       type: cdktf.stringToTerraform(this._type),
       filter: cdktf.listMapper(dataOciMediaServicesMediaAssetsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      distribution_channel_id: {
+        value: cdktf.stringToHclTerraform(this._distributionChannelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      master_media_asset_id: {
+        value: cdktf.stringToHclTerraform(this._masterMediaAssetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      media_workflow_job_id: {
+        value: cdktf.stringToHclTerraform(this._mediaWorkflowJobId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object: {
+        value: cdktf.stringToHclTerraform(this._object),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      parent_media_asset_id: {
+        value: cdktf.stringToHclTerraform(this._parentMediaAssetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_media_workflow_id: {
+        value: cdktf.stringToHclTerraform(this._sourceMediaWorkflowId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_media_workflow_version: {
+        value: cdktf.stringToHclTerraform(this._sourceMediaWorkflowVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciMediaServicesMediaAssetsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciMediaServicesMediaAssetsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

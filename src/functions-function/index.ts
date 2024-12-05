@@ -52,25 +52,25 @@ export interface FunctionsFunctionConfig extends cdktf.TerraformMetaArguments {
   readonly timeoutInSeconds?: number;
   /**
   * provisioned_concurrency_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/functions_function#provisioned_concurrency_config FunctionsFunction#provisioned_concurrency_config}
   */
   readonly provisionedConcurrencyConfig?: FunctionsFunctionProvisionedConcurrencyConfig;
   /**
   * source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/functions_function#source_details FunctionsFunction#source_details}
   */
   readonly sourceDetails?: FunctionsFunctionSourceDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/functions_function#timeouts FunctionsFunction#timeouts}
   */
   readonly timeouts?: FunctionsFunctionTimeouts;
   /**
   * trace_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/functions_function#trace_config FunctionsFunction#trace_config}
   */
   readonly traceConfig?: FunctionsFunctionTraceConfig;
@@ -95,6 +95,31 @@ export function functionsFunctionProvisionedConcurrencyConfigToTerraform(struct?
     count: cdktf.numberToTerraform(struct!.count),
     strategy: cdktf.stringToTerraform(struct!.strategy),
   }
+}
+
+
+export function functionsFunctionProvisionedConcurrencyConfigToHclTerraform(struct?: FunctionsFunctionProvisionedConcurrencyConfigOutputReference | FunctionsFunctionProvisionedConcurrencyConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    count: {
+      value: cdktf.numberToHclTerraform(struct!.count),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    strategy: {
+      value: cdktf.stringToHclTerraform(struct!.strategy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FunctionsFunctionProvisionedConcurrencyConfigOutputReference extends cdktf.ComplexObject {
@@ -186,6 +211,31 @@ export function functionsFunctionSourceDetailsToTerraform(struct?: FunctionsFunc
   }
 }
 
+
+export function functionsFunctionSourceDetailsToHclTerraform(struct?: FunctionsFunctionSourceDetailsOutputReference | FunctionsFunctionSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    pbf_listing_id: {
+      value: cdktf.stringToHclTerraform(struct!.pbfListingId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FunctionsFunctionSourceDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -275,6 +325,37 @@ export function functionsFunctionTimeoutsToTerraform(struct?: FunctionsFunctionT
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function functionsFunctionTimeoutsToHclTerraform(struct?: FunctionsFunctionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FunctionsFunctionTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -396,6 +477,25 @@ export function functionsFunctionTraceConfigToTerraform(struct?: FunctionsFuncti
   }
 }
 
+
+export function functionsFunctionTraceConfigToHclTerraform(struct?: FunctionsFunctionTraceConfigOutputReference | FunctionsFunctionTraceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FunctionsFunctionTraceConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -454,6 +554,20 @@ export class FunctionsFunction extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_functions_function";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FunctionsFunction resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FunctionsFunction to import
+  * @param importFromId The id of the existing FunctionsFunction that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/functions_function#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FunctionsFunction to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_functions_function", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -768,5 +882,97 @@ export class FunctionsFunction extends cdktf.TerraformResource {
       timeouts: functionsFunctionTimeoutsToTerraform(this._timeouts.internalValue),
       trace_config: functionsFunctionTraceConfigToTerraform(this._traceConfig.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      application_id: {
+        value: cdktf.stringToHclTerraform(this._applicationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      config: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._config),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      image: {
+        value: cdktf.stringToHclTerraform(this._image),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      image_digest: {
+        value: cdktf.stringToHclTerraform(this._imageDigest),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      memory_in_mbs: {
+        value: cdktf.stringToHclTerraform(this._memoryInMbs),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeout_in_seconds: {
+        value: cdktf.numberToHclTerraform(this._timeoutInSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      provisioned_concurrency_config: {
+        value: functionsFunctionProvisionedConcurrencyConfigToHclTerraform(this._provisionedConcurrencyConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FunctionsFunctionProvisionedConcurrencyConfigList",
+      },
+      source_details: {
+        value: functionsFunctionSourceDetailsToHclTerraform(this._sourceDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FunctionsFunctionSourceDetailsList",
+      },
+      timeouts: {
+        value: functionsFunctionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FunctionsFunctionTimeouts",
+      },
+      trace_config: {
+        value: functionsFunctionTraceConfigToHclTerraform(this._traceConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FunctionsFunctionTraceConfigList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

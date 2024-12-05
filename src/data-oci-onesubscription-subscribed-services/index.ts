@@ -32,7 +32,7 @@ export interface DataOciOnesubscriptionSubscribedServicesConfig extends cdktf.Te
   readonly subscriptionId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/onesubscription_subscribed_services#filter DataOciOnesubscriptionSubscribedServices#filter}
   */
   readonly filter?: DataOciOnesubscriptionSubscribedServicesFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesBillTo
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToAddressLocationToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToAddressLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToAddressLocationOutputReference extends cdktf.ComplexObject {
@@ -141,6 +152,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesBillTo
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToAddressToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToAddress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToAddressOutputReference extends cdktf.ComplexObject {
@@ -248,6 +270,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesBillTo
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToContactToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToContact): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToContactOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -345,6 +378,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesBillTo
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToCustomerToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToCustomer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesBillToCustomerOutputReference extends cdktf.ComplexObject {
@@ -451,6 +495,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesCommit
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesCommitmentServicesToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesCommitmentServices): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesCommitmentServicesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -538,6 +593,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUse
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserAddressLocationToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserAddressLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserAddressLocationOutputReference extends cdktf.ComplexObject {
@@ -632,6 +698,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUse
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserAddressToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserAddress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserAddressOutputReference extends cdktf.ComplexObject {
@@ -739,6 +816,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUse
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserContactToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserContact): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserContactOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -836,6 +924,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUse
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserCustomerToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserCustomer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesEndUserCustomerOutputReference extends cdktf.ComplexObject {
@@ -942,6 +1041,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesPaymen
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesPaymentTermToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesPaymentTerm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesPaymentTermOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1041,6 +1151,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesProduc
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesProductToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesProduct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesProductOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1130,6 +1251,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCa
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsCurrencyToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsCurrency): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsCurrencyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1202,6 +1334,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCa
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsProductToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsProduct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsProductOutputReference extends cdktf.ComplexObject {
@@ -1293,6 +1436,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCa
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsRateCardTiersToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsRateCardTiers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsRateCardTiersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1365,6 +1519,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCa
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCards): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesRateCardsOutputReference extends cdktf.ComplexObject {
@@ -1479,6 +1644,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesResell
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerAddressLocationToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerAddressLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerAddressLocationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1571,6 +1747,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesResell
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerAddressToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerAddress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerAddressOutputReference extends cdktf.ComplexObject {
@@ -1678,6 +1865,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesResell
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerContactToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerContact): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerContactOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1775,6 +1973,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesResell
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerCustomerToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerCustomer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesResellerCustomerOutputReference extends cdktf.ComplexObject {
@@ -1881,6 +2090,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesServic
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToAddressLocationToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToAddressLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToAddressLocationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1973,6 +2193,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesServic
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToAddressToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToAddress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToAddressOutputReference extends cdktf.ComplexObject {
@@ -2080,6 +2311,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesServic
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToContactToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToContact): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToContactOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2177,6 +2419,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesServic
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToCustomerToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToCustomer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesServiceToCustomerOutputReference extends cdktf.ComplexObject {
@@ -2283,6 +2536,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesSoldTo
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesSoldToContactToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesSoldToContact): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesSoldToContactOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2380,6 +2644,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesSoldTo
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesSoldToCustomerToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServicesSoldToCustomer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesSoldToCustomerOutputReference extends cdktf.ComplexObject {
@@ -2484,6 +2759,17 @@ export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesToTerr
   }
   return {
   }
+}
+
+
+export function dataOciOnesubscriptionSubscribedServicesSubscribedServicesToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesSubscribedServices): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOnesubscriptionSubscribedServicesSubscribedServicesOutputReference extends cdktf.ComplexObject {
@@ -3133,6 +3419,37 @@ export function dataOciOnesubscriptionSubscribedServicesFilterToTerraform(struct
   }
 }
 
+
+export function dataOciOnesubscriptionSubscribedServicesFilterToHclTerraform(struct?: DataOciOnesubscriptionSubscribedServicesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciOnesubscriptionSubscribedServicesFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -3261,6 +3578,20 @@ export class DataOciOnesubscriptionSubscribedServices extends cdktf.TerraformDat
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_onesubscription_subscribed_services";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOnesubscriptionSubscribedServices resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOnesubscriptionSubscribedServices to import
+  * @param importFromId The id of the existing DataOciOnesubscriptionSubscribedServices that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/onesubscription_subscribed_services#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOnesubscriptionSubscribedServices to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_onesubscription_subscribed_services", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -3410,5 +3741,49 @@ export class DataOciOnesubscriptionSubscribedServices extends cdktf.TerraformDat
       subscription_id: cdktf.stringToTerraform(this._subscriptionId),
       filter: cdktf.listMapper(dataOciOnesubscriptionSubscribedServicesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      order_line_id: {
+        value: cdktf.stringToHclTerraform(this._orderLineId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subscription_id: {
+        value: cdktf.stringToHclTerraform(this._subscriptionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOnesubscriptionSubscribedServicesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOnesubscriptionSubscribedServicesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

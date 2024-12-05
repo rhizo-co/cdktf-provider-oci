@@ -44,7 +44,7 @@ export interface DataOciStackMonitoringMonitoredResourceTypesConfig extends cdkt
   readonly status?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_monitored_resource_types#filter DataOciStackMonitoringMonitoredResourceTypes#filter}
   */
   readonly filter?: DataOciStackMonitoringMonitoredResourceTypesFilter[] | cdktf.IResolvable;
@@ -59,6 +59,17 @@ export function dataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTyp
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionItemsMetadataUniquePropertySetsToHclTerraform(struct?: DataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionItemsMetadataUniquePropertySets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionItemsMetadataUniquePropertySetsOutputReference extends cdktf.ComplexObject {
@@ -123,6 +134,17 @@ export function dataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTyp
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionItemsMetadataToHclTerraform(struct?: DataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionItemsMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionItemsMetadataOutputReference extends cdktf.ComplexObject {
@@ -219,6 +241,17 @@ export function dataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTyp
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionItemsToHclTerraform(struct?: DataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -359,6 +392,17 @@ export function dataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTyp
   }
 }
 
+
+export function dataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionToHclTerraform(struct?: DataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciStackMonitoringMonitoredResourceTypesMonitoredResourceTypesCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -437,6 +481,37 @@ export function dataOciStackMonitoringMonitoredResourceTypesFilterToTerraform(st
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciStackMonitoringMonitoredResourceTypesFilterToHclTerraform(struct?: DataOciStackMonitoringMonitoredResourceTypesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciStackMonitoringMonitoredResourceTypesFilterOutputReference extends cdktf.ComplexObject {
@@ -567,6 +642,20 @@ export class DataOciStackMonitoringMonitoredResourceTypes extends cdktf.Terrafor
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_monitored_resource_types";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciStackMonitoringMonitoredResourceTypes resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciStackMonitoringMonitoredResourceTypes to import
+  * @param importFromId The id of the existing DataOciStackMonitoringMonitoredResourceTypes that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_monitored_resource_types#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciStackMonitoringMonitoredResourceTypes to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_monitored_resource_types", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -773,5 +862,67 @@ export class DataOciStackMonitoringMonitoredResourceTypes extends cdktf.Terrafor
       status: cdktf.stringToTerraform(this._status),
       filter: cdktf.listMapper(dataOciStackMonitoringMonitoredResourceTypesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      exclude_fields: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._excludeFields),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      fields: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._fields),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_exclude_system_types: {
+        value: cdktf.booleanToHclTerraform(this._isExcludeSystemTypes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      metric_namespace: {
+        value: cdktf.stringToHclTerraform(this._metricNamespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciStackMonitoringMonitoredResourceTypesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciStackMonitoringMonitoredResourceTypesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -52,13 +52,13 @@ export interface DataSafeAuditPolicyManagementConfig extends cdktf.TerraformMeta
   readonly targetId?: string;
   /**
   * audit_conditions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_audit_policy_management#audit_conditions DataSafeAuditPolicyManagement#audit_conditions}
   */
   readonly auditConditions?: DataSafeAuditPolicyManagementAuditConditions[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_audit_policy_management#timeouts DataSafeAuditPolicyManagement#timeouts}
   */
   readonly timeouts?: DataSafeAuditPolicyManagementTimeouts;
@@ -73,6 +73,17 @@ export function dataSafeAuditPolicyManagementAuditSpecificationsToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataSafeAuditPolicyManagementAuditSpecificationsToHclTerraform(struct?: DataSafeAuditPolicyManagementAuditSpecifications): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataSafeAuditPolicyManagementAuditSpecificationsOutputReference extends cdktf.ComplexObject {
@@ -207,6 +218,43 @@ export function dataSafeAuditPolicyManagementAuditConditionsEnableConditionsToTe
     entity_type: cdktf.stringToTerraform(struct!.entityType),
     operation_status: cdktf.stringToTerraform(struct!.operationStatus),
   }
+}
+
+
+export function dataSafeAuditPolicyManagementAuditConditionsEnableConditionsToHclTerraform(struct?: DataSafeAuditPolicyManagementAuditConditionsEnableConditions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    entity_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.entityNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    entity_selection: {
+      value: cdktf.stringToHclTerraform(struct!.entitySelection),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    entity_type: {
+      value: cdktf.stringToHclTerraform(struct!.entityType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operation_status: {
+      value: cdktf.stringToHclTerraform(struct!.operationStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeAuditPolicyManagementAuditConditionsEnableConditionsOutputReference extends cdktf.ComplexObject {
@@ -374,7 +422,7 @@ export interface DataSafeAuditPolicyManagementAuditConditions {
   readonly isPrivUsersManagedByDataSafe?: boolean | cdktf.IResolvable;
   /**
   * enable_conditions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_audit_policy_management#enable_conditions DataSafeAuditPolicyManagement#enable_conditions}
   */
   readonly enableConditions?: DataSafeAuditPolicyManagementAuditConditionsEnableConditions[] | cdktf.IResolvable;
@@ -392,6 +440,49 @@ export function dataSafeAuditPolicyManagementAuditConditionsToTerraform(struct?:
     is_priv_users_managed_by_data_safe: cdktf.booleanToTerraform(struct!.isPrivUsersManagedByDataSafe),
     enable_conditions: cdktf.listMapper(dataSafeAuditPolicyManagementAuditConditionsEnableConditionsToTerraform, true)(struct!.enableConditions),
   }
+}
+
+
+export function dataSafeAuditPolicyManagementAuditConditionsToHclTerraform(struct?: DataSafeAuditPolicyManagementAuditConditions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    audit_policy_name: {
+      value: cdktf.stringToHclTerraform(struct!.auditPolicyName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_data_safe_service_account_audited: {
+      value: cdktf.booleanToHclTerraform(struct!.isDataSafeServiceAccountAudited),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_priv_users_managed_by_data_safe: {
+      value: cdktf.booleanToHclTerraform(struct!.isPrivUsersManagedByDataSafe),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    enable_conditions: {
+      value: cdktf.listMapperHcl(dataSafeAuditPolicyManagementAuditConditionsEnableConditionsToHclTerraform, true)(struct!.enableConditions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataSafeAuditPolicyManagementAuditConditionsEnableConditionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeAuditPolicyManagementAuditConditionsOutputReference extends cdktf.ComplexObject {
@@ -589,6 +680,37 @@ export function dataSafeAuditPolicyManagementTimeoutsToTerraform(struct?: DataSa
   }
 }
 
+
+export function dataSafeAuditPolicyManagementTimeoutsToHclTerraform(struct?: DataSafeAuditPolicyManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataSafeAuditPolicyManagementTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -701,6 +823,20 @@ export class DataSafeAuditPolicyManagement extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_audit_policy_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeAuditPolicyManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeAuditPolicyManagement to import
+  * @param importFromId The id of the existing DataSafeAuditPolicyManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_audit_policy_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeAuditPolicyManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_audit_policy_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1000,5 +1136,85 @@ export class DataSafeAuditPolicyManagement extends cdktf.TerraformResource {
       audit_conditions: cdktf.listMapper(dataSafeAuditPolicyManagementAuditConditionsToTerraform, true)(this._auditConditions.internalValue),
       timeouts: dataSafeAuditPolicyManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_data_safe_service_account_excluded: {
+        value: cdktf.booleanToHclTerraform(this._isDataSafeServiceAccountExcluded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      provision_trigger: {
+        value: cdktf.booleanToHclTerraform(this._provisionTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      retrieve_from_target_trigger: {
+        value: cdktf.booleanToHclTerraform(this._retrieveFromTargetTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      target_id: {
+        value: cdktf.stringToHclTerraform(this._targetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      audit_conditions: {
+        value: cdktf.listMapperHcl(dataSafeAuditPolicyManagementAuditConditionsToHclTerraform, true)(this._auditConditions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataSafeAuditPolicyManagementAuditConditionsList",
+      },
+      timeouts: {
+        value: dataSafeAuditPolicyManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeAuditPolicyManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -28,7 +28,7 @@ export interface DataOciIdentityUserGroupMembershipsConfig extends cdktf.Terrafo
   readonly userId?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_user_group_memberships#filter DataOciIdentityUserGroupMemberships#filter}
   */
   readonly filter?: DataOciIdentityUserGroupMembershipsFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciIdentityUserGroupMembershipsMembershipsToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciIdentityUserGroupMembershipsMembershipsToHclTerraform(struct?: DataOciIdentityUserGroupMembershipsMemberships): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityUserGroupMembershipsMembershipsOutputReference extends cdktf.ComplexObject {
@@ -152,6 +163,37 @@ export function dataOciIdentityUserGroupMembershipsFilterToTerraform(struct?: Da
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciIdentityUserGroupMembershipsFilterToHclTerraform(struct?: DataOciIdentityUserGroupMembershipsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciIdentityUserGroupMembershipsFilterOutputReference extends cdktf.ComplexObject {
@@ -282,6 +324,20 @@ export class DataOciIdentityUserGroupMemberships extends cdktf.TerraformDataSour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_user_group_memberships";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityUserGroupMemberships resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityUserGroupMemberships to import
+  * @param importFromId The id of the existing DataOciIdentityUserGroupMemberships that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_user_group_memberships#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityUserGroupMemberships to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_user_group_memberships", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -416,5 +472,43 @@ export class DataOciIdentityUserGroupMemberships extends cdktf.TerraformDataSour
       user_id: cdktf.stringToTerraform(this._userId),
       filter: cdktf.listMapper(dataOciIdentityUserGroupMembershipsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      group_id: {
+        value: cdktf.stringToHclTerraform(this._groupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_id: {
+        value: cdktf.stringToHclTerraform(this._userId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciIdentityUserGroupMembershipsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciIdentityUserGroupMembershipsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

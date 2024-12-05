@@ -48,7 +48,7 @@ export interface DataOciDnsSteeringPoliciesConfig extends cdktf.TerraformMetaArg
   readonly timeCreatedLessThan?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dns_steering_policies#filter DataOciDnsSteeringPolicies#filter}
   */
   readonly filter?: DataOciDnsSteeringPoliciesFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciDnsSteeringPoliciesSteeringPoliciesAnswersToTerraform(str
   }
   return {
   }
+}
+
+
+export function dataOciDnsSteeringPoliciesSteeringPoliciesAnswersToHclTerraform(struct?: DataOciDnsSteeringPoliciesSteeringPoliciesAnswers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDnsSteeringPoliciesSteeringPoliciesAnswersOutputReference extends cdktf.ComplexObject {
@@ -149,6 +160,17 @@ export function dataOciDnsSteeringPoliciesSteeringPoliciesRulesCasesAnswerDataTo
   }
 }
 
+
+export function dataOciDnsSteeringPoliciesSteeringPoliciesRulesCasesAnswerDataToHclTerraform(struct?: DataOciDnsSteeringPoliciesSteeringPoliciesRulesCasesAnswerData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDnsSteeringPoliciesSteeringPoliciesRulesCasesAnswerDataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -221,6 +243,17 @@ export function dataOciDnsSteeringPoliciesSteeringPoliciesRulesCasesToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciDnsSteeringPoliciesSteeringPoliciesRulesCasesToHclTerraform(struct?: DataOciDnsSteeringPoliciesSteeringPoliciesRulesCases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDnsSteeringPoliciesSteeringPoliciesRulesCasesOutputReference extends cdktf.ComplexObject {
@@ -298,6 +331,17 @@ export function dataOciDnsSteeringPoliciesSteeringPoliciesRulesDefaultAnswerData
   }
 }
 
+
+export function dataOciDnsSteeringPoliciesSteeringPoliciesRulesDefaultAnswerDataToHclTerraform(struct?: DataOciDnsSteeringPoliciesSteeringPoliciesRulesDefaultAnswerData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDnsSteeringPoliciesSteeringPoliciesRulesDefaultAnswerDataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -370,6 +414,17 @@ export function dataOciDnsSteeringPoliciesSteeringPoliciesRulesToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciDnsSteeringPoliciesSteeringPoliciesRulesToHclTerraform(struct?: DataOciDnsSteeringPoliciesSteeringPoliciesRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDnsSteeringPoliciesSteeringPoliciesRulesOutputReference extends cdktf.ComplexObject {
@@ -456,6 +511,17 @@ export function dataOciDnsSteeringPoliciesSteeringPoliciesToTerraform(struct?: D
   }
   return {
   }
+}
+
+
+export function dataOciDnsSteeringPoliciesSteeringPoliciesToHclTerraform(struct?: DataOciDnsSteeringPoliciesSteeringPolicies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDnsSteeringPoliciesSteeringPoliciesOutputReference extends cdktf.ComplexObject {
@@ -601,6 +667,37 @@ export function dataOciDnsSteeringPoliciesFilterToTerraform(struct?: DataOciDnsS
   }
 }
 
+
+export function dataOciDnsSteeringPoliciesFilterToHclTerraform(struct?: DataOciDnsSteeringPoliciesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciDnsSteeringPoliciesFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -729,6 +826,20 @@ export class DataOciDnsSteeringPolicies extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dns_steering_policies";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDnsSteeringPolicies resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDnsSteeringPolicies to import
+  * @param importFromId The id of the existing DataOciDnsSteeringPolicies that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dns_steering_policies#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDnsSteeringPolicies to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dns_steering_policies", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -953,5 +1064,73 @@ export class DataOciDnsSteeringPolicies extends cdktf.TerraformDataSource {
       time_created_less_than: cdktf.stringToTerraform(this._timeCreatedLessThan),
       filter: cdktf.listMapper(dataOciDnsSteeringPoliciesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name_contains: {
+        value: cdktf.stringToHclTerraform(this._displayNameContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      health_check_monitor_id: {
+        value: cdktf.stringToHclTerraform(this._healthCheckMonitorId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      template: {
+        value: cdktf.stringToHclTerraform(this._template),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDnsSteeringPoliciesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDnsSteeringPoliciesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

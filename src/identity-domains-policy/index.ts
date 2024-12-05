@@ -57,25 +57,25 @@ export interface IdentityDomainsPolicyConfig extends cdktf.TerraformMetaArgument
   readonly schemas: string[];
   /**
   * policy_type block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_policy#policy_type IdentityDomainsPolicy#policy_type}
   */
   readonly policyType: IdentityDomainsPolicyPolicyType;
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_policy#rules IdentityDomainsPolicy#rules}
   */
   readonly rules?: IdentityDomainsPolicyRules[] | cdktf.IResolvable;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_policy#tags IdentityDomainsPolicy#tags}
   */
   readonly tags?: IdentityDomainsPolicyTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_policy#timeouts IdentityDomainsPolicy#timeouts}
   */
   readonly timeouts?: IdentityDomainsPolicyTimeouts;
@@ -90,6 +90,17 @@ export function identityDomainsPolicyIdcsCreatedByToTerraform(struct?: IdentityD
   }
   return {
   }
+}
+
+
+export function identityDomainsPolicyIdcsCreatedByToHclTerraform(struct?: IdentityDomainsPolicyIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsPolicyIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -176,6 +187,17 @@ export function identityDomainsPolicyIdcsLastModifiedByToTerraform(struct?: Iden
   }
 }
 
+
+export function identityDomainsPolicyIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsPolicyIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsPolicyIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -258,6 +280,17 @@ export function identityDomainsPolicyMetaToTerraform(struct?: IdentityDomainsPol
   }
   return {
   }
+}
+
+
+export function identityDomainsPolicyMetaToHclTerraform(struct?: IdentityDomainsPolicyMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsPolicyMetaOutputReference extends cdktf.ComplexObject {
@@ -349,6 +382,25 @@ export function identityDomainsPolicyPolicyTypeToTerraform(struct?: IdentityDoma
   }
 }
 
+
+export function identityDomainsPolicyPolicyTypeToHclTerraform(struct?: IdentityDomainsPolicyPolicyTypeOutputReference | IdentityDomainsPolicyPolicyType): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsPolicyPolicyTypeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -419,6 +471,31 @@ export function identityDomainsPolicyRulesToTerraform(struct?: IdentityDomainsPo
     sequence: cdktf.numberToTerraform(struct!.sequence),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsPolicyRulesToHclTerraform(struct?: IdentityDomainsPolicyRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    sequence: {
+      value: cdktf.numberToHclTerraform(struct!.sequence),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsPolicyRulesOutputReference extends cdktf.ComplexObject {
@@ -549,6 +626,31 @@ export function identityDomainsPolicyTagsToTerraform(struct?: IdentityDomainsPol
   }
 }
 
+
+export function identityDomainsPolicyTagsToHclTerraform(struct?: IdentityDomainsPolicyTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsPolicyTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -672,6 +774,37 @@ export function identityDomainsPolicyTimeoutsToTerraform(struct?: IdentityDomain
   }
 }
 
+
+export function identityDomainsPolicyTimeoutsToHclTerraform(struct?: IdentityDomainsPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -784,6 +917,20 @@ export class IdentityDomainsPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsPolicy to import
+  * @param importFromId The id of the existing IdentityDomainsPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1154,5 +1301,109 @@ export class IdentityDomainsPolicy extends cdktf.TerraformResource {
       tags: cdktf.listMapper(identityDomainsPolicyTagsToTerraform, true)(this._tags.internalValue),
       timeouts: identityDomainsPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      active: {
+        value: cdktf.booleanToHclTerraform(this._active),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_id: {
+        value: cdktf.stringToHclTerraform(this._externalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      policy_groovy: {
+        value: cdktf.stringToHclTerraform(this._policyGroovy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      policy_type: {
+        value: identityDomainsPolicyPolicyTypeToHclTerraform(this._policyType.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsPolicyPolicyTypeList",
+      },
+      rules: {
+        value: cdktf.listMapperHcl(identityDomainsPolicyRulesToHclTerraform, true)(this._rules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsPolicyRulesList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsPolicyTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsPolicyTagsList",
+      },
+      timeouts: {
+        value: identityDomainsPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,6 +24,17 @@ export function dataOciCapacityManagementOccCapacityRequestDetailsAssociatedOccH
   }
 }
 
+
+export function dataOciCapacityManagementOccCapacityRequestDetailsAssociatedOccHandoverResourceBlockListStructToHclTerraform(struct?: DataOciCapacityManagementOccCapacityRequestDetailsAssociatedOccHandoverResourceBlockListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCapacityManagementOccCapacityRequestDetailsAssociatedOccHandoverResourceBlockListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciCapacityManagementOccCapacityRequestDetailsToTerraform(st
   }
   return {
   }
+}
+
+
+export function dataOciCapacityManagementOccCapacityRequestDetailsToHclTerraform(struct?: DataOciCapacityManagementOccCapacityRequestDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCapacityManagementOccCapacityRequestDetailsOutputReference extends cdktf.ComplexObject {
@@ -208,6 +230,17 @@ export function dataOciCapacityManagementOccCapacityRequestPatchOperationsToTerr
   }
 }
 
+
+export function dataOciCapacityManagementOccCapacityRequestPatchOperationsToHclTerraform(struct?: DataOciCapacityManagementOccCapacityRequestPatchOperations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCapacityManagementOccCapacityRequestPatchOperationsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -296,6 +329,20 @@ export class DataOciCapacityManagementOccCapacityRequest extends cdktf.Terraform
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_capacity_management_occ_capacity_request";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCapacityManagementOccCapacityRequest resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCapacityManagementOccCapacityRequest to import
+  * @param importFromId The id of the existing DataOciCapacityManagementOccCapacityRequest that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/capacity_management_occ_capacity_request#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCapacityManagementOccCapacityRequest to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_capacity_management_occ_capacity_request", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -462,5 +509,19 @@ export class DataOciCapacityManagementOccCapacityRequest extends cdktf.Terraform
     return {
       occ_capacity_request_id: cdktf.stringToTerraform(this._occCapacityRequestId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      occ_capacity_request_id: {
+        value: cdktf.stringToHclTerraform(this._occCapacityRequestId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

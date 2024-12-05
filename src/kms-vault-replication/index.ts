@@ -24,7 +24,7 @@ export interface KmsVaultReplicationConfig extends cdktf.TerraformMetaArguments 
   readonly vaultId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_vault_replication#timeouts KmsVaultReplication#timeouts}
   */
   readonly timeouts?: KmsVaultReplicationTimeouts;
@@ -54,6 +54,37 @@ export function kmsVaultReplicationTimeoutsToTerraform(struct?: KmsVaultReplicat
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function kmsVaultReplicationTimeoutsToHclTerraform(struct?: KmsVaultReplicationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsVaultReplicationTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -169,6 +200,20 @@ export class KmsVaultReplication extends cdktf.TerraformResource {
   // =================
   public static readonly tfResourceType = "oci_kms_vault_replication";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a KmsVaultReplication resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the KmsVaultReplication to import
+  * @param importFromId The id of the existing KmsVaultReplication that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_vault_replication#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the KmsVaultReplication to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_vault_replication", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -275,5 +320,37 @@ export class KmsVaultReplication extends cdktf.TerraformResource {
       vault_id: cdktf.stringToTerraform(this._vaultId),
       timeouts: kmsVaultReplicationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      replica_region: {
+        value: cdktf.stringToHclTerraform(this._replicaRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vault_id: {
+        value: cdktf.stringToHclTerraform(this._vaultId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: kmsVaultReplicationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "KmsVaultReplicationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

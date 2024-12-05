@@ -28,6 +28,17 @@ export function dataOciGloballyDistributedDatabaseShardedDatabaseCatalogDetailsE
   }
 }
 
+
+export function dataOciGloballyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetailsToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGloballyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -100,6 +111,17 @@ export function dataOciGloballyDistributedDatabaseShardedDatabaseCatalogDetailsT
   }
   return {
   }
+}
+
+
+export function dataOciGloballyDistributedDatabaseShardedDatabaseCatalogDetailsToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabaseCatalogDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGloballyDistributedDatabaseShardedDatabaseCatalogDetailsOutputReference extends cdktf.ComplexObject {
@@ -248,6 +270,17 @@ export function dataOciGloballyDistributedDatabaseShardedDatabaseConnectionStrin
   }
 }
 
+
+export function dataOciGloballyDistributedDatabaseShardedDatabaseConnectionStringsToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabaseConnectionStrings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGloballyDistributedDatabaseShardedDatabaseConnectionStringsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -311,6 +344,17 @@ export function dataOciGloballyDistributedDatabaseShardedDatabaseGsmsToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciGloballyDistributedDatabaseShardedDatabaseGsmsToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabaseGsms): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGloballyDistributedDatabaseShardedDatabaseGsmsOutputReference extends cdktf.ComplexObject {
@@ -418,6 +462,17 @@ export function dataOciGloballyDistributedDatabaseShardedDatabasePatchOperations
   }
 }
 
+
+export function dataOciGloballyDistributedDatabaseShardedDatabasePatchOperationsToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabasePatchOperations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGloballyDistributedDatabaseShardedDatabasePatchOperationsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -492,6 +547,17 @@ export function dataOciGloballyDistributedDatabaseShardedDatabaseShardDetailsEnc
   }
 }
 
+
+export function dataOciGloballyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetailsToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGloballyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -564,6 +630,17 @@ export function dataOciGloballyDistributedDatabaseShardedDatabaseShardDetailsToT
   }
   return {
   }
+}
+
+
+export function dataOciGloballyDistributedDatabaseShardedDatabaseShardDetailsToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabaseShardDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGloballyDistributedDatabaseShardedDatabaseShardDetailsOutputReference extends cdktf.ComplexObject {
@@ -715,6 +792,20 @@ export class DataOciGloballyDistributedDatabaseShardedDatabase extends cdktf.Ter
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_globally_distributed_database_sharded_database";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGloballyDistributedDatabaseShardedDatabase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGloballyDistributedDatabaseShardedDatabase to import
+  * @param importFromId The id of the existing DataOciGloballyDistributedDatabaseShardedDatabase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/globally_distributed_database_sharded_database#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGloballyDistributedDatabaseShardedDatabase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_globally_distributed_database_sharded_database", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1037,5 +1128,25 @@ export class DataOciGloballyDistributedDatabaseShardedDatabase extends cdktf.Ter
       metadata: cdktf.stringToTerraform(this._metadata),
       sharded_database_id: cdktf.stringToTerraform(this._shardedDatabaseId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      metadata: {
+        value: cdktf.stringToHclTerraform(this._metadata),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sharded_database_id: {
+        value: cdktf.stringToHclTerraform(this._shardedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

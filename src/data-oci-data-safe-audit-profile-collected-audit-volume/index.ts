@@ -43,6 +43,17 @@ export function dataOciDataSafeAuditProfileCollectedAuditVolumeItemsToTerraform(
   }
 }
 
+
+export function dataOciDataSafeAuditProfileCollectedAuditVolumeItemsToHclTerraform(struct?: DataOciDataSafeAuditProfileCollectedAuditVolumeItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeAuditProfileCollectedAuditVolumeItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -120,6 +131,20 @@ export class DataOciDataSafeAuditProfileCollectedAuditVolume extends cdktf.Terra
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_audit_profile_collected_audit_volume";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeAuditProfileCollectedAuditVolume resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeAuditProfileCollectedAuditVolume to import
+  * @param importFromId The id of the existing DataOciDataSafeAuditProfileCollectedAuditVolume that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_audit_profile_collected_audit_volume#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeAuditProfileCollectedAuditVolume to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_audit_profile_collected_audit_volume", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -251,5 +276,43 @@ export class DataOciDataSafeAuditProfileCollectedAuditVolume extends cdktf.Terra
       month_in_consideration_less_than: cdktf.stringToTerraform(this._monthInConsiderationLessThan),
       work_request_id: cdktf.stringToTerraform(this._workRequestId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      audit_profile_id: {
+        value: cdktf.stringToHclTerraform(this._auditProfileId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      month_in_consideration_greater_than: {
+        value: cdktf.stringToHclTerraform(this._monthInConsiderationGreaterThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      month_in_consideration_less_than: {
+        value: cdktf.stringToHclTerraform(this._monthInConsiderationLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      work_request_id: {
+        value: cdktf.stringToHclTerraform(this._workRequestId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

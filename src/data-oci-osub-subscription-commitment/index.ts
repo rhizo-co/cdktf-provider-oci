@@ -38,6 +38,20 @@ export class DataOciOsubSubscriptionCommitment extends cdktf.TerraformDataSource
   // =================
   public static readonly tfResourceType = "oci_osub_subscription_commitment";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOsubSubscriptionCommitment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOsubSubscriptionCommitment to import
+  * @param importFromId The id of the existing DataOciOsubSubscriptionCommitment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/osub_subscription_commitment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOsubSubscriptionCommitment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_osub_subscription_commitment", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -177,5 +191,37 @@ export class DataOciOsubSubscriptionCommitment extends cdktf.TerraformDataSource
       x_one_gateway_subscription_id: cdktf.stringToTerraform(this._xOneGatewaySubscriptionId),
       x_one_origin_region: cdktf.stringToTerraform(this._xOneOriginRegion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      commitment_id: {
+        value: cdktf.stringToHclTerraform(this._commitmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      x_one_gateway_subscription_id: {
+        value: cdktf.stringToHclTerraform(this._xOneGatewaySubscriptionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      x_one_origin_region: {
+        value: cdktf.stringToHclTerraform(this._xOneOriginRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

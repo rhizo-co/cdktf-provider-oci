@@ -60,7 +60,7 @@ export interface DataOciDatabaseVmClusterRecommendedNetworkConfig extends cdktf.
   readonly scanListenerPortTcpSsl?: number;
   /**
   * networks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_vm_cluster_recommended_network#networks DataOciDatabaseVmClusterRecommendedNetwork#networks}
   */
   readonly networks: DataOciDatabaseVmClusterRecommendedNetworkNetworks[] | cdktf.IResolvable;
@@ -75,6 +75,17 @@ export function dataOciDatabaseVmClusterRecommendedNetworkDrScansToTerraform(str
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseVmClusterRecommendedNetworkDrScansToHclTerraform(struct?: DataOciDatabaseVmClusterRecommendedNetworkDrScans): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseVmClusterRecommendedNetworkDrScansOutputReference extends cdktf.ComplexObject {
@@ -149,6 +160,17 @@ export function dataOciDatabaseVmClusterRecommendedNetworkScansToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseVmClusterRecommendedNetworkScansToHclTerraform(struct?: DataOciDatabaseVmClusterRecommendedNetworkScans): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseVmClusterRecommendedNetworkScansOutputReference extends cdktf.ComplexObject {
@@ -233,6 +255,17 @@ export function dataOciDatabaseVmClusterRecommendedNetworkVmNetworksNodesToTerra
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseVmClusterRecommendedNetworkVmNetworksNodesToHclTerraform(struct?: DataOciDatabaseVmClusterRecommendedNetworkVmNetworksNodes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseVmClusterRecommendedNetworkVmNetworksNodesOutputReference extends cdktf.ComplexObject {
@@ -322,6 +355,17 @@ export function dataOciDatabaseVmClusterRecommendedNetworkVmNetworksToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseVmClusterRecommendedNetworkVmNetworksToHclTerraform(struct?: DataOciDatabaseVmClusterRecommendedNetworkVmNetworks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseVmClusterRecommendedNetworkVmNetworksOutputReference extends cdktf.ComplexObject {
@@ -447,6 +491,61 @@ export function dataOciDatabaseVmClusterRecommendedNetworkNetworksToTerraform(st
     prefix: cdktf.stringToTerraform(struct!.prefix),
     vlan_id: cdktf.stringToTerraform(struct!.vlanId),
   }
+}
+
+
+export function dataOciDatabaseVmClusterRecommendedNetworkNetworksToHclTerraform(struct?: DataOciDatabaseVmClusterRecommendedNetworkNetworks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cidr: {
+      value: cdktf.stringToHclTerraform(struct!.cidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    domain: {
+      value: cdktf.stringToHclTerraform(struct!.domain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    gateway: {
+      value: cdktf.stringToHclTerraform(struct!.gateway),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    netmask: {
+      value: cdktf.stringToHclTerraform(struct!.netmask),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    network_type: {
+      value: cdktf.stringToHclTerraform(struct!.networkType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    prefix: {
+      value: cdktf.stringToHclTerraform(struct!.prefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.vlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatabaseVmClusterRecommendedNetworkNetworksOutputReference extends cdktf.ComplexObject {
@@ -650,6 +749,20 @@ export class DataOciDatabaseVmClusterRecommendedNetwork extends cdktf.TerraformD
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_vm_cluster_recommended_network";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseVmClusterRecommendedNetwork resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseVmClusterRecommendedNetwork to import
+  * @param importFromId The id of the existing DataOciDatabaseVmClusterRecommendedNetwork that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_vm_cluster_recommended_network#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseVmClusterRecommendedNetwork to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_vm_cluster_recommended_network", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -931,5 +1044,91 @@ export class DataOciDatabaseVmClusterRecommendedNetwork extends cdktf.TerraformD
       scan_listener_port_tcp_ssl: cdktf.numberToTerraform(this._scanListenerPortTcpSsl),
       networks: cdktf.listMapper(dataOciDatabaseVmClusterRecommendedNetworkNetworksToTerraform, true)(this._networks.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_servers: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._dbServers),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dns: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._dns),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      dr_scan_listener_port_tcp: {
+        value: cdktf.numberToHclTerraform(this._drScanListenerPortTcp),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      exadata_infrastructure_id: {
+        value: cdktf.stringToHclTerraform(this._exadataInfrastructureId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ntp: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._ntp),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      scan_listener_port_tcp: {
+        value: cdktf.numberToHclTerraform(this._scanListenerPortTcp),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      scan_listener_port_tcp_ssl: {
+        value: cdktf.numberToHclTerraform(this._scanListenerPortTcpSsl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      networks: {
+        value: cdktf.listMapperHcl(dataOciDatabaseVmClusterRecommendedNetworkNetworksToHclTerraform, true)(this._networks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataOciDatabaseVmClusterRecommendedNetworkNetworksList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

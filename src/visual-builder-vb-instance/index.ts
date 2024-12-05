@@ -48,19 +48,19 @@ export interface VisualBuilderVbInstanceConfig extends cdktf.TerraformMetaArgume
   readonly nodeCount: number;
   /**
   * alternate_custom_endpoints block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/visual_builder_vb_instance#alternate_custom_endpoints VisualBuilderVbInstance#alternate_custom_endpoints}
   */
   readonly alternateCustomEndpoints?: VisualBuilderVbInstanceAlternateCustomEndpoints[] | cdktf.IResolvable;
   /**
   * custom_endpoint block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/visual_builder_vb_instance#custom_endpoint VisualBuilderVbInstance#custom_endpoint}
   */
   readonly customEndpoint?: VisualBuilderVbInstanceCustomEndpoint;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/visual_builder_vb_instance#timeouts VisualBuilderVbInstance#timeouts}
   */
   readonly timeouts?: VisualBuilderVbInstanceTimeouts;
@@ -75,6 +75,17 @@ export function visualBuilderVbInstanceAttachmentsToTerraform(struct?: VisualBui
   }
   return {
   }
+}
+
+
+export function visualBuilderVbInstanceAttachmentsToHclTerraform(struct?: VisualBuilderVbInstanceAttachments): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class VisualBuilderVbInstanceAttachmentsOutputReference extends cdktf.ComplexObject {
@@ -159,6 +170,17 @@ export function visualBuilderVbInstanceIdcsInfoToTerraform(struct?: VisualBuilde
   }
   return {
   }
+}
+
+
+export function visualBuilderVbInstanceIdcsInfoToHclTerraform(struct?: VisualBuilderVbInstanceIdcsInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class VisualBuilderVbInstanceIdcsInfoOutputReference extends cdktf.ComplexObject {
@@ -253,6 +275,31 @@ export function visualBuilderVbInstanceAlternateCustomEndpointsToTerraform(struc
     certificate_secret_id: cdktf.stringToTerraform(struct!.certificateSecretId),
     hostname: cdktf.stringToTerraform(struct!.hostname),
   }
+}
+
+
+export function visualBuilderVbInstanceAlternateCustomEndpointsToHclTerraform(struct?: VisualBuilderVbInstanceAlternateCustomEndpoints | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    certificate_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.certificateSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    hostname: {
+      value: cdktf.stringToHclTerraform(struct!.hostname),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class VisualBuilderVbInstanceAlternateCustomEndpointsOutputReference extends cdktf.ComplexObject {
@@ -381,6 +428,31 @@ export function visualBuilderVbInstanceCustomEndpointToTerraform(struct?: Visual
   }
 }
 
+
+export function visualBuilderVbInstanceCustomEndpointToHclTerraform(struct?: VisualBuilderVbInstanceCustomEndpointOutputReference | VisualBuilderVbInstanceCustomEndpoint): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    certificate_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.certificateSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    hostname: {
+      value: cdktf.stringToHclTerraform(struct!.hostname),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class VisualBuilderVbInstanceCustomEndpointOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -478,6 +550,37 @@ export function visualBuilderVbInstanceTimeoutsToTerraform(struct?: VisualBuilde
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function visualBuilderVbInstanceTimeoutsToHclTerraform(struct?: VisualBuilderVbInstanceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class VisualBuilderVbInstanceTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -592,6 +695,20 @@ export class VisualBuilderVbInstance extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_visual_builder_vb_instance";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a VisualBuilderVbInstance resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the VisualBuilderVbInstance to import
+  * @param importFromId The id of the existing VisualBuilderVbInstance that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/visual_builder_vb_instance#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the VisualBuilderVbInstance to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_visual_builder_vb_instance", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -903,5 +1020,85 @@ export class VisualBuilderVbInstance extends cdktf.TerraformResource {
       custom_endpoint: visualBuilderVbInstanceCustomEndpointToTerraform(this._customEndpoint.internalValue),
       timeouts: visualBuilderVbInstanceTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      consumption_model: {
+        value: cdktf.stringToHclTerraform(this._consumptionModel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_open_id: {
+        value: cdktf.stringToHclTerraform(this._idcsOpenId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_visual_builder_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isVisualBuilderEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      node_count: {
+        value: cdktf.numberToHclTerraform(this._nodeCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      alternate_custom_endpoints: {
+        value: cdktf.listMapperHcl(visualBuilderVbInstanceAlternateCustomEndpointsToHclTerraform, true)(this._alternateCustomEndpoints.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "VisualBuilderVbInstanceAlternateCustomEndpointsList",
+      },
+      custom_endpoint: {
+        value: visualBuilderVbInstanceCustomEndpointToHclTerraform(this._customEndpoint.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "VisualBuilderVbInstanceCustomEndpointList",
+      },
+      timeouts: {
+        value: visualBuilderVbInstanceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "VisualBuilderVbInstanceTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

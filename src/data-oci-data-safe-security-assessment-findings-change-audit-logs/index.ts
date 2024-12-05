@@ -56,7 +56,7 @@ export interface DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsConfig 
   readonly timeValidUntilLessThan?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_security_assessment_findings_change_audit_logs#filter DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogs#filter}
   */
   readonly filter?: DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFilter[] | cdktf.IResolvable;
@@ -71,6 +71,17 @@ export function dataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFindings
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemsToHclTerraform(struct?: DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -197,6 +208,17 @@ export function dataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFindings
   }
 }
 
+
+export function dataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionToHclTerraform(struct?: DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFindingsChangeAuditLogCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -275,6 +297,37 @@ export function dataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFilterTo
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFilterToHclTerraform(struct?: DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFilterOutputReference extends cdktf.ComplexObject {
@@ -405,6 +458,20 @@ export class DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogs extends cd
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_security_assessment_findings_change_audit_logs";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogs resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogs to import
+  * @param importFromId The id of the existing DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogs that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_security_assessment_findings_change_audit_logs#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogs to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_security_assessment_findings_change_audit_logs", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -665,5 +732,85 @@ export class DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogs extends cd
       time_valid_until_less_than: cdktf.stringToTerraform(this._timeValidUntilLessThan),
       filter: cdktf.listMapper(dataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      finding_key: {
+        value: cdktf.stringToHclTerraform(this._findingKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      finding_title: {
+        value: cdktf.stringToHclTerraform(this._findingTitle),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_risk_deferred: {
+        value: cdktf.booleanToHclTerraform(this._isRiskDeferred),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      modified_by: {
+        value: cdktf.stringToHclTerraform(this._modifiedBy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      security_assessment_id: {
+        value: cdktf.stringToHclTerraform(this._securityAssessmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      severity: {
+        value: cdktf.stringToHclTerraform(this._severity),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_updated_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeUpdatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_updated_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeUpdatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_valid_until_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeValidUntilGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_valid_until_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeValidUntilLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeSecurityAssessmentFindingsChangeAuditLogsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

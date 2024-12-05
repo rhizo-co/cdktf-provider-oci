@@ -27,6 +27,17 @@ export function dataOciAiLanguageModelEvaluationResultsClassMetricsToTerraform(s
   }
 }
 
+
+export function dataOciAiLanguageModelEvaluationResultsClassMetricsToHclTerraform(struct?: DataOciAiLanguageModelEvaluationResultsClassMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiLanguageModelEvaluationResultsClassMetricsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -111,6 +122,17 @@ export function dataOciAiLanguageModelEvaluationResultsEntityMetricsToTerraform(
   }
 }
 
+
+export function dataOciAiLanguageModelEvaluationResultsEntityMetricsToHclTerraform(struct?: DataOciAiLanguageModelEvaluationResultsEntityMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiLanguageModelEvaluationResultsEntityMetricsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -188,6 +210,17 @@ export function dataOciAiLanguageModelEvaluationResultsMetricsToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciAiLanguageModelEvaluationResultsMetricsToHclTerraform(struct?: DataOciAiLanguageModelEvaluationResultsMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiLanguageModelEvaluationResultsMetricsOutputReference extends cdktf.ComplexObject {
@@ -299,6 +332,17 @@ export function dataOciAiLanguageModelEvaluationResultsToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciAiLanguageModelEvaluationResultsToHclTerraform(struct?: DataOciAiLanguageModelEvaluationResults): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiLanguageModelEvaluationResultsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -391,6 +435,17 @@ export function dataOciAiLanguageModelModelDetailsClassificationModeToTerraform(
   }
 }
 
+
+export function dataOciAiLanguageModelModelDetailsClassificationModeToHclTerraform(struct?: DataOciAiLanguageModelModelDetailsClassificationMode): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiLanguageModelModelDetailsClassificationModeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -458,6 +513,17 @@ export function dataOciAiLanguageModelModelDetailsToTerraform(struct?: DataOciAi
   }
   return {
   }
+}
+
+
+export function dataOciAiLanguageModelModelDetailsToHclTerraform(struct?: DataOciAiLanguageModelModelDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiLanguageModelModelDetailsOutputReference extends cdktf.ComplexObject {
@@ -540,6 +606,17 @@ export function dataOciAiLanguageModelTestStrategyTestingDatasetLocationDetailsT
   }
 }
 
+
+export function dataOciAiLanguageModelTestStrategyTestingDatasetLocationDetailsToHclTerraform(struct?: DataOciAiLanguageModelTestStrategyTestingDatasetLocationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiLanguageModelTestStrategyTestingDatasetLocationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -619,6 +696,17 @@ export function dataOciAiLanguageModelTestStrategyTestingDatasetToTerraform(stru
   }
 }
 
+
+export function dataOciAiLanguageModelTestStrategyTestingDatasetToHclTerraform(struct?: DataOciAiLanguageModelTestStrategyTestingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiLanguageModelTestStrategyTestingDatasetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -692,6 +780,17 @@ export function dataOciAiLanguageModelTestStrategyValidationDatasetLocationDetai
   }
   return {
   }
+}
+
+
+export function dataOciAiLanguageModelTestStrategyValidationDatasetLocationDetailsToHclTerraform(struct?: DataOciAiLanguageModelTestStrategyValidationDatasetLocationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiLanguageModelTestStrategyValidationDatasetLocationDetailsOutputReference extends cdktf.ComplexObject {
@@ -773,6 +872,17 @@ export function dataOciAiLanguageModelTestStrategyValidationDatasetToTerraform(s
   }
 }
 
+
+export function dataOciAiLanguageModelTestStrategyValidationDatasetToHclTerraform(struct?: DataOciAiLanguageModelTestStrategyValidationDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiLanguageModelTestStrategyValidationDatasetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -846,6 +956,17 @@ export function dataOciAiLanguageModelTestStrategyToTerraform(struct?: DataOciAi
   }
   return {
   }
+}
+
+
+export function dataOciAiLanguageModelTestStrategyToHclTerraform(struct?: DataOciAiLanguageModelTestStrategy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiLanguageModelTestStrategyOutputReference extends cdktf.ComplexObject {
@@ -922,6 +1043,17 @@ export function dataOciAiLanguageModelTrainingDatasetLocationDetailsToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciAiLanguageModelTrainingDatasetLocationDetailsToHclTerraform(struct?: DataOciAiLanguageModelTrainingDatasetLocationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiLanguageModelTrainingDatasetLocationDetailsOutputReference extends cdktf.ComplexObject {
@@ -1003,6 +1135,17 @@ export function dataOciAiLanguageModelTrainingDatasetToTerraform(struct?: DataOc
   }
 }
 
+
+export function dataOciAiLanguageModelTrainingDatasetToHclTerraform(struct?: DataOciAiLanguageModelTrainingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiLanguageModelTrainingDatasetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1076,6 +1219,20 @@ export class DataOciAiLanguageModel extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ai_language_model";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciAiLanguageModel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciAiLanguageModel to import
+  * @param importFromId The id of the existing DataOciAiLanguageModel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_language_model#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciAiLanguageModel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_language_model", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1219,5 +1376,19 @@ export class DataOciAiLanguageModel extends cdktf.TerraformDataSource {
     return {
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

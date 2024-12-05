@@ -20,7 +20,7 @@ export interface DataOciBdsBdsInstanceListOsPatchesConfig extends cdktf.Terrafor
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/bds_bds_instance_list_os_patches#filter DataOciBdsBdsInstanceListOsPatches#filter}
   */
   readonly filter?: DataOciBdsBdsInstanceListOsPatchesFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciBdsBdsInstanceListOsPatchesOsPatchesToTerraform(struct?: 
   }
   return {
   }
+}
+
+
+export function dataOciBdsBdsInstanceListOsPatchesOsPatchesToHclTerraform(struct?: DataOciBdsBdsInstanceListOsPatchesOsPatches): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciBdsBdsInstanceListOsPatchesOsPatchesOutputReference extends cdktf.ComplexObject {
@@ -124,6 +135,37 @@ export function dataOciBdsBdsInstanceListOsPatchesFilterToTerraform(struct?: Dat
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciBdsBdsInstanceListOsPatchesFilterToHclTerraform(struct?: DataOciBdsBdsInstanceListOsPatchesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciBdsBdsInstanceListOsPatchesFilterOutputReference extends cdktf.ComplexObject {
@@ -255,6 +297,20 @@ export class DataOciBdsBdsInstanceListOsPatches extends cdktf.TerraformDataSourc
   // =================
   public static readonly tfResourceType = "oci_bds_bds_instance_list_os_patches";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciBdsBdsInstanceListOsPatches resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciBdsBdsInstanceListOsPatches to import
+  * @param importFromId The id of the existing DataOciBdsBdsInstanceListOsPatches that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/bds_bds_instance_list_os_patches#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciBdsBdsInstanceListOsPatches to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_bds_bds_instance_list_os_patches", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -352,5 +408,31 @@ export class DataOciBdsBdsInstanceListOsPatches extends cdktf.TerraformDataSourc
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciBdsBdsInstanceListOsPatchesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bds_instance_id: {
+        value: cdktf.stringToHclTerraform(this._bdsInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciBdsBdsInstanceListOsPatchesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciBdsBdsInstanceListOsPatchesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

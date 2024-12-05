@@ -24,6 +24,17 @@ export function dataOciDevopsDeployArtifactDeployArtifactSourceHelmVerificationK
   }
 }
 
+
+export function dataOciDevopsDeployArtifactDeployArtifactSourceHelmVerificationKeySourceToHclTerraform(struct?: DataOciDevopsDeployArtifactDeployArtifactSourceHelmVerificationKeySource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -101,6 +112,17 @@ export function dataOciDevopsDeployArtifactDeployArtifactSourceToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciDevopsDeployArtifactDeployArtifactSourceToHclTerraform(struct?: DataOciDevopsDeployArtifactDeployArtifactSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsDeployArtifactDeployArtifactSourceOutputReference extends cdktf.ComplexObject {
@@ -211,6 +233,20 @@ export class DataOciDevopsDeployArtifact extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_deploy_artifact";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDevopsDeployArtifact resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDevopsDeployArtifact to import
+  * @param importFromId The id of the existing DataOciDevopsDeployArtifact that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_deploy_artifact#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDevopsDeployArtifact to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_deploy_artifact", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -346,5 +382,19 @@ export class DataOciDevopsDeployArtifact extends cdktf.TerraformDataSource {
     return {
       deploy_artifact_id: cdktf.stringToTerraform(this._deployArtifactId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      deploy_artifact_id: {
+        value: cdktf.stringToHclTerraform(this._deployArtifactId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

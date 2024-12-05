@@ -48,7 +48,7 @@ export interface DataOciJmsJavaDownloadsJavaDownloadRecordsConfig extends cdktf.
   readonly timeStart?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_java_downloads_java_download_records#filter DataOciJmsJavaDownloadsJavaDownloadRecords#filter}
   */
   readonly filter?: DataOciJmsJavaDownloadsJavaDownloadRecordsFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciJmsJavaDownloadsJavaDownloadRecordsJavaDownloadRecordColl
   }
   return {
   }
+}
+
+
+export function dataOciJmsJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemsToHclTerraform(struct?: DataOciJmsJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -174,6 +185,17 @@ export function dataOciJmsJavaDownloadsJavaDownloadRecordsJavaDownloadRecordColl
   }
 }
 
+
+export function dataOciJmsJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionToHclTerraform(struct?: DataOciJmsJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -252,6 +274,37 @@ export function dataOciJmsJavaDownloadsJavaDownloadRecordsFilterToTerraform(stru
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciJmsJavaDownloadsJavaDownloadRecordsFilterToHclTerraform(struct?: DataOciJmsJavaDownloadsJavaDownloadRecordsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciJmsJavaDownloadsJavaDownloadRecordsFilterOutputReference extends cdktf.ComplexObject {
@@ -382,6 +435,20 @@ export class DataOciJmsJavaDownloadsJavaDownloadRecords extends cdktf.TerraformD
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_java_downloads_java_download_records";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsJavaDownloadsJavaDownloadRecords resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsJavaDownloadsJavaDownloadRecords to import
+  * @param importFromId The id of the existing DataOciJmsJavaDownloadsJavaDownloadRecords that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_java_downloads_java_download_records#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsJavaDownloadsJavaDownloadRecords to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_java_downloads_java_download_records", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -606,5 +673,73 @@ export class DataOciJmsJavaDownloadsJavaDownloadRecords extends cdktf.TerraformD
       time_start: cdktf.stringToTerraform(this._timeStart),
       filter: cdktf.listMapper(dataOciJmsJavaDownloadsJavaDownloadRecordsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      architecture: {
+        value: cdktf.stringToHclTerraform(this._architecture),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      family_version: {
+        value: cdktf.stringToHclTerraform(this._familyVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      os_family: {
+        value: cdktf.stringToHclTerraform(this._osFamily),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      package_type_detail: {
+        value: cdktf.stringToHclTerraform(this._packageTypeDetail),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      release_version: {
+        value: cdktf.stringToHclTerraform(this._releaseVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_end: {
+        value: cdktf.stringToHclTerraform(this._timeEnd),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_start: {
+        value: cdktf.stringToHclTerraform(this._timeStart),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciJmsJavaDownloadsJavaDownloadRecordsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciJmsJavaDownloadsJavaDownloadRecordsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

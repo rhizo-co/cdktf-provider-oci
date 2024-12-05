@@ -24,6 +24,17 @@ export function dataOciCoreComputeCapacityTopologyCapacitySourceToTerraform(stru
   }
 }
 
+
+export function dataOciCoreComputeCapacityTopologyCapacitySourceToHclTerraform(struct?: DataOciCoreComputeCapacityTopologyCapacitySource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreComputeCapacityTopologyCapacitySourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,20 @@ export class DataOciCoreComputeCapacityTopology extends cdktf.TerraformDataSourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_compute_capacity_topology";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreComputeCapacityTopology resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreComputeCapacityTopology to import
+  * @param importFromId The id of the existing DataOciCoreComputeCapacityTopology that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_compute_capacity_topology#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreComputeCapacityTopology to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_compute_capacity_topology", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -200,5 +225,19 @@ export class DataOciCoreComputeCapacityTopology extends cdktf.TerraformDataSourc
     return {
       compute_capacity_topology_id: cdktf.stringToTerraform(this._computeCapacityTopologyId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compute_capacity_topology_id: {
+        value: cdktf.stringToHclTerraform(this._computeCapacityTopologyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

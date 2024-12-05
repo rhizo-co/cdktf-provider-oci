@@ -35,6 +35,17 @@ export function dataOciCertificatesManagementCertificateAuthorityVersionRevocati
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateAuthorityVersionRevocationStatusToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthorityVersionRevocationStatus): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateAuthorityVersionRevocationStatusOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -102,6 +113,17 @@ export function dataOciCertificatesManagementCertificateAuthorityVersionSubjectA
   }
   return {
   }
+}
+
+
+export function dataOciCertificatesManagementCertificateAuthorityVersionSubjectAlternativeNamesToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthorityVersionSubjectAlternativeNames): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCertificatesManagementCertificateAuthorityVersionSubjectAlternativeNamesOutputReference extends cdktf.ComplexObject {
@@ -173,6 +195,17 @@ export function dataOciCertificatesManagementCertificateAuthorityVersionValidity
   }
 }
 
+
+export function dataOciCertificatesManagementCertificateAuthorityVersionValidityToHclTerraform(struct?: DataOciCertificatesManagementCertificateAuthorityVersionValidity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCertificatesManagementCertificateAuthorityVersionValidityOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -240,6 +273,20 @@ export class DataOciCertificatesManagementCertificateAuthorityVersion extends cd
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_certificates_management_certificate_authority_version";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCertificatesManagementCertificateAuthorityVersion resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCertificatesManagementCertificateAuthorityVersion to import
+  * @param importFromId The id of the existing DataOciCertificatesManagementCertificateAuthorityVersion that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/certificates_management_certificate_authority_version#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCertificatesManagementCertificateAuthorityVersion to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_certificates_management_certificate_authority_version", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -382,5 +429,31 @@ export class DataOciCertificatesManagementCertificateAuthorityVersion extends cd
       certificate_authority_version_number: cdktf.stringToTerraform(this._certificateAuthorityVersionNumber),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      certificate_authority_id: {
+        value: cdktf.stringToHclTerraform(this._certificateAuthorityId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      certificate_authority_version_number: {
+        value: cdktf.stringToHclTerraform(this._certificateAuthorityVersionNumber),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -48,13 +48,13 @@ export interface DataintegrationWorkspaceProjectConfig extends cdktf.TerraformMe
   readonly workspaceId: string;
   /**
   * registry_metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_project#registry_metadata DataintegrationWorkspaceProject#registry_metadata}
   */
   readonly registryMetadata?: DataintegrationWorkspaceProjectRegistryMetadata;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_project#timeouts DataintegrationWorkspaceProject#timeouts}
   */
   readonly timeouts?: DataintegrationWorkspaceProjectTimeouts;
@@ -69,6 +69,17 @@ export function dataintegrationWorkspaceProjectMetadataAggregatorToTerraform(str
   }
   return {
   }
+}
+
+
+export function dataintegrationWorkspaceProjectMetadataAggregatorToHclTerraform(struct?: DataintegrationWorkspaceProjectMetadataAggregator): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataintegrationWorkspaceProjectMetadataAggregatorOutputReference extends cdktf.ComplexObject {
@@ -155,6 +166,17 @@ export function dataintegrationWorkspaceProjectMetadataCountStatisticsObjectType
   }
 }
 
+
+export function dataintegrationWorkspaceProjectMetadataCountStatisticsObjectTypeCountListStructToHclTerraform(struct?: DataintegrationWorkspaceProjectMetadataCountStatisticsObjectTypeCountListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataintegrationWorkspaceProjectMetadataCountStatisticsObjectTypeCountListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -224,6 +246,17 @@ export function dataintegrationWorkspaceProjectMetadataCountStatisticsToTerrafor
   }
 }
 
+
+export function dataintegrationWorkspaceProjectMetadataCountStatisticsToHclTerraform(struct?: DataintegrationWorkspaceProjectMetadataCountStatistics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataintegrationWorkspaceProjectMetadataCountStatisticsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -287,6 +320,17 @@ export function dataintegrationWorkspaceProjectMetadataToTerraform(struct?: Data
   }
   return {
   }
+}
+
+
+export function dataintegrationWorkspaceProjectMetadataToHclTerraform(struct?: DataintegrationWorkspaceProjectMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataintegrationWorkspaceProjectMetadataOutputReference extends cdktf.ComplexObject {
@@ -421,6 +465,17 @@ export function dataintegrationWorkspaceProjectParentRefToTerraform(struct?: Dat
   }
 }
 
+
+export function dataintegrationWorkspaceProjectParentRefToHclTerraform(struct?: DataintegrationWorkspaceProjectParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataintegrationWorkspaceProjectParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -513,6 +568,49 @@ export function dataintegrationWorkspaceProjectRegistryMetadataToTerraform(struc
     labels: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.labels),
     registry_version: cdktf.numberToTerraform(struct!.registryVersion),
   }
+}
+
+
+export function dataintegrationWorkspaceProjectRegistryMetadataToHclTerraform(struct?: DataintegrationWorkspaceProjectRegistryMetadataOutputReference | DataintegrationWorkspaceProjectRegistryMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    aggregator_key: {
+      value: cdktf.stringToHclTerraform(struct!.aggregatorKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_favorite: {
+      value: cdktf.booleanToHclTerraform(struct!.isFavorite),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.labels),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    registry_version: {
+      value: cdktf.numberToHclTerraform(struct!.registryVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceProjectRegistryMetadataOutputReference extends cdktf.ComplexObject {
@@ -678,6 +776,37 @@ export function dataintegrationWorkspaceProjectTimeoutsToTerraform(struct?: Data
   }
 }
 
+
+export function dataintegrationWorkspaceProjectTimeoutsToHclTerraform(struct?: DataintegrationWorkspaceProjectTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceProjectTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -790,6 +919,20 @@ export class DataintegrationWorkspaceProject extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataintegration_workspace_project";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataintegrationWorkspaceProject resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataintegrationWorkspaceProject to import
+  * @param importFromId The id of the existing DataintegrationWorkspaceProject that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_project#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataintegrationWorkspaceProject to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataintegration_workspace_project", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1048,5 +1191,79 @@ export class DataintegrationWorkspaceProject extends cdktf.TerraformResource {
       registry_metadata: dataintegrationWorkspaceProjectRegistryMetadataToTerraform(this._registryMetadata.internalValue),
       timeouts: dataintegrationWorkspaceProjectTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      identifier: {
+        value: cdktf.stringToHclTerraform(this._identifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key: {
+        value: cdktf.stringToHclTerraform(this._key),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_version: {
+        value: cdktf.stringToHclTerraform(this._modelVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_status: {
+        value: cdktf.numberToHclTerraform(this._objectStatus),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      project_key: {
+        value: cdktf.stringToHclTerraform(this._projectKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      workspace_id: {
+        value: cdktf.stringToHclTerraform(this._workspaceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      registry_metadata: {
+        value: dataintegrationWorkspaceProjectRegistryMetadataToHclTerraform(this._registryMetadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceProjectRegistryMetadataList",
+      },
+      timeouts: {
+        value: dataintegrationWorkspaceProjectTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataintegrationWorkspaceProjectTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

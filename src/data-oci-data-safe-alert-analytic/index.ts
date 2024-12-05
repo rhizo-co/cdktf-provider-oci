@@ -63,6 +63,17 @@ export function dataOciDataSafeAlertAnalyticItemsDimensionsToTerraform(struct?: 
   }
 }
 
+
+export function dataOciDataSafeAlertAnalyticItemsDimensionsToHclTerraform(struct?: DataOciDataSafeAlertAnalyticItemsDimensions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeAlertAnalyticItemsDimensionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -126,6 +137,17 @@ export function dataOciDataSafeAlertAnalyticItemsToTerraform(struct?: DataOciDat
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeAlertAnalyticItemsToHclTerraform(struct?: DataOciDataSafeAlertAnalyticItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeAlertAnalyticItemsOutputReference extends cdktf.ComplexObject {
@@ -211,6 +233,20 @@ export class DataOciDataSafeAlertAnalytic extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_alert_analytic";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeAlertAnalytic resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeAlertAnalytic to import
+  * @param importFromId The id of the existing DataOciDataSafeAlertAnalytic that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_alert_analytic#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeAlertAnalytic to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_alert_analytic", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -435,5 +471,73 @@ export class DataOciDataSafeAlertAnalytic extends cdktf.TerraformDataSource {
       time_ended: cdktf.stringToTerraform(this._timeEnded),
       time_started: cdktf.stringToTerraform(this._timeStarted),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      access_level: {
+        value: cdktf.stringToHclTerraform(this._accessLevel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      group_by: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._groupBy),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      query_time_zone: {
+        value: cdktf.stringToHclTerraform(this._queryTimeZone),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scim_query: {
+        value: cdktf.stringToHclTerraform(this._scimQuery),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      summary_field: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._summaryField),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      time_ended: {
+        value: cdktf.stringToHclTerraform(this._timeEnded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_started: {
+        value: cdktf.stringToHclTerraform(this._timeStarted),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

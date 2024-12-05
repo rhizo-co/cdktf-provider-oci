@@ -68,13 +68,13 @@ export interface LogAnalyticsLogAnalyticsEntityConfig extends cdktf.TerraformMet
   readonly timezoneRegion?: string;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_entity#metadata LogAnalyticsLogAnalyticsEntity#metadata}
   */
   readonly metadata?: LogAnalyticsLogAnalyticsEntityMetadata;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_entity#timeouts LogAnalyticsLogAnalyticsEntity#timeouts}
   */
   readonly timeouts?: LogAnalyticsLogAnalyticsEntityTimeouts;
@@ -104,6 +104,37 @@ export function logAnalyticsLogAnalyticsEntityMetadataItemsToTerraform(struct?: 
     type: cdktf.stringToTerraform(struct!.type),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function logAnalyticsLogAnalyticsEntityMetadataItemsToHclTerraform(struct?: LogAnalyticsLogAnalyticsEntityMetadataItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsLogAnalyticsEntityMetadataItemsOutputReference extends cdktf.ComplexObject {
@@ -233,7 +264,7 @@ export class LogAnalyticsLogAnalyticsEntityMetadataItemsList extends cdktf.Compl
 export interface LogAnalyticsLogAnalyticsEntityMetadata {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_entity#items LogAnalyticsLogAnalyticsEntity#items}
   */
   readonly items?: LogAnalyticsLogAnalyticsEntityMetadataItems[] | cdktf.IResolvable;
@@ -247,6 +278,25 @@ export function logAnalyticsLogAnalyticsEntityMetadataToTerraform(struct?: LogAn
   return {
     items: cdktf.listMapper(logAnalyticsLogAnalyticsEntityMetadataItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function logAnalyticsLogAnalyticsEntityMetadataToHclTerraform(struct?: LogAnalyticsLogAnalyticsEntityMetadataOutputReference | LogAnalyticsLogAnalyticsEntityMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(logAnalyticsLogAnalyticsEntityMetadataItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "set",
+      storageClassType: "LogAnalyticsLogAnalyticsEntityMetadataItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsLogAnalyticsEntityMetadataOutputReference extends cdktf.ComplexObject {
@@ -322,6 +372,37 @@ export function logAnalyticsLogAnalyticsEntityTimeoutsToTerraform(struct?: LogAn
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function logAnalyticsLogAnalyticsEntityTimeoutsToHclTerraform(struct?: LogAnalyticsLogAnalyticsEntityTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsLogAnalyticsEntityTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -436,6 +517,20 @@ export class LogAnalyticsLogAnalyticsEntity extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_log_analytics_log_analytics_entity";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LogAnalyticsLogAnalyticsEntity resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LogAnalyticsLogAnalyticsEntity to import
+  * @param importFromId The id of the existing LogAnalyticsLogAnalyticsEntity that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_entity#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LogAnalyticsLogAnalyticsEntity to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_log_analytics_entity", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -793,5 +888,109 @@ export class LogAnalyticsLogAnalyticsEntity extends cdktf.TerraformResource {
       metadata: logAnalyticsLogAnalyticsEntityMetadataToTerraform(this._metadata.internalValue),
       timeouts: logAnalyticsLogAnalyticsEntityTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cloud_resource_id: {
+        value: cdktf.stringToHclTerraform(this._cloudResourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      entity_type_name: {
+        value: cdktf.stringToHclTerraform(this._entityTypeName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      hostname: {
+        value: cdktf.stringToHclTerraform(this._hostname),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      management_agent_id: {
+        value: cdktf.stringToHclTerraform(this._managementAgentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      properties: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._properties),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      source_id: {
+        value: cdktf.stringToHclTerraform(this._sourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_last_discovered: {
+        value: cdktf.stringToHclTerraform(this._timeLastDiscovered),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timezone_region: {
+        value: cdktf.stringToHclTerraform(this._timezoneRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: logAnalyticsLogAnalyticsEntityMetadataToHclTerraform(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LogAnalyticsLogAnalyticsEntityMetadataList",
+      },
+      timeouts: {
+        value: logAnalyticsLogAnalyticsEntityTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LogAnalyticsLogAnalyticsEntityTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

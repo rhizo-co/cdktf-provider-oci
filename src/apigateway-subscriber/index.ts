@@ -36,13 +36,13 @@ export interface ApigatewaySubscriberConfig extends cdktf.TerraformMetaArguments
   readonly usagePlans: string[];
   /**
   * clients block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_subscriber#clients ApigatewaySubscriber#clients}
   */
   readonly clients: ApigatewaySubscriberClients[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_subscriber#timeouts ApigatewaySubscriber#timeouts}
   */
   readonly timeouts?: ApigatewaySubscriberTimeouts;
@@ -67,6 +67,31 @@ export function apigatewaySubscriberClientsToTerraform(struct?: ApigatewaySubscr
     name: cdktf.stringToTerraform(struct!.name),
     token: cdktf.stringToTerraform(struct!.token),
   }
+}
+
+
+export function apigatewaySubscriberClientsToHclTerraform(struct?: ApigatewaySubscriberClients | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    token: {
+      value: cdktf.stringToHclTerraform(struct!.token),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewaySubscriberClientsOutputReference extends cdktf.ComplexObject {
@@ -192,6 +217,37 @@ export function apigatewaySubscriberTimeoutsToTerraform(struct?: ApigatewaySubsc
   }
 }
 
+
+export function apigatewaySubscriberTimeoutsToHclTerraform(struct?: ApigatewaySubscriberTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewaySubscriberTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -304,6 +360,20 @@ export class ApigatewaySubscriber extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apigateway_subscriber";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ApigatewaySubscriber resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ApigatewaySubscriber to import
+  * @param importFromId The id of the existing ApigatewaySubscriber that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_subscriber#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ApigatewaySubscriber to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apigateway_subscriber", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -500,5 +570,61 @@ export class ApigatewaySubscriber extends cdktf.TerraformResource {
       clients: cdktf.listMapper(apigatewaySubscriberClientsToTerraform, true)(this._clients.internalValue),
       timeouts: apigatewaySubscriberTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      usage_plans: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._usagePlans),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      clients: {
+        value: cdktf.listMapperHcl(apigatewaySubscriberClientsToHclTerraform, true)(this._clients.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApigatewaySubscriberClientsList",
+      },
+      timeouts: {
+        value: apigatewaySubscriberTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ApigatewaySubscriberTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

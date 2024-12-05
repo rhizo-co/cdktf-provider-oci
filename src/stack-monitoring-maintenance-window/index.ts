@@ -28,19 +28,19 @@ export interface StackMonitoringMaintenanceWindowConfig extends cdktf.TerraformM
   readonly name: string;
   /**
   * resources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_maintenance_window#resources StackMonitoringMaintenanceWindow#resources}
   */
   readonly resources: StackMonitoringMaintenanceWindowResources[] | cdktf.IResolvable;
   /**
   * schedule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_maintenance_window#schedule StackMonitoringMaintenanceWindow#schedule}
   */
   readonly schedule: StackMonitoringMaintenanceWindowSchedule;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_maintenance_window#timeouts StackMonitoringMaintenanceWindow#timeouts}
   */
   readonly timeouts?: StackMonitoringMaintenanceWindowTimeouts;
@@ -55,6 +55,17 @@ export function stackMonitoringMaintenanceWindowResourcesDetailsToTerraform(stru
   }
   return {
   }
+}
+
+
+export function stackMonitoringMaintenanceWindowResourcesDetailsToHclTerraform(struct?: StackMonitoringMaintenanceWindowResourcesDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class StackMonitoringMaintenanceWindowResourcesDetailsOutputReference extends cdktf.ComplexObject {
@@ -144,6 +155,31 @@ export function stackMonitoringMaintenanceWindowResourcesToTerraform(struct?: St
     are_members_included: cdktf.booleanToTerraform(struct!.areMembersIncluded),
     resource_id: cdktf.stringToTerraform(struct!.resourceId),
   }
+}
+
+
+export function stackMonitoringMaintenanceWindowResourcesToHclTerraform(struct?: StackMonitoringMaintenanceWindowResources | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    are_members_included: {
+      value: cdktf.booleanToHclTerraform(struct!.areMembersIncluded),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.resourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMaintenanceWindowResourcesOutputReference extends cdktf.ComplexObject {
@@ -280,6 +316,49 @@ export function stackMonitoringMaintenanceWindowScheduleToTerraform(struct?: Sta
     time_maintenance_window_end: cdktf.stringToTerraform(struct!.timeMaintenanceWindowEnd),
     time_maintenance_window_start: cdktf.stringToTerraform(struct!.timeMaintenanceWindowStart),
   }
+}
+
+
+export function stackMonitoringMaintenanceWindowScheduleToHclTerraform(struct?: StackMonitoringMaintenanceWindowScheduleOutputReference | StackMonitoringMaintenanceWindowSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    maintenance_window_duration: {
+      value: cdktf.stringToHclTerraform(struct!.maintenanceWindowDuration),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    maintenance_window_recurrences: {
+      value: cdktf.stringToHclTerraform(struct!.maintenanceWindowRecurrences),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    schedule_type: {
+      value: cdktf.stringToHclTerraform(struct!.scheduleType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_maintenance_window_end: {
+      value: cdktf.stringToHclTerraform(struct!.timeMaintenanceWindowEnd),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_maintenance_window_start: {
+      value: cdktf.stringToHclTerraform(struct!.timeMaintenanceWindowStart),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringMaintenanceWindowScheduleOutputReference extends cdktf.ComplexObject {
@@ -442,6 +521,37 @@ export function stackMonitoringMaintenanceWindowTimeoutsToTerraform(struct?: Sta
   }
 }
 
+
+export function stackMonitoringMaintenanceWindowTimeoutsToHclTerraform(struct?: StackMonitoringMaintenanceWindowTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMaintenanceWindowTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -554,6 +664,20 @@ export class StackMonitoringMaintenanceWindow extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_maintenance_window";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a StackMonitoringMaintenanceWindow resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the StackMonitoringMaintenanceWindow to import
+  * @param importFromId The id of the existing StackMonitoringMaintenanceWindow that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_maintenance_window#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the StackMonitoringMaintenanceWindow to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_maintenance_window", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -735,5 +859,55 @@ export class StackMonitoringMaintenanceWindow extends cdktf.TerraformResource {
       schedule: stackMonitoringMaintenanceWindowScheduleToTerraform(this._schedule.internalValue),
       timeouts: stackMonitoringMaintenanceWindowTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resources: {
+        value: cdktf.listMapperHcl(stackMonitoringMaintenanceWindowResourcesToHclTerraform, true)(this._resources.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMaintenanceWindowResourcesList",
+      },
+      schedule: {
+        value: stackMonitoringMaintenanceWindowScheduleToHclTerraform(this._schedule.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringMaintenanceWindowScheduleList",
+      },
+      timeouts: {
+        value: stackMonitoringMaintenanceWindowTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StackMonitoringMaintenanceWindowTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

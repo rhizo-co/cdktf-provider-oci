@@ -60,37 +60,37 @@ export interface DatabaseToolsDatabaseToolsConnectionConfig extends cdktf.Terraf
   readonly userName: string;
   /**
   * key_stores block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#key_stores DatabaseToolsDatabaseToolsConnection#key_stores}
   */
   readonly keyStores?: DatabaseToolsDatabaseToolsConnectionKeyStores[] | cdktf.IResolvable;
   /**
   * locks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#locks DatabaseToolsDatabaseToolsConnection#locks}
   */
   readonly locks?: DatabaseToolsDatabaseToolsConnectionLocks[] | cdktf.IResolvable;
   /**
   * proxy_client block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#proxy_client DatabaseToolsDatabaseToolsConnection#proxy_client}
   */
   readonly proxyClient?: DatabaseToolsDatabaseToolsConnectionProxyClient;
   /**
   * related_resource block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#related_resource DatabaseToolsDatabaseToolsConnection#related_resource}
   */
   readonly relatedResource?: DatabaseToolsDatabaseToolsConnectionRelatedResource;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#timeouts DatabaseToolsDatabaseToolsConnection#timeouts}
   */
   readonly timeouts?: DatabaseToolsDatabaseToolsConnectionTimeouts;
   /**
   * user_password block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#user_password DatabaseToolsDatabaseToolsConnection#user_password}
   */
   readonly userPassword: DatabaseToolsDatabaseToolsConnectionUserPassword;
@@ -115,6 +115,31 @@ export function databaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContentToTe
     secret_id: cdktf.stringToTerraform(struct!.secretId),
     value_type: cdktf.stringToTerraform(struct!.valueType),
   }
+}
+
+
+export function databaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContentToHclTerraform(struct?: DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContentOutputReference | DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContent): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value_type: {
+      value: cdktf.stringToHclTerraform(struct!.valueType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContentOutputReference extends cdktf.ComplexObject {
@@ -206,6 +231,31 @@ export function databaseToolsDatabaseToolsConnectionKeyStoresKeyStorePasswordToT
   }
 }
 
+
+export function databaseToolsDatabaseToolsConnectionKeyStoresKeyStorePasswordToHclTerraform(struct?: DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStorePasswordOutputReference | DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStorePassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value_type: {
+      value: cdktf.stringToHclTerraform(struct!.valueType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStorePasswordOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -280,13 +330,13 @@ export interface DatabaseToolsDatabaseToolsConnectionKeyStores {
   readonly keyStoreType?: string;
   /**
   * key_store_content block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#key_store_content DatabaseToolsDatabaseToolsConnection#key_store_content}
   */
   readonly keyStoreContent?: DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContent;
   /**
   * key_store_password block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#key_store_password DatabaseToolsDatabaseToolsConnection#key_store_password}
   */
   readonly keyStorePassword?: DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStorePassword;
@@ -302,6 +352,37 @@ export function databaseToolsDatabaseToolsConnectionKeyStoresToTerraform(struct?
     key_store_content: databaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContentToTerraform(struct!.keyStoreContent),
     key_store_password: databaseToolsDatabaseToolsConnectionKeyStoresKeyStorePasswordToTerraform(struct!.keyStorePassword),
   }
+}
+
+
+export function databaseToolsDatabaseToolsConnectionKeyStoresToHclTerraform(struct?: DatabaseToolsDatabaseToolsConnectionKeyStores | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key_store_type: {
+      value: cdktf.stringToHclTerraform(struct!.keyStoreType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_store_content: {
+      value: databaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContentToHclTerraform(struct!.keyStoreContent),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContentList",
+    },
+    key_store_password: {
+      value: databaseToolsDatabaseToolsConnectionKeyStoresKeyStorePasswordToHclTerraform(struct!.keyStorePassword),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseToolsDatabaseToolsConnectionKeyStoresKeyStorePasswordList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseToolsDatabaseToolsConnectionKeyStoresOutputReference extends cdktf.ComplexObject {
@@ -458,6 +539,43 @@ export function databaseToolsDatabaseToolsConnectionLocksToTerraform(struct?: Da
     time_created: cdktf.stringToTerraform(struct!.timeCreated),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function databaseToolsDatabaseToolsConnectionLocksToHclTerraform(struct?: DatabaseToolsDatabaseToolsConnectionLocks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    message: {
+      value: cdktf.stringToHclTerraform(struct!.message),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    related_resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.relatedResourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_created: {
+      value: cdktf.stringToHclTerraform(struct!.timeCreated),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseToolsDatabaseToolsConnectionLocksOutputReference extends cdktf.ComplexObject {
@@ -625,6 +743,31 @@ export function databaseToolsDatabaseToolsConnectionProxyClientUserPasswordToTer
   }
 }
 
+
+export function databaseToolsDatabaseToolsConnectionProxyClientUserPasswordToHclTerraform(struct?: DatabaseToolsDatabaseToolsConnectionProxyClientUserPasswordOutputReference | DatabaseToolsDatabaseToolsConnectionProxyClientUserPassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value_type: {
+      value: cdktf.stringToHclTerraform(struct!.valueType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseToolsDatabaseToolsConnectionProxyClientUserPasswordOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -704,7 +847,7 @@ export interface DatabaseToolsDatabaseToolsConnectionProxyClient {
   readonly userName?: string;
   /**
   * user_password block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#user_password DatabaseToolsDatabaseToolsConnection#user_password}
   */
   readonly userPassword?: DatabaseToolsDatabaseToolsConnectionProxyClientUserPassword;
@@ -721,6 +864,43 @@ export function databaseToolsDatabaseToolsConnectionProxyClientToTerraform(struc
     user_name: cdktf.stringToTerraform(struct!.userName),
     user_password: databaseToolsDatabaseToolsConnectionProxyClientUserPasswordToTerraform(struct!.userPassword),
   }
+}
+
+
+export function databaseToolsDatabaseToolsConnectionProxyClientToHclTerraform(struct?: DatabaseToolsDatabaseToolsConnectionProxyClientOutputReference | DatabaseToolsDatabaseToolsConnectionProxyClient): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    proxy_authentication_type: {
+      value: cdktf.stringToHclTerraform(struct!.proxyAuthenticationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    roles: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.roles),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    user_name: {
+      value: cdktf.stringToHclTerraform(struct!.userName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_password: {
+      value: databaseToolsDatabaseToolsConnectionProxyClientUserPasswordToHclTerraform(struct!.userPassword),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseToolsDatabaseToolsConnectionProxyClientUserPasswordList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseToolsDatabaseToolsConnectionProxyClientOutputReference extends cdktf.ComplexObject {
@@ -856,6 +1036,31 @@ export function databaseToolsDatabaseToolsConnectionRelatedResourceToTerraform(s
   }
 }
 
+
+export function databaseToolsDatabaseToolsConnectionRelatedResourceToHclTerraform(struct?: DatabaseToolsDatabaseToolsConnectionRelatedResourceOutputReference | DatabaseToolsDatabaseToolsConnectionRelatedResource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    entity_type: {
+      value: cdktf.stringToHclTerraform(struct!.entityType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    identifier: {
+      value: cdktf.stringToHclTerraform(struct!.identifier),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseToolsDatabaseToolsConnectionRelatedResourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -951,6 +1156,37 @@ export function databaseToolsDatabaseToolsConnectionTimeoutsToTerraform(struct?:
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseToolsDatabaseToolsConnectionTimeoutsToHclTerraform(struct?: DatabaseToolsDatabaseToolsConnectionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseToolsDatabaseToolsConnectionTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -1077,6 +1313,31 @@ export function databaseToolsDatabaseToolsConnectionUserPasswordToTerraform(stru
   }
 }
 
+
+export function databaseToolsDatabaseToolsConnectionUserPasswordToHclTerraform(struct?: DatabaseToolsDatabaseToolsConnectionUserPasswordOutputReference | DatabaseToolsDatabaseToolsConnectionUserPassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value_type: {
+      value: cdktf.stringToHclTerraform(struct!.valueType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseToolsDatabaseToolsConnectionUserPasswordOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1151,6 +1412,20 @@ export class DatabaseToolsDatabaseToolsConnection extends cdktf.TerraformResourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_tools_database_tools_connection";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseToolsDatabaseToolsConnection resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseToolsDatabaseToolsConnection to import
+  * @param importFromId The id of the existing DatabaseToolsDatabaseToolsConnection that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_connection#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseToolsDatabaseToolsConnection to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_tools_database_tools_connection", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1527,5 +1802,121 @@ export class DatabaseToolsDatabaseToolsConnection extends cdktf.TerraformResourc
       timeouts: databaseToolsDatabaseToolsConnectionTimeoutsToTerraform(this._timeouts.internalValue),
       user_password: databaseToolsDatabaseToolsConnectionUserPasswordToTerraform(this._userPassword.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      advanced_properties: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._advancedProperties),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_string: {
+        value: cdktf.stringToHclTerraform(this._connectionString),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      private_endpoint_id: {
+        value: cdktf.stringToHclTerraform(this._privateEndpointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      runtime_support: {
+        value: cdktf.stringToHclTerraform(this._runtimeSupport),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      url: {
+        value: cdktf.stringToHclTerraform(this._url),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_name: {
+        value: cdktf.stringToHclTerraform(this._userName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_stores: {
+        value: cdktf.listMapperHcl(databaseToolsDatabaseToolsConnectionKeyStoresToHclTerraform, true)(this._keyStores.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseToolsDatabaseToolsConnectionKeyStoresList",
+      },
+      locks: {
+        value: cdktf.listMapperHcl(databaseToolsDatabaseToolsConnectionLocksToHclTerraform, true)(this._locks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseToolsDatabaseToolsConnectionLocksList",
+      },
+      proxy_client: {
+        value: databaseToolsDatabaseToolsConnectionProxyClientToHclTerraform(this._proxyClient.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseToolsDatabaseToolsConnectionProxyClientList",
+      },
+      related_resource: {
+        value: databaseToolsDatabaseToolsConnectionRelatedResourceToHclTerraform(this._relatedResource.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseToolsDatabaseToolsConnectionRelatedResourceList",
+      },
+      timeouts: {
+        value: databaseToolsDatabaseToolsConnectionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseToolsDatabaseToolsConnectionTimeouts",
+      },
+      user_password: {
+        value: databaseToolsDatabaseToolsConnectionUserPasswordToHclTerraform(this._userPassword.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseToolsDatabaseToolsConnectionUserPasswordList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -61,37 +61,37 @@ export interface IdentityDomainsIdentitySettingConfig extends cdktf.TerraformMet
   readonly userAllowedToSetRecoveryEmail?: boolean | cdktf.IResolvable;
   /**
   * my_profile block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_identity_setting#my_profile IdentityDomainsIdentitySetting#my_profile}
   */
   readonly myProfile?: IdentityDomainsIdentitySettingMyProfile;
   /**
   * posix_gid block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_identity_setting#posix_gid IdentityDomainsIdentitySetting#posix_gid}
   */
   readonly posixGid?: IdentityDomainsIdentitySettingPosixGid;
   /**
   * posix_uid block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_identity_setting#posix_uid IdentityDomainsIdentitySetting#posix_uid}
   */
   readonly posixUid?: IdentityDomainsIdentitySettingPosixUid;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_identity_setting#tags IdentityDomainsIdentitySetting#tags}
   */
   readonly tags?: IdentityDomainsIdentitySettingTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_identity_setting#timeouts IdentityDomainsIdentitySetting#timeouts}
   */
   readonly timeouts?: IdentityDomainsIdentitySettingTimeouts;
   /**
   * tokens block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_identity_setting#tokens IdentityDomainsIdentitySetting#tokens}
   */
   readonly tokens?: IdentityDomainsIdentitySettingTokens[] | cdktf.IResolvable;
@@ -106,6 +106,17 @@ export function identityDomainsIdentitySettingIdcsCreatedByToTerraform(struct?: 
   }
   return {
   }
+}
+
+
+export function identityDomainsIdentitySettingIdcsCreatedByToHclTerraform(struct?: IdentityDomainsIdentitySettingIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsIdentitySettingIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -192,6 +203,17 @@ export function identityDomainsIdentitySettingIdcsLastModifiedByToTerraform(stru
   }
 }
 
+
+export function identityDomainsIdentitySettingIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsIdentitySettingIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsIdentitySettingIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -274,6 +296,17 @@ export function identityDomainsIdentitySettingMetaToTerraform(struct?: IdentityD
   }
   return {
   }
+}
+
+
+export function identityDomainsIdentitySettingMetaToHclTerraform(struct?: IdentityDomainsIdentitySettingMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsIdentitySettingMetaOutputReference extends cdktf.ComplexObject {
@@ -378,6 +411,43 @@ export function identityDomainsIdentitySettingMyProfileToTerraform(struct?: Iden
     allow_end_users_to_manage_their_capabilities: cdktf.booleanToTerraform(struct!.allowEndUsersToManageTheirCapabilities),
     allow_end_users_to_update_their_security_settings: cdktf.booleanToTerraform(struct!.allowEndUsersToUpdateTheirSecuritySettings),
   }
+}
+
+
+export function identityDomainsIdentitySettingMyProfileToHclTerraform(struct?: IdentityDomainsIdentitySettingMyProfileOutputReference | IdentityDomainsIdentitySettingMyProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allow_end_users_to_change_their_password: {
+      value: cdktf.booleanToHclTerraform(struct!.allowEndUsersToChangeTheirPassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    allow_end_users_to_link_their_support_account: {
+      value: cdktf.booleanToHclTerraform(struct!.allowEndUsersToLinkTheirSupportAccount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    allow_end_users_to_manage_their_capabilities: {
+      value: cdktf.booleanToHclTerraform(struct!.allowEndUsersToManageTheirCapabilities),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    allow_end_users_to_update_their_security_settings: {
+      value: cdktf.booleanToHclTerraform(struct!.allowEndUsersToUpdateTheirSecuritySettings),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsIdentitySettingMyProfileOutputReference extends cdktf.ComplexObject {
@@ -516,6 +586,31 @@ export function identityDomainsIdentitySettingPosixGidToTerraform(struct?: Ident
   }
 }
 
+
+export function identityDomainsIdentitySettingPosixGidToHclTerraform(struct?: IdentityDomainsIdentitySettingPosixGidOutputReference | IdentityDomainsIdentitySettingPosixGid): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    manual_assignment_ends_at: {
+      value: cdktf.numberToHclTerraform(struct!.manualAssignmentEndsAt),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    manual_assignment_starts_from: {
+      value: cdktf.numberToHclTerraform(struct!.manualAssignmentStartsFrom),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsIdentitySettingPosixGidOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -608,6 +703,31 @@ export function identityDomainsIdentitySettingPosixUidToTerraform(struct?: Ident
   }
 }
 
+
+export function identityDomainsIdentitySettingPosixUidToHclTerraform(struct?: IdentityDomainsIdentitySettingPosixUidOutputReference | IdentityDomainsIdentitySettingPosixUid): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    manual_assignment_ends_at: {
+      value: cdktf.numberToHclTerraform(struct!.manualAssignmentEndsAt),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    manual_assignment_starts_from: {
+      value: cdktf.numberToHclTerraform(struct!.manualAssignmentStartsFrom),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsIdentitySettingPosixUidOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -698,6 +818,31 @@ export function identityDomainsIdentitySettingTagsToTerraform(struct?: IdentityD
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsIdentitySettingTagsToHclTerraform(struct?: IdentityDomainsIdentitySettingTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsIdentitySettingTagsOutputReference extends cdktf.ComplexObject {
@@ -821,6 +966,37 @@ export function identityDomainsIdentitySettingTimeoutsToTerraform(struct?: Ident
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function identityDomainsIdentitySettingTimeoutsToHclTerraform(struct?: IdentityDomainsIdentitySettingTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsIdentitySettingTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -947,6 +1123,31 @@ export function identityDomainsIdentitySettingTokensToTerraform(struct?: Identit
   }
 }
 
+
+export function identityDomainsIdentitySettingTokensToHclTerraform(struct?: IdentityDomainsIdentitySettingTokens | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    expires_after: {
+      value: cdktf.numberToHclTerraform(struct!.expiresAfter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsIdentitySettingTokensOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1056,6 +1257,20 @@ export class IdentityDomainsIdentitySetting extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_identity_setting";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsIdentitySetting resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsIdentitySetting to import
+  * @param importFromId The id of the existing IdentityDomainsIdentitySetting that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_identity_setting#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsIdentitySetting to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_identity_setting", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1488,5 +1703,127 @@ export class IdentityDomainsIdentitySetting extends cdktf.TerraformResource {
       timeouts: identityDomainsIdentitySettingTimeoutsToTerraform(this._timeouts.internalValue),
       tokens: cdktf.listMapper(identityDomainsIdentitySettingTokensToTerraform, true)(this._tokens.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      emit_locked_message_when_user_is_locked: {
+        value: cdktf.booleanToHclTerraform(this._emitLockedMessageWhenUserIsLocked),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      external_id: {
+        value: cdktf.stringToHclTerraform(this._externalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      identity_setting_id: {
+        value: cdktf.stringToHclTerraform(this._identitySettingId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      primary_email_required: {
+        value: cdktf.booleanToHclTerraform(this._primaryEmailRequired),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      return_inactive_over_locked_message: {
+        value: cdktf.booleanToHclTerraform(this._returnInactiveOverLockedMessage),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      user_allowed_to_set_recovery_email: {
+        value: cdktf.booleanToHclTerraform(this._userAllowedToSetRecoveryEmail),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      my_profile: {
+        value: identityDomainsIdentitySettingMyProfileToHclTerraform(this._myProfile.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsIdentitySettingMyProfileList",
+      },
+      posix_gid: {
+        value: identityDomainsIdentitySettingPosixGidToHclTerraform(this._posixGid.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsIdentitySettingPosixGidList",
+      },
+      posix_uid: {
+        value: identityDomainsIdentitySettingPosixUidToHclTerraform(this._posixUid.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsIdentitySettingPosixUidList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsIdentitySettingTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsIdentitySettingTagsList",
+      },
+      timeouts: {
+        value: identityDomainsIdentitySettingTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsIdentitySettingTimeouts",
+      },
+      tokens: {
+        value: cdktf.listMapperHcl(identityDomainsIdentitySettingTokensToHclTerraform, true)(this._tokens.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsIdentitySettingTokensList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

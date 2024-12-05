@@ -56,37 +56,37 @@ export interface KmsKeyConfig extends cdktf.TerraformMetaArguments {
   readonly timeOfDeletion?: string;
   /**
   * auto_key_rotation_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_key#auto_key_rotation_details KmsKey#auto_key_rotation_details}
   */
   readonly autoKeyRotationDetails?: KmsKeyAutoKeyRotationDetails;
   /**
   * external_key_reference block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_key#external_key_reference KmsKey#external_key_reference}
   */
   readonly externalKeyReference?: KmsKeyExternalKeyReference;
   /**
   * key_shape block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_key#key_shape KmsKey#key_shape}
   */
   readonly keyShape: KmsKeyKeyShape;
   /**
   * restore_from_file block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_key#restore_from_file KmsKey#restore_from_file}
   */
   readonly restoreFromFile?: KmsKeyRestoreFromFile;
   /**
   * restore_from_object_store block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_key#restore_from_object_store KmsKey#restore_from_object_store}
   */
   readonly restoreFromObjectStore?: KmsKeyRestoreFromObjectStore;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_key#timeouts KmsKey#timeouts}
   */
   readonly timeouts?: KmsKeyTimeouts;
@@ -101,6 +101,17 @@ export function kmsKeyExternalKeyReferenceDetailsToTerraform(struct?: KmsKeyExte
   }
   return {
   }
+}
+
+
+export function kmsKeyExternalKeyReferenceDetailsToHclTerraform(struct?: KmsKeyExternalKeyReferenceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class KmsKeyExternalKeyReferenceDetailsOutputReference extends cdktf.ComplexObject {
@@ -170,6 +181,17 @@ export function kmsKeyReplicaDetailsToTerraform(struct?: KmsKeyReplicaDetails): 
   }
   return {
   }
+}
+
+
+export function kmsKeyReplicaDetailsToHclTerraform(struct?: KmsKeyReplicaDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class KmsKeyReplicaDetailsOutputReference extends cdktf.ComplexObject {
@@ -264,6 +286,55 @@ export function kmsKeyAutoKeyRotationDetailsToTerraform(struct?: KmsKeyAutoKeyRo
     time_of_next_rotation: cdktf.stringToTerraform(struct!.timeOfNextRotation),
     time_of_schedule_start: cdktf.stringToTerraform(struct!.timeOfScheduleStart),
   }
+}
+
+
+export function kmsKeyAutoKeyRotationDetailsToHclTerraform(struct?: KmsKeyAutoKeyRotationDetailsOutputReference | KmsKeyAutoKeyRotationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    last_rotation_message: {
+      value: cdktf.stringToHclTerraform(struct!.lastRotationMessage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    last_rotation_status: {
+      value: cdktf.stringToHclTerraform(struct!.lastRotationStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rotation_interval_in_days: {
+      value: cdktf.numberToHclTerraform(struct!.rotationIntervalInDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    time_of_last_rotation: {
+      value: cdktf.stringToHclTerraform(struct!.timeOfLastRotation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_of_next_rotation: {
+      value: cdktf.stringToHclTerraform(struct!.timeOfNextRotation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_of_schedule_start: {
+      value: cdktf.stringToHclTerraform(struct!.timeOfScheduleStart),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsKeyAutoKeyRotationDetailsOutputReference extends cdktf.ComplexObject {
@@ -441,6 +512,25 @@ export function kmsKeyExternalKeyReferenceToTerraform(struct?: KmsKeyExternalKey
   }
 }
 
+
+export function kmsKeyExternalKeyReferenceToHclTerraform(struct?: KmsKeyExternalKeyReferenceOutputReference | KmsKeyExternalKeyReference): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    external_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.externalKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class KmsKeyExternalKeyReferenceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -511,6 +601,37 @@ export function kmsKeyKeyShapeToTerraform(struct?: KmsKeyKeyShapeOutputReference
     curve_id: cdktf.stringToTerraform(struct!.curveId),
     length: cdktf.numberToTerraform(struct!.length),
   }
+}
+
+
+export function kmsKeyKeyShapeToHclTerraform(struct?: KmsKeyKeyShapeOutputReference | KmsKeyKeyShape): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    algorithm: {
+      value: cdktf.stringToHclTerraform(struct!.algorithm),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    curve_id: {
+      value: cdktf.stringToHclTerraform(struct!.curveId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    length: {
+      value: cdktf.numberToHclTerraform(struct!.length),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsKeyKeyShapeOutputReference extends cdktf.ComplexObject {
@@ -624,6 +745,37 @@ export function kmsKeyRestoreFromFileToTerraform(struct?: KmsKeyRestoreFromFileO
     content_md5: cdktf.stringToTerraform(struct!.contentMd5),
     restore_key_from_file_details: cdktf.stringToTerraform(struct!.restoreKeyFromFileDetails),
   }
+}
+
+
+export function kmsKeyRestoreFromFileToHclTerraform(struct?: KmsKeyRestoreFromFileOutputReference | KmsKeyRestoreFromFile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    content_length: {
+      value: cdktf.stringToHclTerraform(struct!.contentLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    content_md5: {
+      value: cdktf.stringToHclTerraform(struct!.contentMd5),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    restore_key_from_file_details: {
+      value: cdktf.stringToHclTerraform(struct!.restoreKeyFromFileDetails),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsKeyRestoreFromFileOutputReference extends cdktf.ComplexObject {
@@ -747,6 +899,49 @@ export function kmsKeyRestoreFromObjectStoreToTerraform(struct?: KmsKeyRestoreFr
     object: cdktf.stringToTerraform(struct!.object),
     uri: cdktf.stringToTerraform(struct!.uri),
   }
+}
+
+
+export function kmsKeyRestoreFromObjectStoreToHclTerraform(struct?: KmsKeyRestoreFromObjectStoreOutputReference | KmsKeyRestoreFromObjectStore): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination: {
+      value: cdktf.stringToHclTerraform(struct!.destination),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsKeyRestoreFromObjectStoreOutputReference extends cdktf.ComplexObject {
@@ -909,6 +1104,37 @@ export function kmsKeyTimeoutsToTerraform(struct?: KmsKeyTimeouts | cdktf.IResol
   }
 }
 
+
+export function kmsKeyTimeoutsToHclTerraform(struct?: KmsKeyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class KmsKeyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1021,6 +1247,20 @@ export class KmsKey extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_kms_key";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a KmsKey resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the KmsKey to import
+  * @param importFromId The id of the existing KmsKey that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_key#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the KmsKey to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_key", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1398,5 +1638,115 @@ export class KmsKey extends cdktf.TerraformResource {
       restore_from_object_store: kmsKeyRestoreFromObjectStoreToTerraform(this._restoreFromObjectStore.internalValue),
       timeouts: kmsKeyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      desired_state: {
+        value: cdktf.stringToHclTerraform(this._desiredState),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_auto_rotation_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isAutoRotationEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      management_endpoint: {
+        value: cdktf.stringToHclTerraform(this._managementEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      protection_mode: {
+        value: cdktf.stringToHclTerraform(this._protectionMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      restore_trigger: {
+        value: cdktf.booleanToHclTerraform(this._restoreTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      time_of_deletion: {
+        value: cdktf.stringToHclTerraform(this._timeOfDeletion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      auto_key_rotation_details: {
+        value: kmsKeyAutoKeyRotationDetailsToHclTerraform(this._autoKeyRotationDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KmsKeyAutoKeyRotationDetailsList",
+      },
+      external_key_reference: {
+        value: kmsKeyExternalKeyReferenceToHclTerraform(this._externalKeyReference.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KmsKeyExternalKeyReferenceList",
+      },
+      key_shape: {
+        value: kmsKeyKeyShapeToHclTerraform(this._keyShape.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KmsKeyKeyShapeList",
+      },
+      restore_from_file: {
+        value: kmsKeyRestoreFromFileToHclTerraform(this._restoreFromFile.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KmsKeyRestoreFromFileList",
+      },
+      restore_from_object_store: {
+        value: kmsKeyRestoreFromObjectStoreToHclTerraform(this._restoreFromObjectStore.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KmsKeyRestoreFromObjectStoreList",
+      },
+      timeouts: {
+        value: kmsKeyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "KmsKeyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

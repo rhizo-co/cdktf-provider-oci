@@ -76,13 +76,13 @@ export interface ObjectstorageObjectConfig extends cdktf.TerraformMetaArguments 
   readonly storageTier?: string;
   /**
   * source_uri_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_object#source_uri_details ObjectstorageObject#source_uri_details}
   */
   readonly sourceUriDetails?: ObjectstorageObjectSourceUriDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_object#timeouts ObjectstorageObject#timeouts}
   */
   readonly timeouts?: ObjectstorageObjectTimeouts;
@@ -137,6 +137,67 @@ export function objectstorageObjectSourceUriDetailsToTerraform(struct?: Objectst
     source_object_if_match_etag: cdktf.stringToTerraform(struct!.sourceObjectIfMatchEtag),
     source_version_id: cdktf.stringToTerraform(struct!.sourceVersionId),
   }
+}
+
+
+export function objectstorageObjectSourceUriDetailsToHclTerraform(struct?: ObjectstorageObjectSourceUriDetailsOutputReference | ObjectstorageObjectSourceUriDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination_object_if_match_etag: {
+      value: cdktf.stringToHclTerraform(struct!.destinationObjectIfMatchEtag),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination_object_if_none_match_etag: {
+      value: cdktf.stringToHclTerraform(struct!.destinationObjectIfNoneMatchEtag),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    region: {
+      value: cdktf.stringToHclTerraform(struct!.region),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_object_if_match_etag: {
+      value: cdktf.stringToHclTerraform(struct!.sourceObjectIfMatchEtag),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_version_id: {
+      value: cdktf.stringToHclTerraform(struct!.sourceVersionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ObjectstorageObjectSourceUriDetailsOutputReference extends cdktf.ComplexObject {
@@ -356,6 +417,37 @@ export function objectstorageObjectTimeoutsToTerraform(struct?: ObjectstorageObj
   }
 }
 
+
+export function objectstorageObjectTimeoutsToHclTerraform(struct?: ObjectstorageObjectTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ObjectstorageObjectTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -468,6 +560,20 @@ export class ObjectstorageObject extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_objectstorage_object";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ObjectstorageObject resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ObjectstorageObject to import
+  * @param importFromId The id of the existing ObjectstorageObject that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_object#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ObjectstorageObject to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_objectstorage_object", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -844,5 +950,121 @@ export class ObjectstorageObject extends cdktf.TerraformResource {
       source_uri_details: objectstorageObjectSourceUriDetailsToTerraform(this._sourceUriDetails.internalValue),
       timeouts: objectstorageObjectTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cache_control: {
+        value: cdktf.stringToHclTerraform(this._cacheControl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content: {
+        value: cdktf.stringToHclTerraform(this._content),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content_disposition: {
+        value: cdktf.stringToHclTerraform(this._contentDisposition),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content_encoding: {
+        value: cdktf.stringToHclTerraform(this._contentEncoding),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content_language: {
+        value: cdktf.stringToHclTerraform(this._contentLanguage),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content_md5: {
+        value: cdktf.stringToHclTerraform(this._contentMd5),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content_type: {
+        value: cdktf.stringToHclTerraform(this._contentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      delete_all_object_versions: {
+        value: cdktf.booleanToHclTerraform(this._deleteAllObjectVersions),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._metadata),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object: {
+        value: cdktf.stringToHclTerraform(this._object),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opc_sse_kms_key_id: {
+        value: cdktf.stringToHclTerraform(this._opcSseKmsKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source: {
+        value: cdktf.stringToHclTerraform(this._source),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      storage_tier: {
+        value: cdktf.stringToHclTerraform(this._storageTier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_uri_details: {
+        value: objectstorageObjectSourceUriDetailsToHclTerraform(this._sourceUriDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ObjectstorageObjectSourceUriDetailsList",
+      },
+      timeouts: {
+        value: objectstorageObjectTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ObjectstorageObjectTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

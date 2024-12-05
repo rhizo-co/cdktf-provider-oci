@@ -24,6 +24,17 @@ export function dataOciCoreCrossConnectGroupMacsecPropertiesPrimaryKeyToTerrafor
   }
 }
 
+
+export function dataOciCoreCrossConnectGroupMacsecPropertiesPrimaryKeyToHclTerraform(struct?: DataOciCoreCrossConnectGroupMacsecPropertiesPrimaryKey): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCrossConnectGroupMacsecPropertiesPrimaryKeyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -101,6 +112,17 @@ export function dataOciCoreCrossConnectGroupMacsecPropertiesToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function dataOciCoreCrossConnectGroupMacsecPropertiesToHclTerraform(struct?: DataOciCoreCrossConnectGroupMacsecProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCrossConnectGroupMacsecPropertiesOutputReference extends cdktf.ComplexObject {
@@ -181,6 +203,20 @@ export class DataOciCoreCrossConnectGroup extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_cross_connect_group";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreCrossConnectGroup resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreCrossConnectGroup to import
+  * @param importFromId The id of the existing DataOciCoreCrossConnectGroup that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_cross_connect_group#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreCrossConnectGroup to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_cross_connect_group", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -295,5 +331,19 @@ export class DataOciCoreCrossConnectGroup extends cdktf.TerraformDataSource {
     return {
       cross_connect_group_id: cdktf.stringToTerraform(this._crossConnectGroupId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cross_connect_group_id: {
+        value: cdktf.stringToHclTerraform(this._crossConnectGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

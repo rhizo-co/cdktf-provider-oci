@@ -40,19 +40,19 @@ export interface JmsFleetConfig extends cdktf.TerraformMetaArguments {
   readonly isAdvancedFeaturesEnabled?: boolean | cdktf.IResolvable;
   /**
   * inventory_log block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet#inventory_log JmsFleet#inventory_log}
   */
   readonly inventoryLog: JmsFleetInventoryLog;
   /**
   * operation_log block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet#operation_log JmsFleet#operation_log}
   */
   readonly operationLog?: JmsFleetOperationLog;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet#timeouts JmsFleet#timeouts}
   */
   readonly timeouts?: JmsFleetTimeouts;
@@ -77,6 +77,31 @@ export function jmsFleetInventoryLogToTerraform(struct?: JmsFleetInventoryLogOut
     log_group_id: cdktf.stringToTerraform(struct!.logGroupId),
     log_id: cdktf.stringToTerraform(struct!.logId),
   }
+}
+
+
+export function jmsFleetInventoryLogToHclTerraform(struct?: JmsFleetInventoryLogOutputReference | JmsFleetInventoryLog): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    log_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.logGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_id: {
+      value: cdktf.stringToHclTerraform(struct!.logId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetInventoryLogOutputReference extends cdktf.ComplexObject {
@@ -163,6 +188,31 @@ export function jmsFleetOperationLogToTerraform(struct?: JmsFleetOperationLogOut
     log_group_id: cdktf.stringToTerraform(struct!.logGroupId),
     log_id: cdktf.stringToTerraform(struct!.logId),
   }
+}
+
+
+export function jmsFleetOperationLogToHclTerraform(struct?: JmsFleetOperationLogOutputReference | JmsFleetOperationLog): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    log_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.logGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_id: {
+      value: cdktf.stringToHclTerraform(struct!.logId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetOperationLogOutputReference extends cdktf.ComplexObject {
@@ -254,6 +304,37 @@ export function jmsFleetTimeoutsToTerraform(struct?: JmsFleetTimeouts | cdktf.IR
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function jmsFleetTimeoutsToHclTerraform(struct?: JmsFleetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -368,6 +449,20 @@ export class JmsFleet extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_fleet";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a JmsFleet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the JmsFleet to import
+  * @param importFromId The id of the existing JmsFleet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the JmsFleet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_fleet", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -626,5 +721,73 @@ export class JmsFleet extends cdktf.TerraformResource {
       operation_log: jmsFleetOperationLogToTerraform(this._operationLog.internalValue),
       timeouts: jmsFleetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_advanced_features_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isAdvancedFeaturesEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      inventory_log: {
+        value: jmsFleetInventoryLogToHclTerraform(this._inventoryLog.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JmsFleetInventoryLogList",
+      },
+      operation_log: {
+        value: jmsFleetOperationLogToHclTerraform(this._operationLog.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JmsFleetOperationLogList",
+      },
+      timeouts: {
+        value: jmsFleetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "JmsFleetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

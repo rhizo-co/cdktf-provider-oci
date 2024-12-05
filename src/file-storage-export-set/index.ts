@@ -32,7 +32,7 @@ export interface FileStorageExportSetConfig extends cdktf.TerraformMetaArguments
   readonly mountTargetId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_export_set#timeouts FileStorageExportSet#timeouts}
   */
   readonly timeouts?: FileStorageExportSetTimeouts;
@@ -62,6 +62,37 @@ export function fileStorageExportSetTimeoutsToTerraform(struct?: FileStorageExpo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function fileStorageExportSetTimeoutsToHclTerraform(struct?: FileStorageExportSetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FileStorageExportSetTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -176,6 +207,20 @@ export class FileStorageExportSet extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_file_storage_export_set";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FileStorageExportSet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FileStorageExportSet to import
+  * @param importFromId The id of the existing FileStorageExportSet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/file_storage_export_set#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FileStorageExportSet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_file_storage_export_set", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -347,5 +392,49 @@ export class FileStorageExportSet extends cdktf.TerraformResource {
       mount_target_id: cdktf.stringToTerraform(this._mountTargetId),
       timeouts: fileStorageExportSetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      max_fs_stat_bytes: {
+        value: cdktf.stringToHclTerraform(this._maxFsStatBytes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      max_fs_stat_files: {
+        value: cdktf.stringToHclTerraform(this._maxFsStatFiles),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      mount_target_id: {
+        value: cdktf.stringToHclTerraform(this._mountTargetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: fileStorageExportSetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FileStorageExportSetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -36,19 +36,19 @@ export interface WaaWebAppAccelerationPolicyConfig extends cdktf.TerraformMetaAr
   readonly systemTags?: { [key: string]: string };
   /**
   * response_caching_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waa_web_app_acceleration_policy#response_caching_policy WaaWebAppAccelerationPolicy#response_caching_policy}
   */
   readonly responseCachingPolicy?: WaaWebAppAccelerationPolicyResponseCachingPolicy;
   /**
   * response_compression_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waa_web_app_acceleration_policy#response_compression_policy WaaWebAppAccelerationPolicy#response_compression_policy}
   */
   readonly responseCompressionPolicy?: WaaWebAppAccelerationPolicyResponseCompressionPolicy;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waa_web_app_acceleration_policy#timeouts WaaWebAppAccelerationPolicy#timeouts}
   */
   readonly timeouts?: WaaWebAppAccelerationPolicyTimeouts;
@@ -68,6 +68,25 @@ export function waaWebAppAccelerationPolicyResponseCachingPolicyToTerraform(stru
   return {
     is_response_header_based_caching_enabled: cdktf.booleanToTerraform(struct!.isResponseHeaderBasedCachingEnabled),
   }
+}
+
+
+export function waaWebAppAccelerationPolicyResponseCachingPolicyToHclTerraform(struct?: WaaWebAppAccelerationPolicyResponseCachingPolicyOutputReference | WaaWebAppAccelerationPolicyResponseCachingPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_response_header_based_caching_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isResponseHeaderBasedCachingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaaWebAppAccelerationPolicyResponseCachingPolicyOutputReference extends cdktf.ComplexObject {
@@ -135,6 +154,25 @@ export function waaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompress
   }
 }
 
+
+export function waaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompressionToHclTerraform(struct?: WaaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutputReference | WaaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompression): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WaaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompressionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -186,7 +224,7 @@ export class WaaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompression
 export interface WaaWebAppAccelerationPolicyResponseCompressionPolicy {
   /**
   * gzip_compression block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waa_web_app_acceleration_policy#gzip_compression WaaWebAppAccelerationPolicy#gzip_compression}
   */
   readonly gzipCompression?: WaaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompression;
@@ -200,6 +238,25 @@ export function waaWebAppAccelerationPolicyResponseCompressionPolicyToTerraform(
   return {
     gzip_compression: waaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompressionToTerraform(struct!.gzipCompression),
   }
+}
+
+
+export function waaWebAppAccelerationPolicyResponseCompressionPolicyToHclTerraform(struct?: WaaWebAppAccelerationPolicyResponseCompressionPolicyOutputReference | WaaWebAppAccelerationPolicyResponseCompressionPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    gzip_compression: {
+      value: waaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompressionToHclTerraform(struct!.gzipCompression),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WaaWebAppAccelerationPolicyResponseCompressionPolicyGzipCompressionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaaWebAppAccelerationPolicyResponseCompressionPolicyOutputReference extends cdktf.ComplexObject {
@@ -275,6 +332,37 @@ export function waaWebAppAccelerationPolicyTimeoutsToTerraform(struct?: WaaWebAp
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function waaWebAppAccelerationPolicyTimeoutsToHclTerraform(struct?: WaaWebAppAccelerationPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WaaWebAppAccelerationPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -389,6 +477,20 @@ export class WaaWebAppAccelerationPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_waa_web_app_acceleration_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a WaaWebAppAccelerationPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the WaaWebAppAccelerationPolicy to import
+  * @param importFromId The id of the existing WaaWebAppAccelerationPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waa_web_app_acceleration_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the WaaWebAppAccelerationPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_waa_web_app_acceleration_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -609,5 +711,67 @@ export class WaaWebAppAccelerationPolicy extends cdktf.TerraformResource {
       response_compression_policy: waaWebAppAccelerationPolicyResponseCompressionPolicyToTerraform(this._responseCompressionPolicy.internalValue),
       timeouts: waaWebAppAccelerationPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      system_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._systemTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      response_caching_policy: {
+        value: waaWebAppAccelerationPolicyResponseCachingPolicyToHclTerraform(this._responseCachingPolicy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WaaWebAppAccelerationPolicyResponseCachingPolicyList",
+      },
+      response_compression_policy: {
+        value: waaWebAppAccelerationPolicyResponseCompressionPolicyToHclTerraform(this._responseCompressionPolicy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WaaWebAppAccelerationPolicyResponseCompressionPolicyList",
+      },
+      timeouts: {
+        value: waaWebAppAccelerationPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "WaaWebAppAccelerationPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

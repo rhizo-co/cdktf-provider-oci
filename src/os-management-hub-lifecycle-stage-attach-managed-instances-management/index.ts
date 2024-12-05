@@ -20,13 +20,13 @@ export interface OsManagementHubLifecycleStageAttachManagedInstancesManagementCo
   readonly lifecycleStageId: string;
   /**
   * managed_instance_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_lifecycle_stage_attach_managed_instances_management#managed_instance_details OsManagementHubLifecycleStageAttachManagedInstancesManagement#managed_instance_details}
   */
   readonly managedInstanceDetails?: OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_lifecycle_stage_attach_managed_instances_management#timeouts OsManagementHubLifecycleStageAttachManagedInstancesManagement#timeouts}
   */
   readonly timeouts?: OsManagementHubLifecycleStageAttachManagedInstancesManagementTimeouts;
@@ -51,6 +51,31 @@ export function osManagementHubLifecycleStageAttachManagedInstancesManagementMan
     description: cdktf.stringToTerraform(struct!.description),
     display_name: cdktf.stringToTerraform(struct!.displayName),
   }
+}
+
+
+export function osManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsToHclTerraform(struct?: OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsOutputReference | OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsOutputReference extends cdktf.ComplexObject {
@@ -130,7 +155,7 @@ export interface OsManagementHubLifecycleStageAttachManagedInstancesManagementMa
   readonly managedInstances: string[];
   /**
   * work_request_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_lifecycle_stage_attach_managed_instances_management#work_request_details OsManagementHubLifecycleStageAttachManagedInstancesManagement#work_request_details}
   */
   readonly workRequestDetails?: OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetails;
@@ -145,6 +170,31 @@ export function osManagementHubLifecycleStageAttachManagedInstancesManagementMan
     managed_instances: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.managedInstances),
     work_request_details: osManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsToTerraform(struct!.workRequestDetails),
   }
+}
+
+
+export function osManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsToHclTerraform(struct?: OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsOutputReference | OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    managed_instances: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.managedInstances),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    work_request_details: {
+      value: osManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsToHclTerraform(struct!.workRequestDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsWorkRequestDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsOutputReference extends cdktf.ComplexObject {
@@ -239,6 +289,37 @@ export function osManagementHubLifecycleStageAttachManagedInstancesManagementTim
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function osManagementHubLifecycleStageAttachManagedInstancesManagementTimeoutsToHclTerraform(struct?: OsManagementHubLifecycleStageAttachManagedInstancesManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubLifecycleStageAttachManagedInstancesManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -354,6 +435,20 @@ export class OsManagementHubLifecycleStageAttachManagedInstancesManagement exten
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_lifecycle_stage_attach_managed_instances_management";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OsManagementHubLifecycleStageAttachManagedInstancesManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OsManagementHubLifecycleStageAttachManagedInstancesManagement to import
+  * @param importFromId The id of the existing OsManagementHubLifecycleStageAttachManagedInstancesManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_lifecycle_stage_attach_managed_instances_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OsManagementHubLifecycleStageAttachManagedInstancesManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_lifecycle_stage_attach_managed_instances_management", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -463,5 +558,37 @@ export class OsManagementHubLifecycleStageAttachManagedInstancesManagement exten
       managed_instance_details: osManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsToTerraform(this._managedInstanceDetails.internalValue),
       timeouts: osManagementHubLifecycleStageAttachManagedInstancesManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      lifecycle_stage_id: {
+        value: cdktf.stringToHclTerraform(this._lifecycleStageId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_details: {
+        value: osManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsToHclTerraform(this._managedInstanceDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OsManagementHubLifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsList",
+      },
+      timeouts: {
+        value: osManagementHubLifecycleStageAttachManagedInstancesManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OsManagementHubLifecycleStageAttachManagedInstancesManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

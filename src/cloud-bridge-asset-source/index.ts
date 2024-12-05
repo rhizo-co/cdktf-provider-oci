@@ -68,19 +68,19 @@ export interface CloudBridgeAssetSourceConfig extends cdktf.TerraformMetaArgumen
   readonly vcenterEndpoint: string;
   /**
   * discovery_credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset_source#discovery_credentials CloudBridgeAssetSource#discovery_credentials}
   */
   readonly discoveryCredentials: CloudBridgeAssetSourceDiscoveryCredentials;
   /**
   * replication_credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset_source#replication_credentials CloudBridgeAssetSource#replication_credentials}
   */
   readonly replicationCredentials?: CloudBridgeAssetSourceReplicationCredentials;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset_source#timeouts CloudBridgeAssetSource#timeouts}
   */
   readonly timeouts?: CloudBridgeAssetSourceTimeouts;
@@ -105,6 +105,31 @@ export function cloudBridgeAssetSourceDiscoveryCredentialsToTerraform(struct?: C
     secret_id: cdktf.stringToTerraform(struct!.secretId),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function cloudBridgeAssetSourceDiscoveryCredentialsToHclTerraform(struct?: CloudBridgeAssetSourceDiscoveryCredentialsOutputReference | CloudBridgeAssetSourceDiscoveryCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetSourceDiscoveryCredentialsOutputReference extends cdktf.ComplexObject {
@@ -191,6 +216,31 @@ export function cloudBridgeAssetSourceReplicationCredentialsToTerraform(struct?:
     secret_id: cdktf.stringToTerraform(struct!.secretId),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function cloudBridgeAssetSourceReplicationCredentialsToHclTerraform(struct?: CloudBridgeAssetSourceReplicationCredentialsOutputReference | CloudBridgeAssetSourceReplicationCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetSourceReplicationCredentialsOutputReference extends cdktf.ComplexObject {
@@ -282,6 +332,37 @@ export function cloudBridgeAssetSourceTimeoutsToTerraform(struct?: CloudBridgeAs
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function cloudBridgeAssetSourceTimeoutsToHclTerraform(struct?: CloudBridgeAssetSourceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetSourceTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -396,6 +477,20 @@ export class CloudBridgeAssetSource extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_bridge_asset_source";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CloudBridgeAssetSource resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CloudBridgeAssetSource to import
+  * @param importFromId The id of the existing CloudBridgeAssetSource that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset_source#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CloudBridgeAssetSource to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_bridge_asset_source", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -742,5 +837,115 @@ export class CloudBridgeAssetSource extends cdktf.TerraformResource {
       replication_credentials: cloudBridgeAssetSourceReplicationCredentialsToTerraform(this._replicationCredentials.internalValue),
       timeouts: cloudBridgeAssetSourceTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      are_historical_metrics_collected: {
+        value: cdktf.booleanToHclTerraform(this._areHistoricalMetricsCollected),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      are_realtime_metrics_collected: {
+        value: cdktf.booleanToHclTerraform(this._areRealtimeMetricsCollected),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      assets_compartment_id: {
+        value: cdktf.stringToHclTerraform(this._assetsCompartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      discovery_schedule_id: {
+        value: cdktf.stringToHclTerraform(this._discoveryScheduleId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      environment_id: {
+        value: cdktf.stringToHclTerraform(this._environmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      inventory_id: {
+        value: cdktf.stringToHclTerraform(this._inventoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      system_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._systemTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcenter_endpoint: {
+        value: cdktf.stringToHclTerraform(this._vcenterEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      discovery_credentials: {
+        value: cloudBridgeAssetSourceDiscoveryCredentialsToHclTerraform(this._discoveryCredentials.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudBridgeAssetSourceDiscoveryCredentialsList",
+      },
+      replication_credentials: {
+        value: cloudBridgeAssetSourceReplicationCredentialsToHclTerraform(this._replicationCredentials.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudBridgeAssetSourceReplicationCredentialsList",
+      },
+      timeouts: {
+        value: cloudBridgeAssetSourceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CloudBridgeAssetSourceTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

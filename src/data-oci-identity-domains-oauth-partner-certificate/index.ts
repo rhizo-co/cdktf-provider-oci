@@ -36,6 +36,17 @@ export function dataOciIdentityDomainsOauthPartnerCertificateIdcsCreatedByToTerr
   }
 }
 
+
+export function dataOciIdentityDomainsOauthPartnerCertificateIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsOauthPartnerCertificateIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOauthPartnerCertificateIdcsCreatedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -118,6 +129,17 @@ export function dataOciIdentityDomainsOauthPartnerCertificateIdcsLastModifiedByT
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsOauthPartnerCertificateIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsOauthPartnerCertificateIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsOauthPartnerCertificateIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
@@ -204,6 +226,17 @@ export function dataOciIdentityDomainsOauthPartnerCertificateMetaToTerraform(str
   }
 }
 
+
+export function dataOciIdentityDomainsOauthPartnerCertificateMetaToHclTerraform(struct?: DataOciIdentityDomainsOauthPartnerCertificateMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOauthPartnerCertificateMetaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -288,6 +321,17 @@ export function dataOciIdentityDomainsOauthPartnerCertificateTagsToTerraform(str
   }
 }
 
+
+export function dataOciIdentityDomainsOauthPartnerCertificateTagsToHclTerraform(struct?: DataOciIdentityDomainsOauthPartnerCertificateTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOauthPartnerCertificateTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -355,6 +399,20 @@ export class DataOciIdentityDomainsOauthPartnerCertificate extends cdktf.Terrafo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_oauth_partner_certificate";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsOauthPartnerCertificate resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsOauthPartnerCertificate to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsOauthPartnerCertificate that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_oauth_partner_certificate#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsOauthPartnerCertificate to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_oauth_partner_certificate", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -586,5 +644,37 @@ export class DataOciIdentityDomainsOauthPartnerCertificate extends cdktf.Terrafo
       o_auth_partner_certificate_id: cdktf.stringToTerraform(this._oAuthPartnerCertificateId),
       resource_type_schema_version: cdktf.stringToTerraform(this._resourceTypeSchemaVersion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      o_auth_partner_certificate_id: {
+        value: cdktf.stringToHclTerraform(this._oAuthPartnerCertificateId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

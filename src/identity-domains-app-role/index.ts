@@ -69,19 +69,19 @@ export interface IdentityDomainsAppRoleConfig extends cdktf.TerraformMetaArgumen
   readonly schemas: string[];
   /**
   * app block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_app_role#app IdentityDomainsAppRole#app}
   */
   readonly app: IdentityDomainsAppRoleApp;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_app_role#tags IdentityDomainsAppRole#tags}
   */
   readonly tags?: IdentityDomainsAppRoleTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_app_role#timeouts IdentityDomainsAppRole#timeouts}
   */
   readonly timeouts?: IdentityDomainsAppRoleTimeouts;
@@ -96,6 +96,17 @@ export function identityDomainsAppRoleIdcsCreatedByToTerraform(struct?: Identity
   }
   return {
   }
+}
+
+
+export function identityDomainsAppRoleIdcsCreatedByToHclTerraform(struct?: IdentityDomainsAppRoleIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsAppRoleIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -182,6 +193,17 @@ export function identityDomainsAppRoleIdcsLastModifiedByToTerraform(struct?: Ide
   }
 }
 
+
+export function identityDomainsAppRoleIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsAppRoleIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsAppRoleIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -266,6 +288,17 @@ export function identityDomainsAppRoleMembersToTerraform(struct?: IdentityDomain
   }
 }
 
+
+export function identityDomainsAppRoleMembersToHclTerraform(struct?: IdentityDomainsAppRoleMembers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsAppRoleMembersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -343,6 +376,17 @@ export function identityDomainsAppRoleMetaToTerraform(struct?: IdentityDomainsAp
   }
   return {
   }
+}
+
+
+export function identityDomainsAppRoleMetaToHclTerraform(struct?: IdentityDomainsAppRoleMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsAppRoleMetaOutputReference extends cdktf.ComplexObject {
@@ -434,6 +478,25 @@ export function identityDomainsAppRoleAppToTerraform(struct?: IdentityDomainsApp
   }
 }
 
+
+export function identityDomainsAppRoleAppToHclTerraform(struct?: IdentityDomainsAppRoleAppOutputReference | IdentityDomainsAppRoleApp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsAppRoleAppOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -519,6 +582,31 @@ export function identityDomainsAppRoleTagsToTerraform(struct?: IdentityDomainsAp
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsAppRoleTagsToHclTerraform(struct?: IdentityDomainsAppRoleTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsAppRoleTagsOutputReference extends cdktf.ComplexObject {
@@ -644,6 +732,37 @@ export function identityDomainsAppRoleTimeoutsToTerraform(struct?: IdentityDomai
   }
 }
 
+
+export function identityDomainsAppRoleTimeoutsToHclTerraform(struct?: IdentityDomainsAppRoleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsAppRoleTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -756,6 +875,20 @@ export class IdentityDomainsAppRole extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_app_role";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsAppRole resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsAppRole to import
+  * @param importFromId The id of the existing IdentityDomainsAppRole that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_app_role#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsAppRole to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_app_role", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1183,5 +1316,121 @@ export class IdentityDomainsAppRole extends cdktf.TerraformResource {
       tags: cdktf.listMapper(identityDomainsAppRoleTagsToTerraform, true)(this._tags.internalValue),
       timeouts: identityDomainsAppRoleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      admin_role: {
+        value: cdktf.booleanToHclTerraform(this._adminRole),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      available_to_clients: {
+        value: cdktf.booleanToHclTerraform(this._availableToClients),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      available_to_groups: {
+        value: cdktf.booleanToHclTerraform(this._availableToGroups),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      available_to_users: {
+        value: cdktf.booleanToHclTerraform(this._availableToUsers),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      legacy_group_name: {
+        value: cdktf.stringToHclTerraform(this._legacyGroupName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      public: {
+        value: cdktf.booleanToHclTerraform(this._public),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      app: {
+        value: identityDomainsAppRoleAppToHclTerraform(this._app.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsAppRoleAppList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsAppRoleTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsAppRoleTagsList",
+      },
+      timeouts: {
+        value: identityDomainsAppRoleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsAppRoleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

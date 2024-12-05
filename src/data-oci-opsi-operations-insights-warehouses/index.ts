@@ -28,7 +28,7 @@ export interface DataOciOpsiOperationsInsightsWarehousesConfig extends cdktf.Ter
   readonly state?: string[];
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_operations_insights_warehouses#filter DataOciOpsiOperationsInsightsWarehouses#filter}
   */
   readonly filter?: DataOciOpsiOperationsInsightsWarehousesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciOpsiOperationsInsightsWarehousesOperationsInsightsWarehou
   }
   return {
   }
+}
+
+
+export function dataOciOpsiOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemsToHclTerraform(struct?: DataOciOpsiOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOpsiOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -192,6 +203,17 @@ export function dataOciOpsiOperationsInsightsWarehousesOperationsInsightsWarehou
   }
 }
 
+
+export function dataOciOpsiOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionToHclTerraform(struct?: DataOciOpsiOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOpsiOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -270,6 +292,37 @@ export function dataOciOpsiOperationsInsightsWarehousesFilterToTerraform(struct?
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOpsiOperationsInsightsWarehousesFilterToHclTerraform(struct?: DataOciOpsiOperationsInsightsWarehousesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOpsiOperationsInsightsWarehousesFilterOutputReference extends cdktf.ComplexObject {
@@ -400,6 +453,20 @@ export class DataOciOpsiOperationsInsightsWarehouses extends cdktf.TerraformData
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_opsi_operations_insights_warehouses";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOpsiOperationsInsightsWarehouses resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOpsiOperationsInsightsWarehouses to import
+  * @param importFromId The id of the existing DataOciOpsiOperationsInsightsWarehouses that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_operations_insights_warehouses#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOpsiOperationsInsightsWarehouses to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_operations_insights_warehouses", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -537,5 +604,43 @@ export class DataOciOpsiOperationsInsightsWarehouses extends cdktf.TerraformData
       state: cdktf.listMapper(cdktf.stringToTerraform, false)(this._state),
       filter: cdktf.listMapper(dataOciOpsiOperationsInsightsWarehousesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._state),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOpsiOperationsInsightsWarehousesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOpsiOperationsInsightsWarehousesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,7 +40,7 @@ export interface DataOciDatabaseToolsDatabaseToolsConnectionsConfig extends cdkt
   readonly type?: string[];
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_tools_database_tools_connections#filter DataOciDatabaseToolsDatabaseToolsConnections#filter}
   */
   readonly filter?: DataOciDatabaseToolsDatabaseToolsConnectionsFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsKeyStoresKeyStoreContentToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsKeyStoresKeyStoreContent): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsKeyStoresKeyStoreContentOutputReference extends cdktf.ComplexObject {
@@ -126,6 +137,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsKeyStoresKeyStorePasswordToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsKeyStoresKeyStorePassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsKeyStoresKeyStorePasswordOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -193,6 +215,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsKeyStoresToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsKeyStores): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsKeyStoresOutputReference extends cdktf.ComplexObject {
@@ -269,6 +302,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsLocksToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsLocks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsLocksOutputReference extends cdktf.ComplexObject {
@@ -350,6 +394,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsProxyClientUserPasswordToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsProxyClientUserPassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsProxyClientUserPasswordOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -417,6 +472,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsProxyClientToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsProxyClient): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsProxyClientOutputReference extends cdktf.ComplexObject {
@@ -499,6 +565,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsRelatedResourceToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsRelatedResource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsRelatedResourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -568,6 +645,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsUserPasswordToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsUserPassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsUserPasswordOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -635,6 +723,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -815,6 +914,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnect
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionsDatabaseToolsConnectionCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -893,6 +1003,37 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionsFilterToTerraform(st
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionsFilterToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatabaseToolsDatabaseToolsConnectionsFilterOutputReference extends cdktf.ComplexObject {
@@ -1023,6 +1164,20 @@ export class DataOciDatabaseToolsDatabaseToolsConnections extends cdktf.Terrafor
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_tools_database_tools_connections";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseToolsDatabaseToolsConnections resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseToolsDatabaseToolsConnections to import
+  * @param importFromId The id of the existing DataOciDatabaseToolsDatabaseToolsConnections that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_tools_database_tools_connections#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseToolsDatabaseToolsConnections to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_tools_database_tools_connections", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1211,5 +1366,61 @@ export class DataOciDatabaseToolsDatabaseToolsConnections extends cdktf.Terrafor
       type: cdktf.listMapper(cdktf.stringToTerraform, false)(this._type),
       filter: cdktf.listMapper(dataOciDatabaseToolsDatabaseToolsConnectionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      related_resource_identifier: {
+        value: cdktf.stringToHclTerraform(this._relatedResourceIdentifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      runtime_support: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._runtimeSupport),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._type),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatabaseToolsDatabaseToolsConnectionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatabaseToolsDatabaseToolsConnectionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,6 +24,17 @@ export function dataOciAiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecif
   }
 }
 
+
+export function dataOciAiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetailsToHclTerraform(struct?: DataOciAiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -106,6 +117,17 @@ export function dataOciAiAnomalyDetectionDataAssetDataSourceDetailsToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciAiAnomalyDetectionDataAssetDataSourceDetailsToHclTerraform(struct?: DataOciAiAnomalyDetectionDataAssetDataSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiAnomalyDetectionDataAssetDataSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -267,6 +289,20 @@ export class DataOciAiAnomalyDetectionDataAsset extends cdktf.TerraformDataSourc
   // =================
   public static readonly tfResourceType = "oci_ai_anomaly_detection_data_asset";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciAiAnomalyDetectionDataAsset resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciAiAnomalyDetectionDataAsset to import
+  * @param importFromId The id of the existing DataOciAiAnomalyDetectionDataAsset that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_anomaly_detection_data_asset#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciAiAnomalyDetectionDataAsset to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_anomaly_detection_data_asset", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -391,5 +427,19 @@ export class DataOciAiAnomalyDetectionDataAsset extends cdktf.TerraformDataSourc
     return {
       data_asset_id: cdktf.stringToTerraform(this._dataAssetId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      data_asset_id: {
+        value: cdktf.stringToHclTerraform(this._dataAssetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

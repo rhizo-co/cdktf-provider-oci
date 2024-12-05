@@ -85,61 +85,61 @@ export interface IdentityDomainsSelfRegistrationProfileConfig extends cdktf.Terr
   readonly showOnLoginPage: boolean | cdktf.IResolvable;
   /**
   * after_submit_text block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#after_submit_text IdentityDomainsSelfRegistrationProfile#after_submit_text}
   */
   readonly afterSubmitText?: IdentityDomainsSelfRegistrationProfileAfterSubmitText[] | cdktf.IResolvable;
   /**
   * consent_text block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#consent_text IdentityDomainsSelfRegistrationProfile#consent_text}
   */
   readonly consentText?: IdentityDomainsSelfRegistrationProfileConsentText[] | cdktf.IResolvable;
   /**
   * default_groups block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#default_groups IdentityDomainsSelfRegistrationProfile#default_groups}
   */
   readonly defaultGroups?: IdentityDomainsSelfRegistrationProfileDefaultGroups[] | cdktf.IResolvable;
   /**
   * display_name block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#display_name IdentityDomainsSelfRegistrationProfile#display_name}
   */
   readonly displayName: IdentityDomainsSelfRegistrationProfileDisplayName[] | cdktf.IResolvable;
   /**
   * email_template block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#email_template IdentityDomainsSelfRegistrationProfile#email_template}
   */
   readonly emailTemplate: IdentityDomainsSelfRegistrationProfileEmailTemplate;
   /**
   * footer_text block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#footer_text IdentityDomainsSelfRegistrationProfile#footer_text}
   */
   readonly footerText?: IdentityDomainsSelfRegistrationProfileFooterText[] | cdktf.IResolvable;
   /**
   * header_text block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#header_text IdentityDomainsSelfRegistrationProfile#header_text}
   */
   readonly headerText?: IdentityDomainsSelfRegistrationProfileHeaderText[] | cdktf.IResolvable;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#tags IdentityDomainsSelfRegistrationProfile#tags}
   */
   readonly tags?: IdentityDomainsSelfRegistrationProfileTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#timeouts IdentityDomainsSelfRegistrationProfile#timeouts}
   */
   readonly timeouts?: IdentityDomainsSelfRegistrationProfileTimeouts;
   /**
   * user_attributes block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#user_attributes IdentityDomainsSelfRegistrationProfile#user_attributes}
   */
   readonly userAttributes?: IdentityDomainsSelfRegistrationProfileUserAttributes[] | cdktf.IResolvable;
@@ -154,6 +154,17 @@ export function identityDomainsSelfRegistrationProfileIdcsCreatedByToTerraform(s
   }
   return {
   }
+}
+
+
+export function identityDomainsSelfRegistrationProfileIdcsCreatedByToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsSelfRegistrationProfileIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -240,6 +251,17 @@ export function identityDomainsSelfRegistrationProfileIdcsLastModifiedByToTerraf
   }
 }
 
+
+export function identityDomainsSelfRegistrationProfileIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsSelfRegistrationProfileIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -322,6 +344,17 @@ export function identityDomainsSelfRegistrationProfileMetaToTerraform(struct?: I
   }
   return {
   }
+}
+
+
+export function identityDomainsSelfRegistrationProfileMetaToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsSelfRegistrationProfileMetaOutputReference extends cdktf.ComplexObject {
@@ -421,6 +454,37 @@ export function identityDomainsSelfRegistrationProfileAfterSubmitTextToTerraform
     locale: cdktf.stringToTerraform(struct!.locale),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsSelfRegistrationProfileAfterSubmitTextToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileAfterSubmitText | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default: {
+      value: cdktf.booleanToHclTerraform(struct!.default),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    locale: {
+      value: cdktf.stringToHclTerraform(struct!.locale),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsSelfRegistrationProfileAfterSubmitTextOutputReference extends cdktf.ComplexObject {
@@ -568,6 +632,37 @@ export function identityDomainsSelfRegistrationProfileConsentTextToTerraform(str
   }
 }
 
+
+export function identityDomainsSelfRegistrationProfileConsentTextToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileConsentText | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default: {
+      value: cdktf.booleanToHclTerraform(struct!.default),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    locale: {
+      value: cdktf.stringToHclTerraform(struct!.locale),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsSelfRegistrationProfileConsentTextOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -703,6 +798,25 @@ export function identityDomainsSelfRegistrationProfileDefaultGroupsToTerraform(s
   }
 }
 
+
+export function identityDomainsSelfRegistrationProfileDefaultGroupsToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileDefaultGroups | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsSelfRegistrationProfileDefaultGroupsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -815,6 +929,37 @@ export function identityDomainsSelfRegistrationProfileDisplayNameToTerraform(str
     locale: cdktf.stringToTerraform(struct!.locale),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsSelfRegistrationProfileDisplayNameToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileDisplayName | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default: {
+      value: cdktf.booleanToHclTerraform(struct!.default),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    locale: {
+      value: cdktf.stringToHclTerraform(struct!.locale),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsSelfRegistrationProfileDisplayNameOutputReference extends cdktf.ComplexObject {
@@ -952,6 +1097,25 @@ export function identityDomainsSelfRegistrationProfileEmailTemplateToTerraform(s
   }
 }
 
+
+export function identityDomainsSelfRegistrationProfileEmailTemplateToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileEmailTemplateOutputReference | IdentityDomainsSelfRegistrationProfileEmailTemplate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsSelfRegistrationProfileEmailTemplateOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1032,6 +1196,37 @@ export function identityDomainsSelfRegistrationProfileFooterTextToTerraform(stru
     locale: cdktf.stringToTerraform(struct!.locale),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsSelfRegistrationProfileFooterTextToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileFooterText | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default: {
+      value: cdktf.booleanToHclTerraform(struct!.default),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    locale: {
+      value: cdktf.stringToHclTerraform(struct!.locale),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsSelfRegistrationProfileFooterTextOutputReference extends cdktf.ComplexObject {
@@ -1179,6 +1374,37 @@ export function identityDomainsSelfRegistrationProfileHeaderTextToTerraform(stru
   }
 }
 
+
+export function identityDomainsSelfRegistrationProfileHeaderTextToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileHeaderText | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default: {
+      value: cdktf.booleanToHclTerraform(struct!.default),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    locale: {
+      value: cdktf.stringToHclTerraform(struct!.locale),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsSelfRegistrationProfileHeaderTextOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1319,6 +1545,31 @@ export function identityDomainsSelfRegistrationProfileTagsToTerraform(struct?: I
   }
 }
 
+
+export function identityDomainsSelfRegistrationProfileTagsToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsSelfRegistrationProfileTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1440,6 +1691,37 @@ export function identityDomainsSelfRegistrationProfileTimeoutsToTerraform(struct
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function identityDomainsSelfRegistrationProfileTimeoutsToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsSelfRegistrationProfileTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -1569,6 +1851,37 @@ export function identityDomainsSelfRegistrationProfileUserAttributesToTerraform(
     seq_number: cdktf.numberToTerraform(struct!.seqNumber),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsSelfRegistrationProfileUserAttributesToHclTerraform(struct?: IdentityDomainsSelfRegistrationProfileUserAttributes | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fully_qualified_attribute_name: {
+      value: cdktf.stringToHclTerraform(struct!.fullyQualifiedAttributeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    seq_number: {
+      value: cdktf.numberToHclTerraform(struct!.seqNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsSelfRegistrationProfileUserAttributesOutputReference extends cdktf.ComplexObject {
@@ -1709,6 +2022,20 @@ export class IdentityDomainsSelfRegistrationProfile extends cdktf.TerraformResou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_self_registration_profile";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsSelfRegistrationProfile resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsSelfRegistrationProfile to import
+  * @param importFromId The id of the existing IdentityDomainsSelfRegistrationProfile that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_self_registration_profile#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsSelfRegistrationProfile to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_self_registration_profile", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2295,5 +2622,187 @@ export class IdentityDomainsSelfRegistrationProfile extends cdktf.TerraformResou
       timeouts: identityDomainsSelfRegistrationProfileTimeoutsToTerraform(this._timeouts.internalValue),
       user_attributes: cdktf.listMapper(identityDomainsSelfRegistrationProfileUserAttributesToTerraform, true)(this._userAttributes.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      activation_email_required: {
+        value: cdktf.booleanToHclTerraform(this._activationEmailRequired),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      active: {
+        value: cdktf.booleanToHclTerraform(this._active),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      allowed_email_domains: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._allowedEmailDomains),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      consent_text_present: {
+        value: cdktf.booleanToHclTerraform(this._consentTextPresent),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      disallowed_email_domains: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._disallowedEmailDomains),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      external_id: {
+        value: cdktf.stringToHclTerraform(this._externalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      footer_logo: {
+        value: cdktf.stringToHclTerraform(this._footerLogo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      header_logo: {
+        value: cdktf.stringToHclTerraform(this._headerLogo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      number_of_days_redirect_url_is_valid: {
+        value: cdktf.numberToHclTerraform(this._numberOfDaysRedirectUrlIsValid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      redirect_url: {
+        value: cdktf.stringToHclTerraform(this._redirectUrl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      show_on_login_page: {
+        value: cdktf.booleanToHclTerraform(this._showOnLoginPage),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      after_submit_text: {
+        value: cdktf.listMapperHcl(identityDomainsSelfRegistrationProfileAfterSubmitTextToHclTerraform, true)(this._afterSubmitText.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileAfterSubmitTextList",
+      },
+      consent_text: {
+        value: cdktf.listMapperHcl(identityDomainsSelfRegistrationProfileConsentTextToHclTerraform, true)(this._consentText.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileConsentTextList",
+      },
+      default_groups: {
+        value: cdktf.listMapperHcl(identityDomainsSelfRegistrationProfileDefaultGroupsToHclTerraform, true)(this._defaultGroups.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileDefaultGroupsList",
+      },
+      display_name: {
+        value: cdktf.listMapperHcl(identityDomainsSelfRegistrationProfileDisplayNameToHclTerraform, true)(this._displayName.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileDisplayNameList",
+      },
+      email_template: {
+        value: identityDomainsSelfRegistrationProfileEmailTemplateToHclTerraform(this._emailTemplate.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileEmailTemplateList",
+      },
+      footer_text: {
+        value: cdktf.listMapperHcl(identityDomainsSelfRegistrationProfileFooterTextToHclTerraform, true)(this._footerText.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileFooterTextList",
+      },
+      header_text: {
+        value: cdktf.listMapperHcl(identityDomainsSelfRegistrationProfileHeaderTextToHclTerraform, true)(this._headerText.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileHeaderTextList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsSelfRegistrationProfileTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileTagsList",
+      },
+      timeouts: {
+        value: identityDomainsSelfRegistrationProfileTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileTimeouts",
+      },
+      user_attributes: {
+        value: cdktf.listMapperHcl(identityDomainsSelfRegistrationProfileUserAttributesToHclTerraform, true)(this._userAttributes.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsSelfRegistrationProfileUserAttributesList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -23,6 +23,20 @@ export class DataOciLoggingLogSavedSearch extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_logging_log_saved_search";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLoggingLogSavedSearch resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLoggingLogSavedSearch to import
+  * @param importFromId The id of the existing DataOciLoggingLogSavedSearch that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/logging_log_saved_search#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLoggingLogSavedSearch to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_logging_log_saved_search", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -130,5 +144,19 @@ export class DataOciLoggingLogSavedSearch extends cdktf.TerraformDataSource {
     return {
       log_saved_search_id: cdktf.stringToTerraform(this._logSavedSearchId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      log_saved_search_id: {
+        value: cdktf.stringToHclTerraform(this._logSavedSearchId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

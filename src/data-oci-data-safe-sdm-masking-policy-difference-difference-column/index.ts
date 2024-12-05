@@ -34,6 +34,20 @@ export class DataOciDataSafeSdmMaskingPolicyDifferenceDifferenceColumn extends c
   // =================
   public static readonly tfResourceType = "oci_data_safe_sdm_masking_policy_difference_difference_column";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeSdmMaskingPolicyDifferenceDifferenceColumn resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeSdmMaskingPolicyDifferenceDifferenceColumn to import
+  * @param importFromId The id of the existing DataOciDataSafeSdmMaskingPolicyDifferenceDifferenceColumn that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sdm_masking_policy_difference_difference_column#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeSdmMaskingPolicyDifferenceDifferenceColumn to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_sdm_masking_policy_difference_difference_column", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -177,5 +191,31 @@ export class DataOciDataSafeSdmMaskingPolicyDifferenceDifferenceColumn extends c
       id: cdktf.stringToTerraform(this._id),
       sdm_masking_policy_difference_id: cdktf.stringToTerraform(this._sdmMaskingPolicyDifferenceId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      difference_column_key: {
+        value: cdktf.stringToHclTerraform(this._differenceColumnKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sdm_masking_policy_difference_id: {
+        value: cdktf.stringToHclTerraform(this._sdmMaskingPolicyDifferenceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

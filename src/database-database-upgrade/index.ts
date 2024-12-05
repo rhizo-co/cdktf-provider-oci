@@ -24,13 +24,13 @@ export interface DatabaseDatabaseUpgradeConfig extends cdktf.TerraformMetaArgume
   readonly id?: string;
   /**
   * database_upgrade_source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_database_upgrade#database_upgrade_source_details DatabaseDatabaseUpgrade#database_upgrade_source_details}
   */
   readonly databaseUpgradeSourceDetails?: DatabaseDatabaseUpgradeDatabaseUpgradeSourceDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_database_upgrade#timeouts DatabaseDatabaseUpgrade#timeouts}
   */
   readonly timeouts?: DatabaseDatabaseUpgradeTimeouts;
@@ -45,6 +45,17 @@ export function databaseDatabaseUpgradeConnectionStringsToTerraform(struct?: Dat
   }
   return {
   }
+}
+
+
+export function databaseDatabaseUpgradeConnectionStringsToHclTerraform(struct?: DatabaseDatabaseUpgradeConnectionStrings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseDatabaseUpgradeConnectionStringsOutputReference extends cdktf.ComplexObject {
@@ -120,6 +131,17 @@ export function databaseDatabaseUpgradeDbBackupConfigBackupDestinationDetailsToT
   }
   return {
   }
+}
+
+
+export function databaseDatabaseUpgradeDbBackupConfigBackupDestinationDetailsToHclTerraform(struct?: DatabaseDatabaseUpgradeDbBackupConfigBackupDestinationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseDatabaseUpgradeDbBackupConfigBackupDestinationDetailsOutputReference extends cdktf.ComplexObject {
@@ -209,6 +231,17 @@ export function databaseDatabaseUpgradeDbBackupConfigToTerraform(struct?: Databa
   }
   return {
   }
+}
+
+
+export function databaseDatabaseUpgradeDbBackupConfigToHclTerraform(struct?: DatabaseDatabaseUpgradeDbBackupConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseDatabaseUpgradeDbBackupConfigOutputReference extends cdktf.ComplexObject {
@@ -329,6 +362,43 @@ export function databaseDatabaseUpgradeDatabaseUpgradeSourceDetailsToTerraform(s
     options: cdktf.stringToTerraform(struct!.options),
     source: cdktf.stringToTerraform(struct!.source),
   }
+}
+
+
+export function databaseDatabaseUpgradeDatabaseUpgradeSourceDetailsToHclTerraform(struct?: DatabaseDatabaseUpgradeDatabaseUpgradeSourceDetailsOutputReference | DatabaseDatabaseUpgradeDatabaseUpgradeSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    database_software_image_id: {
+      value: cdktf.stringToHclTerraform(struct!.databaseSoftwareImageId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    db_version: {
+      value: cdktf.stringToHclTerraform(struct!.dbVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    options: {
+      value: cdktf.stringToHclTerraform(struct!.options),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source: {
+      value: cdktf.stringToHclTerraform(struct!.source),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseDatabaseUpgradeDatabaseUpgradeSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -472,6 +542,37 @@ export function databaseDatabaseUpgradeTimeoutsToTerraform(struct?: DatabaseData
   }
 }
 
+
+export function databaseDatabaseUpgradeTimeoutsToHclTerraform(struct?: DatabaseDatabaseUpgradeTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseDatabaseUpgradeTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -584,6 +685,20 @@ export class DatabaseDatabaseUpgrade extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_database_upgrade";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseDatabaseUpgrade resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseDatabaseUpgrade to import
+  * @param importFromId The id of the existing DatabaseDatabaseUpgrade that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_database_upgrade#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseDatabaseUpgrade to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_database_upgrade", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -858,5 +973,43 @@ export class DatabaseDatabaseUpgrade extends cdktf.TerraformResource {
       database_upgrade_source_details: databaseDatabaseUpgradeDatabaseUpgradeSourceDetailsToTerraform(this._databaseUpgradeSourceDetails.internalValue),
       timeouts: databaseDatabaseUpgradeTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      action: {
+        value: cdktf.stringToHclTerraform(this._action),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_id: {
+        value: cdktf.stringToHclTerraform(this._databaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_upgrade_source_details: {
+        value: databaseDatabaseUpgradeDatabaseUpgradeSourceDetailsToHclTerraform(this._databaseUpgradeSourceDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseDatabaseUpgradeDatabaseUpgradeSourceDetailsList",
+      },
+      timeouts: {
+        value: databaseDatabaseUpgradeTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseDatabaseUpgradeTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

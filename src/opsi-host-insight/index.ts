@@ -60,7 +60,7 @@ export interface OpsiHostInsightConfig extends cdktf.TerraformMetaArguments {
   readonly status?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_host_insight#timeouts OpsiHostInsight#timeouts}
   */
   readonly timeouts?: OpsiHostInsightTimeouts;
@@ -90,6 +90,37 @@ export function opsiHostInsightTimeoutsToTerraform(struct?: OpsiHostInsightTimeo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function opsiHostInsightTimeoutsToHclTerraform(struct?: OpsiHostInsightTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OpsiHostInsightTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -204,6 +235,20 @@ export class OpsiHostInsight extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_opsi_host_insight";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OpsiHostInsight resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OpsiHostInsight to import
+  * @param importFromId The id of the existing OpsiHostInsight that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_host_insight#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OpsiHostInsight to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_host_insight", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -549,5 +594,91 @@ export class OpsiHostInsight extends cdktf.TerraformResource {
       status: cdktf.stringToTerraform(this._status),
       timeouts: opsiHostInsightTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compute_id: {
+        value: cdktf.stringToHclTerraform(this._computeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      enterprise_manager_bridge_id: {
+        value: cdktf.stringToHclTerraform(this._enterpriseManagerBridgeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enterprise_manager_entity_identifier: {
+        value: cdktf.stringToHclTerraform(this._enterpriseManagerEntityIdentifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enterprise_manager_identifier: {
+        value: cdktf.stringToHclTerraform(this._enterpriseManagerIdentifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      entity_source: {
+        value: cdktf.stringToHclTerraform(this._entitySource),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      exadata_insight_id: {
+        value: cdktf.stringToHclTerraform(this._exadataInsightId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      management_agent_id: {
+        value: cdktf.stringToHclTerraform(this._managementAgentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: opsiHostInsightTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OpsiHostInsightTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

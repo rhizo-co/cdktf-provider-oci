@@ -44,6 +44,17 @@ export function dataOciIdentityDomainsUserAddressesToTerraform(struct?: DataOciI
   }
 }
 
+
+export function dataOciIdentityDomainsUserAddressesToHclTerraform(struct?: DataOciIdentityDomainsUserAddresses): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserAddressesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -143,6 +154,17 @@ export function dataOciIdentityDomainsUserEmailsToTerraform(struct?: DataOciIden
   }
 }
 
+
+export function dataOciIdentityDomainsUserEmailsToHclTerraform(struct?: DataOciIdentityDomainsUserEmails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserEmailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -232,6 +254,17 @@ export function dataOciIdentityDomainsUserEntitlementsToTerraform(struct?: DataO
   }
 }
 
+
+export function dataOciIdentityDomainsUserEntitlementsToHclTerraform(struct?: DataOciIdentityDomainsUserEntitlements): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserEntitlementsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -309,6 +342,17 @@ export function dataOciIdentityDomainsUserGroupsToTerraform(struct?: DataOciIden
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserGroupsToHclTerraform(struct?: DataOciIdentityDomainsUserGroups): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserGroupsOutputReference extends cdktf.ComplexObject {
@@ -415,6 +459,17 @@ export function dataOciIdentityDomainsUserIdcsCreatedByToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciIdentityDomainsUserIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsUserIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserIdcsCreatedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -497,6 +552,17 @@ export function dataOciIdentityDomainsUserIdcsLastModifiedByToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsUserIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
@@ -583,6 +649,17 @@ export function dataOciIdentityDomainsUserImsToTerraform(struct?: DataOciIdentit
   }
 }
 
+
+export function dataOciIdentityDomainsUserImsToHclTerraform(struct?: DataOciIdentityDomainsUserIms): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserImsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -660,6 +737,17 @@ export function dataOciIdentityDomainsUserMetaToTerraform(struct?: DataOciIdenti
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserMetaToHclTerraform(struct?: DataOciIdentityDomainsUserMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserMetaOutputReference extends cdktf.ComplexObject {
@@ -744,6 +832,17 @@ export function dataOciIdentityDomainsUserNameToTerraform(struct?: DataOciIdenti
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserNameToHclTerraform(struct?: DataOciIdentityDomainsUserName): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserNameOutputReference extends cdktf.ComplexObject {
@@ -835,6 +934,17 @@ export function dataOciIdentityDomainsUserPhoneNumbersToTerraform(struct?: DataO
   }
 }
 
+
+export function dataOciIdentityDomainsUserPhoneNumbersToHclTerraform(struct?: DataOciIdentityDomainsUserPhoneNumbers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserPhoneNumbersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -919,6 +1029,17 @@ export function dataOciIdentityDomainsUserPhotosToTerraform(struct?: DataOciIden
   }
 }
 
+
+export function dataOciIdentityDomainsUserPhotosToHclTerraform(struct?: DataOciIdentityDomainsUserPhotos): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserPhotosOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -996,6 +1117,17 @@ export function dataOciIdentityDomainsUserRolesToTerraform(struct?: DataOciIdent
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserRolesToHclTerraform(struct?: DataOciIdentityDomainsUserRoles): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserRolesOutputReference extends cdktf.ComplexObject {
@@ -1077,6 +1209,17 @@ export function dataOciIdentityDomainsUserTagsToTerraform(struct?: DataOciIdenti
   }
 }
 
+
+export function dataOciIdentityDomainsUserTagsToHclTerraform(struct?: DataOciIdentityDomainsUserTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1144,6 +1287,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasextensionenter
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasextensionenterprise20UserManagerToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasextensionenterprise20UserManager): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasextensionenterprise20UserManagerOutputReference extends cdktf.ComplexObject {
@@ -1218,6 +1372,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasextensionenter
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasextensionenterprise20UserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasextensionenterprise20User): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasextensionenterprise20UserOutputReference extends cdktf.ComplexObject {
@@ -1310,6 +1475,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1384,6 +1560,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1451,6 +1638,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionOciTagsOutputReference extends cdktf.ComplexObject {
@@ -1527,6 +1725,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScores): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserRiskScoresOutputReference extends cdktf.ComplexObject {
@@ -1623,6 +1832,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionadaptiveUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1691,6 +1911,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensioncapabilitiesUserOutputReference extends cdktf.ComplexObject {
@@ -1792,6 +2023,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbCredentialsUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1861,6 +2103,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifiersToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifiers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifiersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1928,6 +2181,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserOutputReference extends cdktf.ComplexObject {
@@ -2015,6 +2279,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserRealmUsersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2094,6 +2369,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionkerberosUserUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2157,6 +2443,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodesToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserBypassCodesOutputReference extends cdktf.ComplexObject {
@@ -2226,6 +2523,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevices): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserDevicesOutputReference extends cdktf.ComplexObject {
@@ -2332,6 +2640,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDevice): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserPreferredDeviceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2406,6 +2725,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgents): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserTrustedUserAgentsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2478,6 +2808,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUserOutputReference extends cdktf.ComplexObject {
@@ -2598,6 +2939,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2675,6 +3027,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserOutputReference extends cdktf.ComplexObject {
@@ -2777,6 +3140,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifier): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserFactorIdentifierOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2849,6 +3223,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordlessUserOutputReference extends cdktf.ComplexObject {
@@ -2924,6 +3309,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionposixUserOutputReference extends cdktf.ComplexObject {
@@ -3010,6 +3406,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserSecQuestionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3089,6 +3496,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsecurityQuestionsUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3154,6 +3572,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3216,6 +3645,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileOutputReference extends cdktf.ComplexObject {
@@ -3290,6 +3730,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserOutputReference extends cdktf.ComplexObject {
@@ -3367,6 +3818,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsffUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3429,6 +3891,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccounts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountsOutputReference extends cdktf.ComplexObject {
@@ -3505,6 +3978,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3568,6 +4052,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsents): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentsOutputReference extends cdktf.ComplexObject {
@@ -3639,6 +4134,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3702,6 +4208,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeysToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeys): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserApiKeysOutputReference extends cdktf.ComplexObject {
@@ -3783,6 +4300,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokensToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokens): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokensOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3855,6 +4383,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeysToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeys): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserCustomerSecretKeysOutputReference extends cdktf.ComplexObject {
@@ -3931,6 +4470,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserDbCredentialsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4003,6 +4553,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2ClientCredentialsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2ClientCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOAuth2ClientCredentialsOutputReference extends cdktf.ComplexObject {
@@ -4079,6 +4640,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserSmtpCredentialsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4151,6 +4723,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserOutputReference extends cdktf.ComplexObject {
@@ -4248,6 +4831,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLocked): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserLockedOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4327,6 +4921,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLocked): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserRecoveryLockedOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4394,6 +4999,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserStateUserOutputReference extends cdktf.ComplexObject {
@@ -4502,6 +5118,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccounts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAccountsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4584,6 +5211,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRolesToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRoles): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserAppRolesOutputReference extends cdktf.ComplexObject {
@@ -4685,6 +5323,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetAppOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4769,6 +5418,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4846,6 +5506,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrants): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserGrantsOutputReference extends cdktf.ComplexObject {
@@ -4932,6 +5603,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroups): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserIdcsAppRolesLimitedToGroupsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5014,6 +5696,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountsToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccounts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSupportAccountsOutputReference extends cdktf.ComplexObject {
@@ -5100,6 +5793,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromApp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5179,6 +5883,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
 }
 
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserToken): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserUserTokenOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5246,6 +5961,17 @@ export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsexte
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserToHclTerraform(struct?: DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserOutputReference extends cdktf.ComplexObject {
@@ -5441,6 +6167,17 @@ export function dataOciIdentityDomainsUserX509CertificatesToTerraform(struct?: D
   }
 }
 
+
+export function dataOciIdentityDomainsUserX509CertificatesToHclTerraform(struct?: DataOciIdentityDomainsUserX509Certificates): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsUserX509CertificatesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5518,6 +6255,20 @@ export class DataOciIdentityDomainsUser extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_user";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsUser resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsUser to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsUser that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_user#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsUser to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_user", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -5980,5 +6731,49 @@ export class DataOciIdentityDomainsUser extends cdktf.TerraformDataSource {
       resource_type_schema_version: cdktf.stringToTerraform(this._resourceTypeSchemaVersion),
       user_id: cdktf.stringToTerraform(this._userId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_id: {
+        value: cdktf.stringToHclTerraform(this._userId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

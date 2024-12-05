@@ -40,7 +40,7 @@ export interface FusionAppsFusionEnvironmentAdminUserConfig extends cdktf.Terraf
   readonly username: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment_admin_user#timeouts FusionAppsFusionEnvironmentAdminUser#timeouts}
   */
   readonly timeouts?: FusionAppsFusionEnvironmentAdminUserTimeouts;
@@ -55,6 +55,17 @@ export function fusionAppsFusionEnvironmentAdminUserItemsToTerraform(struct?: Fu
   }
   return {
   }
+}
+
+
+export function fusionAppsFusionEnvironmentAdminUserItemsToHclTerraform(struct?: FusionAppsFusionEnvironmentAdminUserItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class FusionAppsFusionEnvironmentAdminUserItemsOutputReference extends cdktf.ComplexObject {
@@ -149,6 +160,37 @@ export function fusionAppsFusionEnvironmentAdminUserTimeoutsToTerraform(struct?:
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function fusionAppsFusionEnvironmentAdminUserTimeoutsToHclTerraform(struct?: FusionAppsFusionEnvironmentAdminUserTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FusionAppsFusionEnvironmentAdminUserTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -263,6 +305,20 @@ export class FusionAppsFusionEnvironmentAdminUser extends cdktf.TerraformResourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fusion_apps_fusion_environment_admin_user";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FusionAppsFusionEnvironmentAdminUser resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FusionAppsFusionEnvironmentAdminUser to import
+  * @param importFromId The id of the existing FusionAppsFusionEnvironmentAdminUser that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment_admin_user#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FusionAppsFusionEnvironmentAdminUser to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fusion_apps_fusion_environment_admin_user", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -439,5 +495,61 @@ export class FusionAppsFusionEnvironmentAdminUser extends cdktf.TerraformResourc
       username: cdktf.stringToTerraform(this._username),
       timeouts: fusionAppsFusionEnvironmentAdminUserTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      email_address: {
+        value: cdktf.stringToHclTerraform(this._emailAddress),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      first_name: {
+        value: cdktf.stringToHclTerraform(this._firstName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fusion_environment_id: {
+        value: cdktf.stringToHclTerraform(this._fusionEnvironmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      last_name: {
+        value: cdktf.stringToHclTerraform(this._lastName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      password: {
+        value: cdktf.stringToHclTerraform(this._password),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      username: {
+        value: cdktf.stringToHclTerraform(this._username),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: fusionAppsFusionEnvironmentAdminUserTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FusionAppsFusionEnvironmentAdminUserTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

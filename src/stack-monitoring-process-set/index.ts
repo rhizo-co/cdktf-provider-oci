@@ -32,13 +32,13 @@ export interface StackMonitoringProcessSetConfig extends cdktf.TerraformMetaArgu
   readonly id?: string;
   /**
   * specification block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_process_set#specification StackMonitoringProcessSet#specification}
   */
   readonly specification: StackMonitoringProcessSetSpecification;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_process_set#timeouts StackMonitoringProcessSet#timeouts}
   */
   readonly timeouts?: StackMonitoringProcessSetTimeouts;
@@ -73,6 +73,43 @@ export function stackMonitoringProcessSetSpecificationItemsToTerraform(struct?: 
     process_line_regex_pattern: cdktf.stringToTerraform(struct!.processLineRegexPattern),
     process_user: cdktf.stringToTerraform(struct!.processUser),
   }
+}
+
+
+export function stackMonitoringProcessSetSpecificationItemsToHclTerraform(struct?: StackMonitoringProcessSetSpecificationItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    label: {
+      value: cdktf.stringToHclTerraform(struct!.label),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    process_command: {
+      value: cdktf.stringToHclTerraform(struct!.processCommand),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    process_line_regex_pattern: {
+      value: cdktf.stringToHclTerraform(struct!.processLineRegexPattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    process_user: {
+      value: cdktf.stringToHclTerraform(struct!.processUser),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringProcessSetSpecificationItemsOutputReference extends cdktf.ComplexObject {
@@ -224,7 +261,7 @@ export class StackMonitoringProcessSetSpecificationItemsList extends cdktf.Compl
 export interface StackMonitoringProcessSetSpecification {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_process_set#items StackMonitoringProcessSet#items}
   */
   readonly items: StackMonitoringProcessSetSpecificationItems[] | cdktf.IResolvable;
@@ -238,6 +275,25 @@ export function stackMonitoringProcessSetSpecificationToTerraform(struct?: Stack
   return {
     items: cdktf.listMapper(stackMonitoringProcessSetSpecificationItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function stackMonitoringProcessSetSpecificationToHclTerraform(struct?: StackMonitoringProcessSetSpecificationOutputReference | StackMonitoringProcessSetSpecification): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(stackMonitoringProcessSetSpecificationItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringProcessSetSpecificationItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringProcessSetSpecificationOutputReference extends cdktf.ComplexObject {
@@ -310,6 +366,37 @@ export function stackMonitoringProcessSetTimeoutsToTerraform(struct?: StackMonit
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function stackMonitoringProcessSetTimeoutsToHclTerraform(struct?: StackMonitoringProcessSetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringProcessSetTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -424,6 +511,20 @@ export class StackMonitoringProcessSet extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_process_set";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a StackMonitoringProcessSet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the StackMonitoringProcessSet to import
+  * @param importFromId The id of the existing StackMonitoringProcessSet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_process_set#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the StackMonitoringProcessSet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_process_set", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -608,5 +709,55 @@ export class StackMonitoringProcessSet extends cdktf.TerraformResource {
       specification: stackMonitoringProcessSetSpecificationToTerraform(this._specification.internalValue),
       timeouts: stackMonitoringProcessSetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      specification: {
+        value: stackMonitoringProcessSetSpecificationToHclTerraform(this._specification.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringProcessSetSpecificationList",
+      },
+      timeouts: {
+        value: stackMonitoringProcessSetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StackMonitoringProcessSetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

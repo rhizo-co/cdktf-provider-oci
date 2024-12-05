@@ -32,25 +32,25 @@ export interface StreamingStreamPoolConfig extends cdktf.TerraformMetaArguments 
   readonly name: string;
   /**
   * custom_encryption_key block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/streaming_stream_pool#custom_encryption_key StreamingStreamPool#custom_encryption_key}
   */
   readonly customEncryptionKey?: StreamingStreamPoolCustomEncryptionKey;
   /**
   * kafka_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/streaming_stream_pool#kafka_settings StreamingStreamPool#kafka_settings}
   */
   readonly kafkaSettings?: StreamingStreamPoolKafkaSettings;
   /**
   * private_endpoint_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/streaming_stream_pool#private_endpoint_settings StreamingStreamPool#private_endpoint_settings}
   */
   readonly privateEndpointSettings?: StreamingStreamPoolPrivateEndpointSettings;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/streaming_stream_pool#timeouts StreamingStreamPool#timeouts}
   */
   readonly timeouts?: StreamingStreamPoolTimeouts;
@@ -70,6 +70,25 @@ export function streamingStreamPoolCustomEncryptionKeyToTerraform(struct?: Strea
   return {
     kms_key_id: cdktf.stringToTerraform(struct!.kmsKeyId),
   }
+}
+
+
+export function streamingStreamPoolCustomEncryptionKeyToHclTerraform(struct?: StreamingStreamPoolCustomEncryptionKeyOutputReference | StreamingStreamPoolCustomEncryptionKey): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StreamingStreamPoolCustomEncryptionKeyOutputReference extends cdktf.ComplexObject {
@@ -147,6 +166,37 @@ export function streamingStreamPoolKafkaSettingsToTerraform(struct?: StreamingSt
     log_retention_hours: cdktf.numberToTerraform(struct!.logRetentionHours),
     num_partitions: cdktf.numberToTerraform(struct!.numPartitions),
   }
+}
+
+
+export function streamingStreamPoolKafkaSettingsToHclTerraform(struct?: StreamingStreamPoolKafkaSettingsOutputReference | StreamingStreamPoolKafkaSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    auto_create_topics_enable: {
+      value: cdktf.booleanToHclTerraform(struct!.autoCreateTopicsEnable),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    log_retention_hours: {
+      value: cdktf.numberToHclTerraform(struct!.logRetentionHours),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    num_partitions: {
+      value: cdktf.numberToHclTerraform(struct!.numPartitions),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StreamingStreamPoolKafkaSettingsOutputReference extends cdktf.ComplexObject {
@@ -273,6 +323,37 @@ export function streamingStreamPoolPrivateEndpointSettingsToTerraform(struct?: S
   }
 }
 
+
+export function streamingStreamPoolPrivateEndpointSettingsToHclTerraform(struct?: StreamingStreamPoolPrivateEndpointSettingsOutputReference | StreamingStreamPoolPrivateEndpointSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    private_endpoint_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateEndpointIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StreamingStreamPoolPrivateEndpointSettingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -392,6 +473,37 @@ export function streamingStreamPoolTimeoutsToTerraform(struct?: StreamingStreamP
   }
 }
 
+
+export function streamingStreamPoolTimeoutsToHclTerraform(struct?: StreamingStreamPoolTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StreamingStreamPoolTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -504,6 +616,20 @@ export class StreamingStreamPool extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_streaming_stream_pool";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a StreamingStreamPool resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the StreamingStreamPool to import
+  * @param importFromId The id of the existing StreamingStreamPool that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/streaming_stream_pool#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the StreamingStreamPool to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_streaming_stream_pool", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -726,5 +852,67 @@ export class StreamingStreamPool extends cdktf.TerraformResource {
       private_endpoint_settings: streamingStreamPoolPrivateEndpointSettingsToTerraform(this._privateEndpointSettings.internalValue),
       timeouts: streamingStreamPoolTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      custom_encryption_key: {
+        value: streamingStreamPoolCustomEncryptionKeyToHclTerraform(this._customEncryptionKey.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StreamingStreamPoolCustomEncryptionKeyList",
+      },
+      kafka_settings: {
+        value: streamingStreamPoolKafkaSettingsToHclTerraform(this._kafkaSettings.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StreamingStreamPoolKafkaSettingsList",
+      },
+      private_endpoint_settings: {
+        value: streamingStreamPoolPrivateEndpointSettingsToHclTerraform(this._privateEndpointSettings.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StreamingStreamPoolPrivateEndpointSettingsList",
+      },
+      timeouts: {
+        value: streamingStreamPoolTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StreamingStreamPoolTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

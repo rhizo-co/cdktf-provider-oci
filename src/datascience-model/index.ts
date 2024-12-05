@@ -76,31 +76,31 @@ export interface DatascienceModelConfig extends cdktf.TerraformMetaArguments {
   readonly versionLabel?: string;
   /**
   * backup_setting block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model#backup_setting DatascienceModel#backup_setting}
   */
   readonly backupSetting?: DatascienceModelBackupSetting;
   /**
   * custom_metadata_list block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model#custom_metadata_list DatascienceModel#custom_metadata_list}
   */
   readonly customMetadataList?: DatascienceModelCustomMetadataListStruct[] | cdktf.IResolvable;
   /**
   * defined_metadata_list block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model#defined_metadata_list DatascienceModel#defined_metadata_list}
   */
   readonly definedMetadataList?: DatascienceModelDefinedMetadataListStruct[] | cdktf.IResolvable;
   /**
   * retention_setting block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model#retention_setting DatascienceModel#retention_setting}
   */
   readonly retentionSetting?: DatascienceModelRetentionSetting;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model#timeouts DatascienceModel#timeouts}
   */
   readonly timeouts?: DatascienceModelTimeouts;
@@ -115,6 +115,17 @@ export function datascienceModelBackupOperationDetailsToTerraform(struct?: Datas
   }
   return {
   }
+}
+
+
+export function datascienceModelBackupOperationDetailsToHclTerraform(struct?: DatascienceModelBackupOperationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatascienceModelBackupOperationDetailsOutputReference extends cdktf.ComplexObject {
@@ -189,6 +200,17 @@ export function datascienceModelRetentionOperationDetailsToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function datascienceModelRetentionOperationDetailsToHclTerraform(struct?: DatascienceModelRetentionOperationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatascienceModelRetentionOperationDetailsOutputReference extends cdktf.ComplexObject {
@@ -293,6 +315,37 @@ export function datascienceModelBackupSettingToTerraform(struct?: DatascienceMod
     customer_notification_type: cdktf.stringToTerraform(struct!.customerNotificationType),
     is_backup_enabled: cdktf.booleanToTerraform(struct!.isBackupEnabled),
   }
+}
+
+
+export function datascienceModelBackupSettingToHclTerraform(struct?: DatascienceModelBackupSettingOutputReference | DatascienceModelBackupSetting): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    backup_region: {
+      value: cdktf.stringToHclTerraform(struct!.backupRegion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    customer_notification_type: {
+      value: cdktf.stringToHclTerraform(struct!.customerNotificationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_backup_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isBackupEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatascienceModelBackupSettingOutputReference extends cdktf.ComplexObject {
@@ -411,6 +464,43 @@ export function datascienceModelCustomMetadataListStructToTerraform(struct?: Dat
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function datascienceModelCustomMetadataListStructToHclTerraform(struct?: DatascienceModelCustomMetadataListStruct | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    category: {
+      value: cdktf.stringToHclTerraform(struct!.category),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatascienceModelCustomMetadataListStructOutputReference extends cdktf.ComplexObject {
@@ -591,6 +681,43 @@ export function datascienceModelDefinedMetadataListStructToTerraform(struct?: Da
   }
 }
 
+
+export function datascienceModelDefinedMetadataListStructToHclTerraform(struct?: DatascienceModelDefinedMetadataListStruct | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    category: {
+      value: cdktf.stringToHclTerraform(struct!.category),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatascienceModelDefinedMetadataListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -764,6 +891,37 @@ export function datascienceModelRetentionSettingToTerraform(struct?: Datascience
   }
 }
 
+
+export function datascienceModelRetentionSettingToHclTerraform(struct?: DatascienceModelRetentionSettingOutputReference | DatascienceModelRetentionSetting): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    archive_after_days: {
+      value: cdktf.numberToHclTerraform(struct!.archiveAfterDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    customer_notification_type: {
+      value: cdktf.stringToHclTerraform(struct!.customerNotificationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete_after_days: {
+      value: cdktf.numberToHclTerraform(struct!.deleteAfterDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatascienceModelRetentionSettingOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -880,6 +1038,37 @@ export function datascienceModelTimeoutsToTerraform(struct?: DatascienceModelTim
   }
 }
 
+
+export function datascienceModelTimeoutsToHclTerraform(struct?: DatascienceModelTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatascienceModelTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -992,6 +1181,20 @@ export class DatascienceModel extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_model";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatascienceModel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatascienceModel to import
+  * @param importFromId The id of the existing DatascienceModel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_model#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatascienceModel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_model", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1441,5 +1644,139 @@ export class DatascienceModel extends cdktf.TerraformResource {
       retention_setting: datascienceModelRetentionSettingToTerraform(this._retentionSetting.internalValue),
       timeouts: datascienceModelTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      artifact_content_disposition: {
+        value: cdktf.stringToHclTerraform(this._artifactContentDisposition),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      artifact_content_length: {
+        value: cdktf.stringToHclTerraform(this._artifactContentLength),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      input_schema: {
+        value: cdktf.stringToHclTerraform(this._inputSchema),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_artifact: {
+        value: cdktf.stringToHclTerraform(this._modelArtifact),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_version_set_id: {
+        value: cdktf.stringToHclTerraform(this._modelVersionSetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_version_set_name: {
+        value: cdktf.stringToHclTerraform(this._modelVersionSetName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      output_schema: {
+        value: cdktf.stringToHclTerraform(this._outputSchema),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      version_label: {
+        value: cdktf.stringToHclTerraform(this._versionLabel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      backup_setting: {
+        value: datascienceModelBackupSettingToHclTerraform(this._backupSetting.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatascienceModelBackupSettingList",
+      },
+      custom_metadata_list: {
+        value: cdktf.listMapperHcl(datascienceModelCustomMetadataListStructToHclTerraform, true)(this._customMetadataList.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatascienceModelCustomMetadataListStructList",
+      },
+      defined_metadata_list: {
+        value: cdktf.listMapperHcl(datascienceModelDefinedMetadataListStructToHclTerraform, true)(this._definedMetadataList.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatascienceModelDefinedMetadataListStructList",
+      },
+      retention_setting: {
+        value: datascienceModelRetentionSettingToHclTerraform(this._retentionSetting.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatascienceModelRetentionSettingList",
+      },
+      timeouts: {
+        value: datascienceModelTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatascienceModelTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -32,7 +32,7 @@ export interface DataOciUsageProxySubscriptionProductsConfig extends cdktf.Terra
   readonly usagePeriodKey: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/usage_proxy_subscription_products#filter DataOciUsageProxySubscriptionProducts#filter}
   */
   readonly filter?: DataOciUsageProxySubscriptionProductsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciUsageProxySubscriptionProductsProductCollectionItemsItems
   }
   return {
   }
+}
+
+
+export function dataOciUsageProxySubscriptionProductsProductCollectionItemsItemsToHclTerraform(struct?: DataOciUsageProxySubscriptionProductsProductCollectionItemsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciUsageProxySubscriptionProductsProductCollectionItemsItemsOutputReference extends cdktf.ComplexObject {
@@ -133,6 +144,17 @@ export function dataOciUsageProxySubscriptionProductsProductCollectionItemsToTer
   }
 }
 
+
+export function dataOciUsageProxySubscriptionProductsProductCollectionItemsToHclTerraform(struct?: DataOciUsageProxySubscriptionProductsProductCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciUsageProxySubscriptionProductsProductCollectionItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -196,6 +218,17 @@ export function dataOciUsageProxySubscriptionProductsProductCollectionToTerrafor
   }
   return {
   }
+}
+
+
+export function dataOciUsageProxySubscriptionProductsProductCollectionToHclTerraform(struct?: DataOciUsageProxySubscriptionProductsProductCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciUsageProxySubscriptionProductsProductCollectionOutputReference extends cdktf.ComplexObject {
@@ -276,6 +309,37 @@ export function dataOciUsageProxySubscriptionProductsFilterToTerraform(struct?: 
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciUsageProxySubscriptionProductsFilterToHclTerraform(struct?: DataOciUsageProxySubscriptionProductsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciUsageProxySubscriptionProductsFilterOutputReference extends cdktf.ComplexObject {
@@ -406,6 +470,20 @@ export class DataOciUsageProxySubscriptionProducts extends cdktf.TerraformDataSo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_usage_proxy_subscription_products";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciUsageProxySubscriptionProducts resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciUsageProxySubscriptionProducts to import
+  * @param importFromId The id of the existing DataOciUsageProxySubscriptionProducts that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/usage_proxy_subscription_products#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciUsageProxySubscriptionProducts to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_usage_proxy_subscription_products", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -552,5 +630,49 @@ export class DataOciUsageProxySubscriptionProducts extends cdktf.TerraformDataSo
       usage_period_key: cdktf.stringToTerraform(this._usagePeriodKey),
       filter: cdktf.listMapper(dataOciUsageProxySubscriptionProductsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      producttype: {
+        value: cdktf.stringToHclTerraform(this._producttype),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subscription_id: {
+        value: cdktf.stringToHclTerraform(this._subscriptionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tenancy_id: {
+        value: cdktf.stringToHclTerraform(this._tenancyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      usage_period_key: {
+        value: cdktf.stringToHclTerraform(this._usagePeriodKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciUsageProxySubscriptionProductsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciUsageProxySubscriptionProductsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

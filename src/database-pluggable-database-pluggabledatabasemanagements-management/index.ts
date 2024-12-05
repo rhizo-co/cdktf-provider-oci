@@ -48,13 +48,13 @@ export interface DatabasePluggableDatabasePluggabledatabasemanagementsManagement
   readonly sslSecretId?: string;
   /**
   * credential_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_pluggable_database_pluggabledatabasemanagements_management#credential_details DatabasePluggableDatabasePluggabledatabasemanagementsManagement#credential_details}
   */
   readonly credentialDetails: DatabasePluggableDatabasePluggabledatabasemanagementsManagementCredentialDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_pluggable_database_pluggabledatabasemanagements_management#timeouts DatabasePluggableDatabasePluggabledatabasemanagementsManagement#timeouts}
   */
   readonly timeouts?: DatabasePluggableDatabasePluggabledatabasemanagementsManagementTimeouts;
@@ -69,6 +69,17 @@ export function databasePluggableDatabasePluggabledatabasemanagementsManagementC
   }
   return {
   }
+}
+
+
+export function databasePluggableDatabasePluggabledatabasemanagementsManagementConnectionStringsToHclTerraform(struct?: DatabasePluggableDatabasePluggabledatabasemanagementsManagementConnectionStrings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabasePluggableDatabasePluggabledatabasemanagementsManagementConnectionStringsOutputReference extends cdktf.ComplexObject {
@@ -151,6 +162,17 @@ export function databasePluggableDatabasePluggabledatabasemanagementsManagementP
   }
 }
 
+
+export function databasePluggableDatabasePluggabledatabasemanagementsManagementPluggableDatabaseManagementConfigToHclTerraform(struct?: DatabasePluggableDatabasePluggabledatabasemanagementsManagementPluggableDatabaseManagementConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatabasePluggableDatabasePluggabledatabasemanagementsManagementPluggableDatabaseManagementConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -228,6 +250,31 @@ export function databasePluggableDatabasePluggabledatabasemanagementsManagementC
     password_secret_id: cdktf.stringToTerraform(struct!.passwordSecretId),
     user_name: cdktf.stringToTerraform(struct!.userName),
   }
+}
+
+
+export function databasePluggableDatabasePluggabledatabasemanagementsManagementCredentialDetailsToHclTerraform(struct?: DatabasePluggableDatabasePluggabledatabasemanagementsManagementCredentialDetailsOutputReference | DatabasePluggableDatabasePluggabledatabasemanagementsManagementCredentialDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.passwordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_name: {
+      value: cdktf.stringToHclTerraform(struct!.userName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabasePluggableDatabasePluggabledatabasemanagementsManagementCredentialDetailsOutputReference extends cdktf.ComplexObject {
@@ -319,6 +366,37 @@ export function databasePluggableDatabasePluggabledatabasemanagementsManagementT
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databasePluggableDatabasePluggabledatabasemanagementsManagementTimeoutsToHclTerraform(struct?: DatabasePluggableDatabasePluggabledatabasemanagementsManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabasePluggableDatabasePluggabledatabasemanagementsManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -433,6 +511,20 @@ export class DatabasePluggableDatabasePluggabledatabasemanagementsManagement ext
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_pluggable_database_pluggabledatabasemanagements_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabasePluggableDatabasePluggabledatabasemanagementsManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabasePluggableDatabasePluggabledatabasemanagementsManagement to import
+  * @param importFromId The id of the existing DatabasePluggableDatabasePluggabledatabasemanagementsManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_pluggable_database_pluggabledatabasemanagements_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabasePluggableDatabasePluggabledatabasemanagementsManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_pluggable_database_pluggabledatabasemanagements_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -721,5 +813,79 @@ export class DatabasePluggableDatabasePluggabledatabasemanagementsManagement ext
       credential_details: databasePluggableDatabasePluggabledatabasemanagementsManagementCredentialDetailsToTerraform(this._credentialDetails.internalValue),
       timeouts: databasePluggableDatabasePluggabledatabasemanagementsManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      enable_pluggabledatabasemanagement: {
+        value: cdktf.booleanToHclTerraform(this._enablePluggabledatabasemanagement),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pluggable_database_id: {
+        value: cdktf.stringToHclTerraform(this._pluggableDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      port: {
+        value: cdktf.numberToHclTerraform(this._port),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      private_end_point_id: {
+        value: cdktf.stringToHclTerraform(this._privateEndPointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      protocol: {
+        value: cdktf.stringToHclTerraform(this._protocol),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      role: {
+        value: cdktf.stringToHclTerraform(this._role),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      service_name: {
+        value: cdktf.stringToHclTerraform(this._serviceName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ssl_secret_id: {
+        value: cdktf.stringToHclTerraform(this._sslSecretId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      credential_details: {
+        value: databasePluggableDatabasePluggabledatabasemanagementsManagementCredentialDetailsToHclTerraform(this._credentialDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabasePluggableDatabasePluggabledatabasemanagementsManagementCredentialDetailsList",
+      },
+      timeouts: {
+        value: databasePluggableDatabasePluggabledatabasemanagementsManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabasePluggableDatabasePluggabledatabasemanagementsManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -44,13 +44,13 @@ export interface CloudGuardDetectorRecipeConfig extends cdktf.TerraformMetaArgum
   readonly sourceDetectorRecipeId?: string;
   /**
   * detector_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_detector_recipe#detector_rules CloudGuardDetectorRecipe#detector_rules}
   */
   readonly detectorRules?: CloudGuardDetectorRecipeDetectorRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_detector_recipe#timeouts CloudGuardDetectorRecipe#timeouts}
   */
   readonly timeouts?: CloudGuardDetectorRecipeTimeouts;
@@ -65,6 +65,17 @@ export function cloudGuardDetectorRecipeEffectiveDetectorRulesCandidateResponder
   }
   return {
   }
+}
+
+
+export function cloudGuardDetectorRecipeEffectiveDetectorRulesCandidateResponderRulesToHclTerraform(struct?: CloudGuardDetectorRecipeEffectiveDetectorRulesCandidateResponderRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardDetectorRecipeEffectiveDetectorRulesCandidateResponderRulesOutputReference extends cdktf.ComplexObject {
@@ -141,6 +152,17 @@ export function cloudGuardDetectorRecipeEffectiveDetectorRulesDetailsConfigurati
   }
 }
 
+
+export function cloudGuardDetectorRecipeEffectiveDetectorRulesDetailsConfigurationsValuesToHclTerraform(struct?: CloudGuardDetectorRecipeEffectiveDetectorRulesDetailsConfigurationsValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudGuardDetectorRecipeEffectiveDetectorRulesDetailsConfigurationsValuesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -213,6 +235,17 @@ export function cloudGuardDetectorRecipeEffectiveDetectorRulesDetailsConfigurati
   }
   return {
   }
+}
+
+
+export function cloudGuardDetectorRecipeEffectiveDetectorRulesDetailsConfigurationsToHclTerraform(struct?: CloudGuardDetectorRecipeEffectiveDetectorRulesDetailsConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardDetectorRecipeEffectiveDetectorRulesDetailsConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -300,6 +333,17 @@ export function cloudGuardDetectorRecipeEffectiveDetectorRulesDetailsEntitiesMap
   }
 }
 
+
+export function cloudGuardDetectorRecipeEffectiveDetectorRulesDetailsEntitiesMappingsToHclTerraform(struct?: CloudGuardDetectorRecipeEffectiveDetectorRulesDetailsEntitiesMappings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudGuardDetectorRecipeEffectiveDetectorRulesDetailsEntitiesMappingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -372,6 +416,17 @@ export function cloudGuardDetectorRecipeEffectiveDetectorRulesDetailsToTerraform
   }
   return {
   }
+}
+
+
+export function cloudGuardDetectorRecipeEffectiveDetectorRulesDetailsToHclTerraform(struct?: CloudGuardDetectorRecipeEffectiveDetectorRulesDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardDetectorRecipeEffectiveDetectorRulesDetailsOutputReference extends cdktf.ComplexObject {
@@ -485,6 +540,17 @@ export function cloudGuardDetectorRecipeEffectiveDetectorRulesEntitiesMappingsTo
   }
 }
 
+
+export function cloudGuardDetectorRecipeEffectiveDetectorRulesEntitiesMappingsToHclTerraform(struct?: CloudGuardDetectorRecipeEffectiveDetectorRulesEntitiesMappings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudGuardDetectorRecipeEffectiveDetectorRulesEntitiesMappingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -557,6 +623,17 @@ export function cloudGuardDetectorRecipeEffectiveDetectorRulesToTerraform(struct
   }
   return {
   }
+}
+
+
+export function cloudGuardDetectorRecipeEffectiveDetectorRulesToHclTerraform(struct?: CloudGuardDetectorRecipeEffectiveDetectorRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardDetectorRecipeEffectiveDetectorRulesOutputReference extends cdktf.ComplexObject {
@@ -701,6 +778,17 @@ export function cloudGuardDetectorRecipeDetectorRulesCandidateResponderRulesToTe
   }
 }
 
+
+export function cloudGuardDetectorRecipeDetectorRulesCandidateResponderRulesToHclTerraform(struct?: CloudGuardDetectorRecipeDetectorRulesCandidateResponderRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudGuardDetectorRecipeDetectorRulesCandidateResponderRulesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -773,6 +861,17 @@ export function cloudGuardDetectorRecipeDetectorRulesEntitiesMappingsToTerraform
   }
   return {
   }
+}
+
+
+export function cloudGuardDetectorRecipeDetectorRulesEntitiesMappingsToHclTerraform(struct?: CloudGuardDetectorRecipeDetectorRulesEntitiesMappings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardDetectorRecipeDetectorRulesEntitiesMappingsOutputReference extends cdktf.ComplexObject {
@@ -862,6 +961,37 @@ export function cloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsValues
     managed_list_type: cdktf.stringToTerraform(struct!.managedListType),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function cloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsValuesToHclTerraform(struct?: CloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsValues | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    list_type: {
+      value: cdktf.stringToHclTerraform(struct!.listType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    managed_list_type: {
+      value: cdktf.stringToHclTerraform(struct!.managedListType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsValuesOutputReference extends cdktf.ComplexObject {
@@ -998,7 +1128,7 @@ export interface CloudGuardDetectorRecipeDetectorRulesDetailsConfigurations {
   readonly value?: string;
   /**
   * values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_detector_recipe#values CloudGuardDetectorRecipe#values}
   */
   readonly values?: CloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsValues[] | cdktf.IResolvable;
@@ -1016,6 +1146,49 @@ export function cloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsToTerr
     value: cdktf.stringToTerraform(struct!.value),
     values: cdktf.listMapper(cloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsValuesToTerraform, true)(struct!.values),
   }
+}
+
+
+export function cloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsToHclTerraform(struct?: CloudGuardDetectorRecipeDetectorRulesDetailsConfigurations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_key: {
+      value: cdktf.stringToHclTerraform(struct!.configKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    data_type: {
+      value: cdktf.stringToHclTerraform(struct!.dataType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsValuesToHclTerraform, true)(struct!.values),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -1207,6 +1380,37 @@ export function cloudGuardDetectorRecipeDetectorRulesDetailsEntitiesMappingsToTe
   }
 }
 
+
+export function cloudGuardDetectorRecipeDetectorRulesDetailsEntitiesMappingsToHclTerraform(struct?: CloudGuardDetectorRecipeDetectorRulesDetailsEntitiesMappings | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    entity_type: {
+      value: cdktf.stringToHclTerraform(struct!.entityType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query_field: {
+      value: cdktf.stringToHclTerraform(struct!.queryField),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudGuardDetectorRecipeDetectorRulesDetailsEntitiesMappingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1359,13 +1563,13 @@ export interface CloudGuardDetectorRecipeDetectorRulesDetails {
   readonly riskLevel: string;
   /**
   * configurations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_detector_recipe#configurations CloudGuardDetectorRecipe#configurations}
   */
   readonly configurations?: CloudGuardDetectorRecipeDetectorRulesDetailsConfigurations[] | cdktf.IResolvable;
   /**
   * entities_mappings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_detector_recipe#entities_mappings CloudGuardDetectorRecipe#entities_mappings}
   */
   readonly entitiesMappings?: CloudGuardDetectorRecipeDetectorRulesDetailsEntitiesMappings[] | cdktf.IResolvable;
@@ -1387,6 +1591,73 @@ export function cloudGuardDetectorRecipeDetectorRulesDetailsToTerraform(struct?:
     configurations: cdktf.listMapper(cloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsToTerraform, true)(struct!.configurations),
     entities_mappings: cdktf.listMapper(cloudGuardDetectorRecipeDetectorRulesDetailsEntitiesMappingsToTerraform, true)(struct!.entitiesMappings),
   }
+}
+
+
+export function cloudGuardDetectorRecipeDetectorRulesDetailsToHclTerraform(struct?: CloudGuardDetectorRecipeDetectorRulesDetailsOutputReference | CloudGuardDetectorRecipeDetectorRulesDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    data_source_id: {
+      value: cdktf.stringToHclTerraform(struct!.dataSourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    labels: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.labels),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    recommendation: {
+      value: cdktf.stringToHclTerraform(struct!.recommendation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    risk_level: {
+      value: cdktf.stringToHclTerraform(struct!.riskLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    configurations: {
+      value: cdktf.listMapperHcl(cloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsToHclTerraform, true)(struct!.configurations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudGuardDetectorRecipeDetectorRulesDetailsConfigurationsList",
+    },
+    entities_mappings: {
+      value: cdktf.listMapperHcl(cloudGuardDetectorRecipeDetectorRulesDetailsEntitiesMappingsToHclTerraform, true)(struct!.entitiesMappings),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudGuardDetectorRecipeDetectorRulesDetailsEntitiesMappingsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDetectorRecipeDetectorRulesDetailsOutputReference extends cdktf.ComplexObject {
@@ -1619,7 +1890,7 @@ export interface CloudGuardDetectorRecipeDetectorRules {
   readonly detectorRuleId: string;
   /**
   * details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_detector_recipe#details CloudGuardDetectorRecipe#details}
   */
   readonly details: CloudGuardDetectorRecipeDetectorRulesDetails;
@@ -1634,6 +1905,31 @@ export function cloudGuardDetectorRecipeDetectorRulesToTerraform(struct?: CloudG
     detector_rule_id: cdktf.stringToTerraform(struct!.detectorRuleId),
     details: cloudGuardDetectorRecipeDetectorRulesDetailsToTerraform(struct!.details),
   }
+}
+
+
+export function cloudGuardDetectorRecipeDetectorRulesToHclTerraform(struct?: CloudGuardDetectorRecipeDetectorRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    detector_rule_id: {
+      value: cdktf.stringToHclTerraform(struct!.detectorRuleId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    details: {
+      value: cloudGuardDetectorRecipeDetectorRulesDetailsToHclTerraform(struct!.details),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudGuardDetectorRecipeDetectorRulesDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDetectorRecipeDetectorRulesOutputReference extends cdktf.ComplexObject {
@@ -1831,6 +2127,37 @@ export function cloudGuardDetectorRecipeTimeoutsToTerraform(struct?: CloudGuardD
   }
 }
 
+
+export function cloudGuardDetectorRecipeTimeoutsToHclTerraform(struct?: CloudGuardDetectorRecipeTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudGuardDetectorRecipeTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1943,6 +2270,20 @@ export class CloudGuardDetectorRecipe extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_guard_detector_recipe";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CloudGuardDetectorRecipe resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CloudGuardDetectorRecipe to import
+  * @param importFromId The id of the existing CloudGuardDetectorRecipe that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_detector_recipe#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CloudGuardDetectorRecipe to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_guard_detector_recipe", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2200,5 +2541,73 @@ export class CloudGuardDetectorRecipe extends cdktf.TerraformResource {
       detector_rules: cdktf.listMapper(cloudGuardDetectorRecipeDetectorRulesToTerraform, true)(this._detectorRules.internalValue),
       timeouts: cloudGuardDetectorRecipeTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      detector: {
+        value: cdktf.stringToHclTerraform(this._detector),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_detector_recipe_id: {
+        value: cdktf.stringToHclTerraform(this._sourceDetectorRecipeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      detector_rules: {
+        value: cdktf.listMapperHcl(cloudGuardDetectorRecipeDetectorRulesToHclTerraform, true)(this._detectorRules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudGuardDetectorRecipeDetectorRulesList",
+      },
+      timeouts: {
+        value: cloudGuardDetectorRecipeTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CloudGuardDetectorRecipeTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

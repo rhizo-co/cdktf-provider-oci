@@ -64,7 +64,7 @@ export interface NetworkFirewallNetworkFirewallPolicyDecryptionProfileConfig ext
   readonly type: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_decryption_profile#timeouts NetworkFirewallNetworkFirewallPolicyDecryptionProfile#timeouts}
   */
   readonly timeouts?: NetworkFirewallNetworkFirewallPolicyDecryptionProfileTimeouts;
@@ -94,6 +94,37 @@ export function networkFirewallNetworkFirewallPolicyDecryptionProfileTimeoutsToT
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function networkFirewallNetworkFirewallPolicyDecryptionProfileTimeoutsToHclTerraform(struct?: NetworkFirewallNetworkFirewallPolicyDecryptionProfileTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkFirewallNetworkFirewallPolicyDecryptionProfileTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -208,6 +239,20 @@ export class NetworkFirewallNetworkFirewallPolicyDecryptionProfile extends cdktf
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_network_firewall_network_firewall_policy_decryption_profile";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NetworkFirewallNetworkFirewallPolicyDecryptionProfile resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NetworkFirewallNetworkFirewallPolicyDecryptionProfile to import
+  * @param importFromId The id of the existing NetworkFirewallNetworkFirewallPolicyDecryptionProfile that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_decryption_profile#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NetworkFirewallNetworkFirewallPolicyDecryptionProfile to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_firewall_network_firewall_policy_decryption_profile", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -497,5 +542,97 @@ export class NetworkFirewallNetworkFirewallPolicyDecryptionProfile extends cdktf
       type: cdktf.stringToTerraform(this._type),
       timeouts: networkFirewallNetworkFirewallPolicyDecryptionProfileTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      are_certificate_extensions_restricted: {
+        value: cdktf.booleanToHclTerraform(this._areCertificateExtensionsRestricted),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_auto_include_alt_name: {
+        value: cdktf.booleanToHclTerraform(this._isAutoIncludeAltName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_expired_certificate_blocked: {
+        value: cdktf.booleanToHclTerraform(this._isExpiredCertificateBlocked),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_out_of_capacity_blocked: {
+        value: cdktf.booleanToHclTerraform(this._isOutOfCapacityBlocked),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_revocation_status_timeout_blocked: {
+        value: cdktf.booleanToHclTerraform(this._isRevocationStatusTimeoutBlocked),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_unknown_revocation_status_blocked: {
+        value: cdktf.booleanToHclTerraform(this._isUnknownRevocationStatusBlocked),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_unsupported_cipher_blocked: {
+        value: cdktf.booleanToHclTerraform(this._isUnsupportedCipherBlocked),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_unsupported_version_blocked: {
+        value: cdktf.booleanToHclTerraform(this._isUnsupportedVersionBlocked),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_untrusted_issuer_blocked: {
+        value: cdktf.booleanToHclTerraform(this._isUntrustedIssuerBlocked),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_firewall_policy_id: {
+        value: cdktf.stringToHclTerraform(this._networkFirewallPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: networkFirewallNetworkFirewallPolicyDecryptionProfileTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NetworkFirewallNetworkFirewallPolicyDecryptionProfileTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

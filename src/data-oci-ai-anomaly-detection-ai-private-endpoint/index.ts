@@ -23,6 +23,20 @@ export class DataOciAiAnomalyDetectionAiPrivateEndpoint extends cdktf.TerraformD
   // =================
   public static readonly tfResourceType = "oci_ai_anomaly_detection_ai_private_endpoint";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciAiAnomalyDetectionAiPrivateEndpoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciAiAnomalyDetectionAiPrivateEndpoint to import
+  * @param importFromId The id of the existing DataOciAiAnomalyDetectionAiPrivateEndpoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_anomaly_detection_ai_private_endpoint#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciAiAnomalyDetectionAiPrivateEndpoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_anomaly_detection_ai_private_endpoint", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -146,5 +160,19 @@ export class DataOciAiAnomalyDetectionAiPrivateEndpoint extends cdktf.TerraformD
     return {
       ai_private_endpoint_id: cdktf.stringToTerraform(this._aiPrivateEndpointId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ai_private_endpoint_id: {
+        value: cdktf.stringToHclTerraform(this._aiPrivateEndpointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

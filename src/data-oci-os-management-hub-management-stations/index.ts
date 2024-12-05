@@ -36,7 +36,7 @@ export interface DataOciOsManagementHubManagementStationsConfig extends cdktf.Te
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/os_management_hub_management_stations#filter DataOciOsManagementHubManagementStations#filter}
   */
   readonly filter?: DataOciOsManagementHubManagementStationsFilter[] | cdktf.IResolvable;
@@ -51,6 +51,17 @@ export function dataOciOsManagementHubManagementStationsManagementStationCollect
   }
   return {
   }
+}
+
+
+export function dataOciOsManagementHubManagementStationsManagementStationCollectionItemsToHclTerraform(struct?: DataOciOsManagementHubManagementStationsManagementStationCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOsManagementHubManagementStationsManagementStationCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -200,6 +211,17 @@ export function dataOciOsManagementHubManagementStationsManagementStationCollect
   }
 }
 
+
+export function dataOciOsManagementHubManagementStationsManagementStationCollectionToHclTerraform(struct?: DataOciOsManagementHubManagementStationsManagementStationCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOsManagementHubManagementStationsManagementStationCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -278,6 +300,37 @@ export function dataOciOsManagementHubManagementStationsFilterToTerraform(struct
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOsManagementHubManagementStationsFilterToHclTerraform(struct?: DataOciOsManagementHubManagementStationsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOsManagementHubManagementStationsFilterOutputReference extends cdktf.ComplexObject {
@@ -408,6 +461,20 @@ export class DataOciOsManagementHubManagementStations extends cdktf.TerraformDat
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_management_stations";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOsManagementHubManagementStations resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOsManagementHubManagementStations to import
+  * @param importFromId The id of the existing DataOciOsManagementHubManagementStations that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/os_management_hub_management_stations#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOsManagementHubManagementStations to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_management_stations", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -581,5 +648,55 @@ export class DataOciOsManagementHubManagementStations extends cdktf.TerraformDat
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciOsManagementHubManagementStationsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name_contains: {
+        value: cdktf.stringToHclTerraform(this._displayNameContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_id: {
+        value: cdktf.stringToHclTerraform(this._managedInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOsManagementHubManagementStationsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOsManagementHubManagementStationsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

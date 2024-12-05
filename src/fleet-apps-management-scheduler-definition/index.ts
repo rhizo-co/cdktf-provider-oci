@@ -40,25 +40,25 @@ export interface FleetAppsManagementSchedulerDefinitionConfig extends cdktf.Terr
   readonly id?: string;
   /**
   * action_groups block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_scheduler_definition#action_groups FleetAppsManagementSchedulerDefinition#action_groups}
   */
   readonly actionGroups: FleetAppsManagementSchedulerDefinitionActionGroups[] | cdktf.IResolvable;
   /**
   * run_books block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_scheduler_definition#run_books FleetAppsManagementSchedulerDefinition#run_books}
   */
   readonly runBooks?: FleetAppsManagementSchedulerDefinitionRunBooks[] | cdktf.IResolvable;
   /**
   * schedule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_scheduler_definition#schedule FleetAppsManagementSchedulerDefinition#schedule}
   */
   readonly schedule: FleetAppsManagementSchedulerDefinitionSchedule;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_scheduler_definition#timeouts FleetAppsManagementSchedulerDefinition#timeouts}
   */
   readonly timeouts?: FleetAppsManagementSchedulerDefinitionTimeouts;
@@ -113,6 +113,67 @@ export function fleetAppsManagementSchedulerDefinitionActionGroupsToTerraform(st
     target_id: cdktf.stringToTerraform(struct!.targetId),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function fleetAppsManagementSchedulerDefinitionActionGroupsToHclTerraform(struct?: FleetAppsManagementSchedulerDefinitionActionGroups | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    application_type: {
+      value: cdktf.stringToHclTerraform(struct!.applicationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    lifecycle_operation: {
+      value: cdktf.stringToHclTerraform(struct!.lifecycleOperation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    product: {
+      value: cdktf.stringToHclTerraform(struct!.product),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.resourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    runbook_id: {
+      value: cdktf.stringToHclTerraform(struct!.runbookId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subjects: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.subjects),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    target_id: {
+      value: cdktf.stringToHclTerraform(struct!.targetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementSchedulerDefinitionActionGroupsOutputReference extends cdktf.ComplexObject {
@@ -365,6 +426,31 @@ export function fleetAppsManagementSchedulerDefinitionRunBooksInputParametersArg
   }
 }
 
+
+export function fleetAppsManagementSchedulerDefinitionRunBooksInputParametersArgumentsToHclTerraform(struct?: FleetAppsManagementSchedulerDefinitionRunBooksInputParametersArguments | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FleetAppsManagementSchedulerDefinitionRunBooksInputParametersArgumentsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -471,7 +557,7 @@ export interface FleetAppsManagementSchedulerDefinitionRunBooksInputParameters {
   readonly stepName: string;
   /**
   * arguments block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_scheduler_definition#arguments FleetAppsManagementSchedulerDefinition#arguments}
   */
   readonly arguments?: FleetAppsManagementSchedulerDefinitionRunBooksInputParametersArguments[] | cdktf.IResolvable;
@@ -486,6 +572,31 @@ export function fleetAppsManagementSchedulerDefinitionRunBooksInputParametersToT
     step_name: cdktf.stringToTerraform(struct!.stepName),
     arguments: cdktf.listMapper(fleetAppsManagementSchedulerDefinitionRunBooksInputParametersArgumentsToTerraform, true)(struct!.arguments),
   }
+}
+
+
+export function fleetAppsManagementSchedulerDefinitionRunBooksInputParametersToHclTerraform(struct?: FleetAppsManagementSchedulerDefinitionRunBooksInputParameters | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    step_name: {
+      value: cdktf.stringToHclTerraform(struct!.stepName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    arguments: {
+      value: cdktf.listMapperHcl(fleetAppsManagementSchedulerDefinitionRunBooksInputParametersArgumentsToHclTerraform, true)(struct!.arguments),
+      isBlock: true,
+      type: "list",
+      storageClassType: "FleetAppsManagementSchedulerDefinitionRunBooksInputParametersArgumentsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementSchedulerDefinitionRunBooksInputParametersOutputReference extends cdktf.ComplexObject {
@@ -597,7 +708,7 @@ export interface FleetAppsManagementSchedulerDefinitionRunBooks {
   readonly id: string;
   /**
   * input_parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_scheduler_definition#input_parameters FleetAppsManagementSchedulerDefinition#input_parameters}
   */
   readonly inputParameters?: FleetAppsManagementSchedulerDefinitionRunBooksInputParameters[] | cdktf.IResolvable;
@@ -612,6 +723,31 @@ export function fleetAppsManagementSchedulerDefinitionRunBooksToTerraform(struct
     id: cdktf.stringToTerraform(struct!.id),
     input_parameters: cdktf.listMapper(fleetAppsManagementSchedulerDefinitionRunBooksInputParametersToTerraform, true)(struct!.inputParameters),
   }
+}
+
+
+export function fleetAppsManagementSchedulerDefinitionRunBooksToHclTerraform(struct?: FleetAppsManagementSchedulerDefinitionRunBooks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    input_parameters: {
+      value: cdktf.listMapperHcl(fleetAppsManagementSchedulerDefinitionRunBooksInputParametersToHclTerraform, true)(struct!.inputParameters),
+      isBlock: true,
+      type: "list",
+      storageClassType: "FleetAppsManagementSchedulerDefinitionRunBooksInputParametersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementSchedulerDefinitionRunBooksOutputReference extends cdktf.ComplexObject {
@@ -748,6 +884,49 @@ export function fleetAppsManagementSchedulerDefinitionScheduleToTerraform(struct
     recurrences: cdktf.stringToTerraform(struct!.recurrences),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function fleetAppsManagementSchedulerDefinitionScheduleToHclTerraform(struct?: FleetAppsManagementSchedulerDefinitionScheduleOutputReference | FleetAppsManagementSchedulerDefinitionSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    duration: {
+      value: cdktf.stringToHclTerraform(struct!.duration),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    execution_startdate: {
+      value: cdktf.stringToHclTerraform(struct!.executionStartdate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    maintenance_window_id: {
+      value: cdktf.stringToHclTerraform(struct!.maintenanceWindowId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    recurrences: {
+      value: cdktf.stringToHclTerraform(struct!.recurrences),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetAppsManagementSchedulerDefinitionScheduleOutputReference extends cdktf.ComplexObject {
@@ -907,6 +1086,37 @@ export function fleetAppsManagementSchedulerDefinitionTimeoutsToTerraform(struct
   }
 }
 
+
+export function fleetAppsManagementSchedulerDefinitionTimeoutsToHclTerraform(struct?: FleetAppsManagementSchedulerDefinitionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FleetAppsManagementSchedulerDefinitionTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1019,6 +1229,20 @@ export class FleetAppsManagementSchedulerDefinition extends cdktf.TerraformResou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_scheduler_definition";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FleetAppsManagementSchedulerDefinition resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FleetAppsManagementSchedulerDefinition to import
+  * @param importFromId The id of the existing FleetAppsManagementSchedulerDefinition that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_apps_management_scheduler_definition#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FleetAppsManagementSchedulerDefinition to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_scheduler_definition", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1320,5 +1544,79 @@ export class FleetAppsManagementSchedulerDefinition extends cdktf.TerraformResou
       schedule: fleetAppsManagementSchedulerDefinitionScheduleToTerraform(this._schedule.internalValue),
       timeouts: fleetAppsManagementSchedulerDefinitionTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      activity_initiation_cut_off: {
+        value: cdktf.numberToHclTerraform(this._activityInitiationCutOff),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      action_groups: {
+        value: cdktf.listMapperHcl(fleetAppsManagementSchedulerDefinitionActionGroupsToHclTerraform, true)(this._actionGroups.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetAppsManagementSchedulerDefinitionActionGroupsList",
+      },
+      run_books: {
+        value: cdktf.listMapperHcl(fleetAppsManagementSchedulerDefinitionRunBooksToHclTerraform, true)(this._runBooks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetAppsManagementSchedulerDefinitionRunBooksList",
+      },
+      schedule: {
+        value: fleetAppsManagementSchedulerDefinitionScheduleToHclTerraform(this._schedule.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetAppsManagementSchedulerDefinitionScheduleList",
+      },
+      timeouts: {
+        value: fleetAppsManagementSchedulerDefinitionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FleetAppsManagementSchedulerDefinitionTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

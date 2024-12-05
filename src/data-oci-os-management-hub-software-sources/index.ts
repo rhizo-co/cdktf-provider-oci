@@ -72,7 +72,7 @@ export interface DataOciOsManagementHubSoftwareSourcesConfig extends cdktf.Terra
   readonly vendorName?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/os_management_hub_software_sources#filter DataOciOsManagementHubSoftwareSources#filter}
   */
   readonly filter?: DataOciOsManagementHubSoftwareSourcesFilter[] | cdktf.IResolvable;
@@ -87,6 +87,17 @@ export function dataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionIte
   }
   return {
   }
+}
+
+
+export function dataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionItemsVendorSoftwareSourcesToHclTerraform(struct?: DataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionItemsVendorSoftwareSources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionItemsVendorSoftwareSourcesOutputReference extends cdktf.ComplexObject {
@@ -156,6 +167,17 @@ export function dataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionIte
   }
   return {
   }
+}
+
+
+export function dataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionItemsToHclTerraform(struct?: DataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -336,6 +358,17 @@ export function dataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionToT
   }
 }
 
+
+export function dataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionToHclTerraform(struct?: DataOciOsManagementHubSoftwareSourcesSoftwareSourceCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOsManagementHubSoftwareSourcesSoftwareSourceCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -414,6 +447,37 @@ export function dataOciOsManagementHubSoftwareSourcesFilterToTerraform(struct?: 
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOsManagementHubSoftwareSourcesFilterToHclTerraform(struct?: DataOciOsManagementHubSoftwareSourcesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOsManagementHubSoftwareSourcesFilterOutputReference extends cdktf.ComplexObject {
@@ -544,6 +608,20 @@ export class DataOciOsManagementHubSoftwareSources extends cdktf.TerraformDataSo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_software_sources";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOsManagementHubSoftwareSources resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOsManagementHubSoftwareSources to import
+  * @param importFromId The id of the existing DataOciOsManagementHubSoftwareSources that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/os_management_hub_software_sources#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOsManagementHubSoftwareSources to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_software_sources", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -879,5 +957,109 @@ export class DataOciOsManagementHubSoftwareSources extends cdktf.TerraformDataSo
       vendor_name: cdktf.stringToTerraform(this._vendorName),
       filter: cdktf.listMapper(dataOciOsManagementHubSoftwareSourcesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      arch_type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._archType),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      availability: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._availability),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      availability_anywhere: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._availabilityAnywhere),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      availability_at_oci: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._availabilityAtOci),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name_contains: {
+        value: cdktf.stringToHclTerraform(this._displayNameContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name_not_equal_to: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._displayNameNotEqualTo),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_mandatory_for_autonomous_linux: {
+        value: cdktf.booleanToHclTerraform(this._isMandatoryForAutonomousLinux),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      os_family: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._osFamily),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      software_source_id: {
+        value: cdktf.stringToHclTerraform(this._softwareSourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      software_source_type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._softwareSourceType),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      state: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._state),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      vendor_name: {
+        value: cdktf.stringToHclTerraform(this._vendorName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOsManagementHubSoftwareSourcesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOsManagementHubSoftwareSourcesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

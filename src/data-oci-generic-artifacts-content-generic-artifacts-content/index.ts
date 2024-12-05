@@ -30,6 +30,20 @@ export class DataOciGenericArtifactsContentGenericArtifactsContent extends cdktf
   // =================
   public static readonly tfResourceType = "oci_generic_artifacts_content_generic_artifacts_content";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGenericArtifactsContentGenericArtifactsContent resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGenericArtifactsContentGenericArtifactsContent to import
+  * @param importFromId The id of the existing DataOciGenericArtifactsContentGenericArtifactsContent that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/generic_artifacts_content_generic_artifacts_content#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGenericArtifactsContentGenericArtifactsContent to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_generic_artifacts_content_generic_artifacts_content", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -103,5 +117,25 @@ export class DataOciGenericArtifactsContentGenericArtifactsContent extends cdktf
       artifact_id: cdktf.stringToTerraform(this._artifactId),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      artifact_id: {
+        value: cdktf.stringToHclTerraform(this._artifactId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

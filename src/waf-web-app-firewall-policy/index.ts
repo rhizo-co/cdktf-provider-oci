@@ -36,43 +36,43 @@ export interface WafWebAppFirewallPolicyConfig extends cdktf.TerraformMetaArgume
   readonly systemTags?: { [key: string]: string };
   /**
   * actions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#actions WafWebAppFirewallPolicy#actions}
   */
   readonly actions?: WafWebAppFirewallPolicyActions[] | cdktf.IResolvable;
   /**
   * request_access_control block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#request_access_control WafWebAppFirewallPolicy#request_access_control}
   */
   readonly requestAccessControl?: WafWebAppFirewallPolicyRequestAccessControl;
   /**
   * request_protection block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#request_protection WafWebAppFirewallPolicy#request_protection}
   */
   readonly requestProtection?: WafWebAppFirewallPolicyRequestProtection;
   /**
   * request_rate_limiting block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#request_rate_limiting WafWebAppFirewallPolicy#request_rate_limiting}
   */
   readonly requestRateLimiting?: WafWebAppFirewallPolicyRequestRateLimiting;
   /**
   * response_access_control block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#response_access_control WafWebAppFirewallPolicy#response_access_control}
   */
   readonly responseAccessControl?: WafWebAppFirewallPolicyResponseAccessControl;
   /**
   * response_protection block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#response_protection WafWebAppFirewallPolicy#response_protection}
   */
   readonly responseProtection?: WafWebAppFirewallPolicyResponseProtection;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#timeouts WafWebAppFirewallPolicy#timeouts}
   */
   readonly timeouts?: WafWebAppFirewallPolicyTimeouts;
@@ -102,6 +102,37 @@ export function wafWebAppFirewallPolicyActionsBodyToTerraform(struct?: WafWebApp
     text: cdktf.stringToTerraform(struct!.text),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function wafWebAppFirewallPolicyActionsBodyToHclTerraform(struct?: WafWebAppFirewallPolicyActionsBodyOutputReference | WafWebAppFirewallPolicyActionsBody): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    template: {
+      value: cdktf.stringToHclTerraform(struct!.template),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    text: {
+      value: cdktf.stringToHclTerraform(struct!.text),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyActionsBodyOutputReference extends cdktf.ComplexObject {
@@ -213,6 +244,31 @@ export function wafWebAppFirewallPolicyActionsHeadersToTerraform(struct?: WafWeb
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function wafWebAppFirewallPolicyActionsHeadersToHclTerraform(struct?: WafWebAppFirewallPolicyActionsHeaders | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyActionsHeadersOutputReference extends cdktf.ComplexObject {
@@ -332,13 +388,13 @@ export interface WafWebAppFirewallPolicyActions {
   readonly type: string;
   /**
   * body block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#body WafWebAppFirewallPolicy#body}
   */
   readonly body?: WafWebAppFirewallPolicyActionsBody;
   /**
   * headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#headers WafWebAppFirewallPolicy#headers}
   */
   readonly headers?: WafWebAppFirewallPolicyActionsHeaders[] | cdktf.IResolvable;
@@ -356,6 +412,49 @@ export function wafWebAppFirewallPolicyActionsToTerraform(struct?: WafWebAppFire
     body: wafWebAppFirewallPolicyActionsBodyToTerraform(struct!.body),
     headers: cdktf.listMapper(wafWebAppFirewallPolicyActionsHeadersToTerraform, true)(struct!.headers),
   }
+}
+
+
+export function wafWebAppFirewallPolicyActionsToHclTerraform(struct?: WafWebAppFirewallPolicyActions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    code: {
+      value: cdktf.numberToHclTerraform(struct!.code),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    body: {
+      value: wafWebAppFirewallPolicyActionsBodyToHclTerraform(struct!.body),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyActionsBodyList",
+    },
+    headers: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyActionsHeadersToHclTerraform, true)(struct!.headers),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyActionsHeadersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyActionsOutputReference extends cdktf.ComplexObject {
@@ -557,6 +656,49 @@ export function wafWebAppFirewallPolicyRequestAccessControlRulesToTerraform(stru
   }
 }
 
+
+export function wafWebAppFirewallPolicyRequestAccessControlRulesToHclTerraform(struct?: WafWebAppFirewallPolicyRequestAccessControlRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action_name: {
+      value: cdktf.stringToHclTerraform(struct!.actionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition_language: {
+      value: cdktf.stringToHclTerraform(struct!.conditionLanguage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WafWebAppFirewallPolicyRequestAccessControlRulesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -723,7 +865,7 @@ export interface WafWebAppFirewallPolicyRequestAccessControl {
   readonly defaultActionName: string;
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#rules WafWebAppFirewallPolicy#rules}
   */
   readonly rules?: WafWebAppFirewallPolicyRequestAccessControlRules[] | cdktf.IResolvable;
@@ -738,6 +880,31 @@ export function wafWebAppFirewallPolicyRequestAccessControlToTerraform(struct?: 
     default_action_name: cdktf.stringToTerraform(struct!.defaultActionName),
     rules: cdktf.listMapper(wafWebAppFirewallPolicyRequestAccessControlRulesToTerraform, true)(struct!.rules),
   }
+}
+
+
+export function wafWebAppFirewallPolicyRequestAccessControlToHclTerraform(struct?: WafWebAppFirewallPolicyRequestAccessControlOutputReference | WafWebAppFirewallPolicyRequestAccessControl): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default_action_name: {
+      value: cdktf.stringToHclTerraform(struct!.defaultActionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rules: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyRequestAccessControlRulesToHclTerraform, true)(struct!.rules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyRequestAccessControlRulesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyRequestAccessControlOutputReference extends cdktf.ComplexObject {
@@ -827,6 +994,31 @@ export function wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilit
     key: cdktf.stringToTerraform(struct!.key),
     weight: cdktf.numberToTerraform(struct!.weight),
   }
+}
+
+
+export function wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsToHclTerraform(struct?: WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeights | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    weight: {
+      value: cdktf.numberToHclTerraform(struct!.weight),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsOutputReference extends cdktf.ComplexObject {
@@ -947,6 +1139,31 @@ export function wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilit
   }
 }
 
+
+export function wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusionsToHclTerraform(struct?: WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusionsOutputReference | WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    args: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.args),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    request_cookies: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.requestCookies),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1036,13 +1253,13 @@ export interface WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabili
   readonly version: number;
   /**
   * collaborative_weights block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#collaborative_weights WafWebAppFirewallPolicy#collaborative_weights}
   */
   readonly collaborativeWeights?: WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeights[] | cdktf.IResolvable;
   /**
   * exclusions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#exclusions WafWebAppFirewallPolicy#exclusions}
   */
   readonly exclusions?: WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusions;
@@ -1061,6 +1278,55 @@ export function wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilit
     collaborative_weights: cdktf.listMapper(wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsToTerraform, true)(struct!.collaborativeWeights),
     exclusions: wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusionsToTerraform(struct!.exclusions),
   }
+}
+
+
+export function wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesToHclTerraform(struct?: WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilities | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action_name: {
+      value: cdktf.stringToHclTerraform(struct!.actionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    collaborative_action_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.collaborativeActionThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    version: {
+      value: cdktf.numberToHclTerraform(struct!.version),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    collaborative_weights: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsToHclTerraform, true)(struct!.collaborativeWeights),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesCollaborativeWeightsList",
+    },
+    exclusions: {
+      value: wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusionsToHclTerraform(struct!.exclusions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesExclusionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesOutputReference extends cdktf.ComplexObject {
@@ -1289,6 +1555,55 @@ export function wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilit
   }
 }
 
+
+export function wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsToHclTerraform(struct?: WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsOutputReference | WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_http_methods: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedHttpMethods),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    max_http_request_header_length: {
+      value: cdktf.numberToHclTerraform(struct!.maxHttpRequestHeaderLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_http_request_headers: {
+      value: cdktf.numberToHclTerraform(struct!.maxHttpRequestHeaders),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_number_of_arguments: {
+      value: cdktf.numberToHclTerraform(struct!.maxNumberOfArguments),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_single_argument_length: {
+      value: cdktf.numberToHclTerraform(struct!.maxSingleArgumentLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_total_argument_length: {
+      value: cdktf.numberToHclTerraform(struct!.maxTotalArgumentLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1474,13 +1789,13 @@ export interface WafWebAppFirewallPolicyRequestProtectionRules {
   readonly type: string;
   /**
   * protection_capabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#protection_capabilities WafWebAppFirewallPolicy#protection_capabilities}
   */
   readonly protectionCapabilities: WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilities[] | cdktf.IResolvable;
   /**
   * protection_capability_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#protection_capability_settings WafWebAppFirewallPolicy#protection_capability_settings}
   */
   readonly protectionCapabilitySettings?: WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettings;
@@ -1501,6 +1816,67 @@ export function wafWebAppFirewallPolicyRequestProtectionRulesToTerraform(struct?
     protection_capabilities: cdktf.listMapper(wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesToTerraform, true)(struct!.protectionCapabilities),
     protection_capability_settings: wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsToTerraform(struct!.protectionCapabilitySettings),
   }
+}
+
+
+export function wafWebAppFirewallPolicyRequestProtectionRulesToHclTerraform(struct?: WafWebAppFirewallPolicyRequestProtectionRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action_name: {
+      value: cdktf.stringToHclTerraform(struct!.actionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition_language: {
+      value: cdktf.stringToHclTerraform(struct!.conditionLanguage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_body_inspection_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isBodyInspectionEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    protection_capabilities: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesToHclTerraform, true)(struct!.protectionCapabilities),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitiesList",
+    },
+    protection_capability_settings: {
+      value: wafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsToHclTerraform(struct!.protectionCapabilitySettings),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyRequestProtectionRulesProtectionCapabilitySettingsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyRequestProtectionRulesOutputReference extends cdktf.ComplexObject {
@@ -1736,7 +2112,7 @@ export interface WafWebAppFirewallPolicyRequestProtection {
   readonly bodyInspectionSizeLimitInBytes?: number;
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#rules WafWebAppFirewallPolicy#rules}
   */
   readonly rules?: WafWebAppFirewallPolicyRequestProtectionRules[] | cdktf.IResolvable;
@@ -1752,6 +2128,37 @@ export function wafWebAppFirewallPolicyRequestProtectionToTerraform(struct?: Waf
     body_inspection_size_limit_in_bytes: cdktf.numberToTerraform(struct!.bodyInspectionSizeLimitInBytes),
     rules: cdktf.listMapper(wafWebAppFirewallPolicyRequestProtectionRulesToTerraform, true)(struct!.rules),
   }
+}
+
+
+export function wafWebAppFirewallPolicyRequestProtectionToHclTerraform(struct?: WafWebAppFirewallPolicyRequestProtectionOutputReference | WafWebAppFirewallPolicyRequestProtection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    body_inspection_size_limit_exceeded_action_name: {
+      value: cdktf.stringToHclTerraform(struct!.bodyInspectionSizeLimitExceededActionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    body_inspection_size_limit_in_bytes: {
+      value: cdktf.numberToHclTerraform(struct!.bodyInspectionSizeLimitInBytes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    rules: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyRequestProtectionRulesToHclTerraform, true)(struct!.rules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyRequestProtectionRulesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyRequestProtectionOutputReference extends cdktf.ComplexObject {
@@ -1871,6 +2278,37 @@ export function wafWebAppFirewallPolicyRequestRateLimitingRulesConfigurationsToT
     period_in_seconds: cdktf.numberToTerraform(struct!.periodInSeconds),
     requests_limit: cdktf.numberToTerraform(struct!.requestsLimit),
   }
+}
+
+
+export function wafWebAppFirewallPolicyRequestRateLimitingRulesConfigurationsToHclTerraform(struct?: WafWebAppFirewallPolicyRequestRateLimitingRulesConfigurations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action_duration_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.actionDurationInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    period_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.periodInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    requests_limit: {
+      value: cdktf.numberToHclTerraform(struct!.requestsLimit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyRequestRateLimitingRulesConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -2014,7 +2452,7 @@ export interface WafWebAppFirewallPolicyRequestRateLimitingRules {
   readonly type: string;
   /**
   * configurations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#configurations WafWebAppFirewallPolicy#configurations}
   */
   readonly configurations: WafWebAppFirewallPolicyRequestRateLimitingRulesConfigurations[] | cdktf.IResolvable;
@@ -2033,6 +2471,55 @@ export function wafWebAppFirewallPolicyRequestRateLimitingRulesToTerraform(struc
     type: cdktf.stringToTerraform(struct!.type),
     configurations: cdktf.listMapper(wafWebAppFirewallPolicyRequestRateLimitingRulesConfigurationsToTerraform, true)(struct!.configurations),
   }
+}
+
+
+export function wafWebAppFirewallPolicyRequestRateLimitingRulesToHclTerraform(struct?: WafWebAppFirewallPolicyRequestRateLimitingRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action_name: {
+      value: cdktf.stringToHclTerraform(struct!.actionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition_language: {
+      value: cdktf.stringToHclTerraform(struct!.conditionLanguage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    configurations: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyRequestRateLimitingRulesConfigurationsToHclTerraform, true)(struct!.configurations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyRequestRateLimitingRulesConfigurationsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyRequestRateLimitingRulesOutputReference extends cdktf.ComplexObject {
@@ -2216,7 +2703,7 @@ export class WafWebAppFirewallPolicyRequestRateLimitingRulesList extends cdktf.C
 export interface WafWebAppFirewallPolicyRequestRateLimiting {
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#rules WafWebAppFirewallPolicy#rules}
   */
   readonly rules?: WafWebAppFirewallPolicyRequestRateLimitingRules[] | cdktf.IResolvable;
@@ -2230,6 +2717,25 @@ export function wafWebAppFirewallPolicyRequestRateLimitingToTerraform(struct?: W
   return {
     rules: cdktf.listMapper(wafWebAppFirewallPolicyRequestRateLimitingRulesToTerraform, true)(struct!.rules),
   }
+}
+
+
+export function wafWebAppFirewallPolicyRequestRateLimitingToHclTerraform(struct?: WafWebAppFirewallPolicyRequestRateLimitingOutputReference | WafWebAppFirewallPolicyRequestRateLimiting): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    rules: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyRequestRateLimitingRulesToHclTerraform, true)(struct!.rules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyRequestRateLimitingRulesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyRequestRateLimitingOutputReference extends cdktf.ComplexObject {
@@ -2315,6 +2821,49 @@ export function wafWebAppFirewallPolicyResponseAccessControlRulesToTerraform(str
     name: cdktf.stringToTerraform(struct!.name),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function wafWebAppFirewallPolicyResponseAccessControlRulesToHclTerraform(struct?: WafWebAppFirewallPolicyResponseAccessControlRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action_name: {
+      value: cdktf.stringToHclTerraform(struct!.actionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition_language: {
+      value: cdktf.stringToHclTerraform(struct!.conditionLanguage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyResponseAccessControlRulesOutputReference extends cdktf.ComplexObject {
@@ -2479,7 +3028,7 @@ export class WafWebAppFirewallPolicyResponseAccessControlRulesList extends cdktf
 export interface WafWebAppFirewallPolicyResponseAccessControl {
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#rules WafWebAppFirewallPolicy#rules}
   */
   readonly rules?: WafWebAppFirewallPolicyResponseAccessControlRules[] | cdktf.IResolvable;
@@ -2493,6 +3042,25 @@ export function wafWebAppFirewallPolicyResponseAccessControlToTerraform(struct?:
   return {
     rules: cdktf.listMapper(wafWebAppFirewallPolicyResponseAccessControlRulesToTerraform, true)(struct!.rules),
   }
+}
+
+
+export function wafWebAppFirewallPolicyResponseAccessControlToHclTerraform(struct?: WafWebAppFirewallPolicyResponseAccessControlOutputReference | WafWebAppFirewallPolicyResponseAccessControl): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    rules: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyResponseAccessControlRulesToHclTerraform, true)(struct!.rules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyResponseAccessControlRulesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyResponseAccessControlOutputReference extends cdktf.ComplexObject {
@@ -2563,6 +3131,31 @@ export function wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabili
     key: cdktf.stringToTerraform(struct!.key),
     weight: cdktf.numberToTerraform(struct!.weight),
   }
+}
+
+
+export function wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsToHclTerraform(struct?: WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeights | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    weight: {
+      value: cdktf.numberToHclTerraform(struct!.weight),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsOutputReference extends cdktf.ComplexObject {
@@ -2683,6 +3276,31 @@ export function wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabili
   }
 }
 
+
+export function wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusionsToHclTerraform(struct?: WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusionsOutputReference | WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    args: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.args),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    request_cookies: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.requestCookies),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2772,13 +3390,13 @@ export interface WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabil
   readonly version: number;
   /**
   * collaborative_weights block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#collaborative_weights WafWebAppFirewallPolicy#collaborative_weights}
   */
   readonly collaborativeWeights?: WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeights[] | cdktf.IResolvable;
   /**
   * exclusions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#exclusions WafWebAppFirewallPolicy#exclusions}
   */
   readonly exclusions?: WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusions;
@@ -2797,6 +3415,55 @@ export function wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabili
     collaborative_weights: cdktf.listMapper(wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsToTerraform, true)(struct!.collaborativeWeights),
     exclusions: wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusionsToTerraform(struct!.exclusions),
   }
+}
+
+
+export function wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesToHclTerraform(struct?: WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilities | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action_name: {
+      value: cdktf.stringToHclTerraform(struct!.actionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    collaborative_action_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.collaborativeActionThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    version: {
+      value: cdktf.numberToHclTerraform(struct!.version),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    collaborative_weights: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsToHclTerraform, true)(struct!.collaborativeWeights),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesCollaborativeWeightsList",
+    },
+    exclusions: {
+      value: wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusionsToHclTerraform(struct!.exclusions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesExclusionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesOutputReference extends cdktf.ComplexObject {
@@ -3025,6 +3692,55 @@ export function wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabili
   }
 }
 
+
+export function wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsToHclTerraform(struct?: WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsOutputReference | WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_http_methods: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedHttpMethods),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    max_http_request_header_length: {
+      value: cdktf.numberToHclTerraform(struct!.maxHttpRequestHeaderLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_http_request_headers: {
+      value: cdktf.numberToHclTerraform(struct!.maxHttpRequestHeaders),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_number_of_arguments: {
+      value: cdktf.numberToHclTerraform(struct!.maxNumberOfArguments),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_single_argument_length: {
+      value: cdktf.numberToHclTerraform(struct!.maxSingleArgumentLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_total_argument_length: {
+      value: cdktf.numberToHclTerraform(struct!.maxTotalArgumentLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3210,13 +3926,13 @@ export interface WafWebAppFirewallPolicyResponseProtectionRules {
   readonly type: string;
   /**
   * protection_capabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#protection_capabilities WafWebAppFirewallPolicy#protection_capabilities}
   */
   readonly protectionCapabilities: WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilities[] | cdktf.IResolvable;
   /**
   * protection_capability_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#protection_capability_settings WafWebAppFirewallPolicy#protection_capability_settings}
   */
   readonly protectionCapabilitySettings?: WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettings;
@@ -3237,6 +3953,67 @@ export function wafWebAppFirewallPolicyResponseProtectionRulesToTerraform(struct
     protection_capabilities: cdktf.listMapper(wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesToTerraform, true)(struct!.protectionCapabilities),
     protection_capability_settings: wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsToTerraform(struct!.protectionCapabilitySettings),
   }
+}
+
+
+export function wafWebAppFirewallPolicyResponseProtectionRulesToHclTerraform(struct?: WafWebAppFirewallPolicyResponseProtectionRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action_name: {
+      value: cdktf.stringToHclTerraform(struct!.actionName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    condition_language: {
+      value: cdktf.stringToHclTerraform(struct!.conditionLanguage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_body_inspection_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isBodyInspectionEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    protection_capabilities: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesToHclTerraform, true)(struct!.protectionCapabilities),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitiesList",
+    },
+    protection_capability_settings: {
+      value: wafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsToHclTerraform(struct!.protectionCapabilitySettings),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyResponseProtectionRulesProtectionCapabilitySettingsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyResponseProtectionRulesOutputReference extends cdktf.ComplexObject {
@@ -3464,7 +4241,7 @@ export class WafWebAppFirewallPolicyResponseProtectionRulesList extends cdktf.Co
 export interface WafWebAppFirewallPolicyResponseProtection {
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#rules WafWebAppFirewallPolicy#rules}
   */
   readonly rules?: WafWebAppFirewallPolicyResponseProtectionRules[] | cdktf.IResolvable;
@@ -3478,6 +4255,25 @@ export function wafWebAppFirewallPolicyResponseProtectionToTerraform(struct?: Wa
   return {
     rules: cdktf.listMapper(wafWebAppFirewallPolicyResponseProtectionRulesToTerraform, true)(struct!.rules),
   }
+}
+
+
+export function wafWebAppFirewallPolicyResponseProtectionToHclTerraform(struct?: WafWebAppFirewallPolicyResponseProtectionOutputReference | WafWebAppFirewallPolicyResponseProtection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    rules: {
+      value: cdktf.listMapperHcl(wafWebAppFirewallPolicyResponseProtectionRulesToHclTerraform, true)(struct!.rules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "WafWebAppFirewallPolicyResponseProtectionRulesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyResponseProtectionOutputReference extends cdktf.ComplexObject {
@@ -3553,6 +4349,37 @@ export function wafWebAppFirewallPolicyTimeoutsToTerraform(struct?: WafWebAppFir
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function wafWebAppFirewallPolicyTimeoutsToHclTerraform(struct?: WafWebAppFirewallPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class WafWebAppFirewallPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -3667,6 +4494,20 @@ export class WafWebAppFirewallPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_waf_web_app_firewall_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a WafWebAppFirewallPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the WafWebAppFirewallPolicy to import
+  * @param importFromId The id of the existing WafWebAppFirewallPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/waf_web_app_firewall_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the WafWebAppFirewallPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_waf_web_app_firewall_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -3959,5 +4800,91 @@ export class WafWebAppFirewallPolicy extends cdktf.TerraformResource {
       response_protection: wafWebAppFirewallPolicyResponseProtectionToTerraform(this._responseProtection.internalValue),
       timeouts: wafWebAppFirewallPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      system_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._systemTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      actions: {
+        value: cdktf.listMapperHcl(wafWebAppFirewallPolicyActionsToHclTerraform, true)(this._actions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WafWebAppFirewallPolicyActionsList",
+      },
+      request_access_control: {
+        value: wafWebAppFirewallPolicyRequestAccessControlToHclTerraform(this._requestAccessControl.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WafWebAppFirewallPolicyRequestAccessControlList",
+      },
+      request_protection: {
+        value: wafWebAppFirewallPolicyRequestProtectionToHclTerraform(this._requestProtection.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WafWebAppFirewallPolicyRequestProtectionList",
+      },
+      request_rate_limiting: {
+        value: wafWebAppFirewallPolicyRequestRateLimitingToHclTerraform(this._requestRateLimiting.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WafWebAppFirewallPolicyRequestRateLimitingList",
+      },
+      response_access_control: {
+        value: wafWebAppFirewallPolicyResponseAccessControlToHclTerraform(this._responseAccessControl.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WafWebAppFirewallPolicyResponseAccessControlList",
+      },
+      response_protection: {
+        value: wafWebAppFirewallPolicyResponseProtectionToHclTerraform(this._responseProtection.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "WafWebAppFirewallPolicyResponseProtectionList",
+      },
+      timeouts: {
+        value: wafWebAppFirewallPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "WafWebAppFirewallPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

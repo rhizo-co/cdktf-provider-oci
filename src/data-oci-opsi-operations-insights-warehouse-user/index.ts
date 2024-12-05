@@ -23,6 +23,20 @@ export class DataOciOpsiOperationsInsightsWarehouseUser extends cdktf.TerraformD
   // =================
   public static readonly tfResourceType = "oci_opsi_operations_insights_warehouse_user";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOpsiOperationsInsightsWarehouseUser resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOpsiOperationsInsightsWarehouseUser to import
+  * @param importFromId The id of the existing DataOciOpsiOperationsInsightsWarehouseUser that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_operations_insights_warehouse_user#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOpsiOperationsInsightsWarehouseUser to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_operations_insights_warehouse_user", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -156,5 +170,19 @@ export class DataOciOpsiOperationsInsightsWarehouseUser extends cdktf.TerraformD
     return {
       operations_insights_warehouse_user_id: cdktf.stringToTerraform(this._operationsInsightsWarehouseUserId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      operations_insights_warehouse_user_id: {
+        value: cdktf.stringToHclTerraform(this._operationsInsightsWarehouseUserId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

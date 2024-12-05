@@ -27,6 +27,20 @@ export class DataOciFusionAppsFusionEnvironmentDataMaskingActivity extends cdktf
   // =================
   public static readonly tfResourceType = "oci_fusion_apps_fusion_environment_data_masking_activity";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFusionAppsFusionEnvironmentDataMaskingActivity resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFusionAppsFusionEnvironmentDataMaskingActivity to import
+  * @param importFromId The id of the existing DataOciFusionAppsFusionEnvironmentDataMaskingActivity that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fusion_apps_fusion_environment_data_masking_activity#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFusionAppsFusionEnvironmentDataMaskingActivity to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fusion_apps_fusion_environment_data_masking_activity", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -122,5 +136,25 @@ export class DataOciFusionAppsFusionEnvironmentDataMaskingActivity extends cdktf
       data_masking_activity_id: cdktf.stringToTerraform(this._dataMaskingActivityId),
       fusion_environment_id: cdktf.stringToTerraform(this._fusionEnvironmentId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      data_masking_activity_id: {
+        value: cdktf.stringToHclTerraform(this._dataMaskingActivityId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fusion_environment_id: {
+        value: cdktf.stringToHclTerraform(this._fusionEnvironmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

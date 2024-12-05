@@ -24,6 +24,17 @@ export function dataOciStackMonitoringMaintenanceWindowResourcesToTerraform(stru
   }
 }
 
+
+export function dataOciStackMonitoringMaintenanceWindowResourcesToHclTerraform(struct?: DataOciStackMonitoringMaintenanceWindowResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciStackMonitoringMaintenanceWindowResourcesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciStackMonitoringMaintenanceWindowResourcesDetailsToTerrafo
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringMaintenanceWindowResourcesDetailsToHclTerraform(struct?: DataOciStackMonitoringMaintenanceWindowResourcesDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringMaintenanceWindowResourcesDetailsOutputReference extends cdktf.ComplexObject {
@@ -170,6 +192,17 @@ export function dataOciStackMonitoringMaintenanceWindowScheduleToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringMaintenanceWindowScheduleToHclTerraform(struct?: DataOciStackMonitoringMaintenanceWindowSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringMaintenanceWindowScheduleOutputReference extends cdktf.ComplexObject {
@@ -254,6 +287,20 @@ export class DataOciStackMonitoringMaintenanceWindow extends cdktf.TerraformData
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_maintenance_window";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciStackMonitoringMaintenanceWindow resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciStackMonitoringMaintenanceWindow to import
+  * @param importFromId The id of the existing DataOciStackMonitoringMaintenanceWindow that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_maintenance_window#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciStackMonitoringMaintenanceWindow to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_maintenance_window", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -368,5 +415,19 @@ export class DataOciStackMonitoringMaintenanceWindow extends cdktf.TerraformData
     return {
       maintenance_window_id: cdktf.stringToTerraform(this._maintenanceWindowId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      maintenance_window_id: {
+        value: cdktf.stringToHclTerraform(this._maintenanceWindowId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

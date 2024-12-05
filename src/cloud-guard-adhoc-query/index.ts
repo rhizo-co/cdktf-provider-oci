@@ -28,13 +28,13 @@ export interface CloudGuardAdhocQueryConfig extends cdktf.TerraformMetaArguments
   readonly id?: string;
   /**
   * adhoc_query_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_adhoc_query#adhoc_query_details CloudGuardAdhocQuery#adhoc_query_details}
   */
   readonly adhocQueryDetails: CloudGuardAdhocQueryAdhocQueryDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_adhoc_query#timeouts CloudGuardAdhocQuery#timeouts}
   */
   readonly timeouts?: CloudGuardAdhocQueryTimeouts;
@@ -49,6 +49,17 @@ export function cloudGuardAdhocQueryAdhocQueryRegionalDetailsToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function cloudGuardAdhocQueryAdhocQueryRegionalDetailsToHclTerraform(struct?: CloudGuardAdhocQueryAdhocQueryRegionalDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardAdhocQueryAdhocQueryRegionalDetailsOutputReference extends cdktf.ComplexObject {
@@ -158,6 +169,37 @@ export function cloudGuardAdhocQueryAdhocQueryDetailsAdhocQueryResourcesToTerraf
     resource_ids: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resourceIds),
     resource_type: cdktf.stringToTerraform(struct!.resourceType),
   }
+}
+
+
+export function cloudGuardAdhocQueryAdhocQueryDetailsAdhocQueryResourcesToHclTerraform(struct?: CloudGuardAdhocQueryAdhocQueryDetailsAdhocQueryResources | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    region: {
+      value: cdktf.stringToHclTerraform(struct!.region),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.resourceIds),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    resource_type: {
+      value: cdktf.stringToHclTerraform(struct!.resourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardAdhocQueryAdhocQueryDetailsAdhocQueryResourcesOutputReference extends cdktf.ComplexObject {
@@ -291,7 +333,7 @@ export interface CloudGuardAdhocQueryAdhocQueryDetails {
   readonly query: string;
   /**
   * adhoc_query_resources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_adhoc_query#adhoc_query_resources CloudGuardAdhocQuery#adhoc_query_resources}
   */
   readonly adhocQueryResources: CloudGuardAdhocQueryAdhocQueryDetailsAdhocQueryResources[] | cdktf.IResolvable;
@@ -306,6 +348,31 @@ export function cloudGuardAdhocQueryAdhocQueryDetailsToTerraform(struct?: CloudG
     query: cdktf.stringToTerraform(struct!.query),
     adhoc_query_resources: cdktf.listMapper(cloudGuardAdhocQueryAdhocQueryDetailsAdhocQueryResourcesToTerraform, true)(struct!.adhocQueryResources),
   }
+}
+
+
+export function cloudGuardAdhocQueryAdhocQueryDetailsToHclTerraform(struct?: CloudGuardAdhocQueryAdhocQueryDetailsOutputReference | CloudGuardAdhocQueryAdhocQueryDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    query: {
+      value: cdktf.stringToHclTerraform(struct!.query),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    adhoc_query_resources: {
+      value: cdktf.listMapperHcl(cloudGuardAdhocQueryAdhocQueryDetailsAdhocQueryResourcesToHclTerraform, true)(struct!.adhocQueryResources),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudGuardAdhocQueryAdhocQueryDetailsAdhocQueryResourcesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardAdhocQueryAdhocQueryDetailsOutputReference extends cdktf.ComplexObject {
@@ -397,6 +464,37 @@ export function cloudGuardAdhocQueryTimeoutsToTerraform(struct?: CloudGuardAdhoc
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function cloudGuardAdhocQueryTimeoutsToHclTerraform(struct?: CloudGuardAdhocQueryTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardAdhocQueryTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -511,6 +609,20 @@ export class CloudGuardAdhocQuery extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_guard_adhoc_query";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CloudGuardAdhocQuery resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CloudGuardAdhocQuery to import
+  * @param importFromId The id of the existing CloudGuardAdhocQuery that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_adhoc_query#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CloudGuardAdhocQuery to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_guard_adhoc_query", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -691,5 +803,49 @@ export class CloudGuardAdhocQuery extends cdktf.TerraformResource {
       adhoc_query_details: cloudGuardAdhocQueryAdhocQueryDetailsToTerraform(this._adhocQueryDetails.internalValue),
       timeouts: cloudGuardAdhocQueryTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      adhoc_query_details: {
+        value: cloudGuardAdhocQueryAdhocQueryDetailsToHclTerraform(this._adhocQueryDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudGuardAdhocQueryAdhocQueryDetailsList",
+      },
+      timeouts: {
+        value: cloudGuardAdhocQueryTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CloudGuardAdhocQueryTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

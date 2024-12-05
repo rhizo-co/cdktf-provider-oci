@@ -56,7 +56,7 @@ export interface NetworkLoadBalancerListenerConfig extends cdktf.TerraformMetaAr
   readonly udpIdleTimeout?: number;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_listener#timeouts NetworkLoadBalancerListener#timeouts}
   */
   readonly timeouts?: NetworkLoadBalancerListenerTimeouts;
@@ -86,6 +86,37 @@ export function networkLoadBalancerListenerTimeoutsToTerraform(struct?: NetworkL
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function networkLoadBalancerListenerTimeoutsToHclTerraform(struct?: NetworkLoadBalancerListenerTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkLoadBalancerListenerTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -200,6 +231,20 @@ export class NetworkLoadBalancerListener extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_network_load_balancer_listener";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NetworkLoadBalancerListener resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NetworkLoadBalancerListener to import
+  * @param importFromId The id of the existing NetworkLoadBalancerListener that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_listener#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NetworkLoadBalancerListener to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_load_balancer_listener", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -442,5 +487,85 @@ export class NetworkLoadBalancerListener extends cdktf.TerraformResource {
       udp_idle_timeout: cdktf.numberToTerraform(this._udpIdleTimeout),
       timeouts: networkLoadBalancerListenerTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      default_backend_set_name: {
+        value: cdktf.stringToHclTerraform(this._defaultBackendSetName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ip_version: {
+        value: cdktf.stringToHclTerraform(this._ipVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_ppv2enabled: {
+        value: cdktf.booleanToHclTerraform(this._isPpv2Enabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      l3ip_idle_timeout: {
+        value: cdktf.numberToHclTerraform(this._l3IpIdleTimeout),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_load_balancer_id: {
+        value: cdktf.stringToHclTerraform(this._networkLoadBalancerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      port: {
+        value: cdktf.numberToHclTerraform(this._port),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      protocol: {
+        value: cdktf.stringToHclTerraform(this._protocol),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tcp_idle_timeout: {
+        value: cdktf.numberToHclTerraform(this._tcpIdleTimeout),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      udp_idle_timeout: {
+        value: cdktf.numberToHclTerraform(this._udpIdleTimeout),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      timeouts: {
+        value: networkLoadBalancerListenerTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NetworkLoadBalancerListenerTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

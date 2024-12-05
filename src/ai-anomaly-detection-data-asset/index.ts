@@ -44,13 +44,13 @@ export interface AiAnomalyDetectionDataAssetConfig extends cdktf.TerraformMetaAr
   readonly projectId: string;
   /**
   * data_source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_data_asset#data_source_details AiAnomalyDetectionDataAsset#data_source_details}
   */
   readonly dataSourceDetails: AiAnomalyDetectionDataAssetDataSourceDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_data_asset#timeouts AiAnomalyDetectionDataAsset#timeouts}
   */
   readonly timeouts?: AiAnomalyDetectionDataAssetTimeouts;
@@ -90,6 +90,49 @@ export function aiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetai
     organization_name: cdktf.stringToTerraform(struct!.organizationName),
     retention_policy_name: cdktf.stringToTerraform(struct!.retentionPolicyName),
   }
+}
+
+
+export function aiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetailsToHclTerraform(struct?: AiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetailsOutputReference | AiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    database_name: {
+      value: cdktf.stringToHclTerraform(struct!.databaseName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    influx_version: {
+      value: cdktf.stringToHclTerraform(struct!.influxVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    organization_name: {
+      value: cdktf.stringToHclTerraform(struct!.organizationName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    retention_policy_name: {
+      value: cdktf.stringToHclTerraform(struct!.retentionPolicyName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetailsOutputReference extends cdktf.ComplexObject {
@@ -304,7 +347,7 @@ export interface AiAnomalyDetectionDataAssetDataSourceDetails {
   readonly walletPasswordSecretId?: string;
   /**
   * version_specific_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_data_asset#version_specific_details AiAnomalyDetectionDataAsset#version_specific_details}
   */
   readonly versionSpecificDetails?: AiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetails;
@@ -337,6 +380,139 @@ export function aiAnomalyDetectionDataAssetDataSourceDetailsToTerraform(struct?:
     wallet_password_secret_id: cdktf.stringToTerraform(struct!.walletPasswordSecretId),
     version_specific_details: aiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetailsToTerraform(struct!.versionSpecificDetails),
   }
+}
+
+
+export function aiAnomalyDetectionDataAssetDataSourceDetailsToHclTerraform(struct?: AiAnomalyDetectionDataAssetDataSourceDetailsOutputReference | AiAnomalyDetectionDataAssetDataSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    atp_password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.atpPasswordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    atp_user_name: {
+      value: cdktf.stringToHclTerraform(struct!.atpUserName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cwallet_file_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.cwalletFileSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    data_source_type: {
+      value: cdktf.stringToHclTerraform(struct!.dataSourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    database_name: {
+      value: cdktf.stringToHclTerraform(struct!.databaseName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ewallet_file_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.ewalletFileSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_store_file_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.keyStoreFileSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    measurement_name: {
+      value: cdktf.stringToHclTerraform(struct!.measurementName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ojdbc_file_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.ojdbcFileSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.passwordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    table_name: {
+      value: cdktf.stringToHclTerraform(struct!.tableName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tnsnames_file_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.tnsnamesFileSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    truststore_file_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.truststoreFileSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    url: {
+      value: cdktf.stringToHclTerraform(struct!.url),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_name: {
+      value: cdktf.stringToHclTerraform(struct!.userName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    wallet_password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.walletPasswordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    version_specific_details: {
+      value: aiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetailsToHclTerraform(struct!.versionSpecificDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiAnomalyDetectionDataAssetDataSourceDetailsVersionSpecificDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiAnomalyDetectionDataAssetDataSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -829,6 +1005,37 @@ export function aiAnomalyDetectionDataAssetTimeoutsToTerraform(struct?: AiAnomal
   }
 }
 
+
+export function aiAnomalyDetectionDataAssetTimeoutsToHclTerraform(struct?: AiAnomalyDetectionDataAssetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiAnomalyDetectionDataAssetTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -941,6 +1148,20 @@ export class AiAnomalyDetectionDataAsset extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ai_anomaly_detection_data_asset";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a AiAnomalyDetectionDataAsset resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the AiAnomalyDetectionDataAsset to import
+  * @param importFromId The id of the existing AiAnomalyDetectionDataAsset that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_data_asset#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the AiAnomalyDetectionDataAsset to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_anomaly_detection_data_asset", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1174,5 +1395,73 @@ export class AiAnomalyDetectionDataAsset extends cdktf.TerraformResource {
       data_source_details: aiAnomalyDetectionDataAssetDataSourceDetailsToTerraform(this._dataSourceDetails.internalValue),
       timeouts: aiAnomalyDetectionDataAssetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      private_endpoint_id: {
+        value: cdktf.stringToHclTerraform(this._privateEndpointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      data_source_details: {
+        value: aiAnomalyDetectionDataAssetDataSourceDetailsToHclTerraform(this._dataSourceDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiAnomalyDetectionDataAssetDataSourceDetailsList",
+      },
+      timeouts: {
+        value: aiAnomalyDetectionDataAssetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "AiAnomalyDetectionDataAssetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

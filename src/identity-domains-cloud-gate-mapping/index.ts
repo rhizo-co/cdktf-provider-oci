@@ -57,37 +57,37 @@ export interface IdentityDomainsCloudGateMappingConfig extends cdktf.TerraformMe
   readonly schemas: string[];
   /**
   * cloud_gate block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_cloud_gate_mapping#cloud_gate IdentityDomainsCloudGateMapping#cloud_gate}
   */
   readonly cloudGate: IdentityDomainsCloudGateMappingCloudGate;
   /**
   * gateway_app block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_cloud_gate_mapping#gateway_app IdentityDomainsCloudGateMapping#gateway_app}
   */
   readonly gatewayApp: IdentityDomainsCloudGateMappingGatewayApp;
   /**
   * server block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_cloud_gate_mapping#server IdentityDomainsCloudGateMapping#server}
   */
   readonly server: IdentityDomainsCloudGateMappingServer;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_cloud_gate_mapping#tags IdentityDomainsCloudGateMapping#tags}
   */
   readonly tags?: IdentityDomainsCloudGateMappingTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_cloud_gate_mapping#timeouts IdentityDomainsCloudGateMapping#timeouts}
   */
   readonly timeouts?: IdentityDomainsCloudGateMappingTimeouts;
   /**
   * upstream_server_group block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_cloud_gate_mapping#upstream_server_group IdentityDomainsCloudGateMapping#upstream_server_group}
   */
   readonly upstreamServerGroup?: IdentityDomainsCloudGateMappingUpstreamServerGroup;
@@ -102,6 +102,17 @@ export function identityDomainsCloudGateMappingIdcsCreatedByToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function identityDomainsCloudGateMappingIdcsCreatedByToHclTerraform(struct?: IdentityDomainsCloudGateMappingIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsCloudGateMappingIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -188,6 +199,17 @@ export function identityDomainsCloudGateMappingIdcsLastModifiedByToTerraform(str
   }
 }
 
+
+export function identityDomainsCloudGateMappingIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsCloudGateMappingIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsCloudGateMappingIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -270,6 +292,17 @@ export function identityDomainsCloudGateMappingMetaToTerraform(struct?: Identity
   }
   return {
   }
+}
+
+
+export function identityDomainsCloudGateMappingMetaToHclTerraform(struct?: IdentityDomainsCloudGateMappingMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsCloudGateMappingMetaOutputReference extends cdktf.ComplexObject {
@@ -361,6 +394,25 @@ export function identityDomainsCloudGateMappingCloudGateToTerraform(struct?: Ide
   }
 }
 
+
+export function identityDomainsCloudGateMappingCloudGateToHclTerraform(struct?: IdentityDomainsCloudGateMappingCloudGateOutputReference | IdentityDomainsCloudGateMappingCloudGate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsCloudGateMappingCloudGateOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -431,6 +483,31 @@ export function identityDomainsCloudGateMappingGatewayAppToTerraform(struct?: Id
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsCloudGateMappingGatewayAppToHclTerraform(struct?: IdentityDomainsCloudGateMappingGatewayAppOutputReference | IdentityDomainsCloudGateMappingGatewayApp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsCloudGateMappingGatewayAppOutputReference extends cdktf.ComplexObject {
@@ -519,6 +596,25 @@ export function identityDomainsCloudGateMappingServerToTerraform(struct?: Identi
   }
 }
 
+
+export function identityDomainsCloudGateMappingServerToHclTerraform(struct?: IdentityDomainsCloudGateMappingServerOutputReference | IdentityDomainsCloudGateMappingServer): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsCloudGateMappingServerOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -589,6 +685,31 @@ export function identityDomainsCloudGateMappingTagsToTerraform(struct?: Identity
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsCloudGateMappingTagsToHclTerraform(struct?: IdentityDomainsCloudGateMappingTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsCloudGateMappingTagsOutputReference extends cdktf.ComplexObject {
@@ -712,6 +833,37 @@ export function identityDomainsCloudGateMappingTimeoutsToTerraform(struct?: Iden
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function identityDomainsCloudGateMappingTimeoutsToHclTerraform(struct?: IdentityDomainsCloudGateMappingTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsCloudGateMappingTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -838,6 +990,31 @@ export function identityDomainsCloudGateMappingUpstreamServerGroupToTerraform(st
   }
 }
 
+
+export function identityDomainsCloudGateMappingUpstreamServerGroupToHclTerraform(struct?: IdentityDomainsCloudGateMappingUpstreamServerGroupOutputReference | IdentityDomainsCloudGateMappingUpstreamServerGroup): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ssl: {
+      value: cdktf.booleanToHclTerraform(struct!.ssl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsCloudGateMappingUpstreamServerGroupOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -923,6 +1100,20 @@ export class IdentityDomainsCloudGateMapping extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_cloud_gate_mapping";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsCloudGateMapping resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsCloudGateMapping to import
+  * @param importFromId The id of the existing IdentityDomainsCloudGateMapping that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_cloud_gate_mapping#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsCloudGateMapping to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_cloud_gate_mapping", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1325,5 +1516,121 @@ export class IdentityDomainsCloudGateMapping extends cdktf.TerraformResource {
       timeouts: identityDomainsCloudGateMappingTimeoutsToTerraform(this._timeouts.internalValue),
       upstream_server_group: identityDomainsCloudGateMappingUpstreamServerGroupToTerraform(this._upstreamServerGroup.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      nginx_settings: {
+        value: cdktf.stringToHclTerraform(this._nginxSettings),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      policy_name: {
+        value: cdktf.stringToHclTerraform(this._policyName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      proxy_pass: {
+        value: cdktf.stringToHclTerraform(this._proxyPass),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_prefix: {
+        value: cdktf.stringToHclTerraform(this._resourcePrefix),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      cloud_gate: {
+        value: identityDomainsCloudGateMappingCloudGateToHclTerraform(this._cloudGate.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsCloudGateMappingCloudGateList",
+      },
+      gateway_app: {
+        value: identityDomainsCloudGateMappingGatewayAppToHclTerraform(this._gatewayApp.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsCloudGateMappingGatewayAppList",
+      },
+      server: {
+        value: identityDomainsCloudGateMappingServerToHclTerraform(this._server.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsCloudGateMappingServerList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsCloudGateMappingTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsCloudGateMappingTagsList",
+      },
+      timeouts: {
+        value: identityDomainsCloudGateMappingTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsCloudGateMappingTimeouts",
+      },
+      upstream_server_group: {
+        value: identityDomainsCloudGateMappingUpstreamServerGroupToHclTerraform(this._upstreamServerGroup.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsCloudGateMappingUpstreamServerGroupList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

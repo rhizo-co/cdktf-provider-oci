@@ -52,19 +52,19 @@ export interface ClusterPlacementGroupsClusterPlacementGroupConfig extends cdktf
   readonly state?: string;
   /**
   * capabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cluster_placement_groups_cluster_placement_group#capabilities ClusterPlacementGroupsClusterPlacementGroup#capabilities}
   */
   readonly capabilities?: ClusterPlacementGroupsClusterPlacementGroupCapabilities;
   /**
   * placement_instruction block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cluster_placement_groups_cluster_placement_group#placement_instruction ClusterPlacementGroupsClusterPlacementGroup#placement_instruction}
   */
   readonly placementInstruction?: ClusterPlacementGroupsClusterPlacementGroupPlacementInstruction;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cluster_placement_groups_cluster_placement_group#timeouts ClusterPlacementGroupsClusterPlacementGroup#timeouts}
   */
   readonly timeouts?: ClusterPlacementGroupsClusterPlacementGroupTimeouts;
@@ -89,6 +89,31 @@ export function clusterPlacementGroupsClusterPlacementGroupCapabilitiesItemsToTe
     name: cdktf.stringToTerraform(struct!.name),
     service: cdktf.stringToTerraform(struct!.service),
   }
+}
+
+
+export function clusterPlacementGroupsClusterPlacementGroupCapabilitiesItemsToHclTerraform(struct?: ClusterPlacementGroupsClusterPlacementGroupCapabilitiesItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ClusterPlacementGroupsClusterPlacementGroupCapabilitiesItemsOutputReference extends cdktf.ComplexObject {
@@ -190,7 +215,7 @@ export class ClusterPlacementGroupsClusterPlacementGroupCapabilitiesItemsList ex
 export interface ClusterPlacementGroupsClusterPlacementGroupCapabilities {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cluster_placement_groups_cluster_placement_group#items ClusterPlacementGroupsClusterPlacementGroup#items}
   */
   readonly items: ClusterPlacementGroupsClusterPlacementGroupCapabilitiesItems[] | cdktf.IResolvable;
@@ -204,6 +229,25 @@ export function clusterPlacementGroupsClusterPlacementGroupCapabilitiesToTerrafo
   return {
     items: cdktf.listMapper(clusterPlacementGroupsClusterPlacementGroupCapabilitiesItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function clusterPlacementGroupsClusterPlacementGroupCapabilitiesToHclTerraform(struct?: ClusterPlacementGroupsClusterPlacementGroupCapabilitiesOutputReference | ClusterPlacementGroupsClusterPlacementGroupCapabilities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(clusterPlacementGroupsClusterPlacementGroupCapabilitiesItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ClusterPlacementGroupsClusterPlacementGroupCapabilitiesItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ClusterPlacementGroupsClusterPlacementGroupCapabilitiesOutputReference extends cdktf.ComplexObject {
@@ -271,6 +315,31 @@ export function clusterPlacementGroupsClusterPlacementGroupPlacementInstructionT
     type: cdktf.stringToTerraform(struct!.type),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function clusterPlacementGroupsClusterPlacementGroupPlacementInstructionToHclTerraform(struct?: ClusterPlacementGroupsClusterPlacementGroupPlacementInstructionOutputReference | ClusterPlacementGroupsClusterPlacementGroupPlacementInstruction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ClusterPlacementGroupsClusterPlacementGroupPlacementInstructionOutputReference extends cdktf.ComplexObject {
@@ -362,6 +431,37 @@ export function clusterPlacementGroupsClusterPlacementGroupTimeoutsToTerraform(s
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function clusterPlacementGroupsClusterPlacementGroupTimeoutsToHclTerraform(struct?: ClusterPlacementGroupsClusterPlacementGroupTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ClusterPlacementGroupsClusterPlacementGroupTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -476,6 +576,20 @@ export class ClusterPlacementGroupsClusterPlacementGroup extends cdktf.Terraform
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cluster_placement_groups_cluster_placement_group";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ClusterPlacementGroupsClusterPlacementGroup resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ClusterPlacementGroupsClusterPlacementGroup to import
+  * @param importFromId The id of the existing ClusterPlacementGroupsClusterPlacementGroup that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cluster_placement_groups_cluster_placement_group#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ClusterPlacementGroupsClusterPlacementGroup to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cluster_placement_groups_cluster_placement_group", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -757,5 +871,91 @@ export class ClusterPlacementGroupsClusterPlacementGroup extends cdktf.Terraform
       placement_instruction: clusterPlacementGroupsClusterPlacementGroupPlacementInstructionToTerraform(this._placementInstruction.internalValue),
       timeouts: clusterPlacementGroupsClusterPlacementGroupTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_placement_group_type: {
+        value: cdktf.stringToHclTerraform(this._clusterPlacementGroupType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opc_dry_run: {
+        value: cdktf.booleanToHclTerraform(this._opcDryRun),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      capabilities: {
+        value: clusterPlacementGroupsClusterPlacementGroupCapabilitiesToHclTerraform(this._capabilities.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ClusterPlacementGroupsClusterPlacementGroupCapabilitiesList",
+      },
+      placement_instruction: {
+        value: clusterPlacementGroupsClusterPlacementGroupPlacementInstructionToHclTerraform(this._placementInstruction.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ClusterPlacementGroupsClusterPlacementGroupPlacementInstructionList",
+      },
+      timeouts: {
+        value: clusterPlacementGroupsClusterPlacementGroupTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ClusterPlacementGroupsClusterPlacementGroupTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

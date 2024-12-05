@@ -53,49 +53,49 @@ export interface IdentityDomainsGroupConfig extends cdktf.TerraformMetaArguments
   readonly schemas: string[];
   /**
   * members block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#members IdentityDomainsGroup#members}
   */
   readonly members?: IdentityDomainsGroupMembers[] | cdktf.IResolvable;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#tags IdentityDomainsGroup#tags}
   */
   readonly tags?: IdentityDomainsGroupTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#timeouts IdentityDomainsGroup#timeouts}
   */
   readonly timeouts?: IdentityDomainsGroupTimeouts;
   /**
   * urnietfparamsscimschemasoracleidcsextension_oci_tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#urnietfparamsscimschemasoracleidcsextension_oci_tags IdentityDomainsGroup#urnietfparamsscimschemasoracleidcsextension_oci_tags}
   */
   readonly urnietfparamsscimschemasoracleidcsextensionOciTags?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags;
   /**
   * urnietfparamsscimschemasoracleidcsextensiondynamic_group block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#urnietfparamsscimschemasoracleidcsextensiondynamic_group IdentityDomainsGroup#urnietfparamsscimschemasoracleidcsextensiondynamic_group}
   */
   readonly urnietfparamsscimschemasoracleidcsextensiondynamicGroup?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup;
   /**
   * urnietfparamsscimschemasoracleidcsextensiongroup_group block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#urnietfparamsscimschemasoracleidcsextensiongroup_group IdentityDomainsGroup#urnietfparamsscimschemasoracleidcsextensiongroup_group}
   */
   readonly urnietfparamsscimschemasoracleidcsextensiongroupGroup?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup;
   /**
   * urnietfparamsscimschemasoracleidcsextensionposix_group block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#urnietfparamsscimschemasoracleidcsextensionposix_group IdentityDomainsGroup#urnietfparamsscimschemasoracleidcsextensionposix_group}
   */
   readonly urnietfparamsscimschemasoracleidcsextensionposixGroup?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup;
   /**
   * urnietfparamsscimschemasoracleidcsextensionrequestable_group block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#urnietfparamsscimschemasoracleidcsextensionrequestable_group IdentityDomainsGroup#urnietfparamsscimschemasoracleidcsextensionrequestable_group}
   */
   readonly urnietfparamsscimschemasoracleidcsextensionrequestableGroup?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup;
@@ -110,6 +110,17 @@ export function identityDomainsGroupIdcsCreatedByToTerraform(struct?: IdentityDo
   }
   return {
   }
+}
+
+
+export function identityDomainsGroupIdcsCreatedByToHclTerraform(struct?: IdentityDomainsGroupIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsGroupIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -196,6 +207,17 @@ export function identityDomainsGroupIdcsLastModifiedByToTerraform(struct?: Ident
   }
 }
 
+
+export function identityDomainsGroupIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsGroupIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsGroupIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -278,6 +300,17 @@ export function identityDomainsGroupMetaToTerraform(struct?: IdentityDomainsGrou
   }
   return {
   }
+}
+
+
+export function identityDomainsGroupMetaToHclTerraform(struct?: IdentityDomainsGroupMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsGroupMetaOutputReference extends cdktf.ComplexObject {
@@ -364,6 +397,17 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiond
   }
 }
 
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNamesToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNames): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupDomainLevelSchemaNamesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -433,6 +477,17 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiond
   }
 }
 
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNamesToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNames): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupInstanceLevelSchemaNamesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -500,6 +555,17 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiond
   }
   return {
   }
+}
+
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupOutputReference extends cdktf.ComplexObject {
@@ -596,6 +662,37 @@ export function identityDomainsGroupMembersToTerraform(struct?: IdentityDomainsG
     type: cdktf.stringToTerraform(struct!.type),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsGroupMembersToHclTerraform(struct?: IdentityDomainsGroupMembers | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ocid: {
+      value: cdktf.stringToHclTerraform(struct!.ocid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsGroupMembersOutputReference extends cdktf.ComplexObject {
@@ -763,6 +860,31 @@ export function identityDomainsGroupTagsToTerraform(struct?: IdentityDomainsGrou
   }
 }
 
+
+export function identityDomainsGroupTagsToHclTerraform(struct?: IdentityDomainsGroupTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsGroupTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -884,6 +1006,37 @@ export function identityDomainsGroupTimeoutsToTerraform(struct?: IdentityDomains
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function identityDomainsGroupTimeoutsToHclTerraform(struct?: IdentityDomainsGroupTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsGroupTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -1013,6 +1166,37 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionO
     namespace: cdktf.stringToTerraform(struct!.namespace),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsOutputReference extends cdktf.ComplexObject {
@@ -1152,6 +1336,31 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionO
   }
 }
 
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1251,13 +1460,13 @@ export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciT
 export interface IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags {
   /**
   * defined_tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#defined_tags IdentityDomainsGroup#defined_tags}
   */
   readonly definedTags?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTags[] | cdktf.IResolvable;
   /**
   * freeform_tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#freeform_tags IdentityDomainsGroup#freeform_tags}
   */
   readonly freeformTags?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTags[] | cdktf.IResolvable;
@@ -1272,6 +1481,31 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionO
     defined_tags: cdktf.listMapper(identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsToTerraform, true)(struct!.definedTags),
     freeform_tags: cdktf.listMapper(identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsToTerraform, true)(struct!.freeformTags),
   }
+}
+
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutputReference | IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    defined_tags: {
+      value: cdktf.listMapperHcl(identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsToHclTerraform, true)(struct!.definedTags),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsList",
+    },
+    freeform_tags: {
+      value: cdktf.listMapperHcl(identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsToHclTerraform, true)(struct!.freeformTags),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutputReference extends cdktf.ComplexObject {
@@ -1371,6 +1605,31 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiond
   }
 }
 
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupOutputReference | IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    membership_rule: {
+      value: cdktf.stringToHclTerraform(struct!.membershipRule),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    membership_type: {
+      value: cdktf.stringToHclTerraform(struct!.membershipType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1451,6 +1710,17 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiong
   }
   return {
   }
+}
+
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRolesToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRoles): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupAppRolesOutputReference extends cdktf.ComplexObject {
@@ -1552,6 +1822,17 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiong
   }
 }
 
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantsToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrants): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupGrantsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1631,6 +1912,17 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiong
   }
 }
 
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupPasswordPolicyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1708,6 +2000,17 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiong
   }
   return {
   }
+}
+
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromApp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupSyncedFromAppOutputReference extends cdktf.ComplexObject {
@@ -1797,6 +2100,31 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiong
     type: cdktf.stringToTerraform(struct!.type),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwners | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersOutputReference extends cdktf.ComplexObject {
@@ -1916,7 +2244,7 @@ export interface IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextension
   readonly description?: string;
   /**
   * owners block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#owners IdentityDomainsGroup#owners}
   */
   readonly owners?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwners[] | cdktf.IResolvable;
@@ -1932,6 +2260,37 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiong
     description: cdktf.stringToTerraform(struct!.description),
     owners: cdktf.listMapper(identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersToTerraform, true)(struct!.owners),
   }
+}
+
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOutputReference | IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    creation_mechanism: {
+      value: cdktf.stringToHclTerraform(struct!.creationMechanism),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    owners: {
+      value: cdktf.listMapperHcl(identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersToHclTerraform, true)(struct!.owners),
+      isBlock: true,
+      type: "list",
+      storageClassType: "IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOutputReference extends cdktf.ComplexObject {
@@ -2067,6 +2426,25 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionp
   }
 }
 
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupOutputReference | IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    gid_number: {
+      value: cdktf.numberToHclTerraform(struct!.gidNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2132,6 +2510,25 @@ export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionr
   }
 }
 
+
+export function identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupToHclTerraform(struct?: IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupOutputReference | IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    requestable: {
+      value: cdktf.booleanToHclTerraform(struct!.requestable),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2190,6 +2587,20 @@ export class IdentityDomainsGroup extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_group";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsGroup resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsGroup to import
+  * @param importFromId The id of the existing IdentityDomainsGroup that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_group#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsGroup to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_group", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2623,5 +3034,127 @@ export class IdentityDomainsGroup extends cdktf.TerraformResource {
       urnietfparamsscimschemasoracleidcsextensionposix_group: identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupToTerraform(this._urnietfparamsscimschemasoracleidcsextensionposixGroup.internalValue),
       urnietfparamsscimschemasoracleidcsextensionrequestable_group: identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupToTerraform(this._urnietfparamsscimschemasoracleidcsextensionrequestableGroup.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_id: {
+        value: cdktf.stringToHclTerraform(this._externalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      force_delete: {
+        value: cdktf.booleanToHclTerraform(this._forceDelete),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      non_unique_display_name: {
+        value: cdktf.stringToHclTerraform(this._nonUniqueDisplayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      members: {
+        value: cdktf.listMapperHcl(identityDomainsGroupMembersToHclTerraform, true)(this._members.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "IdentityDomainsGroupMembersList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsGroupTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGroupTagsList",
+      },
+      timeouts: {
+        value: identityDomainsGroupTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsGroupTimeouts",
+      },
+      urnietfparamsscimschemasoracleidcsextension_oci_tags: {
+        value: identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsToHclTerraform(this._urnietfparamsscimschemasoracleidcsextensionOciTags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsList",
+      },
+      urnietfparamsscimschemasoracleidcsextensiondynamic_group: {
+        value: identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupToHclTerraform(this._urnietfparamsscimschemasoracleidcsextensiondynamicGroup.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupList",
+      },
+      urnietfparamsscimschemasoracleidcsextensiongroup_group: {
+        value: identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupToHclTerraform(this._urnietfparamsscimschemasoracleidcsextensiongroupGroup.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupList",
+      },
+      urnietfparamsscimschemasoracleidcsextensionposix_group: {
+        value: identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupToHclTerraform(this._urnietfparamsscimschemasoracleidcsextensionposixGroup.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupList",
+      },
+      urnietfparamsscimschemasoracleidcsextensionrequestable_group: {
+        value: identityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupToHclTerraform(this._urnietfparamsscimschemasoracleidcsextensionrequestableGroup.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

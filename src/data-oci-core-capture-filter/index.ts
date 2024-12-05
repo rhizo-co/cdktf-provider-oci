@@ -24,6 +24,17 @@ export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesIcmpOptionsToTe
   }
 }
 
+
+export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesIcmpOptionsToHclTerraform(struct?: DataOciCoreCaptureFilterFlowLogCaptureFilterRulesIcmpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCaptureFilterFlowLogCaptureFilterRulesIcmpOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDesti
   }
   return {
   }
+}
+
+
+export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeToHclTerraform(struct?: DataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeOutputReference extends cdktf.ComplexObject {
@@ -162,6 +184,17 @@ export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourc
   }
 }
 
+
+export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeToHclTerraform(struct?: DataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -229,6 +262,17 @@ export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsToTer
   }
   return {
   }
+}
+
+
+export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsToHclTerraform(struct?: DataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsOutputReference extends cdktf.ComplexObject {
@@ -302,6 +346,17 @@ export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDesti
   }
 }
 
+
+export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeToHclTerraform(struct?: DataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -369,6 +424,17 @@ export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourc
   }
   return {
   }
+}
+
+
+export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeToHclTerraform(struct?: DataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
@@ -440,6 +506,17 @@ export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsToTer
   }
 }
 
+
+export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsToHclTerraform(struct?: DataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -509,6 +586,17 @@ export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesToTerraform(str
   }
   return {
   }
+}
+
+
+export function dataOciCoreCaptureFilterFlowLogCaptureFilterRulesToHclTerraform(struct?: DataOciCoreCaptureFilterFlowLogCaptureFilterRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCaptureFilterFlowLogCaptureFilterRulesOutputReference extends cdktf.ComplexObject {
@@ -628,6 +716,17 @@ export function dataOciCoreCaptureFilterVtapCaptureFilterRulesIcmpOptionsToTerra
   }
 }
 
+
+export function dataOciCoreCaptureFilterVtapCaptureFilterRulesIcmpOptionsToHclTerraform(struct?: DataOciCoreCaptureFilterVtapCaptureFilterRulesIcmpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCaptureFilterVtapCaptureFilterRulesIcmpOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -695,6 +794,17 @@ export function dataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinat
   }
   return {
   }
+}
+
+
+export function dataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeToHclTerraform(struct?: DataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeOutputReference extends cdktf.ComplexObject {
@@ -766,6 +876,17 @@ export function dataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePo
   }
 }
 
+
+export function dataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeToHclTerraform(struct?: DataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -833,6 +954,17 @@ export function dataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsToHclTerraform(struct?: DataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCaptureFilterVtapCaptureFilterRulesTcpOptionsOutputReference extends cdktf.ComplexObject {
@@ -906,6 +1038,17 @@ export function dataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinat
   }
 }
 
+
+export function dataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeToHclTerraform(struct?: DataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -973,6 +1116,17 @@ export function dataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePo
   }
   return {
   }
+}
+
+
+export function dataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeToHclTerraform(struct?: DataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
@@ -1044,6 +1198,17 @@ export function dataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsToTerraf
   }
 }
 
+
+export function dataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsToHclTerraform(struct?: DataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCaptureFilterVtapCaptureFilterRulesUdpOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1113,6 +1278,17 @@ export function dataOciCoreCaptureFilterVtapCaptureFilterRulesToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciCoreCaptureFilterVtapCaptureFilterRulesToHclTerraform(struct?: DataOciCoreCaptureFilterVtapCaptureFilterRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCaptureFilterVtapCaptureFilterRulesOutputReference extends cdktf.ComplexObject {
@@ -1215,6 +1391,20 @@ export class DataOciCoreCaptureFilter extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_capture_filter";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreCaptureFilter resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreCaptureFilter to import
+  * @param importFromId The id of the existing DataOciCoreCaptureFilter that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_capture_filter#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreCaptureFilter to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_capture_filter", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1325,5 +1515,19 @@ export class DataOciCoreCaptureFilter extends cdktf.TerraformDataSource {
     return {
       capture_filter_id: cdktf.stringToTerraform(this._captureFilterId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      capture_filter_id: {
+        value: cdktf.stringToHclTerraform(this._captureFilterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -44,37 +44,37 @@ export interface DatasciencePipelineConfig extends cdktf.TerraformMetaArguments 
   readonly projectId: string;
   /**
   * configuration_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#configuration_details DatasciencePipeline#configuration_details}
   */
   readonly configurationDetails?: DatasciencePipelineConfigurationDetails;
   /**
   * infrastructure_configuration_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#infrastructure_configuration_details DatasciencePipeline#infrastructure_configuration_details}
   */
   readonly infrastructureConfigurationDetails?: DatasciencePipelineInfrastructureConfigurationDetails;
   /**
   * log_configuration_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#log_configuration_details DatasciencePipeline#log_configuration_details}
   */
   readonly logConfigurationDetails?: DatasciencePipelineLogConfigurationDetails;
   /**
   * step_artifact block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#step_artifact DatasciencePipeline#step_artifact}
   */
   readonly stepArtifact?: DatasciencePipelineStepArtifact[] | cdktf.IResolvable;
   /**
   * step_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#step_details DatasciencePipeline#step_details}
   */
   readonly stepDetails: DatasciencePipelineStepDetails[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#timeouts DatasciencePipeline#timeouts}
   */
   readonly timeouts?: DatasciencePipelineTimeouts;
@@ -109,6 +109,43 @@ export function datasciencePipelineConfigurationDetailsToTerraform(struct?: Data
     maximum_runtime_in_minutes: cdktf.stringToTerraform(struct!.maximumRuntimeInMinutes),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function datasciencePipelineConfigurationDetailsToHclTerraform(struct?: DatasciencePipelineConfigurationDetailsOutputReference | DatasciencePipelineConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command_line_arguments: {
+      value: cdktf.stringToHclTerraform(struct!.commandLineArguments),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    environment_variables: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.environmentVariables),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    maximum_runtime_in_minutes: {
+      value: cdktf.stringToHclTerraform(struct!.maximumRuntimeInMinutes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatasciencePipelineConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -244,6 +281,31 @@ export function datasciencePipelineInfrastructureConfigurationDetailsShapeConfig
   }
 }
 
+
+export function datasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetailsToHclTerraform(struct?: DatasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetailsOutputReference | DatasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -329,7 +391,7 @@ export interface DatasciencePipelineInfrastructureConfigurationDetails {
   readonly subnetId?: string;
   /**
   * shape_config_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#shape_config_details DatasciencePipeline#shape_config_details}
   */
   readonly shapeConfigDetails?: DatasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetails;
@@ -346,6 +408,43 @@ export function datasciencePipelineInfrastructureConfigurationDetailsToTerraform
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     shape_config_details: datasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetailsToTerraform(struct!.shapeConfigDetails),
   }
+}
+
+
+export function datasciencePipelineInfrastructureConfigurationDetailsToHclTerraform(struct?: DatasciencePipelineInfrastructureConfigurationDetailsOutputReference | DatasciencePipelineInfrastructureConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_storage_size_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.blockStorageSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    shape_name: {
+      value: cdktf.stringToHclTerraform(struct!.shapeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_config_details: {
+      value: datasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetailsToHclTerraform(struct!.shapeConfigDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatasciencePipelineInfrastructureConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -486,6 +585,43 @@ export function datasciencePipelineLogConfigurationDetailsToTerraform(struct?: D
     log_group_id: cdktf.stringToTerraform(struct!.logGroupId),
     log_id: cdktf.stringToTerraform(struct!.logId),
   }
+}
+
+
+export function datasciencePipelineLogConfigurationDetailsToHclTerraform(struct?: DatasciencePipelineLogConfigurationDetailsOutputReference | DatasciencePipelineLogConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    enable_auto_log_creation: {
+      value: cdktf.booleanToHclTerraform(struct!.enableAutoLogCreation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    enable_logging: {
+      value: cdktf.booleanToHclTerraform(struct!.enableLogging),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    log_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.logGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_id: {
+      value: cdktf.stringToHclTerraform(struct!.logId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatasciencePipelineLogConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -632,6 +768,43 @@ export function datasciencePipelineStepArtifactToTerraform(struct?: DatascienceP
     pipeline_step_artifact: cdktf.stringToTerraform(struct!.pipelineStepArtifact),
     step_name: cdktf.stringToTerraform(struct!.stepName),
   }
+}
+
+
+export function datasciencePipelineStepArtifactToHclTerraform(struct?: DatasciencePipelineStepArtifact | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    artifact_content_disposition: {
+      value: cdktf.stringToHclTerraform(struct!.artifactContentDisposition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    artifact_content_length: {
+      value: cdktf.stringToHclTerraform(struct!.artifactContentLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pipeline_step_artifact: {
+      value: cdktf.stringToHclTerraform(struct!.pipelineStepArtifact),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    step_name: {
+      value: cdktf.stringToHclTerraform(struct!.stepName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatasciencePipelineStepArtifactOutputReference extends cdktf.ComplexObject {
@@ -808,6 +981,37 @@ export function datasciencePipelineStepDetailsStepConfigurationDetailsToTerrafor
   }
 }
 
+
+export function datasciencePipelineStepDetailsStepConfigurationDetailsToHclTerraform(struct?: DatasciencePipelineStepDetailsStepConfigurationDetailsOutputReference | DatasciencePipelineStepDetailsStepConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command_line_arguments: {
+      value: cdktf.stringToHclTerraform(struct!.commandLineArguments),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    environment_variables: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.environmentVariables),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    maximum_runtime_in_minutes: {
+      value: cdktf.stringToHclTerraform(struct!.maximumRuntimeInMinutes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatasciencePipelineStepDetailsStepConfigurationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -940,6 +1144,55 @@ export function datasciencePipelineStepDetailsStepContainerConfigurationDetailsT
     image_digest: cdktf.stringToTerraform(struct!.imageDigest),
     image_signature_id: cdktf.stringToTerraform(struct!.imageSignatureId),
   }
+}
+
+
+export function datasciencePipelineStepDetailsStepContainerConfigurationDetailsToHclTerraform(struct?: DatasciencePipelineStepDetailsStepContainerConfigurationDetailsOutputReference | DatasciencePipelineStepDetailsStepContainerConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cmd: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.cmd),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    container_type: {
+      value: cdktf.stringToHclTerraform(struct!.containerType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    entrypoint: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.entrypoint),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    image: {
+      value: cdktf.stringToHclTerraform(struct!.image),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_digest: {
+      value: cdktf.stringToHclTerraform(struct!.imageDigest),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_signature_id: {
+      value: cdktf.stringToHclTerraform(struct!.imageSignatureId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatasciencePipelineStepDetailsStepContainerConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -1116,6 +1369,31 @@ export function datasciencePipelineStepDetailsStepInfrastructureConfigurationDet
   }
 }
 
+
+export function datasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsToHclTerraform(struct?: DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOutputReference | DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1201,7 +1479,7 @@ export interface DatasciencePipelineStepDetailsStepInfrastructureConfigurationDe
   readonly subnetId?: string;
   /**
   * shape_config_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#shape_config_details DatasciencePipeline#shape_config_details}
   */
   readonly shapeConfigDetails?: DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetails;
@@ -1218,6 +1496,43 @@ export function datasciencePipelineStepDetailsStepInfrastructureConfigurationDet
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     shape_config_details: datasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsToTerraform(struct!.shapeConfigDetails),
   }
+}
+
+
+export function datasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsToHclTerraform(struct?: DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsOutputReference | DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_storage_size_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.blockStorageSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    shape_name: {
+      value: cdktf.stringToHclTerraform(struct!.shapeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_config_details: {
+      value: datasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsToHclTerraform(struct!.shapeConfigDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -1355,19 +1670,19 @@ export interface DatasciencePipelineStepDetails {
   readonly stepType: string;
   /**
   * step_configuration_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#step_configuration_details DatasciencePipeline#step_configuration_details}
   */
   readonly stepConfigurationDetails?: DatasciencePipelineStepDetailsStepConfigurationDetails;
   /**
   * step_container_configuration_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#step_container_configuration_details DatasciencePipeline#step_container_configuration_details}
   */
   readonly stepContainerConfigurationDetails?: DatasciencePipelineStepDetailsStepContainerConfigurationDetails;
   /**
   * step_infrastructure_configuration_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#step_infrastructure_configuration_details DatasciencePipeline#step_infrastructure_configuration_details}
   */
   readonly stepInfrastructureConfigurationDetails?: DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetails;
@@ -1389,6 +1704,73 @@ export function datasciencePipelineStepDetailsToTerraform(struct?: DatasciencePi
     step_container_configuration_details: datasciencePipelineStepDetailsStepContainerConfigurationDetailsToTerraform(struct!.stepContainerConfigurationDetails),
     step_infrastructure_configuration_details: datasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsToTerraform(struct!.stepInfrastructureConfigurationDetails),
   }
+}
+
+
+export function datasciencePipelineStepDetailsToHclTerraform(struct?: DatasciencePipelineStepDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    depends_on: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.dependsOn),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_artifact_uploaded: {
+      value: cdktf.booleanToHclTerraform(struct!.isArtifactUploaded),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    job_id: {
+      value: cdktf.stringToHclTerraform(struct!.jobId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    step_name: {
+      value: cdktf.stringToHclTerraform(struct!.stepName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    step_type: {
+      value: cdktf.stringToHclTerraform(struct!.stepType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    step_configuration_details: {
+      value: datasciencePipelineStepDetailsStepConfigurationDetailsToHclTerraform(struct!.stepConfigurationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatasciencePipelineStepDetailsStepConfigurationDetailsList",
+    },
+    step_container_configuration_details: {
+      value: datasciencePipelineStepDetailsStepContainerConfigurationDetailsToHclTerraform(struct!.stepContainerConfigurationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatasciencePipelineStepDetailsStepContainerConfigurationDetailsList",
+    },
+    step_infrastructure_configuration_details: {
+      value: datasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsToHclTerraform(struct!.stepInfrastructureConfigurationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatasciencePipelineStepDetailsOutputReference extends cdktf.ComplexObject {
@@ -1668,6 +2050,37 @@ export function datasciencePipelineTimeoutsToTerraform(struct?: DatasciencePipel
   }
 }
 
+
+export function datasciencePipelineTimeoutsToHclTerraform(struct?: DatasciencePipelineTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatasciencePipelineTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1780,6 +2193,20 @@ export class DatasciencePipeline extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_pipeline";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatasciencePipeline resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatasciencePipeline to import
+  * @param importFromId The id of the existing DatasciencePipeline that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_pipeline#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatasciencePipeline to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_pipeline", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2095,5 +2522,97 @@ export class DatasciencePipeline extends cdktf.TerraformResource {
       step_details: cdktf.listMapper(datasciencePipelineStepDetailsToTerraform, true)(this._stepDetails.internalValue),
       timeouts: datasciencePipelineTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      delete_related_pipeline_runs: {
+        value: cdktf.booleanToHclTerraform(this._deleteRelatedPipelineRuns),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      configuration_details: {
+        value: datasciencePipelineConfigurationDetailsToHclTerraform(this._configurationDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatasciencePipelineConfigurationDetailsList",
+      },
+      infrastructure_configuration_details: {
+        value: datasciencePipelineInfrastructureConfigurationDetailsToHclTerraform(this._infrastructureConfigurationDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatasciencePipelineInfrastructureConfigurationDetailsList",
+      },
+      log_configuration_details: {
+        value: datasciencePipelineLogConfigurationDetailsToHclTerraform(this._logConfigurationDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatasciencePipelineLogConfigurationDetailsList",
+      },
+      step_artifact: {
+        value: cdktf.listMapperHcl(datasciencePipelineStepArtifactToHclTerraform, true)(this._stepArtifact.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatasciencePipelineStepArtifactList",
+      },
+      step_details: {
+        value: cdktf.listMapperHcl(datasciencePipelineStepDetailsToHclTerraform, true)(this._stepDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatasciencePipelineStepDetailsList",
+      },
+      timeouts: {
+        value: datasciencePipelineTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatasciencePipelineTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

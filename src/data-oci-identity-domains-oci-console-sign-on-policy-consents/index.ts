@@ -48,7 +48,7 @@ export interface DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsConfig exte
   readonly startIndex?: number;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_oci_console_sign_on_policy_consents#filter DataOciIdentityDomainsOciConsoleSignOnPolicyConsents#filter}
   */
   readonly filter?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesCon
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesConsentSignedByToHclTerraform(struct?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesConsentSignedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesConsentSignedByOutputReference extends cdktf.ComplexObject {
@@ -142,6 +153,17 @@ export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesIdc
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -228,6 +250,17 @@ export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesIdc
   }
 }
 
+
+export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -310,6 +343,17 @@ export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesMet
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesMetaToHclTerraform(struct?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesMetaOutputReference extends cdktf.ComplexObject {
@@ -396,6 +440,17 @@ export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesMod
   }
 }
 
+
+export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesModifiedResourceToHclTerraform(struct?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesModifiedResource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesModifiedResourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -470,6 +525,17 @@ export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesPol
   }
 }
 
+
+export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesPolicyResourceToHclTerraform(struct?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesPolicyResource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesPolicyResourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -537,6 +603,17 @@ export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesToT
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesToHclTerraform(struct?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsResourcesOutputReference extends cdktf.ComplexObject {
@@ -699,6 +776,17 @@ export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsTagsToTerraf
   }
 }
 
+
+export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsTagsToHclTerraform(struct?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -781,6 +869,37 @@ export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsFilterToTerr
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsFilterToHclTerraform(struct?: DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsFilterOutputReference extends cdktf.ComplexObject {
@@ -911,6 +1030,20 @@ export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsents extends cdktf.
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_oci_console_sign_on_policy_consents";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsOciConsoleSignOnPolicyConsents resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsOciConsoleSignOnPolicyConsents to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsOciConsoleSignOnPolicyConsents that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_oci_console_sign_on_policy_consents#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsOciConsoleSignOnPolicyConsents to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_oci_console_sign_on_policy_consents", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1161,5 +1294,73 @@ export class DataOciIdentityDomainsOciConsoleSignOnPolicyConsents extends cdktf.
       start_index: cdktf.numberToTerraform(this._startIndex),
       filter: cdktf.listMapper(dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      oci_console_sign_on_policy_consent_count: {
+        value: cdktf.numberToHclTerraform(this._ociConsoleSignOnPolicyConsentCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      oci_console_sign_on_policy_consent_filter: {
+        value: cdktf.stringToHclTerraform(this._ociConsoleSignOnPolicyConsentFilter),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      start_index: {
+        value: cdktf.numberToHclTerraform(this._startIndex),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciIdentityDomainsOciConsoleSignOnPolicyConsentsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciIdentityDomainsOciConsoleSignOnPolicyConsentsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

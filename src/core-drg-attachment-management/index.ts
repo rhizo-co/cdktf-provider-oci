@@ -64,13 +64,13 @@ export interface CoreDrgAttachmentManagementConfig extends cdktf.TerraformMetaAr
   readonly vcnId?: string;
   /**
   * network_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_drg_attachment_management#network_details CoreDrgAttachmentManagement#network_details}
   */
   readonly networkDetails?: CoreDrgAttachmentManagementNetworkDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_drg_attachment_management#timeouts CoreDrgAttachmentManagement#timeouts}
   */
   readonly timeouts?: CoreDrgAttachmentManagementTimeouts;
@@ -103,6 +103,37 @@ export function coreDrgAttachmentManagementNetworkDetailsToTerraform(struct?: Co
     route_table_id: cdktf.stringToTerraform(struct!.routeTableId),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function coreDrgAttachmentManagementNetworkDetailsToHclTerraform(struct?: CoreDrgAttachmentManagementNetworkDetailsOutputReference | CoreDrgAttachmentManagementNetworkDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    route_table_id: {
+      value: cdktf.stringToHclTerraform(struct!.routeTableId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreDrgAttachmentManagementNetworkDetailsOutputReference extends cdktf.ComplexObject {
@@ -223,6 +254,37 @@ export function coreDrgAttachmentManagementTimeoutsToTerraform(struct?: CoreDrgA
   }
 }
 
+
+export function coreDrgAttachmentManagementTimeoutsToHclTerraform(struct?: CoreDrgAttachmentManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreDrgAttachmentManagementTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -335,6 +397,20 @@ export class CoreDrgAttachmentManagement extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_drg_attachment_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreDrgAttachmentManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreDrgAttachmentManagement to import
+  * @param importFromId The id of the existing CoreDrgAttachmentManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_drg_attachment_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreDrgAttachmentManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_drg_attachment_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -652,5 +728,103 @@ export class CoreDrgAttachmentManagement extends cdktf.TerraformResource {
       network_details: coreDrgAttachmentManagementNetworkDetailsToTerraform(this._networkDetails.internalValue),
       timeouts: coreDrgAttachmentManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attachment_type: {
+        value: cdktf.stringToHclTerraform(this._attachmentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      drg_id: {
+        value: cdktf.stringToHclTerraform(this._drgId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      drg_route_table_id: {
+        value: cdktf.stringToHclTerraform(this._drgRouteTableId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      export_drg_route_distribution_id: {
+        value: cdktf.stringToHclTerraform(this._exportDrgRouteDistributionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_id: {
+        value: cdktf.stringToHclTerraform(this._networkId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      remove_export_drg_route_distribution_trigger: {
+        value: cdktf.booleanToHclTerraform(this._removeExportDrgRouteDistributionTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      route_table_id: {
+        value: cdktf.stringToHclTerraform(this._routeTableId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcn_id: {
+        value: cdktf.stringToHclTerraform(this._vcnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_details: {
+        value: coreDrgAttachmentManagementNetworkDetailsToHclTerraform(this._networkDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreDrgAttachmentManagementNetworkDetailsList",
+      },
+      timeouts: {
+        value: coreDrgAttachmentManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreDrgAttachmentManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

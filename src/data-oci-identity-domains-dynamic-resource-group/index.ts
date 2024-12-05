@@ -44,6 +44,17 @@ export function dataOciIdentityDomainsDynamicResourceGroupDynamicGroupAppRolesTo
   }
 }
 
+
+export function dataOciIdentityDomainsDynamicResourceGroupDynamicGroupAppRolesToHclTerraform(struct?: DataOciIdentityDomainsDynamicResourceGroupDynamicGroupAppRoles): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsDynamicResourceGroupDynamicGroupAppRolesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -138,6 +149,17 @@ export function dataOciIdentityDomainsDynamicResourceGroupGrantsToTerraform(stru
   }
 }
 
+
+export function dataOciIdentityDomainsDynamicResourceGroupGrantsToHclTerraform(struct?: DataOciIdentityDomainsDynamicResourceGroupGrants): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsDynamicResourceGroupGrantsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -215,6 +237,17 @@ export function dataOciIdentityDomainsDynamicResourceGroupIdcsCreatedByToTerrafo
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsDynamicResourceGroupIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsDynamicResourceGroupIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsDynamicResourceGroupIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -301,6 +334,17 @@ export function dataOciIdentityDomainsDynamicResourceGroupIdcsLastModifiedByToTe
   }
 }
 
+
+export function dataOciIdentityDomainsDynamicResourceGroupIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsDynamicResourceGroupIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsDynamicResourceGroupIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -383,6 +427,17 @@ export function dataOciIdentityDomainsDynamicResourceGroupMetaToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsDynamicResourceGroupMetaToHclTerraform(struct?: DataOciIdentityDomainsDynamicResourceGroupMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsDynamicResourceGroupMetaOutputReference extends cdktf.ComplexObject {
@@ -469,6 +524,17 @@ export function dataOciIdentityDomainsDynamicResourceGroupTagsToTerraform(struct
   }
 }
 
+
+export function dataOciIdentityDomainsDynamicResourceGroupTagsToHclTerraform(struct?: DataOciIdentityDomainsDynamicResourceGroupTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsDynamicResourceGroupTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -536,6 +602,17 @@ export function dataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschem
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsToHclTerraform(struct?: DataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsDefinedTagsOutputReference extends cdktf.ComplexObject {
@@ -612,6 +689,17 @@ export function dataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschem
   }
 }
 
+
+export function dataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsToHclTerraform(struct?: DataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsFreeformTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -679,6 +767,17 @@ export function dataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschem
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsToHclTerraform(struct?: DataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsDynamicResourceGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsOutputReference extends cdktf.ComplexObject {
@@ -755,6 +854,20 @@ export class DataOciIdentityDomainsDynamicResourceGroup extends cdktf.TerraformD
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_dynamic_resource_group";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsDynamicResourceGroup resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsDynamicResourceGroup to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsDynamicResourceGroup that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_dynamic_resource_group#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsDynamicResourceGroup to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_dynamic_resource_group", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1000,5 +1113,49 @@ export class DataOciIdentityDomainsDynamicResourceGroup extends cdktf.TerraformD
       idcs_endpoint: cdktf.stringToTerraform(this._idcsEndpoint),
       resource_type_schema_version: cdktf.stringToTerraform(this._resourceTypeSchemaVersion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dynamic_resource_group_id: {
+        value: cdktf.stringToHclTerraform(this._dynamicResourceGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

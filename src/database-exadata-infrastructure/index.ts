@@ -108,25 +108,25 @@ export interface DatabaseExadataInfrastructureConfig extends cdktf.TerraformMeta
   readonly timeZone: string;
   /**
   * contacts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_exadata_infrastructure#contacts DatabaseExadataInfrastructure#contacts}
   */
   readonly contacts?: DatabaseExadataInfrastructureContacts[] | cdktf.IResolvable;
   /**
   * maintenance_window block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_exadata_infrastructure#maintenance_window DatabaseExadataInfrastructure#maintenance_window}
   */
   readonly maintenanceWindow?: DatabaseExadataInfrastructureMaintenanceWindow;
   /**
   * network_bonding_mode_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_exadata_infrastructure#network_bonding_mode_details DatabaseExadataInfrastructure#network_bonding_mode_details}
   */
   readonly networkBondingModeDetails?: DatabaseExadataInfrastructureNetworkBondingModeDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_exadata_infrastructure#timeouts DatabaseExadataInfrastructure#timeouts}
   */
   readonly timeouts?: DatabaseExadataInfrastructureTimeouts;
@@ -141,6 +141,17 @@ export function databaseExadataInfrastructureDefinedFileSystemConfigurationsToTe
   }
   return {
   }
+}
+
+
+export function databaseExadataInfrastructureDefinedFileSystemConfigurationsToHclTerraform(struct?: DatabaseExadataInfrastructureDefinedFileSystemConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseExadataInfrastructureDefinedFileSystemConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -245,6 +256,49 @@ export function databaseExadataInfrastructureContactsToTerraform(struct?: Databa
     name: cdktf.stringToTerraform(struct!.name),
     phone_number: cdktf.stringToTerraform(struct!.phoneNumber),
   }
+}
+
+
+export function databaseExadataInfrastructureContactsToHclTerraform(struct?: DatabaseExadataInfrastructureContacts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    email: {
+      value: cdktf.stringToHclTerraform(struct!.email),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_contact_mos_validated: {
+      value: cdktf.booleanToHclTerraform(struct!.isContactMosValidated),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_primary: {
+      value: cdktf.booleanToHclTerraform(struct!.isPrimary),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    phone_number: {
+      value: cdktf.stringToHclTerraform(struct!.phoneNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseExadataInfrastructureContactsOutputReference extends cdktf.ComplexObject {
@@ -423,6 +477,25 @@ export function databaseExadataInfrastructureMaintenanceWindowDaysOfWeekToTerraf
   }
 }
 
+
+export function databaseExadataInfrastructureMaintenanceWindowDaysOfWeekToHclTerraform(struct?: DatabaseExadataInfrastructureMaintenanceWindowDaysOfWeek | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseExadataInfrastructureMaintenanceWindowDaysOfWeekOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -515,6 +588,25 @@ export function databaseExadataInfrastructureMaintenanceWindowMonthsToTerraform(
   return {
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function databaseExadataInfrastructureMaintenanceWindowMonthsToHclTerraform(struct?: DatabaseExadataInfrastructureMaintenanceWindowMonths | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseExadataInfrastructureMaintenanceWindowMonthsOutputReference extends cdktf.ComplexObject {
@@ -633,13 +725,13 @@ export interface DatabaseExadataInfrastructureMaintenanceWindow {
   readonly weeksOfMonth?: number[];
   /**
   * days_of_week block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_exadata_infrastructure#days_of_week DatabaseExadataInfrastructure#days_of_week}
   */
   readonly daysOfWeek?: DatabaseExadataInfrastructureMaintenanceWindowDaysOfWeek[] | cdktf.IResolvable;
   /**
   * months block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_exadata_infrastructure#months DatabaseExadataInfrastructure#months}
   */
   readonly months?: DatabaseExadataInfrastructureMaintenanceWindowMonths[] | cdktf.IResolvable;
@@ -663,6 +755,85 @@ export function databaseExadataInfrastructureMaintenanceWindowToTerraform(struct
     days_of_week: cdktf.listMapper(databaseExadataInfrastructureMaintenanceWindowDaysOfWeekToTerraform, true)(struct!.daysOfWeek),
     months: cdktf.listMapper(databaseExadataInfrastructureMaintenanceWindowMonthsToTerraform, true)(struct!.months),
   }
+}
+
+
+export function databaseExadataInfrastructureMaintenanceWindowToHclTerraform(struct?: DatabaseExadataInfrastructureMaintenanceWindowOutputReference | DatabaseExadataInfrastructureMaintenanceWindow): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    custom_action_timeout_in_mins: {
+      value: cdktf.numberToHclTerraform(struct!.customActionTimeoutInMins),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    hours_of_day: {
+      value: cdktf.listMapperHcl(cdktf.numberToHclTerraform, false)(struct!.hoursOfDay),
+      isBlock: false,
+      type: "list",
+      storageClassType: "numberList",
+    },
+    is_custom_action_timeout_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isCustomActionTimeoutEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_monthly_patching_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isMonthlyPatchingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    lead_time_in_weeks: {
+      value: cdktf.numberToHclTerraform(struct!.leadTimeInWeeks),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    patching_mode: {
+      value: cdktf.stringToHclTerraform(struct!.patchingMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    preference: {
+      value: cdktf.stringToHclTerraform(struct!.preference),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    skip_ru: {
+      value: cdktf.listMapperHcl(cdktf.booleanToHclTerraform, false)(struct!.skipRu),
+      isBlock: false,
+      type: "list",
+      storageClassType: "booleanList",
+    },
+    weeks_of_month: {
+      value: cdktf.listMapperHcl(cdktf.numberToHclTerraform, false)(struct!.weeksOfMonth),
+      isBlock: false,
+      type: "list",
+      storageClassType: "numberList",
+    },
+    days_of_week: {
+      value: cdktf.listMapperHcl(databaseExadataInfrastructureMaintenanceWindowDaysOfWeekToHclTerraform, true)(struct!.daysOfWeek),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseExadataInfrastructureMaintenanceWindowDaysOfWeekList",
+    },
+    months: {
+      value: cdktf.listMapperHcl(databaseExadataInfrastructureMaintenanceWindowMonthsToHclTerraform, true)(struct!.months),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseExadataInfrastructureMaintenanceWindowMonthsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseExadataInfrastructureMaintenanceWindowOutputReference extends cdktf.ComplexObject {
@@ -960,6 +1131,37 @@ export function databaseExadataInfrastructureNetworkBondingModeDetailsToTerrafor
   }
 }
 
+
+export function databaseExadataInfrastructureNetworkBondingModeDetailsToHclTerraform(struct?: DatabaseExadataInfrastructureNetworkBondingModeDetailsOutputReference | DatabaseExadataInfrastructureNetworkBondingModeDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    backup_network_bonding_mode: {
+      value: cdktf.stringToHclTerraform(struct!.backupNetworkBondingMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_network_bonding_mode: {
+      value: cdktf.stringToHclTerraform(struct!.clientNetworkBondingMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dr_network_bonding_mode: {
+      value: cdktf.stringToHclTerraform(struct!.drNetworkBondingMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseExadataInfrastructureNetworkBondingModeDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1079,6 +1281,37 @@ export function databaseExadataInfrastructureTimeoutsToTerraform(struct?: Databa
   }
 }
 
+
+export function databaseExadataInfrastructureTimeoutsToHclTerraform(struct?: DatabaseExadataInfrastructureTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseExadataInfrastructureTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1191,6 +1424,20 @@ export class DatabaseExadataInfrastructure extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_exadata_infrastructure";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseExadataInfrastructure resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseExadataInfrastructure to import
+  * @param importFromId The id of the existing DatabaseExadataInfrastructure that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_exadata_infrastructure#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseExadataInfrastructure to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_exadata_infrastructure", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1811,5 +2058,181 @@ export class DatabaseExadataInfrastructure extends cdktf.TerraformResource {
       network_bonding_mode_details: databaseExadataInfrastructureNetworkBondingModeDetailsToTerraform(this._networkBondingModeDetails.internalValue),
       timeouts: databaseExadataInfrastructureTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      activation_file: {
+        value: cdktf.stringToHclTerraform(this._activationFile),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      additional_storage_count: {
+        value: cdktf.numberToHclTerraform(this._additionalStorageCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      admin_network_cidr: {
+        value: cdktf.stringToHclTerraform(this._adminNetworkCidr),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cloud_control_plane_server1: {
+        value: cdktf.stringToHclTerraform(this._cloudControlPlaneServer1),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cloud_control_plane_server2: {
+        value: cdktf.stringToHclTerraform(this._cloudControlPlaneServer2),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compute_count: {
+        value: cdktf.numberToHclTerraform(this._computeCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      corporate_proxy: {
+        value: cdktf.stringToHclTerraform(this._corporateProxy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      create_async: {
+        value: cdktf.booleanToHclTerraform(this._createAsync),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dns_server: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._dnsServer),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      gateway: {
+        value: cdktf.stringToHclTerraform(this._gateway),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      infini_band_network_cidr: {
+        value: cdktf.stringToHclTerraform(this._infiniBandNetworkCidr),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_cps_offline_report_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isCpsOfflineReportEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_multi_rack_deployment: {
+        value: cdktf.booleanToHclTerraform(this._isMultiRackDeployment),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      multi_rack_configuration_file: {
+        value: cdktf.stringToHclTerraform(this._multiRackConfigurationFile),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      netmask: {
+        value: cdktf.stringToHclTerraform(this._netmask),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ntp_server: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._ntpServer),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      shape: {
+        value: cdktf.stringToHclTerraform(this._shape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      storage_count: {
+        value: cdktf.numberToHclTerraform(this._storageCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      time_zone: {
+        value: cdktf.stringToHclTerraform(this._timeZone),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      contacts: {
+        value: cdktf.listMapperHcl(databaseExadataInfrastructureContactsToHclTerraform, true)(this._contacts.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseExadataInfrastructureContactsList",
+      },
+      maintenance_window: {
+        value: databaseExadataInfrastructureMaintenanceWindowToHclTerraform(this._maintenanceWindow.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseExadataInfrastructureMaintenanceWindowList",
+      },
+      network_bonding_mode_details: {
+        value: databaseExadataInfrastructureNetworkBondingModeDetailsToHclTerraform(this._networkBondingModeDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseExadataInfrastructureNetworkBondingModeDetailsList",
+      },
+      timeouts: {
+        value: databaseExadataInfrastructureTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseExadataInfrastructureTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

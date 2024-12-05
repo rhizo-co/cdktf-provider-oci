@@ -32,7 +32,7 @@ export interface LogAnalyticsLogAnalyticsImportCustomContentConfig extends cdktf
   readonly namespace: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_import_custom_content#timeouts LogAnalyticsLogAnalyticsImportCustomContent#timeouts}
   */
   readonly timeouts?: LogAnalyticsLogAnalyticsImportCustomContentTimeouts;
@@ -47,6 +47,17 @@ export function logAnalyticsLogAnalyticsImportCustomContentChangeListStructToTer
   }
   return {
   }
+}
+
+
+export function logAnalyticsLogAnalyticsImportCustomContentChangeListStructToHclTerraform(struct?: LogAnalyticsLogAnalyticsImportCustomContentChangeListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class LogAnalyticsLogAnalyticsImportCustomContentChangeListStructOutputReference extends cdktf.ComplexObject {
@@ -168,6 +179,37 @@ export function logAnalyticsLogAnalyticsImportCustomContentTimeoutsToTerraform(s
   }
 }
 
+
+export function logAnalyticsLogAnalyticsImportCustomContentTimeoutsToHclTerraform(struct?: LogAnalyticsLogAnalyticsImportCustomContentTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LogAnalyticsLogAnalyticsImportCustomContentTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -280,6 +322,20 @@ export class LogAnalyticsLogAnalyticsImportCustomContent extends cdktf.Terraform
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_log_analytics_log_analytics_import_custom_content";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LogAnalyticsLogAnalyticsImportCustomContent resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LogAnalyticsLogAnalyticsImportCustomContent to import
+  * @param importFromId The id of the existing LogAnalyticsLogAnalyticsImportCustomContent that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_import_custom_content#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LogAnalyticsLogAnalyticsImportCustomContent to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_log_analytics_import_custom_content", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -449,5 +505,49 @@ export class LogAnalyticsLogAnalyticsImportCustomContent extends cdktf.Terraform
       namespace: cdktf.stringToTerraform(this._namespace),
       timeouts: logAnalyticsLogAnalyticsImportCustomContentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      expect: {
+        value: cdktf.stringToHclTerraform(this._expect),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      import_custom_content_file: {
+        value: cdktf.stringToHclTerraform(this._importCustomContentFile),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_overwrite: {
+        value: cdktf.booleanToHclTerraform(this._isOverwrite),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: logAnalyticsLogAnalyticsImportCustomContentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LogAnalyticsLogAnalyticsImportCustomContentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

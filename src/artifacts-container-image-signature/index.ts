@@ -52,7 +52,7 @@ export interface ArtifactsContainerImageSignatureConfig extends cdktf.TerraformM
   readonly signingAlgorithm: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/artifacts_container_image_signature#timeouts ArtifactsContainerImageSignature#timeouts}
   */
   readonly timeouts?: ArtifactsContainerImageSignatureTimeouts;
@@ -82,6 +82,37 @@ export function artifactsContainerImageSignatureTimeoutsToTerraform(struct?: Art
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function artifactsContainerImageSignatureTimeoutsToHclTerraform(struct?: ArtifactsContainerImageSignatureTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ArtifactsContainerImageSignatureTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -196,6 +227,20 @@ export class ArtifactsContainerImageSignature extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_artifacts_container_image_signature";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ArtifactsContainerImageSignature resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ArtifactsContainerImageSignature to import
+  * @param importFromId The id of the existing ArtifactsContainerImageSignature that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/artifacts_container_image_signature#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ArtifactsContainerImageSignature to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_artifacts_container_image_signature", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -440,5 +485,79 @@ export class ArtifactsContainerImageSignature extends cdktf.TerraformResource {
       signing_algorithm: cdktf.stringToTerraform(this._signingAlgorithm),
       timeouts: artifactsContainerImageSignatureTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      image_id: {
+        value: cdktf.stringToHclTerraform(this._imageId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kms_key_id: {
+        value: cdktf.stringToHclTerraform(this._kmsKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kms_key_version_id: {
+        value: cdktf.stringToHclTerraform(this._kmsKeyVersionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      message: {
+        value: cdktf.stringToHclTerraform(this._message),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      signature: {
+        value: cdktf.stringToHclTerraform(this._signature),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      signing_algorithm: {
+        value: cdktf.stringToHclTerraform(this._signingAlgorithm),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: artifactsContainerImageSignatureTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ArtifactsContainerImageSignatureTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -76,7 +76,7 @@ export interface DelegateAccessControlDelegationControlConfig extends cdktf.Terr
   readonly vaultKeyId?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/delegate_access_control_delegation_control#timeouts DelegateAccessControlDelegationControl#timeouts}
   */
   readonly timeouts?: DelegateAccessControlDelegationControlTimeouts;
@@ -106,6 +106,37 @@ export function delegateAccessControlDelegationControlTimeoutsToTerraform(struct
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function delegateAccessControlDelegationControlTimeoutsToHclTerraform(struct?: DelegateAccessControlDelegationControlTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DelegateAccessControlDelegationControlTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -220,6 +251,20 @@ export class DelegateAccessControlDelegationControl extends cdktf.TerraformResou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_delegate_access_control_delegation_control";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DelegateAccessControlDelegationControl resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DelegateAccessControlDelegationControl to import
+  * @param importFromId The id of the existing DelegateAccessControlDelegationControl that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/delegate_access_control_delegation_control#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DelegateAccessControlDelegationControl to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_delegate_access_control_delegation_control", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -577,5 +622,115 @@ export class DelegateAccessControlDelegationControl extends cdktf.TerraformResou
       vault_key_id: cdktf.stringToTerraform(this._vaultKeyId),
       timeouts: delegateAccessControlDelegationControlTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      delegation_subscription_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._delegationSubscriptionIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_auto_approve_during_maintenance: {
+        value: cdktf.booleanToHclTerraform(this._isAutoApproveDuringMaintenance),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      notification_message_format: {
+        value: cdktf.stringToHclTerraform(this._notificationMessageFormat),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      notification_topic_id: {
+        value: cdktf.stringToHclTerraform(this._notificationTopicId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      num_approvals_required: {
+        value: cdktf.numberToHclTerraform(this._numApprovalsRequired),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      pre_approved_service_provider_action_names: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._preApprovedServiceProviderActionNames),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      resource_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._resourceIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      resource_type: {
+        value: cdktf.stringToHclTerraform(this._resourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vault_id: {
+        value: cdktf.stringToHclTerraform(this._vaultId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vault_key_id: {
+        value: cdktf.stringToHclTerraform(this._vaultKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: delegateAccessControlDelegationControlTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DelegateAccessControlDelegationControlTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

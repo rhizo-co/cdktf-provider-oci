@@ -48,7 +48,7 @@ export interface DataOciDevopsRepositoryCommitsConfig extends cdktf.TerraformMet
   readonly timestampLessThanOrEqualTo?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_repository_commits#filter DataOciDevopsRepositoryCommits#filter}
   */
   readonly filter?: DataOciDevopsRepositoryCommitsFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciDevopsRepositoryCommitsRepositoryCommitCollectionItemsToT
   }
   return {
   }
+}
+
+
+export function dataOciDevopsRepositoryCommitsRepositoryCommitCollectionItemsToHclTerraform(struct?: DataOciDevopsRepositoryCommitsRepositoryCommitCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsRepositoryCommitsRepositoryCommitCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -181,6 +192,17 @@ export function dataOciDevopsRepositoryCommitsRepositoryCommitCollectionToTerraf
   }
 }
 
+
+export function dataOciDevopsRepositoryCommitsRepositoryCommitCollectionToHclTerraform(struct?: DataOciDevopsRepositoryCommitsRepositoryCommitCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsRepositoryCommitsRepositoryCommitCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -259,6 +281,37 @@ export function dataOciDevopsRepositoryCommitsFilterToTerraform(struct?: DataOci
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDevopsRepositoryCommitsFilterToHclTerraform(struct?: DataOciDevopsRepositoryCommitsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDevopsRepositoryCommitsFilterOutputReference extends cdktf.ComplexObject {
@@ -389,6 +442,20 @@ export class DataOciDevopsRepositoryCommits extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_repository_commits";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDevopsRepositoryCommits resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDevopsRepositoryCommits to import
+  * @param importFromId The id of the existing DataOciDevopsRepositoryCommits that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_repository_commits#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDevopsRepositoryCommits to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_repository_commits", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -613,5 +680,73 @@ export class DataOciDevopsRepositoryCommits extends cdktf.TerraformDataSource {
       timestamp_less_than_or_equal_to: cdktf.stringToTerraform(this._timestampLessThanOrEqualTo),
       filter: cdktf.listMapper(dataOciDevopsRepositoryCommitsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      author_name: {
+        value: cdktf.stringToHclTerraform(this._authorName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      commit_message: {
+        value: cdktf.stringToHclTerraform(this._commitMessage),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      exclude_ref_name: {
+        value: cdktf.stringToHclTerraform(this._excludeRefName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      file_path: {
+        value: cdktf.stringToHclTerraform(this._filePath),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ref_name: {
+        value: cdktf.stringToHclTerraform(this._refName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      repository_id: {
+        value: cdktf.stringToHclTerraform(this._repositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timestamp_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timestampGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timestamp_less_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timestampLessThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDevopsRepositoryCommitsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDevopsRepositoryCommitsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

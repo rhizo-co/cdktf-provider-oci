@@ -28,6 +28,17 @@ export function dataOciPsqlDbSystemCredentialsPasswordDetailsToTerraform(struct?
   }
 }
 
+
+export function dataOciPsqlDbSystemCredentialsPasswordDetailsToHclTerraform(struct?: DataOciPsqlDbSystemCredentialsPasswordDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciPsqlDbSystemCredentialsPasswordDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -107,6 +118,17 @@ export function dataOciPsqlDbSystemCredentialsToTerraform(struct?: DataOciPsqlDb
   }
 }
 
+
+export function dataOciPsqlDbSystemCredentialsToHclTerraform(struct?: DataOciPsqlDbSystemCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciPsqlDbSystemCredentialsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -175,6 +197,17 @@ export function dataOciPsqlDbSystemInstancesToTerraform(struct?: DataOciPsqlDbSy
   }
   return {
   }
+}
+
+
+export function dataOciPsqlDbSystemInstancesToHclTerraform(struct?: DataOciPsqlDbSystemInstances): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciPsqlDbSystemInstancesOutputReference extends cdktf.ComplexObject {
@@ -276,6 +309,17 @@ export function dataOciPsqlDbSystemInstancesDetailsToTerraform(struct?: DataOciP
   }
 }
 
+
+export function dataOciPsqlDbSystemInstancesDetailsToHclTerraform(struct?: DataOciPsqlDbSystemInstancesDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciPsqlDbSystemInstancesDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -348,6 +392,17 @@ export function dataOciPsqlDbSystemManagementPolicyBackupPolicyToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciPsqlDbSystemManagementPolicyBackupPolicyToHclTerraform(struct?: DataOciPsqlDbSystemManagementPolicyBackupPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciPsqlDbSystemManagementPolicyBackupPolicyOutputReference extends cdktf.ComplexObject {
@@ -434,6 +489,17 @@ export function dataOciPsqlDbSystemManagementPolicyToTerraform(struct?: DataOciP
   }
 }
 
+
+export function dataOciPsqlDbSystemManagementPolicyToHclTerraform(struct?: DataOciPsqlDbSystemManagementPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciPsqlDbSystemManagementPolicyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -502,6 +568,17 @@ export function dataOciPsqlDbSystemNetworkDetailsToTerraform(struct?: DataOciPsq
   }
   return {
   }
+}
+
+
+export function dataOciPsqlDbSystemNetworkDetailsToHclTerraform(struct?: DataOciPsqlDbSystemNetworkDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciPsqlDbSystemNetworkDetailsOutputReference extends cdktf.ComplexObject {
@@ -576,6 +653,17 @@ export function dataOciPsqlDbSystemPatchOperationsToTerraform(struct?: DataOciPs
   }
   return {
   }
+}
+
+
+export function dataOciPsqlDbSystemPatchOperationsToHclTerraform(struct?: DataOciPsqlDbSystemPatchOperations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciPsqlDbSystemPatchOperationsOutputReference extends cdktf.ComplexObject {
@@ -668,6 +756,17 @@ export function dataOciPsqlDbSystemSourceToTerraform(struct?: DataOciPsqlDbSyste
   }
 }
 
+
+export function dataOciPsqlDbSystemSourceToHclTerraform(struct?: DataOciPsqlDbSystemSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciPsqlDbSystemSourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -740,6 +839,17 @@ export function dataOciPsqlDbSystemStorageDetailsToTerraform(struct?: DataOciPsq
   }
   return {
   }
+}
+
+
+export function dataOciPsqlDbSystemStorageDetailsToHclTerraform(struct?: DataOciPsqlDbSystemStorageDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciPsqlDbSystemStorageDetailsOutputReference extends cdktf.ComplexObject {
@@ -819,6 +929,20 @@ export class DataOciPsqlDbSystem extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_psql_db_system";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciPsqlDbSystem resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciPsqlDbSystem to import
+  * @param importFromId The id of the existing DataOciPsqlDbSystem that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/psql_db_system#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciPsqlDbSystem to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_psql_db_system", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1044,5 +1168,25 @@ export class DataOciPsqlDbSystem extends cdktf.TerraformDataSource {
       db_system_id: cdktf.stringToTerraform(this._dbSystemId),
       excluded_fields: cdktf.stringToTerraform(this._excludedFields),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      db_system_id: {
+        value: cdktf.stringToHclTerraform(this._dbSystemId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      excluded_fields: {
+        value: cdktf.stringToHclTerraform(this._excludedFields),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

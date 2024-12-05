@@ -60,13 +60,13 @@ export interface DatabaseAutonomousContainerDatabaseDataguardAssociationConfig e
   readonly standbyMaintenanceBufferInDays?: number;
   /**
   * peer_autonomous_container_database_backup_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_container_database_dataguard_association#peer_autonomous_container_database_backup_config DatabaseAutonomousContainerDatabaseDataguardAssociation#peer_autonomous_container_database_backup_config}
   */
   readonly peerAutonomousContainerDatabaseBackupConfig?: DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_container_database_dataguard_association#timeouts DatabaseAutonomousContainerDatabaseDataguardAssociation#timeouts}
   */
   readonly timeouts?: DatabaseAutonomousContainerDatabaseDataguardAssociationTimeouts;
@@ -114,6 +114,55 @@ export function databaseAutonomousContainerDatabaseDataguardAssociationPeerAuton
     vpc_password: cdktf.stringToTerraform(struct!.vpcPassword),
     vpc_user: cdktf.stringToTerraform(struct!.vpcUser),
   }
+}
+
+
+export function databaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsToHclTerraform(struct?: DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dbrs_policy_id: {
+      value: cdktf.stringToHclTerraform(struct!.dbrsPolicyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    internet_proxy: {
+      value: cdktf.stringToHclTerraform(struct!.internetProxy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vpc_password: {
+      value: cdktf.stringToHclTerraform(struct!.vpcPassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vpc_user: {
+      value: cdktf.stringToHclTerraform(struct!.vpcUser),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsOutputReference extends cdktf.ComplexObject {
@@ -310,7 +359,7 @@ export interface DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAuto
   readonly recoveryWindowInDays?: number;
   /**
   * backup_destination_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_container_database_dataguard_association#backup_destination_details DatabaseAutonomousContainerDatabaseDataguardAssociation#backup_destination_details}
   */
   readonly backupDestinationDetails?: DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetails[] | cdktf.IResolvable;
@@ -325,6 +374,31 @@ export function databaseAutonomousContainerDatabaseDataguardAssociationPeerAuton
     recovery_window_in_days: cdktf.numberToTerraform(struct!.recoveryWindowInDays),
     backup_destination_details: cdktf.listMapper(databaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsToTerraform, true)(struct!.backupDestinationDetails),
   }
+}
+
+
+export function databaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigToHclTerraform(struct?: DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigOutputReference | DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    recovery_window_in_days: {
+      value: cdktf.numberToHclTerraform(struct!.recoveryWindowInDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    backup_destination_details: {
+      value: cdktf.listMapperHcl(databaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsToHclTerraform, true)(struct!.backupDestinationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigOutputReference extends cdktf.ComplexObject {
@@ -422,6 +496,37 @@ export function databaseAutonomousContainerDatabaseDataguardAssociationTimeoutsT
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseAutonomousContainerDatabaseDataguardAssociationTimeoutsToHclTerraform(struct?: DatabaseAutonomousContainerDatabaseDataguardAssociationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseAutonomousContainerDatabaseDataguardAssociationTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -536,6 +641,20 @@ export class DatabaseAutonomousContainerDatabaseDataguardAssociation extends cdk
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_container_database_dataguard_association";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseAutonomousContainerDatabaseDataguardAssociation resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseAutonomousContainerDatabaseDataguardAssociation to import
+  * @param importFromId The id of the existing DatabaseAutonomousContainerDatabaseDataguardAssociation that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_container_database_dataguard_association#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseAutonomousContainerDatabaseDataguardAssociation to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_container_database_dataguard_association", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -885,5 +1004,97 @@ export class DatabaseAutonomousContainerDatabaseDataguardAssociation extends cdk
       peer_autonomous_container_database_backup_config: databaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigToTerraform(this._peerAutonomousContainerDatabaseBackupConfig.internalValue),
       timeouts: databaseAutonomousContainerDatabaseDataguardAssociationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      autonomous_container_database_dataguard_association_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousContainerDatabaseDataguardAssociationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      autonomous_container_database_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousContainerDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fast_start_fail_over_lag_limit_in_seconds: {
+        value: cdktf.numberToHclTerraform(this._fastStartFailOverLagLimitInSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_automatic_failover_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isAutomaticFailoverEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      peer_autonomous_container_database_compartment_id: {
+        value: cdktf.stringToHclTerraform(this._peerAutonomousContainerDatabaseCompartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      peer_autonomous_container_database_display_name: {
+        value: cdktf.stringToHclTerraform(this._peerAutonomousContainerDatabaseDisplayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      peer_autonomous_vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._peerAutonomousVmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      peer_cloud_autonomous_vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._peerCloudAutonomousVmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      peer_db_unique_name: {
+        value: cdktf.stringToHclTerraform(this._peerDbUniqueName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      protection_mode: {
+        value: cdktf.stringToHclTerraform(this._protectionMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      standby_maintenance_buffer_in_days: {
+        value: cdktf.numberToHclTerraform(this._standbyMaintenanceBufferInDays),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      peer_autonomous_container_database_backup_config: {
+        value: databaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigToHclTerraform(this._peerAutonomousContainerDatabaseBackupConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseAutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigList",
+      },
+      timeouts: {
+        value: databaseAutonomousContainerDatabaseDataguardAssociationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseAutonomousContainerDatabaseDataguardAssociationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

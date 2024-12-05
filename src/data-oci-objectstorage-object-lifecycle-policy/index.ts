@@ -28,6 +28,17 @@ export function dataOciObjectstorageObjectLifecyclePolicyRulesObjectNameFilterTo
   }
 }
 
+
+export function dataOciObjectstorageObjectLifecyclePolicyRulesObjectNameFilterToHclTerraform(struct?: DataOciObjectstorageObjectLifecyclePolicyRulesObjectNameFilter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciObjectstorageObjectLifecyclePolicyRulesObjectNameFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -100,6 +111,17 @@ export function dataOciObjectstorageObjectLifecyclePolicyRulesToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciObjectstorageObjectLifecyclePolicyRulesToHclTerraform(struct?: DataOciObjectstorageObjectLifecyclePolicyRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciObjectstorageObjectLifecyclePolicyRulesOutputReference extends cdktf.ComplexObject {
@@ -196,6 +218,20 @@ export class DataOciObjectstorageObjectLifecyclePolicy extends cdktf.TerraformDa
   // =================
   public static readonly tfResourceType = "oci_objectstorage_object_lifecycle_policy";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciObjectstorageObjectLifecyclePolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciObjectstorageObjectLifecyclePolicy to import
+  * @param importFromId The id of the existing DataOciObjectstorageObjectLifecyclePolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/objectstorage_object_lifecycle_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciObjectstorageObjectLifecyclePolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_objectstorage_object_lifecycle_policy", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -282,5 +318,25 @@ export class DataOciObjectstorageObjectLifecyclePolicy extends cdktf.TerraformDa
       bucket: cdktf.stringToTerraform(this._bucket),
       namespace: cdktf.stringToTerraform(this._namespace),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -48,7 +48,7 @@ export interface DataOciDataflowInvokeRunsConfig extends cdktf.TerraformMetaArgu
   readonly timeCreatedGreaterThan?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dataflow_invoke_runs#filter DataOciDataflowInvokeRuns#filter}
   */
   readonly filter?: DataOciDataflowInvokeRunsFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciDataflowInvokeRunsRunsApplicationLogConfigToTerraform(str
   }
   return {
   }
+}
+
+
+export function dataOciDataflowInvokeRunsRunsApplicationLogConfigToHclTerraform(struct?: DataOciDataflowInvokeRunsRunsApplicationLogConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataflowInvokeRunsRunsApplicationLogConfigOutputReference extends cdktf.ComplexObject {
@@ -134,6 +145,17 @@ export function dataOciDataflowInvokeRunsRunsDriverShapeConfigToTerraform(struct
   }
 }
 
+
+export function dataOciDataflowInvokeRunsRunsDriverShapeConfigToHclTerraform(struct?: DataOciDataflowInvokeRunsRunsDriverShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataflowInvokeRunsRunsDriverShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -201,6 +223,17 @@ export function dataOciDataflowInvokeRunsRunsExecutorShapeConfigToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataOciDataflowInvokeRunsRunsExecutorShapeConfigToHclTerraform(struct?: DataOciDataflowInvokeRunsRunsExecutorShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataflowInvokeRunsRunsExecutorShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -272,6 +305,17 @@ export function dataOciDataflowInvokeRunsRunsParametersToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciDataflowInvokeRunsRunsParametersToHclTerraform(struct?: DataOciDataflowInvokeRunsRunsParameters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataflowInvokeRunsRunsParametersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -339,6 +383,17 @@ export function dataOciDataflowInvokeRunsRunsToTerraform(struct?: DataOciDataflo
   }
   return {
   }
+}
+
+
+export function dataOciDataflowInvokeRunsRunsToHclTerraform(struct?: DataOciDataflowInvokeRunsRuns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataflowInvokeRunsRunsOutputReference extends cdktf.ComplexObject {
@@ -652,6 +707,37 @@ export function dataOciDataflowInvokeRunsFilterToTerraform(struct?: DataOciDataf
   }
 }
 
+
+export function dataOciDataflowInvokeRunsFilterToHclTerraform(struct?: DataOciDataflowInvokeRunsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciDataflowInvokeRunsFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -780,6 +866,20 @@ export class DataOciDataflowInvokeRuns extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataflow_invoke_runs";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataflowInvokeRuns resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataflowInvokeRuns to import
+  * @param importFromId The id of the existing DataOciDataflowInvokeRuns that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dataflow_invoke_runs#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataflowInvokeRuns to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataflow_invoke_runs", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1004,5 +1104,73 @@ export class DataOciDataflowInvokeRuns extends cdktf.TerraformDataSource {
       time_created_greater_than: cdktf.stringToTerraform(this._timeCreatedGreaterThan),
       filter: cdktf.listMapper(dataOciDataflowInvokeRunsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      application_id: {
+        value: cdktf.stringToHclTerraform(this._applicationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name_starts_with: {
+        value: cdktf.stringToHclTerraform(this._displayNameStartsWith),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      owner_principal_id: {
+        value: cdktf.stringToHclTerraform(this._ownerPrincipalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pool_id: {
+        value: cdktf.stringToHclTerraform(this._poolId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_greater_than: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedGreaterThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataflowInvokeRunsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataflowInvokeRunsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -45,37 +45,37 @@ export interface IdentityDomainsGrantConfig extends cdktf.TerraformMetaArguments
   readonly schemas: string[];
   /**
   * app block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_grant#app IdentityDomainsGrant#app}
   */
   readonly app?: IdentityDomainsGrantApp;
   /**
   * app_entitlement_collection block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_grant#app_entitlement_collection IdentityDomainsGrant#app_entitlement_collection}
   */
   readonly appEntitlementCollection?: IdentityDomainsGrantAppEntitlementCollection;
   /**
   * entitlement block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_grant#entitlement IdentityDomainsGrant#entitlement}
   */
   readonly entitlement?: IdentityDomainsGrantEntitlement;
   /**
   * grantee block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_grant#grantee IdentityDomainsGrant#grantee}
   */
   readonly grantee: IdentityDomainsGrantGrantee;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_grant#tags IdentityDomainsGrant#tags}
   */
   readonly tags?: IdentityDomainsGrantTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_grant#timeouts IdentityDomainsGrant#timeouts}
   */
   readonly timeouts?: IdentityDomainsGrantTimeouts;
@@ -90,6 +90,17 @@ export function identityDomainsGrantGrantorToTerraform(struct?: IdentityDomainsG
   }
   return {
   }
+}
+
+
+export function identityDomainsGrantGrantorToHclTerraform(struct?: IdentityDomainsGrantGrantor): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsGrantGrantorOutputReference extends cdktf.ComplexObject {
@@ -169,6 +180,17 @@ export function identityDomainsGrantIdcsCreatedByToTerraform(struct?: IdentityDo
   }
   return {
   }
+}
+
+
+export function identityDomainsGrantIdcsCreatedByToHclTerraform(struct?: IdentityDomainsGrantIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsGrantIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -255,6 +277,17 @@ export function identityDomainsGrantIdcsLastModifiedByToTerraform(struct?: Ident
   }
 }
 
+
+export function identityDomainsGrantIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsGrantIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsGrantIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -337,6 +370,17 @@ export function identityDomainsGrantMetaToTerraform(struct?: IdentityDomainsGran
   }
   return {
   }
+}
+
+
+export function identityDomainsGrantMetaToHclTerraform(struct?: IdentityDomainsGrantMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsGrantMetaOutputReference extends cdktf.ComplexObject {
@@ -428,6 +472,25 @@ export function identityDomainsGrantAppToTerraform(struct?: IdentityDomainsGrant
   }
 }
 
+
+export function identityDomainsGrantAppToHclTerraform(struct?: IdentityDomainsGrantAppOutputReference | IdentityDomainsGrantApp): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsGrantAppOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -500,6 +563,25 @@ export function identityDomainsGrantAppEntitlementCollectionToTerraform(struct?:
   }
 }
 
+
+export function identityDomainsGrantAppEntitlementCollectionToHclTerraform(struct?: IdentityDomainsGrantAppEntitlementCollectionOutputReference | IdentityDomainsGrantAppEntitlementCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsGrantAppEntitlementCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -570,6 +652,31 @@ export function identityDomainsGrantEntitlementToTerraform(struct?: IdentityDoma
     attribute_name: cdktf.stringToTerraform(struct!.attributeName),
     attribute_value: cdktf.stringToTerraform(struct!.attributeValue),
   }
+}
+
+
+export function identityDomainsGrantEntitlementToHclTerraform(struct?: IdentityDomainsGrantEntitlementOutputReference | IdentityDomainsGrantEntitlement): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    attribute_name: {
+      value: cdktf.stringToHclTerraform(struct!.attributeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    attribute_value: {
+      value: cdktf.stringToHclTerraform(struct!.attributeValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsGrantEntitlementOutputReference extends cdktf.ComplexObject {
@@ -656,6 +763,31 @@ export function identityDomainsGrantGranteeToTerraform(struct?: IdentityDomainsG
     type: cdktf.stringToTerraform(struct!.type),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsGrantGranteeToHclTerraform(struct?: IdentityDomainsGrantGranteeOutputReference | IdentityDomainsGrantGrantee): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsGrantGranteeOutputReference extends cdktf.ComplexObject {
@@ -752,6 +884,31 @@ export function identityDomainsGrantTagsToTerraform(struct?: IdentityDomainsGran
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsGrantTagsToHclTerraform(struct?: IdentityDomainsGrantTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsGrantTagsOutputReference extends cdktf.ComplexObject {
@@ -877,6 +1034,37 @@ export function identityDomainsGrantTimeoutsToTerraform(struct?: IdentityDomains
   }
 }
 
+
+export function identityDomainsGrantTimeoutsToHclTerraform(struct?: IdentityDomainsGrantTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsGrantTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -989,6 +1177,20 @@ export class IdentityDomainsGrant extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_grant";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsGrant resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsGrant to import
+  * @param importFromId The id of the existing IdentityDomainsGrant that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_grant#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsGrant to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_grant", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1357,5 +1559,103 @@ export class IdentityDomainsGrant extends cdktf.TerraformResource {
       tags: cdktf.listMapper(identityDomainsGrantTagsToTerraform, true)(this._tags.internalValue),
       timeouts: identityDomainsGrantTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      grant_mechanism: {
+        value: cdktf.stringToHclTerraform(this._grantMechanism),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      granted_attribute_values_json: {
+        value: cdktf.stringToHclTerraform(this._grantedAttributeValuesJson),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      app: {
+        value: identityDomainsGrantAppToHclTerraform(this._app.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGrantAppList",
+      },
+      app_entitlement_collection: {
+        value: identityDomainsGrantAppEntitlementCollectionToHclTerraform(this._appEntitlementCollection.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGrantAppEntitlementCollectionList",
+      },
+      entitlement: {
+        value: identityDomainsGrantEntitlementToHclTerraform(this._entitlement.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGrantEntitlementList",
+      },
+      grantee: {
+        value: identityDomainsGrantGranteeToHclTerraform(this._grantee.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGrantGranteeList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsGrantTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsGrantTagsList",
+      },
+      timeouts: {
+        value: identityDomainsGrantTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsGrantTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -34,6 +34,20 @@ export class DataOciOperatorAccessControlAccessRequestAuditLogReport extends cdk
   // =================
   public static readonly tfResourceType = "oci_operator_access_control_access_request_audit_log_report";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOperatorAccessControlAccessRequestAuditLogReport resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOperatorAccessControlAccessRequestAuditLogReport to import
+  * @param importFromId The id of the existing DataOciOperatorAccessControlAccessRequestAuditLogReport that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/operator_access_control_access_request_audit_log_report#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOperatorAccessControlAccessRequestAuditLogReport to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_operator_access_control_access_request_audit_log_report", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -145,5 +159,31 @@ export class DataOciOperatorAccessControlAccessRequestAuditLogReport extends cdk
       enable_process_tree: cdktf.numberToTerraform(this._enableProcessTree),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      access_request_id: {
+        value: cdktf.stringToHclTerraform(this._accessRequestId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enable_process_tree: {
+        value: cdktf.numberToHclTerraform(this._enableProcessTree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

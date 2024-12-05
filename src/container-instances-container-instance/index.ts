@@ -56,43 +56,43 @@ export interface ContainerInstancesContainerInstanceConfig extends cdktf.Terrafo
   readonly state?: string;
   /**
   * containers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#containers ContainerInstancesContainerInstance#containers}
   */
   readonly containers: ContainerInstancesContainerInstanceContainers[] | cdktf.IResolvable;
   /**
   * dns_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#dns_config ContainerInstancesContainerInstance#dns_config}
   */
   readonly dnsConfig?: ContainerInstancesContainerInstanceDnsConfig;
   /**
   * image_pull_secrets block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#image_pull_secrets ContainerInstancesContainerInstance#image_pull_secrets}
   */
   readonly imagePullSecrets?: ContainerInstancesContainerInstanceImagePullSecrets[] | cdktf.IResolvable;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#shape_config ContainerInstancesContainerInstance#shape_config}
   */
   readonly shapeConfig: ContainerInstancesContainerInstanceShapeConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#timeouts ContainerInstancesContainerInstance#timeouts}
   */
   readonly timeouts?: ContainerInstancesContainerInstanceTimeouts;
   /**
   * vnics block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#vnics ContainerInstancesContainerInstance#vnics}
   */
   readonly vnics: ContainerInstancesContainerInstanceVnics[] | cdktf.IResolvable;
   /**
   * volumes block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#volumes ContainerInstancesContainerInstance#volumes}
   */
   readonly volumes?: ContainerInstancesContainerInstanceVolumes[] | cdktf.IResolvable;
@@ -117,6 +117,31 @@ export function containerInstancesContainerInstanceContainersHealthChecksHeaders
     name: cdktf.stringToTerraform(struct!.name),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function containerInstancesContainerInstanceContainersHealthChecksHeadersToHclTerraform(struct?: ContainerInstancesContainerInstanceContainersHealthChecksHeaders | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceContainersHealthChecksHeadersOutputReference extends cdktf.ComplexObject {
@@ -276,7 +301,7 @@ export interface ContainerInstancesContainerInstanceContainersHealthChecks {
   readonly timeoutInSeconds?: number;
   /**
   * headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#headers ContainerInstancesContainerInstance#headers}
   */
   readonly headers?: ContainerInstancesContainerInstanceContainersHealthChecksHeaders[] | cdktf.IResolvable;
@@ -303,6 +328,103 @@ export function containerInstancesContainerInstanceContainersHealthChecksToTerra
     timeout_in_seconds: cdktf.numberToTerraform(struct!.timeoutInSeconds),
     headers: cdktf.listMapper(containerInstancesContainerInstanceContainersHealthChecksHeadersToTerraform, true)(struct!.headers),
   }
+}
+
+
+export function containerInstancesContainerInstanceContainersHealthChecksToHclTerraform(struct?: ContainerInstancesContainerInstanceContainersHealthChecks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    failure_action: {
+      value: cdktf.stringToHclTerraform(struct!.failureAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    failure_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.failureThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    health_check_type: {
+      value: cdktf.stringToHclTerraform(struct!.healthCheckType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    initial_delay_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.initialDelayInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    interval_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.intervalInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    status: {
+      value: cdktf.stringToHclTerraform(struct!.status),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    status_details: {
+      value: cdktf.stringToHclTerraform(struct!.statusDetails),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    success_threshold: {
+      value: cdktf.numberToHclTerraform(struct!.successThreshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    timeout_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    headers: {
+      value: cdktf.listMapperHcl(containerInstancesContainerInstanceContainersHealthChecksHeadersToHclTerraform, true)(struct!.headers),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerInstancesContainerInstanceContainersHealthChecksHeadersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceContainersHealthChecksOutputReference extends cdktf.ComplexObject {
@@ -690,6 +812,31 @@ export function containerInstancesContainerInstanceContainersResourceConfigToTer
   }
 }
 
+
+export function containerInstancesContainerInstanceContainersResourceConfigToHclTerraform(struct?: ContainerInstancesContainerInstanceContainersResourceConfigOutputReference | ContainerInstancesContainerInstanceContainersResourceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_limit_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryLimitInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    vcpus_limit: {
+      value: cdktf.numberToHclTerraform(struct!.vcpusLimit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerInstancesContainerInstanceContainersResourceConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -780,6 +927,31 @@ export function containerInstancesContainerInstanceContainersSecurityContextCapa
     add_capabilities: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.addCapabilities),
     drop_capabilities: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.dropCapabilities),
   }
+}
+
+
+export function containerInstancesContainerInstanceContainersSecurityContextCapabilitiesToHclTerraform(struct?: ContainerInstancesContainerInstanceContainersSecurityContextCapabilitiesOutputReference | ContainerInstancesContainerInstanceContainersSecurityContextCapabilities): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    add_capabilities: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.addCapabilities),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    drop_capabilities: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.dropCapabilities),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceContainersSecurityContextCapabilitiesOutputReference extends cdktf.ComplexObject {
@@ -875,7 +1047,7 @@ export interface ContainerInstancesContainerInstanceContainersSecurityContext {
   readonly securityContextType?: string;
   /**
   * capabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#capabilities ContainerInstancesContainerInstance#capabilities}
   */
   readonly capabilities?: ContainerInstancesContainerInstanceContainersSecurityContextCapabilities;
@@ -894,6 +1066,55 @@ export function containerInstancesContainerInstanceContainersSecurityContextToTe
     security_context_type: cdktf.stringToTerraform(struct!.securityContextType),
     capabilities: containerInstancesContainerInstanceContainersSecurityContextCapabilitiesToTerraform(struct!.capabilities),
   }
+}
+
+
+export function containerInstancesContainerInstanceContainersSecurityContextToHclTerraform(struct?: ContainerInstancesContainerInstanceContainersSecurityContextOutputReference | ContainerInstancesContainerInstanceContainersSecurityContext): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_non_root_user_check_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isNonRootUserCheckEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_root_file_system_readonly: {
+      value: cdktf.booleanToHclTerraform(struct!.isRootFileSystemReadonly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    run_as_group: {
+      value: cdktf.numberToHclTerraform(struct!.runAsGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    run_as_user: {
+      value: cdktf.numberToHclTerraform(struct!.runAsUser),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    security_context_type: {
+      value: cdktf.stringToHclTerraform(struct!.securityContextType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    capabilities: {
+      value: containerInstancesContainerInstanceContainersSecurityContextCapabilitiesToHclTerraform(struct!.capabilities),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerInstancesContainerInstanceContainersSecurityContextCapabilitiesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceContainersSecurityContextOutputReference extends cdktf.ComplexObject {
@@ -1089,6 +1310,49 @@ export function containerInstancesContainerInstanceContainersVolumeMountsToTerra
     sub_path: cdktf.stringToTerraform(struct!.subPath),
     volume_name: cdktf.stringToTerraform(struct!.volumeName),
   }
+}
+
+
+export function containerInstancesContainerInstanceContainersVolumeMountsToHclTerraform(struct?: ContainerInstancesContainerInstanceContainersVolumeMounts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_read_only: {
+      value: cdktf.booleanToHclTerraform(struct!.isReadOnly),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    mount_path: {
+      value: cdktf.stringToHclTerraform(struct!.mountPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    partition: {
+      value: cdktf.numberToHclTerraform(struct!.partition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    sub_path: {
+      value: cdktf.stringToHclTerraform(struct!.subPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    volume_name: {
+      value: cdktf.stringToHclTerraform(struct!.volumeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceContainersVolumeMountsOutputReference extends cdktf.ComplexObject {
@@ -1292,25 +1556,25 @@ export interface ContainerInstancesContainerInstanceContainers {
   readonly workingDirectory?: string;
   /**
   * health_checks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#health_checks ContainerInstancesContainerInstance#health_checks}
   */
   readonly healthChecks?: ContainerInstancesContainerInstanceContainersHealthChecks[] | cdktf.IResolvable;
   /**
   * resource_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#resource_config ContainerInstancesContainerInstance#resource_config}
   */
   readonly resourceConfig?: ContainerInstancesContainerInstanceContainersResourceConfig;
   /**
   * security_context block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#security_context ContainerInstancesContainerInstance#security_context}
   */
   readonly securityContext?: ContainerInstancesContainerInstanceContainersSecurityContext;
   /**
   * volume_mounts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#volume_mounts ContainerInstancesContainerInstance#volume_mounts}
   */
   readonly volumeMounts?: ContainerInstancesContainerInstanceContainersVolumeMounts[] | cdktf.IResolvable;
@@ -1336,6 +1600,97 @@ export function containerInstancesContainerInstanceContainersToTerraform(struct?
     security_context: containerInstancesContainerInstanceContainersSecurityContextToTerraform(struct!.securityContext),
     volume_mounts: cdktf.listMapper(containerInstancesContainerInstanceContainersVolumeMountsToTerraform, true)(struct!.volumeMounts),
   }
+}
+
+
+export function containerInstancesContainerInstanceContainersToHclTerraform(struct?: ContainerInstancesContainerInstanceContainers | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    arguments: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.arguments),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    command: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.command),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    environment_variables: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.environmentVariables),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    image_url: {
+      value: cdktf.stringToHclTerraform(struct!.imageUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_resource_principal_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isResourcePrincipalDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    working_directory: {
+      value: cdktf.stringToHclTerraform(struct!.workingDirectory),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    health_checks: {
+      value: cdktf.listMapperHcl(containerInstancesContainerInstanceContainersHealthChecksToHclTerraform, true)(struct!.healthChecks),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerInstancesContainerInstanceContainersHealthChecksList",
+    },
+    resource_config: {
+      value: containerInstancesContainerInstanceContainersResourceConfigToHclTerraform(struct!.resourceConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerInstancesContainerInstanceContainersResourceConfigList",
+    },
+    security_context: {
+      value: containerInstancesContainerInstanceContainersSecurityContextToHclTerraform(struct!.securityContext),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerInstancesContainerInstanceContainersSecurityContextList",
+    },
+    volume_mounts: {
+      value: cdktf.listMapperHcl(containerInstancesContainerInstanceContainersVolumeMountsToHclTerraform, true)(struct!.volumeMounts),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerInstancesContainerInstanceContainersVolumeMountsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceContainersOutputReference extends cdktf.ComplexObject {
@@ -1767,6 +2122,37 @@ export function containerInstancesContainerInstanceDnsConfigToTerraform(struct?:
   }
 }
 
+
+export function containerInstancesContainerInstanceDnsConfigToHclTerraform(struct?: ContainerInstancesContainerInstanceDnsConfigOutputReference | ContainerInstancesContainerInstanceDnsConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    nameservers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nameservers),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    options: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.options),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    searches: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.searches),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerInstancesContainerInstanceDnsConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1894,6 +2280,49 @@ export function containerInstancesContainerInstanceImagePullSecretsToTerraform(s
     secret_type: cdktf.stringToTerraform(struct!.secretType),
     username: cdktf.stringToTerraform(struct!.username),
   }
+}
+
+
+export function containerInstancesContainerInstanceImagePullSecretsToHclTerraform(struct?: ContainerInstancesContainerInstanceImagePullSecrets | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    registry_endpoint: {
+      value: cdktf.stringToHclTerraform(struct!.registryEndpoint),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_type: {
+      value: cdktf.stringToHclTerraform(struct!.secretType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceImagePullSecretsOutputReference extends cdktf.ComplexObject {
@@ -2080,6 +2509,31 @@ export function containerInstancesContainerInstanceShapeConfigToTerraform(struct
   }
 }
 
+
+export function containerInstancesContainerInstanceShapeConfigToHclTerraform(struct?: ContainerInstancesContainerInstanceShapeConfigOutputReference | ContainerInstancesContainerInstanceShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerInstancesContainerInstanceShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2182,6 +2636,37 @@ export function containerInstancesContainerInstanceTimeoutsToTerraform(struct?: 
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function containerInstancesContainerInstanceTimeoutsToHclTerraform(struct?: ContainerInstancesContainerInstanceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -2341,6 +2826,73 @@ export function containerInstancesContainerInstanceVnicsToTerraform(struct?: Con
     skip_source_dest_check: cdktf.booleanToTerraform(struct!.skipSourceDestCheck),
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
   }
+}
+
+
+export function containerInstancesContainerInstanceVnicsToHclTerraform(struct?: ContainerInstancesContainerInstanceVnics | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    hostname_label: {
+      value: cdktf.stringToHclTerraform(struct!.hostnameLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_public_ip_assigned: {
+      value: cdktf.booleanToHclTerraform(struct!.isPublicIpAssigned),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    skip_source_dest_check: {
+      value: cdktf.booleanToHclTerraform(struct!.skipSourceDestCheck),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceVnicsOutputReference extends cdktf.ComplexObject {
@@ -2628,6 +3180,37 @@ export function containerInstancesContainerInstanceVolumesConfigsToTerraform(str
   }
 }
 
+
+export function containerInstancesContainerInstanceVolumesConfigsToHclTerraform(struct?: ContainerInstancesContainerInstanceVolumesConfigs | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    data: {
+      value: cdktf.stringToHclTerraform(struct!.data),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    file_name: {
+      value: cdktf.stringToHclTerraform(struct!.fileName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ContainerInstancesContainerInstanceVolumesConfigsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2767,7 +3350,7 @@ export interface ContainerInstancesContainerInstanceVolumes {
   readonly volumeType: string;
   /**
   * configs block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#configs ContainerInstancesContainerInstance#configs}
   */
   readonly configs?: ContainerInstancesContainerInstanceVolumesConfigs[] | cdktf.IResolvable;
@@ -2784,6 +3367,43 @@ export function containerInstancesContainerInstanceVolumesToTerraform(struct?: C
     volume_type: cdktf.stringToTerraform(struct!.volumeType),
     configs: cdktf.listMapper(containerInstancesContainerInstanceVolumesConfigsToTerraform, true)(struct!.configs),
   }
+}
+
+
+export function containerInstancesContainerInstanceVolumesToHclTerraform(struct?: ContainerInstancesContainerInstanceVolumes | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    backing_store: {
+      value: cdktf.stringToHclTerraform(struct!.backingStore),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    volume_type: {
+      value: cdktf.stringToHclTerraform(struct!.volumeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    configs: {
+      value: cdktf.listMapperHcl(containerInstancesContainerInstanceVolumesConfigsToHclTerraform, true)(struct!.configs),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ContainerInstancesContainerInstanceVolumesConfigsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerInstancesContainerInstanceVolumesOutputReference extends cdktf.ComplexObject {
@@ -2936,6 +3556,20 @@ export class ContainerInstancesContainerInstance extends cdktf.TerraformResource
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_container_instances_container_instance";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ContainerInstancesContainerInstance resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ContainerInstancesContainerInstance to import
+  * @param importFromId The id of the existing ContainerInstancesContainerInstance that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/container_instances_container_instance#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ContainerInstancesContainerInstance to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_container_instances_container_instance", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -3314,5 +3948,121 @@ export class ContainerInstancesContainerInstance extends cdktf.TerraformResource
       vnics: cdktf.listMapper(containerInstancesContainerInstanceVnicsToTerraform, true)(this._vnics.internalValue),
       volumes: cdktf.listMapper(containerInstancesContainerInstanceVolumesToTerraform, true)(this._volumes.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      container_restart_policy: {
+        value: cdktf.stringToHclTerraform(this._containerRestartPolicy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fault_domain: {
+        value: cdktf.stringToHclTerraform(this._faultDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      graceful_shutdown_timeout_in_seconds: {
+        value: cdktf.stringToHclTerraform(this._gracefulShutdownTimeoutInSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      shape: {
+        value: cdktf.stringToHclTerraform(this._shape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      containers: {
+        value: cdktf.listMapperHcl(containerInstancesContainerInstanceContainersToHclTerraform, true)(this._containers.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerInstancesContainerInstanceContainersList",
+      },
+      dns_config: {
+        value: containerInstancesContainerInstanceDnsConfigToHclTerraform(this._dnsConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerInstancesContainerInstanceDnsConfigList",
+      },
+      image_pull_secrets: {
+        value: cdktf.listMapperHcl(containerInstancesContainerInstanceImagePullSecretsToHclTerraform, true)(this._imagePullSecrets.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerInstancesContainerInstanceImagePullSecretsList",
+      },
+      shape_config: {
+        value: containerInstancesContainerInstanceShapeConfigToHclTerraform(this._shapeConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerInstancesContainerInstanceShapeConfigList",
+      },
+      timeouts: {
+        value: containerInstancesContainerInstanceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ContainerInstancesContainerInstanceTimeouts",
+      },
+      vnics: {
+        value: cdktf.listMapperHcl(containerInstancesContainerInstanceVnicsToHclTerraform, true)(this._vnics.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerInstancesContainerInstanceVnicsList",
+      },
+      volumes: {
+        value: cdktf.listMapperHcl(containerInstancesContainerInstanceVolumesToHclTerraform, true)(this._volumes.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ContainerInstancesContainerInstanceVolumesList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -56,7 +56,7 @@ export interface BudgetAlertRuleConfig extends cdktf.TerraformMetaArguments {
   readonly type: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/budget_alert_rule#timeouts BudgetAlertRule#timeouts}
   */
   readonly timeouts?: BudgetAlertRuleTimeouts;
@@ -86,6 +86,37 @@ export function budgetAlertRuleTimeoutsToTerraform(struct?: BudgetAlertRuleTimeo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function budgetAlertRuleTimeoutsToHclTerraform(struct?: BudgetAlertRuleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BudgetAlertRuleTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -200,6 +231,20 @@ export class BudgetAlertRule extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_budget_alert_rule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a BudgetAlertRule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the BudgetAlertRule to import
+  * @param importFromId The id of the existing BudgetAlertRule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/budget_alert_rule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the BudgetAlertRule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_budget_alert_rule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -465,5 +510,85 @@ export class BudgetAlertRule extends cdktf.TerraformResource {
       type: cdktf.stringToTerraform(this._type),
       timeouts: budgetAlertRuleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      budget_id: {
+        value: cdktf.stringToHclTerraform(this._budgetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      message: {
+        value: cdktf.stringToHclTerraform(this._message),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      recipients: {
+        value: cdktf.stringToHclTerraform(this._recipients),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      threshold: {
+        value: cdktf.numberToHclTerraform(this._threshold),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      threshold_type: {
+        value: cdktf.stringToHclTerraform(this._thresholdType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: budgetAlertRuleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "BudgetAlertRuleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

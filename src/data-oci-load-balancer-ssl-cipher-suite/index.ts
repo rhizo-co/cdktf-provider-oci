@@ -27,6 +27,20 @@ export class DataOciLoadBalancerSslCipherSuite extends cdktf.TerraformDataSource
   // =================
   public static readonly tfResourceType = "oci_load_balancer_ssl_cipher_suite";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLoadBalancerSslCipherSuite resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLoadBalancerSslCipherSuite to import
+  * @param importFromId The id of the existing DataOciLoadBalancerSslCipherSuite that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/load_balancer_ssl_cipher_suite#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLoadBalancerSslCipherSuite to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_load_balancer_ssl_cipher_suite", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -112,5 +126,25 @@ export class DataOciLoadBalancerSslCipherSuite extends cdktf.TerraformDataSource
       load_balancer_id: cdktf.stringToTerraform(this._loadBalancerId),
       name: cdktf.stringToTerraform(this._name),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      load_balancer_id: {
+        value: cdktf.stringToHclTerraform(this._loadBalancerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

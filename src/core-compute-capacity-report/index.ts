@@ -24,13 +24,13 @@ export interface CoreComputeCapacityReportConfig extends cdktf.TerraformMetaArgu
   readonly id?: string;
   /**
   * shape_availabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_report#shape_availabilities CoreComputeCapacityReport#shape_availabilities}
   */
   readonly shapeAvailabilities: CoreComputeCapacityReportShapeAvailabilities[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_report#timeouts CoreComputeCapacityReport#timeouts}
   */
   readonly timeouts?: CoreComputeCapacityReportTimeouts;
@@ -60,6 +60,37 @@ export function coreComputeCapacityReportShapeAvailabilitiesInstanceShapeConfigT
     nvmes: cdktf.numberToTerraform(struct!.nvmes),
     ocpus: cdktf.numberToTerraform(struct!.ocpus),
   }
+}
+
+
+export function coreComputeCapacityReportShapeAvailabilitiesInstanceShapeConfigToHclTerraform(struct?: CoreComputeCapacityReportShapeAvailabilitiesInstanceShapeConfigOutputReference | CoreComputeCapacityReportShapeAvailabilitiesInstanceShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    nvmes: {
+      value: cdktf.numberToHclTerraform(struct!.nvmes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreComputeCapacityReportShapeAvailabilitiesInstanceShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -165,7 +196,7 @@ export interface CoreComputeCapacityReportShapeAvailabilities {
   readonly instanceShape: string;
   /**
   * instance_shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_report#instance_shape_config CoreComputeCapacityReport#instance_shape_config}
   */
   readonly instanceShapeConfig?: CoreComputeCapacityReportShapeAvailabilitiesInstanceShapeConfig;
@@ -181,6 +212,37 @@ export function coreComputeCapacityReportShapeAvailabilitiesToTerraform(struct?:
     instance_shape: cdktf.stringToTerraform(struct!.instanceShape),
     instance_shape_config: coreComputeCapacityReportShapeAvailabilitiesInstanceShapeConfigToTerraform(struct!.instanceShapeConfig),
   }
+}
+
+
+export function coreComputeCapacityReportShapeAvailabilitiesToHclTerraform(struct?: CoreComputeCapacityReportShapeAvailabilities | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fault_domain: {
+      value: cdktf.stringToHclTerraform(struct!.faultDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    instance_shape: {
+      value: cdktf.stringToHclTerraform(struct!.instanceShape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    instance_shape_config: {
+      value: coreComputeCapacityReportShapeAvailabilitiesInstanceShapeConfigToHclTerraform(struct!.instanceShapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreComputeCapacityReportShapeAvailabilitiesInstanceShapeConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreComputeCapacityReportShapeAvailabilitiesOutputReference extends cdktf.ComplexObject {
@@ -341,6 +403,37 @@ export function coreComputeCapacityReportTimeoutsToTerraform(struct?: CoreComput
   }
 }
 
+
+export function coreComputeCapacityReportTimeoutsToHclTerraform(struct?: CoreComputeCapacityReportTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreComputeCapacityReportTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -453,6 +546,20 @@ export class CoreComputeCapacityReport extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_compute_capacity_report";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreComputeCapacityReport resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreComputeCapacityReport to import
+  * @param importFromId The id of the existing CoreComputeCapacityReport that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_report#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreComputeCapacityReport to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_compute_capacity_report", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -580,5 +687,43 @@ export class CoreComputeCapacityReport extends cdktf.TerraformResource {
       shape_availabilities: cdktf.listMapper(coreComputeCapacityReportShapeAvailabilitiesToTerraform, true)(this._shapeAvailabilities.internalValue),
       timeouts: coreComputeCapacityReportTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      shape_availabilities: {
+        value: cdktf.listMapperHcl(coreComputeCapacityReportShapeAvailabilitiesToHclTerraform, true)(this._shapeAvailabilities.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreComputeCapacityReportShapeAvailabilitiesList",
+      },
+      timeouts: {
+        value: coreComputeCapacityReportTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreComputeCapacityReportTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

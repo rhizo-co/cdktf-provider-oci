@@ -20,7 +20,7 @@ export interface DataOciCoreVolumeBackupPolicyAssignmentsConfig extends cdktf.Te
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_volume_backup_policy_assignments#filter DataOciCoreVolumeBackupPolicyAssignments#filter}
   */
   readonly filter?: DataOciCoreVolumeBackupPolicyAssignmentsFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciCoreVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssign
   }
   return {
   }
+}
+
+
+export function dataOciCoreVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentsToHclTerraform(struct?: DataOciCoreVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignments): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreVolumeBackupPolicyAssignmentsVolumeBackupPolicyAssignmentsOutputReference extends cdktf.ComplexObject {
@@ -134,6 +145,37 @@ export function dataOciCoreVolumeBackupPolicyAssignmentsFilterToTerraform(struct
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCoreVolumeBackupPolicyAssignmentsFilterToHclTerraform(struct?: DataOciCoreVolumeBackupPolicyAssignmentsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCoreVolumeBackupPolicyAssignmentsFilterOutputReference extends cdktf.ComplexObject {
@@ -265,6 +307,20 @@ export class DataOciCoreVolumeBackupPolicyAssignments extends cdktf.TerraformDat
   // =================
   public static readonly tfResourceType = "oci_core_volume_backup_policy_assignments";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreVolumeBackupPolicyAssignments resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreVolumeBackupPolicyAssignments to import
+  * @param importFromId The id of the existing DataOciCoreVolumeBackupPolicyAssignments that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_volume_backup_policy_assignments#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreVolumeBackupPolicyAssignments to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_volume_backup_policy_assignments", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -362,5 +418,31 @@ export class DataOciCoreVolumeBackupPolicyAssignments extends cdktf.TerraformDat
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciCoreVolumeBackupPolicyAssignmentsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      asset_id: {
+        value: cdktf.stringToHclTerraform(this._assetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCoreVolumeBackupPolicyAssignmentsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCoreVolumeBackupPolicyAssignmentsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

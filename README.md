@@ -1,7 +1,7 @@
 
-# CDKTF prebuilt bindings for oracle/oci provider version ~> 6.18.0
+# CDKTF prebuilt bindings for oracle/oci provider version 6.18.0
 
-This repo builds and publishes the [Terraform oci provider](https://registry.terraform.io/providers/oracle/oci/6.18.0.0/docs) bindings for [CDK for Terraform](https://cdk.tf).
+This repo builds and publishes the [Terraform oci provider](https://registry.terraform.io/providers/oracle/oci/6.18.0/docs) bindings for [CDK for Terraform](https://cdk.tf).
 
 ## Available Packages
 
@@ -63,7 +63,7 @@ This project is explicitly not tracking the Terraform oci provider version 1:1. 
 These are the upstream dependencies:
 
 - [CDK for Terraform](https://cdk.tf)
-- [Terraform oci provider](https://registry.terraform.io/providers/oracle/oci/6.18.0.0)
+- [Terraform oci provider](https://registry.terraform.io/providers/oracle/oci/6.18.0)
 - [Terraform Engine](https://terraform.io)
 
 If there are breaking changes (backward incompatible) in any of the above, the major version of this project will be bumped.

@@ -40,13 +40,13 @@ export interface CloudGuardDataSourceConfig extends cdktf.TerraformMetaArguments
   readonly status?: string;
   /**
   * data_source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_data_source#data_source_details CloudGuardDataSource#data_source_details}
   */
   readonly dataSourceDetails?: CloudGuardDataSourceDataSourceDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_data_source#timeouts CloudGuardDataSource#timeouts}
   */
   readonly timeouts?: CloudGuardDataSourceTimeouts;
@@ -61,6 +61,17 @@ export function cloudGuardDataSourceDataSourceDetectorMappingInfoToTerraform(str
   }
   return {
   }
+}
+
+
+export function cloudGuardDataSourceDataSourceDetectorMappingInfoToHclTerraform(struct?: CloudGuardDataSourceDataSourceDetectorMappingInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardDataSourceDataSourceDetectorMappingInfoOutputReference extends cdktf.ComplexObject {
@@ -130,6 +141,17 @@ export function cloudGuardDataSourceRegionStatusDetailToTerraform(struct?: Cloud
   }
   return {
   }
+}
+
+
+export function cloudGuardDataSourceRegionStatusDetailToHclTerraform(struct?: CloudGuardDataSourceRegionStatusDetail): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardDataSourceRegionStatusDetailOutputReference extends cdktf.ComplexObject {
@@ -209,6 +231,31 @@ export function cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsToTerraf
     key_entities_count: cdktf.numberToTerraform(struct!.keyEntitiesCount),
     logging_query_type: cdktf.stringToTerraform(struct!.loggingQueryType),
   }
+}
+
+
+export function cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsToHclTerraform(struct?: CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutputReference | CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key_entities_count: {
+      value: cdktf.numberToHclTerraform(struct!.keyEntitiesCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    logging_query_type: {
+      value: cdktf.stringToHclTerraform(struct!.loggingQueryType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutputReference extends cdktf.ComplexObject {
@@ -298,6 +345,31 @@ export function cloudGuardDataSourceDataSourceDetailsQueryStartTimeToTerraform(s
     query_start_time: cdktf.stringToTerraform(struct!.queryStartTime),
     start_policy_type: cdktf.stringToTerraform(struct!.startPolicyType),
   }
+}
+
+
+export function cloudGuardDataSourceDataSourceDetailsQueryStartTimeToHclTerraform(struct?: CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutputReference | CloudGuardDataSourceDataSourceDetailsQueryStartTime): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    query_start_time: {
+      value: cdktf.stringToHclTerraform(struct!.queryStartTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    start_policy_type: {
+      value: cdktf.stringToHclTerraform(struct!.startPolicyType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDataSourceDataSourceDetailsQueryStartTimeOutputReference extends cdktf.ComplexObject {
@@ -392,6 +464,37 @@ export function cloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailsT
     resource_ids: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.resourceIds),
     resource_type: cdktf.stringToTerraform(struct!.resourceType),
   }
+}
+
+
+export function cloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailsToHclTerraform(struct?: CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    region: {
+      value: cdktf.stringToHclTerraform(struct!.region),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.resourceIds),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    resource_type: {
+      value: cdktf.stringToHclTerraform(struct!.resourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailsOutputReference extends cdktf.ComplexObject {
@@ -561,19 +664,19 @@ export interface CloudGuardDataSourceDataSourceDetails {
   readonly threshold?: number;
   /**
   * logging_query_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_data_source#logging_query_details CloudGuardDataSource#logging_query_details}
   */
   readonly loggingQueryDetails?: CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails;
   /**
   * query_start_time block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_data_source#query_start_time CloudGuardDataSource#query_start_time}
   */
   readonly queryStartTime?: CloudGuardDataSourceDataSourceDetailsQueryStartTime;
   /**
   * scheduled_query_scope_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_data_source#scheduled_query_scope_details CloudGuardDataSource#scheduled_query_scope_details}
   */
   readonly scheduledQueryScopeDetails?: CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetails[] | cdktf.IResolvable;
@@ -599,6 +702,97 @@ export function cloudGuardDataSourceDataSourceDetailsToTerraform(struct?: CloudG
     query_start_time: cloudGuardDataSourceDataSourceDetailsQueryStartTimeToTerraform(struct!.queryStartTime),
     scheduled_query_scope_details: cdktf.listMapper(cloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailsToTerraform, true)(struct!.scheduledQueryScopeDetails),
   }
+}
+
+
+export function cloudGuardDataSourceDataSourceDetailsToHclTerraform(struct?: CloudGuardDataSourceDataSourceDetailsOutputReference | CloudGuardDataSourceDataSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    additional_entities_count: {
+      value: cdktf.numberToHclTerraform(struct!.additionalEntitiesCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    data_source_feed_provider: {
+      value: cdktf.stringToHclTerraform(struct!.dataSourceFeedProvider),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    interval_in_minutes: {
+      value: cdktf.numberToHclTerraform(struct!.intervalInMinutes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    interval_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.intervalInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    logging_query_type: {
+      value: cdktf.stringToHclTerraform(struct!.loggingQueryType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator: {
+      value: cdktf.stringToHclTerraform(struct!.operator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query: {
+      value: cdktf.stringToHclTerraform(struct!.query),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.regions),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    threshold: {
+      value: cdktf.numberToHclTerraform(struct!.threshold),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    logging_query_details: {
+      value: cloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsToHclTerraform(struct!.loggingQueryDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsList",
+    },
+    query_start_time: {
+      value: cloudGuardDataSourceDataSourceDetailsQueryStartTimeToHclTerraform(struct!.queryStartTime),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudGuardDataSourceDataSourceDetailsQueryStartTimeList",
+    },
+    scheduled_query_scope_details: {
+      value: cdktf.listMapperHcl(cloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailsToHclTerraform, true)(struct!.scheduledQueryScopeDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardDataSourceDataSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -937,6 +1131,37 @@ export function cloudGuardDataSourceTimeoutsToTerraform(struct?: CloudGuardDataS
   }
 }
 
+
+export function cloudGuardDataSourceTimeoutsToHclTerraform(struct?: CloudGuardDataSourceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudGuardDataSourceTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1049,6 +1274,20 @@ export class CloudGuardDataSource extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_guard_data_source";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CloudGuardDataSource resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CloudGuardDataSource to import
+  * @param importFromId The id of the existing CloudGuardDataSource that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_data_source#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CloudGuardDataSource to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_guard_data_source", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1276,5 +1515,67 @@ export class CloudGuardDataSource extends cdktf.TerraformResource {
       data_source_details: cloudGuardDataSourceDataSourceDetailsToTerraform(this._dataSourceDetails.internalValue),
       timeouts: cloudGuardDataSourceTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      data_source_feed_provider: {
+        value: cdktf.stringToHclTerraform(this._dataSourceFeedProvider),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      data_source_details: {
+        value: cloudGuardDataSourceDataSourceDetailsToHclTerraform(this._dataSourceDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudGuardDataSourceDataSourceDetailsList",
+      },
+      timeouts: {
+        value: cloudGuardDataSourceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CloudGuardDataSourceTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

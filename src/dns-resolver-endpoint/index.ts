@@ -56,7 +56,7 @@ export interface DnsResolverEndpointConfig extends cdktf.TerraformMetaArguments 
   readonly subnetId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_resolver_endpoint#timeouts DnsResolverEndpoint#timeouts}
   */
   readonly timeouts?: DnsResolverEndpointTimeouts;
@@ -86,6 +86,37 @@ export function dnsResolverEndpointTimeoutsToTerraform(struct?: DnsResolverEndpo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function dnsResolverEndpointTimeoutsToHclTerraform(struct?: DnsResolverEndpointTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DnsResolverEndpointTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -200,6 +231,20 @@ export class DnsResolverEndpoint extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dns_resolver_endpoint";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DnsResolverEndpoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DnsResolverEndpoint to import
+  * @param importFromId The id of the existing DnsResolverEndpoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_resolver_endpoint#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DnsResolverEndpoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dns_resolver_endpoint", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -467,5 +512,85 @@ export class DnsResolverEndpoint extends cdktf.TerraformResource {
       subnet_id: cdktf.stringToTerraform(this._subnetId),
       timeouts: dnsResolverEndpointTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      endpoint_type: {
+        value: cdktf.stringToHclTerraform(this._endpointType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      forwarding_address: {
+        value: cdktf.stringToHclTerraform(this._forwardingAddress),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_forwarding: {
+        value: cdktf.booleanToHclTerraform(this._isForwarding),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_listening: {
+        value: cdktf.booleanToHclTerraform(this._isListening),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      listening_address: {
+        value: cdktf.stringToHclTerraform(this._listeningAddress),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      nsg_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._nsgIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      resolver_id: {
+        value: cdktf.stringToHclTerraform(this._resolverId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scope: {
+        value: cdktf.stringToHclTerraform(this._scope),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: dnsResolverEndpointTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DnsResolverEndpointTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

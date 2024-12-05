@@ -36,7 +36,7 @@ export interface DatabaseAutonomousVmClusterOrdsCertificateManagementConfig exte
   readonly id?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_vm_cluster_ords_certificate_management#timeouts DatabaseAutonomousVmClusterOrdsCertificateManagement#timeouts}
   */
   readonly timeouts?: DatabaseAutonomousVmClusterOrdsCertificateManagementTimeouts;
@@ -66,6 +66,37 @@ export function databaseAutonomousVmClusterOrdsCertificateManagementTimeoutsToTe
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseAutonomousVmClusterOrdsCertificateManagementTimeoutsToHclTerraform(struct?: DatabaseAutonomousVmClusterOrdsCertificateManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseAutonomousVmClusterOrdsCertificateManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -180,6 +211,20 @@ export class DatabaseAutonomousVmClusterOrdsCertificateManagement extends cdktf.
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_vm_cluster_ords_certificate_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseAutonomousVmClusterOrdsCertificateManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseAutonomousVmClusterOrdsCertificateManagement to import
+  * @param importFromId The id of the existing DatabaseAutonomousVmClusterOrdsCertificateManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_vm_cluster_ords_certificate_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseAutonomousVmClusterOrdsCertificateManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_vm_cluster_ords_certificate_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -341,5 +386,55 @@ export class DatabaseAutonomousVmClusterOrdsCertificateManagement extends cdktf.
       id: cdktf.stringToTerraform(this._id),
       timeouts: databaseAutonomousVmClusterOrdsCertificateManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      autonomous_vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousVmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ca_bundle_id: {
+        value: cdktf.stringToHclTerraform(this._caBundleId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      certificate_authority_id: {
+        value: cdktf.stringToHclTerraform(this._certificateAuthorityId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      certificate_generation_type: {
+        value: cdktf.stringToHclTerraform(this._certificateGenerationType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      certificate_id: {
+        value: cdktf.stringToHclTerraform(this._certificateId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: databaseAutonomousVmClusterOrdsCertificateManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseAutonomousVmClusterOrdsCertificateManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

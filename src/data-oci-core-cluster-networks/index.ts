@@ -28,7 +28,7 @@ export interface DataOciCoreClusterNetworksConfig extends cdktf.TerraformMetaArg
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_cluster_networks#filter DataOciCoreClusterNetworks#filter}
   */
   readonly filter?: DataOciCoreClusterNetworksFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciCoreClusterNetworksClusterNetworksClusterConfigurationToT
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksClusterConfigurationToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksClusterConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksClusterConfigurationOutputReference extends cdktf.ComplexObject {
@@ -112,6 +123,17 @@ export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsLoadBalanc
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsLoadBalancersToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksInstancePoolsLoadBalancers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksInstancePoolsLoadBalancersOutputReference extends cdktf.ComplexObject {
@@ -208,6 +230,17 @@ export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementC
   }
 }
 
+
+export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsPrimaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsPrimaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsPrimaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -270,6 +303,17 @@ export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementC
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsPrimaryVnicSubnetsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsPrimaryVnicSubnets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsPrimaryVnicSubnetsOutputReference extends cdktf.ComplexObject {
@@ -347,6 +391,17 @@ export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementC
   }
 }
 
+
+export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsSecondaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsSecondaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsSecondaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -409,6 +464,17 @@ export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementC
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsSecondaryVnicSubnetsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsSecondaryVnicSubnets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsSecondaryVnicSubnetsOutputReference extends cdktf.ComplexObject {
@@ -489,6 +555,17 @@ export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementC
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksInstancePoolsPlacementConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -575,6 +652,17 @@ export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsToTerrafor
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksInstancePoolsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksInstancePools): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksInstancePoolsOutputReference extends cdktf.ComplexObject {
@@ -705,6 +793,17 @@ export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationP
   }
 }
 
+
+export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationPrimaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksPlacementConfigurationPrimaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreClusterNetworksClusterNetworksPlacementConfigurationPrimaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -767,6 +866,17 @@ export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationP
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationPrimaryVnicSubnetsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksPlacementConfigurationPrimaryVnicSubnets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksPlacementConfigurationPrimaryVnicSubnetsOutputReference extends cdktf.ComplexObject {
@@ -844,6 +954,17 @@ export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationS
   }
 }
 
+
+export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationSecondaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksPlacementConfigurationSecondaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreClusterNetworksClusterNetworksPlacementConfigurationSecondaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -906,6 +1027,17 @@ export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationS
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationSecondaryVnicSubnetsToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksPlacementConfigurationSecondaryVnicSubnets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksPlacementConfigurationSecondaryVnicSubnetsOutputReference extends cdktf.ComplexObject {
@@ -986,6 +1118,17 @@ export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationT
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksPlacementConfigurationToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworksPlacementConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksPlacementConfigurationOutputReference extends cdktf.ComplexObject {
@@ -1072,6 +1215,17 @@ export function dataOciCoreClusterNetworksClusterNetworksToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function dataOciCoreClusterNetworksClusterNetworksToHclTerraform(struct?: DataOciCoreClusterNetworksClusterNetworks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreClusterNetworksClusterNetworksOutputReference extends cdktf.ComplexObject {
@@ -1218,6 +1372,37 @@ export function dataOciCoreClusterNetworksFilterToTerraform(struct?: DataOciCore
   }
 }
 
+
+export function dataOciCoreClusterNetworksFilterToHclTerraform(struct?: DataOciCoreClusterNetworksFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciCoreClusterNetworksFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1346,6 +1531,20 @@ export class DataOciCoreClusterNetworks extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_cluster_networks";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreClusterNetworks resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreClusterNetworks to import
+  * @param importFromId The id of the existing DataOciCoreClusterNetworks that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_cluster_networks#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreClusterNetworks to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_cluster_networks", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1480,5 +1679,43 @@ export class DataOciCoreClusterNetworks extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciCoreClusterNetworksFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCoreClusterNetworksFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCoreClusterNetworksFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

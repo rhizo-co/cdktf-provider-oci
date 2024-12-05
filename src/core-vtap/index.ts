@@ -88,7 +88,7 @@ export interface CoreVtapConfig extends cdktf.TerraformMetaArguments {
   readonly vxlanNetworkIdentifier?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_vtap#timeouts CoreVtap#timeouts}
   */
   readonly timeouts?: CoreVtapTimeouts;
@@ -118,6 +118,37 @@ export function coreVtapTimeoutsToTerraform(struct?: CoreVtapTimeouts | cdktf.IR
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function coreVtapTimeoutsToHclTerraform(struct?: CoreVtapTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreVtapTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -232,6 +263,20 @@ export class CoreVtap extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_vtap";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreVtap resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreVtap to import
+  * @param importFromId The id of the existing CoreVtap that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_vtap#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreVtap to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_vtap", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -636,5 +681,133 @@ export class CoreVtap extends cdktf.TerraformResource {
       vxlan_network_identifier: cdktf.stringToTerraform(this._vxlanNetworkIdentifier),
       timeouts: coreVtapTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      capture_filter_id: {
+        value: cdktf.stringToHclTerraform(this._captureFilterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      encapsulation_protocol: {
+        value: cdktf.stringToHclTerraform(this._encapsulationProtocol),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_vtap_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isVtapEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      max_packet_size: {
+        value: cdktf.numberToHclTerraform(this._maxPacketSize),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      source_id: {
+        value: cdktf.stringToHclTerraform(this._sourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_private_endpoint_ip: {
+        value: cdktf.stringToHclTerraform(this._sourcePrivateEndpointIp),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_private_endpoint_subnet_id: {
+        value: cdktf.stringToHclTerraform(this._sourcePrivateEndpointSubnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_type: {
+        value: cdktf.stringToHclTerraform(this._sourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_id: {
+        value: cdktf.stringToHclTerraform(this._targetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_ip: {
+        value: cdktf.stringToHclTerraform(this._targetIp),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_type: {
+        value: cdktf.stringToHclTerraform(this._targetType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      traffic_mode: {
+        value: cdktf.stringToHclTerraform(this._trafficMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcn_id: {
+        value: cdktf.stringToHclTerraform(this._vcnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vxlan_network_identifier: {
+        value: cdktf.stringToHclTerraform(this._vxlanNetworkIdentifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: coreVtapTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreVtapTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

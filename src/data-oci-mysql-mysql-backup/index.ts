@@ -24,6 +24,17 @@ export function dataOciMysqlMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyToT
   }
 }
 
+
+export function dataOciMysqlMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyToHclTerraform(struct?: DataOciMysqlMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMysqlMysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -86,6 +97,17 @@ export function dataOciMysqlMysqlBackupDbSystemSnapshotBackupPolicyToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciMysqlMysqlBackupDbSystemSnapshotBackupPolicyToHclTerraform(struct?: DataOciMysqlMysqlBackupDbSystemSnapshotBackupPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMysqlMysqlBackupDbSystemSnapshotBackupPolicyOutputReference extends cdktf.ComplexObject {
@@ -180,6 +202,17 @@ export function dataOciMysqlMysqlBackupDbSystemSnapshotDataStorageToTerraform(st
   }
 }
 
+
+export function dataOciMysqlMysqlBackupDbSystemSnapshotDataStorageToHclTerraform(struct?: DataOciMysqlMysqlBackupDbSystemSnapshotDataStorage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMysqlMysqlBackupDbSystemSnapshotDataStorageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -264,6 +297,17 @@ export function dataOciMysqlMysqlBackupDbSystemSnapshotDeletionPolicyToTerraform
   }
 }
 
+
+export function dataOciMysqlMysqlBackupDbSystemSnapshotDeletionPolicyToHclTerraform(struct?: DataOciMysqlMysqlBackupDbSystemSnapshotDeletionPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMysqlMysqlBackupDbSystemSnapshotDeletionPolicyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -336,6 +380,17 @@ export function dataOciMysqlMysqlBackupDbSystemSnapshotEndpointsToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataOciMysqlMysqlBackupDbSystemSnapshotEndpointsToHclTerraform(struct?: DataOciMysqlMysqlBackupDbSystemSnapshotEndpoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMysqlMysqlBackupDbSystemSnapshotEndpointsOutputReference extends cdktf.ComplexObject {
@@ -442,6 +497,17 @@ export function dataOciMysqlMysqlBackupDbSystemSnapshotMaintenanceToTerraform(st
   }
 }
 
+
+export function dataOciMysqlMysqlBackupDbSystemSnapshotMaintenanceToHclTerraform(struct?: DataOciMysqlMysqlBackupDbSystemSnapshotMaintenance): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMysqlMysqlBackupDbSystemSnapshotMaintenanceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -504,6 +570,17 @@ export function dataOciMysqlMysqlBackupDbSystemSnapshotSecureConnectionsToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciMysqlMysqlBackupDbSystemSnapshotSecureConnectionsToHclTerraform(struct?: DataOciMysqlMysqlBackupDbSystemSnapshotSecureConnections): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMysqlMysqlBackupDbSystemSnapshotSecureConnectionsOutputReference extends cdktf.ComplexObject {
@@ -573,6 +650,17 @@ export function dataOciMysqlMysqlBackupDbSystemSnapshotToTerraform(struct?: Data
   }
   return {
   }
+}
+
+
+export function dataOciMysqlMysqlBackupDbSystemSnapshotToHclTerraform(struct?: DataOciMysqlMysqlBackupDbSystemSnapshot): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMysqlMysqlBackupDbSystemSnapshotOutputReference extends cdktf.ComplexObject {
@@ -782,6 +870,17 @@ export function dataOciMysqlMysqlBackupDbSystemSnapshotSummaryToTerraform(struct
   }
 }
 
+
+export function dataOciMysqlMysqlBackupDbSystemSnapshotSummaryToHclTerraform(struct?: DataOciMysqlMysqlBackupDbSystemSnapshotSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMysqlMysqlBackupDbSystemSnapshotSummaryOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -856,6 +955,17 @@ export function dataOciMysqlMysqlBackupSourceDetailsToTerraform(struct?: DataOci
   }
 }
 
+
+export function dataOciMysqlMysqlBackupSourceDetailsToHclTerraform(struct?: DataOciMysqlMysqlBackupSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMysqlMysqlBackupSourceDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -928,6 +1038,20 @@ export class DataOciMysqlMysqlBackup extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_mysql_mysql_backup";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMysqlMysqlBackup resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMysqlMysqlBackup to import
+  * @param importFromId The id of the existing DataOciMysqlMysqlBackup that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/mysql_mysql_backup#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMysqlMysqlBackup to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_mysql_mysql_backup", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1109,5 +1233,19 @@ export class DataOciMysqlMysqlBackup extends cdktf.TerraformDataSource {
     return {
       backup_id: cdktf.stringToTerraform(this._backupId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      backup_id: {
+        value: cdktf.stringToHclTerraform(this._backupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

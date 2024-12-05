@@ -32,7 +32,7 @@ export interface DataOciOcvpSupportedVmwareSoftwareVersionsConfig extends cdktf.
   readonly versionToUpgrade?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ocvp_supported_vmware_software_versions#filter DataOciOcvpSupportedVmwareSoftwareVersions#filter}
   */
   readonly filter?: DataOciOcvpSupportedVmwareSoftwareVersionsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciOcvpSupportedVmwareSoftwareVersionsItemsEsxiSoftwareVersi
   }
   return {
   }
+}
+
+
+export function dataOciOcvpSupportedVmwareSoftwareVersionsItemsEsxiSoftwareVersionsToHclTerraform(struct?: DataOciOcvpSupportedVmwareSoftwareVersionsItemsEsxiSoftwareVersions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOcvpSupportedVmwareSoftwareVersionsItemsEsxiSoftwareVersionsOutputReference extends cdktf.ComplexObject {
@@ -121,6 +132,17 @@ export function dataOciOcvpSupportedVmwareSoftwareVersionsItemsToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciOcvpSupportedVmwareSoftwareVersionsItemsToHclTerraform(struct?: DataOciOcvpSupportedVmwareSoftwareVersionsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOcvpSupportedVmwareSoftwareVersionsItemsOutputReference extends cdktf.ComplexObject {
@@ -211,6 +233,37 @@ export function dataOciOcvpSupportedVmwareSoftwareVersionsFilterToTerraform(stru
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOcvpSupportedVmwareSoftwareVersionsFilterToHclTerraform(struct?: DataOciOcvpSupportedVmwareSoftwareVersionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOcvpSupportedVmwareSoftwareVersionsFilterOutputReference extends cdktf.ComplexObject {
@@ -341,6 +394,20 @@ export class DataOciOcvpSupportedVmwareSoftwareVersions extends cdktf.TerraformD
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ocvp_supported_vmware_software_versions";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOcvpSupportedVmwareSoftwareVersions resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOcvpSupportedVmwareSoftwareVersions to import
+  * @param importFromId The id of the existing DataOciOcvpSupportedVmwareSoftwareVersions that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ocvp_supported_vmware_software_versions#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOcvpSupportedVmwareSoftwareVersions to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ocvp_supported_vmware_software_versions", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -493,5 +560,49 @@ export class DataOciOcvpSupportedVmwareSoftwareVersions extends cdktf.TerraformD
       version_to_upgrade: cdktf.stringToTerraform(this._versionToUpgrade),
       filter: cdktf.listMapper(dataOciOcvpSupportedVmwareSoftwareVersionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      host_shape_name: {
+        value: cdktf.stringToHclTerraform(this._hostShapeName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      version: {
+        value: cdktf.stringToHclTerraform(this._version),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      version_to_upgrade: {
+        value: cdktf.stringToHclTerraform(this._versionToUpgrade),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOcvpSupportedVmwareSoftwareVersionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOcvpSupportedVmwareSoftwareVersionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

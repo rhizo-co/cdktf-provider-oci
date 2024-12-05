@@ -40,19 +40,19 @@ export interface DemandSignalOccDemandSignalConfig extends cdktf.TerraformMetaAr
   readonly occDemandSignalId?: string;
   /**
   * occ_demand_signals block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/demand_signal_occ_demand_signal#occ_demand_signals DemandSignalOccDemandSignal#occ_demand_signals}
   */
   readonly occDemandSignals: DemandSignalOccDemandSignalOccDemandSignals[] | cdktf.IResolvable;
   /**
   * patch_operations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/demand_signal_occ_demand_signal#patch_operations DemandSignalOccDemandSignal#patch_operations}
   */
   readonly patchOperations?: DemandSignalOccDemandSignalPatchOperations[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/demand_signal_occ_demand_signal#timeouts DemandSignalOccDemandSignal#timeouts}
   */
   readonly timeouts?: DemandSignalOccDemandSignalTimeouts;
@@ -82,6 +82,37 @@ export function demandSignalOccDemandSignalOccDemandSignalsValuesToTerraform(str
     time_expected: cdktf.stringToTerraform(struct!.timeExpected),
     value: cdktf.numberToTerraform(struct!.value),
   }
+}
+
+
+export function demandSignalOccDemandSignalOccDemandSignalsValuesToHclTerraform(struct?: DemandSignalOccDemandSignalOccDemandSignalsValues | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    comments: {
+      value: cdktf.stringToHclTerraform(struct!.comments),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_expected: {
+      value: cdktf.stringToHclTerraform(struct!.timeExpected),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.numberToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DemandSignalOccDemandSignalOccDemandSignalsValuesOutputReference extends cdktf.ComplexObject {
@@ -213,7 +244,7 @@ export interface DemandSignalOccDemandSignalOccDemandSignals {
   readonly units: string;
   /**
   * values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/demand_signal_occ_demand_signal#values DemandSignalOccDemandSignal#values}
   */
   readonly values: DemandSignalOccDemandSignalOccDemandSignalsValues[] | cdktf.IResolvable;
@@ -229,6 +260,37 @@ export function demandSignalOccDemandSignalOccDemandSignalsToTerraform(struct?: 
     units: cdktf.stringToTerraform(struct!.units),
     values: cdktf.listMapper(demandSignalOccDemandSignalOccDemandSignalsValuesToTerraform, true)(struct!.values),
   }
+}
+
+
+export function demandSignalOccDemandSignalOccDemandSignalsToHclTerraform(struct?: DemandSignalOccDemandSignalOccDemandSignals | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    resource_type: {
+      value: cdktf.stringToHclTerraform(struct!.resourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    units: {
+      value: cdktf.stringToHclTerraform(struct!.units),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(demandSignalOccDemandSignalOccDemandSignalsValuesToHclTerraform, true)(struct!.values),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DemandSignalOccDemandSignalOccDemandSignalsValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DemandSignalOccDemandSignalOccDemandSignalsOutputReference extends cdktf.ComplexObject {
@@ -386,6 +448,55 @@ export function demandSignalOccDemandSignalPatchOperationsToTerraform(struct?: D
     selection: cdktf.stringToTerraform(struct!.selection),
     value: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.value),
   }
+}
+
+
+export function demandSignalOccDemandSignalPatchOperationsToHclTerraform(struct?: DemandSignalOccDemandSignalPatchOperations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    from: {
+      value: cdktf.stringToHclTerraform(struct!.from),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operation: {
+      value: cdktf.stringToHclTerraform(struct!.operation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    position: {
+      value: cdktf.stringToHclTerraform(struct!.position),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    selected_item: {
+      value: cdktf.stringToHclTerraform(struct!.selectedItem),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    selection: {
+      value: cdktf.stringToHclTerraform(struct!.selection),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.value),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DemandSignalOccDemandSignalPatchOperationsOutputReference extends cdktf.ComplexObject {
@@ -593,6 +704,37 @@ export function demandSignalOccDemandSignalTimeoutsToTerraform(struct?: DemandSi
   }
 }
 
+
+export function demandSignalOccDemandSignalTimeoutsToHclTerraform(struct?: DemandSignalOccDemandSignalTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DemandSignalOccDemandSignalTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -705,6 +847,20 @@ export class DemandSignalOccDemandSignal extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_demand_signal_occ_demand_signal";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DemandSignalOccDemandSignal resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DemandSignalOccDemandSignal to import
+  * @param importFromId The id of the existing DemandSignalOccDemandSignal that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/demand_signal_occ_demand_signal#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DemandSignalOccDemandSignal to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_demand_signal_occ_demand_signal", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -943,5 +1099,73 @@ export class DemandSignalOccDemandSignal extends cdktf.TerraformResource {
       patch_operations: cdktf.listMapper(demandSignalOccDemandSignalPatchOperationsToTerraform, true)(this._patchOperations.internalValue),
       timeouts: demandSignalOccDemandSignalTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_active: {
+        value: cdktf.booleanToHclTerraform(this._isActive),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      occ_demand_signal_id: {
+        value: cdktf.stringToHclTerraform(this._occDemandSignalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      occ_demand_signals: {
+        value: cdktf.listMapperHcl(demandSignalOccDemandSignalOccDemandSignalsToHclTerraform, true)(this._occDemandSignals.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DemandSignalOccDemandSignalOccDemandSignalsList",
+      },
+      patch_operations: {
+        value: cdktf.listMapperHcl(demandSignalOccDemandSignalPatchOperationsToHclTerraform, true)(this._patchOperations.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DemandSignalOccDemandSignalPatchOperationsList",
+      },
+      timeouts: {
+        value: demandSignalOccDemandSignalTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DemandSignalOccDemandSignalTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

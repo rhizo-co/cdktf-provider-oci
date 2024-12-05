@@ -65,25 +65,25 @@ export interface IdentityDomainsNotificationSettingConfig extends cdktf.Terrafor
   readonly testRecipients?: string[];
   /**
   * event_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_notification_setting#event_settings IdentityDomainsNotificationSetting#event_settings}
   */
   readonly eventSettings: IdentityDomainsNotificationSettingEventSettings[] | cdktf.IResolvable;
   /**
   * from_email_address block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_notification_setting#from_email_address IdentityDomainsNotificationSetting#from_email_address}
   */
   readonly fromEmailAddress: IdentityDomainsNotificationSettingFromEmailAddress;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_notification_setting#tags IdentityDomainsNotificationSetting#tags}
   */
   readonly tags?: IdentityDomainsNotificationSettingTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_notification_setting#timeouts IdentityDomainsNotificationSetting#timeouts}
   */
   readonly timeouts?: IdentityDomainsNotificationSettingTimeouts;
@@ -98,6 +98,17 @@ export function identityDomainsNotificationSettingIdcsCreatedByToTerraform(struc
   }
   return {
   }
+}
+
+
+export function identityDomainsNotificationSettingIdcsCreatedByToHclTerraform(struct?: IdentityDomainsNotificationSettingIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsNotificationSettingIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -184,6 +195,17 @@ export function identityDomainsNotificationSettingIdcsLastModifiedByToTerraform(
   }
 }
 
+
+export function identityDomainsNotificationSettingIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsNotificationSettingIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsNotificationSettingIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -266,6 +288,17 @@ export function identityDomainsNotificationSettingMetaToTerraform(struct?: Ident
   }
   return {
   }
+}
+
+
+export function identityDomainsNotificationSettingMetaToHclTerraform(struct?: IdentityDomainsNotificationSettingMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsNotificationSettingMetaOutputReference extends cdktf.ComplexObject {
@@ -360,6 +393,31 @@ export function identityDomainsNotificationSettingEventSettingsToTerraform(struc
     enabled: cdktf.booleanToTerraform(struct!.enabled),
     event_id: cdktf.stringToTerraform(struct!.eventId),
   }
+}
+
+
+export function identityDomainsNotificationSettingEventSettingsToHclTerraform(struct?: IdentityDomainsNotificationSettingEventSettings | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.enabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    event_id: {
+      value: cdktf.stringToHclTerraform(struct!.eventId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsNotificationSettingEventSettingsOutputReference extends cdktf.ComplexObject {
@@ -488,6 +546,37 @@ export function identityDomainsNotificationSettingFromEmailAddressToTerraform(st
   }
 }
 
+
+export function identityDomainsNotificationSettingFromEmailAddressToHclTerraform(struct?: IdentityDomainsNotificationSettingFromEmailAddressOutputReference | IdentityDomainsNotificationSettingFromEmailAddress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    validate: {
+      value: cdktf.stringToHclTerraform(struct!.validate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsNotificationSettingFromEmailAddressOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -599,6 +688,31 @@ export function identityDomainsNotificationSettingTagsToTerraform(struct?: Ident
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsNotificationSettingTagsToHclTerraform(struct?: IdentityDomainsNotificationSettingTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsNotificationSettingTagsOutputReference extends cdktf.ComplexObject {
@@ -724,6 +838,37 @@ export function identityDomainsNotificationSettingTimeoutsToTerraform(struct?: I
   }
 }
 
+
+export function identityDomainsNotificationSettingTimeoutsToHclTerraform(struct?: IdentityDomainsNotificationSettingTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsNotificationSettingTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -836,6 +981,20 @@ export class IdentityDomainsNotificationSetting extends cdktf.TerraformResource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_notification_setting";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsNotificationSetting resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsNotificationSetting to import
+  * @param importFromId The id of the existing IdentityDomainsNotificationSetting that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_notification_setting#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsNotificationSetting to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_notification_setting", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1236,5 +1395,121 @@ export class IdentityDomainsNotificationSetting extends cdktf.TerraformResource 
       tags: cdktf.listMapper(identityDomainsNotificationSettingTagsToTerraform, true)(this._tags.internalValue),
       timeouts: identityDomainsNotificationSettingTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_id: {
+        value: cdktf.stringToHclTerraform(this._externalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      notification_enabled: {
+        value: cdktf.booleanToHclTerraform(this._notificationEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      notification_setting_id: {
+        value: cdktf.stringToHclTerraform(this._notificationSettingId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      send_notification_to_old_and_new_primary_emails_when_admin_changes_primary_email: {
+        value: cdktf.booleanToHclTerraform(this._sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      send_notifications_to_secondary_email: {
+        value: cdktf.booleanToHclTerraform(this._sendNotificationsToSecondaryEmail),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      test_mode_enabled: {
+        value: cdktf.booleanToHclTerraform(this._testModeEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      test_recipients: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._testRecipients),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      event_settings: {
+        value: cdktf.listMapperHcl(identityDomainsNotificationSettingEventSettingsToHclTerraform, true)(this._eventSettings.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsNotificationSettingEventSettingsList",
+      },
+      from_email_address: {
+        value: identityDomainsNotificationSettingFromEmailAddressToHclTerraform(this._fromEmailAddress.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsNotificationSettingFromEmailAddressList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsNotificationSettingTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsNotificationSettingTagsList",
+      },
+      timeouts: {
+        value: identityDomainsNotificationSettingTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsNotificationSettingTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

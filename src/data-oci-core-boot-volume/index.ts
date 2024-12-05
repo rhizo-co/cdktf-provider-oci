@@ -24,6 +24,17 @@ export function dataOciCoreBootVolumeAutotunePoliciesToTerraform(struct?: DataOc
   }
 }
 
+
+export function dataOciCoreBootVolumeAutotunePoliciesToHclTerraform(struct?: DataOciCoreBootVolumeAutotunePolicies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreBootVolumeAutotunePoliciesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciCoreBootVolumeBootVolumeReplicasToTerraform(struct?: Data
   }
   return {
   }
+}
+
+
+export function dataOciCoreBootVolumeBootVolumeReplicasToHclTerraform(struct?: DataOciCoreBootVolumeBootVolumeReplicas): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreBootVolumeBootVolumeReplicasOutputReference extends cdktf.ComplexObject {
@@ -177,6 +199,17 @@ export function dataOciCoreBootVolumeSourceDetailsToTerraform(struct?: DataOciCo
   }
 }
 
+
+export function dataOciCoreBootVolumeSourceDetailsToHclTerraform(struct?: DataOciCoreBootVolumeSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreBootVolumeSourceDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -259,6 +292,20 @@ export class DataOciCoreBootVolume extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_boot_volume";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreBootVolume resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreBootVolume to import
+  * @param importFromId The id of the existing DataOciCoreBootVolume that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_boot_volume#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreBootVolume to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_boot_volume", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -446,5 +493,19 @@ export class DataOciCoreBootVolume extends cdktf.TerraformDataSource {
     return {
       boot_volume_id: cdktf.stringToTerraform(this._bootVolumeId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      boot_volume_id: {
+        value: cdktf.stringToHclTerraform(this._bootVolumeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

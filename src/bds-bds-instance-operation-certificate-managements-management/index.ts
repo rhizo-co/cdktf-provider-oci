@@ -44,13 +44,13 @@ export interface BdsBdsInstanceOperationCertificateManagementsManagementConfig e
   readonly services: string[];
   /**
   * host_cert_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_operation_certificate_managements_management#host_cert_details BdsBdsInstanceOperationCertificateManagementsManagement#host_cert_details}
   */
   readonly hostCertDetails?: BdsBdsInstanceOperationCertificateManagementsManagementHostCertDetails[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_operation_certificate_managements_management#timeouts BdsBdsInstanceOperationCertificateManagementsManagement#timeouts}
   */
   readonly timeouts?: BdsBdsInstanceOperationCertificateManagementsManagementTimeouts;
@@ -80,6 +80,37 @@ export function bdsBdsInstanceOperationCertificateManagementsManagementHostCertD
     host_name: cdktf.stringToTerraform(struct!.hostName),
     private_key: cdktf.stringToTerraform(struct!.privateKey),
   }
+}
+
+
+export function bdsBdsInstanceOperationCertificateManagementsManagementHostCertDetailsToHclTerraform(struct?: BdsBdsInstanceOperationCertificateManagementsManagementHostCertDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    certificate: {
+      value: cdktf.stringToHclTerraform(struct!.certificate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    host_name: {
+      value: cdktf.stringToHclTerraform(struct!.hostName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    private_key: {
+      value: cdktf.stringToHclTerraform(struct!.privateKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceOperationCertificateManagementsManagementHostCertDetailsOutputReference extends cdktf.ComplexObject {
@@ -233,6 +264,37 @@ export function bdsBdsInstanceOperationCertificateManagementsManagementTimeoutsT
   }
 }
 
+
+export function bdsBdsInstanceOperationCertificateManagementsManagementTimeoutsToHclTerraform(struct?: BdsBdsInstanceOperationCertificateManagementsManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BdsBdsInstanceOperationCertificateManagementsManagementTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -345,6 +407,20 @@ export class BdsBdsInstanceOperationCertificateManagementsManagement extends cdk
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_bds_bds_instance_operation_certificate_managements_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a BdsBdsInstanceOperationCertificateManagementsManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the BdsBdsInstanceOperationCertificateManagementsManagement to import
+  * @param importFromId The id of the existing BdsBdsInstanceOperationCertificateManagementsManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance_operation_certificate_managements_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the BdsBdsInstanceOperationCertificateManagementsManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_bds_bds_instance_operation_certificate_managements_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -551,5 +627,73 @@ export class BdsBdsInstanceOperationCertificateManagementsManagement extends cdk
       host_cert_details: cdktf.listMapper(bdsBdsInstanceOperationCertificateManagementsManagementHostCertDetailsToTerraform, true)(this._hostCertDetails.internalValue),
       timeouts: bdsBdsInstanceOperationCertificateManagementsManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bds_instance_id: {
+        value: cdktf.stringToHclTerraform(this._bdsInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_admin_password: {
+        value: cdktf.stringToHclTerraform(this._clusterAdminPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enable_operation_certificate_management: {
+        value: cdktf.booleanToHclTerraform(this._enableOperationCertificateManagement),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      renew_operation_certificate_management: {
+        value: cdktf.booleanToHclTerraform(this._renewOperationCertificateManagement),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      root_certificate: {
+        value: cdktf.stringToHclTerraform(this._rootCertificate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      server_key_password: {
+        value: cdktf.stringToHclTerraform(this._serverKeyPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      services: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._services),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      host_cert_details: {
+        value: cdktf.listMapperHcl(bdsBdsInstanceOperationCertificateManagementsManagementHostCertDetailsToHclTerraform, true)(this._hostCertDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstanceOperationCertificateManagementsManagementHostCertDetailsList",
+      },
+      timeouts: {
+        value: bdsBdsInstanceOperationCertificateManagementsManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "BdsBdsInstanceOperationCertificateManagementsManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

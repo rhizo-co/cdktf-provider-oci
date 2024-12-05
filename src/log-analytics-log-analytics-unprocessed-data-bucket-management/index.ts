@@ -28,7 +28,7 @@ export interface LogAnalyticsLogAnalyticsUnprocessedDataBucketManagementConfig e
   readonly namespace: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_unprocessed_data_bucket_management#timeouts LogAnalyticsLogAnalyticsUnprocessedDataBucketManagement#timeouts}
   */
   readonly timeouts?: LogAnalyticsLogAnalyticsUnprocessedDataBucketManagementTimeouts;
@@ -58,6 +58,37 @@ export function logAnalyticsLogAnalyticsUnprocessedDataBucketManagementTimeoutsT
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function logAnalyticsLogAnalyticsUnprocessedDataBucketManagementTimeoutsToHclTerraform(struct?: LogAnalyticsLogAnalyticsUnprocessedDataBucketManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsLogAnalyticsUnprocessedDataBucketManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -172,6 +203,20 @@ export class LogAnalyticsLogAnalyticsUnprocessedDataBucketManagement extends cdk
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_log_analytics_log_analytics_unprocessed_data_bucket_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LogAnalyticsLogAnalyticsUnprocessedDataBucketManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LogAnalyticsLogAnalyticsUnprocessedDataBucketManagement to import
+  * @param importFromId The id of the existing LogAnalyticsLogAnalyticsUnprocessedDataBucketManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_unprocessed_data_bucket_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LogAnalyticsLogAnalyticsUnprocessedDataBucketManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_log_analytics_unprocessed_data_bucket_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -307,5 +352,43 @@ export class LogAnalyticsLogAnalyticsUnprocessedDataBucketManagement extends cdk
       namespace: cdktf.stringToTerraform(this._namespace),
       timeouts: logAnalyticsLogAnalyticsUnprocessedDataBucketManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: logAnalyticsLogAnalyticsUnprocessedDataBucketManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LogAnalyticsLogAnalyticsUnprocessedDataBucketManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

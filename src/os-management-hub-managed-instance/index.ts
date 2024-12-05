@@ -36,13 +36,13 @@ export interface OsManagementHubManagedInstanceConfig extends cdktf.TerraformMet
   readonly secondaryManagementStationId?: string;
   /**
   * autonomous_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_managed_instance#autonomous_settings OsManagementHubManagedInstance#autonomous_settings}
   */
   readonly autonomousSettings?: OsManagementHubManagedInstanceAutonomousSettings;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_managed_instance#timeouts OsManagementHubManagedInstance#timeouts}
   */
   readonly timeouts?: OsManagementHubManagedInstanceTimeouts;
@@ -57,6 +57,17 @@ export function osManagementHubManagedInstanceLifecycleEnvironmentToTerraform(st
   }
   return {
   }
+}
+
+
+export function osManagementHubManagedInstanceLifecycleEnvironmentToHclTerraform(struct?: OsManagementHubManagedInstanceLifecycleEnvironment): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OsManagementHubManagedInstanceLifecycleEnvironmentOutputReference extends cdktf.ComplexObject {
@@ -128,6 +139,17 @@ export function osManagementHubManagedInstanceLifecycleStageToTerraform(struct?:
   }
 }
 
+
+export function osManagementHubManagedInstanceLifecycleStageToHclTerraform(struct?: OsManagementHubManagedInstanceLifecycleStage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class OsManagementHubManagedInstanceLifecycleStageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -197,6 +219,17 @@ export function osManagementHubManagedInstanceManagedInstanceGroupToTerraform(st
   }
 }
 
+
+export function osManagementHubManagedInstanceManagedInstanceGroupToHclTerraform(struct?: OsManagementHubManagedInstanceManagedInstanceGroup): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class OsManagementHubManagedInstanceManagedInstanceGroupOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -264,6 +297,17 @@ export function osManagementHubManagedInstanceSoftwareSourcesToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function osManagementHubManagedInstanceSoftwareSourcesToHclTerraform(struct?: OsManagementHubManagedInstanceSoftwareSources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OsManagementHubManagedInstanceSoftwareSourcesOutputReference extends cdktf.ComplexObject {
@@ -355,6 +399,25 @@ export function osManagementHubManagedInstanceAutonomousSettingsToTerraform(stru
   }
 }
 
+
+export function osManagementHubManagedInstanceAutonomousSettingsToHclTerraform(struct?: OsManagementHubManagedInstanceAutonomousSettingsOutputReference | OsManagementHubManagedInstanceAutonomousSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_data_collection_authorized: {
+      value: cdktf.booleanToHclTerraform(struct!.isDataCollectionAuthorized),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OsManagementHubManagedInstanceAutonomousSettingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -433,6 +496,37 @@ export function osManagementHubManagedInstanceTimeoutsToTerraform(struct?: OsMan
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function osManagementHubManagedInstanceTimeoutsToHclTerraform(struct?: OsManagementHubManagedInstanceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubManagedInstanceTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -547,6 +641,20 @@ export class OsManagementHubManagedInstance extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_managed_instance";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OsManagementHubManagedInstance resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OsManagementHubManagedInstance to import
+  * @param importFromId The id of the existing OsManagementHubManagedInstance that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_managed_instance#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OsManagementHubManagedInstance to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_managed_instance", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -893,5 +1001,61 @@ export class OsManagementHubManagedInstance extends cdktf.TerraformResource {
       autonomous_settings: osManagementHubManagedInstanceAutonomousSettingsToTerraform(this._autonomousSettings.internalValue),
       timeouts: osManagementHubManagedInstanceTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_id: {
+        value: cdktf.stringToHclTerraform(this._managedInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      notification_topic_id: {
+        value: cdktf.stringToHclTerraform(this._notificationTopicId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      primary_management_station_id: {
+        value: cdktf.stringToHclTerraform(this._primaryManagementStationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      secondary_management_station_id: {
+        value: cdktf.stringToHclTerraform(this._secondaryManagementStationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      autonomous_settings: {
+        value: osManagementHubManagedInstanceAutonomousSettingsToHclTerraform(this._autonomousSettings.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OsManagementHubManagedInstanceAutonomousSettingsList",
+      },
+      timeouts: {
+        value: osManagementHubManagedInstanceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OsManagementHubManagedInstanceTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,13 +40,13 @@ export interface CloudGuardResponderRecipeConfig extends cdktf.TerraformMetaArgu
   readonly sourceResponderRecipeId: string;
   /**
   * responder_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_responder_recipe#responder_rules CloudGuardResponderRecipe#responder_rules}
   */
   readonly responderRules?: CloudGuardResponderRecipeResponderRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_responder_recipe#timeouts CloudGuardResponderRecipe#timeouts}
   */
   readonly timeouts?: CloudGuardResponderRecipeTimeouts;
@@ -61,6 +61,17 @@ export function cloudGuardResponderRecipeEffectiveResponderRulesDetailsConfigura
   }
   return {
   }
+}
+
+
+export function cloudGuardResponderRecipeEffectiveResponderRulesDetailsConfigurationsToHclTerraform(struct?: CloudGuardResponderRecipeEffectiveResponderRulesDetailsConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardResponderRecipeEffectiveResponderRulesDetailsConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -135,6 +146,17 @@ export function cloudGuardResponderRecipeEffectiveResponderRulesDetailsToTerrafo
   }
   return {
   }
+}
+
+
+export function cloudGuardResponderRecipeEffectiveResponderRulesDetailsToHclTerraform(struct?: CloudGuardResponderRecipeEffectiveResponderRulesDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardResponderRecipeEffectiveResponderRulesDetailsOutputReference extends cdktf.ComplexObject {
@@ -215,6 +237,17 @@ export function cloudGuardResponderRecipeEffectiveResponderRulesToTerraform(stru
   }
   return {
   }
+}
+
+
+export function cloudGuardResponderRecipeEffectiveResponderRulesToHclTerraform(struct?: CloudGuardResponderRecipeEffectiveResponderRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudGuardResponderRecipeEffectiveResponderRulesOutputReference extends cdktf.ComplexObject {
@@ -337,6 +370,17 @@ export function cloudGuardResponderRecipeResponderRulesDetailsConfigurationsToTe
   }
 }
 
+
+export function cloudGuardResponderRecipeResponderRulesDetailsConfigurationsToHclTerraform(struct?: CloudGuardResponderRecipeResponderRulesDetailsConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudGuardResponderRecipeResponderRulesDetailsConfigurationsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -416,6 +460,25 @@ export function cloudGuardResponderRecipeResponderRulesDetailsToTerraform(struct
   }
 }
 
+
+export function cloudGuardResponderRecipeResponderRulesDetailsToHclTerraform(struct?: CloudGuardResponderRecipeResponderRulesDetailsOutputReference | CloudGuardResponderRecipeResponderRulesDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudGuardResponderRecipeResponderRulesDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -488,7 +551,7 @@ export interface CloudGuardResponderRecipeResponderRules {
   readonly responderRuleId: string;
   /**
   * details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_responder_recipe#details CloudGuardResponderRecipe#details}
   */
   readonly details: CloudGuardResponderRecipeResponderRulesDetails;
@@ -504,6 +567,37 @@ export function cloudGuardResponderRecipeResponderRulesToTerraform(struct?: Clou
     responder_rule_id: cdktf.stringToTerraform(struct!.responderRuleId),
     details: cloudGuardResponderRecipeResponderRulesDetailsToTerraform(struct!.details),
   }
+}
+
+
+export function cloudGuardResponderRecipeResponderRulesToHclTerraform(struct?: CloudGuardResponderRecipeResponderRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    responder_rule_id: {
+      value: cdktf.stringToHclTerraform(struct!.responderRuleId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    details: {
+      value: cloudGuardResponderRecipeResponderRulesDetailsToHclTerraform(struct!.details),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudGuardResponderRecipeResponderRulesDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudGuardResponderRecipeResponderRulesOutputReference extends cdktf.ComplexObject {
@@ -696,6 +790,37 @@ export function cloudGuardResponderRecipeTimeoutsToTerraform(struct?: CloudGuard
   }
 }
 
+
+export function cloudGuardResponderRecipeTimeoutsToHclTerraform(struct?: CloudGuardResponderRecipeTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudGuardResponderRecipeTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -808,6 +933,20 @@ export class CloudGuardResponderRecipe extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_guard_responder_recipe";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CloudGuardResponderRecipe resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CloudGuardResponderRecipe to import
+  * @param importFromId The id of the existing CloudGuardResponderRecipe that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_guard_responder_recipe#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CloudGuardResponderRecipe to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_guard_responder_recipe", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1039,5 +1178,67 @@ export class CloudGuardResponderRecipe extends cdktf.TerraformResource {
       responder_rules: cdktf.listMapper(cloudGuardResponderRecipeResponderRulesToTerraform, true)(this._responderRules.internalValue),
       timeouts: cloudGuardResponderRecipeTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_responder_recipe_id: {
+        value: cdktf.stringToHclTerraform(this._sourceResponderRecipeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      responder_rules: {
+        value: cdktf.listMapperHcl(cloudGuardResponderRecipeResponderRulesToHclTerraform, true)(this._responderRules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudGuardResponderRecipeResponderRulesList",
+      },
+      timeouts: {
+        value: cloudGuardResponderRecipeTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CloudGuardResponderRecipeTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

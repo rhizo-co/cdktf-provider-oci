@@ -32,7 +32,7 @@ export interface KmsKeyVersionConfig extends cdktf.TerraformMetaArguments {
   readonly timeOfDeletion?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_key_version#timeouts KmsKeyVersion#timeouts}
   */
   readonly timeouts?: KmsKeyVersionTimeouts;
@@ -47,6 +47,17 @@ export function kmsKeyVersionExternalKeyReferenceDetailsToTerraform(struct?: Kms
   }
   return {
   }
+}
+
+
+export function kmsKeyVersionExternalKeyReferenceDetailsToHclTerraform(struct?: KmsKeyVersionExternalKeyReferenceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class KmsKeyVersionExternalKeyReferenceDetailsOutputReference extends cdktf.ComplexObject {
@@ -116,6 +127,17 @@ export function kmsKeyVersionReplicaDetailsToTerraform(struct?: KmsKeyVersionRep
   }
   return {
   }
+}
+
+
+export function kmsKeyVersionReplicaDetailsToHclTerraform(struct?: KmsKeyVersionReplicaDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class KmsKeyVersionReplicaDetailsOutputReference extends cdktf.ComplexObject {
@@ -195,6 +217,37 @@ export function kmsKeyVersionTimeoutsToTerraform(struct?: KmsKeyVersionTimeouts 
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function kmsKeyVersionTimeoutsToHclTerraform(struct?: KmsKeyVersionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsKeyVersionTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -309,6 +362,20 @@ export class KmsKeyVersion extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_kms_key_version";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a KmsKeyVersion resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the KmsKeyVersion to import
+  * @param importFromId The id of the existing KmsKeyVersion that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_key_version#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the KmsKeyVersion to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_key_version", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -514,5 +581,49 @@ export class KmsKeyVersion extends cdktf.TerraformResource {
       time_of_deletion: cdktf.stringToTerraform(this._timeOfDeletion),
       timeouts: kmsKeyVersionTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      external_key_version_id: {
+        value: cdktf.stringToHclTerraform(this._externalKeyVersionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_id: {
+        value: cdktf.stringToHclTerraform(this._keyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      management_endpoint: {
+        value: cdktf.stringToHclTerraform(this._managementEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_of_deletion: {
+        value: cdktf.stringToHclTerraform(this._timeOfDeletion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: kmsKeyVersionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "KmsKeyVersionTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

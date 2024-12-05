@@ -24,6 +24,17 @@ export function dataOciDatabaseMigrationJobParameterFileVersionsToTerraform(stru
   }
 }
 
+
+export function dataOciDatabaseMigrationJobParameterFileVersionsToHclTerraform(struct?: DataOciDatabaseMigrationJobParameterFileVersions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseMigrationJobParameterFileVersionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -131,6 +142,17 @@ export function dataOciDatabaseMigrationJobProgressPhasesExtractToTerraform(stru
   }
 }
 
+
+export function dataOciDatabaseMigrationJobProgressPhasesExtractToHclTerraform(struct?: DataOciDatabaseMigrationJobProgressPhasesExtract): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseMigrationJobProgressPhasesExtractOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -198,6 +220,17 @@ export function dataOciDatabaseMigrationJobProgressPhasesLogLocationToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseMigrationJobProgressPhasesLogLocationToHclTerraform(struct?: DataOciDatabaseMigrationJobProgressPhasesLogLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseMigrationJobProgressPhasesLogLocationOutputReference extends cdktf.ComplexObject {
@@ -272,6 +305,17 @@ export function dataOciDatabaseMigrationJobProgressPhasesToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseMigrationJobProgressPhasesToHclTerraform(struct?: DataOciDatabaseMigrationJobProgressPhases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseMigrationJobProgressPhasesOutputReference extends cdktf.ComplexObject {
@@ -390,6 +434,17 @@ export function dataOciDatabaseMigrationJobProgressToTerraform(struct?: DataOciD
   }
 }
 
+
+export function dataOciDatabaseMigrationJobProgressToHclTerraform(struct?: DataOciDatabaseMigrationJobProgress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseMigrationJobProgressOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -465,6 +520,17 @@ export function dataOciDatabaseMigrationJobUnsupportedObjectsToTerraform(struct?
   }
 }
 
+
+export function dataOciDatabaseMigrationJobUnsupportedObjectsToHclTerraform(struct?: DataOciDatabaseMigrationJobUnsupportedObjects): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseMigrationJobUnsupportedObjectsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -537,6 +603,20 @@ export class DataOciDatabaseMigrationJob extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_migration_job";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseMigrationJob resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseMigrationJob to import
+  * @param importFromId The id of the existing DataOciDatabaseMigrationJob that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_migration_job#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseMigrationJob to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_migration_job", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -674,5 +754,19 @@ export class DataOciDatabaseMigrationJob extends cdktf.TerraformDataSource {
     return {
       job_id: cdktf.stringToTerraform(this._jobId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      job_id: {
+        value: cdktf.stringToHclTerraform(this._jobId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

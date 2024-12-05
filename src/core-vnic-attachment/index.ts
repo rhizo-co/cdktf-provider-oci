@@ -28,13 +28,13 @@ export interface CoreVnicAttachmentConfig extends cdktf.TerraformMetaArguments {
   readonly nicIndex?: number;
   /**
   * create_vnic_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_vnic_attachment#create_vnic_details CoreVnicAttachment#create_vnic_details}
   */
   readonly createVnicDetails: CoreVnicAttachmentCreateVnicDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_vnic_attachment#timeouts CoreVnicAttachment#timeouts}
   */
   readonly timeouts?: CoreVnicAttachmentTimeouts;
@@ -59,6 +59,31 @@ export function coreVnicAttachmentCreateVnicDetailsIpv6AddressIpv6SubnetCidrPair
     ipv6_address: cdktf.stringToTerraform(struct!.ipv6Address),
     ipv6_subnet_cidr: cdktf.stringToTerraform(struct!.ipv6SubnetCidr),
   }
+}
+
+
+export function coreVnicAttachmentCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: CoreVnicAttachmentCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ipv6_address: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6Address),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6_subnet_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6SubnetCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreVnicAttachmentCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
@@ -218,7 +243,7 @@ export interface CoreVnicAttachmentCreateVnicDetails {
   readonly vlanId?: string;
   /**
   * ipv6address_ipv6subnet_cidr_pair_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_vnic_attachment#ipv6address_ipv6subnet_cidr_pair_details CoreVnicAttachment#ipv6address_ipv6subnet_cidr_pair_details}
   */
   readonly ipv6AddressIpv6SubnetCidrPairDetails?: CoreVnicAttachmentCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetails[] | cdktf.IResolvable;
@@ -245,6 +270,103 @@ export function coreVnicAttachmentCreateVnicDetailsToTerraform(struct?: CoreVnic
     vlan_id: cdktf.stringToTerraform(struct!.vlanId),
     ipv6address_ipv6subnet_cidr_pair_details: cdktf.listMapper(coreVnicAttachmentCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
   }
+}
+
+
+export function coreVnicAttachmentCreateVnicDetailsToHclTerraform(struct?: CoreVnicAttachmentCreateVnicDetailsOutputReference | CoreVnicAttachmentCreateVnicDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    assign_ipv6ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignIpv6Ip),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_private_dns_record: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPrivateDnsRecord),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_public_ip: {
+      value: cdktf.stringToHclTerraform(struct!.assignPublicIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    hostname_label: {
+      value: cdktf.stringToHclTerraform(struct!.hostnameLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    security_attributes: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.securityAttributes),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    skip_source_dest_check: {
+      value: cdktf.booleanToHclTerraform(struct!.skipSourceDestCheck),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.vlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6address_ipv6subnet_cidr_pair_details: {
+      value: cdktf.listMapperHcl(coreVnicAttachmentCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform, true)(struct!.ipv6AddressIpv6SubnetCidrPairDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreVnicAttachmentCreateVnicDetailsIpv6AddressIpv6SubnetCidrPairDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreVnicAttachmentCreateVnicDetailsOutputReference extends cdktf.ComplexObject {
@@ -608,6 +730,37 @@ export function coreVnicAttachmentTimeoutsToTerraform(struct?: CoreVnicAttachmen
   }
 }
 
+
+export function coreVnicAttachmentTimeoutsToHclTerraform(struct?: CoreVnicAttachmentTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreVnicAttachmentTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -720,6 +873,20 @@ export class CoreVnicAttachment extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_vnic_attachment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreVnicAttachment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreVnicAttachment to import
+  * @param importFromId The id of the existing CoreVnicAttachment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_vnic_attachment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreVnicAttachment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_vnic_attachment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -903,5 +1070,49 @@ export class CoreVnicAttachment extends cdktf.TerraformResource {
       create_vnic_details: coreVnicAttachmentCreateVnicDetailsToTerraform(this._createVnicDetails.internalValue),
       timeouts: coreVnicAttachmentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instance_id: {
+        value: cdktf.stringToHclTerraform(this._instanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      nic_index: {
+        value: cdktf.numberToHclTerraform(this._nicIndex),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      create_vnic_details: {
+        value: coreVnicAttachmentCreateVnicDetailsToHclTerraform(this._createVnicDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreVnicAttachmentCreateVnicDetailsList",
+      },
+      timeouts: {
+        value: coreVnicAttachmentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreVnicAttachmentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -88,31 +88,31 @@ export interface GoldenGateDeploymentConfig extends cdktf.TerraformMetaArguments
   readonly subnetId: string;
   /**
   * locks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/golden_gate_deployment#locks GoldenGateDeployment#locks}
   */
   readonly locks?: GoldenGateDeploymentLocks[] | cdktf.IResolvable;
   /**
   * maintenance_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/golden_gate_deployment#maintenance_configuration GoldenGateDeployment#maintenance_configuration}
   */
   readonly maintenanceConfiguration?: GoldenGateDeploymentMaintenanceConfiguration;
   /**
   * maintenance_window block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/golden_gate_deployment#maintenance_window GoldenGateDeployment#maintenance_window}
   */
   readonly maintenanceWindow?: GoldenGateDeploymentMaintenanceWindow;
   /**
   * ogg_data block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/golden_gate_deployment#ogg_data GoldenGateDeployment#ogg_data}
   */
   readonly oggData?: GoldenGateDeploymentOggData;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/golden_gate_deployment#timeouts GoldenGateDeployment#timeouts}
   */
   readonly timeouts?: GoldenGateDeploymentTimeouts;
@@ -127,6 +127,17 @@ export function goldenGateDeploymentDeploymentDiagnosticDataToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function goldenGateDeploymentDeploymentDiagnosticDataToHclTerraform(struct?: GoldenGateDeploymentDeploymentDiagnosticData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class GoldenGateDeploymentDeploymentDiagnosticDataOutputReference extends cdktf.ComplexObject {
@@ -218,6 +229,17 @@ export function goldenGateDeploymentIngressIpsToTerraform(struct?: GoldenGateDep
   }
 }
 
+
+export function goldenGateDeploymentIngressIpsToHclTerraform(struct?: GoldenGateDeploymentIngressIps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class GoldenGateDeploymentIngressIpsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -290,6 +312,31 @@ export function goldenGateDeploymentLocksToTerraform(struct?: GoldenGateDeployme
     message: cdktf.stringToTerraform(struct!.message),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function goldenGateDeploymentLocksToHclTerraform(struct?: GoldenGateDeploymentLocks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    message: {
+      value: cdktf.stringToHclTerraform(struct!.message),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GoldenGateDeploymentLocksOutputReference extends cdktf.ComplexObject {
@@ -436,6 +483,49 @@ export function goldenGateDeploymentMaintenanceConfigurationToTerraform(struct?:
     major_release_upgrade_period_in_days: cdktf.numberToTerraform(struct!.majorReleaseUpgradePeriodInDays),
     security_patch_upgrade_period_in_days: cdktf.numberToTerraform(struct!.securityPatchUpgradePeriodInDays),
   }
+}
+
+
+export function goldenGateDeploymentMaintenanceConfigurationToHclTerraform(struct?: GoldenGateDeploymentMaintenanceConfigurationOutputReference | GoldenGateDeploymentMaintenanceConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bundle_release_upgrade_period_in_days: {
+      value: cdktf.numberToHclTerraform(struct!.bundleReleaseUpgradePeriodInDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    interim_release_upgrade_period_in_days: {
+      value: cdktf.numberToHclTerraform(struct!.interimReleaseUpgradePeriodInDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_interim_release_auto_upgrade_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isInterimReleaseAutoUpgradeEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    major_release_upgrade_period_in_days: {
+      value: cdktf.numberToHclTerraform(struct!.majorReleaseUpgradePeriodInDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    security_patch_upgrade_period_in_days: {
+      value: cdktf.numberToHclTerraform(struct!.securityPatchUpgradePeriodInDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GoldenGateDeploymentMaintenanceConfigurationOutputReference extends cdktf.ComplexObject {
@@ -596,6 +686,31 @@ export function goldenGateDeploymentMaintenanceWindowToTerraform(struct?: Golden
   }
 }
 
+
+export function goldenGateDeploymentMaintenanceWindowToHclTerraform(struct?: GoldenGateDeploymentMaintenanceWindowOutputReference | GoldenGateDeploymentMaintenanceWindow): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    day: {
+      value: cdktf.stringToHclTerraform(struct!.day),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    start_hour: {
+      value: cdktf.numberToHclTerraform(struct!.startHour),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class GoldenGateDeploymentMaintenanceWindowOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -690,6 +805,43 @@ export function goldenGateDeploymentOggDataGroupToRolesMappingToTerraform(struct
     security_group_id: cdktf.stringToTerraform(struct!.securityGroupId),
     user_group_id: cdktf.stringToTerraform(struct!.userGroupId),
   }
+}
+
+
+export function goldenGateDeploymentOggDataGroupToRolesMappingToHclTerraform(struct?: GoldenGateDeploymentOggDataGroupToRolesMappingOutputReference | GoldenGateDeploymentOggDataGroupToRolesMapping): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    administrator_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.administratorGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operator_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.operatorGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    security_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.securityGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.userGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GoldenGateDeploymentOggDataGroupToRolesMappingOutputReference extends cdktf.ComplexObject {
@@ -842,7 +994,7 @@ export interface GoldenGateDeploymentOggData {
   readonly passwordSecretId?: string;
   /**
   * group_to_roles_mapping block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/golden_gate_deployment#group_to_roles_mapping GoldenGateDeployment#group_to_roles_mapping}
   */
   readonly groupToRolesMapping?: GoldenGateDeploymentOggDataGroupToRolesMapping;
@@ -865,6 +1017,79 @@ export function goldenGateDeploymentOggDataToTerraform(struct?: GoldenGateDeploy
     password_secret_id: cdktf.stringToTerraform(struct!.passwordSecretId),
     group_to_roles_mapping: goldenGateDeploymentOggDataGroupToRolesMappingToTerraform(struct!.groupToRolesMapping),
   }
+}
+
+
+export function goldenGateDeploymentOggDataToHclTerraform(struct?: GoldenGateDeploymentOggDataOutputReference | GoldenGateDeploymentOggData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    admin_password: {
+      value: cdktf.stringToHclTerraform(struct!.adminPassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    admin_username: {
+      value: cdktf.stringToHclTerraform(struct!.adminUsername),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    certificate: {
+      value: cdktf.stringToHclTerraform(struct!.certificate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    credential_store: {
+      value: cdktf.stringToHclTerraform(struct!.credentialStore),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    deployment_name: {
+      value: cdktf.stringToHclTerraform(struct!.deploymentName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    identity_domain_id: {
+      value: cdktf.stringToHclTerraform(struct!.identityDomainId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ogg_version: {
+      value: cdktf.stringToHclTerraform(struct!.oggVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.passwordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    group_to_roles_mapping: {
+      value: goldenGateDeploymentOggDataGroupToRolesMappingToHclTerraform(struct!.groupToRolesMapping),
+      isBlock: true,
+      type: "list",
+      storageClassType: "GoldenGateDeploymentOggDataGroupToRolesMappingList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GoldenGateDeploymentOggDataOutputReference extends cdktf.ComplexObject {
@@ -1137,6 +1362,37 @@ export function goldenGateDeploymentTimeoutsToTerraform(struct?: GoldenGateDeplo
   }
 }
 
+
+export function goldenGateDeploymentTimeoutsToHclTerraform(struct?: GoldenGateDeploymentTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class GoldenGateDeploymentTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1249,6 +1505,20 @@ export class GoldenGateDeployment extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_golden_gate_deployment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a GoldenGateDeployment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the GoldenGateDeployment to import
+  * @param importFromId The id of the existing GoldenGateDeployment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/golden_gate_deployment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the GoldenGateDeployment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_golden_gate_deployment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1809,5 +2079,157 @@ export class GoldenGateDeployment extends cdktf.TerraformResource {
       ogg_data: goldenGateDeploymentOggDataToTerraform(this._oggData.internalValue),
       timeouts: goldenGateDeploymentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cpu_core_count: {
+        value: cdktf.numberToHclTerraform(this._cpuCoreCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      deployment_backup_id: {
+        value: cdktf.stringToHclTerraform(this._deploymentBackupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      deployment_type: {
+        value: cdktf.stringToHclTerraform(this._deploymentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      environment_type: {
+        value: cdktf.stringToHclTerraform(this._environmentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fqdn: {
+        value: cdktf.stringToHclTerraform(this._fqdn),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_auto_scaling_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isAutoScalingEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_lock_override: {
+        value: cdktf.booleanToHclTerraform(this._isLockOverride),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_public: {
+        value: cdktf.booleanToHclTerraform(this._isPublic),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      license_model: {
+        value: cdktf.stringToHclTerraform(this._licenseModel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      load_balancer_subnet_id: {
+        value: cdktf.stringToHclTerraform(this._loadBalancerSubnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      nsg_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._nsgIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      locks: {
+        value: cdktf.listMapperHcl(goldenGateDeploymentLocksToHclTerraform, true)(this._locks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GoldenGateDeploymentLocksList",
+      },
+      maintenance_configuration: {
+        value: goldenGateDeploymentMaintenanceConfigurationToHclTerraform(this._maintenanceConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GoldenGateDeploymentMaintenanceConfigurationList",
+      },
+      maintenance_window: {
+        value: goldenGateDeploymentMaintenanceWindowToHclTerraform(this._maintenanceWindow.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GoldenGateDeploymentMaintenanceWindowList",
+      },
+      ogg_data: {
+        value: goldenGateDeploymentOggDataToHclTerraform(this._oggData.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GoldenGateDeploymentOggDataList",
+      },
+      timeouts: {
+        value: goldenGateDeploymentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "GoldenGateDeploymentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

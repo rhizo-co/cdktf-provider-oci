@@ -24,6 +24,17 @@ export function dataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsApplyUp
   }
 }
 
+
+export function dataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceToHclTerraform(struct?: DataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreference): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsApplyUpdateTimePreferenceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -93,6 +104,17 @@ export function dataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsFreezeP
   }
 }
 
+
+export function dataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsFreezePeriodToHclTerraform(struct?: DataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsFreezePeriod): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsFreezePeriodOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -160,6 +182,17 @@ export function dataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsToTerra
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsToHclTerraform(struct?: DataOciDatabaseCloudVmClusterCloudAutomationUpdateDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseCloudVmClusterCloudAutomationUpdateDetailsOutputReference extends cdktf.ComplexObject {
@@ -243,6 +276,17 @@ export function dataOciDatabaseCloudVmClusterDataCollectionOptionsToTerraform(st
   }
 }
 
+
+export function dataOciDatabaseCloudVmClusterDataCollectionOptionsToHclTerraform(struct?: DataOciDatabaseCloudVmClusterDataCollectionOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseCloudVmClusterDataCollectionOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -317,6 +361,17 @@ export function dataOciDatabaseCloudVmClusterFileSystemConfigurationDetailsToTer
   }
 }
 
+
+export function dataOciDatabaseCloudVmClusterFileSystemConfigurationDetailsToHclTerraform(struct?: DataOciDatabaseCloudVmClusterFileSystemConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseCloudVmClusterFileSystemConfigurationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -384,6 +439,17 @@ export function dataOciDatabaseCloudVmClusterIormConfigCacheDbPlansToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseCloudVmClusterIormConfigCacheDbPlansToHclTerraform(struct?: DataOciDatabaseCloudVmClusterIormConfigCacheDbPlans): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseCloudVmClusterIormConfigCacheDbPlansOutputReference extends cdktf.ComplexObject {
@@ -458,6 +524,17 @@ export function dataOciDatabaseCloudVmClusterIormConfigCacheToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseCloudVmClusterIormConfigCacheToHclTerraform(struct?: DataOciDatabaseCloudVmClusterIormConfigCache): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseCloudVmClusterIormConfigCacheOutputReference extends cdktf.ComplexObject {
@@ -538,6 +615,20 @@ export class DataOciDatabaseCloudVmCluster extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_cloud_vm_cluster";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseCloudVmCluster resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseCloudVmCluster to import
+  * @param importFromId The id of the existing DataOciDatabaseCloudVmCluster that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_cloud_vm_cluster#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseCloudVmCluster to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_cloud_vm_cluster", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -867,5 +958,19 @@ export class DataOciDatabaseCloudVmCluster extends cdktf.TerraformDataSource {
     return {
       cloud_vm_cluster_id: cdktf.stringToTerraform(this._cloudVmClusterId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cloud_vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._cloudVmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

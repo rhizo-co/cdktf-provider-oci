@@ -28,43 +28,43 @@ export interface JmsFleetAdvancedFeatureConfigurationConfig extends cdktf.Terraf
   readonly id?: string;
   /**
   * advanced_usage_tracking block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#advanced_usage_tracking JmsFleetAdvancedFeatureConfiguration#advanced_usage_tracking}
   */
   readonly advancedUsageTracking?: JmsFleetAdvancedFeatureConfigurationAdvancedUsageTracking;
   /**
   * crypto_event_analysis block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#crypto_event_analysis JmsFleetAdvancedFeatureConfiguration#crypto_event_analysis}
   */
   readonly cryptoEventAnalysis?: JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysis;
   /**
   * java_migration_analysis block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#java_migration_analysis JmsFleetAdvancedFeatureConfiguration#java_migration_analysis}
   */
   readonly javaMigrationAnalysis?: JmsFleetAdvancedFeatureConfigurationJavaMigrationAnalysis;
   /**
   * jfr_recording block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#jfr_recording JmsFleetAdvancedFeatureConfiguration#jfr_recording}
   */
   readonly jfrRecording?: JmsFleetAdvancedFeatureConfigurationJfrRecording;
   /**
   * lcm block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#lcm JmsFleetAdvancedFeatureConfiguration#lcm}
   */
   readonly lcm?: JmsFleetAdvancedFeatureConfigurationLcm;
   /**
   * performance_tuning_analysis block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#performance_tuning_analysis JmsFleetAdvancedFeatureConfiguration#performance_tuning_analysis}
   */
   readonly performanceTuningAnalysis?: JmsFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#timeouts JmsFleetAdvancedFeatureConfiguration#timeouts}
   */
   readonly timeouts?: JmsFleetAdvancedFeatureConfigurationTimeouts;
@@ -84,6 +84,25 @@ export function jmsFleetAdvancedFeatureConfigurationAdvancedUsageTrackingToTerra
   return {
     is_enabled: cdktf.booleanToTerraform(struct!.isEnabled),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationAdvancedUsageTrackingToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputReference | JmsFleetAdvancedFeatureConfigurationAdvancedUsageTracking): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputReference extends cdktf.ComplexObject {
@@ -154,6 +173,31 @@ export function jmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarize
     log_group_id: cdktf.stringToTerraform(struct!.logGroupId),
     log_id: cdktf.stringToTerraform(struct!.logId),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputReference | JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    log_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.logGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_id: {
+      value: cdktf.stringToHclTerraform(struct!.logId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputReference extends cdktf.ComplexObject {
@@ -227,7 +271,7 @@ export interface JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
   readonly isEnabled?: boolean | cdktf.IResolvable;
   /**
   * summarized_events_log block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#summarized_events_log JmsFleetAdvancedFeatureConfiguration#summarized_events_log}
   */
   readonly summarizedEventsLog?: JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog;
@@ -242,6 +286,31 @@ export function jmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisToTerrafo
     is_enabled: cdktf.booleanToTerraform(struct!.isEnabled),
     summarized_events_log: jmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogToTerraform(struct!.summarizedEventsLog),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputReference | JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysis): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    summarized_events_log: {
+      value: jmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogToHclTerraform(struct!.summarizedEventsLog),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputReference extends cdktf.ComplexObject {
@@ -331,6 +400,25 @@ export function jmsFleetAdvancedFeatureConfigurationJavaMigrationAnalysisToTerra
   }
 }
 
+
+export function jmsFleetAdvancedFeatureConfigurationJavaMigrationAnalysisToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputReference | JmsFleetAdvancedFeatureConfigurationJavaMigrationAnalysis): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class JmsFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -394,6 +482,25 @@ export function jmsFleetAdvancedFeatureConfigurationJfrRecordingToTerraform(stru
   return {
     is_enabled: cdktf.booleanToTerraform(struct!.isEnabled),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationJfrRecordingToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationJfrRecordingOutputReference | JmsFleetAdvancedFeatureConfigurationJfrRecording): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationJfrRecordingOutputReference extends cdktf.ComplexObject {
@@ -464,6 +571,31 @@ export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMi
     key_size: cdktf.numberToTerraform(struct!.keySize),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key_size: {
+      value: cdktf.numberToHclTerraform(struct!.keySize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutputReference extends cdktf.ComplexObject {
@@ -590,6 +722,31 @@ export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMi
   }
 }
 
+
+export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key_size: {
+      value: cdktf.numberToHclTerraform(struct!.keySize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -714,6 +871,31 @@ export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMi
   }
 }
 
+
+export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTls | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key_size: {
+      value: cdktf.numberToHclTerraform(struct!.keySize),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -819,19 +1001,19 @@ export class JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinim
 export interface JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings {
   /**
   * certpath block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#certpath JmsFleetAdvancedFeatureConfiguration#certpath}
   */
   readonly certpath?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath[] | cdktf.IResolvable;
   /**
   * jar block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#jar JmsFleetAdvancedFeatureConfiguration#jar}
   */
   readonly jar?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar[] | cdktf.IResolvable;
   /**
   * tls block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#tls JmsFleetAdvancedFeatureConfiguration#tls}
   */
   readonly tls?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTls[] | cdktf.IResolvable;
@@ -847,6 +1029,37 @@ export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMi
     jar: cdktf.listMapper(jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarToTerraform, true)(struct!.jar),
     tls: cdktf.listMapper(jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsToTerraform, true)(struct!.tls),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutputReference | JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    certpath: {
+      value: cdktf.listMapperHcl(jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathToHclTerraform, true)(struct!.certpath),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathList",
+    },
+    jar: {
+      value: cdktf.listMapperHcl(jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarToHclTerraform, true)(struct!.jar),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarList",
+    },
+    tls: {
+      value: cdktf.listMapperHcl(jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsToHclTerraform, true)(struct!.tls),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutputReference extends cdktf.ComplexObject {
@@ -996,6 +1209,73 @@ export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPr
     socks_proxy_port: cdktf.numberToTerraform(struct!.socksProxyPort),
     use_system_proxies: cdktf.booleanToTerraform(struct!.useSystemProxies),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutputReference | JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ftp_proxy_host: {
+      value: cdktf.stringToHclTerraform(struct!.ftpProxyHost),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ftp_proxy_port: {
+      value: cdktf.numberToHclTerraform(struct!.ftpProxyPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    http_proxy_host: {
+      value: cdktf.stringToHclTerraform(struct!.httpProxyHost),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    http_proxy_port: {
+      value: cdktf.numberToHclTerraform(struct!.httpProxyPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    https_proxy_host: {
+      value: cdktf.stringToHclTerraform(struct!.httpsProxyHost),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    https_proxy_port: {
+      value: cdktf.numberToHclTerraform(struct!.httpsProxyPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    socks_proxy_host: {
+      value: cdktf.stringToHclTerraform(struct!.socksProxyHost),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    socks_proxy_port: {
+      value: cdktf.numberToHclTerraform(struct!.socksProxyPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    use_system_proxies: {
+      value: cdktf.booleanToHclTerraform(struct!.useSystemProxies),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutputReference extends cdktf.ComplexObject {
@@ -1241,13 +1521,13 @@ export interface JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActions 
   readonly shouldReplaceCertificatesOperatingSystem?: boolean | cdktf.IResolvable;
   /**
   * minimum_key_size_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#minimum_key_size_settings JmsFleetAdvancedFeatureConfiguration#minimum_key_size_settings}
   */
   readonly minimumKeySizeSettings?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings;
   /**
   * proxies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#proxies JmsFleetAdvancedFeatureConfiguration#proxies}
   */
   readonly proxies?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies;
@@ -1266,6 +1546,55 @@ export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsTo
     minimum_key_size_settings: jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsToTerraform(struct!.minimumKeySizeSettings),
     proxies: jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesToTerraform(struct!.proxies),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutputReference | JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    add_logging_handler: {
+      value: cdktf.booleanToHclTerraform(struct!.addLoggingHandler),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    disabled_tls_versions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.disabledTlsVersions),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    global_logging_level: {
+      value: cdktf.stringToHclTerraform(struct!.globalLoggingLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    should_replace_certificates_operating_system: {
+      value: cdktf.booleanToHclTerraform(struct!.shouldReplaceCertificatesOperatingSystem),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    minimum_key_size_settings: {
+      value: jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsToHclTerraform(struct!.minimumKeySizeSettings),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsList",
+    },
+    proxies: {
+      value: jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesToHclTerraform(struct!.proxies),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutputReference extends cdktf.ComplexObject {
@@ -1433,7 +1762,7 @@ export interface JmsFleetAdvancedFeatureConfigurationLcm {
   readonly isEnabled?: boolean | cdktf.IResolvable;
   /**
   * post_installation_actions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#post_installation_actions JmsFleetAdvancedFeatureConfiguration#post_installation_actions}
   */
   readonly postInstallationActions?: JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActions;
@@ -1448,6 +1777,31 @@ export function jmsFleetAdvancedFeatureConfigurationLcmToTerraform(struct?: JmsF
     is_enabled: cdktf.booleanToTerraform(struct!.isEnabled),
     post_installation_actions: jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsToTerraform(struct!.postInstallationActions),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationLcmToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationLcmOutputReference | JmsFleetAdvancedFeatureConfigurationLcm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    post_installation_actions: {
+      value: jmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsToHclTerraform(struct!.postInstallationActions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "JmsFleetAdvancedFeatureConfigurationLcmPostInstallationActionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationLcmOutputReference extends cdktf.ComplexObject {
@@ -1537,6 +1891,25 @@ export function jmsFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisToT
   }
 }
 
+
+export function jmsFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputReference | JmsFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class JmsFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1610,6 +1983,37 @@ export function jmsFleetAdvancedFeatureConfigurationTimeoutsToTerraform(struct?:
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function jmsFleetAdvancedFeatureConfigurationTimeoutsToHclTerraform(struct?: JmsFleetAdvancedFeatureConfigurationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsFleetAdvancedFeatureConfigurationTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -1724,6 +2128,20 @@ export class JmsFleetAdvancedFeatureConfiguration extends cdktf.TerraformResourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_fleet_advanced_feature_configuration";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a JmsFleetAdvancedFeatureConfiguration resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the JmsFleetAdvancedFeatureConfiguration to import
+  * @param importFromId The id of the existing JmsFleetAdvancedFeatureConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_fleet_advanced_feature_configuration#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the JmsFleetAdvancedFeatureConfiguration to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_fleet_advanced_feature_configuration", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1965,5 +2383,79 @@ export class JmsFleetAdvancedFeatureConfiguration extends cdktf.TerraformResourc
       performance_tuning_analysis: jmsFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisToTerraform(this._performanceTuningAnalysis.internalValue),
       timeouts: jmsFleetAdvancedFeatureConfigurationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      analytic_bucket_name: {
+        value: cdktf.stringToHclTerraform(this._analyticBucketName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      analytic_namespace: {
+        value: cdktf.stringToHclTerraform(this._analyticNamespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fleet_id: {
+        value: cdktf.stringToHclTerraform(this._fleetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      advanced_usage_tracking: {
+        value: jmsFleetAdvancedFeatureConfigurationAdvancedUsageTrackingToHclTerraform(this._advancedUsageTracking.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JmsFleetAdvancedFeatureConfigurationAdvancedUsageTrackingList",
+      },
+      crypto_event_analysis: {
+        value: jmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisToHclTerraform(this._cryptoEventAnalysis.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JmsFleetAdvancedFeatureConfigurationCryptoEventAnalysisList",
+      },
+      java_migration_analysis: {
+        value: jmsFleetAdvancedFeatureConfigurationJavaMigrationAnalysisToHclTerraform(this._javaMigrationAnalysis.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JmsFleetAdvancedFeatureConfigurationJavaMigrationAnalysisList",
+      },
+      jfr_recording: {
+        value: jmsFleetAdvancedFeatureConfigurationJfrRecordingToHclTerraform(this._jfrRecording.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JmsFleetAdvancedFeatureConfigurationJfrRecordingList",
+      },
+      lcm: {
+        value: jmsFleetAdvancedFeatureConfigurationLcmToHclTerraform(this._lcm.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JmsFleetAdvancedFeatureConfigurationLcmList",
+      },
+      performance_tuning_analysis: {
+        value: jmsFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisToHclTerraform(this._performanceTuningAnalysis.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "JmsFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisList",
+      },
+      timeouts: {
+        value: jmsFleetAdvancedFeatureConfigurationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "JmsFleetAdvancedFeatureConfigurationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

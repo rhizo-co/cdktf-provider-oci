@@ -24,7 +24,7 @@ export interface DataOciCloudBridgeInventoriesConfig extends cdktf.TerraformMeta
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_bridge_inventories#filter DataOciCloudBridgeInventories#filter}
   */
   readonly filter?: DataOciCloudBridgeInventoriesFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciCloudBridgeInventoriesInventoryCollectionItemsToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciCloudBridgeInventoriesInventoryCollectionItemsToHclTerraform(struct?: DataOciCloudBridgeInventoriesInventoryCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudBridgeInventoriesInventoryCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -153,6 +164,17 @@ export function dataOciCloudBridgeInventoriesInventoryCollectionToTerraform(stru
   }
 }
 
+
+export function dataOciCloudBridgeInventoriesInventoryCollectionToHclTerraform(struct?: DataOciCloudBridgeInventoriesInventoryCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudBridgeInventoriesInventoryCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -231,6 +253,37 @@ export function dataOciCloudBridgeInventoriesFilterToTerraform(struct?: DataOciC
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCloudBridgeInventoriesFilterToHclTerraform(struct?: DataOciCloudBridgeInventoriesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCloudBridgeInventoriesFilterOutputReference extends cdktf.ComplexObject {
@@ -362,6 +415,20 @@ export class DataOciCloudBridgeInventories extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_cloud_bridge_inventories";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCloudBridgeInventories resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCloudBridgeInventories to import
+  * @param importFromId The id of the existing DataOciCloudBridgeInventories that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_bridge_inventories#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCloudBridgeInventories to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_bridge_inventories", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -477,5 +544,37 @@ export class DataOciCloudBridgeInventories extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciCloudBridgeInventoriesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCloudBridgeInventoriesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCloudBridgeInventoriesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

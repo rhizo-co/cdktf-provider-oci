@@ -72,13 +72,13 @@ export interface DataSafeMaskingPolicyConfig extends cdktf.TerraformMetaArgument
   readonly recompile?: string;
   /**
   * column_source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_masking_policy#column_source DataSafeMaskingPolicy#column_source}
   */
   readonly columnSource: DataSafeMaskingPolicyColumnSource[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_masking_policy#timeouts DataSafeMaskingPolicy#timeouts}
   */
   readonly timeouts?: DataSafeMaskingPolicyTimeouts;
@@ -108,6 +108,37 @@ export function dataSafeMaskingPolicyColumnSourceToTerraform(struct?: DataSafeMa
     sensitive_data_model_id: cdktf.stringToTerraform(struct!.sensitiveDataModelId),
     target_id: cdktf.stringToTerraform(struct!.targetId),
   }
+}
+
+
+export function dataSafeMaskingPolicyColumnSourceToHclTerraform(struct?: DataSafeMaskingPolicyColumnSource | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    column_source: {
+      value: cdktf.stringToHclTerraform(struct!.columnSource),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    sensitive_data_model_id: {
+      value: cdktf.stringToHclTerraform(struct!.sensitiveDataModelId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    target_id: {
+      value: cdktf.stringToHclTerraform(struct!.targetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeMaskingPolicyColumnSourceOutputReference extends cdktf.ComplexObject {
@@ -258,6 +289,37 @@ export function dataSafeMaskingPolicyTimeoutsToTerraform(struct?: DataSafeMaskin
   }
 }
 
+
+export function dataSafeMaskingPolicyTimeoutsToHclTerraform(struct?: DataSafeMaskingPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataSafeMaskingPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -370,6 +432,20 @@ export class DataSafeMaskingPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_masking_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeMaskingPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeMaskingPolicy to import
+  * @param importFromId The id of the existing DataSafeMaskingPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_masking_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeMaskingPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_masking_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -726,5 +802,115 @@ export class DataSafeMaskingPolicy extends cdktf.TerraformResource {
       column_source: cdktf.listMapper(dataSafeMaskingPolicyColumnSourceToTerraform, true)(this._columnSource.internalValue),
       timeouts: dataSafeMaskingPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      add_masking_columns_from_sdm_trigger: {
+        value: cdktf.numberToHclTerraform(this._addMaskingColumnsFromSdmTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      generate_health_report_trigger: {
+        value: cdktf.numberToHclTerraform(this._generateHealthReportTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_drop_temp_tables_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isDropTempTablesEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_redo_logging_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isRedoLoggingEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_refresh_stats_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isRefreshStatsEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      parallel_degree: {
+        value: cdktf.stringToHclTerraform(this._parallelDegree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      post_masking_script: {
+        value: cdktf.stringToHclTerraform(this._postMaskingScript),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pre_masking_script: {
+        value: cdktf.stringToHclTerraform(this._preMaskingScript),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      recompile: {
+        value: cdktf.stringToHclTerraform(this._recompile),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      column_source: {
+        value: cdktf.listMapperHcl(dataSafeMaskingPolicyColumnSourceToHclTerraform, true)(this._columnSource.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataSafeMaskingPolicyColumnSourceList",
+      },
+      timeouts: {
+        value: dataSafeMaskingPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeMaskingPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

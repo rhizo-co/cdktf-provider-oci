@@ -44,13 +44,13 @@ export interface DataintegrationWorkspaceImportRequestConfig extends cdktf.Terra
   readonly workspaceId: string;
   /**
   * import_conflict_resolution block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_import_request#import_conflict_resolution DataintegrationWorkspaceImportRequest#import_conflict_resolution}
   */
   readonly importConflictResolution?: DataintegrationWorkspaceImportRequestImportConflictResolution;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_import_request#timeouts DataintegrationWorkspaceImportRequest#timeouts}
   */
   readonly timeouts?: DataintegrationWorkspaceImportRequestTimeouts;
@@ -65,6 +65,17 @@ export function dataintegrationWorkspaceImportRequestImportedObjectsToTerraform(
   }
   return {
   }
+}
+
+
+export function dataintegrationWorkspaceImportRequestImportedObjectsToHclTerraform(struct?: DataintegrationWorkspaceImportRequestImportedObjects): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataintegrationWorkspaceImportRequestImportedObjectsOutputReference extends cdktf.ComplexObject {
@@ -191,6 +202,37 @@ export function dataintegrationWorkspaceImportRequestImportConflictResolutionToT
   }
 }
 
+
+export function dataintegrationWorkspaceImportRequestImportConflictResolutionToHclTerraform(struct?: DataintegrationWorkspaceImportRequestImportConflictResolutionOutputReference | DataintegrationWorkspaceImportRequestImportConflictResolution): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    duplicate_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.duplicatePrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    duplicate_suffix: {
+      value: cdktf.stringToHclTerraform(struct!.duplicateSuffix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    import_conflict_resolution_type: {
+      value: cdktf.stringToHclTerraform(struct!.importConflictResolutionType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceImportRequestImportConflictResolutionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -307,6 +349,37 @@ export function dataintegrationWorkspaceImportRequestTimeoutsToTerraform(struct?
   }
 }
 
+
+export function dataintegrationWorkspaceImportRequestTimeoutsToHclTerraform(struct?: DataintegrationWorkspaceImportRequestTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceImportRequestTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -419,6 +492,20 @@ export class DataintegrationWorkspaceImportRequest extends cdktf.TerraformResour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataintegration_workspace_import_request";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataintegrationWorkspaceImportRequest resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataintegrationWorkspaceImportRequest to import
+  * @param importFromId The id of the existing DataintegrationWorkspaceImportRequest that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_import_request#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataintegrationWorkspaceImportRequest to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataintegration_workspace_import_request", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -678,5 +765,73 @@ export class DataintegrationWorkspaceImportRequest extends cdktf.TerraformResour
       import_conflict_resolution: dataintegrationWorkspaceImportRequestImportConflictResolutionToTerraform(this._importConflictResolution.internalValue),
       timeouts: dataintegrationWorkspaceImportRequestTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      are_data_asset_references_included: {
+        value: cdktf.booleanToHclTerraform(this._areDataAssetReferencesIncluded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      file_name: {
+        value: cdktf.stringToHclTerraform(this._fileName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_key_for_import: {
+        value: cdktf.stringToHclTerraform(this._objectKeyForImport),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_storage_region: {
+        value: cdktf.stringToHclTerraform(this._objectStorageRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_storage_tenancy_id: {
+        value: cdktf.stringToHclTerraform(this._objectStorageTenancyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      workspace_id: {
+        value: cdktf.stringToHclTerraform(this._workspaceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      import_conflict_resolution: {
+        value: dataintegrationWorkspaceImportRequestImportConflictResolutionToHclTerraform(this._importConflictResolution.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceImportRequestImportConflictResolutionList",
+      },
+      timeouts: {
+        value: dataintegrationWorkspaceImportRequestTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataintegrationWorkspaceImportRequestTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

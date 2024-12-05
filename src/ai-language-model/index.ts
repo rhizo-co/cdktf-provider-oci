@@ -40,25 +40,25 @@ export interface AiLanguageModelConfig extends cdktf.TerraformMetaArguments {
   readonly projectId: string;
   /**
   * model_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#model_details AiLanguageModel#model_details}
   */
   readonly modelDetails: AiLanguageModelModelDetails;
   /**
   * test_strategy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#test_strategy AiLanguageModel#test_strategy}
   */
   readonly testStrategy?: AiLanguageModelTestStrategy;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#timeouts AiLanguageModel#timeouts}
   */
   readonly timeouts?: AiLanguageModelTimeouts;
   /**
   * training_dataset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#training_dataset AiLanguageModel#training_dataset}
   */
   readonly trainingDataset: AiLanguageModelTrainingDataset;
@@ -73,6 +73,17 @@ export function aiLanguageModelEvaluationResultsClassMetricsToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function aiLanguageModelEvaluationResultsClassMetricsToHclTerraform(struct?: AiLanguageModelEvaluationResultsClassMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class AiLanguageModelEvaluationResultsClassMetricsOutputReference extends cdktf.ComplexObject {
@@ -159,6 +170,17 @@ export function aiLanguageModelEvaluationResultsEntityMetricsToTerraform(struct?
   }
 }
 
+
+export function aiLanguageModelEvaluationResultsEntityMetricsToHclTerraform(struct?: AiLanguageModelEvaluationResultsEntityMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class AiLanguageModelEvaluationResultsEntityMetricsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -236,6 +258,17 @@ export function aiLanguageModelEvaluationResultsMetricsToTerraform(struct?: AiLa
   }
   return {
   }
+}
+
+
+export function aiLanguageModelEvaluationResultsMetricsToHclTerraform(struct?: AiLanguageModelEvaluationResultsMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class AiLanguageModelEvaluationResultsMetricsOutputReference extends cdktf.ComplexObject {
@@ -347,6 +380,17 @@ export function aiLanguageModelEvaluationResultsToTerraform(struct?: AiLanguageM
   }
 }
 
+
+export function aiLanguageModelEvaluationResultsToHclTerraform(struct?: AiLanguageModelEvaluationResults): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class AiLanguageModelEvaluationResultsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -449,6 +493,31 @@ export function aiLanguageModelModelDetailsClassificationModeToTerraform(struct?
   }
 }
 
+
+export function aiLanguageModelModelDetailsClassificationModeToHclTerraform(struct?: AiLanguageModelModelDetailsClassificationModeOutputReference | AiLanguageModelModelDetailsClassificationMode): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    classification_mode: {
+      value: cdktf.stringToHclTerraform(struct!.classificationMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    version: {
+      value: cdktf.stringToHclTerraform(struct!.version),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiLanguageModelModelDetailsClassificationModeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -531,7 +600,7 @@ export interface AiLanguageModelModelDetails {
   readonly version?: string;
   /**
   * classification_mode block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#classification_mode AiLanguageModel#classification_mode}
   */
   readonly classificationMode?: AiLanguageModelModelDetailsClassificationMode;
@@ -548,6 +617,43 @@ export function aiLanguageModelModelDetailsToTerraform(struct?: AiLanguageModelM
     version: cdktf.stringToTerraform(struct!.version),
     classification_mode: aiLanguageModelModelDetailsClassificationModeToTerraform(struct!.classificationMode),
   }
+}
+
+
+export function aiLanguageModelModelDetailsToHclTerraform(struct?: AiLanguageModelModelDetailsOutputReference | AiLanguageModelModelDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    language_code: {
+      value: cdktf.stringToHclTerraform(struct!.languageCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    version: {
+      value: cdktf.stringToHclTerraform(struct!.version),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    classification_mode: {
+      value: aiLanguageModelModelDetailsClassificationModeToHclTerraform(struct!.classificationMode),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiLanguageModelModelDetailsClassificationModeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiLanguageModelModelDetailsOutputReference extends cdktf.ComplexObject {
@@ -693,6 +799,43 @@ export function aiLanguageModelTestStrategyTestingDatasetLocationDetailsToTerraf
   }
 }
 
+
+export function aiLanguageModelTestStrategyTestingDatasetLocationDetailsToHclTerraform(struct?: AiLanguageModelTestStrategyTestingDatasetLocationDetailsOutputReference | AiLanguageModelTestStrategyTestingDatasetLocationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    location_type: {
+      value: cdktf.stringToHclTerraform(struct!.locationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.objectNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiLanguageModelTestStrategyTestingDatasetLocationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -806,7 +949,7 @@ export interface AiLanguageModelTestStrategyTestingDataset {
   readonly datasetType: string;
   /**
   * location_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#location_details AiLanguageModel#location_details}
   */
   readonly locationDetails?: AiLanguageModelTestStrategyTestingDatasetLocationDetails;
@@ -822,6 +965,37 @@ export function aiLanguageModelTestStrategyTestingDatasetToTerraform(struct?: Ai
     dataset_type: cdktf.stringToTerraform(struct!.datasetType),
     location_details: aiLanguageModelTestStrategyTestingDatasetLocationDetailsToTerraform(struct!.locationDetails),
   }
+}
+
+
+export function aiLanguageModelTestStrategyTestingDatasetToHclTerraform(struct?: AiLanguageModelTestStrategyTestingDatasetOutputReference | AiLanguageModelTestStrategyTestingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dataset_id: {
+      value: cdktf.stringToHclTerraform(struct!.datasetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_type: {
+      value: cdktf.stringToHclTerraform(struct!.datasetType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    location_details: {
+      value: aiLanguageModelTestStrategyTestingDatasetLocationDetailsToHclTerraform(struct!.locationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiLanguageModelTestStrategyTestingDatasetLocationDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiLanguageModelTestStrategyTestingDatasetOutputReference extends cdktf.ComplexObject {
@@ -945,6 +1119,43 @@ export function aiLanguageModelTestStrategyValidationDatasetLocationDetailsToTer
   }
 }
 
+
+export function aiLanguageModelTestStrategyValidationDatasetLocationDetailsToHclTerraform(struct?: AiLanguageModelTestStrategyValidationDatasetLocationDetailsOutputReference | AiLanguageModelTestStrategyValidationDatasetLocationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    location_type: {
+      value: cdktf.stringToHclTerraform(struct!.locationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.objectNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiLanguageModelTestStrategyValidationDatasetLocationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1058,7 +1269,7 @@ export interface AiLanguageModelTestStrategyValidationDataset {
   readonly datasetType: string;
   /**
   * location_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#location_details AiLanguageModel#location_details}
   */
   readonly locationDetails?: AiLanguageModelTestStrategyValidationDatasetLocationDetails;
@@ -1074,6 +1285,37 @@ export function aiLanguageModelTestStrategyValidationDatasetToTerraform(struct?:
     dataset_type: cdktf.stringToTerraform(struct!.datasetType),
     location_details: aiLanguageModelTestStrategyValidationDatasetLocationDetailsToTerraform(struct!.locationDetails),
   }
+}
+
+
+export function aiLanguageModelTestStrategyValidationDatasetToHclTerraform(struct?: AiLanguageModelTestStrategyValidationDatasetOutputReference | AiLanguageModelTestStrategyValidationDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dataset_id: {
+      value: cdktf.stringToHclTerraform(struct!.datasetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_type: {
+      value: cdktf.stringToHclTerraform(struct!.datasetType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    location_details: {
+      value: aiLanguageModelTestStrategyValidationDatasetLocationDetailsToHclTerraform(struct!.locationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiLanguageModelTestStrategyValidationDatasetLocationDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiLanguageModelTestStrategyValidationDatasetOutputReference extends cdktf.ComplexObject {
@@ -1172,13 +1414,13 @@ export interface AiLanguageModelTestStrategy {
   readonly strategyType: string;
   /**
   * testing_dataset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#testing_dataset AiLanguageModel#testing_dataset}
   */
   readonly testingDataset: AiLanguageModelTestStrategyTestingDataset;
   /**
   * validation_dataset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#validation_dataset AiLanguageModel#validation_dataset}
   */
   readonly validationDataset?: AiLanguageModelTestStrategyValidationDataset;
@@ -1194,6 +1436,37 @@ export function aiLanguageModelTestStrategyToTerraform(struct?: AiLanguageModelT
     testing_dataset: aiLanguageModelTestStrategyTestingDatasetToTerraform(struct!.testingDataset),
     validation_dataset: aiLanguageModelTestStrategyValidationDatasetToTerraform(struct!.validationDataset),
   }
+}
+
+
+export function aiLanguageModelTestStrategyToHclTerraform(struct?: AiLanguageModelTestStrategyOutputReference | AiLanguageModelTestStrategy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    strategy_type: {
+      value: cdktf.stringToHclTerraform(struct!.strategyType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    testing_dataset: {
+      value: aiLanguageModelTestStrategyTestingDatasetToHclTerraform(struct!.testingDataset),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiLanguageModelTestStrategyTestingDatasetList",
+    },
+    validation_dataset: {
+      value: aiLanguageModelTestStrategyValidationDatasetToHclTerraform(struct!.validationDataset),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiLanguageModelTestStrategyValidationDatasetList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiLanguageModelTestStrategyOutputReference extends cdktf.ComplexObject {
@@ -1307,6 +1580,37 @@ export function aiLanguageModelTimeoutsToTerraform(struct?: AiLanguageModelTimeo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function aiLanguageModelTimeoutsToHclTerraform(struct?: AiLanguageModelTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiLanguageModelTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -1443,6 +1747,43 @@ export function aiLanguageModelTrainingDatasetLocationDetailsToTerraform(struct?
   }
 }
 
+
+export function aiLanguageModelTrainingDatasetLocationDetailsToHclTerraform(struct?: AiLanguageModelTrainingDatasetLocationDetailsOutputReference | AiLanguageModelTrainingDatasetLocationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    location_type: {
+      value: cdktf.stringToHclTerraform(struct!.locationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.objectNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiLanguageModelTrainingDatasetLocationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1556,7 +1897,7 @@ export interface AiLanguageModelTrainingDataset {
   readonly datasetType: string;
   /**
   * location_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#location_details AiLanguageModel#location_details}
   */
   readonly locationDetails?: AiLanguageModelTrainingDatasetLocationDetails;
@@ -1572,6 +1913,37 @@ export function aiLanguageModelTrainingDatasetToTerraform(struct?: AiLanguageMod
     dataset_type: cdktf.stringToTerraform(struct!.datasetType),
     location_details: aiLanguageModelTrainingDatasetLocationDetailsToTerraform(struct!.locationDetails),
   }
+}
+
+
+export function aiLanguageModelTrainingDatasetToHclTerraform(struct?: AiLanguageModelTrainingDatasetOutputReference | AiLanguageModelTrainingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dataset_id: {
+      value: cdktf.stringToHclTerraform(struct!.datasetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_type: {
+      value: cdktf.stringToHclTerraform(struct!.datasetType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    location_details: {
+      value: aiLanguageModelTrainingDatasetLocationDetailsToHclTerraform(struct!.locationDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiLanguageModelTrainingDatasetLocationDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiLanguageModelTrainingDatasetOutputReference extends cdktf.ComplexObject {
@@ -1673,6 +2045,20 @@ export class AiLanguageModel extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ai_language_model";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a AiLanguageModel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the AiLanguageModel to import
+  * @param importFromId The id of the existing AiLanguageModel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_language_model#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the AiLanguageModel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_language_model", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1937,5 +2323,79 @@ export class AiLanguageModel extends cdktf.TerraformResource {
       timeouts: aiLanguageModelTimeoutsToTerraform(this._timeouts.internalValue),
       training_dataset: aiLanguageModelTrainingDatasetToTerraform(this._trainingDataset.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_details: {
+        value: aiLanguageModelModelDetailsToHclTerraform(this._modelDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiLanguageModelModelDetailsList",
+      },
+      test_strategy: {
+        value: aiLanguageModelTestStrategyToHclTerraform(this._testStrategy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiLanguageModelTestStrategyList",
+      },
+      timeouts: {
+        value: aiLanguageModelTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "AiLanguageModelTimeouts",
+      },
+      training_dataset: {
+        value: aiLanguageModelTrainingDatasetToHclTerraform(this._trainingDataset.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiLanguageModelTrainingDatasetList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

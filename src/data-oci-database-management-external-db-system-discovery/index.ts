@@ -24,6 +24,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsAsmInstancesToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsAsmInstances): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsAsmInstancesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -98,6 +109,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsAssociatedComponentsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsAssociatedComponents): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsAssociatedComponentsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -170,6 +192,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoConnectionCredentialsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoConnectionCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoConnectionCredentialsOutputReference extends cdktf.ComplexObject {
@@ -266,6 +299,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoConnectionStringToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoConnectionString): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoConnectionStringOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -348,6 +392,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoDatabaseCredentialToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoDatabaseCredential): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoDatabaseCredentialOutputReference extends cdktf.ComplexObject {
@@ -439,6 +494,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorConnectionInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -519,6 +585,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesConnectorOutputReference extends cdktf.ComplexObject {
@@ -616,6 +693,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstances): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsClusterInstancesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -704,6 +792,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoConnectionCredentialsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoConnectionCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoConnectionCredentialsOutputReference extends cdktf.ComplexObject {
@@ -800,6 +899,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoConnectionStringToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoConnectionString): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoConnectionStringOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -882,6 +992,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoDatabaseCredentialToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoDatabaseCredential): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoDatabaseCredentialOutputReference extends cdktf.ComplexObject {
@@ -973,6 +1094,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorConnectionInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1053,6 +1185,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsConnectorOutputReference extends cdktf.ComplexObject {
@@ -1150,6 +1293,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsEndpointsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsEndpoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsEndpointsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1234,6 +1388,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsNetworkConfigurationsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsNetworkConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsNetworkConfigurationsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1306,6 +1471,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoConnectionCredentialsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoConnectionCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoConnectionCredentialsOutputReference extends cdktf.ComplexObject {
@@ -1402,6 +1578,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoConnectionStringToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoConnectionString): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoConnectionStringOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1484,6 +1671,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoDatabaseCredentialToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoDatabaseCredential): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoDatabaseCredentialOutputReference extends cdktf.ComplexObject {
@@ -1575,6 +1773,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorConnectionInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1655,6 +1864,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesConnectorOutputReference extends cdktf.ComplexObject {
@@ -1752,6 +1972,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsPluggableDatabasesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1830,6 +2061,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsScanConfigurationsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsScanConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsScanConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -1911,6 +2153,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsVipConfigurationsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsVipConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsVipConfigurationsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1983,6 +2236,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComp
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponents): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryDiscoveredComponentsOutputReference extends cdktf.ComplexObject {
@@ -2288,6 +2552,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperation
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorConnectionInfoConnectionCredentialsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorConnectionInfoConnectionCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorConnectionInfoConnectionCredentialsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2377,6 +2652,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperation
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorConnectionInfoConnectionStringToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorConnectionInfoConnectionString): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorConnectionInfoConnectionStringOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2461,6 +2747,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperation
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorConnectionInfoToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorConnectionInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorConnectionInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2535,6 +2832,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperation
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueConnectorOutputReference extends cdktf.ComplexObject {
@@ -2617,6 +2925,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperation
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsValueOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2697,6 +3016,17 @@ export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperation
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemDiscoveryPatchOperationsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2770,6 +3100,20 @@ export class DataOciDatabaseManagementExternalDbSystemDiscovery extends cdktf.Te
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_external_db_system_discovery";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementExternalDbSystemDiscovery resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementExternalDbSystemDiscovery to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementExternalDbSystemDiscovery that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_external_db_system_discovery#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementExternalDbSystemDiscovery to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_external_db_system_discovery", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2906,5 +3250,19 @@ export class DataOciDatabaseManagementExternalDbSystemDiscovery extends cdktf.Te
     return {
       external_db_system_discovery_id: cdktf.stringToTerraform(this._externalDbSystemDiscoveryId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      external_db_system_discovery_id: {
+        value: cdktf.stringToHclTerraform(this._externalDbSystemDiscoveryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

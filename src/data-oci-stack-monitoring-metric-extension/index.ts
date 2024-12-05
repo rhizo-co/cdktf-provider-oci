@@ -24,6 +24,17 @@ export function dataOciStackMonitoringMetricExtensionEnabledOnResourcesToTerrafo
   }
 }
 
+
+export function dataOciStackMonitoringMetricExtensionEnabledOnResourcesToHclTerraform(struct?: DataOciStackMonitoringMetricExtensionEnabledOnResources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciStackMonitoringMetricExtensionEnabledOnResourcesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -86,6 +97,17 @@ export function dataOciStackMonitoringMetricExtensionMetricListStructToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringMetricExtensionMetricListStructToHclTerraform(struct?: DataOciStackMonitoringMetricExtensionMetricListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringMetricExtensionMetricListStructOutputReference extends cdktf.ComplexObject {
@@ -187,6 +209,17 @@ export function dataOciStackMonitoringMetricExtensionQueryPropertiesInParamDetai
   }
 }
 
+
+export function dataOciStackMonitoringMetricExtensionQueryPropertiesInParamDetailsToHclTerraform(struct?: DataOciStackMonitoringMetricExtensionQueryPropertiesInParamDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciStackMonitoringMetricExtensionQueryPropertiesInParamDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -254,6 +287,17 @@ export function dataOciStackMonitoringMetricExtensionQueryPropertiesOutParamDeta
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringMetricExtensionQueryPropertiesOutParamDetailsToHclTerraform(struct?: DataOciStackMonitoringMetricExtensionQueryPropertiesOutParamDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringMetricExtensionQueryPropertiesOutParamDetailsOutputReference extends cdktf.ComplexObject {
@@ -325,6 +369,17 @@ export function dataOciStackMonitoringMetricExtensionQueryPropertiesScriptDetail
   }
 }
 
+
+export function dataOciStackMonitoringMetricExtensionQueryPropertiesScriptDetailsToHclTerraform(struct?: DataOciStackMonitoringMetricExtensionQueryPropertiesScriptDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciStackMonitoringMetricExtensionQueryPropertiesScriptDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -394,6 +449,17 @@ export function dataOciStackMonitoringMetricExtensionQueryPropertiesSqlDetailsTo
   }
 }
 
+
+export function dataOciStackMonitoringMetricExtensionQueryPropertiesSqlDetailsToHclTerraform(struct?: DataOciStackMonitoringMetricExtensionQueryPropertiesSqlDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciStackMonitoringMetricExtensionQueryPropertiesSqlDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -461,6 +527,17 @@ export function dataOciStackMonitoringMetricExtensionQueryPropertiesToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringMetricExtensionQueryPropertiesToHclTerraform(struct?: DataOciStackMonitoringMetricExtensionQueryProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringMetricExtensionQueryPropertiesOutputReference extends cdktf.ComplexObject {
@@ -599,6 +676,20 @@ export class DataOciStackMonitoringMetricExtension extends cdktf.TerraformDataSo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_metric_extension";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciStackMonitoringMetricExtension resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciStackMonitoringMetricExtension to import
+  * @param importFromId The id of the existing DataOciStackMonitoringMetricExtension that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_metric_extension#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciStackMonitoringMetricExtension to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_metric_extension", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -763,5 +854,19 @@ export class DataOciStackMonitoringMetricExtension extends cdktf.TerraformDataSo
     return {
       metric_extension_id: cdktf.stringToTerraform(this._metricExtensionId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      metric_extension_id: {
+        value: cdktf.stringToHclTerraform(this._metricExtensionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

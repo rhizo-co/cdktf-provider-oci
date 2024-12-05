@@ -44,13 +44,13 @@ export interface DataSafeAlertPolicyConfig extends cdktf.TerraformMetaArguments 
   readonly severity: string;
   /**
   * alert_policy_rule_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_alert_policy#alert_policy_rule_details DataSafeAlertPolicy#alert_policy_rule_details}
   */
   readonly alertPolicyRuleDetails?: DataSafeAlertPolicyAlertPolicyRuleDetails[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_alert_policy#timeouts DataSafeAlertPolicy#timeouts}
   */
   readonly timeouts?: DataSafeAlertPolicyTimeouts;
@@ -80,6 +80,37 @@ export function dataSafeAlertPolicyAlertPolicyRuleDetailsToTerraform(struct?: Da
     display_name: cdktf.stringToTerraform(struct!.displayName),
     expression: cdktf.stringToTerraform(struct!.expression),
   }
+}
+
+
+export function dataSafeAlertPolicyAlertPolicyRuleDetailsToHclTerraform(struct?: DataSafeAlertPolicyAlertPolicyRuleDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    expression: {
+      value: cdktf.stringToHclTerraform(struct!.expression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeAlertPolicyAlertPolicyRuleDetailsOutputReference extends cdktf.ComplexObject {
@@ -230,6 +261,37 @@ export function dataSafeAlertPolicyTimeoutsToTerraform(struct?: DataSafeAlertPol
   }
 }
 
+
+export function dataSafeAlertPolicyTimeoutsToHclTerraform(struct?: DataSafeAlertPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataSafeAlertPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -342,6 +404,20 @@ export class DataSafeAlertPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_alert_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeAlertPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeAlertPolicy to import
+  * @param importFromId The id of the existing DataSafeAlertPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_alert_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeAlertPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_alert_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -585,5 +661,73 @@ export class DataSafeAlertPolicy extends cdktf.TerraformResource {
       alert_policy_rule_details: cdktf.listMapper(dataSafeAlertPolicyAlertPolicyRuleDetailsToTerraform, true)(this._alertPolicyRuleDetails.internalValue),
       timeouts: dataSafeAlertPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      alert_policy_type: {
+        value: cdktf.stringToHclTerraform(this._alertPolicyType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      severity: {
+        value: cdktf.stringToHclTerraform(this._severity),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      alert_policy_rule_details: {
+        value: cdktf.listMapperHcl(dataSafeAlertPolicyAlertPolicyRuleDetailsToHclTerraform, true)(this._alertPolicyRuleDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataSafeAlertPolicyAlertPolicyRuleDetailsList",
+      },
+      timeouts: {
+        value: dataSafeAlertPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeAlertPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

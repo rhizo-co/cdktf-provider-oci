@@ -35,6 +35,17 @@ export function dataOciContainerengineClusterOptionClusterPodNetworkOptionsToTer
   }
 }
 
+
+export function dataOciContainerengineClusterOptionClusterPodNetworkOptionsToHclTerraform(struct?: DataOciContainerengineClusterOptionClusterPodNetworkOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciContainerengineClusterOptionClusterPodNetworkOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -97,6 +108,20 @@ export class DataOciContainerengineClusterOption extends cdktf.TerraformDataSour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_containerengine_cluster_option";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciContainerengineClusterOption resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciContainerengineClusterOption to import
+  * @param importFromId The id of the existing DataOciContainerengineClusterOption that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/containerengine_cluster_option#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciContainerengineClusterOption to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_containerengine_cluster_option", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -200,5 +225,31 @@ export class DataOciContainerengineClusterOption extends cdktf.TerraformDataSour
       compartment_id: cdktf.stringToTerraform(this._compartmentId),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cluster_option_id: {
+        value: cdktf.stringToHclTerraform(this._clusterOptionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

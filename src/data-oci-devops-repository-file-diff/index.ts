@@ -47,6 +47,17 @@ export function dataOciDevopsRepositoryFileDiffChangesDiffSectionsLinesToTerrafo
   }
 }
 
+
+export function dataOciDevopsRepositoryFileDiffChangesDiffSectionsLinesToHclTerraform(struct?: DataOciDevopsRepositoryFileDiffChangesDiffSectionsLines): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsRepositoryFileDiffChangesDiffSectionsLinesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -126,6 +137,17 @@ export function dataOciDevopsRepositoryFileDiffChangesDiffSectionsToTerraform(st
   }
 }
 
+
+export function dataOciDevopsRepositoryFileDiffChangesDiffSectionsToHclTerraform(struct?: DataOciDevopsRepositoryFileDiffChangesDiffSections): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDevopsRepositoryFileDiffChangesDiffSectionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -194,6 +216,17 @@ export function dataOciDevopsRepositoryFileDiffChangesToTerraform(struct?: DataO
   }
   return {
   }
+}
+
+
+export function dataOciDevopsRepositoryFileDiffChangesToHclTerraform(struct?: DataOciDevopsRepositoryFileDiffChanges): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDevopsRepositoryFileDiffChangesOutputReference extends cdktf.ComplexObject {
@@ -279,6 +312,20 @@ export class DataOciDevopsRepositoryFileDiff extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_repository_file_diff";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDevopsRepositoryFileDiff resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDevopsRepositoryFileDiff to import
+  * @param importFromId The id of the existing DataOciDevopsRepositoryFileDiff that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/devops_repository_file_diff#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDevopsRepositoryFileDiff to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_repository_file_diff", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -457,5 +504,49 @@ export class DataOciDevopsRepositoryFileDiff extends cdktf.TerraformDataSource {
       repository_id: cdktf.stringToTerraform(this._repositoryId),
       target_version: cdktf.stringToTerraform(this._targetVersion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      base_version: {
+        value: cdktf.stringToHclTerraform(this._baseVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      file_path: {
+        value: cdktf.stringToHclTerraform(this._filePath),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_comparison_from_merge_base: {
+        value: cdktf.booleanToHclTerraform(this._isComparisonFromMergeBase),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      repository_id: {
+        value: cdktf.stringToHclTerraform(this._repositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_version: {
+        value: cdktf.stringToHclTerraform(this._targetVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

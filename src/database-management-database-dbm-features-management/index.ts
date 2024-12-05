@@ -28,13 +28,13 @@ export interface DatabaseManagementDatabaseDbmFeaturesManagementConfig extends c
   readonly modifyDatabaseDbmFeature?: boolean | cdktf.IResolvable;
   /**
   * feature_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_database_dbm_features_management#feature_details DatabaseManagementDatabaseDbmFeaturesManagement#feature_details}
   */
   readonly featureDetails?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_database_dbm_features_management#timeouts DatabaseManagementDatabaseDbmFeaturesManagement#timeouts}
   */
   readonly timeouts?: DatabaseManagementDatabaseDbmFeaturesManagementTimeouts;
@@ -69,6 +69,43 @@ export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsCon
     management_agent_id: cdktf.stringToTerraform(struct!.managementAgentId),
     private_end_point_id: cdktf.stringToTerraform(struct!.privateEndPointId),
   }
+}
+
+
+export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsToHclTerraform(struct?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsOutputReference | DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    connector_type: {
+      value: cdktf.stringToHclTerraform(struct!.connectorType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    database_connector_id: {
+      value: cdktf.stringToHclTerraform(struct!.databaseConnectorId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    management_agent_id: {
+      value: cdktf.stringToHclTerraform(struct!.managementAgentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    private_end_point_id: {
+      value: cdktf.stringToHclTerraform(struct!.privateEndPointId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsOutputReference extends cdktf.ComplexObject {
@@ -230,6 +267,61 @@ export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDat
     ssl_secret_id: cdktf.stringToTerraform(struct!.sslSecretId),
     user_name: cdktf.stringToTerraform(struct!.userName),
   }
+}
+
+
+export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsToHclTerraform(struct?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsOutputReference | DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credential_name: {
+      value: cdktf.stringToHclTerraform(struct!.credentialName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    credential_type: {
+      value: cdktf.stringToHclTerraform(struct!.credentialType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    named_credential_id: {
+      value: cdktf.stringToHclTerraform(struct!.namedCredentialId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.passwordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ssl_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.sslSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_name: {
+      value: cdktf.stringToHclTerraform(struct!.userName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsOutputReference extends cdktf.ComplexObject {
@@ -444,6 +536,43 @@ export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDat
   }
 }
 
+
+export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringToHclTerraform(struct?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringOutputReference | DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    connection_type: {
+      value: cdktf.stringToHclTerraform(struct!.connectionType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service: {
+      value: cdktf.stringToHclTerraform(struct!.service),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -561,13 +690,13 @@ export class DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDataba
 export interface DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails {
   /**
   * connection_credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_database_dbm_features_management#connection_credentials DatabaseManagementDatabaseDbmFeaturesManagement#connection_credentials}
   */
   readonly connectionCredentials?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentials;
   /**
   * connection_string block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_database_dbm_features_management#connection_string DatabaseManagementDatabaseDbmFeaturesManagement#connection_string}
   */
   readonly connectionString?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionString;
@@ -582,6 +711,31 @@ export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDat
     connection_credentials: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsToTerraform(struct!.connectionCredentials),
     connection_string: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringToTerraform(struct!.connectionString),
   }
+}
+
+
+export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsToHclTerraform(struct?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsOutputReference | DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    connection_credentials: {
+      value: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsToHclTerraform(struct!.connectionCredentials),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionCredentialsList",
+    },
+    connection_string: {
+      value: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringToHclTerraform(struct!.connectionString),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsConnectionStringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsOutputReference extends cdktf.ComplexObject {
@@ -669,13 +823,13 @@ export interface DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetails {
   readonly managementType?: string;
   /**
   * connector_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_database_dbm_features_management#connector_details DatabaseManagementDatabaseDbmFeaturesManagement#connector_details}
   */
   readonly connectorDetails?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetails;
   /**
   * database_connection_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_database_dbm_features_management#database_connection_details DatabaseManagementDatabaseDbmFeaturesManagement#database_connection_details}
   */
   readonly databaseConnectionDetails?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetails;
@@ -693,6 +847,49 @@ export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsToT
     connector_details: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsToTerraform(struct!.connectorDetails),
     database_connection_details: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsToTerraform(struct!.databaseConnectionDetails),
   }
+}
+
+
+export function databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsToHclTerraform(struct?: DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsOutputReference | DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    feature: {
+      value: cdktf.stringToHclTerraform(struct!.feature),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_auto_enable_pluggable_database: {
+      value: cdktf.booleanToHclTerraform(struct!.isAutoEnablePluggableDatabase),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    management_type: {
+      value: cdktf.stringToHclTerraform(struct!.managementType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connector_details: {
+      value: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsToHclTerraform(struct!.connectorDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsConnectorDetailsList",
+    },
+    database_connection_details: {
+      value: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsToHclTerraform(struct!.databaseConnectionDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsDatabaseConnectionDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsOutputReference extends cdktf.ComplexObject {
@@ -855,6 +1052,37 @@ export function databaseManagementDatabaseDbmFeaturesManagementTimeoutsToTerrafo
   }
 }
 
+
+export function databaseManagementDatabaseDbmFeaturesManagementTimeoutsToHclTerraform(struct?: DatabaseManagementDatabaseDbmFeaturesManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseManagementDatabaseDbmFeaturesManagementTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -967,6 +1195,20 @@ export class DatabaseManagementDatabaseDbmFeaturesManagement extends cdktf.Terra
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_database_dbm_features_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseManagementDatabaseDbmFeaturesManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseManagementDatabaseDbmFeaturesManagement to import
+  * @param importFromId The id of the existing DatabaseManagementDatabaseDbmFeaturesManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_database_dbm_features_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseManagementDatabaseDbmFeaturesManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_database_dbm_features_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1110,5 +1352,49 @@ export class DatabaseManagementDatabaseDbmFeaturesManagement extends cdktf.Terra
       feature_details: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsToTerraform(this._featureDetails.internalValue),
       timeouts: databaseManagementDatabaseDbmFeaturesManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      database_id: {
+        value: cdktf.stringToHclTerraform(this._databaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enable_database_dbm_feature: {
+        value: cdktf.booleanToHclTerraform(this._enableDatabaseDbmFeature),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      modify_database_dbm_feature: {
+        value: cdktf.booleanToHclTerraform(this._modifyDatabaseDbmFeature),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      feature_details: {
+        value: databaseManagementDatabaseDbmFeaturesManagementFeatureDetailsToHclTerraform(this._featureDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseManagementDatabaseDbmFeaturesManagementFeatureDetailsList",
+      },
+      timeouts: {
+        value: databaseManagementDatabaseDbmFeaturesManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseManagementDatabaseDbmFeaturesManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

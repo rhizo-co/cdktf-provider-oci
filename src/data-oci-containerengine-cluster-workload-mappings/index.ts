@@ -20,7 +20,7 @@ export interface DataOciContainerengineClusterWorkloadMappingsConfig extends cdk
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/containerengine_cluster_workload_mappings#filter DataOciContainerengineClusterWorkloadMappings#filter}
   */
   readonly filter?: DataOciContainerengineClusterWorkloadMappingsFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciContainerengineClusterWorkloadMappingsWorkloadMappingsToT
   }
   return {
   }
+}
+
+
+export function dataOciContainerengineClusterWorkloadMappingsWorkloadMappingsToHclTerraform(struct?: DataOciContainerengineClusterWorkloadMappingsWorkloadMappings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciContainerengineClusterWorkloadMappingsWorkloadMappingsOutputReference extends cdktf.ComplexObject {
@@ -156,6 +167,37 @@ export function dataOciContainerengineClusterWorkloadMappingsFilterToTerraform(s
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciContainerengineClusterWorkloadMappingsFilterToHclTerraform(struct?: DataOciContainerengineClusterWorkloadMappingsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciContainerengineClusterWorkloadMappingsFilterOutputReference extends cdktf.ComplexObject {
@@ -287,6 +329,20 @@ export class DataOciContainerengineClusterWorkloadMappings extends cdktf.Terrafo
   // =================
   public static readonly tfResourceType = "oci_containerengine_cluster_workload_mappings";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciContainerengineClusterWorkloadMappings resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciContainerengineClusterWorkloadMappings to import
+  * @param importFromId The id of the existing DataOciContainerengineClusterWorkloadMappings that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/containerengine_cluster_workload_mappings#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciContainerengineClusterWorkloadMappings to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_containerengine_cluster_workload_mappings", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -384,5 +440,31 @@ export class DataOciContainerengineClusterWorkloadMappings extends cdktf.Terrafo
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciContainerengineClusterWorkloadMappingsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cluster_id: {
+        value: cdktf.stringToHclTerraform(this._clusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciContainerengineClusterWorkloadMappingsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciContainerengineClusterWorkloadMappingsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,19 +40,19 @@ export interface LoggingUnifiedAgentConfigurationConfig extends cdktf.TerraformM
   readonly isEnabled: boolean | cdktf.IResolvable;
   /**
   * group_association block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#group_association LoggingUnifiedAgentConfiguration#group_association}
   */
   readonly groupAssociation?: LoggingUnifiedAgentConfigurationGroupAssociation;
   /**
   * service_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#service_configuration LoggingUnifiedAgentConfiguration#service_configuration}
   */
   readonly serviceConfiguration: LoggingUnifiedAgentConfigurationServiceConfiguration;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#timeouts LoggingUnifiedAgentConfiguration#timeouts}
   */
   readonly timeouts?: LoggingUnifiedAgentConfigurationTimeouts;
@@ -72,6 +72,25 @@ export function loggingUnifiedAgentConfigurationGroupAssociationToTerraform(stru
   return {
     group_list: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.groupList),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationGroupAssociationToHclTerraform(struct?: LoggingUnifiedAgentConfigurationGroupAssociationOutputReference | LoggingUnifiedAgentConfigurationGroupAssociation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    group_list: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.groupList),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationGroupAssociationOutputReference extends cdktf.ComplexObject {
@@ -142,6 +161,31 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
     compartment_id: cdktf.stringToTerraform(struct!.compartmentId),
     metrics_namespace: cdktf.stringToTerraform(struct!.metricsNamespace),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsDestinationToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsDestinationOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsDestination): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metrics_namespace: {
+      value: cdktf.stringToHclTerraform(struct!.metricsNamespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsDestinationOutputReference extends cdktf.ComplexObject {
@@ -254,6 +298,55 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
     service_name: cdktf.stringToTerraform(struct!.serviceName),
     url: cdktf.stringToTerraform(struct!.url),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceScrapeTargetsToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceScrapeTargets | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    k8s_namespace: {
+      value: cdktf.stringToHclTerraform(struct!.k8SNamespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_group: {
+      value: cdktf.stringToHclTerraform(struct!.resourceGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_type: {
+      value: cdktf.stringToHclTerraform(struct!.resourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service_name: {
+      value: cdktf.stringToHclTerraform(struct!.serviceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    url: {
+      value: cdktf.stringToHclTerraform(struct!.url),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceScrapeTargetsOutputReference extends cdktf.ComplexObject {
@@ -453,7 +546,7 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationApplication
   readonly name?: string;
   /**
   * scrape_targets block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#scrape_targets LoggingUnifiedAgentConfiguration#scrape_targets}
   */
   readonly scrapeTargets?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceScrapeTargets[] | cdktf.IResolvable;
@@ -468,6 +561,31 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
     name: cdktf.stringToTerraform(struct!.name),
     scrape_targets: cdktf.listMapper(loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceScrapeTargetsToTerraform, true)(struct!.scrapeTargets),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scrape_targets: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceScrapeTargetsToHclTerraform, true)(struct!.scrapeTargets),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceScrapeTargetsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceOutputReference extends cdktf.ComplexObject {
@@ -555,6 +673,25 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
   return {
     is_read_from_head: cdktf.booleanToTerraform(struct!.isReadFromHead),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesAdvancedOptionsToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesAdvancedOptionsOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesAdvancedOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_read_from_head: {
+      value: cdktf.booleanToHclTerraform(struct!.isReadFromHead),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesAdvancedOptionsOutputReference extends cdktf.ComplexObject {
@@ -645,6 +782,55 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
     time_format: cdktf.stringToTerraform(struct!.timeFormat),
     time_type: cdktf.stringToTerraform(struct!.timeType),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserNestedParserToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserNestedParserOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserNestedParser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    field_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_keep_time_key: {
+      value: cdktf.booleanToHclTerraform(struct!.isKeepTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    parse_nested: {
+      value: cdktf.booleanToHclTerraform(struct!.parseNested),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    separator: {
+      value: cdktf.stringToHclTerraform(struct!.separator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_format: {
+      value: cdktf.stringToHclTerraform(struct!.timeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_type: {
+      value: cdktf.stringToHclTerraform(struct!.timeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserNestedParserOutputReference extends cdktf.ComplexObject {
@@ -842,6 +1028,49 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
   }
 }
 
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserPatternsToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserPatterns | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    field_time_format: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_time_zone: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeZone),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pattern: {
+      value: cdktf.stringToHclTerraform(struct!.pattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserPatternsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1035,6 +1264,37 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
     namespace: cdktf.stringToTerraform(struct!.namespace),
     resource_group: cdktf.stringToTerraform(struct!.resourceGroup),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserRecordInputToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserRecordInputOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserRecordInput): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dimensions: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.dimensions),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_group: {
+      value: cdktf.stringToHclTerraform(struct!.resourceGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserRecordInputOutputReference extends cdktf.ComplexObject {
@@ -1240,19 +1500,19 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationApplication
   readonly types?: { [key: string]: string };
   /**
   * nested_parser block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#nested_parser LoggingUnifiedAgentConfiguration#nested_parser}
   */
   readonly nestedParser?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserNestedParser;
   /**
   * patterns block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#patterns LoggingUnifiedAgentConfiguration#patterns}
   */
   readonly patterns?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserPatterns[] | cdktf.IResolvable;
   /**
   * record_input block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#record_input LoggingUnifiedAgentConfiguration#record_input}
   */
   readonly recordInput?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserRecordInput;
@@ -1295,6 +1555,199 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
     patterns: cdktf.listMapper(loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserPatternsToTerraform, true)(struct!.patterns),
     record_input: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserRecordInputToTerraform(struct!.recordInput),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    delimiter: {
+      value: cdktf.stringToHclTerraform(struct!.delimiter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    expression: {
+      value: cdktf.stringToHclTerraform(struct!.expression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    format: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.format),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    format_firstline: {
+      value: cdktf.stringToHclTerraform(struct!.formatFirstline),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    grok_failure_key: {
+      value: cdktf.stringToHclTerraform(struct!.grokFailureKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    grok_name_key: {
+      value: cdktf.stringToHclTerraform(struct!.grokNameKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_estimate_current_event: {
+      value: cdktf.booleanToHclTerraform(struct!.isEstimateCurrentEvent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_keep_time_key: {
+      value: cdktf.booleanToHclTerraform(struct!.isKeepTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_merge_cri_fields: {
+      value: cdktf.booleanToHclTerraform(struct!.isMergeCriFields),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_null_empty_string: {
+      value: cdktf.booleanToHclTerraform(struct!.isNullEmptyString),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_support_colonless_ident: {
+      value: cdktf.booleanToHclTerraform(struct!.isSupportColonlessIdent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_with_priority: {
+      value: cdktf.booleanToHclTerraform(struct!.isWithPriority),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    keys: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.keys),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    message_format: {
+      value: cdktf.stringToHclTerraform(struct!.messageFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    message_key: {
+      value: cdktf.stringToHclTerraform(struct!.messageKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    multi_line_start_regexp: {
+      value: cdktf.stringToHclTerraform(struct!.multiLineStartRegexp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    null_value_pattern: {
+      value: cdktf.stringToHclTerraform(struct!.nullValuePattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parse_nested: {
+      value: cdktf.booleanToHclTerraform(struct!.parseNested),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    parser_type: {
+      value: cdktf.stringToHclTerraform(struct!.parserType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rfc5424time_format: {
+      value: cdktf.stringToHclTerraform(struct!.rfc5424TimeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    separator: {
+      value: cdktf.stringToHclTerraform(struct!.separator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    syslog_parser_type: {
+      value: cdktf.stringToHclTerraform(struct!.syslogParserType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_format: {
+      value: cdktf.stringToHclTerraform(struct!.timeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_type: {
+      value: cdktf.stringToHclTerraform(struct!.timeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    timeout_in_milliseconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutInMilliseconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    types: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.types),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    nested_parser: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserNestedParserToHclTerraform(struct!.nestedParser),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserNestedParserList",
+    },
+    patterns: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserPatternsToHclTerraform, true)(struct!.patterns),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserPatternsList",
+    },
+    record_input: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserRecordInputToHclTerraform(struct!.recordInput),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserRecordInputList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserOutputReference extends cdktf.ComplexObject {
@@ -1995,13 +2448,13 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationApplication
   readonly sourceType?: string;
   /**
   * advanced_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#advanced_options LoggingUnifiedAgentConfiguration#advanced_options}
   */
   readonly advancedOptions?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesAdvancedOptions;
   /**
   * parser block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#parser LoggingUnifiedAgentConfiguration#parser}
   */
   readonly parser?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParser;
@@ -2019,6 +2472,49 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
     advanced_options: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesAdvancedOptionsToTerraform(struct!.advancedOptions),
     parser: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserToTerraform(struct!.parser),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSources | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    paths: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.paths),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    advanced_options: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesAdvancedOptionsToHclTerraform(struct!.advancedOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesAdvancedOptionsList",
+    },
+    parser: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserToHclTerraform(struct!.parser),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesParserList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesOutputReference extends cdktf.ComplexObject {
@@ -2221,6 +2717,43 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
   }
 }
 
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsUnifiedAgentConfigurationFilterToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsUnifiedAgentConfigurationFilterOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsUnifiedAgentConfigurationFilter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allow_list: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowList),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    deny_list: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.denyList),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    filter_type: {
+      value: cdktf.stringToHclTerraform(struct!.filterType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsUnifiedAgentConfigurationFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2342,25 +2875,25 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationApplication
   readonly sourceType: string;
   /**
   * destination block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#destination LoggingUnifiedAgentConfiguration#destination}
   */
   readonly destination: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsDestination;
   /**
   * source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#source LoggingUnifiedAgentConfiguration#source}
   */
   readonly source?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSource;
   /**
   * sources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#sources LoggingUnifiedAgentConfiguration#sources}
   */
   readonly sources?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSources[] | cdktf.IResolvable;
   /**
   * unified_agent_configuration_filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#unified_agent_configuration_filter LoggingUnifiedAgentConfiguration#unified_agent_configuration_filter}
   */
   readonly unifiedAgentConfigurationFilter?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsUnifiedAgentConfigurationFilter;
@@ -2378,6 +2911,49 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationC
     sources: cdktf.listMapper(loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesToTerraform, true)(struct!.sources),
     unified_agent_configuration_filter: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsUnifiedAgentConfigurationFilterToTerraform(struct!.unifiedAgentConfigurationFilter),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsDestinationToHclTerraform(struct!.destination),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsDestinationList",
+    },
+    source: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceToHclTerraform(struct!.source),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourceList",
+    },
+    sources: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesToHclTerraform, true)(struct!.sources),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsSourcesList",
+    },
+    unified_agent_configuration_filter: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsUnifiedAgentConfigurationFilterToHclTerraform(struct!.unifiedAgentConfigurationFilter),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsUnifiedAgentConfigurationFilterList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -2559,6 +3135,25 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationO
   }
 }
 
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2624,6 +3219,31 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationO
     namespace: cdktf.stringToTerraform(struct!.namespace),
     resource_group: cdktf.stringToTerraform(struct!.resourceGroup),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_group: {
+      value: cdktf.stringToHclTerraform(struct!.resourceGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputOutputReference extends cdktf.ComplexObject {
@@ -2704,7 +3324,7 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationDestination
   readonly type: string;
   /**
   * record_input block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#record_input LoggingUnifiedAgentConfiguration#record_input}
   */
   readonly recordInput: LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInput;
@@ -2720,6 +3340,37 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationO
     type: cdktf.stringToTerraform(struct!.type),
     record_input: loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputToTerraform(struct!.recordInput),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    metrics: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.metrics),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    record_input: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputToHclTerraform(struct!.recordInput),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceOutputReference extends cdktf.ComplexObject {
@@ -2811,13 +3462,13 @@ export class LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOper
 export interface LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration {
   /**
   * destination block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#destination LoggingUnifiedAgentConfiguration#destination}
   */
   readonly destination: LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestination;
   /**
   * source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#source LoggingUnifiedAgentConfiguration#source}
   */
   readonly source: LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSource;
@@ -2832,6 +3483,31 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationO
     destination: loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationToTerraform(struct!.destination),
     source: loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceToTerraform(struct!.source),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationToHclTerraform(struct!.destination),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationDestinationList",
+    },
+    source: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceToHclTerraform(struct!.source),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationOutputReference extends cdktf.ComplexObject {
@@ -2905,7 +3581,7 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationDestination
   readonly logObjectId: string;
   /**
   * operational_metrics_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#operational_metrics_configuration LoggingUnifiedAgentConfiguration#operational_metrics_configuration}
   */
   readonly operationalMetricsConfiguration?: LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfiguration;
@@ -2920,6 +3596,31 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationT
     log_object_id: cdktf.stringToTerraform(struct!.logObjectId),
     operational_metrics_configuration: loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationToTerraform(struct!.operationalMetricsConfiguration),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationDestinationToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationDestination): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    log_object_id: {
+      value: cdktf.stringToHclTerraform(struct!.logObjectId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operational_metrics_configuration: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationToHclTerraform(struct!.operationalMetricsConfiguration),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationDestinationOutputReference extends cdktf.ComplexObject {
@@ -3004,6 +3705,25 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesAdvan
   return {
     is_read_from_head: cdktf.booleanToTerraform(struct!.isReadFromHead),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesAdvancedOptionsToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesAdvancedOptionsOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationSourcesAdvancedOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_read_from_head: {
+      value: cdktf.booleanToHclTerraform(struct!.isReadFromHead),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationSourcesAdvancedOptionsOutputReference extends cdktf.ComplexObject {
@@ -3094,6 +3814,55 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesParse
     time_format: cdktf.stringToTerraform(struct!.timeFormat),
     time_type: cdktf.stringToTerraform(struct!.timeType),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserNestedParserToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserNestedParserOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserNestedParser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    field_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_keep_time_key: {
+      value: cdktf.booleanToHclTerraform(struct!.isKeepTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    parse_nested: {
+      value: cdktf.booleanToHclTerraform(struct!.parseNested),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    separator: {
+      value: cdktf.stringToHclTerraform(struct!.separator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_format: {
+      value: cdktf.stringToHclTerraform(struct!.timeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_type: {
+      value: cdktf.stringToHclTerraform(struct!.timeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserNestedParserOutputReference extends cdktf.ComplexObject {
@@ -3291,6 +4060,49 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesParse
   }
 }
 
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserPatternsToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserPatterns | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    field_time_format: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_time_zone: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeZone),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pattern: {
+      value: cdktf.stringToHclTerraform(struct!.pattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserPatternsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -3484,6 +4296,37 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesParse
     namespace: cdktf.stringToTerraform(struct!.namespace),
     resource_group: cdktf.stringToTerraform(struct!.resourceGroup),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserRecordInputToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserRecordInputOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserRecordInput): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dimensions: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.dimensions),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_group: {
+      value: cdktf.stringToHclTerraform(struct!.resourceGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserRecordInputOutputReference extends cdktf.ComplexObject {
@@ -3689,19 +4532,19 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationSourcesPars
   readonly types?: { [key: string]: string };
   /**
   * nested_parser block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#nested_parser LoggingUnifiedAgentConfiguration#nested_parser}
   */
   readonly nestedParser?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserNestedParser;
   /**
   * patterns block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#patterns LoggingUnifiedAgentConfiguration#patterns}
   */
   readonly patterns?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserPatterns[] | cdktf.IResolvable;
   /**
   * record_input block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#record_input LoggingUnifiedAgentConfiguration#record_input}
   */
   readonly recordInput?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserRecordInput;
@@ -3744,6 +4587,199 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesParse
     patterns: cdktf.listMapper(loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserPatternsToTerraform, true)(struct!.patterns),
     record_input: loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserRecordInputToTerraform(struct!.recordInput),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    delimiter: {
+      value: cdktf.stringToHclTerraform(struct!.delimiter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    expression: {
+      value: cdktf.stringToHclTerraform(struct!.expression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    format: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.format),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    format_firstline: {
+      value: cdktf.stringToHclTerraform(struct!.formatFirstline),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    grok_failure_key: {
+      value: cdktf.stringToHclTerraform(struct!.grokFailureKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    grok_name_key: {
+      value: cdktf.stringToHclTerraform(struct!.grokNameKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_estimate_current_event: {
+      value: cdktf.booleanToHclTerraform(struct!.isEstimateCurrentEvent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_keep_time_key: {
+      value: cdktf.booleanToHclTerraform(struct!.isKeepTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_merge_cri_fields: {
+      value: cdktf.booleanToHclTerraform(struct!.isMergeCriFields),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_null_empty_string: {
+      value: cdktf.booleanToHclTerraform(struct!.isNullEmptyString),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_support_colonless_ident: {
+      value: cdktf.booleanToHclTerraform(struct!.isSupportColonlessIdent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_with_priority: {
+      value: cdktf.booleanToHclTerraform(struct!.isWithPriority),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    keys: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.keys),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    message_format: {
+      value: cdktf.stringToHclTerraform(struct!.messageFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    message_key: {
+      value: cdktf.stringToHclTerraform(struct!.messageKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    multi_line_start_regexp: {
+      value: cdktf.stringToHclTerraform(struct!.multiLineStartRegexp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    null_value_pattern: {
+      value: cdktf.stringToHclTerraform(struct!.nullValuePattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parse_nested: {
+      value: cdktf.booleanToHclTerraform(struct!.parseNested),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    parser_type: {
+      value: cdktf.stringToHclTerraform(struct!.parserType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rfc5424time_format: {
+      value: cdktf.stringToHclTerraform(struct!.rfc5424TimeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    separator: {
+      value: cdktf.stringToHclTerraform(struct!.separator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    syslog_parser_type: {
+      value: cdktf.stringToHclTerraform(struct!.syslogParserType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_format: {
+      value: cdktf.stringToHclTerraform(struct!.timeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_type: {
+      value: cdktf.stringToHclTerraform(struct!.timeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    timeout_in_milliseconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutInMilliseconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    types: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.types),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    nested_parser: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserNestedParserToHclTerraform(struct!.nestedParser),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserNestedParserList",
+    },
+    patterns: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserPatternsToHclTerraform, true)(struct!.patterns),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserPatternsList",
+    },
+    record_input: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserRecordInputToHclTerraform(struct!.recordInput),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserRecordInputList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserOutputReference extends cdktf.ComplexObject {
@@ -4452,13 +5488,13 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationSources {
   readonly sourceType: string;
   /**
   * advanced_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#advanced_options LoggingUnifiedAgentConfiguration#advanced_options}
   */
   readonly advancedOptions?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesAdvancedOptions;
   /**
   * parser block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#parser LoggingUnifiedAgentConfiguration#parser}
   */
   readonly parser?: LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParser;
@@ -4478,6 +5514,61 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesToTer
     advanced_options: loggingUnifiedAgentConfigurationServiceConfigurationSourcesAdvancedOptionsToTerraform(struct!.advancedOptions),
     parser: loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserToTerraform(struct!.parser),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationSourcesToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationSources | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    channels: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.channels),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    custom_plugin: {
+      value: cdktf.stringToHclTerraform(struct!.customPlugin),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    paths: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.paths),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    advanced_options: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationSourcesAdvancedOptionsToHclTerraform(struct!.advancedOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationSourcesAdvancedOptionsList",
+    },
+    parser: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationSourcesParserToHclTerraform(struct!.parser),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationSourcesParserList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationSourcesOutputReference extends cdktf.ComplexObject {
@@ -4711,6 +5802,31 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgent
   }
 }
 
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListStructToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListStruct | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pattern: {
+      value: cdktf.stringToHclTerraform(struct!.pattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -4835,6 +5951,31 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgent
   }
 }
 
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionsToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSections | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    params: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.params),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -4957,6 +6098,31 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgent
     key: cdktf.stringToTerraform(struct!.key),
     pattern: cdktf.stringToTerraform(struct!.pattern),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListStructToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListStruct | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pattern: {
+      value: cdktf.stringToHclTerraform(struct!.pattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListStructOutputReference extends cdktf.ComplexObject {
@@ -5101,6 +6267,55 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgent
     time_format: cdktf.stringToTerraform(struct!.timeFormat),
     time_type: cdktf.stringToTerraform(struct!.timeType),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    field_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_keep_time_key: {
+      value: cdktf.booleanToHclTerraform(struct!.isKeepTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    parse_nested: {
+      value: cdktf.booleanToHclTerraform(struct!.parseNested),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    separator: {
+      value: cdktf.stringToHclTerraform(struct!.separator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_format: {
+      value: cdktf.stringToHclTerraform(struct!.timeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_type: {
+      value: cdktf.stringToHclTerraform(struct!.timeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserOutputReference extends cdktf.ComplexObject {
@@ -5298,6 +6513,49 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgent
   }
 }
 
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternsToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatterns | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    field_time_format: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_time_zone: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeZone),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pattern: {
+      value: cdktf.stringToHclTerraform(struct!.pattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -5491,6 +6749,37 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgent
     namespace: cdktf.stringToTerraform(struct!.namespace),
     resource_group: cdktf.stringToTerraform(struct!.resourceGroup),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dimensions: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.dimensions),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_group: {
+      value: cdktf.stringToHclTerraform(struct!.resourceGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputOutputReference extends cdktf.ComplexObject {
@@ -5696,19 +6985,19 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgen
   readonly types?: { [key: string]: string };
   /**
   * nested_parser block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#nested_parser LoggingUnifiedAgentConfiguration#nested_parser}
   */
   readonly nestedParser?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser;
   /**
   * patterns block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#patterns LoggingUnifiedAgentConfiguration#patterns}
   */
   readonly patterns?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatterns[] | cdktf.IResolvable;
   /**
   * record_input block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#record_input LoggingUnifiedAgentConfiguration#record_input}
   */
   readonly recordInput?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInput;
@@ -5751,6 +7040,199 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgent
     patterns: cdktf.listMapper(loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternsToTerraform, true)(struct!.patterns),
     record_input: loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputToTerraform(struct!.recordInput),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputReference | LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    delimiter: {
+      value: cdktf.stringToHclTerraform(struct!.delimiter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    expression: {
+      value: cdktf.stringToHclTerraform(struct!.expression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    field_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.fieldTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    format: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.format),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    format_firstline: {
+      value: cdktf.stringToHclTerraform(struct!.formatFirstline),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    grok_failure_key: {
+      value: cdktf.stringToHclTerraform(struct!.grokFailureKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    grok_name_key: {
+      value: cdktf.stringToHclTerraform(struct!.grokNameKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_estimate_current_event: {
+      value: cdktf.booleanToHclTerraform(struct!.isEstimateCurrentEvent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_keep_time_key: {
+      value: cdktf.booleanToHclTerraform(struct!.isKeepTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_merge_cri_fields: {
+      value: cdktf.booleanToHclTerraform(struct!.isMergeCriFields),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_null_empty_string: {
+      value: cdktf.booleanToHclTerraform(struct!.isNullEmptyString),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_support_colonless_ident: {
+      value: cdktf.booleanToHclTerraform(struct!.isSupportColonlessIdent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_with_priority: {
+      value: cdktf.booleanToHclTerraform(struct!.isWithPriority),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    keys: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.keys),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    message_format: {
+      value: cdktf.stringToHclTerraform(struct!.messageFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    message_key: {
+      value: cdktf.stringToHclTerraform(struct!.messageKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    multi_line_start_regexp: {
+      value: cdktf.stringToHclTerraform(struct!.multiLineStartRegexp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    null_value_pattern: {
+      value: cdktf.stringToHclTerraform(struct!.nullValuePattern),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parse_nested: {
+      value: cdktf.booleanToHclTerraform(struct!.parseNested),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    parser_type: {
+      value: cdktf.stringToHclTerraform(struct!.parserType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rfc5424time_format: {
+      value: cdktf.stringToHclTerraform(struct!.rfc5424TimeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    separator: {
+      value: cdktf.stringToHclTerraform(struct!.separator),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    syslog_parser_type: {
+      value: cdktf.stringToHclTerraform(struct!.syslogParserType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_format: {
+      value: cdktf.stringToHclTerraform(struct!.timeFormat),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_type: {
+      value: cdktf.stringToHclTerraform(struct!.timeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    timeout_in_milliseconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutInMilliseconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    types: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.types),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    nested_parser: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserToHclTerraform(struct!.nestedParser),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserList",
+    },
+    patterns: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternsToHclTerraform, true)(struct!.patterns),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserPatternsList",
+    },
+    record_input: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputToHclTerraform(struct!.recordInput),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserRecordInputList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserOutputReference extends cdktf.ComplexObject {
@@ -6458,6 +7940,31 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgent
   }
 }
 
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListStructToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListStruct | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -6635,31 +8142,31 @@ export interface LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgen
   readonly reserveTime?: boolean | cdktf.IResolvable;
   /**
   * allow_list block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#allow_list LoggingUnifiedAgentConfiguration#allow_list}
   */
   readonly allowList?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListStruct[] | cdktf.IResolvable;
   /**
   * custom_sections block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#custom_sections LoggingUnifiedAgentConfiguration#custom_sections}
   */
   readonly customSections?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSections[] | cdktf.IResolvable;
   /**
   * deny_list block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#deny_list LoggingUnifiedAgentConfiguration#deny_list}
   */
   readonly denyList?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListStruct[] | cdktf.IResolvable;
   /**
   * parser block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#parser LoggingUnifiedAgentConfiguration#parser}
   */
   readonly parser?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParser;
   /**
   * record_list block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#record_list LoggingUnifiedAgentConfiguration#record_list}
   */
   readonly recordList?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListStruct[] | cdktf.IResolvable;
@@ -6695,6 +8202,157 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgent
     parser: loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserToTerraform(struct!.parser),
     record_list: cdktf.listMapper(loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListStructToTerraform, true)(struct!.recordList),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    custom_filter_type: {
+      value: cdktf.stringToHclTerraform(struct!.customFilterType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    emit_invalid_record_to_error: {
+      value: cdktf.booleanToHclTerraform(struct!.emitInvalidRecordToError),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    filter_type: {
+      value: cdktf.stringToHclTerraform(struct!.filterType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    hash_value_field: {
+      value: cdktf.stringToHclTerraform(struct!.hashValueField),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    inject_key_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.injectKeyPrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_auto_typecast_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAutoTypecastEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_renew_record_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isRenewRecordEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_ruby_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isRubyEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    keep_keys: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.keepKeys),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    key_name: {
+      value: cdktf.stringToHclTerraform(struct!.keyName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    params: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.params),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    remove_key_name_field: {
+      value: cdktf.booleanToHclTerraform(struct!.removeKeyNameField),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    remove_keys: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.removeKeys),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    renew_time_key: {
+      value: cdktf.stringToHclTerraform(struct!.renewTimeKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    replace_invalid_sequence: {
+      value: cdktf.booleanToHclTerraform(struct!.replaceInvalidSequence),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    reserve_data: {
+      value: cdktf.booleanToHclTerraform(struct!.reserveData),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    reserve_time: {
+      value: cdktf.booleanToHclTerraform(struct!.reserveTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    allow_list: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListStructToHclTerraform, true)(struct!.allowList),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListStructList",
+    },
+    custom_sections: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionsToHclTerraform, true)(struct!.customSections),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionsList",
+    },
+    deny_list: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListStructToHclTerraform, true)(struct!.denyList),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterDenyListStructList",
+    },
+    parser: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserToHclTerraform(struct!.parser),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserList",
+    },
+    record_list: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListStructToHclTerraform, true)(struct!.recordList),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterRecordListStructList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterOutputReference extends cdktf.ComplexObject {
@@ -7262,25 +8920,25 @@ export interface LoggingUnifiedAgentConfigurationServiceConfiguration {
   readonly configurationType: string;
   /**
   * application_configurations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#application_configurations LoggingUnifiedAgentConfiguration#application_configurations}
   */
   readonly applicationConfigurations?: LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurations[] | cdktf.IResolvable;
   /**
   * destination block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#destination LoggingUnifiedAgentConfiguration#destination}
   */
   readonly destination?: LoggingUnifiedAgentConfigurationServiceConfigurationDestination;
   /**
   * sources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#sources LoggingUnifiedAgentConfiguration#sources}
   */
   readonly sources?: LoggingUnifiedAgentConfigurationServiceConfigurationSources[] | cdktf.IResolvable;
   /**
   * unified_agent_configuration_filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#unified_agent_configuration_filter LoggingUnifiedAgentConfiguration#unified_agent_configuration_filter}
   */
   readonly unifiedAgentConfigurationFilter?: LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilter[] | cdktf.IResolvable;
@@ -7298,6 +8956,49 @@ export function loggingUnifiedAgentConfigurationServiceConfigurationToTerraform(
     sources: cdktf.listMapper(loggingUnifiedAgentConfigurationServiceConfigurationSourcesToTerraform, true)(struct!.sources),
     unified_agent_configuration_filter: cdktf.listMapper(loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterToTerraform, true)(struct!.unifiedAgentConfigurationFilter),
   }
+}
+
+
+export function loggingUnifiedAgentConfigurationServiceConfigurationToHclTerraform(struct?: LoggingUnifiedAgentConfigurationServiceConfigurationOutputReference | LoggingUnifiedAgentConfigurationServiceConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    configuration_type: {
+      value: cdktf.stringToHclTerraform(struct!.configurationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    application_configurations: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsToHclTerraform, true)(struct!.applicationConfigurations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationApplicationConfigurationsList",
+    },
+    destination: {
+      value: loggingUnifiedAgentConfigurationServiceConfigurationDestinationToHclTerraform(struct!.destination),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationDestinationList",
+    },
+    sources: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationSourcesToHclTerraform, true)(struct!.sources),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationSourcesList",
+    },
+    unified_agent_configuration_filter: {
+      value: cdktf.listMapperHcl(loggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterToHclTerraform, true)(struct!.unifiedAgentConfigurationFilter),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LoggingUnifiedAgentConfigurationServiceConfigurationOutputReference extends cdktf.ComplexObject {
@@ -7460,6 +9161,37 @@ export function loggingUnifiedAgentConfigurationTimeoutsToTerraform(struct?: Log
   }
 }
 
+
+export function loggingUnifiedAgentConfigurationTimeoutsToHclTerraform(struct?: LoggingUnifiedAgentConfigurationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LoggingUnifiedAgentConfigurationTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -7572,6 +9304,20 @@ export class LoggingUnifiedAgentConfiguration extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_logging_unified_agent_configuration";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LoggingUnifiedAgentConfiguration resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LoggingUnifiedAgentConfiguration to import
+  * @param importFromId The id of the existing LoggingUnifiedAgentConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/logging_unified_agent_configuration#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LoggingUnifiedAgentConfiguration to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_logging_unified_agent_configuration", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -7798,5 +9544,73 @@ export class LoggingUnifiedAgentConfiguration extends cdktf.TerraformResource {
       service_configuration: loggingUnifiedAgentConfigurationServiceConfigurationToTerraform(this._serviceConfiguration.internalValue),
       timeouts: loggingUnifiedAgentConfigurationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      group_association: {
+        value: loggingUnifiedAgentConfigurationGroupAssociationToHclTerraform(this._groupAssociation.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LoggingUnifiedAgentConfigurationGroupAssociationList",
+      },
+      service_configuration: {
+        value: loggingUnifiedAgentConfigurationServiceConfigurationToHclTerraform(this._serviceConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LoggingUnifiedAgentConfigurationServiceConfigurationList",
+      },
+      timeouts: {
+        value: loggingUnifiedAgentConfigurationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LoggingUnifiedAgentConfigurationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -32,7 +32,7 @@ export interface DataOciDataSafeAuditProfileCollectedAuditVolumesConfig extends 
   readonly workRequestId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_audit_profile_collected_audit_volumes#filter DataOciDataSafeAuditProfileCollectedAuditVolumes#filter}
   */
   readonly filter?: DataOciDataSafeAuditProfileCollectedAuditVolumesFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVo
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemsItemsToHclTerraform(struct?: DataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemsItemsOutputReference extends cdktf.ComplexObject {
@@ -128,6 +139,17 @@ export function dataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVo
   }
 }
 
+
+export function dataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemsToHclTerraform(struct?: DataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -191,6 +213,17 @@ export function dataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVo
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionToHclTerraform(struct?: DataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeAuditProfileCollectedAuditVolumesCollectedAuditVolumeCollectionOutputReference extends cdktf.ComplexObject {
@@ -271,6 +304,37 @@ export function dataOciDataSafeAuditProfileCollectedAuditVolumesFilterToTerrafor
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeAuditProfileCollectedAuditVolumesFilterToHclTerraform(struct?: DataOciDataSafeAuditProfileCollectedAuditVolumesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeAuditProfileCollectedAuditVolumesFilterOutputReference extends cdktf.ComplexObject {
@@ -401,6 +465,20 @@ export class DataOciDataSafeAuditProfileCollectedAuditVolumes extends cdktf.Terr
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_audit_profile_collected_audit_volumes";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeAuditProfileCollectedAuditVolumes resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeAuditProfileCollectedAuditVolumes to import
+  * @param importFromId The id of the existing DataOciDataSafeAuditProfileCollectedAuditVolumes that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_audit_profile_collected_audit_volumes#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeAuditProfileCollectedAuditVolumes to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_audit_profile_collected_audit_volumes", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -550,5 +628,49 @@ export class DataOciDataSafeAuditProfileCollectedAuditVolumes extends cdktf.Terr
       work_request_id: cdktf.stringToTerraform(this._workRequestId),
       filter: cdktf.listMapper(dataOciDataSafeAuditProfileCollectedAuditVolumesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      audit_profile_id: {
+        value: cdktf.stringToHclTerraform(this._auditProfileId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      month_in_consideration_greater_than: {
+        value: cdktf.stringToHclTerraform(this._monthInConsiderationGreaterThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      month_in_consideration_less_than: {
+        value: cdktf.stringToHclTerraform(this._monthInConsiderationLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      work_request_id: {
+        value: cdktf.stringToHclTerraform(this._workRequestId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeAuditProfileCollectedAuditVolumesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeAuditProfileCollectedAuditVolumesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

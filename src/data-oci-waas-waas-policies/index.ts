@@ -40,7 +40,7 @@ export interface DataOciWaasWaasPoliciesConfig extends cdktf.TerraformMetaArgume
   readonly timeCreatedLessThan?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/waas_waas_policies#filter DataOciWaasWaasPolicies#filter}
   */
   readonly filter?: DataOciWaasWaasPoliciesFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesOriginGroupsOriginGroupToTerr
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesOriginGroupsOriginGroupToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesOriginGroupsOriginGroup): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesOriginGroupsOriginGroupOutputReference extends cdktf.ComplexObject {
@@ -124,6 +135,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesOriginGroupsToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesOriginGroupsToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesOriginGroups): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesOriginGroupsOutputReference extends cdktf.ComplexObject {
@@ -196,6 +218,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesOriginsCustomHeadersToTerrafo
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesOriginsCustomHeadersToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesOriginsCustomHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesOriginsCustomHeadersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -263,6 +296,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesOriginsToTerraform(struct?: D
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesOriginsToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesOrigins): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesOriginsOutputReference extends cdktf.ComplexObject {
@@ -348,6 +392,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesPolicyConfigHealthChecksToTer
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesPolicyConfigHealthChecksToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesPolicyConfigHealthChecks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesPolicyConfigHealthChecksOutputReference extends cdktf.ComplexObject {
@@ -465,6 +520,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesPolicyConfigLoadBalancingMeth
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesPolicyConfigLoadBalancingMethodToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesPolicyConfigLoadBalancingMethod): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesPolicyConfigLoadBalancingMethodOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -542,6 +608,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesPolicyConfigToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesPolicyConfigToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesPolicyConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesPolicyConfigOutputReference extends cdktf.ComplexObject {
@@ -675,6 +752,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesCriteriaT
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesCriteriaToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesCriteria): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesCriteriaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -749,6 +837,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesResponseH
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesResponseHeaderManipulationToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesResponseHeaderManipulation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesResponseHeaderManipulationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -821,6 +920,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesToTerrafo
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigAccessRulesOutputReference extends cdktf.ComplexObject {
@@ -964,6 +1074,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigAddressRateLimitingT
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigAddressRateLimitingToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigAddressRateLimiting): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigAddressRateLimitingOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1043,6 +1164,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCachingRulesCriteria
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCachingRulesCriteriaToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigCachingRulesCriteria): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigCachingRulesCriteriaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1110,6 +1242,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCachingRulesToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCachingRulesToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigCachingRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigCachingRulesOutputReference extends cdktf.ComplexObject {
@@ -1207,6 +1350,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCaptchasToTerraform(
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCaptchasToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigCaptchas): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigCaptchasOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1301,6 +1455,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCustomProtectionRule
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCustomProtectionRulesExclusionsToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigCustomProtectionRulesExclusions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigCustomProtectionRulesExclusionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1368,6 +1533,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCustomProtectionRule
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigCustomProtectionRulesToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigCustomProtectionRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigCustomProtectionRulesOutputReference extends cdktf.ComplexObject {
@@ -1443,6 +1619,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigDeviceFingerprintCha
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigDeviceFingerprintChallengeChallengeSettingsToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigDeviceFingerprintChallengeChallengeSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigDeviceFingerprintChallengeChallengeSettingsOutputReference extends cdktf.ComplexObject {
@@ -1549,6 +1736,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigDeviceFingerprintCha
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigDeviceFingerprintChallengeToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigDeviceFingerprintChallenge): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigDeviceFingerprintChallengeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1647,6 +1845,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChal
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChallengeChallengeSettingsToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChallengeChallengeSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChallengeChallengeSettingsOutputReference extends cdktf.ComplexObject {
@@ -1753,6 +1962,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChal
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChallengeSetHttpHeaderToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChallengeSetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChallengeSetHttpHeaderOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1820,6 +2040,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChal
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChallengeToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChallenge): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigHumanInteractionChallengeOutputReference extends cdktf.ComplexObject {
@@ -1933,6 +2164,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeChallenge
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeChallengeSettingsToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeChallengeSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeChallengeSettingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2037,6 +2279,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeCriteriaT
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeCriteriaToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeCriteria): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeCriteriaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2111,6 +2364,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeSetHttpHe
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeSetHttpHeaderToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeSetHttpHeader): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeSetHttpHeaderOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2178,6 +2442,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeToTerrafo
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallenge): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigJsChallengeOutputReference extends cdktf.ComplexObject {
@@ -2285,6 +2560,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigProtectionSettingsTo
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigProtectionSettingsToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigProtectionSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigProtectionSettingsOutputReference extends cdktf.ComplexObject {
@@ -2411,6 +2697,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigWhitelistsToTerrafor
   }
 }
 
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigWhitelistsToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfigWhitelists): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigWhitelistsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2483,6 +2780,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesWafConfigToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPoliciesWafConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesWafConfigOutputReference extends cdktf.ComplexObject {
@@ -2612,6 +2920,17 @@ export function dataOciWaasWaasPoliciesWaasPoliciesToTerraform(struct?: DataOciW
   }
   return {
   }
+}
+
+
+export function dataOciWaasWaasPoliciesWaasPoliciesToHclTerraform(struct?: DataOciWaasWaasPoliciesWaasPolicies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasWaasPoliciesWaasPoliciesOutputReference extends cdktf.ComplexObject {
@@ -2764,6 +3083,37 @@ export function dataOciWaasWaasPoliciesFilterToTerraform(struct?: DataOciWaasWaa
   }
 }
 
+
+export function dataOciWaasWaasPoliciesFilterToHclTerraform(struct?: DataOciWaasWaasPoliciesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciWaasWaasPoliciesFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2892,6 +3242,20 @@ export class DataOciWaasWaasPolicies extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_waas_waas_policies";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciWaasWaasPolicies resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciWaasWaasPolicies to import
+  * @param importFromId The id of the existing DataOciWaasWaasPolicies that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/waas_waas_policies#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciWaasWaasPolicies to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_waas_waas_policies", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -3080,5 +3444,61 @@ export class DataOciWaasWaasPolicies extends cdktf.TerraformDataSource {
       time_created_less_than: cdktf.stringToTerraform(this._timeCreatedLessThan),
       filter: cdktf.listMapper(dataOciWaasWaasPoliciesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_names: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._displayNames),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._ids),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      states: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._states),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      time_created_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciWaasWaasPoliciesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciWaasWaasPoliciesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

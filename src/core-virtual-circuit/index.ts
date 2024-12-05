@@ -84,19 +84,19 @@ export interface CoreVirtualCircuitConfig extends cdktf.TerraformMetaArguments {
   readonly type: string;
   /**
   * cross_connect_mappings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_virtual_circuit#cross_connect_mappings CoreVirtualCircuit#cross_connect_mappings}
   */
   readonly crossConnectMappings?: CoreVirtualCircuitCrossConnectMappings[] | cdktf.IResolvable;
   /**
   * public_prefixes block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_virtual_circuit#public_prefixes CoreVirtualCircuit#public_prefixes}
   */
   readonly publicPrefixes?: CoreVirtualCircuitPublicPrefixes[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_virtual_circuit#timeouts CoreVirtualCircuit#timeouts}
   */
   readonly timeouts?: CoreVirtualCircuitTimeouts;
@@ -111,6 +111,17 @@ export function coreVirtualCircuitVirtualCircuitRedundancyMetadataToTerraform(st
   }
   return {
   }
+}
+
+
+export function coreVirtualCircuitVirtualCircuitRedundancyMetadataToHclTerraform(struct?: CoreVirtualCircuitVirtualCircuitRedundancyMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CoreVirtualCircuitVirtualCircuitRedundancyMetadataOutputReference extends cdktf.ComplexObject {
@@ -220,6 +231,61 @@ export function coreVirtualCircuitCrossConnectMappingsToTerraform(struct?: CoreV
     oracle_bgp_peering_ipv6: cdktf.stringToTerraform(struct!.oracleBgpPeeringIpv6),
     vlan: cdktf.numberToTerraform(struct!.vlan),
   }
+}
+
+
+export function coreVirtualCircuitCrossConnectMappingsToHclTerraform(struct?: CoreVirtualCircuitCrossConnectMappings | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bgp_md5auth_key: {
+      value: cdktf.stringToHclTerraform(struct!.bgpMd5AuthKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cross_connect_or_cross_connect_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.crossConnectOrCrossConnectGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    customer_bgp_peering_ip: {
+      value: cdktf.stringToHclTerraform(struct!.customerBgpPeeringIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    customer_bgp_peering_ipv6: {
+      value: cdktf.stringToHclTerraform(struct!.customerBgpPeeringIpv6),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    oracle_bgp_peering_ip: {
+      value: cdktf.stringToHclTerraform(struct!.oracleBgpPeeringIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    oracle_bgp_peering_ipv6: {
+      value: cdktf.stringToHclTerraform(struct!.oracleBgpPeeringIpv6),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vlan: {
+      value: cdktf.numberToHclTerraform(struct!.vlan),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreVirtualCircuitCrossConnectMappingsOutputReference extends cdktf.ComplexObject {
@@ -451,6 +517,25 @@ export function coreVirtualCircuitPublicPrefixesToTerraform(struct?: CoreVirtual
   }
 }
 
+
+export function coreVirtualCircuitPublicPrefixesToHclTerraform(struct?: CoreVirtualCircuitPublicPrefixes | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cidr_block: {
+      value: cdktf.stringToHclTerraform(struct!.cidrBlock),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreVirtualCircuitPublicPrefixesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -553,6 +638,37 @@ export function coreVirtualCircuitTimeoutsToTerraform(struct?: CoreVirtualCircui
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function coreVirtualCircuitTimeoutsToHclTerraform(struct?: CoreVirtualCircuitTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreVirtualCircuitTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -667,6 +783,20 @@ export class CoreVirtualCircuit extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_virtual_circuit";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreVirtualCircuit resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreVirtualCircuit to import
+  * @param importFromId The id of the existing CoreVirtualCircuit that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_virtual_circuit#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreVirtualCircuit to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_virtual_circuit", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1131,5 +1261,139 @@ export class CoreVirtualCircuit extends cdktf.TerraformResource {
       public_prefixes: cdktf.listMapper(coreVirtualCircuitPublicPrefixesToTerraform, true)(this._publicPrefixes.internalValue),
       timeouts: coreVirtualCircuitTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bandwidth_shape_name: {
+        value: cdktf.stringToHclTerraform(this._bandwidthShapeName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      bgp_admin_state: {
+        value: cdktf.stringToHclTerraform(this._bgpAdminState),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      customer_asn: {
+        value: cdktf.stringToHclTerraform(this._customerAsn),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      customer_bgp_asn: {
+        value: cdktf.numberToHclTerraform(this._customerBgpAsn),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      gateway_id: {
+        value: cdktf.stringToHclTerraform(this._gatewayId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ip_mtu: {
+        value: cdktf.stringToHclTerraform(this._ipMtu),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_bfd_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isBfdEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_transport_mode: {
+        value: cdktf.booleanToHclTerraform(this._isTransportMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      provider_service_id: {
+        value: cdktf.stringToHclTerraform(this._providerServiceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      provider_service_key_name: {
+        value: cdktf.stringToHclTerraform(this._providerServiceKeyName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      region: {
+        value: cdktf.stringToHclTerraform(this._region),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      routing_policy: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._routingPolicy),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cross_connect_mappings: {
+        value: cdktf.listMapperHcl(coreVirtualCircuitCrossConnectMappingsToHclTerraform, true)(this._crossConnectMappings.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreVirtualCircuitCrossConnectMappingsList",
+      },
+      public_prefixes: {
+        value: cdktf.listMapperHcl(coreVirtualCircuitPublicPrefixesToHclTerraform, true)(this._publicPrefixes.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "CoreVirtualCircuitPublicPrefixesList",
+      },
+      timeouts: {
+        value: coreVirtualCircuitTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreVirtualCircuitTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

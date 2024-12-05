@@ -28,7 +28,7 @@ export interface DatabaseManagementExternalExadataStorageServerConfig extends cd
   readonly id?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_external_exadata_storage_server#timeouts DatabaseManagementExternalExadataStorageServer#timeouts}
   */
   readonly timeouts?: DatabaseManagementExternalExadataStorageServerTimeouts;
@@ -43,6 +43,17 @@ export function databaseManagementExternalExadataStorageServerConnectorToTerrafo
   }
   return {
   }
+}
+
+
+export function databaseManagementExternalExadataStorageServerConnectorToHclTerraform(struct?: DatabaseManagementExternalExadataStorageServerConnector): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseManagementExternalExadataStorageServerConnectorOutputReference extends cdktf.ComplexObject {
@@ -208,6 +219,37 @@ export function databaseManagementExternalExadataStorageServerTimeoutsToTerrafor
   }
 }
 
+
+export function databaseManagementExternalExadataStorageServerTimeoutsToHclTerraform(struct?: DatabaseManagementExternalExadataStorageServerTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseManagementExternalExadataStorageServerTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -320,6 +362,20 @@ export class DatabaseManagementExternalExadataStorageServer extends cdktf.Terraf
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_external_exadata_storage_server";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseManagementExternalExadataStorageServer resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseManagementExternalExadataStorageServer to import
+  * @param importFromId The id of the existing DatabaseManagementExternalExadataStorageServer that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_external_exadata_storage_server#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseManagementExternalExadataStorageServer to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_external_exadata_storage_server", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -561,5 +617,43 @@ export class DatabaseManagementExternalExadataStorageServer extends cdktf.Terraf
       id: cdktf.stringToTerraform(this._id),
       timeouts: databaseManagementExternalExadataStorageServerTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      external_exadata_storage_server_id: {
+        value: cdktf.stringToHclTerraform(this._externalExadataStorageServerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: databaseManagementExternalExadataStorageServerTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseManagementExternalExadataStorageServerTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

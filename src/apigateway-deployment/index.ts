@@ -40,13 +40,13 @@ export interface ApigatewayDeploymentConfig extends cdktf.TerraformMetaArguments
   readonly pathPrefix: string;
   /**
   * specification block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#specification ApigatewayDeployment#specification}
   */
   readonly specification: ApigatewayDeploymentSpecification;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#timeouts ApigatewayDeployment#timeouts}
   */
   readonly timeouts?: ApigatewayDeploymentTimeouts;
@@ -66,6 +66,25 @@ export function apigatewayDeploymentSpecificationLoggingPoliciesAccessLogToTerra
   return {
     is_enabled: cdktf.booleanToTerraform(struct!.isEnabled),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationLoggingPoliciesAccessLogToHclTerraform(struct?: ApigatewayDeploymentSpecificationLoggingPoliciesAccessLogOutputReference | ApigatewayDeploymentSpecificationLoggingPoliciesAccessLog): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationLoggingPoliciesAccessLogOutputReference extends cdktf.ComplexObject {
@@ -136,6 +155,31 @@ export function apigatewayDeploymentSpecificationLoggingPoliciesExecutionLogToTe
     is_enabled: cdktf.booleanToTerraform(struct!.isEnabled),
     log_level: cdktf.stringToTerraform(struct!.logLevel),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationLoggingPoliciesExecutionLogToHclTerraform(struct?: ApigatewayDeploymentSpecificationLoggingPoliciesExecutionLogOutputReference | ApigatewayDeploymentSpecificationLoggingPoliciesExecutionLog): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    log_level: {
+      value: cdktf.stringToHclTerraform(struct!.logLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationLoggingPoliciesExecutionLogOutputReference extends cdktf.ComplexObject {
@@ -211,13 +255,13 @@ export class ApigatewayDeploymentSpecificationLoggingPoliciesExecutionLogOutputR
 export interface ApigatewayDeploymentSpecificationLoggingPolicies {
   /**
   * access_log block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#access_log ApigatewayDeployment#access_log}
   */
   readonly accessLog?: ApigatewayDeploymentSpecificationLoggingPoliciesAccessLog;
   /**
   * execution_log block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#execution_log ApigatewayDeployment#execution_log}
   */
   readonly executionLog?: ApigatewayDeploymentSpecificationLoggingPoliciesExecutionLog;
@@ -232,6 +276,31 @@ export function apigatewayDeploymentSpecificationLoggingPoliciesToTerraform(stru
     access_log: apigatewayDeploymentSpecificationLoggingPoliciesAccessLogToTerraform(struct!.accessLog),
     execution_log: apigatewayDeploymentSpecificationLoggingPoliciesExecutionLogToTerraform(struct!.executionLog),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationLoggingPoliciesToHclTerraform(struct?: ApigatewayDeploymentSpecificationLoggingPoliciesOutputReference | ApigatewayDeploymentSpecificationLoggingPolicies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    access_log: {
+      value: apigatewayDeploymentSpecificationLoggingPoliciesAccessLogToHclTerraform(struct!.accessLog),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationLoggingPoliciesAccessLogList",
+    },
+    execution_log: {
+      value: apigatewayDeploymentSpecificationLoggingPoliciesExecutionLogToHclTerraform(struct!.executionLog),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationLoggingPoliciesExecutionLogList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationLoggingPoliciesOutputReference extends cdktf.ComplexObject {
@@ -359,6 +428,73 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationPu
     n: cdktf.stringToTerraform(struct!.n),
     use: cdktf.stringToTerraform(struct!.use),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeys | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    alg: {
+      value: cdktf.stringToHclTerraform(struct!.alg),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    e: {
+      value: cdktf.stringToHclTerraform(struct!.e),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    format: {
+      value: cdktf.stringToHclTerraform(struct!.format),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_ops: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.keyOps),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    kid: {
+      value: cdktf.stringToHclTerraform(struct!.kid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kty: {
+      value: cdktf.stringToHclTerraform(struct!.kty),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    n: {
+      value: cdktf.stringToHclTerraform(struct!.n),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    use: {
+      value: cdktf.stringToHclTerraform(struct!.use),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysOutputReference extends cdktf.ComplexObject {
@@ -633,7 +769,7 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationP
   readonly uri?: string;
   /**
   * keys block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#keys ApigatewayDeployment#keys}
   */
   readonly keys?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeys[] | cdktf.IResolvable;
@@ -651,6 +787,49 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationPu
     uri: cdktf.stringToTerraform(struct!.uri),
     keys: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysToTerraform, true)(struct!.keys),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeys): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_ssl_verify_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSslVerifyDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_cache_duration_in_hours: {
+      value: cdktf.numberToHclTerraform(struct!.maxCacheDurationInHours),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    keys: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysToHclTerraform, true)(struct!.keys),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKeysList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysOutputReference extends cdktf.ComplexObject {
@@ -818,6 +997,43 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    client_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_secret_version_number: {
+      value: cdktf.stringToHclTerraform(struct!.clientSecretVersionNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -946,6 +1162,25 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1033,7 +1268,7 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationV
   readonly type?: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItems[] | cdktf.IResolvable;
@@ -1048,6 +1283,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
     type: cdktf.stringToTerraform(struct!.type),
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersOutputReference extends cdktf.ComplexObject {
@@ -1140,6 +1400,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
     from: cdktf.stringToTerraform(struct!.from),
     to: cdktf.stringToTerraform(struct!.to),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    from: {
+      value: cdktf.stringToHclTerraform(struct!.from),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    to: {
+      value: cdktf.stringToHclTerraform(struct!.to),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsOutputReference extends cdktf.ComplexObject {
@@ -1247,7 +1532,7 @@ export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValid
 export interface ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeaders {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItems[] | cdktf.IResolvable;
@@ -1261,6 +1546,25 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersOutputReference extends cdktf.ComplexObject {
@@ -1336,6 +1640,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
     name: cdktf.stringToTerraform(struct!.name),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    if_exists: {
+      value: cdktf.stringToHclTerraform(struct!.ifExists),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsOutputReference extends cdktf.ComplexObject {
@@ -1465,7 +1800,7 @@ export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValid
 export interface ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeaders {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItems[] | cdktf.IResolvable;
@@ -1479,6 +1814,25 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersOutputReference extends cdktf.ComplexObject {
@@ -1532,19 +1886,19 @@ export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValid
 export interface ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformations {
   /**
   * filter_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#filter_headers ApigatewayDeployment#filter_headers}
   */
   readonly filterHeaders?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeaders;
   /**
   * rename_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#rename_headers ApigatewayDeployment#rename_headers}
   */
   readonly renameHeaders?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeaders;
   /**
   * set_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#set_headers ApigatewayDeployment#set_headers}
   */
   readonly setHeaders?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeaders;
@@ -1560,6 +1914,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
     rename_headers: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersToTerraform(struct!.renameHeaders),
     set_headers: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersToTerraform(struct!.setHeaders),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    filter_headers: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersToHclTerraform(struct!.filterHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsFilterHeadersList",
+    },
+    rename_headers: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersToHclTerraform(struct!.renameHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsRenameHeadersList",
+    },
+    set_headers: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersToHclTerraform(struct!.setHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsSetHeadersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsOutputReference extends cdktf.ComplexObject {
@@ -1676,6 +2061,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1790,19 +2200,19 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationV
   readonly usePkce?: boolean | cdktf.IResolvable;
   /**
   * client_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#client_details ApigatewayDeployment#client_details}
   */
   readonly clientDetails?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetails;
   /**
   * response_header_transformations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#response_header_transformations ApigatewayDeployment#response_header_transformations}
   */
   readonly responseHeaderTransformations?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformations;
   /**
   * source_uri_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#source_uri_details ApigatewayDeployment#source_uri_details}
   */
   readonly sourceUriDetails?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetails;
@@ -1829,6 +2239,103 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
     response_header_transformations: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsToTerraform(struct!.responseHeaderTransformations),
     source_uri_details: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsToTerraform(struct!.sourceUriDetails),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fallback_redirect_path: {
+      value: cdktf.stringToHclTerraform(struct!.fallbackRedirectPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    logout_path: {
+      value: cdktf.stringToHclTerraform(struct!.logoutPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_expiry_duration_in_hours: {
+      value: cdktf.numberToHclTerraform(struct!.maxExpiryDurationInHours),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    response_code: {
+      value: cdktf.stringToHclTerraform(struct!.responseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    response_message: {
+      value: cdktf.stringToHclTerraform(struct!.responseMessage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    response_type: {
+      value: cdktf.stringToHclTerraform(struct!.responseType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scopes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.scopes),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    use_cookies_for_intermediate_steps: {
+      value: cdktf.booleanToHclTerraform(struct!.useCookiesForIntermediateSteps),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    use_cookies_for_session: {
+      value: cdktf.booleanToHclTerraform(struct!.useCookiesForSession),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    use_pkce: {
+      value: cdktf.booleanToHclTerraform(struct!.usePkce),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    client_details: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsToHclTerraform(struct!.clientDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyClientDetailsList",
+    },
+    response_header_transformations: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsToHclTerraform(struct!.responseHeaderTransformations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyResponseHeaderTransformationsList",
+    },
+    source_uri_details: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsToHclTerraform(struct!.sourceUriDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicySourceUriDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyOutputReference extends cdktf.ComplexObject {
@@ -2189,6 +2696,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaims | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2324,7 +2862,7 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationV
   readonly issuers?: string[];
   /**
   * verify_claims block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#verify_claims ApigatewayDeployment#verify_claims}
   */
   readonly verifyClaims?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaims[] | cdktf.IResolvable;
@@ -2340,6 +2878,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
     issuers: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.issuers),
     verify_claims: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsToTerraform, true)(struct!.verifyClaims),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    audiences: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.audiences),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    issuers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.issuers),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    verify_claims: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsToHclTerraform, true)(struct!.verifyClaims),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyVerifyClaimsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyOutputReference extends cdktf.ComplexObject {
@@ -2464,6 +3033,43 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
     client_secret_version_number: cdktf.stringToTerraform(struct!.clientSecretVersionNumber),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    client_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_secret_version_number: {
+      value: cdktf.stringToHclTerraform(struct!.clientSecretVersionNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsOutputReference extends cdktf.ComplexObject {
@@ -2632,6 +3238,73 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
     n: cdktf.stringToTerraform(struct!.n),
     use: cdktf.stringToTerraform(struct!.use),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeys | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    alg: {
+      value: cdktf.stringToHclTerraform(struct!.alg),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    e: {
+      value: cdktf.stringToHclTerraform(struct!.e),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    format: {
+      value: cdktf.stringToHclTerraform(struct!.format),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_ops: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.keyOps),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    kid: {
+      value: cdktf.stringToHclTerraform(struct!.kid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kty: {
+      value: cdktf.stringToHclTerraform(struct!.kty),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    n: {
+      value: cdktf.stringToHclTerraform(struct!.n),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    use: {
+      value: cdktf.stringToHclTerraform(struct!.use),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysOutputReference extends cdktf.ComplexObject {
@@ -2909,6 +3582,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2995,25 +3693,25 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationV
   readonly uri?: string;
   /**
   * additional_validation_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#additional_validation_policy ApigatewayDeployment#additional_validation_policy}
   */
   readonly additionalValidationPolicy?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicy;
   /**
   * client_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#client_details ApigatewayDeployment#client_details}
   */
   readonly clientDetails?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetails;
   /**
   * keys block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#keys ApigatewayDeployment#keys}
   */
   readonly keys?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeys[] | cdktf.IResolvable;
   /**
   * source_uri_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#source_uri_details ApigatewayDeployment#source_uri_details}
   */
   readonly sourceUriDetails?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails;
@@ -3034,6 +3732,67 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVa
     keys: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysToTerraform, true)(struct!.keys),
     source_uri_details: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsToTerraform(struct!.sourceUriDetails),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_ssl_verify_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSslVerifyDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_cache_duration_in_hours: {
+      value: cdktf.numberToHclTerraform(struct!.maxCacheDurationInHours),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    additional_validation_policy: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyToHclTerraform(struct!.additionalValidationPolicy),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyAdditionalValidationPolicyList",
+    },
+    client_details: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsToHclTerraform(struct!.clientDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyClientDetailsList",
+    },
+    keys: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysToHclTerraform, true)(struct!.keys),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyKeysList",
+    },
+    source_uri_details: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsToHclTerraform(struct!.sourceUriDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyOutputReference extends cdktf.ComplexObject {
@@ -3262,6 +4021,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVe
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationVerifyClaims | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -3433,25 +4223,25 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesAuthentication 
   readonly type: string;
   /**
   * public_keys block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#public_keys ApigatewayDeployment#public_keys}
   */
   readonly publicKeys?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeys;
   /**
   * validation_failure_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#validation_failure_policy ApigatewayDeployment#validation_failure_policy}
   */
   readonly validationFailurePolicy?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicy;
   /**
   * validation_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#validation_policy ApigatewayDeployment#validation_policy}
   */
   readonly validationPolicy?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicy;
   /**
   * verify_claims block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#verify_claims ApigatewayDeployment#verify_claims}
   */
   readonly verifyClaims?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationVerifyClaims[] | cdktf.IResolvable;
@@ -3479,6 +4269,109 @@ export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationTo
     validation_policy: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyToTerraform(struct!.validationPolicy),
     verify_claims: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsToTerraform, true)(struct!.verifyClaims),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesAuthenticationToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesAuthentication): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    audiences: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.audiences),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    cache_key: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.cacheKey),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    function_id: {
+      value: cdktf.stringToHclTerraform(struct!.functionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_anonymous_access_allowed: {
+      value: cdktf.booleanToHclTerraform(struct!.isAnonymousAccessAllowed),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    issuers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.issuers),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    max_clock_skew_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.maxClockSkewInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    parameters: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.parameters),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    token_auth_scheme: {
+      value: cdktf.stringToHclTerraform(struct!.tokenAuthScheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    token_header: {
+      value: cdktf.stringToHclTerraform(struct!.tokenHeader),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    token_query_param: {
+      value: cdktf.stringToHclTerraform(struct!.tokenQueryParam),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    public_keys: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysToHclTerraform(struct!.publicKeys),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationPublicKeysList",
+    },
+    validation_failure_policy: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyToHclTerraform(struct!.validationFailurePolicy),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationFailurePolicyList",
+    },
+    validation_policy: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyToHclTerraform(struct!.validationPolicy),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationValidationPolicyList",
+    },
+    verify_claims: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsToHclTerraform, true)(struct!.verifyClaims),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationVerifyClaimsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationOutputReference extends cdktf.ComplexObject {
@@ -3876,6 +4769,55 @@ export function apigatewayDeploymentSpecificationRequestPoliciesCorsToTerraform(
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesCorsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesCorsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesCors): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_headers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedHeaders),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    allowed_methods: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedMethods),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    allowed_origins: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedOrigins),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    exposed_headers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.exposedHeaders),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    is_allow_credentials_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAllowCredentialsEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_age_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.maxAgeInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesCorsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4086,6 +5028,73 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     n: cdktf.stringToTerraform(struct!.n),
     use: cdktf.stringToTerraform(struct!.use),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeys | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    alg: {
+      value: cdktf.stringToHclTerraform(struct!.alg),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    e: {
+      value: cdktf.stringToHclTerraform(struct!.e),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    format: {
+      value: cdktf.stringToHclTerraform(struct!.format),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_ops: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.keyOps),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    kid: {
+      value: cdktf.stringToHclTerraform(struct!.kid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kty: {
+      value: cdktf.stringToHclTerraform(struct!.kty),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    n: {
+      value: cdktf.stringToHclTerraform(struct!.n),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    use: {
+      value: cdktf.stringToHclTerraform(struct!.use),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysOutputReference extends cdktf.ComplexObject {
@@ -4360,7 +5369,7 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenti
   readonly uri?: string;
   /**
   * keys block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#keys ApigatewayDeployment#keys}
   */
   readonly keys?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeys[] | cdktf.IResolvable;
@@ -4378,6 +5387,49 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     uri: cdktf.stringToTerraform(struct!.uri),
     keys: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysToTerraform, true)(struct!.keys),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeys): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_ssl_verify_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSslVerifyDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_cache_duration_in_hours: {
+      value: cdktf.numberToHclTerraform(struct!.maxCacheDurationInHours),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    keys: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysToHclTerraform, true)(struct!.keys),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysKeysList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysOutputReference extends cdktf.ComplexObject {
@@ -4545,6 +5597,43 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyClientDetailsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyClientDetailsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyClientDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    client_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_secret_version_number: {
+      value: cdktf.stringToHclTerraform(struct!.clientSecretVersionNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyClientDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4673,6 +5762,25 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -4760,7 +5868,7 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenti
   readonly type?: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItems[] | cdktf.IResolvable;
@@ -4775,6 +5883,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     type: cdktf.stringToTerraform(struct!.type),
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersOutputReference extends cdktf.ComplexObject {
@@ -4867,6 +6000,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     from: cdktf.stringToTerraform(struct!.from),
     to: cdktf.stringToTerraform(struct!.to),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    from: {
+      value: cdktf.stringToHclTerraform(struct!.from),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    to: {
+      value: cdktf.stringToHclTerraform(struct!.to),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsOutputReference extends cdktf.ComplexObject {
@@ -4974,7 +6132,7 @@ export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticati
 export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeaders {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItems[] | cdktf.IResolvable;
@@ -4988,6 +6146,25 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersOutputReference extends cdktf.ComplexObject {
@@ -5063,6 +6240,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     name: cdktf.stringToTerraform(struct!.name),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    if_exists: {
+      value: cdktf.stringToHclTerraform(struct!.ifExists),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsOutputReference extends cdktf.ComplexObject {
@@ -5192,7 +6400,7 @@ export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticati
 export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItems[] | cdktf.IResolvable;
@@ -5206,6 +6414,25 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersOutputReference extends cdktf.ComplexObject {
@@ -5259,19 +6486,19 @@ export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticati
 export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformations {
   /**
   * filter_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#filter_headers ApigatewayDeployment#filter_headers}
   */
   readonly filterHeaders?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeaders;
   /**
   * rename_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#rename_headers ApigatewayDeployment#rename_headers}
   */
   readonly renameHeaders?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeaders;
   /**
   * set_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#set_headers ApigatewayDeployment#set_headers}
   */
   readonly setHeaders?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeaders;
@@ -5287,6 +6514,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     rename_headers: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersToTerraform(struct!.renameHeaders),
     set_headers: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersToTerraform(struct!.setHeaders),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    filter_headers: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersToHclTerraform(struct!.filterHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsFilterHeadersList",
+    },
+    rename_headers: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersToHclTerraform(struct!.renameHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsRenameHeadersList",
+    },
+    set_headers: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersToHclTerraform(struct!.setHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsSetHeadersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsOutputReference extends cdktf.ComplexObject {
@@ -5403,6 +6661,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5517,19 +6800,19 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenti
   readonly usePkce?: boolean | cdktf.IResolvable;
   /**
   * client_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#client_details ApigatewayDeployment#client_details}
   */
   readonly clientDetails?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyClientDetails;
   /**
   * response_header_transformations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#response_header_transformations ApigatewayDeployment#response_header_transformations}
   */
   readonly responseHeaderTransformations?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformations;
   /**
   * source_uri_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#source_uri_details ApigatewayDeployment#source_uri_details}
   */
   readonly sourceUriDetails?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetails;
@@ -5556,6 +6839,103 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     response_header_transformations: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsToTerraform(struct!.responseHeaderTransformations),
     source_uri_details: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsToTerraform(struct!.sourceUriDetails),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    fallback_redirect_path: {
+      value: cdktf.stringToHclTerraform(struct!.fallbackRedirectPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    logout_path: {
+      value: cdktf.stringToHclTerraform(struct!.logoutPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_expiry_duration_in_hours: {
+      value: cdktf.numberToHclTerraform(struct!.maxExpiryDurationInHours),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    response_code: {
+      value: cdktf.stringToHclTerraform(struct!.responseCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    response_message: {
+      value: cdktf.stringToHclTerraform(struct!.responseMessage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    response_type: {
+      value: cdktf.stringToHclTerraform(struct!.responseType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scopes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.scopes),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    use_cookies_for_intermediate_steps: {
+      value: cdktf.booleanToHclTerraform(struct!.useCookiesForIntermediateSteps),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    use_cookies_for_session: {
+      value: cdktf.booleanToHclTerraform(struct!.useCookiesForSession),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    use_pkce: {
+      value: cdktf.booleanToHclTerraform(struct!.usePkce),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    client_details: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyClientDetailsToHclTerraform(struct!.clientDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyClientDetailsList",
+    },
+    response_header_transformations: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsToHclTerraform(struct!.responseHeaderTransformations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyResponseHeaderTransformationsList",
+    },
+    source_uri_details: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsToHclTerraform(struct!.sourceUriDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicySourceUriDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyOutputReference extends cdktf.ComplexObject {
@@ -5916,6 +7296,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaims | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -6051,7 +7462,7 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenti
   readonly issuers?: string[];
   /**
   * verify_claims block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#verify_claims ApigatewayDeployment#verify_claims}
   */
   readonly verifyClaims?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaims[] | cdktf.IResolvable;
@@ -6067,6 +7478,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     issuers: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.issuers),
     verify_claims: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsToTerraform, true)(struct!.verifyClaims),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    audiences: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.audiences),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    issuers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.issuers),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    verify_claims: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsToHclTerraform, true)(struct!.verifyClaims),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyVerifyClaimsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyOutputReference extends cdktf.ComplexObject {
@@ -6191,6 +7633,43 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     client_secret_version_number: cdktf.stringToTerraform(struct!.clientSecretVersionNumber),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetailsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetailsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    client_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_secret_version_number: {
+      value: cdktf.stringToHclTerraform(struct!.clientSecretVersionNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetailsOutputReference extends cdktf.ComplexObject {
@@ -6359,6 +7838,73 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     n: cdktf.stringToTerraform(struct!.n),
     use: cdktf.stringToTerraform(struct!.use),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeys | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    alg: {
+      value: cdktf.stringToHclTerraform(struct!.alg),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    e: {
+      value: cdktf.stringToHclTerraform(struct!.e),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    format: {
+      value: cdktf.stringToHclTerraform(struct!.format),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_ops: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.keyOps),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    kid: {
+      value: cdktf.stringToHclTerraform(struct!.kid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kty: {
+      value: cdktf.stringToHclTerraform(struct!.kty),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    n: {
+      value: cdktf.stringToHclTerraform(struct!.n),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    use: {
+      value: cdktf.stringToHclTerraform(struct!.use),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysOutputReference extends cdktf.ComplexObject {
@@ -6636,6 +8182,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6722,25 +8293,25 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenti
   readonly uri?: string;
   /**
   * additional_validation_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#additional_validation_policy ApigatewayDeployment#additional_validation_policy}
   */
   readonly additionalValidationPolicy?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicy;
   /**
   * client_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#client_details ApigatewayDeployment#client_details}
   */
   readonly clientDetails?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetails;
   /**
   * keys block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#keys ApigatewayDeployment#keys}
   */
   readonly keys?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeys[] | cdktf.IResolvable;
   /**
   * source_uri_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#source_uri_details ApigatewayDeployment#source_uri_details}
   */
   readonly sourceUriDetails?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetails;
@@ -6761,6 +8332,67 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     keys: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysToTerraform, true)(struct!.keys),
     source_uri_details: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsToTerraform(struct!.sourceUriDetails),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_ssl_verify_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSslVerifyDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_cache_duration_in_hours: {
+      value: cdktf.numberToHclTerraform(struct!.maxCacheDurationInHours),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    additional_validation_policy: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyToHclTerraform(struct!.additionalValidationPolicy),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyAdditionalValidationPolicyList",
+    },
+    client_details: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetailsToHclTerraform(struct!.clientDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyClientDetailsList",
+    },
+    keys: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysToHclTerraform, true)(struct!.keys),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyKeysList",
+    },
+    source_uri_details: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsToHclTerraform(struct!.sourceUriDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicySourceUriDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyOutputReference extends cdktf.ComplexObject {
@@ -6989,6 +8621,37 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaims | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -7160,25 +8823,25 @@ export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenti
   readonly type: string;
   /**
   * public_keys block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#public_keys ApigatewayDeployment#public_keys}
   */
   readonly publicKeys?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeys;
   /**
   * validation_failure_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#validation_failure_policy ApigatewayDeployment#validation_failure_policy}
   */
   readonly validationFailurePolicy?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicy;
   /**
   * validation_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#validation_policy ApigatewayDeployment#validation_policy}
   */
   readonly validationPolicy?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicy;
   /**
   * verify_claims block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#verify_claims ApigatewayDeployment#verify_claims}
   */
   readonly verifyClaims?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaims[] | cdktf.IResolvable;
@@ -7206,6 +8869,109 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     validation_policy: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyToTerraform(struct!.validationPolicy),
     verify_claims: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsToTerraform, true)(struct!.verifyClaims),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetail): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    audiences: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.audiences),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    cache_key: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.cacheKey),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    function_id: {
+      value: cdktf.stringToHclTerraform(struct!.functionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_anonymous_access_allowed: {
+      value: cdktf.booleanToHclTerraform(struct!.isAnonymousAccessAllowed),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    issuers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.issuers),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    max_clock_skew_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.maxClockSkewInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    parameters: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.parameters),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    token_auth_scheme: {
+      value: cdktf.stringToHclTerraform(struct!.tokenAuthScheme),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    token_header: {
+      value: cdktf.stringToHclTerraform(struct!.tokenHeader),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    token_query_param: {
+      value: cdktf.stringToHclTerraform(struct!.tokenQueryParam),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    public_keys: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysToHclTerraform(struct!.publicKeys),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailPublicKeysList",
+    },
+    validation_failure_policy: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyToHclTerraform(struct!.validationFailurePolicy),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationFailurePolicyList",
+    },
+    validation_policy: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyToHclTerraform(struct!.validationPolicy),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailValidationPolicyList",
+    },
+    verify_claims: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsToHclTerraform, true)(struct!.verifyClaims),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailVerifyClaimsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailOutputReference extends cdktf.ComplexObject {
@@ -7598,6 +9364,49 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKey): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    expression: {
+      value: cdktf.stringToHclTerraform(struct!.expression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_default: {
+      value: cdktf.booleanToHclTerraform(struct!.isDefault),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -7734,13 +9543,13 @@ export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticati
 export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServers {
   /**
   * authentication_server_detail block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#authentication_server_detail ApigatewayDeployment#authentication_server_detail}
   */
   readonly authenticationServerDetail: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetail;
   /**
   * key block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#key ApigatewayDeployment#key}
   */
   readonly key: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKey;
@@ -7755,6 +9564,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     authentication_server_detail: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailToTerraform(struct!.authenticationServerDetail),
     key: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyToTerraform(struct!.key),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServers | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    authentication_server_detail: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailToHclTerraform(struct!.authenticationServerDetail),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersAuthenticationServerDetailList",
+    },
+    key: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyToHclTerraform(struct!.key),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersKeyList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersOutputReference extends cdktf.ComplexObject {
@@ -7875,6 +9709,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    selector: {
+      value: cdktf.stringToHclTerraform(struct!.selector),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -7942,13 +9801,13 @@ export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticati
 export interface ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentication {
   /**
   * authentication_servers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#authentication_servers ApigatewayDeployment#authentication_servers}
   */
   readonly authenticationServers: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServers[] | cdktf.IResolvable;
   /**
   * selection_source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#selection_source ApigatewayDeployment#selection_source}
   */
   readonly selectionSource: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource;
@@ -7963,6 +9822,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentic
     authentication_servers: cdktf.listMapper(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersToTerraform, true)(struct!.authenticationServers),
     selection_source: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceToTerraform(struct!.selectionSource),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentication): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    authentication_servers: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersToHclTerraform, true)(struct!.authenticationServers),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServersList",
+    },
+    selection_source: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceToHclTerraform(struct!.selectionSource),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSourceList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationOutputReference extends cdktf.ComplexObject {
@@ -8049,6 +9933,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesMutualTlsToTerra
     allowed_sans: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.allowedSans),
     is_verified_certificate_required: cdktf.booleanToTerraform(struct!.isVerifiedCertificateRequired),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesMutualTlsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesMutualTlsOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesMutualTls): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_sans: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedSans),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    is_verified_certificate_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isVerifiedCertificateRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesMutualTlsOutputReference extends cdktf.ComplexObject {
@@ -8143,6 +10052,31 @@ export function apigatewayDeploymentSpecificationRequestPoliciesRateLimitingToTe
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesRateLimitingToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesRateLimitingOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesRateLimiting): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    rate_in_requests_per_second: {
+      value: cdktf.numberToHclTerraform(struct!.rateInRequestsPerSecond),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    rate_key: {
+      value: cdktf.stringToHclTerraform(struct!.rateKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesRateLimitingOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -8224,6 +10158,25 @@ export function apigatewayDeploymentSpecificationRequestPoliciesUsagePlansToTerr
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRequestPoliciesUsagePlansToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesUsagePlansOutputReference | ApigatewayDeploymentSpecificationRequestPoliciesUsagePlans): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    token_locations: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.tokenLocations),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRequestPoliciesUsagePlansOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -8272,37 +10225,37 @@ export class ApigatewayDeploymentSpecificationRequestPoliciesUsagePlansOutputRef
 export interface ApigatewayDeploymentSpecificationRequestPolicies {
   /**
   * authentication block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#authentication ApigatewayDeployment#authentication}
   */
   readonly authentication?: ApigatewayDeploymentSpecificationRequestPoliciesAuthentication;
   /**
   * cors block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#cors ApigatewayDeployment#cors}
   */
   readonly cors?: ApigatewayDeploymentSpecificationRequestPoliciesCors;
   /**
   * dynamic_authentication block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#dynamic_authentication ApigatewayDeployment#dynamic_authentication}
   */
   readonly dynamicAuthentication?: ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthentication;
   /**
   * mutual_tls block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#mutual_tls ApigatewayDeployment#mutual_tls}
   */
   readonly mutualTls?: ApigatewayDeploymentSpecificationRequestPoliciesMutualTls;
   /**
   * rate_limiting block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#rate_limiting ApigatewayDeployment#rate_limiting}
   */
   readonly rateLimiting?: ApigatewayDeploymentSpecificationRequestPoliciesRateLimiting;
   /**
   * usage_plans block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#usage_plans ApigatewayDeployment#usage_plans}
   */
   readonly usagePlans?: ApigatewayDeploymentSpecificationRequestPoliciesUsagePlans;
@@ -8321,6 +10274,55 @@ export function apigatewayDeploymentSpecificationRequestPoliciesToTerraform(stru
     rate_limiting: apigatewayDeploymentSpecificationRequestPoliciesRateLimitingToTerraform(struct!.rateLimiting),
     usage_plans: apigatewayDeploymentSpecificationRequestPoliciesUsagePlansToTerraform(struct!.usagePlans),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRequestPoliciesToHclTerraform(struct?: ApigatewayDeploymentSpecificationRequestPoliciesOutputReference | ApigatewayDeploymentSpecificationRequestPolicies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    authentication: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesAuthenticationToHclTerraform(struct!.authentication),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesAuthenticationList",
+    },
+    cors: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesCorsToHclTerraform(struct!.cors),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesCorsList",
+    },
+    dynamic_authentication: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationToHclTerraform(struct!.dynamicAuthentication),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesDynamicAuthenticationList",
+    },
+    mutual_tls: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesMutualTlsToHclTerraform(struct!.mutualTls),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesMutualTlsList",
+    },
+    rate_limiting: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesRateLimitingToHclTerraform(struct!.rateLimiting),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesRateLimitingList",
+    },
+    usage_plans: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesUsagePlansToHclTerraform(struct!.usagePlans),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesUsagePlansList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRequestPoliciesOutputReference extends cdktf.ComplexObject {
@@ -8503,6 +10505,31 @@ export function apigatewayDeploymentSpecificationRoutesBackendHeadersToTerraform
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesBackendHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesBackendHeaders | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesBackendHeadersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -8617,6 +10644,17 @@ export function apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBac
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackendHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackendHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackendHeadersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -8724,6 +10762,67 @@ export function apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBac
     type: cdktf.stringToTerraform(struct!.type),
     url: cdktf.stringToTerraform(struct!.url),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackendToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackendOutputReference | ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackend): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    body: {
+      value: cdktf.stringToHclTerraform(struct!.body),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connect_timeout_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.connectTimeoutInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    function_id: {
+      value: cdktf.stringToHclTerraform(struct!.functionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_ssl_verify_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSslVerifyDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    read_timeout_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.readTimeoutInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    status: {
+      value: cdktf.numberToHclTerraform(struct!.status),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    url: {
+      value: cdktf.stringToHclTerraform(struct!.url),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackendOutputReference extends cdktf.ComplexObject {
@@ -8973,6 +11072,49 @@ export function apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKey
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKeyToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKeyOutputReference | ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKey): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    expression: {
+      value: cdktf.stringToHclTerraform(struct!.expression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_default: {
+      value: cdktf.booleanToHclTerraform(struct!.isDefault),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKeyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -9106,13 +11248,13 @@ export class ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKeyOut
 export interface ApigatewayDeploymentSpecificationRoutesBackendRoutingBackends {
   /**
   * backend block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#backend ApigatewayDeployment#backend}
   */
   readonly backend?: ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackend;
   /**
   * key block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#key ApigatewayDeployment#key}
   */
   readonly key?: ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKey;
@@ -9127,6 +11269,31 @@ export function apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsToT
     backend: apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackendToTerraform(struct!.backend),
     key: apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKeyToTerraform(struct!.key),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesBackendRoutingBackends | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    backend: {
+      value: apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackendToHclTerraform(struct!.backend),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsBackendList",
+    },
+    key: {
+      value: apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKeyToHclTerraform(struct!.key),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsKeyList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsOutputReference extends cdktf.ComplexObject {
@@ -9253,6 +11420,31 @@ export function apigatewayDeploymentSpecificationRoutesBackendSelectionSourceToT
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesBackendSelectionSourceToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesBackendSelectionSourceOutputReference | ApigatewayDeploymentSpecificationRoutesBackendSelectionSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    selector: {
+      value: cdktf.stringToHclTerraform(struct!.selector),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesBackendSelectionSourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -9364,19 +11556,19 @@ export interface ApigatewayDeploymentSpecificationRoutesBackend {
   readonly url?: string;
   /**
   * headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#headers ApigatewayDeployment#headers}
   */
   readonly headers?: ApigatewayDeploymentSpecificationRoutesBackendHeaders[] | cdktf.IResolvable;
   /**
   * routing_backends block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#routing_backends ApigatewayDeployment#routing_backends}
   */
   readonly routingBackends?: ApigatewayDeploymentSpecificationRoutesBackendRoutingBackends[] | cdktf.IResolvable;
   /**
   * selection_source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#selection_source ApigatewayDeployment#selection_source}
   */
   readonly selectionSource?: ApigatewayDeploymentSpecificationRoutesBackendSelectionSource;
@@ -9403,6 +11595,103 @@ export function apigatewayDeploymentSpecificationRoutesBackendToTerraform(struct
     routing_backends: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsToTerraform, true)(struct!.routingBackends),
     selection_source: apigatewayDeploymentSpecificationRoutesBackendSelectionSourceToTerraform(struct!.selectionSource),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesBackendToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesBackendOutputReference | ApigatewayDeploymentSpecificationRoutesBackend): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_post_logout_uris: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedPostLogoutUris),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    body: {
+      value: cdktf.stringToHclTerraform(struct!.body),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connect_timeout_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.connectTimeoutInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    function_id: {
+      value: cdktf.stringToHclTerraform(struct!.functionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_ssl_verify_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isSslVerifyDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    post_logout_state: {
+      value: cdktf.stringToHclTerraform(struct!.postLogoutState),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    read_timeout_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.readTimeoutInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    send_timeout_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.sendTimeoutInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    status: {
+      value: cdktf.numberToHclTerraform(struct!.status),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    url: {
+      value: cdktf.stringToHclTerraform(struct!.url),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    headers: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesBackendHeadersToHclTerraform, true)(struct!.headers),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesBackendHeadersList",
+    },
+    routing_backends: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesBackendRoutingBackendsToHclTerraform, true)(struct!.routingBackends),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesBackendRoutingBackendsList",
+    },
+    selection_source: {
+      value: apigatewayDeploymentSpecificationRoutesBackendSelectionSourceToHclTerraform(struct!.selectionSource),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesBackendSelectionSourceList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesBackendOutputReference extends cdktf.ComplexObject {
@@ -9753,6 +12042,25 @@ export function apigatewayDeploymentSpecificationRoutesLoggingPoliciesAccessLogT
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesLoggingPoliciesAccessLogToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesLoggingPoliciesAccessLogOutputReference | ApigatewayDeploymentSpecificationRoutesLoggingPoliciesAccessLog): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesLoggingPoliciesAccessLogOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -9821,6 +12129,31 @@ export function apigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionL
     is_enabled: cdktf.booleanToTerraform(struct!.isEnabled),
     log_level: cdktf.stringToTerraform(struct!.logLevel),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionLogToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionLogOutputReference | ApigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionLog): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    log_level: {
+      value: cdktf.stringToHclTerraform(struct!.logLevel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionLogOutputReference extends cdktf.ComplexObject {
@@ -9896,13 +12229,13 @@ export class ApigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionLogO
 export interface ApigatewayDeploymentSpecificationRoutesLoggingPolicies {
   /**
   * access_log block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#access_log ApigatewayDeployment#access_log}
   */
   readonly accessLog?: ApigatewayDeploymentSpecificationRoutesLoggingPoliciesAccessLog;
   /**
   * execution_log block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#execution_log ApigatewayDeployment#execution_log}
   */
   readonly executionLog?: ApigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionLog;
@@ -9917,6 +12250,31 @@ export function apigatewayDeploymentSpecificationRoutesLoggingPoliciesToTerrafor
     access_log: apigatewayDeploymentSpecificationRoutesLoggingPoliciesAccessLogToTerraform(struct!.accessLog),
     execution_log: apigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionLogToTerraform(struct!.executionLog),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesLoggingPoliciesToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesLoggingPoliciesOutputReference | ApigatewayDeploymentSpecificationRoutesLoggingPolicies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    access_log: {
+      value: apigatewayDeploymentSpecificationRoutesLoggingPoliciesAccessLogToHclTerraform(struct!.accessLog),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesLoggingPoliciesAccessLogList",
+    },
+    execution_log: {
+      value: apigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionLogToHclTerraform(struct!.executionLog),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesLoggingPoliciesExecutionLogList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesLoggingPoliciesOutputReference extends cdktf.ComplexObject {
@@ -10011,6 +12369,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesAuthorizat
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesAuthorizationToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesAuthorizationOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesAuthorization): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_scope: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedScope),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesAuthorizationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -10101,6 +12484,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValida
     media_type: cdktf.stringToTerraform(struct!.mediaType),
     validation_type: cdktf.stringToTerraform(struct!.validationType),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationContentToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationContent | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    media_type: {
+      value: cdktf.stringToHclTerraform(struct!.mediaType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    validation_type: {
+      value: cdktf.stringToHclTerraform(struct!.validationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationContentOutputReference extends cdktf.ComplexObject {
@@ -10210,7 +12618,7 @@ export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValid
   readonly validationMode?: string;
   /**
   * content block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#content ApigatewayDeployment#content}
   */
   readonly content?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationContent[] | cdktf.IResolvable;
@@ -10226,6 +12634,37 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValida
     validation_mode: cdktf.stringToTerraform(struct!.validationMode),
     content: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationContentToTerraform, true)(struct!.content),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    required: {
+      value: cdktf.booleanToHclTerraform(struct!.required),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    validation_mode: {
+      value: cdktf.stringToHclTerraform(struct!.validationMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    content: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationContentToHclTerraform, true)(struct!.content),
+      isBlock: true,
+      type: "set",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationContentList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationOutputReference extends cdktf.ComplexObject {
@@ -10360,6 +12799,55 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesCorsToTerr
     is_allow_credentials_enabled: cdktf.booleanToTerraform(struct!.isAllowCredentialsEnabled),
     max_age_in_seconds: cdktf.numberToTerraform(struct!.maxAgeInSeconds),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesCorsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesCorsOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesCors): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_headers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedHeaders),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    allowed_methods: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedMethods),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    allowed_origins: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedOrigins),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    exposed_headers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.exposedHeaders),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    is_allow_credentials_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAllowCredentialsEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_age_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.maxAgeInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesCorsOutputReference extends cdktf.ComplexObject {
@@ -10534,6 +13022,25 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTran
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -10618,7 +13125,7 @@ export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTra
   readonly type: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersItems[] | cdktf.IResolvable;
@@ -10633,6 +13140,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTran
     type: cdktf.stringToTerraform(struct!.type),
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersOutputReference extends cdktf.ComplexObject {
@@ -10719,6 +13251,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTran
     from: cdktf.stringToTerraform(struct!.from),
     to: cdktf.stringToTerraform(struct!.to),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    from: {
+      value: cdktf.stringToHclTerraform(struct!.from),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    to: {
+      value: cdktf.stringToHclTerraform(struct!.to),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersItemsOutputReference extends cdktf.ComplexObject {
@@ -10820,7 +13377,7 @@ export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransfo
 export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeaders {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersItems[] | cdktf.IResolvable;
@@ -10834,6 +13391,25 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTran
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersOutputReference extends cdktf.ComplexObject {
@@ -10906,6 +13482,37 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTran
     name: cdktf.stringToTerraform(struct!.name),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    if_exists: {
+      value: cdktf.stringToHclTerraform(struct!.ifExists),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItemsOutputReference extends cdktf.ComplexObject {
@@ -11029,7 +13636,7 @@ export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransfo
 export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeaders {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItems[] | cdktf.IResolvable;
@@ -11043,6 +13650,25 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTran
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersOutputReference extends cdktf.ComplexObject {
@@ -11093,19 +13719,19 @@ export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransfo
 export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformations {
   /**
   * filter_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#filter_headers ApigatewayDeployment#filter_headers}
   */
   readonly filterHeaders?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeaders;
   /**
   * rename_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#rename_headers ApigatewayDeployment#rename_headers}
   */
   readonly renameHeaders?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeaders;
   /**
   * set_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#set_headers ApigatewayDeployment#set_headers}
   */
   readonly setHeaders?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeaders;
@@ -11121,6 +13747,37 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTran
     rename_headers: apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersToTerraform(struct!.renameHeaders),
     set_headers: apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersToTerraform(struct!.setHeaders),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    filter_headers: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersToHclTerraform(struct!.filterHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsFilterHeadersList",
+    },
+    rename_headers: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersToHclTerraform(struct!.renameHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsRenameHeadersList",
+    },
+    set_headers: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersToHclTerraform(struct!.setHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsSetHeadersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsOutputReference extends cdktf.ComplexObject {
@@ -11237,6 +13894,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderVali
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeaders | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    required: {
+      value: cdktf.booleanToHclTerraform(struct!.required),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -11343,7 +14025,7 @@ export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderVal
   readonly validationMode?: string;
   /**
   * headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#headers ApigatewayDeployment#headers}
   */
   readonly headers?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeaders[] | cdktf.IResolvable;
@@ -11358,6 +14040,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderVali
     validation_mode: cdktf.stringToTerraform(struct!.validationMode),
     headers: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersToTerraform, true)(struct!.headers),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    validation_mode: {
+      value: cdktf.stringToHclTerraform(struct!.validationMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    headers: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersToHclTerraform, true)(struct!.headers),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsHeadersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsOutputReference extends cdktf.ComplexObject {
@@ -11447,6 +14154,25 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParam
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -11531,7 +14257,7 @@ export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryPara
   readonly type: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersItems[] | cdktf.IResolvable;
@@ -11546,6 +14272,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParam
     type: cdktf.stringToTerraform(struct!.type),
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParameters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersOutputReference extends cdktf.ComplexObject {
@@ -11632,6 +14383,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParam
     from: cdktf.stringToTerraform(struct!.from),
     to: cdktf.stringToTerraform(struct!.to),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    from: {
+      value: cdktf.stringToHclTerraform(struct!.from),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    to: {
+      value: cdktf.stringToHclTerraform(struct!.to),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemsOutputReference extends cdktf.ComplexObject {
@@ -11733,7 +14509,7 @@ export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParamete
 export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParameters {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersItems[] | cdktf.IResolvable;
@@ -11747,6 +14523,25 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParam
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParameters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersOutputReference extends cdktf.ComplexObject {
@@ -11819,6 +14614,37 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParam
     name: cdktf.stringToTerraform(struct!.name),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    if_exists: {
+      value: cdktf.stringToHclTerraform(struct!.ifExists),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItemsOutputReference extends cdktf.ComplexObject {
@@ -11942,7 +14768,7 @@ export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParamete
 export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParameters {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItems[] | cdktf.IResolvable;
@@ -11956,6 +14782,25 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParam
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParameters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersOutputReference extends cdktf.ComplexObject {
@@ -12006,19 +14851,19 @@ export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParamete
 export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformations {
   /**
   * filter_query_parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#filter_query_parameters ApigatewayDeployment#filter_query_parameters}
   */
   readonly filterQueryParameters?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParameters;
   /**
   * rename_query_parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#rename_query_parameters ApigatewayDeployment#rename_query_parameters}
   */
   readonly renameQueryParameters?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParameters;
   /**
   * set_query_parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#set_query_parameters ApigatewayDeployment#set_query_parameters}
   */
   readonly setQueryParameters?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParameters;
@@ -12034,6 +14879,37 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParam
     rename_query_parameters: apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersToTerraform(struct!.renameQueryParameters),
     set_query_parameters: apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersToTerraform(struct!.setQueryParameters),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    filter_query_parameters: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersToHclTerraform(struct!.filterQueryParameters),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsFilterQueryParametersList",
+    },
+    rename_query_parameters: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersToHclTerraform(struct!.renameQueryParameters),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsRenameQueryParametersList",
+    },
+    set_query_parameters: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersToHclTerraform(struct!.setQueryParameters),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsSetQueryParametersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsOutputReference extends cdktf.ComplexObject {
@@ -12150,6 +15026,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParam
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParameters | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    required: {
+      value: cdktf.booleanToHclTerraform(struct!.required),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -12256,7 +15157,7 @@ export interface ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryPara
   readonly validationMode?: string;
   /**
   * parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#parameters ApigatewayDeployment#parameters}
   */
   readonly parameters?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParameters[] | cdktf.IResolvable;
@@ -12271,6 +15172,31 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParam
     validation_mode: cdktf.stringToTerraform(struct!.validationMode),
     parameters: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersToTerraform, true)(struct!.parameters),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    validation_mode: {
+      value: cdktf.stringToHclTerraform(struct!.validationMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parameters: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersToHclTerraform, true)(struct!.parameters),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsParametersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsOutputReference extends cdktf.ComplexObject {
@@ -12373,6 +15299,43 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCa
     is_private_caching_enabled: cdktf.booleanToTerraform(struct!.isPrivateCachingEnabled),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCacheLookupToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCacheLookupOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCacheLookup): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cache_key_additions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.cacheKeyAdditions),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_private_caching_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPrivateCachingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCacheLookupOutputReference extends cdktf.ComplexObject {
@@ -12489,49 +15452,49 @@ export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCache
 export interface ApigatewayDeploymentSpecificationRoutesRequestPolicies {
   /**
   * authorization block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#authorization ApigatewayDeployment#authorization}
   */
   readonly authorization?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesAuthorization;
   /**
   * body_validation block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#body_validation ApigatewayDeployment#body_validation}
   */
   readonly bodyValidation?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidation;
   /**
   * cors block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#cors ApigatewayDeployment#cors}
   */
   readonly cors?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesCors;
   /**
   * header_transformations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#header_transformations ApigatewayDeployment#header_transformations}
   */
   readonly headerTransformations?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformations;
   /**
   * header_validations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#header_validations ApigatewayDeployment#header_validations}
   */
   readonly headerValidations?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidations;
   /**
   * query_parameter_transformations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#query_parameter_transformations ApigatewayDeployment#query_parameter_transformations}
   */
   readonly queryParameterTransformations?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformations;
   /**
   * query_parameter_validations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#query_parameter_validations ApigatewayDeployment#query_parameter_validations}
   */
   readonly queryParameterValidations?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidations;
   /**
   * response_cache_lookup block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#response_cache_lookup ApigatewayDeployment#response_cache_lookup}
   */
   readonly responseCacheLookup?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCacheLookup;
@@ -12552,6 +15515,67 @@ export function apigatewayDeploymentSpecificationRoutesRequestPoliciesToTerrafor
     query_parameter_validations: apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsToTerraform(struct!.queryParameterValidations),
     response_cache_lookup: apigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCacheLookupToTerraform(struct!.responseCacheLookup),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesRequestPoliciesToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesRequestPoliciesOutputReference | ApigatewayDeploymentSpecificationRoutesRequestPolicies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    authorization: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesAuthorizationToHclTerraform(struct!.authorization),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesAuthorizationList",
+    },
+    body_validation: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationToHclTerraform(struct!.bodyValidation),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesBodyValidationList",
+    },
+    cors: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesCorsToHclTerraform(struct!.cors),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesCorsList",
+    },
+    header_transformations: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsToHclTerraform(struct!.headerTransformations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderTransformationsList",
+    },
+    header_validations: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsToHclTerraform(struct!.headerValidations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesHeaderValidationsList",
+    },
+    query_parameter_transformations: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsToHclTerraform(struct!.queryParameterTransformations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterTransformationsList",
+    },
+    query_parameter_validations: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsToHclTerraform(struct!.queryParameterValidations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesQueryParameterValidationsList",
+    },
+    response_cache_lookup: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCacheLookupToHclTerraform(struct!.responseCacheLookup),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesResponseCacheLookupList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesRequestPoliciesOutputReference extends cdktf.ComplexObject {
@@ -12773,6 +15797,25 @@ export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTra
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -12857,7 +15900,7 @@ export interface ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTr
   readonly type: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersItems[] | cdktf.IResolvable;
@@ -12872,6 +15915,31 @@ export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTra
     type: cdktf.stringToTerraform(struct!.type),
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersOutputReference | ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersOutputReference extends cdktf.ComplexObject {
@@ -12958,6 +16026,31 @@ export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTra
     from: cdktf.stringToTerraform(struct!.from),
     to: cdktf.stringToTerraform(struct!.to),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    from: {
+      value: cdktf.stringToHclTerraform(struct!.from),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    to: {
+      value: cdktf.stringToHclTerraform(struct!.to),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersItemsOutputReference extends cdktf.ComplexObject {
@@ -13059,7 +16152,7 @@ export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransf
 export interface ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeaders {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersItems[] | cdktf.IResolvable;
@@ -13073,6 +16166,25 @@ export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTra
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersOutputReference | ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersOutputReference extends cdktf.ComplexObject {
@@ -13145,6 +16257,37 @@ export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTra
     name: cdktf.stringToTerraform(struct!.name),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItemsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    if_exists: {
+      value: cdktf.stringToHclTerraform(struct!.ifExists),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItemsOutputReference extends cdktf.ComplexObject {
@@ -13268,7 +16411,7 @@ export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransf
 export interface ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeaders {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#items ApigatewayDeployment#items}
   */
   readonly items: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItems[] | cdktf.IResolvable;
@@ -13282,6 +16425,25 @@ export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTra
   return {
     items: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersOutputReference | ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeaders): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersOutputReference extends cdktf.ComplexObject {
@@ -13332,19 +16494,19 @@ export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransf
 export interface ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformations {
   /**
   * filter_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#filter_headers ApigatewayDeployment#filter_headers}
   */
   readonly filterHeaders?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeaders;
   /**
   * rename_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#rename_headers ApigatewayDeployment#rename_headers}
   */
   readonly renameHeaders?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeaders;
   /**
   * set_headers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#set_headers ApigatewayDeployment#set_headers}
   */
   readonly setHeaders?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeaders;
@@ -13360,6 +16522,37 @@ export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTra
     rename_headers: apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersToTerraform(struct!.renameHeaders),
     set_headers: apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersToTerraform(struct!.setHeaders),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsOutputReference | ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    filter_headers: {
+      value: apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersToHclTerraform(struct!.filterHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsFilterHeadersList",
+    },
+    rename_headers: {
+      value: apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersToHclTerraform(struct!.renameHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsRenameHeadersList",
+    },
+    set_headers: {
+      value: apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersToHclTerraform(struct!.setHeaders),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsSetHeadersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsOutputReference extends cdktf.ComplexObject {
@@ -13476,6 +16669,31 @@ export function apigatewayDeploymentSpecificationRoutesResponsePoliciesResponseC
   }
 }
 
+
+export function apigatewayDeploymentSpecificationRoutesResponsePoliciesResponseCacheStoreToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesResponseCacheStoreOutputReference | ApigatewayDeploymentSpecificationRoutesResponsePoliciesResponseCacheStore): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    time_to_live_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.timeToLiveInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesResponseCacheStoreOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -13543,13 +16761,13 @@ export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesResponseCach
 export interface ApigatewayDeploymentSpecificationRoutesResponsePolicies {
   /**
   * header_transformations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#header_transformations ApigatewayDeployment#header_transformations}
   */
   readonly headerTransformations?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformations;
   /**
   * response_cache_store block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#response_cache_store ApigatewayDeployment#response_cache_store}
   */
   readonly responseCacheStore?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesResponseCacheStore;
@@ -13564,6 +16782,31 @@ export function apigatewayDeploymentSpecificationRoutesResponsePoliciesToTerrafo
     header_transformations: apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsToTerraform(struct!.headerTransformations),
     response_cache_store: apigatewayDeploymentSpecificationRoutesResponsePoliciesResponseCacheStoreToTerraform(struct!.responseCacheStore),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesResponsePoliciesToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutesResponsePoliciesOutputReference | ApigatewayDeploymentSpecificationRoutesResponsePolicies): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    header_transformations: {
+      value: apigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsToHclTerraform(struct!.headerTransformations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesResponsePoliciesHeaderTransformationsList",
+    },
+    response_cache_store: {
+      value: apigatewayDeploymentSpecificationRoutesResponsePoliciesResponseCacheStoreToHclTerraform(struct!.responseCacheStore),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesResponsePoliciesResponseCacheStoreList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesResponsePoliciesOutputReference extends cdktf.ComplexObject {
@@ -13647,25 +16890,25 @@ export interface ApigatewayDeploymentSpecificationRoutes {
   readonly path: string;
   /**
   * backend block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#backend ApigatewayDeployment#backend}
   */
   readonly backend: ApigatewayDeploymentSpecificationRoutesBackend;
   /**
   * logging_policies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#logging_policies ApigatewayDeployment#logging_policies}
   */
   readonly loggingPolicies?: ApigatewayDeploymentSpecificationRoutesLoggingPolicies;
   /**
   * request_policies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#request_policies ApigatewayDeployment#request_policies}
   */
   readonly requestPolicies?: ApigatewayDeploymentSpecificationRoutesRequestPolicies;
   /**
   * response_policies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#response_policies ApigatewayDeployment#response_policies}
   */
   readonly responsePolicies?: ApigatewayDeploymentSpecificationRoutesResponsePolicies;
@@ -13684,6 +16927,55 @@ export function apigatewayDeploymentSpecificationRoutesToTerraform(struct?: Apig
     request_policies: apigatewayDeploymentSpecificationRoutesRequestPoliciesToTerraform(struct!.requestPolicies),
     response_policies: apigatewayDeploymentSpecificationRoutesResponsePoliciesToTerraform(struct!.responsePolicies),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationRoutesToHclTerraform(struct?: ApigatewayDeploymentSpecificationRoutes | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    methods: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.methods),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    backend: {
+      value: apigatewayDeploymentSpecificationRoutesBackendToHclTerraform(struct!.backend),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesBackendList",
+    },
+    logging_policies: {
+      value: apigatewayDeploymentSpecificationRoutesLoggingPoliciesToHclTerraform(struct!.loggingPolicies),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesLoggingPoliciesList",
+    },
+    request_policies: {
+      value: apigatewayDeploymentSpecificationRoutesRequestPoliciesToHclTerraform(struct!.requestPolicies),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesRequestPoliciesList",
+    },
+    response_policies: {
+      value: apigatewayDeploymentSpecificationRoutesResponsePoliciesToHclTerraform(struct!.responsePolicies),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesResponsePoliciesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationRoutesOutputReference extends cdktf.ComplexObject {
@@ -13873,19 +17165,19 @@ export class ApigatewayDeploymentSpecificationRoutesList extends cdktf.ComplexLi
 export interface ApigatewayDeploymentSpecification {
   /**
   * logging_policies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#logging_policies ApigatewayDeployment#logging_policies}
   */
   readonly loggingPolicies?: ApigatewayDeploymentSpecificationLoggingPolicies;
   /**
   * request_policies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#request_policies ApigatewayDeployment#request_policies}
   */
   readonly requestPolicies?: ApigatewayDeploymentSpecificationRequestPolicies;
   /**
   * routes block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#routes ApigatewayDeployment#routes}
   */
   readonly routes: ApigatewayDeploymentSpecificationRoutes[] | cdktf.IResolvable;
@@ -13901,6 +17193,37 @@ export function apigatewayDeploymentSpecificationToTerraform(struct?: Apigateway
     request_policies: apigatewayDeploymentSpecificationRequestPoliciesToTerraform(struct!.requestPolicies),
     routes: cdktf.listMapper(apigatewayDeploymentSpecificationRoutesToTerraform, true)(struct!.routes),
   }
+}
+
+
+export function apigatewayDeploymentSpecificationToHclTerraform(struct?: ApigatewayDeploymentSpecificationOutputReference | ApigatewayDeploymentSpecification): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    logging_policies: {
+      value: apigatewayDeploymentSpecificationLoggingPoliciesToHclTerraform(struct!.loggingPolicies),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationLoggingPoliciesList",
+    },
+    request_policies: {
+      value: apigatewayDeploymentSpecificationRequestPoliciesToHclTerraform(struct!.requestPolicies),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRequestPoliciesList",
+    },
+    routes: {
+      value: cdktf.listMapperHcl(apigatewayDeploymentSpecificationRoutesToHclTerraform, true)(struct!.routes),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ApigatewayDeploymentSpecificationRoutesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApigatewayDeploymentSpecificationOutputReference extends cdktf.ComplexObject {
@@ -14019,6 +17342,37 @@ export function apigatewayDeploymentTimeoutsToTerraform(struct?: ApigatewayDeplo
   }
 }
 
+
+export function apigatewayDeploymentTimeoutsToHclTerraform(struct?: ApigatewayDeploymentTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApigatewayDeploymentTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -14131,6 +17485,20 @@ export class ApigatewayDeployment extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apigateway_deployment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ApigatewayDeployment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ApigatewayDeployment to import
+  * @param importFromId The id of the existing ApigatewayDeployment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apigateway_deployment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ApigatewayDeployment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apigateway_deployment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -14347,5 +17715,67 @@ export class ApigatewayDeployment extends cdktf.TerraformResource {
       specification: apigatewayDeploymentSpecificationToTerraform(this._specification.internalValue),
       timeouts: apigatewayDeploymentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      gateway_id: {
+        value: cdktf.stringToHclTerraform(this._gatewayId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      path_prefix: {
+        value: cdktf.stringToHclTerraform(this._pathPrefix),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      specification: {
+        value: apigatewayDeploymentSpecificationToHclTerraform(this._specification.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApigatewayDeploymentSpecificationList",
+      },
+      timeouts: {
+        value: apigatewayDeploymentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ApigatewayDeploymentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

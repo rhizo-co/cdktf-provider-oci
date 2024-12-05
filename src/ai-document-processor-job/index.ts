@@ -24,25 +24,25 @@ export interface AiDocumentProcessorJobConfig extends cdktf.TerraformMetaArgumen
   readonly id?: string;
   /**
   * input_location block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_processor_job#input_location AiDocumentProcessorJob#input_location}
   */
   readonly inputLocation: AiDocumentProcessorJobInputLocation;
   /**
   * output_location block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_processor_job#output_location AiDocumentProcessorJob#output_location}
   */
   readonly outputLocation: AiDocumentProcessorJobOutputLocation;
   /**
   * processor_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_processor_job#processor_config AiDocumentProcessorJob#processor_config}
   */
   readonly processorConfig: AiDocumentProcessorJobProcessorConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_processor_job#timeouts AiDocumentProcessorJob#timeouts}
   */
   readonly timeouts?: AiDocumentProcessorJobTimeouts;
@@ -72,6 +72,37 @@ export function aiDocumentProcessorJobInputLocationObjectLocationsToTerraform(st
     namespace: cdktf.stringToTerraform(struct!.namespace),
     object: cdktf.stringToTerraform(struct!.object),
   }
+}
+
+
+export function aiDocumentProcessorJobInputLocationObjectLocationsToHclTerraform(struct?: AiDocumentProcessorJobInputLocationObjectLocations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiDocumentProcessorJobInputLocationObjectLocationsOutputReference extends cdktf.ComplexObject {
@@ -209,7 +240,7 @@ export interface AiDocumentProcessorJobInputLocation {
   readonly sourceType: string;
   /**
   * object_locations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_processor_job#object_locations AiDocumentProcessorJob#object_locations}
   */
   readonly objectLocations?: AiDocumentProcessorJobInputLocationObjectLocations[] | cdktf.IResolvable;
@@ -225,6 +256,37 @@ export function aiDocumentProcessorJobInputLocationToTerraform(struct?: AiDocume
     source_type: cdktf.stringToTerraform(struct!.sourceType),
     object_locations: cdktf.listMapper(aiDocumentProcessorJobInputLocationObjectLocationsToTerraform, true)(struct!.objectLocations),
   }
+}
+
+
+export function aiDocumentProcessorJobInputLocationToHclTerraform(struct?: AiDocumentProcessorJobInputLocationOutputReference | AiDocumentProcessorJobInputLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    data: {
+      value: cdktf.stringToHclTerraform(struct!.data),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_locations: {
+      value: cdktf.listMapperHcl(aiDocumentProcessorJobInputLocationObjectLocationsToHclTerraform, true)(struct!.objectLocations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiDocumentProcessorJobInputLocationObjectLocationsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiDocumentProcessorJobInputLocationOutputReference extends cdktf.ComplexObject {
@@ -341,6 +403,37 @@ export function aiDocumentProcessorJobOutputLocationToTerraform(struct?: AiDocum
     namespace: cdktf.stringToTerraform(struct!.namespace),
     prefix: cdktf.stringToTerraform(struct!.prefix),
   }
+}
+
+
+export function aiDocumentProcessorJobOutputLocationToHclTerraform(struct?: AiDocumentProcessorJobOutputLocationOutputReference | AiDocumentProcessorJobOutputLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    prefix: {
+      value: cdktf.stringToHclTerraform(struct!.prefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiDocumentProcessorJobOutputLocationOutputReference extends cdktf.ComplexObject {
@@ -461,6 +554,49 @@ export function aiDocumentProcessorJobProcessorConfigFeaturesToTerraform(struct?
     model_id: cdktf.stringToTerraform(struct!.modelId),
     tenancy_id: cdktf.stringToTerraform(struct!.tenancyId),
   }
+}
+
+
+export function aiDocumentProcessorJobProcessorConfigFeaturesToHclTerraform(struct?: AiDocumentProcessorJobProcessorConfigFeatures | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    feature_type: {
+      value: cdktf.stringToHclTerraform(struct!.featureType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    generate_searchable_pdf: {
+      value: cdktf.booleanToHclTerraform(struct!.generateSearchablePdf),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    max_results: {
+      value: cdktf.numberToHclTerraform(struct!.maxResults),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    model_id: {
+      value: cdktf.stringToHclTerraform(struct!.modelId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tenancy_id: {
+      value: cdktf.stringToHclTerraform(struct!.tenancyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiDocumentProcessorJobProcessorConfigFeaturesOutputReference extends cdktf.ComplexObject {
@@ -647,7 +783,7 @@ export interface AiDocumentProcessorJobProcessorConfig {
   readonly processorType: string;
   /**
   * features block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_processor_job#features AiDocumentProcessorJob#features}
   */
   readonly features: AiDocumentProcessorJobProcessorConfigFeatures[] | cdktf.IResolvable;
@@ -665,6 +801,49 @@ export function aiDocumentProcessorJobProcessorConfigToTerraform(struct?: AiDocu
     processor_type: cdktf.stringToTerraform(struct!.processorType),
     features: cdktf.listMapper(aiDocumentProcessorJobProcessorConfigFeaturesToTerraform, true)(struct!.features),
   }
+}
+
+
+export function aiDocumentProcessorJobProcessorConfigToHclTerraform(struct?: AiDocumentProcessorJobProcessorConfigOutputReference | AiDocumentProcessorJobProcessorConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    document_type: {
+      value: cdktf.stringToHclTerraform(struct!.documentType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_zip_output_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isZipOutputEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    language: {
+      value: cdktf.stringToHclTerraform(struct!.language),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    processor_type: {
+      value: cdktf.stringToHclTerraform(struct!.processorType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    features: {
+      value: cdktf.listMapperHcl(aiDocumentProcessorJobProcessorConfigFeaturesToHclTerraform, true)(struct!.features),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiDocumentProcessorJobProcessorConfigFeaturesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiDocumentProcessorJobProcessorConfigOutputReference extends cdktf.ComplexObject {
@@ -824,6 +1003,37 @@ export function aiDocumentProcessorJobTimeoutsToTerraform(struct?: AiDocumentPro
   }
 }
 
+
+export function aiDocumentProcessorJobTimeoutsToHclTerraform(struct?: AiDocumentProcessorJobTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiDocumentProcessorJobTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -936,6 +1146,20 @@ export class AiDocumentProcessorJob extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ai_document_processor_job";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a AiDocumentProcessorJob resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the AiDocumentProcessorJob to import
+  * @param importFromId The id of the existing AiDocumentProcessorJob that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_processor_job#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the AiDocumentProcessorJob to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_document_processor_job", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1121,5 +1345,55 @@ export class AiDocumentProcessorJob extends cdktf.TerraformResource {
       processor_config: aiDocumentProcessorJobProcessorConfigToTerraform(this._processorConfig.internalValue),
       timeouts: aiDocumentProcessorJobTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      input_location: {
+        value: aiDocumentProcessorJobInputLocationToHclTerraform(this._inputLocation.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiDocumentProcessorJobInputLocationList",
+      },
+      output_location: {
+        value: aiDocumentProcessorJobOutputLocationToHclTerraform(this._outputLocation.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiDocumentProcessorJobOutputLocationList",
+      },
+      processor_config: {
+        value: aiDocumentProcessorJobProcessorConfigToHclTerraform(this._processorConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiDocumentProcessorJobProcessorConfigList",
+      },
+      timeouts: {
+        value: aiDocumentProcessorJobTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "AiDocumentProcessorJobTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

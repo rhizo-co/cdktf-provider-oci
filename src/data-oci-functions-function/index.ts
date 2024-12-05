@@ -24,6 +24,17 @@ export function dataOciFunctionsFunctionProvisionedConcurrencyConfigToTerraform(
   }
 }
 
+
+export function dataOciFunctionsFunctionProvisionedConcurrencyConfigToHclTerraform(struct?: DataOciFunctionsFunctionProvisionedConcurrencyConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFunctionsFunctionProvisionedConcurrencyConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciFunctionsFunctionSourceDetailsToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciFunctionsFunctionSourceDetailsToHclTerraform(struct?: DataOciFunctionsFunctionSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFunctionsFunctionSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -162,6 +184,17 @@ export function dataOciFunctionsFunctionTraceConfigToTerraform(struct?: DataOciF
   }
 }
 
+
+export function dataOciFunctionsFunctionTraceConfigToHclTerraform(struct?: DataOciFunctionsFunctionTraceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFunctionsFunctionTraceConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -224,6 +257,20 @@ export class DataOciFunctionsFunction extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_functions_function";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFunctionsFunction resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFunctionsFunction to import
+  * @param importFromId The id of the existing DataOciFunctionsFunction that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/functions_function#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFunctionsFunction to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_functions_function", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -381,5 +428,19 @@ export class DataOciFunctionsFunction extends cdktf.TerraformDataSource {
     return {
       function_id: cdktf.stringToTerraform(this._functionId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      function_id: {
+        value: cdktf.stringToHclTerraform(this._functionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

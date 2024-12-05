@@ -24,6 +24,17 @@ export function dataOciBlockchainBlockchainPlatformComponentDetailsOsnsOcpuAlloc
   }
 }
 
+
+export function dataOciBlockchainBlockchainPlatformComponentDetailsOsnsOcpuAllocationParamToHclTerraform(struct?: DataOciBlockchainBlockchainPlatformComponentDetailsOsnsOcpuAllocationParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciBlockchainBlockchainPlatformComponentDetailsOsnsOcpuAllocationParamOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -86,6 +97,17 @@ export function dataOciBlockchainBlockchainPlatformComponentDetailsOsnsToTerrafo
   }
   return {
   }
+}
+
+
+export function dataOciBlockchainBlockchainPlatformComponentDetailsOsnsToHclTerraform(struct?: DataOciBlockchainBlockchainPlatformComponentDetailsOsns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciBlockchainBlockchainPlatformComponentDetailsOsnsOutputReference extends cdktf.ComplexObject {
@@ -168,6 +190,17 @@ export function dataOciBlockchainBlockchainPlatformComponentDetailsPeersOcpuAllo
   }
 }
 
+
+export function dataOciBlockchainBlockchainPlatformComponentDetailsPeersOcpuAllocationParamToHclTerraform(struct?: DataOciBlockchainBlockchainPlatformComponentDetailsPeersOcpuAllocationParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciBlockchainBlockchainPlatformComponentDetailsPeersOcpuAllocationParamOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -230,6 +263,17 @@ export function dataOciBlockchainBlockchainPlatformComponentDetailsPeersToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciBlockchainBlockchainPlatformComponentDetailsPeersToHclTerraform(struct?: DataOciBlockchainBlockchainPlatformComponentDetailsPeers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciBlockchainBlockchainPlatformComponentDetailsPeersOutputReference extends cdktf.ComplexObject {
@@ -327,6 +371,17 @@ export function dataOciBlockchainBlockchainPlatformComponentDetailsToTerraform(s
   }
 }
 
+
+export function dataOciBlockchainBlockchainPlatformComponentDetailsToHclTerraform(struct?: DataOciBlockchainBlockchainPlatformComponentDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciBlockchainBlockchainPlatformComponentDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -396,6 +451,17 @@ export function dataOciBlockchainBlockchainPlatformHostOcpuUtilizationInfoToTerr
   }
   return {
   }
+}
+
+
+export function dataOciBlockchainBlockchainPlatformHostOcpuUtilizationInfoToHclTerraform(struct?: DataOciBlockchainBlockchainPlatformHostOcpuUtilizationInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciBlockchainBlockchainPlatformHostOcpuUtilizationInfoOutputReference extends cdktf.ComplexObject {
@@ -472,6 +538,17 @@ export function dataOciBlockchainBlockchainPlatformReplicasToTerraform(struct?: 
   }
 }
 
+
+export function dataOciBlockchainBlockchainPlatformReplicasToHclTerraform(struct?: DataOciBlockchainBlockchainPlatformReplicas): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciBlockchainBlockchainPlatformReplicasOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -544,6 +621,20 @@ export class DataOciBlockchainBlockchainPlatform extends cdktf.TerraformDataSour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_blockchain_blockchain_platform";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciBlockchainBlockchainPlatform resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciBlockchainBlockchainPlatform to import
+  * @param importFromId The id of the existing DataOciBlockchainBlockchainPlatform that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/blockchain_blockchain_platform#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciBlockchainBlockchainPlatform to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_blockchain_blockchain_platform", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -745,5 +836,19 @@ export class DataOciBlockchainBlockchainPlatform extends cdktf.TerraformDataSour
     return {
       blockchain_platform_id: cdktf.stringToTerraform(this._blockchainPlatformId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      blockchain_platform_id: {
+        value: cdktf.stringToHclTerraform(this._blockchainPlatformId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

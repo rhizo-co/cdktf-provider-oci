@@ -60,13 +60,13 @@ export interface CoreVcnConfig extends cdktf.TerraformMetaArguments {
   readonly securityAttributes?: { [key: string]: string };
   /**
   * byoipv6cidr_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_vcn#byoipv6cidr_details CoreVcn#byoipv6cidr_details}
   */
   readonly byoipv6CidrDetails?: CoreVcnByoipv6CidrDetails[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_vcn#timeouts CoreVcn#timeouts}
   */
   readonly timeouts?: CoreVcnTimeouts;
@@ -91,6 +91,31 @@ export function coreVcnByoipv6CidrDetailsToTerraform(struct?: CoreVcnByoipv6Cidr
     byoipv6range_id: cdktf.stringToTerraform(struct!.byoipv6RangeId),
     ipv6cidr_block: cdktf.stringToTerraform(struct!.ipv6CidrBlock),
   }
+}
+
+
+export function coreVcnByoipv6CidrDetailsToHclTerraform(struct?: CoreVcnByoipv6CidrDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    byoipv6range_id: {
+      value: cdktf.stringToHclTerraform(struct!.byoipv6RangeId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipv6cidr_block: {
+      value: cdktf.stringToHclTerraform(struct!.ipv6CidrBlock),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreVcnByoipv6CidrDetailsOutputReference extends cdktf.ComplexObject {
@@ -216,6 +241,37 @@ export function coreVcnTimeoutsToTerraform(struct?: CoreVcnTimeouts | cdktf.IRes
   }
 }
 
+
+export function coreVcnTimeoutsToHclTerraform(struct?: CoreVcnTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreVcnTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -328,6 +384,20 @@ export class CoreVcn extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_vcn";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreVcn resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreVcn to import
+  * @param importFromId The id of the existing CoreVcn that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_vcn#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreVcn to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_vcn", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -658,5 +728,97 @@ export class CoreVcn extends cdktf.TerraformResource {
       byoipv6cidr_details: cdktf.listMapper(coreVcnByoipv6CidrDetailsToTerraform, true)(this._byoipv6CidrDetails.internalValue),
       timeouts: coreVcnTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cidr_block: {
+        value: cdktf.stringToHclTerraform(this._cidrBlock),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cidr_blocks: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._cidrBlocks),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dns_label: {
+        value: cdktf.stringToHclTerraform(this._dnsLabel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ipv6private_cidr_blocks: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._ipv6PrivateCidrBlocks),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      is_ipv6enabled: {
+        value: cdktf.booleanToHclTerraform(this._isIpv6Enabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_oracle_gua_allocation_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isOracleGuaAllocationEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      security_attributes: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._securityAttributes),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      byoipv6cidr_details: {
+        value: cdktf.listMapperHcl(coreVcnByoipv6CidrDetailsToHclTerraform, true)(this._byoipv6CidrDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreVcnByoipv6CidrDetailsList",
+      },
+      timeouts: {
+        value: coreVcnTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreVcnTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

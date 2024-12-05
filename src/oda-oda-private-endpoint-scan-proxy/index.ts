@@ -28,13 +28,13 @@ export interface OdaOdaPrivateEndpointScanProxyConfig extends cdktf.TerraformMet
   readonly scanListenerType: string;
   /**
   * scan_listener_infos block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/oda_oda_private_endpoint_scan_proxy#scan_listener_infos OdaOdaPrivateEndpointScanProxy#scan_listener_infos}
   */
   readonly scanListenerInfos: OdaOdaPrivateEndpointScanProxyScanListenerInfos[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/oda_oda_private_endpoint_scan_proxy#timeouts OdaOdaPrivateEndpointScanProxy#timeouts}
   */
   readonly timeouts?: OdaOdaPrivateEndpointScanProxyTimeouts;
@@ -64,6 +64,37 @@ export function odaOdaPrivateEndpointScanProxyScanListenerInfosToTerraform(struc
     scan_listener_ip: cdktf.stringToTerraform(struct!.scanListenerIp),
     scan_listener_port: cdktf.numberToTerraform(struct!.scanListenerPort),
   }
+}
+
+
+export function odaOdaPrivateEndpointScanProxyScanListenerInfosToHclTerraform(struct?: OdaOdaPrivateEndpointScanProxyScanListenerInfos | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    scan_listener_fqdn: {
+      value: cdktf.stringToHclTerraform(struct!.scanListenerFqdn),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scan_listener_ip: {
+      value: cdktf.stringToHclTerraform(struct!.scanListenerIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scan_listener_port: {
+      value: cdktf.numberToHclTerraform(struct!.scanListenerPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OdaOdaPrivateEndpointScanProxyScanListenerInfosOutputReference extends cdktf.ComplexObject {
@@ -217,6 +248,37 @@ export function odaOdaPrivateEndpointScanProxyTimeoutsToTerraform(struct?: OdaOd
   }
 }
 
+
+export function odaOdaPrivateEndpointScanProxyTimeoutsToHclTerraform(struct?: OdaOdaPrivateEndpointScanProxyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OdaOdaPrivateEndpointScanProxyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -329,6 +391,20 @@ export class OdaOdaPrivateEndpointScanProxy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_oda_oda_private_endpoint_scan_proxy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OdaOdaPrivateEndpointScanProxy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OdaOdaPrivateEndpointScanProxy to import
+  * @param importFromId The id of the existing OdaOdaPrivateEndpointScanProxy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/oda_oda_private_endpoint_scan_proxy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OdaOdaPrivateEndpointScanProxy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_oda_oda_private_endpoint_scan_proxy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -476,5 +552,49 @@ export class OdaOdaPrivateEndpointScanProxy extends cdktf.TerraformResource {
       scan_listener_infos: cdktf.listMapper(odaOdaPrivateEndpointScanProxyScanListenerInfosToTerraform, true)(this._scanListenerInfos.internalValue),
       timeouts: odaOdaPrivateEndpointScanProxyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      oda_private_endpoint_id: {
+        value: cdktf.stringToHclTerraform(this._odaPrivateEndpointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      protocol: {
+        value: cdktf.stringToHclTerraform(this._protocol),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scan_listener_type: {
+        value: cdktf.stringToHclTerraform(this._scanListenerType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scan_listener_infos: {
+        value: cdktf.listMapperHcl(odaOdaPrivateEndpointScanProxyScanListenerInfosToHclTerraform, true)(this._scanListenerInfos.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OdaOdaPrivateEndpointScanProxyScanListenerInfosList",
+      },
+      timeouts: {
+        value: odaOdaPrivateEndpointScanProxyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OdaOdaPrivateEndpointScanProxyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

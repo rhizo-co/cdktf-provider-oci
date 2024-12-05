@@ -24,6 +24,17 @@ export function dataOciDatabaseBackupDestinationAssociatedDatabasesToTerraform(s
   }
 }
 
+
+export function dataOciDatabaseBackupDestinationAssociatedDatabasesToHclTerraform(struct?: DataOciDatabaseBackupDestinationAssociatedDatabases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseBackupDestinationAssociatedDatabasesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciDatabaseBackupDestinationMountTypeDetailsToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseBackupDestinationMountTypeDetailsToHclTerraform(struct?: DataOciDatabaseBackupDestinationMountTypeDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseBackupDestinationMountTypeDetailsOutputReference extends cdktf.ComplexObject {
@@ -170,6 +192,20 @@ export class DataOciDatabaseBackupDestination extends cdktf.TerraformDataSource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_backup_destination";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseBackupDestination resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseBackupDestination to import
+  * @param importFromId The id of the existing DataOciDatabaseBackupDestination that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_backup_destination#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseBackupDestination to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_backup_destination", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -315,5 +351,19 @@ export class DataOciDatabaseBackupDestination extends cdktf.TerraformDataSource 
     return {
       backup_destination_id: cdktf.stringToTerraform(this._backupDestinationId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      backup_destination_id: {
+        value: cdktf.stringToHclTerraform(this._backupDestinationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

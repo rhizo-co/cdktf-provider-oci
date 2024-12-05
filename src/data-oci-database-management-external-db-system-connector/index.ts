@@ -24,6 +24,17 @@ export function dataOciDatabaseManagementExternalDbSystemConnectorConnectionInfo
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoConnectionCredentialsToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoConnectionCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoConnectionCredentialsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -118,6 +129,17 @@ export function dataOciDatabaseManagementExternalDbSystemConnectorConnectionInfo
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoConnectionStringToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoConnectionString): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoConnectionStringOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -200,6 +222,17 @@ export function dataOciDatabaseManagementExternalDbSystemConnectorConnectionInfo
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoDatabaseCredentialToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoDatabaseCredential): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoDatabaseCredentialOutputReference extends cdktf.ComplexObject {
@@ -291,6 +324,17 @@ export function dataOciDatabaseManagementExternalDbSystemConnectorConnectionInfo
   }
 }
 
+
+export function dataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoToHclTerraform(struct?: DataOciDatabaseManagementExternalDbSystemConnectorConnectionInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementExternalDbSystemConnectorConnectionInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -371,6 +415,20 @@ export class DataOciDatabaseManagementExternalDbSystemConnector extends cdktf.Te
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_external_db_system_connector";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementExternalDbSystemConnector resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementExternalDbSystemConnector to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementExternalDbSystemConnector that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_external_db_system_connector#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementExternalDbSystemConnector to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_external_db_system_connector", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -516,5 +574,19 @@ export class DataOciDatabaseManagementExternalDbSystemConnector extends cdktf.Te
     return {
       external_db_system_connector_id: cdktf.stringToTerraform(this._externalDbSystemConnectorId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      external_db_system_connector_id: {
+        value: cdktf.stringToHclTerraform(this._externalDbSystemConnectorId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

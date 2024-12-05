@@ -48,25 +48,25 @@ export interface DatascienceJobRunConfig extends cdktf.TerraformMetaArguments {
   readonly projectId: string;
   /**
   * job_configuration_override_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_job_run#job_configuration_override_details DatascienceJobRun#job_configuration_override_details}
   */
   readonly jobConfigurationOverrideDetails?: DatascienceJobRunJobConfigurationOverrideDetails;
   /**
   * job_environment_configuration_override_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_job_run#job_environment_configuration_override_details DatascienceJobRun#job_environment_configuration_override_details}
   */
   readonly jobEnvironmentConfigurationOverrideDetails?: DatascienceJobRunJobEnvironmentConfigurationOverrideDetails;
   /**
   * job_log_configuration_override_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_job_run#job_log_configuration_override_details DatascienceJobRun#job_log_configuration_override_details}
   */
   readonly jobLogConfigurationOverrideDetails?: DatascienceJobRunJobLogConfigurationOverrideDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_job_run#timeouts DatascienceJobRun#timeouts}
   */
   readonly timeouts?: DatascienceJobRunTimeouts;
@@ -81,6 +81,17 @@ export function datascienceJobRunJobInfrastructureConfigurationDetailsJobShapeCo
   }
   return {
   }
+}
+
+
+export function datascienceJobRunJobInfrastructureConfigurationDetailsJobShapeConfigDetailsToHclTerraform(struct?: DatascienceJobRunJobInfrastructureConfigurationDetailsJobShapeConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatascienceJobRunJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutputReference extends cdktf.ComplexObject {
@@ -150,6 +161,17 @@ export function datascienceJobRunJobInfrastructureConfigurationDetailsToTerrafor
   }
   return {
   }
+}
+
+
+export function datascienceJobRunJobInfrastructureConfigurationDetailsToHclTerraform(struct?: DatascienceJobRunJobInfrastructureConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatascienceJobRunJobInfrastructureConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -235,6 +257,17 @@ export function datascienceJobRunJobStorageMountConfigurationDetailsListStructTo
   }
   return {
   }
+}
+
+
+export function datascienceJobRunJobStorageMountConfigurationDetailsListStructToHclTerraform(struct?: DatascienceJobRunJobStorageMountConfigurationDetailsListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatascienceJobRunJobStorageMountConfigurationDetailsListStructOutputReference extends cdktf.ComplexObject {
@@ -336,6 +369,17 @@ export function datascienceJobRunLogDetailsToTerraform(struct?: DatascienceJobRu
   }
 }
 
+
+export function datascienceJobRunLogDetailsToHclTerraform(struct?: DatascienceJobRunLogDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DatascienceJobRunLogDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -423,6 +467,43 @@ export function datascienceJobRunJobConfigurationOverrideDetailsToTerraform(stru
     job_type: cdktf.stringToTerraform(struct!.jobType),
     maximum_runtime_in_minutes: cdktf.stringToTerraform(struct!.maximumRuntimeInMinutes),
   }
+}
+
+
+export function datascienceJobRunJobConfigurationOverrideDetailsToHclTerraform(struct?: DatascienceJobRunJobConfigurationOverrideDetailsOutputReference | DatascienceJobRunJobConfigurationOverrideDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    command_line_arguments: {
+      value: cdktf.stringToHclTerraform(struct!.commandLineArguments),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    environment_variables: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.environmentVariables),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    job_type: {
+      value: cdktf.stringToHclTerraform(struct!.jobType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    maximum_runtime_in_minutes: {
+      value: cdktf.stringToHclTerraform(struct!.maximumRuntimeInMinutes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatascienceJobRunJobConfigurationOverrideDetailsOutputReference extends cdktf.ComplexObject {
@@ -576,6 +657,55 @@ export function datascienceJobRunJobEnvironmentConfigurationOverrideDetailsToTer
     image_signature_id: cdktf.stringToTerraform(struct!.imageSignatureId),
     job_environment_type: cdktf.stringToTerraform(struct!.jobEnvironmentType),
   }
+}
+
+
+export function datascienceJobRunJobEnvironmentConfigurationOverrideDetailsToHclTerraform(struct?: DatascienceJobRunJobEnvironmentConfigurationOverrideDetailsOutputReference | DatascienceJobRunJobEnvironmentConfigurationOverrideDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cmd: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.cmd),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    entrypoint: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.entrypoint),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    image: {
+      value: cdktf.stringToHclTerraform(struct!.image),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_digest: {
+      value: cdktf.stringToHclTerraform(struct!.imageDigest),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_signature_id: {
+      value: cdktf.stringToHclTerraform(struct!.imageSignatureId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    job_environment_type: {
+      value: cdktf.stringToHclTerraform(struct!.jobEnvironmentType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatascienceJobRunJobEnvironmentConfigurationOverrideDetailsOutputReference extends cdktf.ComplexObject {
@@ -762,6 +892,43 @@ export function datascienceJobRunJobLogConfigurationOverrideDetailsToTerraform(s
   }
 }
 
+
+export function datascienceJobRunJobLogConfigurationOverrideDetailsToHclTerraform(struct?: DatascienceJobRunJobLogConfigurationOverrideDetailsOutputReference | DatascienceJobRunJobLogConfigurationOverrideDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    enable_auto_log_creation: {
+      value: cdktf.booleanToHclTerraform(struct!.enableAutoLogCreation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    enable_logging: {
+      value: cdktf.booleanToHclTerraform(struct!.enableLogging),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    log_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.logGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_id: {
+      value: cdktf.stringToHclTerraform(struct!.logId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatascienceJobRunJobLogConfigurationOverrideDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -903,6 +1070,37 @@ export function datascienceJobRunTimeoutsToTerraform(struct?: DatascienceJobRunT
   }
 }
 
+
+export function datascienceJobRunTimeoutsToHclTerraform(struct?: DatascienceJobRunTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatascienceJobRunTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1015,6 +1213,20 @@ export class DatascienceJobRun extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_job_run";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatascienceJobRun resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatascienceJobRun to import
+  * @param importFromId The id of the existing DatascienceJobRun that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/datascience_job_run#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatascienceJobRun to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_job_run", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1329,5 +1541,91 @@ export class DatascienceJobRun extends cdktf.TerraformResource {
       job_log_configuration_override_details: datascienceJobRunJobLogConfigurationOverrideDetailsToTerraform(this._jobLogConfigurationOverrideDetails.internalValue),
       timeouts: datascienceJobRunTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      asynchronous: {
+        value: cdktf.booleanToHclTerraform(this._asynchronous),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      job_id: {
+        value: cdktf.stringToHclTerraform(this._jobId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opc_parent_rpt_url: {
+        value: cdktf.stringToHclTerraform(this._opcParentRptUrl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      job_configuration_override_details: {
+        value: datascienceJobRunJobConfigurationOverrideDetailsToHclTerraform(this._jobConfigurationOverrideDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatascienceJobRunJobConfigurationOverrideDetailsList",
+      },
+      job_environment_configuration_override_details: {
+        value: datascienceJobRunJobEnvironmentConfigurationOverrideDetailsToHclTerraform(this._jobEnvironmentConfigurationOverrideDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatascienceJobRunJobEnvironmentConfigurationOverrideDetailsList",
+      },
+      job_log_configuration_override_details: {
+        value: datascienceJobRunJobLogConfigurationOverrideDetailsToHclTerraform(this._jobLogConfigurationOverrideDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatascienceJobRunJobLogConfigurationOverrideDetailsList",
+      },
+      timeouts: {
+        value: datascienceJobRunTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatascienceJobRunTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

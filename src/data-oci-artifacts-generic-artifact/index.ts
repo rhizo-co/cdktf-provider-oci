@@ -23,6 +23,20 @@ export class DataOciArtifactsGenericArtifact extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_artifacts_generic_artifact";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciArtifactsGenericArtifact resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciArtifactsGenericArtifact to import
+  * @param importFromId The id of the existing DataOciArtifactsGenericArtifact that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/artifacts_generic_artifact#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciArtifactsGenericArtifact to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_artifacts_generic_artifact", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -140,5 +154,19 @@ export class DataOciArtifactsGenericArtifact extends cdktf.TerraformDataSource {
     return {
       artifact_id: cdktf.stringToTerraform(this._artifactId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      artifact_id: {
+        value: cdktf.stringToHclTerraform(this._artifactId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

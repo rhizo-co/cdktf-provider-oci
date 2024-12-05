@@ -28,7 +28,7 @@ export interface DataOciWaasProtectionRulesConfig extends cdktf.TerraformMetaArg
   readonly waasPolicyId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/waas_protection_rules#filter DataOciWaasProtectionRules#filter}
   */
   readonly filter?: DataOciWaasProtectionRulesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciWaasProtectionRulesProtectionRulesExclusionsToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciWaasProtectionRulesProtectionRulesExclusionsToHclTerraform(struct?: DataOciWaasProtectionRulesProtectionRulesExclusions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasProtectionRulesProtectionRulesExclusionsOutputReference extends cdktf.ComplexObject {
@@ -112,6 +123,17 @@ export function dataOciWaasProtectionRulesProtectionRulesToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function dataOciWaasProtectionRulesProtectionRulesToHclTerraform(struct?: DataOciWaasProtectionRulesProtectionRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciWaasProtectionRulesProtectionRulesOutputReference extends cdktf.ComplexObject {
@@ -227,6 +249,37 @@ export function dataOciWaasProtectionRulesFilterToTerraform(struct?: DataOciWaas
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciWaasProtectionRulesFilterToHclTerraform(struct?: DataOciWaasProtectionRulesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciWaasProtectionRulesFilterOutputReference extends cdktf.ComplexObject {
@@ -357,6 +410,20 @@ export class DataOciWaasProtectionRules extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_waas_protection_rules";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciWaasProtectionRules resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciWaasProtectionRules to import
+  * @param importFromId The id of the existing DataOciWaasProtectionRules that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/waas_protection_rules#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciWaasProtectionRules to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_waas_protection_rules", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -491,5 +558,43 @@ export class DataOciWaasProtectionRules extends cdktf.TerraformDataSource {
       waas_policy_id: cdktf.stringToTerraform(this._waasPolicyId),
       filter: cdktf.listMapper(dataOciWaasProtectionRulesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      action: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._action),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      mod_security_rule_id: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._modSecurityRuleId),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      waas_policy_id: {
+        value: cdktf.stringToHclTerraform(this._waasPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciWaasProtectionRulesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciWaasProtectionRulesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

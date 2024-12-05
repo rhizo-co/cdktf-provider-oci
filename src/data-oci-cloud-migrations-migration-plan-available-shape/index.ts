@@ -47,6 +47,17 @@ export function dataOciCloudMigrationsMigrationPlanAvailableShapeItemsToTerrafor
   }
 }
 
+
+export function dataOciCloudMigrationsMigrationPlanAvailableShapeItemsToHclTerraform(struct?: DataOciCloudMigrationsMigrationPlanAvailableShapeItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudMigrationsMigrationPlanAvailableShapeItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -192,6 +203,20 @@ export class DataOciCloudMigrationsMigrationPlanAvailableShape extends cdktf.Ter
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_migrations_migration_plan_available_shape";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCloudMigrationsMigrationPlanAvailableShape resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCloudMigrationsMigrationPlanAvailableShape to import
+  * @param importFromId The id of the existing DataOciCloudMigrationsMigrationPlanAvailableShape that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_migrations_migration_plan_available_shape#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCloudMigrationsMigrationPlanAvailableShape to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_migrations_migration_plan_available_shape", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -344,5 +369,49 @@ export class DataOciCloudMigrationsMigrationPlanAvailableShape extends cdktf.Ter
       migration_plan_id: cdktf.stringToTerraform(this._migrationPlanId),
       reserved_capacity_id: cdktf.stringToTerraform(this._reservedCapacityId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dvh_host_id: {
+        value: cdktf.stringToHclTerraform(this._dvhHostId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      migration_plan_id: {
+        value: cdktf.stringToHclTerraform(this._migrationPlanId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      reserved_capacity_id: {
+        value: cdktf.stringToHclTerraform(this._reservedCapacityId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

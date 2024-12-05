@@ -35,6 +35,17 @@ export function dataOciDatabaseManagementManagedDatabasesAsmPropertyItemsToTerra
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabasesAsmPropertyItemsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabasesAsmPropertyItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabasesAsmPropertyItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -97,6 +108,20 @@ export class DataOciDatabaseManagementManagedDatabasesAsmProperty extends cdktf.
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_databases_asm_property";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementManagedDatabasesAsmProperty resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementManagedDatabasesAsmProperty to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementManagedDatabasesAsmProperty that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_databases_asm_property#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementManagedDatabasesAsmProperty to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_databases_asm_property", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -195,5 +220,31 @@ export class DataOciDatabaseManagementManagedDatabasesAsmProperty extends cdktf.
       managed_database_id: cdktf.stringToTerraform(this._managedDatabaseId),
       name: cdktf.stringToTerraform(this._name),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

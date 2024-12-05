@@ -35,6 +35,17 @@ export function dataOciContainerInstancesContainerInstanceShapeItemsMemoryOption
   }
 }
 
+
+export function dataOciContainerInstancesContainerInstanceShapeItemsMemoryOptionsToHclTerraform(struct?: DataOciContainerInstancesContainerInstanceShapeItemsMemoryOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciContainerInstancesContainerInstanceShapeItemsMemoryOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -119,6 +130,17 @@ export function dataOciContainerInstancesContainerInstanceShapeItemsNetworkingBa
   }
 }
 
+
+export function dataOciContainerInstancesContainerInstanceShapeItemsNetworkingBandwidthOptionsToHclTerraform(struct?: DataOciContainerInstancesContainerInstanceShapeItemsNetworkingBandwidthOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciContainerInstancesContainerInstanceShapeItemsNetworkingBandwidthOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -193,6 +215,17 @@ export function dataOciContainerInstancesContainerInstanceShapeItemsOcpuOptionsT
   }
 }
 
+
+export function dataOciContainerInstancesContainerInstanceShapeItemsOcpuOptionsToHclTerraform(struct?: DataOciContainerInstancesContainerInstanceShapeItemsOcpuOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciContainerInstancesContainerInstanceShapeItemsOcpuOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -260,6 +293,17 @@ export function dataOciContainerInstancesContainerInstanceShapeItemsToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciContainerInstancesContainerInstanceShapeItemsToHclTerraform(struct?: DataOciContainerInstancesContainerInstanceShapeItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciContainerInstancesContainerInstanceShapeItemsOutputReference extends cdktf.ComplexObject {
@@ -347,6 +391,20 @@ export class DataOciContainerInstancesContainerInstanceShape extends cdktf.Terra
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_container_instances_container_instance_shape";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciContainerInstancesContainerInstanceShape resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciContainerInstancesContainerInstanceShape to import
+  * @param importFromId The id of the existing DataOciContainerInstancesContainerInstanceShape that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/container_instances_container_instance_shape#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciContainerInstancesContainerInstanceShape to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_container_instances_container_instance_shape", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -445,5 +503,31 @@ export class DataOciContainerInstancesContainerInstanceShape extends cdktf.Terra
       compartment_id: cdktf.stringToTerraform(this._compartmentId),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

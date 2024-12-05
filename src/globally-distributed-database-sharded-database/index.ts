@@ -152,25 +152,25 @@ export interface GloballyDistributedDatabaseShardedDatabaseConfig extends cdktf.
   readonly validateNetworkTrigger?: number;
   /**
   * catalog_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/globally_distributed_database_sharded_database#catalog_details GloballyDistributedDatabaseShardedDatabase#catalog_details}
   */
   readonly catalogDetails: GloballyDistributedDatabaseShardedDatabaseCatalogDetails[] | cdktf.IResolvable;
   /**
   * patch_operations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/globally_distributed_database_sharded_database#patch_operations GloballyDistributedDatabaseShardedDatabase#patch_operations}
   */
   readonly patchOperations?: GloballyDistributedDatabaseShardedDatabasePatchOperations[] | cdktf.IResolvable;
   /**
   * shard_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/globally_distributed_database_sharded_database#shard_details GloballyDistributedDatabaseShardedDatabase#shard_details}
   */
   readonly shardDetails: GloballyDistributedDatabaseShardedDatabaseShardDetails[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/globally_distributed_database_sharded_database#timeouts GloballyDistributedDatabaseShardedDatabase#timeouts}
   */
   readonly timeouts?: GloballyDistributedDatabaseShardedDatabaseTimeouts;
@@ -185,6 +185,17 @@ export function globallyDistributedDatabaseShardedDatabaseConnectionStringsToTer
   }
   return {
   }
+}
+
+
+export function globallyDistributedDatabaseShardedDatabaseConnectionStringsToHclTerraform(struct?: GloballyDistributedDatabaseShardedDatabaseConnectionStrings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class GloballyDistributedDatabaseShardedDatabaseConnectionStringsOutputReference extends cdktf.ComplexObject {
@@ -250,6 +261,17 @@ export function globallyDistributedDatabaseShardedDatabaseGsmsToTerraform(struct
   }
   return {
   }
+}
+
+
+export function globallyDistributedDatabaseShardedDatabaseGsmsToHclTerraform(struct?: GloballyDistributedDatabaseShardedDatabaseGsms): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class GloballyDistributedDatabaseShardedDatabaseGsmsOutputReference extends cdktf.ComplexObject {
@@ -372,6 +394,37 @@ export function globallyDistributedDatabaseShardedDatabaseCatalogDetailsEncrypti
   }
 }
 
+
+export function globallyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetailsToHclTerraform(struct?: GloballyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetailsOutputReference | GloballyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kms_key_version_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyVersionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vault_id: {
+      value: cdktf.stringToHclTerraform(struct!.vaultId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class GloballyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -485,7 +538,7 @@ export interface GloballyDistributedDatabaseShardedDatabaseCatalogDetails {
   readonly peerCloudAutonomousVmClusterId?: string;
   /**
   * encryption_key_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/globally_distributed_database_sharded_database#encryption_key_details GloballyDistributedDatabaseShardedDatabase#encryption_key_details}
   */
   readonly encryptionKeyDetails?: GloballyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetails;
@@ -505,6 +558,61 @@ export function globallyDistributedDatabaseShardedDatabaseCatalogDetailsToTerraf
     peer_cloud_autonomous_vm_cluster_id: cdktf.stringToTerraform(struct!.peerCloudAutonomousVmClusterId),
     encryption_key_details: globallyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetailsToTerraform(struct!.encryptionKeyDetails),
   }
+}
+
+
+export function globallyDistributedDatabaseShardedDatabaseCatalogDetailsToHclTerraform(struct?: GloballyDistributedDatabaseShardedDatabaseCatalogDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    admin_password: {
+      value: cdktf.stringToHclTerraform(struct!.adminPassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cloud_autonomous_vm_cluster_id: {
+      value: cdktf.stringToHclTerraform(struct!.cloudAutonomousVmClusterId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compute_count: {
+      value: cdktf.numberToHclTerraform(struct!.computeCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    data_storage_size_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.dataStorageSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_auto_scaling_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAutoScalingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    peer_cloud_autonomous_vm_cluster_id: {
+      value: cdktf.stringToHclTerraform(struct!.peerCloudAutonomousVmClusterId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    encryption_key_details: {
+      value: globallyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetailsToHclTerraform(struct!.encryptionKeyDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "GloballyDistributedDatabaseShardedDatabaseCatalogDetailsEncryptionKeyDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GloballyDistributedDatabaseShardedDatabaseCatalogDetailsOutputReference extends cdktf.ComplexObject {
@@ -782,6 +890,37 @@ export function globallyDistributedDatabaseShardedDatabasePatchOperationsToTerra
   }
 }
 
+
+export function globallyDistributedDatabaseShardedDatabasePatchOperationsToHclTerraform(struct?: GloballyDistributedDatabaseShardedDatabasePatchOperations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    operation: {
+      value: cdktf.stringToHclTerraform(struct!.operation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    selection: {
+      value: cdktf.stringToHclTerraform(struct!.selection),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class GloballyDistributedDatabaseShardedDatabasePatchOperationsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -924,6 +1063,37 @@ export function globallyDistributedDatabaseShardedDatabaseShardDetailsEncryption
   }
 }
 
+
+export function globallyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetailsToHclTerraform(struct?: GloballyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetailsOutputReference | GloballyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kms_key_version_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyVersionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vault_id: {
+      value: cdktf.stringToHclTerraform(struct!.vaultId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class GloballyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1041,7 +1211,7 @@ export interface GloballyDistributedDatabaseShardedDatabaseShardDetails {
   readonly shardSpace?: string;
   /**
   * encryption_key_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/globally_distributed_database_sharded_database#encryption_key_details GloballyDistributedDatabaseShardedDatabase#encryption_key_details}
   */
   readonly encryptionKeyDetails?: GloballyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetails;
@@ -1062,6 +1232,67 @@ export function globallyDistributedDatabaseShardedDatabaseShardDetailsToTerrafor
     shard_space: cdktf.stringToTerraform(struct!.shardSpace),
     encryption_key_details: globallyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetailsToTerraform(struct!.encryptionKeyDetails),
   }
+}
+
+
+export function globallyDistributedDatabaseShardedDatabaseShardDetailsToHclTerraform(struct?: GloballyDistributedDatabaseShardedDatabaseShardDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    admin_password: {
+      value: cdktf.stringToHclTerraform(struct!.adminPassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cloud_autonomous_vm_cluster_id: {
+      value: cdktf.stringToHclTerraform(struct!.cloudAutonomousVmClusterId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compute_count: {
+      value: cdktf.numberToHclTerraform(struct!.computeCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    data_storage_size_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.dataStorageSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    is_auto_scaling_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAutoScalingEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    peer_cloud_autonomous_vm_cluster_id: {
+      value: cdktf.stringToHclTerraform(struct!.peerCloudAutonomousVmClusterId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shard_space: {
+      value: cdktf.stringToHclTerraform(struct!.shardSpace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    encryption_key_details: {
+      value: globallyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetailsToHclTerraform(struct!.encryptionKeyDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "GloballyDistributedDatabaseShardedDatabaseShardDetailsEncryptionKeyDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GloballyDistributedDatabaseShardedDatabaseShardDetailsOutputReference extends cdktf.ComplexObject {
@@ -1361,6 +1592,37 @@ export function globallyDistributedDatabaseShardedDatabaseTimeoutsToTerraform(st
   }
 }
 
+
+export function globallyDistributedDatabaseShardedDatabaseTimeoutsToHclTerraform(struct?: GloballyDistributedDatabaseShardedDatabaseTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class GloballyDistributedDatabaseShardedDatabaseTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1473,6 +1735,20 @@ export class GloballyDistributedDatabaseShardedDatabase extends cdktf.TerraformR
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_globally_distributed_database_sharded_database";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a GloballyDistributedDatabaseShardedDatabase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the GloballyDistributedDatabaseShardedDatabase to import
+  * @param importFromId The id of the existing GloballyDistributedDatabaseShardedDatabase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/globally_distributed_database_sharded_database#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the GloballyDistributedDatabaseShardedDatabase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_globally_distributed_database_sharded_database", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2229,5 +2505,247 @@ export class GloballyDistributedDatabaseShardedDatabase extends cdktf.TerraformR
       shard_details: cdktf.listMapper(globallyDistributedDatabaseShardedDatabaseShardDetailsToTerraform, true)(this._shardDetails.internalValue),
       timeouts: globallyDistributedDatabaseShardedDatabaseTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ca_signed_certificate: {
+        value: cdktf.stringToHclTerraform(this._caSignedCertificate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      character_set: {
+        value: cdktf.stringToHclTerraform(this._characterSet),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      chunks: {
+        value: cdktf.numberToHclTerraform(this._chunks),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      cluster_certificate_common_name: {
+        value: cdktf.stringToHclTerraform(this._clusterCertificateCommonName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      configure_gsms_trigger: {
+        value: cdktf.numberToHclTerraform(this._configureGsmsTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      configure_gsms_trigger_is_latest_gsm_image: {
+        value: cdktf.booleanToHclTerraform(this._configureGsmsTriggerIsLatestGsmImage),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      configure_gsms_trigger_old_gsm_names: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._configureGsmsTriggerOldGsmNames),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      configure_sharding_trigger: {
+        value: cdktf.numberToHclTerraform(this._configureShardingTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      db_deployment_type: {
+        value: cdktf.stringToHclTerraform(this._dbDeploymentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_version: {
+        value: cdktf.stringToHclTerraform(this._dbVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_workload: {
+        value: cdktf.stringToHclTerraform(this._dbWorkload),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      download_gsm_certificate_signing_request_trigger: {
+        value: cdktf.numberToHclTerraform(this._downloadGsmCertificateSigningRequestTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      generate_gsm_certificate_signing_request_trigger: {
+        value: cdktf.numberToHclTerraform(this._generateGsmCertificateSigningRequestTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      generate_wallet_password: {
+        value: cdktf.stringToHclTerraform(this._generateWalletPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      generate_wallet_trigger: {
+        value: cdktf.numberToHclTerraform(this._generateWalletTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      get_connection_string_trigger: {
+        value: cdktf.numberToHclTerraform(this._getConnectionStringTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      listener_port: {
+        value: cdktf.numberToHclTerraform(this._listenerPort),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      listener_port_tls: {
+        value: cdktf.numberToHclTerraform(this._listenerPortTls),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      ncharacter_set: {
+        value: cdktf.stringToHclTerraform(this._ncharacterSet),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ons_port_local: {
+        value: cdktf.numberToHclTerraform(this._onsPortLocal),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      ons_port_remote: {
+        value: cdktf.numberToHclTerraform(this._onsPortRemote),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      prefix: {
+        value: cdktf.stringToHclTerraform(this._prefix),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      replication_factor: {
+        value: cdktf.numberToHclTerraform(this._replicationFactor),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      replication_method: {
+        value: cdktf.stringToHclTerraform(this._replicationMethod),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      replication_unit: {
+        value: cdktf.numberToHclTerraform(this._replicationUnit),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      sharding_method: {
+        value: cdktf.stringToHclTerraform(this._shardingMethod),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      start_database_trigger: {
+        value: cdktf.numberToHclTerraform(this._startDatabaseTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      stop_database_trigger: {
+        value: cdktf.numberToHclTerraform(this._stopDatabaseTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      upload_signed_certificate_and_generate_wallet_trigger: {
+        value: cdktf.numberToHclTerraform(this._uploadSignedCertificateAndGenerateWalletTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      validate_network_trigger: {
+        value: cdktf.numberToHclTerraform(this._validateNetworkTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      catalog_details: {
+        value: cdktf.listMapperHcl(globallyDistributedDatabaseShardedDatabaseCatalogDetailsToHclTerraform, true)(this._catalogDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GloballyDistributedDatabaseShardedDatabaseCatalogDetailsList",
+      },
+      patch_operations: {
+        value: cdktf.listMapperHcl(globallyDistributedDatabaseShardedDatabasePatchOperationsToHclTerraform, true)(this._patchOperations.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GloballyDistributedDatabaseShardedDatabasePatchOperationsList",
+      },
+      shard_details: {
+        value: cdktf.listMapperHcl(globallyDistributedDatabaseShardedDatabaseShardDetailsToHclTerraform, true)(this._shardDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GloballyDistributedDatabaseShardedDatabaseShardDetailsList",
+      },
+      timeouts: {
+        value: globallyDistributedDatabaseShardedDatabaseTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "GloballyDistributedDatabaseShardedDatabaseTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

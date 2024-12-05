@@ -31,6 +31,17 @@ export function dataOciOptimizerCategoryRecommendationCountsToTerraform(struct?:
   }
 }
 
+
+export function dataOciOptimizerCategoryRecommendationCountsToHclTerraform(struct?: DataOciOptimizerCategoryRecommendationCounts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerCategoryRecommendationCountsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -100,6 +111,17 @@ export function dataOciOptimizerCategoryResourceCountsToTerraform(struct?: DataO
   }
 }
 
+
+export function dataOciOptimizerCategoryResourceCountsToHclTerraform(struct?: DataOciOptimizerCategoryResourceCounts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerCategoryResourceCountsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -167,6 +189,20 @@ export class DataOciOptimizerCategory extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_optimizer_category";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOptimizerCategory resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOptimizerCategory to import
+  * @param importFromId The id of the existing DataOciOptimizerCategory that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/optimizer_category#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOptimizerCategory to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_optimizer_category", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -299,5 +335,25 @@ export class DataOciOptimizerCategory extends cdktf.TerraformDataSource {
       category_id: cdktf.stringToTerraform(this._categoryId),
       id: cdktf.stringToTerraform(this._id),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      category_id: {
+        value: cdktf.stringToHclTerraform(this._categoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

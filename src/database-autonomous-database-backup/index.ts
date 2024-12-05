@@ -32,13 +32,13 @@ export interface DatabaseAutonomousDatabaseBackupConfigA extends cdktf.Terraform
   readonly retentionPeriodInDays?: number;
   /**
   * backup_destination_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_database_backup#backup_destination_details DatabaseAutonomousDatabaseBackup#backup_destination_details}
   */
   readonly backupDestinationDetails?: DatabaseAutonomousDatabaseBackupBackupDestinationDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_database_backup#timeouts DatabaseAutonomousDatabaseBackup#timeouts}
   */
   readonly timeouts?: DatabaseAutonomousDatabaseBackupTimeouts;
@@ -81,6 +81,49 @@ export function databaseAutonomousDatabaseBackupBackupDestinationDetailsToTerraf
     vpc_password: cdktf.stringToTerraform(struct!.vpcPassword),
     vpc_user: cdktf.stringToTerraform(struct!.vpcUser),
   }
+}
+
+
+export function databaseAutonomousDatabaseBackupBackupDestinationDetailsToHclTerraform(struct?: DatabaseAutonomousDatabaseBackupBackupDestinationDetailsOutputReference | DatabaseAutonomousDatabaseBackupBackupDestinationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    internet_proxy: {
+      value: cdktf.stringToHclTerraform(struct!.internetProxy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vpc_password: {
+      value: cdktf.stringToHclTerraform(struct!.vpcPassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vpc_user: {
+      value: cdktf.stringToHclTerraform(struct!.vpcUser),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseAutonomousDatabaseBackupBackupDestinationDetailsOutputReference extends cdktf.ComplexObject {
@@ -243,6 +286,37 @@ export function databaseAutonomousDatabaseBackupTimeoutsToTerraform(struct?: Dat
   }
 }
 
+
+export function databaseAutonomousDatabaseBackupTimeoutsToHclTerraform(struct?: DatabaseAutonomousDatabaseBackupTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseAutonomousDatabaseBackupTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -355,6 +429,20 @@ export class DatabaseAutonomousDatabaseBackup extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_database_backup";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseAutonomousDatabaseBackup resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseAutonomousDatabaseBackup to import
+  * @param importFromId The id of the existing DatabaseAutonomousDatabaseBackup that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_database_backup#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseAutonomousDatabaseBackup to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_database_backup", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -604,5 +692,55 @@ export class DatabaseAutonomousDatabaseBackup extends cdktf.TerraformResource {
       backup_destination_details: databaseAutonomousDatabaseBackupBackupDestinationDetailsToTerraform(this._backupDestinationDetails.internalValue),
       timeouts: databaseAutonomousDatabaseBackupTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      autonomous_database_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_long_term_backup: {
+        value: cdktf.booleanToHclTerraform(this._isLongTermBackup),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      retention_period_in_days: {
+        value: cdktf.numberToHclTerraform(this._retentionPeriodInDays),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      backup_destination_details: {
+        value: databaseAutonomousDatabaseBackupBackupDestinationDetailsToHclTerraform(this._backupDestinationDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseAutonomousDatabaseBackupBackupDestinationDetailsList",
+      },
+      timeouts: {
+        value: databaseAutonomousDatabaseBackupTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseAutonomousDatabaseBackupTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

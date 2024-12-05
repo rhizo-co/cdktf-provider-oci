@@ -40,25 +40,25 @@ export interface ServiceMeshVirtualDeploymentConfig extends cdktf.TerraformMetaA
   readonly virtualServiceId: string;
   /**
   * access_logging block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_virtual_deployment#access_logging ServiceMeshVirtualDeployment#access_logging}
   */
   readonly accessLogging?: ServiceMeshVirtualDeploymentAccessLogging;
   /**
   * listeners block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_virtual_deployment#listeners ServiceMeshVirtualDeployment#listeners}
   */
   readonly listeners?: ServiceMeshVirtualDeploymentListeners[] | cdktf.IResolvable;
   /**
   * service_discovery block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_virtual_deployment#service_discovery ServiceMeshVirtualDeployment#service_discovery}
   */
   readonly serviceDiscovery?: ServiceMeshVirtualDeploymentServiceDiscovery;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_virtual_deployment#timeouts ServiceMeshVirtualDeployment#timeouts}
   */
   readonly timeouts?: ServiceMeshVirtualDeploymentTimeouts;
@@ -78,6 +78,25 @@ export function serviceMeshVirtualDeploymentAccessLoggingToTerraform(struct?: Se
   return {
     is_enabled: cdktf.booleanToTerraform(struct!.isEnabled),
   }
+}
+
+
+export function serviceMeshVirtualDeploymentAccessLoggingToHclTerraform(struct?: ServiceMeshVirtualDeploymentAccessLoggingOutputReference | ServiceMeshVirtualDeploymentAccessLogging): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshVirtualDeploymentAccessLoggingOutputReference extends cdktf.ComplexObject {
@@ -158,6 +177,43 @@ export function serviceMeshVirtualDeploymentListenersToTerraform(struct?: Servic
     protocol: cdktf.stringToTerraform(struct!.protocol),
     request_timeout_in_ms: cdktf.stringToTerraform(struct!.requestTimeoutInMs),
   }
+}
+
+
+export function serviceMeshVirtualDeploymentListenersToHclTerraform(struct?: ServiceMeshVirtualDeploymentListeners | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    idle_timeout_in_ms: {
+      value: cdktf.stringToHclTerraform(struct!.idleTimeoutInMs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    request_timeout_in_ms: {
+      value: cdktf.stringToHclTerraform(struct!.requestTimeoutInMs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshVirtualDeploymentListenersOutputReference extends cdktf.ComplexObject {
@@ -322,6 +378,31 @@ export function serviceMeshVirtualDeploymentServiceDiscoveryToTerraform(struct?:
   }
 }
 
+
+export function serviceMeshVirtualDeploymentServiceDiscoveryToHclTerraform(struct?: ServiceMeshVirtualDeploymentServiceDiscoveryOutputReference | ServiceMeshVirtualDeploymentServiceDiscovery): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hostname: {
+      value: cdktf.stringToHclTerraform(struct!.hostname),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ServiceMeshVirtualDeploymentServiceDiscoveryOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -414,6 +495,37 @@ export function serviceMeshVirtualDeploymentTimeoutsToTerraform(struct?: Service
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function serviceMeshVirtualDeploymentTimeoutsToHclTerraform(struct?: ServiceMeshVirtualDeploymentTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshVirtualDeploymentTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -528,6 +640,20 @@ export class ServiceMeshVirtualDeployment extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_service_mesh_virtual_deployment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ServiceMeshVirtualDeployment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ServiceMeshVirtualDeployment to import
+  * @param importFromId The id of the existing ServiceMeshVirtualDeployment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_virtual_deployment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ServiceMeshVirtualDeployment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_service_mesh_virtual_deployment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -784,5 +910,79 @@ export class ServiceMeshVirtualDeployment extends cdktf.TerraformResource {
       service_discovery: serviceMeshVirtualDeploymentServiceDiscoveryToTerraform(this._serviceDiscovery.internalValue),
       timeouts: serviceMeshVirtualDeploymentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      virtual_service_id: {
+        value: cdktf.stringToHclTerraform(this._virtualServiceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      access_logging: {
+        value: serviceMeshVirtualDeploymentAccessLoggingToHclTerraform(this._accessLogging.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ServiceMeshVirtualDeploymentAccessLoggingList",
+      },
+      listeners: {
+        value: cdktf.listMapperHcl(serviceMeshVirtualDeploymentListenersToHclTerraform, true)(this._listeners.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ServiceMeshVirtualDeploymentListenersList",
+      },
+      service_discovery: {
+        value: serviceMeshVirtualDeploymentServiceDiscoveryToHclTerraform(this._serviceDiscovery.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ServiceMeshVirtualDeploymentServiceDiscoveryList",
+      },
+      timeouts: {
+        value: serviceMeshVirtualDeploymentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ServiceMeshVirtualDeploymentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

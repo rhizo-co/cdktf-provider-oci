@@ -44,19 +44,19 @@ export interface DnsSteeringPolicyConfig extends cdktf.TerraformMetaArguments {
   readonly ttl?: number;
   /**
   * answers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_steering_policy#answers DnsSteeringPolicy#answers}
   */
   readonly answers?: DnsSteeringPolicyAnswers[] | cdktf.IResolvable;
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_steering_policy#rules DnsSteeringPolicy#rules}
   */
   readonly rules?: DnsSteeringPolicyRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_steering_policy#timeouts DnsSteeringPolicy#timeouts}
   */
   readonly timeouts?: DnsSteeringPolicyTimeouts;
@@ -96,6 +96,49 @@ export function dnsSteeringPolicyAnswersToTerraform(struct?: DnsSteeringPolicyAn
     rdata: cdktf.stringToTerraform(struct!.rdata),
     rtype: cdktf.stringToTerraform(struct!.rtype),
   }
+}
+
+
+export function dnsSteeringPolicyAnswersToHclTerraform(struct?: DnsSteeringPolicyAnswers | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pool: {
+      value: cdktf.stringToHclTerraform(struct!.pool),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rdata: {
+      value: cdktf.stringToHclTerraform(struct!.rdata),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rtype: {
+      value: cdktf.stringToHclTerraform(struct!.rtype),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DnsSteeringPolicyAnswersOutputReference extends cdktf.ComplexObject {
@@ -284,6 +327,37 @@ export function dnsSteeringPolicyRulesCasesAnswerDataToTerraform(struct?: DnsSte
   }
 }
 
+
+export function dnsSteeringPolicyRulesCasesAnswerDataToHclTerraform(struct?: DnsSteeringPolicyRulesCasesAnswerData | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    answer_condition: {
+      value: cdktf.stringToHclTerraform(struct!.answerCondition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    should_keep: {
+      value: cdktf.booleanToHclTerraform(struct!.shouldKeep),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    value: {
+      value: cdktf.numberToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DnsSteeringPolicyRulesCasesAnswerDataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -419,7 +493,7 @@ export interface DnsSteeringPolicyRulesCases {
   readonly count?: number;
   /**
   * answer_data block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_steering_policy#answer_data DnsSteeringPolicy#answer_data}
   */
   readonly answerData?: DnsSteeringPolicyRulesCasesAnswerData[] | cdktf.IResolvable;
@@ -435,6 +509,37 @@ export function dnsSteeringPolicyRulesCasesToTerraform(struct?: DnsSteeringPolic
     count: cdktf.numberToTerraform(struct!.count),
     answer_data: cdktf.listMapper(dnsSteeringPolicyRulesCasesAnswerDataToTerraform, true)(struct!.answerData),
   }
+}
+
+
+export function dnsSteeringPolicyRulesCasesToHclTerraform(struct?: DnsSteeringPolicyRulesCases | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    case_condition: {
+      value: cdktf.stringToHclTerraform(struct!.caseCondition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    count: {
+      value: cdktf.numberToHclTerraform(struct!.count),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    answer_data: {
+      value: cdktf.listMapperHcl(dnsSteeringPolicyRulesCasesAnswerDataToHclTerraform, true)(struct!.answerData),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DnsSteeringPolicyRulesCasesAnswerDataList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DnsSteeringPolicyRulesCasesOutputReference extends cdktf.ComplexObject {
@@ -588,6 +693,37 @@ export function dnsSteeringPolicyRulesDefaultAnswerDataToTerraform(struct?: DnsS
   }
 }
 
+
+export function dnsSteeringPolicyRulesDefaultAnswerDataToHclTerraform(struct?: DnsSteeringPolicyRulesDefaultAnswerData | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    answer_condition: {
+      value: cdktf.stringToHclTerraform(struct!.answerCondition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    should_keep: {
+      value: cdktf.booleanToHclTerraform(struct!.shouldKeep),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    value: {
+      value: cdktf.numberToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DnsSteeringPolicyRulesDefaultAnswerDataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -727,13 +863,13 @@ export interface DnsSteeringPolicyRules {
   readonly ruleType: string;
   /**
   * cases block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_steering_policy#cases DnsSteeringPolicy#cases}
   */
   readonly cases?: DnsSteeringPolicyRulesCases[] | cdktf.IResolvable;
   /**
   * default_answer_data block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_steering_policy#default_answer_data DnsSteeringPolicy#default_answer_data}
   */
   readonly defaultAnswerData?: DnsSteeringPolicyRulesDefaultAnswerData[] | cdktf.IResolvable;
@@ -751,6 +887,49 @@ export function dnsSteeringPolicyRulesToTerraform(struct?: DnsSteeringPolicyRule
     cases: cdktf.listMapper(dnsSteeringPolicyRulesCasesToTerraform, true)(struct!.cases),
     default_answer_data: cdktf.listMapper(dnsSteeringPolicyRulesDefaultAnswerDataToTerraform, true)(struct!.defaultAnswerData),
   }
+}
+
+
+export function dnsSteeringPolicyRulesToHclTerraform(struct?: DnsSteeringPolicyRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default_count: {
+      value: cdktf.numberToHclTerraform(struct!.defaultCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rule_type: {
+      value: cdktf.stringToHclTerraform(struct!.ruleType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cases: {
+      value: cdktf.listMapperHcl(dnsSteeringPolicyRulesCasesToHclTerraform, true)(struct!.cases),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DnsSteeringPolicyRulesCasesList",
+    },
+    default_answer_data: {
+      value: cdktf.listMapperHcl(dnsSteeringPolicyRulesDefaultAnswerDataToHclTerraform, true)(struct!.defaultAnswerData),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DnsSteeringPolicyRulesDefaultAnswerDataList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DnsSteeringPolicyRulesOutputReference extends cdktf.ComplexObject {
@@ -945,6 +1124,37 @@ export function dnsSteeringPolicyTimeoutsToTerraform(struct?: DnsSteeringPolicyT
   }
 }
 
+
+export function dnsSteeringPolicyTimeoutsToHclTerraform(struct?: DnsSteeringPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DnsSteeringPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1057,6 +1267,20 @@ export class DnsSteeringPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dns_steering_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DnsSteeringPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DnsSteeringPolicy to import
+  * @param importFromId The id of the existing DnsSteeringPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_steering_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DnsSteeringPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dns_steering_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1302,5 +1526,79 @@ export class DnsSteeringPolicy extends cdktf.TerraformResource {
       rules: cdktf.listMapper(dnsSteeringPolicyRulesToTerraform, true)(this._rules.internalValue),
       timeouts: dnsSteeringPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      health_check_monitor_id: {
+        value: cdktf.stringToHclTerraform(this._healthCheckMonitorId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      template: {
+        value: cdktf.stringToHclTerraform(this._template),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ttl: {
+        value: cdktf.numberToHclTerraform(this._ttl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      answers: {
+        value: cdktf.listMapperHcl(dnsSteeringPolicyAnswersToHclTerraform, true)(this._answers.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DnsSteeringPolicyAnswersList",
+      },
+      rules: {
+        value: cdktf.listMapperHcl(dnsSteeringPolicyRulesToHclTerraform, true)(this._rules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DnsSteeringPolicyRulesList",
+      },
+      timeouts: {
+        value: dnsSteeringPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DnsSteeringPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

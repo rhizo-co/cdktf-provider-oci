@@ -28,13 +28,13 @@ export interface NetworkFirewallNetworkFirewallPolicyServiceConfig extends cdktf
   readonly type: string;
   /**
   * port_ranges block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_service#port_ranges NetworkFirewallNetworkFirewallPolicyService#port_ranges}
   */
   readonly portRanges: NetworkFirewallNetworkFirewallPolicyServicePortRanges[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_service#timeouts NetworkFirewallNetworkFirewallPolicyService#timeouts}
   */
   readonly timeouts?: NetworkFirewallNetworkFirewallPolicyServiceTimeouts;
@@ -59,6 +59,31 @@ export function networkFirewallNetworkFirewallPolicyServicePortRangesToTerraform
     maximum_port: cdktf.numberToTerraform(struct!.maximumPort),
     minimum_port: cdktf.numberToTerraform(struct!.minimumPort),
   }
+}
+
+
+export function networkFirewallNetworkFirewallPolicyServicePortRangesToHclTerraform(struct?: NetworkFirewallNetworkFirewallPolicyServicePortRanges | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    maximum_port: {
+      value: cdktf.numberToHclTerraform(struct!.maximumPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    minimum_port: {
+      value: cdktf.numberToHclTerraform(struct!.minimumPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkFirewallNetworkFirewallPolicyServicePortRangesOutputReference extends cdktf.ComplexObject {
@@ -187,6 +212,37 @@ export function networkFirewallNetworkFirewallPolicyServiceTimeoutsToTerraform(s
   }
 }
 
+
+export function networkFirewallNetworkFirewallPolicyServiceTimeoutsToHclTerraform(struct?: NetworkFirewallNetworkFirewallPolicyServiceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class NetworkFirewallNetworkFirewallPolicyServiceTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -299,6 +355,20 @@ export class NetworkFirewallNetworkFirewallPolicyService extends cdktf.Terraform
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_network_firewall_network_firewall_policy_service";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NetworkFirewallNetworkFirewallPolicyService resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NetworkFirewallNetworkFirewallPolicyService to import
+  * @param importFromId The id of the existing NetworkFirewallNetworkFirewallPolicyService that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_firewall_network_firewall_policy_service#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NetworkFirewallNetworkFirewallPolicyService to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_firewall_network_firewall_policy_service", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -441,5 +511,49 @@ export class NetworkFirewallNetworkFirewallPolicyService extends cdktf.Terraform
       port_ranges: cdktf.listMapper(networkFirewallNetworkFirewallPolicyServicePortRangesToTerraform, true)(this._portRanges.internalValue),
       timeouts: networkFirewallNetworkFirewallPolicyServiceTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_firewall_policy_id: {
+        value: cdktf.stringToHclTerraform(this._networkFirewallPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      port_ranges: {
+        value: cdktf.listMapperHcl(networkFirewallNetworkFirewallPolicyServicePortRangesToHclTerraform, true)(this._portRanges.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NetworkFirewallNetworkFirewallPolicyServicePortRangesList",
+      },
+      timeouts: {
+        value: networkFirewallNetworkFirewallPolicyServiceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NetworkFirewallNetworkFirewallPolicyServiceTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

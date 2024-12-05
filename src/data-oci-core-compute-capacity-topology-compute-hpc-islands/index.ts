@@ -28,7 +28,7 @@ export interface DataOciCoreComputeCapacityTopologyComputeHpcIslandsConfig exten
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_compute_capacity_topology_compute_hpc_islands#filter DataOciCoreComputeCapacityTopologyComputeHpcIslands#filter}
   */
   readonly filter?: DataOciCoreComputeCapacityTopologyComputeHpcIslandsFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciCoreComputeCapacityTopologyComputeHpcIslandsComputeHpcIsl
   }
   return {
   }
+}
+
+
+export function dataOciCoreComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItemsToHclTerraform(struct?: DataOciCoreComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -134,6 +145,17 @@ export function dataOciCoreComputeCapacityTopologyComputeHpcIslandsComputeHpcIsl
   }
 }
 
+
+export function dataOciCoreComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionToHclTerraform(struct?: DataOciCoreComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreComputeCapacityTopologyComputeHpcIslandsComputeHpcIslandCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -212,6 +234,37 @@ export function dataOciCoreComputeCapacityTopologyComputeHpcIslandsFilterToTerra
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCoreComputeCapacityTopologyComputeHpcIslandsFilterToHclTerraform(struct?: DataOciCoreComputeCapacityTopologyComputeHpcIslandsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCoreComputeCapacityTopologyComputeHpcIslandsFilterOutputReference extends cdktf.ComplexObject {
@@ -342,6 +395,20 @@ export class DataOciCoreComputeCapacityTopologyComputeHpcIslands extends cdktf.T
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_compute_capacity_topology_compute_hpc_islands";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreComputeCapacityTopologyComputeHpcIslands resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreComputeCapacityTopologyComputeHpcIslands to import
+  * @param importFromId The id of the existing DataOciCoreComputeCapacityTopologyComputeHpcIslands that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_compute_capacity_topology_compute_hpc_islands#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreComputeCapacityTopologyComputeHpcIslands to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_compute_capacity_topology_compute_hpc_islands", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -476,5 +543,43 @@ export class DataOciCoreComputeCapacityTopologyComputeHpcIslands extends cdktf.T
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciCoreComputeCapacityTopologyComputeHpcIslandsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compute_capacity_topology_id: {
+        value: cdktf.stringToHclTerraform(this._computeCapacityTopologyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCoreComputeCapacityTopologyComputeHpcIslandsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCoreComputeCapacityTopologyComputeHpcIslandsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

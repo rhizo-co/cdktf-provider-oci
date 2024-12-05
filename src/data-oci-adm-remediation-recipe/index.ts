@@ -24,6 +24,17 @@ export function dataOciAdmRemediationRecipeDetectConfigurationToTerraform(struct
   }
 }
 
+
+export function dataOciAdmRemediationRecipeDetectConfigurationToHclTerraform(struct?: DataOciAdmRemediationRecipeDetectConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAdmRemediationRecipeDetectConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -108,6 +119,17 @@ export function dataOciAdmRemediationRecipeNetworkConfigurationToTerraform(struc
   }
 }
 
+
+export function dataOciAdmRemediationRecipeNetworkConfigurationToHclTerraform(struct?: DataOciAdmRemediationRecipeNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAdmRemediationRecipeNetworkConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -175,6 +197,17 @@ export function dataOciAdmRemediationRecipeScmConfigurationToTerraform(struct?: 
   }
   return {
   }
+}
+
+
+export function dataOciAdmRemediationRecipeScmConfigurationToHclTerraform(struct?: DataOciAdmRemediationRecipeScmConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAdmRemediationRecipeScmConfigurationOutputReference extends cdktf.ComplexObject {
@@ -279,6 +312,17 @@ export function dataOciAdmRemediationRecipeVerifyConfigurationToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciAdmRemediationRecipeVerifyConfigurationToHclTerraform(struct?: DataOciAdmRemediationRecipeVerifyConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAdmRemediationRecipeVerifyConfigurationOutputReference extends cdktf.ComplexObject {
@@ -389,6 +433,20 @@ export class DataOciAdmRemediationRecipe extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_adm_remediation_recipe";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciAdmRemediationRecipe resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciAdmRemediationRecipe to import
+  * @param importFromId The id of the existing DataOciAdmRemediationRecipe that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/adm_remediation_recipe#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciAdmRemediationRecipe to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_adm_remediation_recipe", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -527,5 +585,19 @@ export class DataOciAdmRemediationRecipe extends cdktf.TerraformDataSource {
     return {
       remediation_recipe_id: cdktf.stringToTerraform(this._remediationRecipeId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      remediation_recipe_id: {
+        value: cdktf.stringToHclTerraform(this._remediationRecipeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,6 +24,17 @@ export function dataOciDatabaseAutonomousContainerDatabaseBackupConfigBackupDest
   }
 }
 
+
+export function dataOciDatabaseAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabaseBackupConfigBackupDestinationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -108,6 +119,17 @@ export function dataOciDatabaseAutonomousContainerDatabaseBackupConfigToTerrafor
   }
 }
 
+
+export function dataOciDatabaseAutonomousContainerDatabaseBackupConfigToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabaseBackupConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousContainerDatabaseBackupConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -176,6 +198,17 @@ export function dataOciDatabaseAutonomousContainerDatabaseKeyHistoryEntryToTerra
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseAutonomousContainerDatabaseKeyHistoryEntryToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabaseKeyHistoryEntry): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseAutonomousContainerDatabaseKeyHistoryEntryOutputReference extends cdktf.ComplexObject {
@@ -257,6 +290,17 @@ export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDaysO
   }
 }
 
+
+export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDaysOfWeek): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDaysOfWeekOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -321,6 +365,17 @@ export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowMonth
   }
 }
 
+
+export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowMonthsToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowMonths): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowMonthsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -383,6 +438,17 @@ export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowToTer
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindow): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowOutputReference extends cdktf.ComplexObject {
@@ -502,6 +568,17 @@ export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetai
   }
 }
 
+
+export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeek): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetailsDaysOfWeekOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -566,6 +643,17 @@ export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetai
   }
 }
 
+
+export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetailsMonthsToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetailsMonths): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetailsMonthsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -628,6 +716,17 @@ export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetai
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetailsToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseAutonomousContainerDatabaseMaintenanceWindowDetailsOutputReference extends cdktf.ComplexObject {
@@ -747,6 +846,17 @@ export function dataOciDatabaseAutonomousContainerDatabasePeerAutonomousContaine
   }
 }
 
+
+export function dataOciDatabaseAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -831,6 +941,17 @@ export function dataOciDatabaseAutonomousContainerDatabasePeerAutonomousContaine
   }
 }
 
+
+export function dataOciDatabaseAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigToHclTerraform(struct?: DataOciDatabaseAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousContainerDatabasePeerAutonomousContainerDatabaseBackupConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -899,6 +1020,20 @@ export class DataOciDatabaseAutonomousContainerDatabase extends cdktf.TerraformD
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_container_database";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseAutonomousContainerDatabase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseAutonomousContainerDatabase to import
+  * @param importFromId The id of the existing DataOciDatabaseAutonomousContainerDatabase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_autonomous_container_database#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseAutonomousContainerDatabase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_container_database", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1272,5 +1407,19 @@ export class DataOciDatabaseAutonomousContainerDatabase extends cdktf.TerraformD
     return {
       autonomous_container_database_id: cdktf.stringToTerraform(this._autonomousContainerDatabaseId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      autonomous_container_database_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousContainerDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

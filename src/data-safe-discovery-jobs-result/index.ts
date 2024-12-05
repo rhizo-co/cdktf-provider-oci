@@ -20,7 +20,7 @@ export interface DataSafeDiscoveryJobsResultConfig extends cdktf.TerraformMetaAr
   readonly id?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_discovery_jobs_result#timeouts DataSafeDiscoveryJobsResult#timeouts}
   */
   readonly timeouts?: DataSafeDiscoveryJobsResultTimeouts;
@@ -35,6 +35,17 @@ export function dataSafeDiscoveryJobsResultModifiedAttributesToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function dataSafeDiscoveryJobsResultModifiedAttributesToHclTerraform(struct?: DataSafeDiscoveryJobsResultModifiedAttributes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataSafeDiscoveryJobsResultModifiedAttributesOutputReference extends cdktf.ComplexObject {
@@ -119,6 +130,37 @@ export function dataSafeDiscoveryJobsResultTimeoutsToTerraform(struct?: DataSafe
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function dataSafeDiscoveryJobsResultTimeoutsToHclTerraform(struct?: DataSafeDiscoveryJobsResultTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeDiscoveryJobsResultTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -233,6 +275,20 @@ export class DataSafeDiscoveryJobsResult extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_discovery_jobs_result";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeDiscoveryJobsResult resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeDiscoveryJobsResult to import
+  * @param importFromId The id of the existing DataSafeDiscoveryJobsResult that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_discovery_jobs_result#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeDiscoveryJobsResult to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_discovery_jobs_result", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -421,5 +477,31 @@ export class DataSafeDiscoveryJobsResult extends cdktf.TerraformResource {
       id: cdktf.stringToTerraform(this._id),
       timeouts: dataSafeDiscoveryJobsResultTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      discovery_job_id: {
+        value: cdktf.stringToHclTerraform(this._discoveryJobId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: dataSafeDiscoveryJobsResultTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeDiscoveryJobsResultTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

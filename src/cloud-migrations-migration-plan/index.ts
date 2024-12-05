@@ -40,19 +40,19 @@ export interface CloudMigrationsMigrationPlanConfig extends cdktf.TerraformMetaA
   readonly sourceMigrationPlanId?: string;
   /**
   * strategies block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_migration_plan#strategies CloudMigrationsMigrationPlan#strategies}
   */
   readonly strategies?: CloudMigrationsMigrationPlanStrategies[] | cdktf.IResolvable;
   /**
   * target_environments block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_migration_plan#target_environments CloudMigrationsMigrationPlan#target_environments}
   */
   readonly targetEnvironments?: CloudMigrationsMigrationPlanTargetEnvironments[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_migration_plan#timeouts CloudMigrationsMigrationPlan#timeouts}
   */
   readonly timeouts?: CloudMigrationsMigrationPlanTimeouts;
@@ -67,6 +67,17 @@ export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCost
   }
   return {
   }
+}
+
+
+export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostComputeToHclTerraform(struct?: CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostCompute): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostComputeOutputReference extends cdktf.ComplexObject {
@@ -183,6 +194,17 @@ export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCost
   }
 }
 
+
+export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostOsImageToHclTerraform(struct?: CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostOsImage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostOsImageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -250,6 +272,17 @@ export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCost
   }
   return {
   }
+}
+
+
+export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostStorageVolumesToHclTerraform(struct?: CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostStorageVolumes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostStorageVolumesOutputReference extends cdktf.ComplexObject {
@@ -331,6 +364,17 @@ export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCost
   }
 }
 
+
+export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostStorageToHclTerraform(struct?: CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostStorage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostStorageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -404,6 +448,17 @@ export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCost
   }
   return {
   }
+}
+
+
+export function cloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostToHclTerraform(struct?: CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCost): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsMigrationPlanMigrationPlanStatsTotalEstimatedCostOutputReference extends cdktf.ComplexObject {
@@ -501,6 +556,17 @@ export function cloudMigrationsMigrationPlanMigrationPlanStatsToTerraform(struct
   }
   return {
   }
+}
+
+
+export function cloudMigrationsMigrationPlanMigrationPlanStatsToHclTerraform(struct?: CloudMigrationsMigrationPlanMigrationPlanStats): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsMigrationPlanMigrationPlanStatsOutputReference extends cdktf.ComplexObject {
@@ -606,6 +672,55 @@ export function cloudMigrationsMigrationPlanStrategiesToTerraform(struct?: Cloud
     resource_type: cdktf.stringToTerraform(struct!.resourceType),
     strategy_type: cdktf.stringToTerraform(struct!.strategyType),
   }
+}
+
+
+export function cloudMigrationsMigrationPlanStrategiesToHclTerraform(struct?: CloudMigrationsMigrationPlanStrategies | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    adjustment_multiplier: {
+      value: cdktf.numberToHclTerraform(struct!.adjustmentMultiplier),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    metric_time_window: {
+      value: cdktf.stringToHclTerraform(struct!.metricTimeWindow),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metric_type: {
+      value: cdktf.stringToHclTerraform(struct!.metricType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    percentile: {
+      value: cdktf.stringToHclTerraform(struct!.percentile),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_type: {
+      value: cdktf.stringToHclTerraform(struct!.resourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    strategy_type: {
+      value: cdktf.stringToHclTerraform(struct!.strategyType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudMigrationsMigrationPlanStrategiesOutputReference extends cdktf.ComplexObject {
@@ -847,6 +962,73 @@ export function cloudMigrationsMigrationPlanTargetEnvironmentsToTerraform(struct
     target_environment_type: cdktf.stringToTerraform(struct!.targetEnvironmentType),
     vcn: cdktf.stringToTerraform(struct!.vcn),
   }
+}
+
+
+export function cloudMigrationsMigrationPlanTargetEnvironmentsToHclTerraform(struct?: CloudMigrationsMigrationPlanTargetEnvironments | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability_domain: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dedicated_vm_host: {
+      value: cdktf.stringToHclTerraform(struct!.dedicatedVmHost),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    fault_domain: {
+      value: cdktf.stringToHclTerraform(struct!.faultDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ms_license: {
+      value: cdktf.stringToHclTerraform(struct!.msLicense),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    preferred_shape_type: {
+      value: cdktf.stringToHclTerraform(struct!.preferredShapeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet: {
+      value: cdktf.stringToHclTerraform(struct!.subnet),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    target_compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.targetCompartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    target_environment_type: {
+      value: cdktf.stringToHclTerraform(struct!.targetEnvironmentType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vcn: {
+      value: cdktf.stringToHclTerraform(struct!.vcn),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudMigrationsMigrationPlanTargetEnvironmentsOutputReference extends cdktf.ComplexObject {
@@ -1123,6 +1305,37 @@ export function cloudMigrationsMigrationPlanTimeoutsToTerraform(struct?: CloudMi
   }
 }
 
+
+export function cloudMigrationsMigrationPlanTimeoutsToHclTerraform(struct?: CloudMigrationsMigrationPlanTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudMigrationsMigrationPlanTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1235,6 +1448,20 @@ export class CloudMigrationsMigrationPlan extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_migrations_migration_plan";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CloudMigrationsMigrationPlan resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CloudMigrationsMigrationPlan to import
+  * @param importFromId The id of the existing CloudMigrationsMigrationPlan that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_migration_plan#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CloudMigrationsMigrationPlan to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_migrations_migration_plan", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1490,5 +1717,73 @@ export class CloudMigrationsMigrationPlan extends cdktf.TerraformResource {
       target_environments: cdktf.listMapper(cloudMigrationsMigrationPlanTargetEnvironmentsToTerraform, true)(this._targetEnvironments.internalValue),
       timeouts: cloudMigrationsMigrationPlanTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      migration_id: {
+        value: cdktf.stringToHclTerraform(this._migrationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_migration_plan_id: {
+        value: cdktf.stringToHclTerraform(this._sourceMigrationPlanId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      strategies: {
+        value: cdktf.listMapperHcl(cloudMigrationsMigrationPlanStrategiesToHclTerraform, true)(this._strategies.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudMigrationsMigrationPlanStrategiesList",
+      },
+      target_environments: {
+        value: cdktf.listMapperHcl(cloudMigrationsMigrationPlanTargetEnvironmentsToHclTerraform, true)(this._targetEnvironments.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudMigrationsMigrationPlanTargetEnvironmentsList",
+      },
+      timeouts: {
+        value: cloudMigrationsMigrationPlanTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CloudMigrationsMigrationPlanTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

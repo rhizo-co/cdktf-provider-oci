@@ -40,7 +40,7 @@ export interface IntegrationOracleManagedCustomEndpointConfig extends cdktf.Terr
   readonly state?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/integration_oracle_managed_custom_endpoint#timeouts IntegrationOracleManagedCustomEndpoint#timeouts}
   */
   readonly timeouts?: IntegrationOracleManagedCustomEndpointTimeouts;
@@ -70,6 +70,37 @@ export function integrationOracleManagedCustomEndpointTimeoutsToTerraform(struct
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function integrationOracleManagedCustomEndpointTimeoutsToHclTerraform(struct?: IntegrationOracleManagedCustomEndpointTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IntegrationOracleManagedCustomEndpointTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -184,6 +215,20 @@ export class IntegrationOracleManagedCustomEndpoint extends cdktf.TerraformResou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_integration_oracle_managed_custom_endpoint";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IntegrationOracleManagedCustomEndpoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IntegrationOracleManagedCustomEndpoint to import
+  * @param importFromId The id of the existing IntegrationOracleManagedCustomEndpoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/integration_oracle_managed_custom_endpoint#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IntegrationOracleManagedCustomEndpoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_integration_oracle_managed_custom_endpoint", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -363,5 +408,61 @@ export class IntegrationOracleManagedCustomEndpoint extends cdktf.TerraformResou
       state: cdktf.stringToTerraform(this._state),
       timeouts: integrationOracleManagedCustomEndpointTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      dns_type: {
+        value: cdktf.stringToHclTerraform(this._dnsType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dns_zone_name: {
+        value: cdktf.stringToHclTerraform(this._dnsZoneName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      hostname: {
+        value: cdktf.stringToHclTerraform(this._hostname),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      integration_instance_id: {
+        value: cdktf.stringToHclTerraform(this._integrationInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_type: {
+        value: cdktf.stringToHclTerraform(this._managedType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: integrationOracleManagedCustomEndpointTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IntegrationOracleManagedCustomEndpointTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

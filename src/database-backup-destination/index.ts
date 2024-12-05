@@ -48,13 +48,13 @@ export interface DatabaseBackupDestinationConfig extends cdktf.TerraformMetaArgu
   readonly vpcUsers?: string[];
   /**
   * mount_type_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_backup_destination#mount_type_details DatabaseBackupDestination#mount_type_details}
   */
   readonly mountTypeDetails?: DatabaseBackupDestinationMountTypeDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_backup_destination#timeouts DatabaseBackupDestination#timeouts}
   */
   readonly timeouts?: DatabaseBackupDestinationTimeouts;
@@ -69,6 +69,17 @@ export function databaseBackupDestinationAssociatedDatabasesToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function databaseBackupDestinationAssociatedDatabasesToHclTerraform(struct?: DatabaseBackupDestinationAssociatedDatabases): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseBackupDestinationAssociatedDatabasesOutputReference extends cdktf.ComplexObject {
@@ -158,6 +169,43 @@ export function databaseBackupDestinationMountTypeDetailsToTerraform(struct?: Da
     nfs_server: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.nfsServer),
     nfs_server_export: cdktf.stringToTerraform(struct!.nfsServerExport),
   }
+}
+
+
+export function databaseBackupDestinationMountTypeDetailsToHclTerraform(struct?: DatabaseBackupDestinationMountTypeDetailsOutputReference | DatabaseBackupDestinationMountTypeDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    local_mount_point_path: {
+      value: cdktf.stringToHclTerraform(struct!.localMountPointPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    mount_type: {
+      value: cdktf.stringToHclTerraform(struct!.mountType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nfs_server: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nfsServer),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    nfs_server_export: {
+      value: cdktf.stringToHclTerraform(struct!.nfsServerExport),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseBackupDestinationMountTypeDetailsOutputReference extends cdktf.ComplexObject {
@@ -298,6 +346,37 @@ export function databaseBackupDestinationTimeoutsToTerraform(struct?: DatabaseBa
   }
 }
 
+
+export function databaseBackupDestinationTimeoutsToHclTerraform(struct?: DatabaseBackupDestinationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseBackupDestinationTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -410,6 +489,20 @@ export class DatabaseBackupDestination extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_backup_destination";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseBackupDestination resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseBackupDestination to import
+  * @param importFromId The id of the existing DatabaseBackupDestination that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_backup_destination#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseBackupDestination to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_backup_destination", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -676,5 +769,79 @@ export class DatabaseBackupDestination extends cdktf.TerraformResource {
       mount_type_details: databaseBackupDestinationMountTypeDetailsToTerraform(this._mountTypeDetails.internalValue),
       timeouts: databaseBackupDestinationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_string: {
+        value: cdktf.stringToHclTerraform(this._connectionString),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      local_mount_point_path: {
+        value: cdktf.stringToHclTerraform(this._localMountPointPath),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vpc_users: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._vpcUsers),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      mount_type_details: {
+        value: databaseBackupDestinationMountTypeDetailsToHclTerraform(this._mountTypeDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseBackupDestinationMountTypeDetailsList",
+      },
+      timeouts: {
+        value: databaseBackupDestinationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseBackupDestinationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

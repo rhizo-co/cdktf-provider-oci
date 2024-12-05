@@ -68,7 +68,7 @@ export interface DataOciDatacatalogConnectionsConfig extends cdktf.TerraformMeta
   readonly updatedById?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/datacatalog_connections#filter DataOciDatacatalogConnections#filter}
   */
   readonly filter?: DataOciDatacatalogConnectionsFilter[] | cdktf.IResolvable;
@@ -83,6 +83,17 @@ export function dataOciDatacatalogConnectionsConnectionCollectionItemsToTerrafor
   }
   return {
   }
+}
+
+
+export function dataOciDatacatalogConnectionsConnectionCollectionItemsToHclTerraform(struct?: DataOciDatacatalogConnectionsConnectionCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatacatalogConnectionsConnectionCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -231,6 +242,17 @@ export function dataOciDatacatalogConnectionsConnectionCollectionToTerraform(str
   }
 }
 
+
+export function dataOciDatacatalogConnectionsConnectionCollectionToHclTerraform(struct?: DataOciDatacatalogConnectionsConnectionCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatacatalogConnectionsConnectionCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -314,6 +336,37 @@ export function dataOciDatacatalogConnectionsFilterToTerraform(struct?: DataOciD
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDatacatalogConnectionsFilterToHclTerraform(struct?: DataOciDatacatalogConnectionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatacatalogConnectionsFilterOutputReference extends cdktf.ComplexObject {
@@ -444,6 +497,20 @@ export class DataOciDatacatalogConnections extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datacatalog_connections";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatacatalogConnections resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatacatalogConnections to import
+  * @param importFromId The id of the existing DataOciDatacatalogConnections that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/datacatalog_connections#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatacatalogConnections to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datacatalog_connections", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -755,5 +822,103 @@ export class DataOciDatacatalogConnections extends cdktf.TerraformDataSource {
       updated_by_id: cdktf.stringToTerraform(this._updatedById),
       filter: cdktf.listMapper(dataOciDatacatalogConnectionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      catalog_id: {
+        value: cdktf.stringToHclTerraform(this._catalogId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      created_by_id: {
+        value: cdktf.stringToHclTerraform(this._createdById),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      data_asset_key: {
+        value: cdktf.stringToHclTerraform(this._dataAssetKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name_contains: {
+        value: cdktf.stringToHclTerraform(this._displayNameContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_key: {
+        value: cdktf.stringToHclTerraform(this._externalKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fields: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._fields),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_default: {
+        value: cdktf.booleanToHclTerraform(this._isDefault),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created: {
+        value: cdktf.stringToHclTerraform(this._timeCreated),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_status_updated: {
+        value: cdktf.stringToHclTerraform(this._timeStatusUpdated),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_updated: {
+        value: cdktf.stringToHclTerraform(this._timeUpdated),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      updated_by_id: {
+        value: cdktf.stringToHclTerraform(this._updatedById),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatacatalogConnectionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatacatalogConnectionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

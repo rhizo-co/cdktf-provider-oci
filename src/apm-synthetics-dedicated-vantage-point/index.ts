@@ -40,13 +40,13 @@ export interface ApmSyntheticsDedicatedVantagePointConfig extends cdktf.Terrafor
   readonly status?: string;
   /**
   * dvp_stack_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_dedicated_vantage_point#dvp_stack_details ApmSyntheticsDedicatedVantagePoint#dvp_stack_details}
   */
   readonly dvpStackDetails: ApmSyntheticsDedicatedVantagePointDvpStackDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_dedicated_vantage_point#timeouts ApmSyntheticsDedicatedVantagePoint#timeouts}
   */
   readonly timeouts?: ApmSyntheticsDedicatedVantagePointTimeouts;
@@ -61,6 +61,17 @@ export function apmSyntheticsDedicatedVantagePointMonitorStatusCountMapToTerrafo
   }
   return {
   }
+}
+
+
+export function apmSyntheticsDedicatedVantagePointMonitorStatusCountMapToHclTerraform(struct?: ApmSyntheticsDedicatedVantagePointMonitorStatusCountMap): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ApmSyntheticsDedicatedVantagePointMonitorStatusCountMapOutputReference extends cdktf.ComplexObject {
@@ -160,6 +171,43 @@ export function apmSyntheticsDedicatedVantagePointDvpStackDetailsToTerraform(str
     dvp_stream_id: cdktf.stringToTerraform(struct!.dvpStreamId),
     dvp_version: cdktf.stringToTerraform(struct!.dvpVersion),
   }
+}
+
+
+export function apmSyntheticsDedicatedVantagePointDvpStackDetailsToHclTerraform(struct?: ApmSyntheticsDedicatedVantagePointDvpStackDetailsOutputReference | ApmSyntheticsDedicatedVantagePointDvpStackDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dvp_stack_id: {
+      value: cdktf.stringToHclTerraform(struct!.dvpStackId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dvp_stack_type: {
+      value: cdktf.stringToHclTerraform(struct!.dvpStackType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dvp_stream_id: {
+      value: cdktf.stringToHclTerraform(struct!.dvpStreamId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dvp_version: {
+      value: cdktf.stringToHclTerraform(struct!.dvpVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ApmSyntheticsDedicatedVantagePointDvpStackDetailsOutputReference extends cdktf.ComplexObject {
@@ -291,6 +339,37 @@ export function apmSyntheticsDedicatedVantagePointTimeoutsToTerraform(struct?: A
   }
 }
 
+
+export function apmSyntheticsDedicatedVantagePointTimeoutsToHclTerraform(struct?: ApmSyntheticsDedicatedVantagePointTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ApmSyntheticsDedicatedVantagePointTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -403,6 +482,20 @@ export class ApmSyntheticsDedicatedVantagePoint extends cdktf.TerraformResource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apm_synthetics_dedicated_vantage_point";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ApmSyntheticsDedicatedVantagePoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ApmSyntheticsDedicatedVantagePoint to import
+  * @param importFromId The id of the existing ApmSyntheticsDedicatedVantagePoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/apm_synthetics_dedicated_vantage_point#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ApmSyntheticsDedicatedVantagePoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apm_synthetics_dedicated_vantage_point", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -615,5 +708,67 @@ export class ApmSyntheticsDedicatedVantagePoint extends cdktf.TerraformResource 
       dvp_stack_details: apmSyntheticsDedicatedVantagePointDvpStackDetailsToTerraform(this._dvpStackDetails.internalValue),
       timeouts: apmSyntheticsDedicatedVantagePointTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      apm_domain_id: {
+        value: cdktf.stringToHclTerraform(this._apmDomainId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      region: {
+        value: cdktf.stringToHclTerraform(this._region),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dvp_stack_details: {
+        value: apmSyntheticsDedicatedVantagePointDvpStackDetailsToHclTerraform(this._dvpStackDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ApmSyntheticsDedicatedVantagePointDvpStackDetailsList",
+      },
+      timeouts: {
+        value: apmSyntheticsDedicatedVantagePointTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ApmSyntheticsDedicatedVantagePointTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

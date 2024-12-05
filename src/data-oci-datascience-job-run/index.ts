@@ -24,6 +24,17 @@ export function dataOciDatascienceJobRunJobConfigurationOverrideDetailsToTerrafo
   }
 }
 
+
+export function dataOciDatascienceJobRunJobConfigurationOverrideDetailsToHclTerraform(struct?: DataOciDatascienceJobRunJobConfigurationOverrideDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceJobRunJobConfigurationOverrideDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -102,6 +113,17 @@ export function dataOciDatascienceJobRunJobEnvironmentConfigurationOverrideDetai
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceJobRunJobEnvironmentConfigurationOverrideDetailsToHclTerraform(struct?: DataOciDatascienceJobRunJobEnvironmentConfigurationOverrideDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceJobRunJobEnvironmentConfigurationOverrideDetailsOutputReference extends cdktf.ComplexObject {
@@ -193,6 +215,17 @@ export function dataOciDatascienceJobRunJobInfrastructureConfigurationDetailsJob
   }
 }
 
+
+export function dataOciDatascienceJobRunJobInfrastructureConfigurationDetailsJobShapeConfigDetailsToHclTerraform(struct?: DataOciDatascienceJobRunJobInfrastructureConfigurationDetailsJobShapeConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceJobRunJobInfrastructureConfigurationDetailsJobShapeConfigDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -260,6 +293,17 @@ export function dataOciDatascienceJobRunJobInfrastructureConfigurationDetailsToT
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceJobRunJobInfrastructureConfigurationDetailsToHclTerraform(struct?: DataOciDatascienceJobRunJobInfrastructureConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceJobRunJobInfrastructureConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -347,6 +391,17 @@ export function dataOciDatascienceJobRunJobLogConfigurationOverrideDetailsToTerr
   }
 }
 
+
+export function dataOciDatascienceJobRunJobLogConfigurationOverrideDetailsToHclTerraform(struct?: DataOciDatascienceJobRunJobLogConfigurationOverrideDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceJobRunJobLogConfigurationOverrideDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -424,6 +479,17 @@ export function dataOciDatascienceJobRunJobStorageMountConfigurationDetailsListS
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceJobRunJobStorageMountConfigurationDetailsListStructToHclTerraform(struct?: DataOciDatascienceJobRunJobStorageMountConfigurationDetailsListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceJobRunJobStorageMountConfigurationDetailsListStructOutputReference extends cdktf.ComplexObject {
@@ -525,6 +591,17 @@ export function dataOciDatascienceJobRunLogDetailsToTerraform(struct?: DataOciDa
   }
 }
 
+
+export function dataOciDatascienceJobRunLogDetailsToHclTerraform(struct?: DataOciDatascienceJobRunLogDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceJobRunLogDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -592,6 +669,20 @@ export class DataOciDatascienceJobRun extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_job_run";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatascienceJobRun resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatascienceJobRun to import
+  * @param importFromId The id of the existing DataOciDatascienceJobRun that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/datascience_job_run#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatascienceJobRun to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_job_run", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -761,5 +852,19 @@ export class DataOciDatascienceJobRun extends cdktf.TerraformDataSource {
     return {
       job_run_id: cdktf.stringToTerraform(this._jobRunId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      job_run_id: {
+        value: cdktf.stringToHclTerraform(this._jobRunId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

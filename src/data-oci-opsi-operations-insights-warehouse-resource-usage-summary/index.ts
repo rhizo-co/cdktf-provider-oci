@@ -30,6 +30,20 @@ export class DataOciOpsiOperationsInsightsWarehouseResourceUsageSummary extends 
   // =================
   public static readonly tfResourceType = "oci_opsi_operations_insights_warehouse_resource_usage_summary";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOpsiOperationsInsightsWarehouseResourceUsageSummary resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOpsiOperationsInsightsWarehouseResourceUsageSummary to import
+  * @param importFromId The id of the existing DataOciOpsiOperationsInsightsWarehouseResourceUsageSummary that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_operations_insights_warehouse_resource_usage_summary#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOpsiOperationsInsightsWarehouseResourceUsageSummary to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_operations_insights_warehouse_resource_usage_summary", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -118,5 +132,25 @@ export class DataOciOpsiOperationsInsightsWarehouseResourceUsageSummary extends 
       id: cdktf.stringToTerraform(this._id),
       operations_insights_warehouse_id: cdktf.stringToTerraform(this._operationsInsightsWarehouseId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      operations_insights_warehouse_id: {
+        value: cdktf.stringToHclTerraform(this._operationsInsightsWarehouseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

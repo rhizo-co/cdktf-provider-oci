@@ -59,6 +59,17 @@ export function dataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFin
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFindingItemsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFindingItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFindingItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -201,6 +212,20 @@ export class DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFindin
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_database_sql_tuning_advisor_tasks_finding";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFinding resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFinding to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFinding that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_database_sql_tuning_advisor_tasks_finding#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFinding to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_database_sql_tuning_advisor_tasks_finding", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -404,5 +429,67 @@ export class DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksFindin
       sql_tuning_advisor_task_id: cdktf.stringToTerraform(this._sqlTuningAdvisorTaskId),
       stats_hash_filter: cdktf.stringToTerraform(this._statsHashFilter),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      begin_exec_id: {
+        value: cdktf.stringToHclTerraform(this._beginExecId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      end_exec_id: {
+        value: cdktf.stringToHclTerraform(this._endExecId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      finding_filter: {
+        value: cdktf.stringToHclTerraform(this._findingFilter),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      index_hash_filter: {
+        value: cdktf.stringToHclTerraform(this._indexHashFilter),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      search_period: {
+        value: cdktf.stringToHclTerraform(this._searchPeriod),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sql_tuning_advisor_task_id: {
+        value: cdktf.stringToHclTerraform(this._sqlTuningAdvisorTaskId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      stats_hash_filter: {
+        value: cdktf.stringToHclTerraform(this._statsHashFilter),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

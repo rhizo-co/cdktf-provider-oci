@@ -40,13 +40,13 @@ export interface NosqlTableConfig extends cdktf.TerraformMetaArguments {
   readonly name: string;
   /**
   * table_limits block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/nosql_table#table_limits NosqlTable#table_limits}
   */
   readonly tableLimits?: NosqlTableTableLimits;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/nosql_table#timeouts NosqlTable#timeouts}
   */
   readonly timeouts?: NosqlTableTimeouts;
@@ -61,6 +61,17 @@ export function nosqlTableReplicasToTerraform(struct?: NosqlTableReplicas): any 
   }
   return {
   }
+}
+
+
+export function nosqlTableReplicasToHclTerraform(struct?: NosqlTableReplicas): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class NosqlTableReplicasOutputReference extends cdktf.ComplexObject {
@@ -152,6 +163,17 @@ export function nosqlTableSchemaColumnsToTerraform(struct?: NosqlTableSchemaColu
   }
 }
 
+
+export function nosqlTableSchemaColumnsToHclTerraform(struct?: NosqlTableSchemaColumns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class NosqlTableSchemaColumnsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -241,6 +263,17 @@ export function nosqlTableSchemaIdentityToTerraform(struct?: NosqlTableSchemaIde
   }
 }
 
+
+export function nosqlTableSchemaIdentityToHclTerraform(struct?: NosqlTableSchemaIdentity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class NosqlTableSchemaIdentityOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -313,6 +346,17 @@ export function nosqlTableSchemaToTerraform(struct?: NosqlTableSchema): any {
   }
   return {
   }
+}
+
+
+export function nosqlTableSchemaToHclTerraform(struct?: NosqlTableSchema): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class NosqlTableSchemaOutputReference extends cdktf.ComplexObject {
@@ -419,6 +463,43 @@ export function nosqlTableTableLimitsToTerraform(struct?: NosqlTableTableLimitsO
     max_storage_in_gbs: cdktf.numberToTerraform(struct!.maxStorageInGbs),
     max_write_units: cdktf.numberToTerraform(struct!.maxWriteUnits),
   }
+}
+
+
+export function nosqlTableTableLimitsToHclTerraform(struct?: NosqlTableTableLimitsOutputReference | NosqlTableTableLimits): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    capacity_mode: {
+      value: cdktf.stringToHclTerraform(struct!.capacityMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    max_read_units: {
+      value: cdktf.numberToHclTerraform(struct!.maxReadUnits),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_storage_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.maxStorageInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_write_units: {
+      value: cdktf.numberToHclTerraform(struct!.maxWriteUnits),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NosqlTableTableLimitsOutputReference extends cdktf.ComplexObject {
@@ -553,6 +634,37 @@ export function nosqlTableTimeoutsToTerraform(struct?: NosqlTableTimeouts | cdkt
   }
 }
 
+
+export function nosqlTableTimeoutsToHclTerraform(struct?: NosqlTableTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class NosqlTableTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -665,6 +777,20 @@ export class NosqlTable extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_nosql_table";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NosqlTable resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NosqlTable to import
+  * @param importFromId The id of the existing NosqlTable that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/nosql_table#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NosqlTable to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_nosql_table", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -917,5 +1043,67 @@ export class NosqlTable extends cdktf.TerraformResource {
       table_limits: nosqlTableTableLimitsToTerraform(this._tableLimits.internalValue),
       timeouts: nosqlTableTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ddl_statement: {
+        value: cdktf.stringToHclTerraform(this._ddlStatement),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_auto_reclaimable: {
+        value: cdktf.booleanToHclTerraform(this._isAutoReclaimable),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      table_limits: {
+        value: nosqlTableTableLimitsToHclTerraform(this._tableLimits.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NosqlTableTableLimitsList",
+      },
+      timeouts: {
+        value: nosqlTableTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NosqlTableTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

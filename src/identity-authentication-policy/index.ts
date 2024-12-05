@@ -20,19 +20,19 @@ export interface IdentityAuthenticationPolicyConfig extends cdktf.TerraformMetaA
   readonly id?: string;
   /**
   * network_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_authentication_policy#network_policy IdentityAuthenticationPolicy#network_policy}
   */
   readonly networkPolicy?: IdentityAuthenticationPolicyNetworkPolicy;
   /**
   * password_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_authentication_policy#password_policy IdentityAuthenticationPolicy#password_policy}
   */
   readonly passwordPolicy?: IdentityAuthenticationPolicyPasswordPolicy;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_authentication_policy#timeouts IdentityAuthenticationPolicy#timeouts}
   */
   readonly timeouts?: IdentityAuthenticationPolicyTimeouts;
@@ -52,6 +52,25 @@ export function identityAuthenticationPolicyNetworkPolicyToTerraform(struct?: Id
   return {
     network_source_ids: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.networkSourceIds),
   }
+}
+
+
+export function identityAuthenticationPolicyNetworkPolicyToHclTerraform(struct?: IdentityAuthenticationPolicyNetworkPolicyOutputReference | IdentityAuthenticationPolicyNetworkPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    network_source_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.networkSourceIds),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityAuthenticationPolicyNetworkPolicyOutputReference extends cdktf.ComplexObject {
@@ -142,6 +161,55 @@ export function identityAuthenticationPolicyPasswordPolicyToTerraform(struct?: I
     is_username_containment_allowed: cdktf.booleanToTerraform(struct!.isUsernameContainmentAllowed),
     minimum_password_length: cdktf.numberToTerraform(struct!.minimumPasswordLength),
   }
+}
+
+
+export function identityAuthenticationPolicyPasswordPolicyToHclTerraform(struct?: IdentityAuthenticationPolicyPasswordPolicyOutputReference | IdentityAuthenticationPolicyPasswordPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_lowercase_characters_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isLowercaseCharactersRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_numeric_characters_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isNumericCharactersRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_special_characters_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isSpecialCharactersRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_uppercase_characters_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isUppercaseCharactersRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_username_containment_allowed: {
+      value: cdktf.booleanToHclTerraform(struct!.isUsernameContainmentAllowed),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    minimum_password_length: {
+      value: cdktf.numberToHclTerraform(struct!.minimumPasswordLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityAuthenticationPolicyPasswordPolicyOutputReference extends cdktf.ComplexObject {
@@ -329,6 +397,37 @@ export function identityAuthenticationPolicyTimeoutsToTerraform(struct?: Identit
   }
 }
 
+
+export function identityAuthenticationPolicyTimeoutsToHclTerraform(struct?: IdentityAuthenticationPolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityAuthenticationPolicyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -441,6 +540,20 @@ export class IdentityAuthenticationPolicy extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_authentication_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityAuthenticationPolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityAuthenticationPolicy to import
+  * @param importFromId The id of the existing IdentityAuthenticationPolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_authentication_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityAuthenticationPolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_authentication_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -569,5 +682,43 @@ export class IdentityAuthenticationPolicy extends cdktf.TerraformResource {
       password_policy: identityAuthenticationPolicyPasswordPolicyToTerraform(this._passwordPolicy.internalValue),
       timeouts: identityAuthenticationPolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_policy: {
+        value: identityAuthenticationPolicyNetworkPolicyToHclTerraform(this._networkPolicy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityAuthenticationPolicyNetworkPolicyList",
+      },
+      password_policy: {
+        value: identityAuthenticationPolicyPasswordPolicyToHclTerraform(this._passwordPolicy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityAuthenticationPolicyPasswordPolicyList",
+      },
+      timeouts: {
+        value: identityAuthenticationPolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityAuthenticationPolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

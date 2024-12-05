@@ -24,6 +24,17 @@ export function dataOciDatabasePluggableDatabaseConnectionStringsToTerraform(str
   }
 }
 
+
+export function dataOciDatabasePluggableDatabaseConnectionStringsToHclTerraform(struct?: DataOciDatabasePluggableDatabaseConnectionStrings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabasePluggableDatabaseConnectionStringsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -99,6 +110,17 @@ export function dataOciDatabasePluggableDatabasePdbCreationTypeDetailsRefreshabl
   }
 }
 
+
+export function dataOciDatabasePluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsToHclTerraform(struct?: DataOciDatabasePluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabasePluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -161,6 +183,17 @@ export function dataOciDatabasePluggableDatabasePdbCreationTypeDetailsToTerrafor
   }
   return {
   }
+}
+
+
+export function dataOciDatabasePluggableDatabasePdbCreationTypeDetailsToHclTerraform(struct?: DataOciDatabasePluggableDatabasePdbCreationTypeDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabasePluggableDatabasePdbCreationTypeDetailsOutputReference extends cdktf.ComplexObject {
@@ -258,6 +291,17 @@ export function dataOciDatabasePluggableDatabasePdbNodeLevelDetailsToTerraform(s
   }
 }
 
+
+export function dataOciDatabasePluggableDatabasePdbNodeLevelDetailsToHclTerraform(struct?: DataOciDatabasePluggableDatabasePdbNodeLevelDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabasePluggableDatabasePdbNodeLevelDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -327,6 +371,17 @@ export function dataOciDatabasePluggableDatabasePluggableDatabaseManagementConfi
   }
 }
 
+
+export function dataOciDatabasePluggableDatabasePluggableDatabaseManagementConfigToHclTerraform(struct?: DataOciDatabasePluggableDatabasePluggableDatabaseManagementConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabasePluggableDatabasePluggableDatabaseManagementConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -391,6 +446,17 @@ export function dataOciDatabasePluggableDatabaseRefreshableCloneConfigToTerrafor
   }
 }
 
+
+export function dataOciDatabasePluggableDatabaseRefreshableCloneConfigToHclTerraform(struct?: DataOciDatabasePluggableDatabaseRefreshableCloneConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabasePluggableDatabaseRefreshableCloneConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -453,6 +519,20 @@ export class DataOciDatabasePluggableDatabase extends cdktf.TerraformDataSource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_pluggable_database";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabasePluggableDatabase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabasePluggableDatabase to import
+  * @param importFromId The id of the existing DataOciDatabasePluggableDatabase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_pluggable_database#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabasePluggableDatabase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_pluggable_database", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -641,5 +721,19 @@ export class DataOciDatabasePluggableDatabase extends cdktf.TerraformDataSource 
     return {
       pluggable_database_id: cdktf.stringToTerraform(this._pluggableDatabaseId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      pluggable_database_id: {
+        value: cdktf.stringToHclTerraform(this._pluggableDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

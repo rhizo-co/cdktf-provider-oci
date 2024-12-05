@@ -9,89 +9,89 @@ import * as cdktf from 'cdktf';
 export interface OciProviderConfig {
   /**
   * (Optional) The type of auth to use. Options are 'ApiKey', 'SecurityToken', 'InstancePrincipal', 'ResourcePrincipal' and 'OKEWorkloadIdentity'. By default, 'ApiKey' will be used.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#auth OciProvider#auth}
   */
   readonly auth?: string;
   /**
   * (Optional) The profile name to be used from config file, if not set it will be DEFAULT.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#config_file_profile OciProvider#config_file_profile}
   */
   readonly configFileProfile?: string;
   /**
   * (Optional) Disable automatic retries for retriable errors.
-Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
-  * 
+  * Automatic retries were introduced to solve some eventual consistency problems but it also introduced performance issues on destroy operations.
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#disable_auto_retries OciProvider#disable_auto_retries}
   */
   readonly disableAutoRetries?: boolean | cdktf.IResolvable;
   /**
   * (Optional) The fingerprint for the user's RSA key. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#fingerprint OciProvider#fingerprint}
   */
   readonly fingerprint?: string;
   /**
   * (Optional) List of defined tags keys that Terraform should ignore when planning creates and updates to the associated remote object
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#ignore_defined_tags OciProvider#ignore_defined_tags}
   */
   readonly ignoreDefinedTags?: string[];
   /**
   * (Optional) A PEM formatted RSA private key for the user.
-A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
-  * 
+  * A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#private_key OciProvider#private_key}
   */
   readonly privateKey?: string;
   /**
   * (Optional) The password used to secure the private key.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#private_key_password OciProvider#private_key_password}
   */
   readonly privateKeyPassword?: string;
   /**
   * (Optional) The path to the user's PEM formatted private key.
-A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
-  * 
+  * A private_key or a private_key_path must be provided if auth is set to 'ApiKey', ignored otherwise.
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#private_key_path OciProvider#private_key_path}
   */
   readonly privateKeyPath?: string;
   /**
   * (Optional) flags to enable realm specific service endpoint.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#realm_specific_service_endpoint_template_enabled OciProvider#realm_specific_service_endpoint_template_enabled}
   */
   readonly realmSpecificServiceEndpointTemplateEnabled?: boolean | cdktf.IResolvable;
   /**
   * (Required) The region for API connections (e.g. us-ashburn-1).
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#region OciProvider#region}
   */
   readonly region?: string;
   /**
   * (Optional) The minimum duration (in seconds) to retry a resource operation in response to an error.
-The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
-  * 
+  * The actual retry duration may be longer due to jittering of retry operations. This value is ignored if the `disable_auto_retries` field is set to true.
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#retry_duration_seconds OciProvider#retry_duration_seconds}
   */
   readonly retryDurationSeconds?: number;
   /**
   * (Optional) The tenancy OCID for a user. The tenancy OCID can be found at the bottom of user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#tenancy_ocid OciProvider#tenancy_ocid}
   */
   readonly tenancyOcid?: string;
   /**
   * (Optional) The user OCID. This can be found in user settings in the Oracle Cloud Infrastructure console. Required if auth is set to 'ApiKey', ignored otherwise.
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#user_ocid OciProvider#user_ocid}
   */
   readonly userOcid?: string;
   /**
   * Alias name
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#alias OciProvider#alias}
   */
   readonly alias?: string;
@@ -106,6 +106,20 @@ export class OciProvider extends cdktf.TerraformProvider {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OciProvider resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OciProvider to import
+  * @param importFromId The id of the existing OciProvider that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OciProvider to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -393,5 +407,97 @@ export class OciProvider extends cdktf.TerraformProvider {
       user_ocid: cdktf.stringToTerraform(this._userOcid),
       alias: cdktf.stringToTerraform(this._alias),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      auth: {
+        value: cdktf.stringToHclTerraform(this._auth),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      config_file_profile: {
+        value: cdktf.stringToHclTerraform(this._configFileProfile),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      disable_auto_retries: {
+        value: cdktf.booleanToHclTerraform(this._disableAutoRetries),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      fingerprint: {
+        value: cdktf.stringToHclTerraform(this._fingerprint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ignore_defined_tags: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._ignoreDefinedTags),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      private_key: {
+        value: cdktf.stringToHclTerraform(this._privateKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      private_key_password: {
+        value: cdktf.stringToHclTerraform(this._privateKeyPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      private_key_path: {
+        value: cdktf.stringToHclTerraform(this._privateKeyPath),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      realm_specific_service_endpoint_template_enabled: {
+        value: cdktf.booleanToHclTerraform(this._realmSpecificServiceEndpointTemplateEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      region: {
+        value: cdktf.stringToHclTerraform(this._region),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      retry_duration_seconds: {
+        value: cdktf.numberToHclTerraform(this._retryDurationSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      tenancy_ocid: {
+        value: cdktf.stringToHclTerraform(this._tenancyOcid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_ocid: {
+        value: cdktf.stringToHclTerraform(this._userOcid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      alias: {
+        value: cdktf.stringToHclTerraform(this._alias),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

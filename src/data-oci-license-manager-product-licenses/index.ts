@@ -24,7 +24,7 @@ export interface DataOciLicenseManagerProductLicensesConfig extends cdktf.Terraf
   readonly isCompartmentIdInSubtree?: boolean | cdktf.IResolvable;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/license_manager_product_licenses#filter DataOciLicenseManagerProductLicenses#filter}
   */
   readonly filter?: DataOciLicenseManagerProductLicensesFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciLicenseManagerProductLicensesProductLicenseCollectionItem
   }
   return {
   }
+}
+
+
+export function dataOciLicenseManagerProductLicensesProductLicenseCollectionItemsImagesToHclTerraform(struct?: DataOciLicenseManagerProductLicensesProductLicenseCollectionItemsImages): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciLicenseManagerProductLicensesProductLicenseCollectionItemsImagesOutputReference extends cdktf.ComplexObject {
@@ -123,6 +134,17 @@ export function dataOciLicenseManagerProductLicensesProductLicenseCollectionItem
   }
   return {
   }
+}
+
+
+export function dataOciLicenseManagerProductLicensesProductLicenseCollectionItemsToHclTerraform(struct?: DataOciLicenseManagerProductLicensesProductLicenseCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciLicenseManagerProductLicensesProductLicenseCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -293,6 +315,17 @@ export function dataOciLicenseManagerProductLicensesProductLicenseCollectionToTe
   }
 }
 
+
+export function dataOciLicenseManagerProductLicensesProductLicenseCollectionToHclTerraform(struct?: DataOciLicenseManagerProductLicensesProductLicenseCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciLicenseManagerProductLicensesProductLicenseCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -371,6 +404,37 @@ export function dataOciLicenseManagerProductLicensesFilterToTerraform(struct?: D
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciLicenseManagerProductLicensesFilterToHclTerraform(struct?: DataOciLicenseManagerProductLicensesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciLicenseManagerProductLicensesFilterOutputReference extends cdktf.ComplexObject {
@@ -502,6 +566,20 @@ export class DataOciLicenseManagerProductLicenses extends cdktf.TerraformDataSou
   // =================
   public static readonly tfResourceType = "oci_license_manager_product_licenses";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLicenseManagerProductLicenses resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLicenseManagerProductLicenses to import
+  * @param importFromId The id of the existing DataOciLicenseManagerProductLicenses that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/license_manager_product_licenses#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLicenseManagerProductLicenses to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_license_manager_product_licenses", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -617,5 +695,37 @@ export class DataOciLicenseManagerProductLicenses extends cdktf.TerraformDataSou
       is_compartment_id_in_subtree: cdktf.booleanToTerraform(this._isCompartmentIdInSubtree),
       filter: cdktf.listMapper(dataOciLicenseManagerProductLicensesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._isCompartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciLicenseManagerProductLicensesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciLicenseManagerProductLicensesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

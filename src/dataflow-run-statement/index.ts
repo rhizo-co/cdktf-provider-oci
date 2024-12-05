@@ -24,7 +24,7 @@ export interface DataflowRunStatementConfig extends cdktf.TerraformMetaArguments
   readonly runId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_run_statement#timeouts DataflowRunStatement#timeouts}
   */
   readonly timeouts?: DataflowRunStatementTimeouts;
@@ -39,6 +39,17 @@ export function dataflowRunStatementOutputDataToTerraform(struct?: DataflowRunSt
   }
   return {
   }
+}
+
+
+export function dataflowRunStatementOutputDataToHclTerraform(struct?: DataflowRunStatementOutputData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataflowRunStatementOutputDataOutputReference extends cdktf.ComplexObject {
@@ -108,6 +119,17 @@ export function dataflowRunStatementOutputToTerraform(struct?: DataflowRunStatem
   }
   return {
   }
+}
+
+
+export function dataflowRunStatementOutputToHclTerraform(struct?: DataflowRunStatementOutput): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataflowRunStatementOutputOutputReference extends cdktf.ComplexObject {
@@ -208,6 +230,37 @@ export function dataflowRunStatementTimeoutsToTerraform(struct?: DataflowRunStat
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function dataflowRunStatementTimeoutsToHclTerraform(struct?: DataflowRunStatementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataflowRunStatementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -322,6 +375,20 @@ export class DataflowRunStatement extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataflow_run_statement";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataflowRunStatement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataflowRunStatement to import
+  * @param importFromId The id of the existing DataflowRunStatement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_run_statement#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataflowRunStatement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataflow_run_statement", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -455,5 +522,37 @@ export class DataflowRunStatement extends cdktf.TerraformResource {
       run_id: cdktf.stringToTerraform(this._runId),
       timeouts: dataflowRunStatementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      code: {
+        value: cdktf.stringToHclTerraform(this._code),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      run_id: {
+        value: cdktf.stringToHclTerraform(this._runId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: dataflowRunStatementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataflowRunStatementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

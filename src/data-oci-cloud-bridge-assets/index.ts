@@ -48,7 +48,7 @@ export interface DataOciCloudBridgeAssetsConfig extends cdktf.TerraformMetaArgum
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_bridge_assets#filter DataOciCloudBridgeAssets#filter}
   */
   readonly filter?: DataOciCloudBridgeAssetsFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeDisksToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeDisksToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsComputeDisks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudBridgeAssetsAssetCollectionItemsComputeDisksOutputReference extends cdktf.ComplexObject {
@@ -159,6 +170,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeGpuDevicesToT
   }
 }
 
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeGpuDevicesToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsComputeGpuDevices): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudBridgeAssetsAssetCollectionItemsComputeGpuDevicesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -241,6 +263,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeNicsToTerrafo
   }
   return {
   }
+}
+
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeNicsToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsComputeNics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudBridgeAssetsAssetCollectionItemsComputeNicsOutputReference extends cdktf.ComplexObject {
@@ -332,6 +365,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeNvdimmControl
   }
 }
 
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeNvdimmControllerToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsComputeNvdimmController): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudBridgeAssetsAssetCollectionItemsComputeNvdimmControllerOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -399,6 +443,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeNvdimmsToTerr
   }
   return {
   }
+}
+
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeNvdimmsToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsComputeNvdimms): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudBridgeAssetsAssetCollectionItemsComputeNvdimmsOutputReference extends cdktf.ComplexObject {
@@ -475,6 +530,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeScsiControlle
   }
 }
 
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeScsiControllerToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsComputeScsiController): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudBridgeAssetsAssetCollectionItemsComputeScsiControllerOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -547,6 +613,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsComputeToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsCompute): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudBridgeAssetsAssetCollectionItemsComputeOutputReference extends cdktf.ComplexObject {
@@ -759,6 +836,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsVmToTerraform(struct
   }
 }
 
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsVmToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsVm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudBridgeAssetsAssetCollectionItemsVmOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -831,6 +919,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsVmwareVcenterToTerra
   }
   return {
   }
+}
+
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsVmwareVcenterToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsVmwareVcenter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudBridgeAssetsAssetCollectionItemsVmwareVcenterOutputReference extends cdktf.ComplexObject {
@@ -907,6 +1006,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsVmwareVmCustomerTags
   }
 }
 
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsVmwareVmCustomerTagsToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsVmwareVmCustomerTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudBridgeAssetsAssetCollectionItemsVmwareVmCustomerTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -974,6 +1084,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsVmwareVmToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsVmwareVmToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItemsVmwareVm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudBridgeAssetsAssetCollectionItemsVmwareVmOutputReference extends cdktf.ComplexObject {
@@ -1089,6 +1210,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionItemsToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function dataOciCloudBridgeAssetsAssetCollectionItemsToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudBridgeAssetsAssetCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -1247,6 +1379,17 @@ export function dataOciCloudBridgeAssetsAssetCollectionToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciCloudBridgeAssetsAssetCollectionToHclTerraform(struct?: DataOciCloudBridgeAssetsAssetCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudBridgeAssetsAssetCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1325,6 +1468,37 @@ export function dataOciCloudBridgeAssetsFilterToTerraform(struct?: DataOciCloudB
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCloudBridgeAssetsFilterToHclTerraform(struct?: DataOciCloudBridgeAssetsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCloudBridgeAssetsFilterOutputReference extends cdktf.ComplexObject {
@@ -1455,6 +1629,20 @@ export class DataOciCloudBridgeAssets extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_bridge_assets";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCloudBridgeAssets resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCloudBridgeAssets to import
+  * @param importFromId The id of the existing DataOciCloudBridgeAssets that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_bridge_assets#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCloudBridgeAssets to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_bridge_assets", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1679,5 +1867,73 @@ export class DataOciCloudBridgeAssets extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciCloudBridgeAssetsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      asset_id: {
+        value: cdktf.stringToHclTerraform(this._assetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      asset_type: {
+        value: cdktf.stringToHclTerraform(this._assetType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_asset_key: {
+        value: cdktf.stringToHclTerraform(this._externalAssetKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      inventory_id: {
+        value: cdktf.stringToHclTerraform(this._inventoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_key: {
+        value: cdktf.stringToHclTerraform(this._sourceKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCloudBridgeAssetsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCloudBridgeAssetsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

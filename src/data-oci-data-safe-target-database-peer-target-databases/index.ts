@@ -20,7 +20,7 @@ export interface DataOciDataSafeTargetDatabasePeerTargetDatabasesAConfig extends
   readonly targetDatabaseId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_target_database_peer_target_databases#filter DataOciDataSafeTargetDatabasePeerTargetDatabasesA#filter}
   */
   readonly filter?: DataOciDataSafeTargetDatabasePeerTargetDatabasesFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDataba
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemsDatabaseDetailsToHclTerraform(struct?: DataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemsDatabaseDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemsDatabaseDetailsOutputReference extends cdktf.ComplexObject {
@@ -141,6 +152,17 @@ export function dataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDataba
   }
 }
 
+
+export function dataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemsTlsConfigToHclTerraform(struct?: DataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemsTlsConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemsTlsConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -223,6 +245,17 @@ export function dataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDataba
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemsToHclTerraform(struct?: DataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -346,6 +379,17 @@ export function dataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDataba
   }
 }
 
+
+export function dataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionToHclTerraform(struct?: DataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeTargetDatabasePeerTargetDatabasesPeerTargetDatabaseCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -429,6 +473,37 @@ export function dataOciDataSafeTargetDatabasePeerTargetDatabasesFilterToTerrafor
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeTargetDatabasePeerTargetDatabasesFilterToHclTerraform(struct?: DataOciDataSafeTargetDatabasePeerTargetDatabasesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeTargetDatabasePeerTargetDatabasesFilterOutputReference extends cdktf.ComplexObject {
@@ -560,6 +635,20 @@ export class DataOciDataSafeTargetDatabasePeerTargetDatabasesA extends cdktf.Ter
   // =================
   public static readonly tfResourceType = "oci_data_safe_target_database_peer_target_databases";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeTargetDatabasePeerTargetDatabasesA resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeTargetDatabasePeerTargetDatabasesA to import
+  * @param importFromId The id of the existing DataOciDataSafeTargetDatabasePeerTargetDatabasesA that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_target_database_peer_target_databases#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeTargetDatabasePeerTargetDatabasesA to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_target_database_peer_target_databases", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -657,5 +746,31 @@ export class DataOciDataSafeTargetDatabasePeerTargetDatabasesA extends cdktf.Ter
       target_database_id: cdktf.stringToTerraform(this._targetDatabaseId),
       filter: cdktf.listMapper(dataOciDataSafeTargetDatabasePeerTargetDatabasesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_database_id: {
+        value: cdktf.stringToHclTerraform(this._targetDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeTargetDatabasePeerTargetDatabasesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeTargetDatabasePeerTargetDatabasesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

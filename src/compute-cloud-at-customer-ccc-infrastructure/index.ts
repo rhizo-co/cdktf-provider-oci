@@ -52,7 +52,7 @@ export interface ComputeCloudAtCustomerCccInfrastructureConfig extends cdktf.Ter
   readonly subnetId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/compute_cloud_at_customer_ccc_infrastructure#timeouts ComputeCloudAtCustomerCccInfrastructure#timeouts}
   */
   readonly timeouts?: ComputeCloudAtCustomerCccInfrastructureTimeouts;
@@ -67,6 +67,17 @@ export function computeCloudAtCustomerCccInfrastructureInfrastructureInventoryTo
   }
   return {
   }
+}
+
+
+export function computeCloudAtCustomerCccInfrastructureInfrastructureInventoryToHclTerraform(struct?: ComputeCloudAtCustomerCccInfrastructureInfrastructureInventory): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ComputeCloudAtCustomerCccInfrastructureInfrastructureInventoryOutputReference extends cdktf.ComplexObject {
@@ -153,6 +164,17 @@ export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConf
   }
 }
 
+
+export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationToHclTerraform(struct?: ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -220,6 +242,17 @@ export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConf
   }
   return {
   }
+}
+
+
+export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicToHclTerraform(struct?: ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputReference extends cdktf.ComplexObject {
@@ -297,6 +330,17 @@ export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConf
   }
 }
 
+
+export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticToHclTerraform(struct?: ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -366,6 +410,17 @@ export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConf
   }
 }
 
+
+export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodesToHclTerraform(struct?: ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -433,6 +488,17 @@ export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConf
   }
   return {
   }
+}
+
+
+export function computeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationToHclTerraform(struct?: ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputReference extends cdktf.ComplexObject {
@@ -572,6 +638,17 @@ export function computeCloudAtCustomerCccInfrastructureUpgradeInformationToTerra
   }
 }
 
+
+export function computeCloudAtCustomerCccInfrastructureUpgradeInformationToHclTerraform(struct?: ComputeCloudAtCustomerCccInfrastructureUpgradeInformation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class ComputeCloudAtCustomerCccInfrastructureUpgradeInformationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -664,6 +741,37 @@ export function computeCloudAtCustomerCccInfrastructureTimeoutsToTerraform(struc
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function computeCloudAtCustomerCccInfrastructureTimeoutsToHclTerraform(struct?: ComputeCloudAtCustomerCccInfrastructureTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ComputeCloudAtCustomerCccInfrastructureTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -778,6 +886,20 @@ export class ComputeCloudAtCustomerCccInfrastructure extends cdktf.TerraformReso
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_compute_cloud_at_customer_ccc_infrastructure";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ComputeCloudAtCustomerCccInfrastructure resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ComputeCloudAtCustomerCccInfrastructure to import
+  * @param importFromId The id of the existing ComputeCloudAtCustomerCccInfrastructure that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/compute_cloud_at_customer_ccc_infrastructure#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ComputeCloudAtCustomerCccInfrastructure to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_compute_cloud_at_customer_ccc_infrastructure", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1067,5 +1189,79 @@ export class ComputeCloudAtCustomerCccInfrastructure extends cdktf.TerraformReso
       subnet_id: cdktf.stringToTerraform(this._subnetId),
       timeouts: computeCloudAtCustomerCccInfrastructureTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ccc_upgrade_schedule_id: {
+        value: cdktf.stringToHclTerraform(this._cccUpgradeScheduleId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_details: {
+        value: cdktf.stringToHclTerraform(this._connectionDetails),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_state: {
+        value: cdktf.stringToHclTerraform(this._connectionState),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: computeCloudAtCustomerCccInfrastructureTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ComputeCloudAtCustomerCccInfrastructureTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

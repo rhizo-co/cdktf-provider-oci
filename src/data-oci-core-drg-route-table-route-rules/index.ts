@@ -24,7 +24,7 @@ export interface DataOciCoreDrgRouteTableRouteRulesConfig extends cdktf.Terrafor
   readonly routeType?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_drg_route_table_route_rules#filter DataOciCoreDrgRouteTableRouteRules#filter}
   */
   readonly filter?: DataOciCoreDrgRouteTableRouteRulesFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciCoreDrgRouteTableRouteRulesDrgRouteRulesToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciCoreDrgRouteTableRouteRulesDrgRouteRulesToHclTerraform(struct?: DataOciCoreDrgRouteTableRouteRulesDrgRouteRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreDrgRouteTableRouteRulesDrgRouteRulesOutputReference extends cdktf.ComplexObject {
@@ -159,6 +170,37 @@ export function dataOciCoreDrgRouteTableRouteRulesFilterToTerraform(struct?: Dat
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCoreDrgRouteTableRouteRulesFilterToHclTerraform(struct?: DataOciCoreDrgRouteTableRouteRulesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCoreDrgRouteTableRouteRulesFilterOutputReference extends cdktf.ComplexObject {
@@ -290,6 +332,20 @@ export class DataOciCoreDrgRouteTableRouteRules extends cdktf.TerraformDataSourc
   // =================
   public static readonly tfResourceType = "oci_core_drg_route_table_route_rules";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreDrgRouteTableRouteRules resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreDrgRouteTableRouteRules to import
+  * @param importFromId The id of the existing DataOciCoreDrgRouteTableRouteRules that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_drg_route_table_route_rules#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreDrgRouteTableRouteRules to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_drg_route_table_route_rules", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -405,5 +461,37 @@ export class DataOciCoreDrgRouteTableRouteRules extends cdktf.TerraformDataSourc
       route_type: cdktf.stringToTerraform(this._routeType),
       filter: cdktf.listMapper(dataOciCoreDrgRouteTableRouteRulesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      drg_route_table_id: {
+        value: cdktf.stringToHclTerraform(this._drgRouteTableId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      route_type: {
+        value: cdktf.stringToHclTerraform(this._routeType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCoreDrgRouteTableRouteRulesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCoreDrgRouteTableRouteRulesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

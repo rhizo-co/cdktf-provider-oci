@@ -32,7 +32,7 @@ export interface DataOciOpsiAwrHubAwrSnapshotsConfig extends cdktf.TerraformMeta
   readonly timeLessThanOrEqualTo?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_awr_hub_awr_snapshots#filter DataOciOpsiAwrHubAwrSnapshots#filter}
   */
   readonly filter?: DataOciOpsiAwrHubAwrSnapshotsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionItemsItemsToTe
   }
   return {
   }
+}
+
+
+export function dataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionItemsItemsToHclTerraform(struct?: DataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionItemsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionItemsItemsOutputReference extends cdktf.ComplexObject {
@@ -143,6 +154,17 @@ export function dataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionItemsToTerrafo
   }
 }
 
+
+export function dataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionItemsToHclTerraform(struct?: DataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -206,6 +228,17 @@ export function dataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionToTerraform(st
   }
   return {
   }
+}
+
+
+export function dataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionToHclTerraform(struct?: DataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOpsiAwrHubAwrSnapshotsAwrSnapshotCollectionOutputReference extends cdktf.ComplexObject {
@@ -286,6 +319,37 @@ export function dataOciOpsiAwrHubAwrSnapshotsFilterToTerraform(struct?: DataOciO
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOpsiAwrHubAwrSnapshotsFilterToHclTerraform(struct?: DataOciOpsiAwrHubAwrSnapshotsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOpsiAwrHubAwrSnapshotsFilterOutputReference extends cdktf.ComplexObject {
@@ -416,6 +480,20 @@ export class DataOciOpsiAwrHubAwrSnapshots extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_opsi_awr_hub_awr_snapshots";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOpsiAwrHubAwrSnapshots resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOpsiAwrHubAwrSnapshots to import
+  * @param importFromId The id of the existing DataOciOpsiAwrHubAwrSnapshots that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_awr_hub_awr_snapshots#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOpsiAwrHubAwrSnapshots to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_awr_hub_awr_snapshots", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -565,5 +643,49 @@ export class DataOciOpsiAwrHubAwrSnapshots extends cdktf.TerraformDataSource {
       time_less_than_or_equal_to: cdktf.stringToTerraform(this._timeLessThanOrEqualTo),
       filter: cdktf.listMapper(dataOciOpsiAwrHubAwrSnapshotsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      awr_hub_id: {
+        value: cdktf.stringToHclTerraform(this._awrHubId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      awr_source_database_identifier: {
+        value: cdktf.stringToHclTerraform(this._awrSourceDatabaseIdentifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_less_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeLessThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOpsiAwrHubAwrSnapshotsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOpsiAwrHubAwrSnapshotsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

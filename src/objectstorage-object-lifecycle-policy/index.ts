@@ -24,13 +24,13 @@ export interface ObjectstorageObjectLifecyclePolicyConfig extends cdktf.Terrafor
   readonly namespace: string;
   /**
   * rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_object_lifecycle_policy#rules ObjectstorageObjectLifecyclePolicy#rules}
   */
   readonly rules?: ObjectstorageObjectLifecyclePolicyRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_object_lifecycle_policy#timeouts ObjectstorageObjectLifecyclePolicy#timeouts}
   */
   readonly timeouts?: ObjectstorageObjectLifecyclePolicyTimeouts;
@@ -60,6 +60,37 @@ export function objectstorageObjectLifecyclePolicyRulesObjectNameFilterToTerrafo
     inclusion_patterns: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.inclusionPatterns),
     inclusion_prefixes: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.inclusionPrefixes),
   }
+}
+
+
+export function objectstorageObjectLifecyclePolicyRulesObjectNameFilterToHclTerraform(struct?: ObjectstorageObjectLifecyclePolicyRulesObjectNameFilterOutputReference | ObjectstorageObjectLifecyclePolicyRulesObjectNameFilter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    exclusion_patterns: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.exclusionPatterns),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    inclusion_patterns: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.inclusionPatterns),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    inclusion_prefixes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.inclusionPrefixes),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ObjectstorageObjectLifecyclePolicyRulesObjectNameFilterOutputReference extends cdktf.ComplexObject {
@@ -181,7 +212,7 @@ export interface ObjectstorageObjectLifecyclePolicyRules {
   readonly timeUnit: string;
   /**
   * object_name_filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_object_lifecycle_policy#object_name_filter ObjectstorageObjectLifecyclePolicy#object_name_filter}
   */
   readonly objectNameFilter?: ObjectstorageObjectLifecyclePolicyRulesObjectNameFilter;
@@ -201,6 +232,61 @@ export function objectstorageObjectLifecyclePolicyRulesToTerraform(struct?: Obje
     time_unit: cdktf.stringToTerraform(struct!.timeUnit),
     object_name_filter: objectstorageObjectLifecyclePolicyRulesObjectNameFilterToTerraform(struct!.objectNameFilter),
   }
+}
+
+
+export function objectstorageObjectLifecyclePolicyRulesToHclTerraform(struct?: ObjectstorageObjectLifecyclePolicyRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action: {
+      value: cdktf.stringToHclTerraform(struct!.action),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    target: {
+      value: cdktf.stringToHclTerraform(struct!.target),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_amount: {
+      value: cdktf.stringToHclTerraform(struct!.timeAmount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_unit: {
+      value: cdktf.stringToHclTerraform(struct!.timeUnit),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_name_filter: {
+      value: objectstorageObjectLifecyclePolicyRulesObjectNameFilterToHclTerraform(struct!.objectNameFilter),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ObjectstorageObjectLifecyclePolicyRulesObjectNameFilterList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ObjectstorageObjectLifecyclePolicyRulesOutputReference extends cdktf.ComplexObject {
@@ -427,6 +513,37 @@ export function objectstorageObjectLifecyclePolicyTimeoutsToTerraform(struct?: O
   }
 }
 
+
+export function objectstorageObjectLifecyclePolicyTimeoutsToHclTerraform(struct?: ObjectstorageObjectLifecyclePolicyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ObjectstorageObjectLifecyclePolicyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -539,6 +656,20 @@ export class ObjectstorageObjectLifecyclePolicy extends cdktf.TerraformResource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_objectstorage_object_lifecycle_policy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ObjectstorageObjectLifecyclePolicy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ObjectstorageObjectLifecyclePolicy to import
+  * @param importFromId The id of the existing ObjectstorageObjectLifecyclePolicy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_object_lifecycle_policy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ObjectstorageObjectLifecyclePolicy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_objectstorage_object_lifecycle_policy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -669,5 +800,43 @@ export class ObjectstorageObjectLifecyclePolicy extends cdktf.TerraformResource 
       rules: cdktf.listMapper(objectstorageObjectLifecyclePolicyRulesToTerraform, true)(this._rules.internalValue),
       timeouts: objectstorageObjectLifecyclePolicyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      rules: {
+        value: cdktf.listMapperHcl(objectstorageObjectLifecyclePolicyRulesToHclTerraform, true)(this._rules.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "ObjectstorageObjectLifecyclePolicyRulesList",
+      },
+      timeouts: {
+        value: objectstorageObjectLifecyclePolicyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ObjectstorageObjectLifecyclePolicyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

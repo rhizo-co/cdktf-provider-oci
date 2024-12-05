@@ -27,6 +27,20 @@ export class DataOciNetworkLoadBalancerListener extends cdktf.TerraformDataSourc
   // =================
   public static readonly tfResourceType = "oci_network_load_balancer_listener";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciNetworkLoadBalancerListener resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciNetworkLoadBalancerListener to import
+  * @param importFromId The id of the existing DataOciNetworkLoadBalancerListener that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/network_load_balancer_listener#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciNetworkLoadBalancerListener to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_load_balancer_listener", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -147,5 +161,25 @@ export class DataOciNetworkLoadBalancerListener extends cdktf.TerraformDataSourc
       listener_name: cdktf.stringToTerraform(this._listenerName),
       network_load_balancer_id: cdktf.stringToTerraform(this._networkLoadBalancerId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      listener_name: {
+        value: cdktf.stringToHclTerraform(this._listenerName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_load_balancer_id: {
+        value: cdktf.stringToHclTerraform(this._networkLoadBalancerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,13 +24,13 @@ export interface BlockchainOsnConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * ocpu_allocation_param block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/blockchain_osn#ocpu_allocation_param BlockchainOsn#ocpu_allocation_param}
   */
   readonly ocpuAllocationParam?: BlockchainOsnOcpuAllocationParam;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/blockchain_osn#timeouts BlockchainOsn#timeouts}
   */
   readonly timeouts?: BlockchainOsnTimeouts;
@@ -50,6 +50,25 @@ export function blockchainOsnOcpuAllocationParamToTerraform(struct?: BlockchainO
   return {
     ocpu_allocation_number: cdktf.numberToTerraform(struct!.ocpuAllocationNumber),
   }
+}
+
+
+export function blockchainOsnOcpuAllocationParamToHclTerraform(struct?: BlockchainOsnOcpuAllocationParamOutputReference | BlockchainOsnOcpuAllocationParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ocpu_allocation_number: {
+      value: cdktf.numberToHclTerraform(struct!.ocpuAllocationNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BlockchainOsnOcpuAllocationParamOutputReference extends cdktf.ComplexObject {
@@ -122,6 +141,37 @@ export function blockchainOsnTimeoutsToTerraform(struct?: BlockchainOsnTimeouts 
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function blockchainOsnTimeoutsToHclTerraform(struct?: BlockchainOsnTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BlockchainOsnTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -236,6 +286,20 @@ export class BlockchainOsn extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_blockchain_osn";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a BlockchainOsn resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the BlockchainOsn to import
+  * @param importFromId The id of the existing BlockchainOsn that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/blockchain_osn#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the BlockchainOsn to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_blockchain_osn", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -371,5 +435,43 @@ export class BlockchainOsn extends cdktf.TerraformResource {
       ocpu_allocation_param: blockchainOsnOcpuAllocationParamToTerraform(this._ocpuAllocationParam.internalValue),
       timeouts: blockchainOsnTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ad: {
+        value: cdktf.stringToHclTerraform(this._ad),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      blockchain_platform_id: {
+        value: cdktf.stringToHclTerraform(this._blockchainPlatformId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocpu_allocation_param: {
+        value: blockchainOsnOcpuAllocationParamToHclTerraform(this._ocpuAllocationParam.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BlockchainOsnOcpuAllocationParamList",
+      },
+      timeouts: {
+        value: blockchainOsnTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "BlockchainOsnTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

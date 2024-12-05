@@ -20,7 +20,7 @@ export interface DataOciIdentityRegionSubscriptionsConfig extends cdktf.Terrafor
   readonly tenancyId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_region_subscriptions#filter DataOciIdentityRegionSubscriptions#filter}
   */
   readonly filter?: DataOciIdentityRegionSubscriptionsFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciIdentityRegionSubscriptionsRegionSubscriptionsToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciIdentityRegionSubscriptionsRegionSubscriptionsToHclTerraform(struct?: DataOciIdentityRegionSubscriptionsRegionSubscriptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityRegionSubscriptionsRegionSubscriptionsOutputReference extends cdktf.ComplexObject {
@@ -134,6 +145,37 @@ export function dataOciIdentityRegionSubscriptionsFilterToTerraform(struct?: Dat
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciIdentityRegionSubscriptionsFilterToHclTerraform(struct?: DataOciIdentityRegionSubscriptionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciIdentityRegionSubscriptionsFilterOutputReference extends cdktf.ComplexObject {
@@ -265,6 +307,20 @@ export class DataOciIdentityRegionSubscriptions extends cdktf.TerraformDataSourc
   // =================
   public static readonly tfResourceType = "oci_identity_region_subscriptions";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityRegionSubscriptions resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityRegionSubscriptions to import
+  * @param importFromId The id of the existing DataOciIdentityRegionSubscriptions that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_region_subscriptions#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityRegionSubscriptions to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_region_subscriptions", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -362,5 +418,31 @@ export class DataOciIdentityRegionSubscriptions extends cdktf.TerraformDataSourc
       tenancy_id: cdktf.stringToTerraform(this._tenancyId),
       filter: cdktf.listMapper(dataOciIdentityRegionSubscriptionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tenancy_id: {
+        value: cdktf.stringToHclTerraform(this._tenancyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciIdentityRegionSubscriptionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciIdentityRegionSubscriptionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

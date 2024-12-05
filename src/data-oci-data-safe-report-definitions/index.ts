@@ -48,7 +48,7 @@ export interface DataOciDataSafeReportDefinitionsConfig extends cdktf.TerraformM
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_report_definitions#filter DataOciDataSafeReportDefinitions#filter}
   */
   readonly filter?: DataOciDataSafeReportDefinitionsFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsC
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsColumnFiltersToHclTerraform(struct?: DataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsColumnFilters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsColumnFiltersOutputReference extends cdktf.ComplexObject {
@@ -149,6 +160,17 @@ export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsC
   }
 }
 
+
+export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsColumnInfoToHclTerraform(struct?: DataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsColumnInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsColumnInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -233,6 +255,17 @@ export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsC
   }
 }
 
+
+export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsColumnSortingsToHclTerraform(struct?: DataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsColumnSortings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsColumnSortingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -305,6 +338,17 @@ export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsS
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsSummaryToHclTerraform(struct?: DataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsSummaryOutputReference extends cdktf.ComplexObject {
@@ -394,6 +438,17 @@ export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsT
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsToHclTerraform(struct?: DataOciDataSafeReportDefinitionsReportDefinitionCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeReportDefinitionsReportDefinitionCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -602,6 +657,17 @@ export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionToTerr
   }
 }
 
+
+export function dataOciDataSafeReportDefinitionsReportDefinitionCollectionToHclTerraform(struct?: DataOciDataSafeReportDefinitionsReportDefinitionCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeReportDefinitionsReportDefinitionCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -680,6 +746,37 @@ export function dataOciDataSafeReportDefinitionsFilterToTerraform(struct?: DataO
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeReportDefinitionsFilterToHclTerraform(struct?: DataOciDataSafeReportDefinitionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeReportDefinitionsFilterOutputReference extends cdktf.ComplexObject {
@@ -810,6 +907,20 @@ export class DataOciDataSafeReportDefinitions extends cdktf.TerraformDataSource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_report_definitions";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeReportDefinitions resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeReportDefinitions to import
+  * @param importFromId The id of the existing DataOciDataSafeReportDefinitions that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_report_definitions#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeReportDefinitions to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_report_definitions", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1034,5 +1145,73 @@ export class DataOciDataSafeReportDefinitions extends cdktf.TerraformDataSource 
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciDataSafeReportDefinitionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      access_level: {
+        value: cdktf.stringToHclTerraform(this._accessLevel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      category: {
+        value: cdktf.stringToHclTerraform(this._category),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      data_source: {
+        value: cdktf.stringToHclTerraform(this._dataSource),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_seeded: {
+        value: cdktf.booleanToHclTerraform(this._isSeeded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeReportDefinitionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeReportDefinitionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

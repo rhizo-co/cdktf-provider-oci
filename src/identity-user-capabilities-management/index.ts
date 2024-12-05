@@ -40,7 +40,7 @@ export interface IdentityUserCapabilitiesManagementConfig extends cdktf.Terrafor
   readonly userId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_user_capabilities_management#timeouts IdentityUserCapabilitiesManagement#timeouts}
   */
   readonly timeouts?: IdentityUserCapabilitiesManagementTimeouts;
@@ -70,6 +70,37 @@ export function identityUserCapabilitiesManagementTimeoutsToTerraform(struct?: I
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function identityUserCapabilitiesManagementTimeoutsToHclTerraform(struct?: IdentityUserCapabilitiesManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityUserCapabilitiesManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -184,6 +215,20 @@ export class IdentityUserCapabilitiesManagement extends cdktf.TerraformResource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_user_capabilities_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityUserCapabilitiesManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityUserCapabilitiesManagement to import
+  * @param importFromId The id of the existing IdentityUserCapabilitiesManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_user_capabilities_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityUserCapabilitiesManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_user_capabilities_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -366,5 +411,61 @@ export class IdentityUserCapabilitiesManagement extends cdktf.TerraformResource 
       user_id: cdktf.stringToTerraform(this._userId),
       timeouts: identityUserCapabilitiesManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      can_use_api_keys: {
+        value: cdktf.booleanToHclTerraform(this._canUseApiKeys),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      can_use_auth_tokens: {
+        value: cdktf.booleanToHclTerraform(this._canUseAuthTokens),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      can_use_console_password: {
+        value: cdktf.booleanToHclTerraform(this._canUseConsolePassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      can_use_customer_secret_keys: {
+        value: cdktf.booleanToHclTerraform(this._canUseCustomerSecretKeys),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      can_use_smtp_credentials: {
+        value: cdktf.booleanToHclTerraform(this._canUseSmtpCredentials),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_id: {
+        value: cdktf.stringToHclTerraform(this._userId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: identityUserCapabilitiesManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityUserCapabilitiesManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

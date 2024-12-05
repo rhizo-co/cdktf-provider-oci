@@ -68,7 +68,7 @@ export interface OperatorAccessControlOperatorControlConfig extends cdktf.Terraf
   readonly systemMessage?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/operator_access_control_operator_control#timeouts OperatorAccessControlOperatorControl#timeouts}
   */
   readonly timeouts?: OperatorAccessControlOperatorControlTimeouts;
@@ -98,6 +98,37 @@ export function operatorAccessControlOperatorControlTimeoutsToTerraform(struct?:
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function operatorAccessControlOperatorControlTimeoutsToHclTerraform(struct?: OperatorAccessControlOperatorControlTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OperatorAccessControlOperatorControlTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -212,6 +243,20 @@ export class OperatorAccessControlOperatorControl extends cdktf.TerraformResourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_operator_access_control_operator_control";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OperatorAccessControlOperatorControl resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OperatorAccessControlOperatorControl to import
+  * @param importFromId The id of the existing OperatorAccessControlOperatorControl that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/operator_access_control_operator_control#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OperatorAccessControlOperatorControl to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_operator_access_control_operator_control", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -543,5 +588,103 @@ export class OperatorAccessControlOperatorControl extends cdktf.TerraformResourc
       system_message: cdktf.stringToTerraform(this._systemMessage),
       timeouts: operatorAccessControlOperatorControlTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      approver_groups_list: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._approverGroupsList),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      approvers_list: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._approversList),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      email_id_list: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._emailIdList),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_fully_pre_approved: {
+        value: cdktf.booleanToHclTerraform(this._isFullyPreApproved),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      number_of_approvers: {
+        value: cdktf.numberToHclTerraform(this._numberOfApprovers),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      operator_control_name: {
+        value: cdktf.stringToHclTerraform(this._operatorControlName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pre_approved_op_action_list: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._preApprovedOpActionList),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      resource_type: {
+        value: cdktf.stringToHclTerraform(this._resourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      system_message: {
+        value: cdktf.stringToHclTerraform(this._systemMessage),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: operatorAccessControlOperatorControlTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OperatorAccessControlOperatorControlTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

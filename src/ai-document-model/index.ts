@@ -60,31 +60,31 @@ export interface AiDocumentModelConfig extends cdktf.TerraformMetaArguments {
   readonly projectId: string;
   /**
   * component_models block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_model#component_models AiDocumentModel#component_models}
   */
   readonly componentModels?: AiDocumentModelComponentModels[] | cdktf.IResolvable;
   /**
   * testing_dataset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_model#testing_dataset AiDocumentModel#testing_dataset}
   */
   readonly testingDataset?: AiDocumentModelTestingDataset;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_model#timeouts AiDocumentModel#timeouts}
   */
   readonly timeouts?: AiDocumentModelTimeouts;
   /**
   * training_dataset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_model#training_dataset AiDocumentModel#training_dataset}
   */
   readonly trainingDataset?: AiDocumentModelTrainingDataset;
   /**
   * validation_dataset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_model#validation_dataset AiDocumentModel#validation_dataset}
   */
   readonly validationDataset?: AiDocumentModelValidationDataset;
@@ -99,6 +99,17 @@ export function aiDocumentModelMetricsDatasetSummaryToTerraform(struct?: AiDocum
   }
   return {
   }
+}
+
+
+export function aiDocumentModelMetricsDatasetSummaryToHclTerraform(struct?: AiDocumentModelMetricsDatasetSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class AiDocumentModelMetricsDatasetSummaryOutputReference extends cdktf.ComplexObject {
@@ -173,6 +184,17 @@ export function aiDocumentModelMetricsLabelMetricsReportConfidenceEntriesToTerra
   }
   return {
   }
+}
+
+
+export function aiDocumentModelMetricsLabelMetricsReportConfidenceEntriesToHclTerraform(struct?: AiDocumentModelMetricsLabelMetricsReportConfidenceEntries): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class AiDocumentModelMetricsLabelMetricsReportConfidenceEntriesOutputReference extends cdktf.ComplexObject {
@@ -259,6 +281,17 @@ export function aiDocumentModelMetricsLabelMetricsReportToTerraform(struct?: AiD
   }
 }
 
+
+export function aiDocumentModelMetricsLabelMetricsReportToHclTerraform(struct?: AiDocumentModelMetricsLabelMetricsReport): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class AiDocumentModelMetricsLabelMetricsReportOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -337,6 +370,17 @@ export function aiDocumentModelMetricsOverallMetricsReportConfidenceEntriesToTer
   }
   return {
   }
+}
+
+
+export function aiDocumentModelMetricsOverallMetricsReportConfidenceEntriesToHclTerraform(struct?: AiDocumentModelMetricsOverallMetricsReportConfidenceEntries): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class AiDocumentModelMetricsOverallMetricsReportConfidenceEntriesOutputReference extends cdktf.ComplexObject {
@@ -423,6 +467,17 @@ export function aiDocumentModelMetricsOverallMetricsReportToTerraform(struct?: A
   }
 }
 
+
+export function aiDocumentModelMetricsOverallMetricsReportToHclTerraform(struct?: AiDocumentModelMetricsOverallMetricsReport): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class AiDocumentModelMetricsOverallMetricsReportOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -496,6 +551,17 @@ export function aiDocumentModelMetricsToTerraform(struct?: AiDocumentModelMetric
   }
   return {
   }
+}
+
+
+export function aiDocumentModelMetricsToHclTerraform(struct?: AiDocumentModelMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class AiDocumentModelMetricsOutputReference extends cdktf.ComplexObject {
@@ -583,6 +649,25 @@ export function aiDocumentModelComponentModelsToTerraform(struct?: AiDocumentMod
   return {
     model_id: cdktf.stringToTerraform(struct!.modelId),
   }
+}
+
+
+export function aiDocumentModelComponentModelsToHclTerraform(struct?: AiDocumentModelComponentModels | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    model_id: {
+      value: cdktf.stringToHclTerraform(struct!.modelId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiDocumentModelComponentModelsOutputReference extends cdktf.ComplexObject {
@@ -700,6 +785,49 @@ export function aiDocumentModelTestingDatasetToTerraform(struct?: AiDocumentMode
     namespace: cdktf.stringToTerraform(struct!.namespace),
     object: cdktf.stringToTerraform(struct!.object),
   }
+}
+
+
+export function aiDocumentModelTestingDatasetToHclTerraform(struct?: AiDocumentModelTestingDatasetOutputReference | AiDocumentModelTestingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_id: {
+      value: cdktf.stringToHclTerraform(struct!.datasetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_type: {
+      value: cdktf.stringToHclTerraform(struct!.datasetType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiDocumentModelTestingDatasetOutputReference extends cdktf.ComplexObject {
@@ -862,6 +990,37 @@ export function aiDocumentModelTimeoutsToTerraform(struct?: AiDocumentModelTimeo
   }
 }
 
+
+export function aiDocumentModelTimeoutsToHclTerraform(struct?: AiDocumentModelTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiDocumentModelTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -999,6 +1158,49 @@ export function aiDocumentModelTrainingDatasetToTerraform(struct?: AiDocumentMod
     namespace: cdktf.stringToTerraform(struct!.namespace),
     object: cdktf.stringToTerraform(struct!.object),
   }
+}
+
+
+export function aiDocumentModelTrainingDatasetToHclTerraform(struct?: AiDocumentModelTrainingDatasetOutputReference | AiDocumentModelTrainingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_id: {
+      value: cdktf.stringToHclTerraform(struct!.datasetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_type: {
+      value: cdktf.stringToHclTerraform(struct!.datasetType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiDocumentModelTrainingDatasetOutputReference extends cdktf.ComplexObject {
@@ -1171,6 +1373,49 @@ export function aiDocumentModelValidationDatasetToTerraform(struct?: AiDocumentM
   }
 }
 
+
+export function aiDocumentModelValidationDatasetToHclTerraform(struct?: AiDocumentModelValidationDatasetOutputReference | AiDocumentModelValidationDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_id: {
+      value: cdktf.stringToHclTerraform(struct!.datasetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_type: {
+      value: cdktf.stringToHclTerraform(struct!.datasetType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiDocumentModelValidationDatasetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1314,6 +1559,20 @@ export class AiDocumentModel extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ai_document_model";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a AiDocumentModel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the AiDocumentModel to import
+  * @param importFromId The id of the existing AiDocumentModel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_document_model#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the AiDocumentModel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_document_model", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1704,5 +1963,115 @@ export class AiDocumentModel extends cdktf.TerraformResource {
       training_dataset: aiDocumentModelTrainingDatasetToTerraform(this._trainingDataset.internalValue),
       validation_dataset: aiDocumentModelValidationDatasetToTerraform(this._validationDataset.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_quick_mode: {
+        value: cdktf.booleanToHclTerraform(this._isQuickMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      max_training_time_in_hours: {
+        value: cdktf.numberToHclTerraform(this._maxTrainingTimeInHours),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      model_id: {
+        value: cdktf.stringToHclTerraform(this._modelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_type: {
+        value: cdktf.stringToHclTerraform(this._modelType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_version: {
+        value: cdktf.stringToHclTerraform(this._modelVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      component_models: {
+        value: cdktf.listMapperHcl(aiDocumentModelComponentModelsToHclTerraform, true)(this._componentModels.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiDocumentModelComponentModelsList",
+      },
+      testing_dataset: {
+        value: aiDocumentModelTestingDatasetToHclTerraform(this._testingDataset.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiDocumentModelTestingDatasetList",
+      },
+      timeouts: {
+        value: aiDocumentModelTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "AiDocumentModelTimeouts",
+      },
+      training_dataset: {
+        value: aiDocumentModelTrainingDatasetToHclTerraform(this._trainingDataset.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiDocumentModelTrainingDatasetList",
+      },
+      validation_dataset: {
+        value: aiDocumentModelValidationDatasetToHclTerraform(this._validationDataset.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiDocumentModelValidationDatasetList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

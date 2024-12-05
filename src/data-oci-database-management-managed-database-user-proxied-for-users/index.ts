@@ -32,7 +32,7 @@ export interface DataOciDatabaseManagementManagedDatabaseUserProxiedForUsersConf
   readonly userName: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_database_user_proxied_for_users#filter DataOciDatabaseManagementManagedDatabaseUserProxiedForUsers#filter}
   */
   readonly filter?: DataOciDatabaseManagementManagedDatabaseUserProxiedForUsersFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciDatabaseManagementManagedDatabaseUserProxiedForUsersProxi
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabaseUserProxiedForUsersProxiedForUserCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -121,6 +132,17 @@ export function dataOciDatabaseManagementManagedDatabaseUserProxiedForUsersProxi
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseUserProxiedForUsersProxiedForUserCollectionToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseUserProxiedForUsersProxiedForUserCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabaseUserProxiedForUsersProxiedForUserCollectionOutputReference extends cdktf.ComplexObject {
@@ -201,6 +223,37 @@ export function dataOciDatabaseManagementManagedDatabaseUserProxiedForUsersFilte
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseUserProxiedForUsersFilterToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseUserProxiedForUsersFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatabaseManagementManagedDatabaseUserProxiedForUsersFilterOutputReference extends cdktf.ComplexObject {
@@ -331,6 +384,20 @@ export class DataOciDatabaseManagementManagedDatabaseUserProxiedForUsers extends
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_database_user_proxied_for_users";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementManagedDatabaseUserProxiedForUsers resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementManagedDatabaseUserProxiedForUsers to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementManagedDatabaseUserProxiedForUsers that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_database_user_proxied_for_users#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementManagedDatabaseUserProxiedForUsers to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_database_user_proxied_for_users", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -480,5 +547,49 @@ export class DataOciDatabaseManagementManagedDatabaseUserProxiedForUsers extends
       user_name: cdktf.stringToTerraform(this._userName),
       filter: cdktf.listMapper(dataOciDatabaseManagementManagedDatabaseUserProxiedForUsersFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opc_named_credential_id: {
+        value: cdktf.stringToHclTerraform(this._opcNamedCredentialId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_name: {
+        value: cdktf.stringToHclTerraform(this._userName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatabaseManagementManagedDatabaseUserProxiedForUsersFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatabaseManagementManagedDatabaseUserProxiedForUsersFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,13 +24,13 @@ export interface DatabaseCloudVmClusterIormConfigConfig extends cdktf.TerraformM
   readonly objective?: string;
   /**
   * db_plans block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_cloud_vm_cluster_iorm_config#db_plans DatabaseCloudVmClusterIormConfig#db_plans}
   */
   readonly dbPlans: DatabaseCloudVmClusterIormConfigDbPlans[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_cloud_vm_cluster_iorm_config#timeouts DatabaseCloudVmClusterIormConfig#timeouts}
   */
   readonly timeouts?: DatabaseCloudVmClusterIormConfigTimeouts;
@@ -55,6 +55,31 @@ export function databaseCloudVmClusterIormConfigDbPlansToTerraform(struct?: Data
     db_name: cdktf.stringToTerraform(struct!.dbName),
     share: cdktf.numberToTerraform(struct!.share),
   }
+}
+
+
+export function databaseCloudVmClusterIormConfigDbPlansToHclTerraform(struct?: DatabaseCloudVmClusterIormConfigDbPlans | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    db_name: {
+      value: cdktf.stringToHclTerraform(struct!.dbName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    share: {
+      value: cdktf.numberToHclTerraform(struct!.share),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseCloudVmClusterIormConfigDbPlansOutputReference extends cdktf.ComplexObject {
@@ -185,6 +210,37 @@ export function databaseCloudVmClusterIormConfigTimeoutsToTerraform(struct?: Dat
   }
 }
 
+
+export function databaseCloudVmClusterIormConfigTimeoutsToHclTerraform(struct?: DatabaseCloudVmClusterIormConfigTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseCloudVmClusterIormConfigTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -297,6 +353,20 @@ export class DatabaseCloudVmClusterIormConfig extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_cloud_vm_cluster_iorm_config";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseCloudVmClusterIormConfig resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseCloudVmClusterIormConfig to import
+  * @param importFromId The id of the existing DatabaseCloudVmClusterIormConfig that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_cloud_vm_cluster_iorm_config#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseCloudVmClusterIormConfig to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_cloud_vm_cluster_iorm_config", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -432,5 +502,43 @@ export class DatabaseCloudVmClusterIormConfig extends cdktf.TerraformResource {
       db_plans: cdktf.listMapper(databaseCloudVmClusterIormConfigDbPlansToTerraform, true)(this._dbPlans.internalValue),
       timeouts: databaseCloudVmClusterIormConfigTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cloud_vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._cloudVmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      objective: {
+        value: cdktf.stringToHclTerraform(this._objective),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_plans: {
+        value: cdktf.listMapperHcl(databaseCloudVmClusterIormConfigDbPlansToHclTerraform, true)(this._dbPlans.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DatabaseCloudVmClusterIormConfigDbPlansList",
+      },
+      timeouts: {
+        value: databaseCloudVmClusterIormConfigTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseCloudVmClusterIormConfigTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

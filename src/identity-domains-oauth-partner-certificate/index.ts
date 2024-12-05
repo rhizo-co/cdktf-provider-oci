@@ -57,13 +57,13 @@ export interface IdentityDomainsOauthPartnerCertificateConfig extends cdktf.Terr
   readonly x509Base64Certificate?: string;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_oauth_partner_certificate#tags IdentityDomainsOauthPartnerCertificate#tags}
   */
   readonly tags?: IdentityDomainsOauthPartnerCertificateTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_oauth_partner_certificate#timeouts IdentityDomainsOauthPartnerCertificate#timeouts}
   */
   readonly timeouts?: IdentityDomainsOauthPartnerCertificateTimeouts;
@@ -78,6 +78,17 @@ export function identityDomainsOauthPartnerCertificateIdcsCreatedByToTerraform(s
   }
   return {
   }
+}
+
+
+export function identityDomainsOauthPartnerCertificateIdcsCreatedByToHclTerraform(struct?: IdentityDomainsOauthPartnerCertificateIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsOauthPartnerCertificateIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -164,6 +175,17 @@ export function identityDomainsOauthPartnerCertificateIdcsLastModifiedByToTerraf
   }
 }
 
+
+export function identityDomainsOauthPartnerCertificateIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsOauthPartnerCertificateIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsOauthPartnerCertificateIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -246,6 +268,17 @@ export function identityDomainsOauthPartnerCertificateMetaToTerraform(struct?: I
   }
   return {
   }
+}
+
+
+export function identityDomainsOauthPartnerCertificateMetaToHclTerraform(struct?: IdentityDomainsOauthPartnerCertificateMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsOauthPartnerCertificateMetaOutputReference extends cdktf.ComplexObject {
@@ -340,6 +373,31 @@ export function identityDomainsOauthPartnerCertificateTagsToTerraform(struct?: I
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsOauthPartnerCertificateTagsToHclTerraform(struct?: IdentityDomainsOauthPartnerCertificateTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsOauthPartnerCertificateTagsOutputReference extends cdktf.ComplexObject {
@@ -465,6 +523,37 @@ export function identityDomainsOauthPartnerCertificateTimeoutsToTerraform(struct
   }
 }
 
+
+export function identityDomainsOauthPartnerCertificateTimeoutsToHclTerraform(struct?: IdentityDomainsOauthPartnerCertificateTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsOauthPartnerCertificateTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -577,6 +666,20 @@ export class IdentityDomainsOauthPartnerCertificate extends cdktf.TerraformResou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_oauth_partner_certificate";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsOauthPartnerCertificate resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsOauthPartnerCertificate to import
+  * @param importFromId The id of the existing IdentityDomainsOauthPartnerCertificate that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_oauth_partner_certificate#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsOauthPartnerCertificate to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_oauth_partner_certificate", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -934,5 +1037,97 @@ export class IdentityDomainsOauthPartnerCertificate extends cdktf.TerraformResou
       tags: cdktf.listMapper(identityDomainsOauthPartnerCertificateTagsToTerraform, true)(this._tags.internalValue),
       timeouts: identityDomainsOauthPartnerCertificateTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      certificate_alias: {
+        value: cdktf.stringToHclTerraform(this._certificateAlias),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_id: {
+        value: cdktf.stringToHclTerraform(this._externalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_store_id: {
+        value: cdktf.stringToHclTerraform(this._keyStoreId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_store_name: {
+        value: cdktf.stringToHclTerraform(this._keyStoreName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_store_password: {
+        value: cdktf.stringToHclTerraform(this._keyStorePassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      map: {
+        value: cdktf.stringToHclTerraform(this._map),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      x509base64certificate: {
+        value: cdktf.stringToHclTerraform(this._x509Base64Certificate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsOauthPartnerCertificateTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsOauthPartnerCertificateTagsList",
+      },
+      timeouts: {
+        value: identityDomainsOauthPartnerCertificateTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsOauthPartnerCertificateTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

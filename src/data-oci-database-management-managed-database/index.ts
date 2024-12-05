@@ -35,6 +35,17 @@ export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsConn
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsConnectorDetailsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsConnectorDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsConnectorDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -112,6 +123,17 @@ export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsData
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsDatabaseConnectionDetailsConnectionCredentialsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsDatabaseConnectionDetailsConnectionCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsDatabaseConnectionDetailsConnectionCredentialsOutputReference extends cdktf.ComplexObject {
@@ -208,6 +230,17 @@ export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsData
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsDatabaseConnectionDetailsConnectionStringToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsDatabaseConnectionDetailsConnectionString): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsDatabaseConnectionDetailsConnectionStringOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -287,6 +320,17 @@ export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsData
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsDatabaseConnectionDetailsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsDatabaseConnectionDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsDatabaseConnectionDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -356,6 +400,17 @@ export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsToTe
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabaseDbmgmtFeatureConfigsOutputReference extends cdktf.ComplexObject {
@@ -444,6 +499,17 @@ export function dataOciDatabaseManagementManagedDatabaseManagedDatabaseGroupsToT
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseManagedDatabaseGroupsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseManagedDatabaseGroups): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseManagedDatabaseGroupsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -516,6 +582,20 @@ export class DataOciDatabaseManagementManagedDatabase extends cdktf.TerraformDat
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_database";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementManagedDatabase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementManagedDatabase to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementManagedDatabase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_database#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementManagedDatabase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_database", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -714,5 +794,31 @@ export class DataOciDatabaseManagementManagedDatabase extends cdktf.TerraformDat
       id: cdktf.stringToTerraform(this._id),
       managed_database_id: cdktf.stringToTerraform(this._managedDatabaseId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      database_platform_name: {
+        value: cdktf.stringToHclTerraform(this._databasePlatformName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

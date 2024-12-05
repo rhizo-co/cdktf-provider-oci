@@ -24,6 +24,17 @@ export function dataOciDatasciencePipelineConfigurationDetailsToTerraform(struct
   }
 }
 
+
+export function dataOciDatasciencePipelineConfigurationDetailsToHclTerraform(struct?: DataOciDatasciencePipelineConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatasciencePipelineConfigurationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -104,6 +115,17 @@ export function dataOciDatasciencePipelineInfrastructureConfigurationDetailsShap
   }
 }
 
+
+export function dataOciDatasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetailsToHclTerraform(struct?: DataOciDatasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatasciencePipelineInfrastructureConfigurationDetailsShapeConfigDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -171,6 +193,17 @@ export function dataOciDatasciencePipelineInfrastructureConfigurationDetailsToTe
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineInfrastructureConfigurationDetailsToHclTerraform(struct?: DataOciDatasciencePipelineInfrastructureConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineInfrastructureConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -253,6 +286,17 @@ export function dataOciDatasciencePipelineLogConfigurationDetailsToTerraform(str
   }
 }
 
+
+export function dataOciDatasciencePipelineLogConfigurationDetailsToHclTerraform(struct?: DataOciDatasciencePipelineLogConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatasciencePipelineLogConfigurationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -330,6 +374,17 @@ export function dataOciDatasciencePipelineStepArtifactToTerraform(struct?: DataO
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineStepArtifactToHclTerraform(struct?: DataOciDatasciencePipelineStepArtifact): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineStepArtifactOutputReference extends cdktf.ComplexObject {
@@ -421,6 +476,17 @@ export function dataOciDatasciencePipelineStepDetailsStepConfigurationDetailsToT
   }
 }
 
+
+export function dataOciDatasciencePipelineStepDetailsStepConfigurationDetailsToHclTerraform(struct?: DataOciDatasciencePipelineStepDetailsStepConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatasciencePipelineStepDetailsStepConfigurationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -494,6 +560,17 @@ export function dataOciDatasciencePipelineStepDetailsStepContainerConfigurationD
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineStepDetailsStepContainerConfigurationDetailsToHclTerraform(struct?: DataOciDatasciencePipelineStepDetailsStepContainerConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineStepDetailsStepContainerConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -585,6 +662,17 @@ export function dataOciDatasciencePipelineStepDetailsStepInfrastructureConfigura
   }
 }
 
+
+export function dataOciDatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsToHclTerraform(struct?: DataOciDatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -652,6 +740,17 @@ export function dataOciDatasciencePipelineStepDetailsStepInfrastructureConfigura
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsToHclTerraform(struct?: DataOciDatasciencePipelineStepDetailsStepInfrastructureConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineStepDetailsStepInfrastructureConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -732,6 +831,17 @@ export function dataOciDatasciencePipelineStepDetailsToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciDatasciencePipelineStepDetailsToHclTerraform(struct?: DataOciDatasciencePipelineStepDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatasciencePipelineStepDetailsOutputReference extends cdktf.ComplexObject {
@@ -839,6 +949,20 @@ export class DataOciDatasciencePipeline extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_pipeline";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatasciencePipeline resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatasciencePipeline to import
+  * @param importFromId The id of the existing DataOciDatasciencePipeline that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/datascience_pipeline#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatasciencePipeline to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_pipeline", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -998,5 +1122,19 @@ export class DataOciDatasciencePipeline extends cdktf.TerraformDataSource {
     return {
       pipeline_id: cdktf.stringToTerraform(this._pipelineId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      pipeline_id: {
+        value: cdktf.stringToHclTerraform(this._pipelineId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

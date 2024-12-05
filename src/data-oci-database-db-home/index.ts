@@ -24,6 +24,17 @@ export function dataOciDatabaseDbHomeDatabaseConnectionStringsToTerraform(struct
   }
 }
 
+
+export function dataOciDatabaseDbHomeDatabaseConnectionStringsToHclTerraform(struct?: DataOciDatabaseDbHomeDatabaseConnectionStrings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseDbHomeDatabaseConnectionStringsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -99,6 +110,17 @@ export function dataOciDatabaseDbHomeDatabaseDbBackupConfigBackupDestinationDeta
   }
 }
 
+
+export function dataOciDatabaseDbHomeDatabaseDbBackupConfigBackupDestinationDetailsToHclTerraform(struct?: DataOciDatabaseDbHomeDatabaseDbBackupConfigBackupDestinationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseDbHomeDatabaseDbBackupConfigBackupDestinationDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -171,6 +193,17 @@ export function dataOciDatabaseDbHomeDatabaseDbBackupConfigToTerraform(struct?: 
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseDbHomeDatabaseDbBackupConfigToHclTerraform(struct?: DataOciDatabaseDbHomeDatabaseDbBackupConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseDbHomeDatabaseDbBackupConfigOutputReference extends cdktf.ComplexObject {
@@ -271,6 +304,17 @@ export function dataOciDatabaseDbHomeDatabaseToTerraform(struct?: DataOciDatabas
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseDbHomeDatabaseToHclTerraform(struct?: DataOciDatabaseDbHomeDatabase): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseDbHomeDatabaseOutputReference extends cdktf.ComplexObject {
@@ -475,6 +519,20 @@ export class DataOciDatabaseDbHome extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_database_db_home";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseDbHome resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseDbHome to import
+  * @param importFromId The id of the existing DataOciDatabaseDbHome that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_db_home#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseDbHome to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_db_home", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -638,5 +696,19 @@ export class DataOciDatabaseDbHome extends cdktf.TerraformDataSource {
     return {
       db_home_id: cdktf.stringToTerraform(this._dbHomeId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      db_home_id: {
+        value: cdktf.stringToHclTerraform(this._dbHomeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

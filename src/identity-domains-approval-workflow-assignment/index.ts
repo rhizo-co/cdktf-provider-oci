@@ -41,25 +41,25 @@ export interface IdentityDomainsApprovalWorkflowAssignmentConfig extends cdktf.T
   readonly schemas: string[];
   /**
   * approval_workflow block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_approval_workflow_assignment#approval_workflow IdentityDomainsApprovalWorkflowAssignment#approval_workflow}
   */
   readonly approvalWorkflow: IdentityDomainsApprovalWorkflowAssignmentApprovalWorkflow;
   /**
   * assigned_to block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_approval_workflow_assignment#assigned_to IdentityDomainsApprovalWorkflowAssignment#assigned_to}
   */
   readonly assignedTo: IdentityDomainsApprovalWorkflowAssignmentAssignedTo;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_approval_workflow_assignment#tags IdentityDomainsApprovalWorkflowAssignment#tags}
   */
   readonly tags?: IdentityDomainsApprovalWorkflowAssignmentTags[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_approval_workflow_assignment#timeouts IdentityDomainsApprovalWorkflowAssignment#timeouts}
   */
   readonly timeouts?: IdentityDomainsApprovalWorkflowAssignmentTimeouts;
@@ -74,6 +74,17 @@ export function identityDomainsApprovalWorkflowAssignmentIdcsCreatedByToTerrafor
   }
   return {
   }
+}
+
+
+export function identityDomainsApprovalWorkflowAssignmentIdcsCreatedByToHclTerraform(struct?: IdentityDomainsApprovalWorkflowAssignmentIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsApprovalWorkflowAssignmentIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -160,6 +171,17 @@ export function identityDomainsApprovalWorkflowAssignmentIdcsLastModifiedByToTer
   }
 }
 
+
+export function identityDomainsApprovalWorkflowAssignmentIdcsLastModifiedByToHclTerraform(struct?: IdentityDomainsApprovalWorkflowAssignmentIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class IdentityDomainsApprovalWorkflowAssignmentIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -242,6 +264,17 @@ export function identityDomainsApprovalWorkflowAssignmentMetaToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function identityDomainsApprovalWorkflowAssignmentMetaToHclTerraform(struct?: IdentityDomainsApprovalWorkflowAssignmentMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class IdentityDomainsApprovalWorkflowAssignmentMetaOutputReference extends cdktf.ComplexObject {
@@ -341,6 +374,37 @@ export function identityDomainsApprovalWorkflowAssignmentApprovalWorkflowToTerra
     type: cdktf.stringToTerraform(struct!.type),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsApprovalWorkflowAssignmentApprovalWorkflowToHclTerraform(struct?: IdentityDomainsApprovalWorkflowAssignmentApprovalWorkflowOutputReference | IdentityDomainsApprovalWorkflowAssignmentApprovalWorkflow): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ocid: {
+      value: cdktf.stringToHclTerraform(struct!.ocid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsApprovalWorkflowAssignmentApprovalWorkflowOutputReference extends cdktf.ComplexObject {
@@ -466,6 +530,37 @@ export function identityDomainsApprovalWorkflowAssignmentAssignedToToTerraform(s
   }
 }
 
+
+export function identityDomainsApprovalWorkflowAssignmentAssignedToToHclTerraform(struct?: IdentityDomainsApprovalWorkflowAssignmentAssignedToOutputReference | IdentityDomainsApprovalWorkflowAssignmentAssignedTo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ocid: {
+      value: cdktf.stringToHclTerraform(struct!.ocid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsApprovalWorkflowAssignmentAssignedToOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -582,6 +677,31 @@ export function identityDomainsApprovalWorkflowAssignmentTagsToTerraform(struct?
     key: cdktf.stringToTerraform(struct!.key),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function identityDomainsApprovalWorkflowAssignmentTagsToHclTerraform(struct?: IdentityDomainsApprovalWorkflowAssignmentTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class IdentityDomainsApprovalWorkflowAssignmentTagsOutputReference extends cdktf.ComplexObject {
@@ -707,6 +827,37 @@ export function identityDomainsApprovalWorkflowAssignmentTimeoutsToTerraform(str
   }
 }
 
+
+export function identityDomainsApprovalWorkflowAssignmentTimeoutsToHclTerraform(struct?: IdentityDomainsApprovalWorkflowAssignmentTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class IdentityDomainsApprovalWorkflowAssignmentTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -819,6 +970,20 @@ export class IdentityDomainsApprovalWorkflowAssignment extends cdktf.TerraformRe
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_approval_workflow_assignment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a IdentityDomainsApprovalWorkflowAssignment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the IdentityDomainsApprovalWorkflowAssignment to import
+  * @param importFromId The id of the existing IdentityDomainsApprovalWorkflowAssignment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/identity_domains_approval_workflow_assignment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the IdentityDomainsApprovalWorkflowAssignment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_approval_workflow_assignment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1114,5 +1279,85 @@ export class IdentityDomainsApprovalWorkflowAssignment extends cdktf.TerraformRe
       tags: cdktf.listMapper(identityDomainsApprovalWorkflowAssignmentTagsToTerraform, true)(this._tags.internalValue),
       timeouts: identityDomainsApprovalWorkflowAssignmentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      assignment_type: {
+        value: cdktf.stringToHclTerraform(this._assignmentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ocid: {
+        value: cdktf.stringToHclTerraform(this._ocid),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schemas: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemas),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      approval_workflow: {
+        value: identityDomainsApprovalWorkflowAssignmentApprovalWorkflowToHclTerraform(this._approvalWorkflow.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsApprovalWorkflowAssignmentApprovalWorkflowList",
+      },
+      assigned_to: {
+        value: identityDomainsApprovalWorkflowAssignmentAssignedToToHclTerraform(this._assignedTo.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsApprovalWorkflowAssignmentAssignedToList",
+      },
+      tags: {
+        value: cdktf.listMapperHcl(identityDomainsApprovalWorkflowAssignmentTagsToHclTerraform, true)(this._tags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "IdentityDomainsApprovalWorkflowAssignmentTagsList",
+      },
+      timeouts: {
+        value: identityDomainsApprovalWorkflowAssignmentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "IdentityDomainsApprovalWorkflowAssignmentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

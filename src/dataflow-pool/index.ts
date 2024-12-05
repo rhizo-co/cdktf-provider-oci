@@ -44,19 +44,19 @@ export interface DataflowPoolConfig extends cdktf.TerraformMetaArguments {
   readonly state?: string;
   /**
   * configurations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_pool#configurations DataflowPool#configurations}
   */
   readonly configurations: DataflowPoolConfigurations[] | cdktf.IResolvable;
   /**
   * schedules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_pool#schedules DataflowPool#schedules}
   */
   readonly schedules?: DataflowPoolSchedules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_pool#timeouts DataflowPool#timeouts}
   */
   readonly timeouts?: DataflowPoolTimeouts;
@@ -71,6 +71,17 @@ export function dataflowPoolPoolMetricsActivelyUsedNodeCountToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function dataflowPoolPoolMetricsActivelyUsedNodeCountToHclTerraform(struct?: DataflowPoolPoolMetricsActivelyUsedNodeCount): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataflowPoolPoolMetricsActivelyUsedNodeCountOutputReference extends cdktf.ComplexObject {
@@ -140,6 +151,17 @@ export function dataflowPoolPoolMetricsToTerraform(struct?: DataflowPoolPoolMetr
   }
   return {
   }
+}
+
+
+export function dataflowPoolPoolMetricsToHclTerraform(struct?: DataflowPoolPoolMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataflowPoolPoolMetricsOutputReference extends cdktf.ComplexObject {
@@ -242,6 +264,31 @@ export function dataflowPoolConfigurationsShapeConfigToTerraform(struct?: Datafl
   }
 }
 
+
+export function dataflowPoolConfigurationsShapeConfigToHclTerraform(struct?: DataflowPoolConfigurationsShapeConfigOutputReference | DataflowPoolConfigurationsShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataflowPoolConfigurationsShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -327,7 +374,7 @@ export interface DataflowPoolConfigurations {
   readonly shape?: string;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_pool#shape_config DataflowPool#shape_config}
   */
   readonly shapeConfig?: DataflowPoolConfigurationsShapeConfig;
@@ -344,6 +391,43 @@ export function dataflowPoolConfigurationsToTerraform(struct?: DataflowPoolConfi
     shape: cdktf.stringToTerraform(struct!.shape),
     shape_config: dataflowPoolConfigurationsShapeConfigToTerraform(struct!.shapeConfig),
   }
+}
+
+
+export function dataflowPoolConfigurationsToHclTerraform(struct?: DataflowPoolConfigurations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_config: {
+      value: dataflowPoolConfigurationsShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataflowPoolConfigurationsShapeConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataflowPoolConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -519,6 +603,37 @@ export function dataflowPoolSchedulesToTerraform(struct?: DataflowPoolSchedules 
   }
 }
 
+
+export function dataflowPoolSchedulesToHclTerraform(struct?: DataflowPoolSchedules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    day_of_week: {
+      value: cdktf.stringToHclTerraform(struct!.dayOfWeek),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    start_time: {
+      value: cdktf.numberToHclTerraform(struct!.startTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    stop_time: {
+      value: cdktf.numberToHclTerraform(struct!.stopTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataflowPoolSchedulesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -670,6 +785,37 @@ export function dataflowPoolTimeoutsToTerraform(struct?: DataflowPoolTimeouts | 
   }
 }
 
+
+export function dataflowPoolTimeoutsToHclTerraform(struct?: DataflowPoolTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataflowPoolTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -782,6 +928,20 @@ export class DataflowPool extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataflow_pool";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataflowPool resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataflowPool to import
+  * @param importFromId The id of the existing DataflowPool that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_pool#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataflowPool to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataflow_pool", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1043,5 +1203,79 @@ export class DataflowPool extends cdktf.TerraformResource {
       schedules: cdktf.listMapper(dataflowPoolSchedulesToTerraform, true)(this._schedules.internalValue),
       timeouts: dataflowPoolTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idle_timeout_in_minutes: {
+        value: cdktf.numberToHclTerraform(this._idleTimeoutInMinutes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      configurations: {
+        value: cdktf.listMapperHcl(dataflowPoolConfigurationsToHclTerraform, true)(this._configurations.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataflowPoolConfigurationsList",
+      },
+      schedules: {
+        value: cdktf.listMapperHcl(dataflowPoolSchedulesToHclTerraform, true)(this._schedules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataflowPoolSchedulesList",
+      },
+      timeouts: {
+        value: dataflowPoolTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataflowPoolTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

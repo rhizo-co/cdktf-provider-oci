@@ -36,13 +36,13 @@ export interface ComputeCloudAtCustomerCccUpgradeScheduleConfig extends cdktf.Te
   readonly id?: string;
   /**
   * events block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/compute_cloud_at_customer_ccc_upgrade_schedule#events ComputeCloudAtCustomerCccUpgradeSchedule#events}
   */
   readonly events: ComputeCloudAtCustomerCccUpgradeScheduleEvents[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/compute_cloud_at_customer_ccc_upgrade_schedule#timeouts ComputeCloudAtCustomerCccUpgradeSchedule#timeouts}
   */
   readonly timeouts?: ComputeCloudAtCustomerCccUpgradeScheduleTimeouts;
@@ -77,6 +77,43 @@ export function computeCloudAtCustomerCccUpgradeScheduleEventsToTerraform(struct
     schedule_event_recurrences: cdktf.stringToTerraform(struct!.scheduleEventRecurrences),
     time_start: cdktf.stringToTerraform(struct!.timeStart),
   }
+}
+
+
+export function computeCloudAtCustomerCccUpgradeScheduleEventsToHclTerraform(struct?: ComputeCloudAtCustomerCccUpgradeScheduleEvents | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    schedule_event_duration: {
+      value: cdktf.stringToHclTerraform(struct!.scheduleEventDuration),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    schedule_event_recurrences: {
+      value: cdktf.stringToHclTerraform(struct!.scheduleEventRecurrences),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_start: {
+      value: cdktf.stringToHclTerraform(struct!.timeStart),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ComputeCloudAtCustomerCccUpgradeScheduleEventsOutputReference extends cdktf.ComplexObject {
@@ -248,6 +285,37 @@ export function computeCloudAtCustomerCccUpgradeScheduleTimeoutsToTerraform(stru
   }
 }
 
+
+export function computeCloudAtCustomerCccUpgradeScheduleTimeoutsToHclTerraform(struct?: ComputeCloudAtCustomerCccUpgradeScheduleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ComputeCloudAtCustomerCccUpgradeScheduleTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -360,6 +428,20 @@ export class ComputeCloudAtCustomerCccUpgradeSchedule extends cdktf.TerraformRes
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_compute_cloud_at_customer_ccc_upgrade_schedule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ComputeCloudAtCustomerCccUpgradeSchedule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ComputeCloudAtCustomerCccUpgradeSchedule to import
+  * @param importFromId The id of the existing ComputeCloudAtCustomerCccUpgradeSchedule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/compute_cloud_at_customer_ccc_upgrade_schedule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ComputeCloudAtCustomerCccUpgradeSchedule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_compute_cloud_at_customer_ccc_upgrade_schedule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -567,5 +649,61 @@ export class ComputeCloudAtCustomerCccUpgradeSchedule extends cdktf.TerraformRes
       events: cdktf.listMapper(computeCloudAtCustomerCccUpgradeScheduleEventsToTerraform, true)(this._events.internalValue),
       timeouts: computeCloudAtCustomerCccUpgradeScheduleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      events: {
+        value: cdktf.listMapperHcl(computeCloudAtCustomerCccUpgradeScheduleEventsToHclTerraform, true)(this._events.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ComputeCloudAtCustomerCccUpgradeScheduleEventsList",
+      },
+      timeouts: {
+        value: computeCloudAtCustomerCccUpgradeScheduleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ComputeCloudAtCustomerCccUpgradeScheduleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

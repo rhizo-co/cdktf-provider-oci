@@ -23,6 +23,20 @@ export class DataOciDnsSteeringPolicyAttachment extends cdktf.TerraformDataSourc
   // =================
   public static readonly tfResourceType = "oci_dns_steering_policy_attachment";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDnsSteeringPolicyAttachment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDnsSteeringPolicyAttachment to import
+  * @param importFromId The id of the existing DataOciDnsSteeringPolicyAttachment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/dns_steering_policy_attachment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDnsSteeringPolicyAttachment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dns_steering_policy_attachment", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -128,5 +142,19 @@ export class DataOciDnsSteeringPolicyAttachment extends cdktf.TerraformDataSourc
     return {
       steering_policy_attachment_id: cdktf.stringToTerraform(this._steeringPolicyAttachmentId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      steering_policy_attachment_id: {
+        value: cdktf.stringToHclTerraform(this._steeringPolicyAttachmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

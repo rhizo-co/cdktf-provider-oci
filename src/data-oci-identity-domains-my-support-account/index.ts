@@ -36,6 +36,17 @@ export function dataOciIdentityDomainsMySupportAccountIdcsCreatedByToTerraform(s
   }
 }
 
+
+export function dataOciIdentityDomainsMySupportAccountIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsMySupportAccountIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsMySupportAccountIdcsCreatedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -118,6 +129,17 @@ export function dataOciIdentityDomainsMySupportAccountIdcsLastModifiedByToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsMySupportAccountIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsMySupportAccountIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsMySupportAccountIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
@@ -204,6 +226,17 @@ export function dataOciIdentityDomainsMySupportAccountMetaToTerraform(struct?: D
   }
 }
 
+
+export function dataOciIdentityDomainsMySupportAccountMetaToHclTerraform(struct?: DataOciIdentityDomainsMySupportAccountMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsMySupportAccountMetaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -288,6 +321,17 @@ export function dataOciIdentityDomainsMySupportAccountTagsToTerraform(struct?: D
   }
 }
 
+
+export function dataOciIdentityDomainsMySupportAccountTagsToHclTerraform(struct?: DataOciIdentityDomainsMySupportAccountTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsMySupportAccountTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -355,6 +399,17 @@ export function dataOciIdentityDomainsMySupportAccountUserToTerraform(struct?: D
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsMySupportAccountUserToHclTerraform(struct?: DataOciIdentityDomainsMySupportAccountUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsMySupportAccountUserOutputReference extends cdktf.ComplexObject {
@@ -439,6 +494,20 @@ export class DataOciIdentityDomainsMySupportAccount extends cdktf.TerraformDataS
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_my_support_account";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsMySupportAccount resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsMySupportAccount to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsMySupportAccount that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_my_support_account#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsMySupportAccount to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_my_support_account", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -636,5 +705,37 @@ export class DataOciIdentityDomainsMySupportAccount extends cdktf.TerraformDataS
       my_support_account_id: cdktf.stringToTerraform(this._mySupportAccountId),
       resource_type_schema_version: cdktf.stringToTerraform(this._resourceTypeSchemaVersion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      my_support_account_id: {
+        value: cdktf.stringToHclTerraform(this._mySupportAccountId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

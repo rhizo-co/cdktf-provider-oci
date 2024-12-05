@@ -32,7 +32,7 @@ export interface DataOciGenerativeAiAgentDataSourcesConfig extends cdktf.Terrafo
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/generative_ai_agent_data_sources#filter DataOciGenerativeAiAgentDataSources#filter}
   */
   readonly filter?: DataOciGenerativeAiAgentDataSourcesFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsData
   }
   return {
   }
+}
+
+
+export function dataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsDataSourceConfigObjectStoragePrefixesToHclTerraform(struct?: DataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsDataSourceConfigObjectStoragePrefixes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsDataSourceConfigObjectStoragePrefixesOutputReference extends cdktf.ComplexObject {
@@ -123,6 +134,17 @@ export function dataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsData
   }
 }
 
+
+export function dataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsDataSourceConfigToHclTerraform(struct?: DataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsDataSourceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsDataSourceConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -191,6 +213,17 @@ export function dataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsToTe
   }
   return {
   }
+}
+
+
+export function dataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsToHclTerraform(struct?: DataOciGenerativeAiAgentDataSourcesDataSourceCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGenerativeAiAgentDataSourcesDataSourceCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -321,6 +354,17 @@ export function dataOciGenerativeAiAgentDataSourcesDataSourceCollectionToTerrafo
   }
 }
 
+
+export function dataOciGenerativeAiAgentDataSourcesDataSourceCollectionToHclTerraform(struct?: DataOciGenerativeAiAgentDataSourcesDataSourceCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGenerativeAiAgentDataSourcesDataSourceCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -399,6 +443,37 @@ export function dataOciGenerativeAiAgentDataSourcesFilterToTerraform(struct?: Da
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciGenerativeAiAgentDataSourcesFilterToHclTerraform(struct?: DataOciGenerativeAiAgentDataSourcesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciGenerativeAiAgentDataSourcesFilterOutputReference extends cdktf.ComplexObject {
@@ -529,6 +604,20 @@ export class DataOciGenerativeAiAgentDataSources extends cdktf.TerraformDataSour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_generative_ai_agent_data_sources";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGenerativeAiAgentDataSources resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGenerativeAiAgentDataSources to import
+  * @param importFromId The id of the existing DataOciGenerativeAiAgentDataSources that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/generative_ai_agent_data_sources#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGenerativeAiAgentDataSources to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_generative_ai_agent_data_sources", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -684,5 +773,49 @@ export class DataOciGenerativeAiAgentDataSources extends cdktf.TerraformDataSour
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciGenerativeAiAgentDataSourcesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      knowledge_base_id: {
+        value: cdktf.stringToHclTerraform(this._knowledgeBaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciGenerativeAiAgentDataSourcesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciGenerativeAiAgentDataSourcesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

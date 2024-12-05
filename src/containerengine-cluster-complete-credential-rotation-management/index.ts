@@ -20,7 +20,7 @@ export interface ContainerengineClusterCompleteCredentialRotationManagementConfi
   readonly id?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster_complete_credential_rotation_management#timeouts ContainerengineClusterCompleteCredentialRotationManagement#timeouts}
   */
   readonly timeouts?: ContainerengineClusterCompleteCredentialRotationManagementTimeouts;
@@ -50,6 +50,37 @@ export function containerengineClusterCompleteCredentialRotationManagementTimeou
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function containerengineClusterCompleteCredentialRotationManagementTimeoutsToHclTerraform(struct?: ContainerengineClusterCompleteCredentialRotationManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ContainerengineClusterCompleteCredentialRotationManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -165,6 +196,20 @@ export class ContainerengineClusterCompleteCredentialRotationManagement extends 
   // =================
   public static readonly tfResourceType = "oci_containerengine_cluster_complete_credential_rotation_management";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ContainerengineClusterCompleteCredentialRotationManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ContainerengineClusterCompleteCredentialRotationManagement to import
+  * @param importFromId The id of the existing ContainerengineClusterCompleteCredentialRotationManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/containerengine_cluster_complete_credential_rotation_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ContainerengineClusterCompleteCredentialRotationManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_containerengine_cluster_complete_credential_rotation_management", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -256,5 +301,31 @@ export class ContainerengineClusterCompleteCredentialRotationManagement extends 
       id: cdktf.stringToTerraform(this._id),
       timeouts: containerengineClusterCompleteCredentialRotationManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cluster_id: {
+        value: cdktf.stringToHclTerraform(this._clusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: containerengineClusterCompleteCredentialRotationManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ContainerengineClusterCompleteCredentialRotationManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

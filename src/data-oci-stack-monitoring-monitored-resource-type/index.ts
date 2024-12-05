@@ -24,6 +24,17 @@ export function dataOciStackMonitoringMonitoredResourceTypeMetadataUniquePropert
   }
 }
 
+
+export function dataOciStackMonitoringMonitoredResourceTypeMetadataUniquePropertySetsToHclTerraform(struct?: DataOciStackMonitoringMonitoredResourceTypeMetadataUniquePropertySets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciStackMonitoringMonitoredResourceTypeMetadataUniquePropertySetsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -86,6 +97,17 @@ export function dataOciStackMonitoringMonitoredResourceTypeMetadataToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringMonitoredResourceTypeMetadataToHclTerraform(struct?: DataOciStackMonitoringMonitoredResourceTypeMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringMonitoredResourceTypeMetadataOutputReference extends cdktf.ComplexObject {
@@ -182,6 +204,20 @@ export class DataOciStackMonitoringMonitoredResourceType extends cdktf.Terraform
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_monitored_resource_type";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciStackMonitoringMonitoredResourceType resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciStackMonitoringMonitoredResourceType to import
+  * @param importFromId The id of the existing DataOciStackMonitoringMonitoredResourceType that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_monitored_resource_type#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciStackMonitoringMonitoredResourceType to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_monitored_resource_type", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -317,5 +353,19 @@ export class DataOciStackMonitoringMonitoredResourceType extends cdktf.Terraform
     return {
       monitored_resource_type_id: cdktf.stringToTerraform(this._monitoredResourceTypeId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      monitored_resource_type_id: {
+        value: cdktf.stringToHclTerraform(this._monitoredResourceTypeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

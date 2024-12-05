@@ -40,13 +40,13 @@ export interface StackMonitoringDiscoveryJobConfig extends cdktf.TerraformMetaAr
   readonly shouldPropagateTagsToDiscoveredResources?: boolean | cdktf.IResolvable;
   /**
   * discovery_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_discovery_job#discovery_details StackMonitoringDiscoveryJob#discovery_details}
   */
   readonly discoveryDetails: StackMonitoringDiscoveryJobDiscoveryDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_discovery_job#timeouts StackMonitoringDiscoveryJob#timeouts}
   */
   readonly timeouts?: StackMonitoringDiscoveryJobTimeouts;
@@ -66,6 +66,25 @@ export function stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsPrope
   return {
     properties_map: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.propertiesMap),
   }
+}
+
+
+export function stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsPropertiesToHclTerraform(struct?: StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsPropertiesOutputReference | StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    properties_map: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.propertiesMap),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsPropertiesOutputReference extends cdktf.ComplexObject {
@@ -127,7 +146,7 @@ export interface StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItems {
   readonly credentialType: string;
   /**
   * properties block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_discovery_job#properties StackMonitoringDiscoveryJob#properties}
   */
   readonly properties: StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsProperties;
@@ -143,6 +162,37 @@ export function stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsToTer
     credential_type: cdktf.stringToTerraform(struct!.credentialType),
     properties: stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsPropertiesToTerraform(struct!.properties),
   }
+}
+
+
+export function stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsToHclTerraform(struct?: StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credential_name: {
+      value: cdktf.stringToHclTerraform(struct!.credentialName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    credential_type: {
+      value: cdktf.stringToHclTerraform(struct!.credentialType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    properties: {
+      value: stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsPropertiesToHclTerraform(struct!.properties),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsPropertiesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsOutputReference extends cdktf.ComplexObject {
@@ -263,7 +313,7 @@ export class StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsList ext
 export interface StackMonitoringDiscoveryJobDiscoveryDetailsCredentials {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_discovery_job#items StackMonitoringDiscoveryJob#items}
   */
   readonly items: StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItems[] | cdktf.IResolvable;
@@ -277,6 +327,25 @@ export function stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsToTerrafor
   return {
     items: cdktf.listMapper(stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsToHclTerraform(struct?: StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsOutputReference | StackMonitoringDiscoveryJobDiscoveryDetailsCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsOutputReference extends cdktf.ComplexObject {
@@ -339,6 +408,25 @@ export function stackMonitoringDiscoveryJobDiscoveryDetailsPropertiesToTerraform
   return {
     properties_map: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.propertiesMap),
   }
+}
+
+
+export function stackMonitoringDiscoveryJobDiscoveryDetailsPropertiesToHclTerraform(struct?: StackMonitoringDiscoveryJobDiscoveryDetailsPropertiesOutputReference | StackMonitoringDiscoveryJobDiscoveryDetailsProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    properties_map: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.propertiesMap),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringDiscoveryJobDiscoveryDetailsPropertiesOutputReference extends cdktf.ComplexObject {
@@ -404,6 +492,25 @@ export function stackMonitoringDiscoveryJobDiscoveryDetailsTagsToTerraform(struc
   return {
     properties_map: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.propertiesMap),
   }
+}
+
+
+export function stackMonitoringDiscoveryJobDiscoveryDetailsTagsToHclTerraform(struct?: StackMonitoringDiscoveryJobDiscoveryDetailsTagsOutputReference | StackMonitoringDiscoveryJobDiscoveryDetailsTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    properties_map: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.propertiesMap),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringDiscoveryJobDiscoveryDetailsTagsOutputReference extends cdktf.ComplexObject {
@@ -473,19 +580,19 @@ export interface StackMonitoringDiscoveryJobDiscoveryDetails {
   readonly resourceType: string;
   /**
   * credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_discovery_job#credentials StackMonitoringDiscoveryJob#credentials}
   */
   readonly credentials?: StackMonitoringDiscoveryJobDiscoveryDetailsCredentials;
   /**
   * properties block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_discovery_job#properties StackMonitoringDiscoveryJob#properties}
   */
   readonly properties: StackMonitoringDiscoveryJobDiscoveryDetailsProperties;
   /**
   * tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_discovery_job#tags StackMonitoringDiscoveryJob#tags}
   */
   readonly tags?: StackMonitoringDiscoveryJobDiscoveryDetailsTags;
@@ -505,6 +612,61 @@ export function stackMonitoringDiscoveryJobDiscoveryDetailsToTerraform(struct?: 
     properties: stackMonitoringDiscoveryJobDiscoveryDetailsPropertiesToTerraform(struct!.properties),
     tags: stackMonitoringDiscoveryJobDiscoveryDetailsTagsToTerraform(struct!.tags),
   }
+}
+
+
+export function stackMonitoringDiscoveryJobDiscoveryDetailsToHclTerraform(struct?: StackMonitoringDiscoveryJobDiscoveryDetailsOutputReference | StackMonitoringDiscoveryJobDiscoveryDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    agent_id: {
+      value: cdktf.stringToHclTerraform(struct!.agentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    license: {
+      value: cdktf.stringToHclTerraform(struct!.license),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_name: {
+      value: cdktf.stringToHclTerraform(struct!.resourceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_type: {
+      value: cdktf.stringToHclTerraform(struct!.resourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    credentials: {
+      value: stackMonitoringDiscoveryJobDiscoveryDetailsCredentialsToHclTerraform(struct!.credentials),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringDiscoveryJobDiscoveryDetailsCredentialsList",
+    },
+    properties: {
+      value: stackMonitoringDiscoveryJobDiscoveryDetailsPropertiesToHclTerraform(struct!.properties),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringDiscoveryJobDiscoveryDetailsPropertiesList",
+    },
+    tags: {
+      value: stackMonitoringDiscoveryJobDiscoveryDetailsTagsToHclTerraform(struct!.tags),
+      isBlock: true,
+      type: "list",
+      storageClassType: "StackMonitoringDiscoveryJobDiscoveryDetailsTagsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class StackMonitoringDiscoveryJobDiscoveryDetailsOutputReference extends cdktf.ComplexObject {
@@ -702,6 +864,37 @@ export function stackMonitoringDiscoveryJobTimeoutsToTerraform(struct?: StackMon
   }
 }
 
+
+export function stackMonitoringDiscoveryJobTimeoutsToHclTerraform(struct?: StackMonitoringDiscoveryJobTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringDiscoveryJobTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -814,6 +1007,20 @@ export class StackMonitoringDiscoveryJob extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_discovery_job";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a StackMonitoringDiscoveryJob resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the StackMonitoringDiscoveryJob to import
+  * @param importFromId The id of the existing StackMonitoringDiscoveryJob that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_discovery_job#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the StackMonitoringDiscoveryJob to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_discovery_job", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1047,5 +1254,67 @@ export class StackMonitoringDiscoveryJob extends cdktf.TerraformResource {
       discovery_details: stackMonitoringDiscoveryJobDiscoveryDetailsToTerraform(this._discoveryDetails.internalValue),
       timeouts: stackMonitoringDiscoveryJobTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      discovery_client: {
+        value: cdktf.stringToHclTerraform(this._discoveryClient),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      discovery_type: {
+        value: cdktf.stringToHclTerraform(this._discoveryType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      should_propagate_tags_to_discovered_resources: {
+        value: cdktf.booleanToHclTerraform(this._shouldPropagateTagsToDiscoveredResources),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      discovery_details: {
+        value: stackMonitoringDiscoveryJobDiscoveryDetailsToHclTerraform(this._discoveryDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "StackMonitoringDiscoveryJobDiscoveryDetailsList",
+      },
+      timeouts: {
+        value: stackMonitoringDiscoveryJobTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StackMonitoringDiscoveryJobTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

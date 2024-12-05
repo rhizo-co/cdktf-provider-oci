@@ -34,6 +34,20 @@ export class DataOciDatabaseExadbVmClusterUpdate extends cdktf.TerraformDataSour
   // =================
   public static readonly tfResourceType = "oci_database_exadb_vm_cluster_update";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseExadbVmClusterUpdate resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseExadbVmClusterUpdate to import
+  * @param importFromId The id of the existing DataOciDatabaseExadbVmClusterUpdate that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_exadb_vm_cluster_update#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseExadbVmClusterUpdate to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_exadb_vm_cluster_update", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -162,5 +176,31 @@ export class DataOciDatabaseExadbVmClusterUpdate extends cdktf.TerraformDataSour
       id: cdktf.stringToTerraform(this._id),
       update_id: cdktf.stringToTerraform(this._updateId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      exadb_vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._exadbVmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      update_id: {
+        value: cdktf.stringToHclTerraform(this._updateId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

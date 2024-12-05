@@ -28,7 +28,7 @@ export interface DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRule
   readonly tunnelInspectionRulePriorityOrder?: number;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/network_firewall_network_firewall_policy_tunnel_inspection_rules#filter DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules#filter}
   */
   readonly filter?: DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules
   }
   return {
   }
+}
+
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsConditionToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsCondition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsConditionOutputReference extends cdktf.ComplexObject {
@@ -114,6 +125,17 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules
   }
 }
 
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsPositionToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsPosition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsPositionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -183,6 +205,17 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules
   }
 }
 
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsProfileToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsProfile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsProfileOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -245,6 +278,17 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules
   }
   return {
   }
+}
+
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -354,6 +398,17 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules
   }
 }
 
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesTunnelInspectionRuleSummaryCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -432,6 +487,37 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesFilterToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesFilterOutputReference extends cdktf.ComplexObject {
@@ -562,6 +648,20 @@ export class DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules ex
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_network_firewall_network_firewall_policy_tunnel_inspection_rules";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules to import
+  * @param importFromId The id of the existing DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/network_firewall_network_firewall_policy_tunnel_inspection_rules#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_firewall_network_firewall_policy_tunnel_inspection_rules", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -696,5 +796,43 @@ export class DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRules ex
       tunnel_inspection_rule_priority_order: cdktf.numberToTerraform(this._tunnelInspectionRulePriorityOrder),
       filter: cdktf.listMapper(dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_firewall_policy_id: {
+        value: cdktf.stringToHclTerraform(this._networkFirewallPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tunnel_inspection_rule_priority_order: {
+        value: cdktf.numberToHclTerraform(this._tunnelInspectionRulePriorityOrder),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciNetworkFirewallNetworkFirewallPolicyTunnelInspectionRulesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

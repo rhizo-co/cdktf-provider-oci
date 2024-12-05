@@ -31,6 +31,17 @@ export function dataOciJmsJavaReleaseArtifactsToTerraform(struct?: DataOciJmsJav
   }
 }
 
+
+export function dataOciJmsJavaReleaseArtifactsToHclTerraform(struct?: DataOciJmsJavaReleaseArtifacts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsJavaReleaseArtifactsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -153,6 +164,17 @@ export function dataOciJmsJavaReleaseFamilyDetailsLatestReleaseArtifactsToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciJmsJavaReleaseFamilyDetailsLatestReleaseArtifactsToHclTerraform(struct?: DataOciJmsJavaReleaseFamilyDetailsLatestReleaseArtifacts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsJavaReleaseFamilyDetailsLatestReleaseArtifactsOutputReference extends cdktf.ComplexObject {
@@ -279,6 +301,17 @@ export function dataOciJmsJavaReleaseFamilyDetailsToTerraform(struct?: DataOciJm
   }
 }
 
+
+export function dataOciJmsJavaReleaseFamilyDetailsToHclTerraform(struct?: DataOciJmsJavaReleaseFamilyDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsJavaReleaseFamilyDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -384,6 +417,17 @@ export function dataOciJmsJavaReleaseLicenseDetailsToTerraform(struct?: DataOciJ
   }
 }
 
+
+export function dataOciJmsJavaReleaseLicenseDetailsToHclTerraform(struct?: DataOciJmsJavaReleaseLicenseDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsJavaReleaseLicenseDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -458,6 +502,17 @@ export function dataOciJmsJavaReleaseMosPatchesToTerraform(struct?: DataOciJmsJa
   }
 }
 
+
+export function dataOciJmsJavaReleaseMosPatchesToHclTerraform(struct?: DataOciJmsJavaReleaseMosPatches): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsJavaReleaseMosPatchesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -525,6 +580,20 @@ export class DataOciJmsJavaRelease extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_java_release";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsJavaRelease resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsJavaRelease to import
+  * @param importFromId The id of the existing DataOciJmsJavaRelease that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_java_release#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsJavaRelease to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_java_release", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -668,5 +737,25 @@ export class DataOciJmsJavaRelease extends cdktf.TerraformDataSource {
       id: cdktf.stringToTerraform(this._id),
       release_version: cdktf.stringToTerraform(this._releaseVersion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      release_version: {
+        value: cdktf.stringToHclTerraform(this._releaseVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

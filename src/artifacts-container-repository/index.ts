@@ -40,13 +40,13 @@ export interface ArtifactsContainerRepositoryConfig extends cdktf.TerraformMetaA
   readonly isPublic?: boolean | cdktf.IResolvable;
   /**
   * readme block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/artifacts_container_repository#readme ArtifactsContainerRepository#readme}
   */
   readonly readme?: ArtifactsContainerRepositoryReadme;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/artifacts_container_repository#timeouts ArtifactsContainerRepository#timeouts}
   */
   readonly timeouts?: ArtifactsContainerRepositoryTimeouts;
@@ -71,6 +71,31 @@ export function artifactsContainerRepositoryReadmeToTerraform(struct?: Artifacts
     content: cdktf.stringToTerraform(struct!.content),
     format: cdktf.stringToTerraform(struct!.format),
   }
+}
+
+
+export function artifactsContainerRepositoryReadmeToHclTerraform(struct?: ArtifactsContainerRepositoryReadmeOutputReference | ArtifactsContainerRepositoryReadme): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    content: {
+      value: cdktf.stringToHclTerraform(struct!.content),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    format: {
+      value: cdktf.stringToHclTerraform(struct!.format),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ArtifactsContainerRepositoryReadmeOutputReference extends cdktf.ComplexObject {
@@ -162,6 +187,37 @@ export function artifactsContainerRepositoryTimeoutsToTerraform(struct?: Artifac
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function artifactsContainerRepositoryTimeoutsToHclTerraform(struct?: ArtifactsContainerRepositoryTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ArtifactsContainerRepositoryTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -276,6 +332,20 @@ export class ArtifactsContainerRepository extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_artifacts_container_repository";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ArtifactsContainerRepository resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ArtifactsContainerRepository to import
+  * @param importFromId The id of the existing ArtifactsContainerRepository that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/artifacts_container_repository#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ArtifactsContainerRepository to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_artifacts_container_repository", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -524,5 +594,67 @@ export class ArtifactsContainerRepository extends cdktf.TerraformResource {
       readme: artifactsContainerRepositoryReadmeToTerraform(this._readme.internalValue),
       timeouts: artifactsContainerRepositoryTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_immutable: {
+        value: cdktf.booleanToHclTerraform(this._isImmutable),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_public: {
+        value: cdktf.booleanToHclTerraform(this._isPublic),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      readme: {
+        value: artifactsContainerRepositoryReadmeToHclTerraform(this._readme.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ArtifactsContainerRepositoryReadmeList",
+      },
+      timeouts: {
+        value: artifactsContainerRepositoryTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ArtifactsContainerRepositoryTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

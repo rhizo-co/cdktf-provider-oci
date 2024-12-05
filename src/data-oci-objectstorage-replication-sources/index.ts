@@ -24,7 +24,7 @@ export interface DataOciObjectstorageReplicationSourcesConfig extends cdktf.Terr
   readonly namespace: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/objectstorage_replication_sources#filter DataOciObjectstorageReplicationSources#filter}
   */
   readonly filter?: DataOciObjectstorageReplicationSourcesFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciObjectstorageReplicationSourcesReplicationSourcesToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciObjectstorageReplicationSourcesReplicationSourcesToHclTerraform(struct?: DataOciObjectstorageReplicationSourcesReplicationSources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciObjectstorageReplicationSourcesReplicationSourcesOutputReference extends cdktf.ComplexObject {
@@ -128,6 +139,37 @@ export function dataOciObjectstorageReplicationSourcesFilterToTerraform(struct?:
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciObjectstorageReplicationSourcesFilterToHclTerraform(struct?: DataOciObjectstorageReplicationSourcesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciObjectstorageReplicationSourcesFilterOutputReference extends cdktf.ComplexObject {
@@ -259,6 +301,20 @@ export class DataOciObjectstorageReplicationSources extends cdktf.TerraformDataS
   // =================
   public static readonly tfResourceType = "oci_objectstorage_replication_sources";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciObjectstorageReplicationSources resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciObjectstorageReplicationSources to import
+  * @param importFromId The id of the existing DataOciObjectstorageReplicationSources that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/objectstorage_replication_sources#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciObjectstorageReplicationSources to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_objectstorage_replication_sources", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -371,5 +427,37 @@ export class DataOciObjectstorageReplicationSources extends cdktf.TerraformDataS
       namespace: cdktf.stringToTerraform(this._namespace),
       filter: cdktf.listMapper(dataOciObjectstorageReplicationSourcesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciObjectstorageReplicationSourcesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciObjectstorageReplicationSourcesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,13 +40,13 @@ export interface CoreComputeCapacityReservationConfig extends cdktf.TerraformMet
   readonly isDefaultReservation?: boolean | cdktf.IResolvable;
   /**
   * instance_reservation_configs block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_reservation#instance_reservation_configs CoreComputeCapacityReservation#instance_reservation_configs}
   */
   readonly instanceReservationConfigs: CoreComputeCapacityReservationInstanceReservationConfigs[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_reservation#timeouts CoreComputeCapacityReservation#timeouts}
   */
   readonly timeouts?: CoreComputeCapacityReservationTimeouts;
@@ -71,6 +71,31 @@ export function coreComputeCapacityReservationInstanceReservationConfigsClusterC
     hpc_island_id: cdktf.stringToTerraform(struct!.hpcIslandId),
     network_block_ids: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.networkBlockIds),
   }
+}
+
+
+export function coreComputeCapacityReservationInstanceReservationConfigsClusterConfigToHclTerraform(struct?: CoreComputeCapacityReservationInstanceReservationConfigsClusterConfigOutputReference | CoreComputeCapacityReservationInstanceReservationConfigsClusterConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hpc_island_id: {
+      value: cdktf.stringToHclTerraform(struct!.hpcIslandId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    network_block_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.networkBlockIds),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreComputeCapacityReservationInstanceReservationConfigsClusterConfigOutputReference extends cdktf.ComplexObject {
@@ -162,6 +187,31 @@ export function coreComputeCapacityReservationInstanceReservationConfigsInstance
   }
 }
 
+
+export function coreComputeCapacityReservationInstanceReservationConfigsInstanceShapeConfigToHclTerraform(struct?: CoreComputeCapacityReservationInstanceReservationConfigsInstanceShapeConfigOutputReference | CoreComputeCapacityReservationInstanceReservationConfigsInstanceShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreComputeCapacityReservationInstanceReservationConfigsInstanceShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -251,13 +301,13 @@ export interface CoreComputeCapacityReservationInstanceReservationConfigs {
   readonly reservedCount: string;
   /**
   * cluster_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_reservation#cluster_config CoreComputeCapacityReservation#cluster_config}
   */
   readonly clusterConfig?: CoreComputeCapacityReservationInstanceReservationConfigsClusterConfig;
   /**
   * instance_shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_reservation#instance_shape_config CoreComputeCapacityReservation#instance_shape_config}
   */
   readonly instanceShapeConfig?: CoreComputeCapacityReservationInstanceReservationConfigsInstanceShapeConfig;
@@ -276,6 +326,55 @@ export function coreComputeCapacityReservationInstanceReservationConfigsToTerraf
     cluster_config: coreComputeCapacityReservationInstanceReservationConfigsClusterConfigToTerraform(struct!.clusterConfig),
     instance_shape_config: coreComputeCapacityReservationInstanceReservationConfigsInstanceShapeConfigToTerraform(struct!.instanceShapeConfig),
   }
+}
+
+
+export function coreComputeCapacityReservationInstanceReservationConfigsToHclTerraform(struct?: CoreComputeCapacityReservationInstanceReservationConfigs | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cluster_placement_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.clusterPlacementGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    fault_domain: {
+      value: cdktf.stringToHclTerraform(struct!.faultDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    instance_shape: {
+      value: cdktf.stringToHclTerraform(struct!.instanceShape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    reserved_count: {
+      value: cdktf.stringToHclTerraform(struct!.reservedCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cluster_config: {
+      value: coreComputeCapacityReservationInstanceReservationConfigsClusterConfigToHclTerraform(struct!.clusterConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreComputeCapacityReservationInstanceReservationConfigsClusterConfigList",
+    },
+    instance_shape_config: {
+      value: coreComputeCapacityReservationInstanceReservationConfigsInstanceShapeConfigToHclTerraform(struct!.instanceShapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreComputeCapacityReservationInstanceReservationConfigsInstanceShapeConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreComputeCapacityReservationInstanceReservationConfigsOutputReference extends cdktf.ComplexObject {
@@ -494,6 +593,37 @@ export function coreComputeCapacityReservationTimeoutsToTerraform(struct?: CoreC
   }
 }
 
+
+export function coreComputeCapacityReservationTimeoutsToHclTerraform(struct?: CoreComputeCapacityReservationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreComputeCapacityReservationTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -606,6 +736,20 @@ export class CoreComputeCapacityReservation extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_compute_capacity_reservation";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreComputeCapacityReservation resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreComputeCapacityReservation to import
+  * @param importFromId The id of the existing CoreComputeCapacityReservation that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_compute_capacity_reservation#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreComputeCapacityReservation to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_compute_capacity_reservation", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -825,5 +969,67 @@ export class CoreComputeCapacityReservation extends cdktf.TerraformResource {
       instance_reservation_configs: cdktf.listMapper(coreComputeCapacityReservationInstanceReservationConfigsToTerraform, true)(this._instanceReservationConfigs.internalValue),
       timeouts: coreComputeCapacityReservationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_default_reservation: {
+        value: cdktf.booleanToHclTerraform(this._isDefaultReservation),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      instance_reservation_configs: {
+        value: cdktf.listMapperHcl(coreComputeCapacityReservationInstanceReservationConfigsToHclTerraform, true)(this._instanceReservationConfigs.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "CoreComputeCapacityReservationInstanceReservationConfigsList",
+      },
+      timeouts: {
+        value: coreComputeCapacityReservationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreComputeCapacityReservationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

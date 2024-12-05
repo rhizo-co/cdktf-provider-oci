@@ -20,7 +20,7 @@ export interface DataOciDelegateAccessControlDelegationControlResourcesConfig ex
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/delegate_access_control_delegation_control_resources#filter DataOciDelegateAccessControlDelegationControlResources#filter}
   */
   readonly filter?: DataOciDelegateAccessControlDelegationControlResourcesFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciDelegateAccessControlDelegationControlResourcesDelegation
   }
   return {
   }
+}
+
+
+export function dataOciDelegateAccessControlDelegationControlResourcesDelegationControlResourceCollectionItemsToHclTerraform(struct?: DataOciDelegateAccessControlDelegationControlResourcesDelegationControlResourceCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDelegateAccessControlDelegationControlResourcesDelegationControlResourceCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -104,6 +115,17 @@ export function dataOciDelegateAccessControlDelegationControlResourcesDelegation
   }
   return {
   }
+}
+
+
+export function dataOciDelegateAccessControlDelegationControlResourcesDelegationControlResourceCollectionToHclTerraform(struct?: DataOciDelegateAccessControlDelegationControlResourcesDelegationControlResourceCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDelegateAccessControlDelegationControlResourcesDelegationControlResourceCollectionOutputReference extends cdktf.ComplexObject {
@@ -184,6 +206,37 @@ export function dataOciDelegateAccessControlDelegationControlResourcesFilterToTe
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDelegateAccessControlDelegationControlResourcesFilterToHclTerraform(struct?: DataOciDelegateAccessControlDelegationControlResourcesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDelegateAccessControlDelegationControlResourcesFilterOutputReference extends cdktf.ComplexObject {
@@ -315,6 +368,20 @@ export class DataOciDelegateAccessControlDelegationControlResources extends cdkt
   // =================
   public static readonly tfResourceType = "oci_delegate_access_control_delegation_control_resources";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDelegateAccessControlDelegationControlResources resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDelegateAccessControlDelegationControlResources to import
+  * @param importFromId The id of the existing DataOciDelegateAccessControlDelegationControlResources that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/delegate_access_control_delegation_control_resources#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDelegateAccessControlDelegationControlResources to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_delegate_access_control_delegation_control_resources", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -412,5 +479,31 @@ export class DataOciDelegateAccessControlDelegationControlResources extends cdkt
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciDelegateAccessControlDelegationControlResourcesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      delegation_control_id: {
+        value: cdktf.stringToHclTerraform(this._delegationControlId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDelegateAccessControlDelegationControlResourcesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDelegateAccessControlDelegationControlResourcesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

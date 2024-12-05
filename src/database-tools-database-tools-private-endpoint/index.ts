@@ -52,13 +52,13 @@ export interface DatabaseToolsDatabaseToolsPrivateEndpointConfig extends cdktf.T
   readonly subnetId: string;
   /**
   * locks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_private_endpoint#locks DatabaseToolsDatabaseToolsPrivateEndpoint#locks}
   */
   readonly locks?: DatabaseToolsDatabaseToolsPrivateEndpointLocks[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_private_endpoint#timeouts DatabaseToolsDatabaseToolsPrivateEndpoint#timeouts}
   */
   readonly timeouts?: DatabaseToolsDatabaseToolsPrivateEndpointTimeouts;
@@ -73,6 +73,17 @@ export function databaseToolsDatabaseToolsPrivateEndpointReverseConnectionConfig
   }
   return {
   }
+}
+
+
+export function databaseToolsDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpsToHclTerraform(struct?: DatabaseToolsDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseToolsDatabaseToolsPrivateEndpointReverseConnectionConfigurationReverseConnectionsSourceIpsOutputReference extends cdktf.ComplexObject {
@@ -137,6 +148,17 @@ export function databaseToolsDatabaseToolsPrivateEndpointReverseConnectionConfig
   }
   return {
   }
+}
+
+
+export function databaseToolsDatabaseToolsPrivateEndpointReverseConnectionConfigurationToHclTerraform(struct?: DatabaseToolsDatabaseToolsPrivateEndpointReverseConnectionConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DatabaseToolsDatabaseToolsPrivateEndpointReverseConnectionConfigurationOutputReference extends cdktf.ComplexObject {
@@ -222,6 +244,43 @@ export function databaseToolsDatabaseToolsPrivateEndpointLocksToTerraform(struct
     time_created: cdktf.stringToTerraform(struct!.timeCreated),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function databaseToolsDatabaseToolsPrivateEndpointLocksToHclTerraform(struct?: DatabaseToolsDatabaseToolsPrivateEndpointLocks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    message: {
+      value: cdktf.stringToHclTerraform(struct!.message),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    related_resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.relatedResourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_created: {
+      value: cdktf.stringToHclTerraform(struct!.timeCreated),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseToolsDatabaseToolsPrivateEndpointLocksOutputReference extends cdktf.ComplexObject {
@@ -394,6 +453,37 @@ export function databaseToolsDatabaseToolsPrivateEndpointTimeoutsToTerraform(str
   }
 }
 
+
+export function databaseToolsDatabaseToolsPrivateEndpointTimeoutsToHclTerraform(struct?: DatabaseToolsDatabaseToolsPrivateEndpointTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseToolsDatabaseToolsPrivateEndpointTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -506,6 +596,20 @@ export class DatabaseToolsDatabaseToolsPrivateEndpoint extends cdktf.TerraformRe
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_tools_database_tools_private_endpoint";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseToolsDatabaseToolsPrivateEndpoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseToolsDatabaseToolsPrivateEndpoint to import
+  * @param importFromId The id of the existing DatabaseToolsDatabaseToolsPrivateEndpoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_tools_database_tools_private_endpoint#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseToolsDatabaseToolsPrivateEndpoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_tools_database_tools_private_endpoint", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -803,5 +907,85 @@ export class DatabaseToolsDatabaseToolsPrivateEndpoint extends cdktf.TerraformRe
       locks: cdktf.listMapper(databaseToolsDatabaseToolsPrivateEndpointLocksToTerraform, true)(this._locks.internalValue),
       timeouts: databaseToolsDatabaseToolsPrivateEndpointTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      endpoint_service_id: {
+        value: cdktf.stringToHclTerraform(this._endpointServiceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      nsg_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._nsgIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      private_endpoint_ip: {
+        value: cdktf.stringToHclTerraform(this._privateEndpointIp),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      locks: {
+        value: cdktf.listMapperHcl(databaseToolsDatabaseToolsPrivateEndpointLocksToHclTerraform, true)(this._locks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseToolsDatabaseToolsPrivateEndpointLocksList",
+      },
+      timeouts: {
+        value: databaseToolsDatabaseToolsPrivateEndpointTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseToolsDatabaseToolsPrivateEndpointTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

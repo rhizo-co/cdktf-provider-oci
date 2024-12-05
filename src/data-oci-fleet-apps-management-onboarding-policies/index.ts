@@ -16,7 +16,7 @@ export interface DataOciFleetAppsManagementOnboardingPoliciesConfig extends cdkt
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_onboarding_policies#filter DataOciFleetAppsManagementOnboardingPolicies#filter}
   */
   readonly filter?: DataOciFleetAppsManagementOnboardingPoliciesFilter[] | cdktf.IResolvable;
@@ -31,6 +31,17 @@ export function dataOciFleetAppsManagementOnboardingPoliciesOnboardingPolicyColl
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementOnboardingPoliciesOnboardingPolicyCollectionItemsToHclTerraform(struct?: DataOciFleetAppsManagementOnboardingPoliciesOnboardingPolicyCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementOnboardingPoliciesOnboardingPolicyCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -118,6 +129,17 @@ export function dataOciFleetAppsManagementOnboardingPoliciesOnboardingPolicyColl
   }
 }
 
+
+export function dataOciFleetAppsManagementOnboardingPoliciesOnboardingPolicyCollectionToHclTerraform(struct?: DataOciFleetAppsManagementOnboardingPoliciesOnboardingPolicyCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementOnboardingPoliciesOnboardingPolicyCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -196,6 +218,37 @@ export function dataOciFleetAppsManagementOnboardingPoliciesFilterToTerraform(st
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciFleetAppsManagementOnboardingPoliciesFilterToHclTerraform(struct?: DataOciFleetAppsManagementOnboardingPoliciesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciFleetAppsManagementOnboardingPoliciesFilterOutputReference extends cdktf.ComplexObject {
@@ -327,6 +380,20 @@ export class DataOciFleetAppsManagementOnboardingPolicies extends cdktf.Terrafor
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_onboarding_policies";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFleetAppsManagementOnboardingPolicies resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFleetAppsManagementOnboardingPolicies to import
+  * @param importFromId The id of the existing DataOciFleetAppsManagementOnboardingPolicies that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_onboarding_policies#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFleetAppsManagementOnboardingPolicies to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_onboarding_policies", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -409,5 +476,25 @@ export class DataOciFleetAppsManagementOnboardingPolicies extends cdktf.Terrafor
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciFleetAppsManagementOnboardingPoliciesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciFleetAppsManagementOnboardingPoliciesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciFleetAppsManagementOnboardingPoliciesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

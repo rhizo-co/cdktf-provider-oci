@@ -40,7 +40,7 @@ export interface DataOciOsManagementHubManagedInstanceInstalledPackagesConfig ex
   readonly timeInstallDateStart?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/os_management_hub_managed_instance_installed_packages#filter DataOciOsManagementHubManagedInstanceInstalledPackages#filter}
   */
   readonly filter?: DataOciOsManagementHubManagedInstanceInstalledPackagesFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciOsManagementHubManagedInstanceInstalledPackagesInstalledP
   }
   return {
   }
+}
+
+
+export function dataOciOsManagementHubManagedInstanceInstalledPackagesInstalledPackageCollectionItemsSoftwareSourcesToHclTerraform(struct?: DataOciOsManagementHubManagedInstanceInstalledPackagesInstalledPackageCollectionItemsSoftwareSources): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOsManagementHubManagedInstanceInstalledPackagesInstalledPackageCollectionItemsSoftwareSourcesOutputReference extends cdktf.ComplexObject {
@@ -139,6 +150,17 @@ export function dataOciOsManagementHubManagedInstanceInstalledPackagesInstalledP
   }
   return {
   }
+}
+
+
+export function dataOciOsManagementHubManagedInstanceInstalledPackagesInstalledPackageCollectionItemsToHclTerraform(struct?: DataOciOsManagementHubManagedInstanceInstalledPackagesInstalledPackageCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOsManagementHubManagedInstanceInstalledPackagesInstalledPackageCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -246,6 +268,17 @@ export function dataOciOsManagementHubManagedInstanceInstalledPackagesInstalledP
   }
 }
 
+
+export function dataOciOsManagementHubManagedInstanceInstalledPackagesInstalledPackageCollectionToHclTerraform(struct?: DataOciOsManagementHubManagedInstanceInstalledPackagesInstalledPackageCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOsManagementHubManagedInstanceInstalledPackagesInstalledPackageCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -324,6 +357,37 @@ export function dataOciOsManagementHubManagedInstanceInstalledPackagesFilterToTe
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOsManagementHubManagedInstanceInstalledPackagesFilterToHclTerraform(struct?: DataOciOsManagementHubManagedInstanceInstalledPackagesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOsManagementHubManagedInstanceInstalledPackagesFilterOutputReference extends cdktf.ComplexObject {
@@ -454,6 +518,20 @@ export class DataOciOsManagementHubManagedInstanceInstalledPackages extends cdkt
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_managed_instance_installed_packages";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOsManagementHubManagedInstanceInstalledPackages resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOsManagementHubManagedInstanceInstalledPackages to import
+  * @param importFromId The id of the existing DataOciOsManagementHubManagedInstanceInstalledPackages that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/os_management_hub_managed_instance_installed_packages#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOsManagementHubManagedInstanceInstalledPackages to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_managed_instance_installed_packages", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -642,5 +720,61 @@ export class DataOciOsManagementHubManagedInstanceInstalledPackages extends cdkt
       time_install_date_start: cdktf.stringToTerraform(this._timeInstallDateStart),
       filter: cdktf.listMapper(dataOciOsManagementHubManagedInstanceInstalledPackagesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._displayName),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      display_name_contains: {
+        value: cdktf.stringToHclTerraform(this._displayNameContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_id: {
+        value: cdktf.stringToHclTerraform(this._managedInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_install_date_end: {
+        value: cdktf.stringToHclTerraform(this._timeInstallDateEnd),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_install_date_start: {
+        value: cdktf.stringToHclTerraform(this._timeInstallDateStart),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOsManagementHubManagedInstanceInstalledPackagesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOsManagementHubManagedInstanceInstalledPackagesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

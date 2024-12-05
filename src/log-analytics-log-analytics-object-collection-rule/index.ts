@@ -108,13 +108,13 @@ export interface LogAnalyticsLogAnalyticsObjectCollectionRuleConfig extends cdkt
   readonly timezone?: string;
   /**
   * overrides block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_object_collection_rule#overrides LogAnalyticsLogAnalyticsObjectCollectionRule#overrides}
   */
   readonly overrides?: LogAnalyticsLogAnalyticsObjectCollectionRuleOverrides[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_object_collection_rule#timeouts LogAnalyticsLogAnalyticsObjectCollectionRule#timeouts}
   */
   readonly timeouts?: LogAnalyticsLogAnalyticsObjectCollectionRuleTimeouts;
@@ -149,6 +149,43 @@ export function logAnalyticsLogAnalyticsObjectCollectionRuleOverridesToTerraform
     property_name: cdktf.stringToTerraform(struct!.propertyName),
     property_value: cdktf.stringToTerraform(struct!.propertyValue),
   }
+}
+
+
+export function logAnalyticsLogAnalyticsObjectCollectionRuleOverridesToHclTerraform(struct?: LogAnalyticsLogAnalyticsObjectCollectionRuleOverrides | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    match_type: {
+      value: cdktf.stringToHclTerraform(struct!.matchType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    match_value: {
+      value: cdktf.stringToHclTerraform(struct!.matchValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    property_name: {
+      value: cdktf.stringToHclTerraform(struct!.propertyName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    property_value: {
+      value: cdktf.stringToHclTerraform(struct!.propertyValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsLogAnalyticsObjectCollectionRuleOverridesOutputReference extends cdktf.ComplexObject {
@@ -324,6 +361,37 @@ export function logAnalyticsLogAnalyticsObjectCollectionRuleTimeoutsToTerraform(
   }
 }
 
+
+export function logAnalyticsLogAnalyticsObjectCollectionRuleTimeoutsToHclTerraform(struct?: LogAnalyticsLogAnalyticsObjectCollectionRuleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LogAnalyticsLogAnalyticsObjectCollectionRuleTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -436,6 +504,20 @@ export class LogAnalyticsLogAnalyticsObjectCollectionRule extends cdktf.Terrafor
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_log_analytics_log_analytics_object_collection_rule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LogAnalyticsLogAnalyticsObjectCollectionRule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LogAnalyticsLogAnalyticsObjectCollectionRule to import
+  * @param importFromId The id of the existing LogAnalyticsLogAnalyticsObjectCollectionRule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_log_analytics_object_collection_rule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LogAnalyticsLogAnalyticsObjectCollectionRule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_log_analytics_object_collection_rule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -944,5 +1026,169 @@ export class LogAnalyticsLogAnalyticsObjectCollectionRule extends cdktf.Terrafor
       overrides: cdktf.listMapper(logAnalyticsLogAnalyticsObjectCollectionRuleOverridesToTerraform, true)(this._overrides.internalValue),
       timeouts: logAnalyticsLogAnalyticsObjectCollectionRuleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      char_encoding: {
+        value: cdktf.stringToHclTerraform(this._charEncoding),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      collection_type: {
+        value: cdktf.stringToHclTerraform(this._collectionType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      entity_id: {
+        value: cdktf.stringToHclTerraform(this._entityId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_force_historic_collection: {
+        value: cdktf.booleanToHclTerraform(this._isForceHistoricCollection),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      log_group_id: {
+        value: cdktf.stringToHclTerraform(this._logGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      log_set: {
+        value: cdktf.stringToHclTerraform(this._logSet),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      log_set_ext_regex: {
+        value: cdktf.stringToHclTerraform(this._logSetExtRegex),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      log_set_key: {
+        value: cdktf.stringToHclTerraform(this._logSetKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      log_source_name: {
+        value: cdktf.stringToHclTerraform(this._logSourceName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      log_type: {
+        value: cdktf.stringToHclTerraform(this._logType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_name_filters: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._objectNameFilters),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      os_bucket_name: {
+        value: cdktf.stringToHclTerraform(this._osBucketName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      os_namespace: {
+        value: cdktf.stringToHclTerraform(this._osNamespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      poll_since: {
+        value: cdktf.stringToHclTerraform(this._pollSince),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      poll_till: {
+        value: cdktf.stringToHclTerraform(this._pollTill),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timezone: {
+        value: cdktf.stringToHclTerraform(this._timezone),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      overrides: {
+        value: cdktf.listMapperHcl(logAnalyticsLogAnalyticsObjectCollectionRuleOverridesToHclTerraform, true)(this._overrides.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LogAnalyticsLogAnalyticsObjectCollectionRuleOverridesList",
+      },
+      timeouts: {
+        value: logAnalyticsLogAnalyticsObjectCollectionRuleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LogAnalyticsLogAnalyticsObjectCollectionRuleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

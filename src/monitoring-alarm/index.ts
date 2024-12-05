@@ -108,19 +108,19 @@ export interface MonitoringAlarmConfig extends cdktf.TerraformMetaArguments {
   readonly severity: string;
   /**
   * overrides block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/monitoring_alarm#overrides MonitoringAlarm#overrides}
   */
   readonly overrides?: MonitoringAlarmOverrides[] | cdktf.IResolvable;
   /**
   * suppression block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/monitoring_alarm#suppression MonitoringAlarm#suppression}
   */
   readonly suppression?: MonitoringAlarmSuppression;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/monitoring_alarm#timeouts MonitoringAlarm#timeouts}
   */
   readonly timeouts?: MonitoringAlarmTimeouts;
@@ -160,6 +160,49 @@ export function monitoringAlarmOverridesToTerraform(struct?: MonitoringAlarmOver
     rule_name: cdktf.stringToTerraform(struct!.ruleName),
     severity: cdktf.stringToTerraform(struct!.severity),
   }
+}
+
+
+export function monitoringAlarmOverridesToHclTerraform(struct?: MonitoringAlarmOverrides | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    body: {
+      value: cdktf.stringToHclTerraform(struct!.body),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pending_duration: {
+      value: cdktf.stringToHclTerraform(struct!.pendingDuration),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query: {
+      value: cdktf.stringToHclTerraform(struct!.query),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rule_name: {
+      value: cdktf.stringToHclTerraform(struct!.ruleName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    severity: {
+      value: cdktf.stringToHclTerraform(struct!.severity),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MonitoringAlarmOverridesOutputReference extends cdktf.ComplexObject {
@@ -357,6 +400,37 @@ export function monitoringAlarmSuppressionToTerraform(struct?: MonitoringAlarmSu
   }
 }
 
+
+export function monitoringAlarmSuppressionToHclTerraform(struct?: MonitoringAlarmSuppressionOutputReference | MonitoringAlarmSuppression): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_suppress_from: {
+      value: cdktf.stringToHclTerraform(struct!.timeSuppressFrom),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_suppress_until: {
+      value: cdktf.stringToHclTerraform(struct!.timeSuppressUntil),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MonitoringAlarmSuppressionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -468,6 +542,37 @@ export function monitoringAlarmTimeoutsToTerraform(struct?: MonitoringAlarmTimeo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function monitoringAlarmTimeoutsToHclTerraform(struct?: MonitoringAlarmTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MonitoringAlarmTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -582,6 +687,20 @@ export class MonitoringAlarm extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_monitoring_alarm";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a MonitoringAlarm resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the MonitoringAlarm to import
+  * @param importFromId The id of the existing MonitoringAlarm that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/monitoring_alarm#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the MonitoringAlarm to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_monitoring_alarm", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1100,5 +1219,175 @@ export class MonitoringAlarm extends cdktf.TerraformResource {
       suppression: monitoringAlarmSuppressionToTerraform(this._suppression.internalValue),
       timeouts: monitoringAlarmTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      alarm_summary: {
+        value: cdktf.stringToHclTerraform(this._alarmSummary),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      body: {
+        value: cdktf.stringToHclTerraform(this._body),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      destinations: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._destinations),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      evaluation_slack_duration: {
+        value: cdktf.stringToHclTerraform(this._evaluationSlackDuration),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_notifications_per_metric_dimension_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isNotificationsPerMetricDimensionEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      message_format: {
+        value: cdktf.stringToHclTerraform(this._messageFormat),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metric_compartment_id: {
+        value: cdktf.stringToHclTerraform(this._metricCompartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metric_compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._metricCompartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      notification_title: {
+        value: cdktf.stringToHclTerraform(this._notificationTitle),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      notification_version: {
+        value: cdktf.stringToHclTerraform(this._notificationVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      pending_duration: {
+        value: cdktf.stringToHclTerraform(this._pendingDuration),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      query: {
+        value: cdktf.stringToHclTerraform(this._query),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      repeat_notification_duration: {
+        value: cdktf.stringToHclTerraform(this._repeatNotificationDuration),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resolution: {
+        value: cdktf.stringToHclTerraform(this._resolution),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_group: {
+        value: cdktf.stringToHclTerraform(this._resourceGroup),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      rule_name: {
+        value: cdktf.stringToHclTerraform(this._ruleName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      severity: {
+        value: cdktf.stringToHclTerraform(this._severity),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      overrides: {
+        value: cdktf.listMapperHcl(monitoringAlarmOverridesToHclTerraform, true)(this._overrides.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MonitoringAlarmOverridesList",
+      },
+      suppression: {
+        value: monitoringAlarmSuppressionToHclTerraform(this._suppression.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MonitoringAlarmSuppressionList",
+      },
+      timeouts: {
+        value: monitoringAlarmTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "MonitoringAlarmTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

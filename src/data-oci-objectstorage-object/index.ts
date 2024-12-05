@@ -74,6 +74,20 @@ export class DataOciObjectstorageObject extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_objectstorage_object";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciObjectstorageObject resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciObjectstorageObject to import
+  * @param importFromId The id of the existing DataOciObjectstorageObject that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/objectstorage_object#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciObjectstorageObject to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_objectstorage_object", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -390,5 +404,91 @@ export class DataOciObjectstorageObject extends cdktf.TerraformDataSource {
       object: cdktf.stringToTerraform(this._object),
       version_id: cdktf.stringToTerraform(this._versionId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      base64_encode_content: {
+        value: cdktf.booleanToHclTerraform(this._base64EncodeContent),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      content_length_limit: {
+        value: cdktf.numberToHclTerraform(this._contentLengthLimit),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      http_response_cache_control: {
+        value: cdktf.stringToHclTerraform(this._httpResponseCacheControl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      http_response_content_disposition: {
+        value: cdktf.stringToHclTerraform(this._httpResponseContentDisposition),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      http_response_content_encoding: {
+        value: cdktf.stringToHclTerraform(this._httpResponseContentEncoding),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      http_response_content_language: {
+        value: cdktf.stringToHclTerraform(this._httpResponseContentLanguage),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      http_response_content_type: {
+        value: cdktf.stringToHclTerraform(this._httpResponseContentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      http_response_expires: {
+        value: cdktf.stringToHclTerraform(this._httpResponseExpires),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object: {
+        value: cdktf.stringToHclTerraform(this._object),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      version_id: {
+        value: cdktf.stringToHclTerraform(this._versionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

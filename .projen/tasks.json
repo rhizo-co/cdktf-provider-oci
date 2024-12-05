@@ -114,7 +114,7 @@
       "description": "Generate documentation for the project",
       "steps": [
         {
-          "exec": "rm -rf docs && rm -f API.md && mkdir docs && jsii-docgen --split-by-submodule -l typescript -l python -l java -l csharp -l go && mv *.*.md docs && cd docs && ls ./ | xargs sed -i '150000,$ d' $1"
+          "exec": "rm -rf docs && rm -f API.md && mkdir docs && jsii-docgen --split-by-submodule -l typescript -l python -l java -l csharp -l go && mv *.*.md docs && cd docs && ls ./ | xargs gsed -i '150000,$ d' $1"
         }
       ]
     },
@@ -343,7 +343,7 @@
       },
       "steps": [
         {
-          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@action-validator/cli,@action-validator/core,jsii-diff,jsii-pacmak,projen,typescript"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --no-deprecated --dep=dev,peer,prod,optional --filter=@action-validator/cli,@action-validator/core,jsii-diff,jsii-pacmak,projen"
         },
         {
           "exec": "yarn install --check-files"

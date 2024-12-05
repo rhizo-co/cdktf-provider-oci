@@ -32,7 +32,7 @@ export interface DataOciServiceMeshIngressGatewayRouteTablesConfig extends cdktf
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/service_mesh_ingress_gateway_route_tables#filter DataOciServiceMeshIngressGatewayRouteTables#filter}
   */
   readonly filter?: DataOciServiceMeshIngressGatewayRouteTablesFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTa
   }
   return {
   }
+}
+
+
+export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsRouteRulesDestinationsToHclTerraform(struct?: DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsRouteRulesDestinations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsRouteRulesDestinationsOutputReference extends cdktf.ComplexObject {
@@ -123,6 +134,17 @@ export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTa
   }
 }
 
+
+export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsRouteRulesIngressGatewayHostToHclTerraform(struct?: DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsRouteRulesIngressGatewayHost): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsRouteRulesIngressGatewayHostOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -190,6 +212,17 @@ export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTa
   }
   return {
   }
+}
+
+
+export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsRouteRulesToHclTerraform(struct?: DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsRouteRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsRouteRulesOutputReference extends cdktf.ComplexObject {
@@ -296,6 +329,17 @@ export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTa
   }
   return {
   }
+}
+
+
+export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsToHclTerraform(struct?: DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -431,6 +475,17 @@ export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTa
   }
 }
 
+
+export function dataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionToHclTerraform(struct?: DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciServiceMeshIngressGatewayRouteTablesIngressGatewayRouteTableCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -509,6 +564,37 @@ export function dataOciServiceMeshIngressGatewayRouteTablesFilterToTerraform(str
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciServiceMeshIngressGatewayRouteTablesFilterToHclTerraform(struct?: DataOciServiceMeshIngressGatewayRouteTablesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciServiceMeshIngressGatewayRouteTablesFilterOutputReference extends cdktf.ComplexObject {
@@ -639,6 +725,20 @@ export class DataOciServiceMeshIngressGatewayRouteTables extends cdktf.Terraform
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_service_mesh_ingress_gateway_route_tables";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciServiceMeshIngressGatewayRouteTables resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciServiceMeshIngressGatewayRouteTables to import
+  * @param importFromId The id of the existing DataOciServiceMeshIngressGatewayRouteTables that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/service_mesh_ingress_gateway_route_tables#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciServiceMeshIngressGatewayRouteTables to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_service_mesh_ingress_gateway_route_tables", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -791,5 +891,49 @@ export class DataOciServiceMeshIngressGatewayRouteTables extends cdktf.Terraform
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciServiceMeshIngressGatewayRouteTablesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ingress_gateway_id: {
+        value: cdktf.stringToHclTerraform(this._ingressGatewayId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciServiceMeshIngressGatewayRouteTablesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciServiceMeshIngressGatewayRouteTablesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

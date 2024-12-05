@@ -28,7 +28,7 @@ export interface DataOciAnnouncementsServiceServicesConfig extends cdktf.Terrafo
   readonly platformType?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/announcements_service_services#filter DataOciAnnouncementsServiceServices#filter}
   */
   readonly filter?: DataOciAnnouncementsServiceServicesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciAnnouncementsServiceServicesServicesCollectionItemsToTerr
   }
   return {
   }
+}
+
+
+export function dataOciAnnouncementsServiceServicesServicesCollectionItemsToHclTerraform(struct?: DataOciAnnouncementsServiceServicesServicesCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAnnouncementsServiceServicesServicesCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -164,6 +175,17 @@ export function dataOciAnnouncementsServiceServicesServicesCollectionToTerraform
   }
 }
 
+
+export function dataOciAnnouncementsServiceServicesServicesCollectionToHclTerraform(struct?: DataOciAnnouncementsServiceServicesServicesCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAnnouncementsServiceServicesServicesCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -242,6 +264,37 @@ export function dataOciAnnouncementsServiceServicesFilterToTerraform(struct?: Da
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciAnnouncementsServiceServicesFilterToHclTerraform(struct?: DataOciAnnouncementsServiceServicesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciAnnouncementsServiceServicesFilterOutputReference extends cdktf.ComplexObject {
@@ -372,6 +425,20 @@ export class DataOciAnnouncementsServiceServices extends cdktf.TerraformDataSour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_announcements_service_services";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciAnnouncementsServiceServices resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciAnnouncementsServiceServices to import
+  * @param importFromId The id of the existing DataOciAnnouncementsServiceServices that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/announcements_service_services#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciAnnouncementsServiceServices to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_announcements_service_services", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -506,5 +573,43 @@ export class DataOciAnnouncementsServiceServices extends cdktf.TerraformDataSour
       platform_type: cdktf.stringToTerraform(this._platformType),
       filter: cdktf.listMapper(dataOciAnnouncementsServiceServicesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      comms_manager_name: {
+        value: cdktf.stringToHclTerraform(this._commsManagerName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      platform_type: {
+        value: cdktf.stringToHclTerraform(this._platformType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciAnnouncementsServiceServicesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciAnnouncementsServiceServicesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

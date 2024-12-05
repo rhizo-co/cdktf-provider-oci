@@ -56,13 +56,13 @@ export interface DevopsConnectionConfig extends cdktf.TerraformMetaArguments {
   readonly username?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_connection#timeouts DevopsConnection#timeouts}
   */
   readonly timeouts?: DevopsConnectionTimeouts;
   /**
   * tls_verify_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_connection#tls_verify_config DevopsConnection#tls_verify_config}
   */
   readonly tlsVerifyConfig?: DevopsConnectionTlsVerifyConfig;
@@ -77,6 +77,17 @@ export function devopsConnectionLastConnectionValidationResultToTerraform(struct
   }
   return {
   }
+}
+
+
+export function devopsConnectionLastConnectionValidationResultToHclTerraform(struct?: DevopsConnectionLastConnectionValidationResult): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DevopsConnectionLastConnectionValidationResultOutputReference extends cdktf.ComplexObject {
@@ -166,6 +177,37 @@ export function devopsConnectionTimeoutsToTerraform(struct?: DevopsConnectionTim
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function devopsConnectionTimeoutsToHclTerraform(struct?: DevopsConnectionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsConnectionTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -292,6 +334,31 @@ export function devopsConnectionTlsVerifyConfigToTerraform(struct?: DevopsConnec
   }
 }
 
+
+export function devopsConnectionTlsVerifyConfigToHclTerraform(struct?: DevopsConnectionTlsVerifyConfigOutputReference | DevopsConnectionTlsVerifyConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ca_certificate_bundle_id: {
+      value: cdktf.stringToHclTerraform(struct!.caCertificateBundleId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tls_verify_mode: {
+      value: cdktf.stringToHclTerraform(struct!.tlsVerifyMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DevopsConnectionTlsVerifyConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -366,6 +433,20 @@ export class DevopsConnection extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_connection";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DevopsConnection resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DevopsConnection to import
+  * @param importFromId The id of the existing DevopsConnection that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_connection#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DevopsConnection to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_connection", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -667,5 +748,91 @@ export class DevopsConnection extends cdktf.TerraformResource {
       timeouts: devopsConnectionTimeoutsToTerraform(this._timeouts.internalValue),
       tls_verify_config: devopsConnectionTlsVerifyConfigToTerraform(this._tlsVerifyConfig.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      access_token: {
+        value: cdktf.stringToHclTerraform(this._accessToken),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      app_password: {
+        value: cdktf.stringToHclTerraform(this._appPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      base_url: {
+        value: cdktf.stringToHclTerraform(this._baseUrl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_type: {
+        value: cdktf.stringToHclTerraform(this._connectionType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      username: {
+        value: cdktf.stringToHclTerraform(this._username),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: devopsConnectionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DevopsConnectionTimeouts",
+      },
+      tls_verify_config: {
+        value: devopsConnectionTlsVerifyConfigToHclTerraform(this._tlsVerifyConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsConnectionTlsVerifyConfigList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

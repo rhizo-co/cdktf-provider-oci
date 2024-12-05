@@ -23,6 +23,20 @@ export class DataOciManagementAgentManagementAgentInstallKey extends cdktf.Terra
   // =================
   public static readonly tfResourceType = "oci_management_agent_management_agent_install_key";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciManagementAgentManagementAgentInstallKey resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciManagementAgentManagementAgentInstallKey to import
+  * @param importFromId The id of the existing DataOciManagementAgentManagementAgentInstallKey that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/management_agent_management_agent_install_key#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciManagementAgentManagementAgentInstallKey to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_management_agent_management_agent_install_key", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -143,5 +157,19 @@ export class DataOciManagementAgentManagementAgentInstallKey extends cdktf.Terra
     return {
       management_agent_install_key_id: cdktf.stringToTerraform(this._managementAgentInstallKeyId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      management_agent_install_key_id: {
+        value: cdktf.stringToHclTerraform(this._managementAgentInstallKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

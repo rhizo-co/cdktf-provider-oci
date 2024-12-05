@@ -28,6 +28,17 @@ export function dataOciOdaOdaPrivateEndpointScanProxyScanListenerInfosToTerrafor
   }
 }
 
+
+export function dataOciOdaOdaPrivateEndpointScanProxyScanListenerInfosToHclTerraform(struct?: DataOciOdaOdaPrivateEndpointScanProxyScanListenerInfos): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOdaOdaPrivateEndpointScanProxyScanListenerInfosOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -100,6 +111,20 @@ export class DataOciOdaOdaPrivateEndpointScanProxy extends cdktf.TerraformDataSo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_oda_oda_private_endpoint_scan_proxy";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOdaOdaPrivateEndpointScanProxy resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOdaOdaPrivateEndpointScanProxy to import
+  * @param importFromId The id of the existing DataOciOdaOdaPrivateEndpointScanProxy that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/oda_oda_private_endpoint_scan_proxy#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOdaOdaPrivateEndpointScanProxy to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_oda_oda_private_endpoint_scan_proxy", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -202,5 +227,25 @@ export class DataOciOdaOdaPrivateEndpointScanProxy extends cdktf.TerraformDataSo
       oda_private_endpoint_id: cdktf.stringToTerraform(this._odaPrivateEndpointId),
       oda_private_endpoint_scan_proxy_id: cdktf.stringToTerraform(this._odaPrivateEndpointScanProxyId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      oda_private_endpoint_id: {
+        value: cdktf.stringToHclTerraform(this._odaPrivateEndpointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      oda_private_endpoint_scan_proxy_id: {
+        value: cdktf.stringToHclTerraform(this._odaPrivateEndpointScanProxyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -51,6 +51,17 @@ export function dataOciIdentityDomainsBrandingSettingCompanyNamesToTerraform(str
   }
 }
 
+
+export function dataOciIdentityDomainsBrandingSettingCompanyNamesToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingCompanyNames): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsBrandingSettingCompanyNamesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -120,6 +131,17 @@ export function dataOciIdentityDomainsBrandingSettingDefaultCompanyNamesToTerraf
   }
 }
 
+
+export function dataOciIdentityDomainsBrandingSettingDefaultCompanyNamesToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingDefaultCompanyNames): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsBrandingSettingDefaultCompanyNamesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -187,6 +209,17 @@ export function dataOciIdentityDomainsBrandingSettingDefaultImagesToTerraform(st
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsBrandingSettingDefaultImagesToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingDefaultImages): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsBrandingSettingDefaultImagesOutputReference extends cdktf.ComplexObject {
@@ -263,6 +296,17 @@ export function dataOciIdentityDomainsBrandingSettingDefaultLoginTextsToTerrafor
   }
 }
 
+
+export function dataOciIdentityDomainsBrandingSettingDefaultLoginTextsToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingDefaultLoginTexts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsBrandingSettingDefaultLoginTextsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -330,6 +374,17 @@ export function dataOciIdentityDomainsBrandingSettingIdcsCreatedByToTerraform(st
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsBrandingSettingIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsBrandingSettingIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -416,6 +471,17 @@ export function dataOciIdentityDomainsBrandingSettingIdcsLastModifiedByToTerrafo
   }
 }
 
+
+export function dataOciIdentityDomainsBrandingSettingIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsBrandingSettingIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -500,6 +566,17 @@ export function dataOciIdentityDomainsBrandingSettingImagesToTerraform(struct?: 
   }
 }
 
+
+export function dataOciIdentityDomainsBrandingSettingImagesToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingImages): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsBrandingSettingImagesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -574,6 +651,17 @@ export function dataOciIdentityDomainsBrandingSettingLoginTextsToTerraform(struc
   }
 }
 
+
+export function dataOciIdentityDomainsBrandingSettingLoginTextsToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingLoginTexts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsBrandingSettingLoginTextsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -641,6 +729,17 @@ export function dataOciIdentityDomainsBrandingSettingMetaToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsBrandingSettingMetaToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsBrandingSettingMetaOutputReference extends cdktf.ComplexObject {
@@ -727,6 +826,17 @@ export function dataOciIdentityDomainsBrandingSettingTagsToTerraform(struct?: Da
   }
 }
 
+
+export function dataOciIdentityDomainsBrandingSettingTagsToHclTerraform(struct?: DataOciIdentityDomainsBrandingSettingTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsBrandingSettingTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -794,6 +904,20 @@ export class DataOciIdentityDomainsBrandingSetting extends cdktf.TerraformDataSo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_branding_setting";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsBrandingSetting resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsBrandingSetting to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsBrandingSetting that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_branding_setting#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsBrandingSetting to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_branding_setting", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1115,5 +1239,55 @@ export class DataOciIdentityDomainsBrandingSetting extends cdktf.TerraformDataSo
       idcs_endpoint: cdktf.stringToTerraform(this._idcsEndpoint),
       resource_type_schema_version: cdktf.stringToTerraform(this._resourceTypeSchemaVersion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      branding_setting_id: {
+        value: cdktf.stringToHclTerraform(this._brandingSettingId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

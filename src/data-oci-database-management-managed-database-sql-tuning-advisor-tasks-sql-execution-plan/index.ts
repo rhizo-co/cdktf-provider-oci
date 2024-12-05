@@ -47,6 +47,17 @@ export function dataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSql
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlan): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlanPlanOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -250,6 +261,20 @@ export class DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSqlExe
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_database_sql_tuning_advisor_tasks_sql_execution_plan";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_database_sql_tuning_advisor_tasks_sql_execution_plan#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSqlExecutionPlan to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_database_sql_tuning_advisor_tasks_sql_execution_plan", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -392,5 +417,49 @@ export class DataOciDatabaseManagementManagedDatabaseSqlTuningAdvisorTasksSqlExe
       sql_object_id: cdktf.stringToTerraform(this._sqlObjectId),
       sql_tuning_advisor_task_id: cdktf.stringToTerraform(this._sqlTuningAdvisorTaskId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute: {
+        value: cdktf.stringToHclTerraform(this._attribute),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opc_named_credential_id: {
+        value: cdktf.stringToHclTerraform(this._opcNamedCredentialId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sql_object_id: {
+        value: cdktf.stringToHclTerraform(this._sqlObjectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sql_tuning_advisor_task_id: {
+        value: cdktf.stringToHclTerraform(this._sqlTuningAdvisorTaskId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

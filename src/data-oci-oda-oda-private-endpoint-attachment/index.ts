@@ -23,6 +23,20 @@ export class DataOciOdaOdaPrivateEndpointAttachment extends cdktf.TerraformDataS
   // =================
   public static readonly tfResourceType = "oci_oda_oda_private_endpoint_attachment";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOdaOdaPrivateEndpointAttachment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOdaOdaPrivateEndpointAttachment to import
+  * @param importFromId The id of the existing DataOciOdaOdaPrivateEndpointAttachment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/oda_oda_private_endpoint_attachment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOdaOdaPrivateEndpointAttachment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_oda_oda_private_endpoint_attachment", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -113,5 +127,19 @@ export class DataOciOdaOdaPrivateEndpointAttachment extends cdktf.TerraformDataS
     return {
       oda_private_endpoint_attachment_id: cdktf.stringToTerraform(this._odaPrivateEndpointAttachmentId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      oda_private_endpoint_attachment_id: {
+        value: cdktf.stringToHclTerraform(this._odaPrivateEndpointAttachmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

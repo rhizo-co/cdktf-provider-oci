@@ -40,13 +40,13 @@ export interface CoreDhcpOptionsConfig extends cdktf.TerraformMetaArguments {
   readonly vcnId: string;
   /**
   * options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_dhcp_options#options CoreDhcpOptions#options}
   */
   readonly options: CoreDhcpOptionsOptions[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_dhcp_options#timeouts CoreDhcpOptions#timeouts}
   */
   readonly timeouts?: CoreDhcpOptionsTimeouts;
@@ -81,6 +81,43 @@ export function coreDhcpOptionsOptionsToTerraform(struct?: CoreDhcpOptionsOption
     server_type: cdktf.stringToTerraform(struct!.serverType),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function coreDhcpOptionsOptionsToHclTerraform(struct?: CoreDhcpOptionsOptions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    custom_dns_servers: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.customDnsServers),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    search_domain_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.searchDomainNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    server_type: {
+      value: cdktf.stringToHclTerraform(struct!.serverType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreDhcpOptionsOptionsOutputReference extends cdktf.ComplexObject {
@@ -253,6 +290,37 @@ export function coreDhcpOptionsTimeoutsToTerraform(struct?: CoreDhcpOptionsTimeo
   }
 }
 
+
+export function coreDhcpOptionsTimeoutsToHclTerraform(struct?: CoreDhcpOptionsTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreDhcpOptionsTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -365,6 +433,20 @@ export class CoreDhcpOptions extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_dhcp_options";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreDhcpOptions resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreDhcpOptions to import
+  * @param importFromId The id of the existing CoreDhcpOptions that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_dhcp_options#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreDhcpOptions to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_dhcp_options", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -569,5 +651,67 @@ export class CoreDhcpOptions extends cdktf.TerraformResource {
       options: cdktf.listMapper(coreDhcpOptionsOptionsToTerraform, true)(this._options.internalValue),
       timeouts: coreDhcpOptionsTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      domain_name_type: {
+        value: cdktf.stringToHclTerraform(this._domainNameType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcn_id: {
+        value: cdktf.stringToHclTerraform(this._vcnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      options: {
+        value: cdktf.listMapperHcl(coreDhcpOptionsOptionsToHclTerraform, true)(this._options.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "CoreDhcpOptionsOptionsList",
+      },
+      timeouts: {
+        value: coreDhcpOptionsTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreDhcpOptionsTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

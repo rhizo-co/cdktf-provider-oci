@@ -52,7 +52,7 @@ export interface DataOciDataSafeListUserGrantsConfig extends cdktf.TerraformMeta
   readonly userKey: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_list_user_grants#filter DataOciDataSafeListUserGrants#filter}
   */
   readonly filter?: DataOciDataSafeListUserGrantsFilter[] | cdktf.IResolvable;
@@ -67,6 +67,17 @@ export function dataOciDataSafeListUserGrantsGrantsToTerraform(struct?: DataOciD
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeListUserGrantsGrantsToHclTerraform(struct?: DataOciDataSafeListUserGrantsGrants): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeListUserGrantsGrantsOutputReference extends cdktf.ComplexObject {
@@ -166,6 +177,37 @@ export function dataOciDataSafeListUserGrantsFilterToTerraform(struct?: DataOciD
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeListUserGrantsFilterToHclTerraform(struct?: DataOciDataSafeListUserGrantsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeListUserGrantsFilterOutputReference extends cdktf.ComplexObject {
@@ -296,6 +338,20 @@ export class DataOciDataSafeListUserGrants extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_list_user_grants";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeListUserGrants resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeListUserGrants to import
+  * @param importFromId The id of the existing DataOciDataSafeListUserGrants that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_list_user_grants#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeListUserGrants to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_list_user_grants", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -535,5 +591,79 @@ export class DataOciDataSafeListUserGrants extends cdktf.TerraformDataSource {
       user_key: cdktf.stringToTerraform(this._userKey),
       filter: cdktf.listMapper(dataOciDataSafeListUserGrantsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      depth_level: {
+        value: cdktf.numberToHclTerraform(this._depthLevel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      depth_level_greater_than_or_equal_to: {
+        value: cdktf.numberToHclTerraform(this._depthLevelGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      depth_level_less_than: {
+        value: cdktf.numberToHclTerraform(this._depthLevelLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      grant_key: {
+        value: cdktf.stringToHclTerraform(this._grantKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      grant_name: {
+        value: cdktf.stringToHclTerraform(this._grantName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      privilege_category: {
+        value: cdktf.stringToHclTerraform(this._privilegeCategory),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      privilege_type: {
+        value: cdktf.stringToHclTerraform(this._privilegeType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_assessment_id: {
+        value: cdktf.stringToHclTerraform(this._userAssessmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_key: {
+        value: cdktf.stringToHclTerraform(this._userKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeListUserGrantsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeListUserGrantsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

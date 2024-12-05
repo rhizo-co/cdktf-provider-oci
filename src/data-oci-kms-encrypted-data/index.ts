@@ -42,6 +42,20 @@ export class DataOciKmsEncryptedData extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_kms_encrypted_data";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciKmsEncryptedData resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciKmsEncryptedData to import
+  * @param importFromId The id of the existing DataOciKmsEncryptedData that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/kms_encrypted_data#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciKmsEncryptedData to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_encrypted_data", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -168,5 +182,43 @@ export class DataOciKmsEncryptedData extends cdktf.TerraformDataSource {
       key_id: cdktf.stringToTerraform(this._keyId),
       plaintext: cdktf.stringToTerraform(this._plaintext),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      associated_data: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._associatedData),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      crypto_endpoint: {
+        value: cdktf.stringToHclTerraform(this._cryptoEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_id: {
+        value: cdktf.stringToHclTerraform(this._keyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      plaintext: {
+        value: cdktf.stringToHclTerraform(this._plaintext),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

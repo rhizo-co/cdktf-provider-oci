@@ -23,6 +23,20 @@ export class DataOciDatascienceModelVersionSet extends cdktf.TerraformDataSource
   // =================
   public static readonly tfResourceType = "oci_datascience_model_version_set";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatascienceModelVersionSet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatascienceModelVersionSet to import
+  * @param importFromId The id of the existing DataOciDatascienceModelVersionSet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/datascience_model_version_set#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatascienceModelVersionSet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_model_version_set", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -141,5 +155,19 @@ export class DataOciDatascienceModelVersionSet extends cdktf.TerraformDataSource
     return {
       model_version_set_id: cdktf.stringToTerraform(this._modelVersionSetId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      model_version_set_id: {
+        value: cdktf.stringToHclTerraform(this._modelVersionSetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

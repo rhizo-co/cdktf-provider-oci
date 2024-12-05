@@ -24,6 +24,17 @@ export function dataOciApigatewayGatewayCaBundlesToTerraform(struct?: DataOciApi
   }
 }
 
+
+export function dataOciApigatewayGatewayCaBundlesToHclTerraform(struct?: DataOciApigatewayGatewayCaBundles): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciApigatewayGatewayCaBundlesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -98,6 +109,17 @@ export function dataOciApigatewayGatewayIpAddressesToTerraform(struct?: DataOciA
   }
 }
 
+
+export function dataOciApigatewayGatewayIpAddressesToHclTerraform(struct?: DataOciApigatewayGatewayIpAddresses): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciApigatewayGatewayIpAddressesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -160,6 +182,17 @@ export function dataOciApigatewayGatewayResponseCacheDetailsServersToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciApigatewayGatewayResponseCacheDetailsServersToHclTerraform(struct?: DataOciApigatewayGatewayResponseCacheDetailsServers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciApigatewayGatewayResponseCacheDetailsServersOutputReference extends cdktf.ComplexObject {
@@ -229,6 +262,17 @@ export function dataOciApigatewayGatewayResponseCacheDetailsToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function dataOciApigatewayGatewayResponseCacheDetailsToHclTerraform(struct?: DataOciApigatewayGatewayResponseCacheDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciApigatewayGatewayResponseCacheDetailsOutputReference extends cdktf.ComplexObject {
@@ -334,6 +378,20 @@ export class DataOciApigatewayGateway extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apigateway_gateway";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciApigatewayGateway resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciApigatewayGateway to import
+  * @param importFromId The id of the existing DataOciApigatewayGateway that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/apigateway_gateway#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciApigatewayGateway to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apigateway_gateway", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -480,5 +538,19 @@ export class DataOciApigatewayGateway extends cdktf.TerraformDataSource {
     return {
       gateway_id: cdktf.stringToTerraform(this._gatewayId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      gateway_id: {
+        value: cdktf.stringToHclTerraform(this._gatewayId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

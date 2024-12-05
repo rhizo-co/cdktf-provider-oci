@@ -24,13 +24,13 @@ export interface MeteringComputationCustomTableConfig extends cdktf.TerraformMet
   readonly savedReportId: string;
   /**
   * saved_custom_table block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_custom_table#saved_custom_table MeteringComputationCustomTable#saved_custom_table}
   */
   readonly savedCustomTable: MeteringComputationCustomTableSavedCustomTable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_custom_table#timeouts MeteringComputationCustomTable#timeouts}
   */
   readonly timeouts?: MeteringComputationCustomTableTimeouts;
@@ -60,6 +60,37 @@ export function meteringComputationCustomTableSavedCustomTableGroupByTagToTerraf
     namespace: cdktf.stringToTerraform(struct!.namespace),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function meteringComputationCustomTableSavedCustomTableGroupByTagToHclTerraform(struct?: MeteringComputationCustomTableSavedCustomTableGroupByTag | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MeteringComputationCustomTableSavedCustomTableGroupByTagOutputReference extends cdktf.ComplexObject {
@@ -209,7 +240,7 @@ export interface MeteringComputationCustomTableSavedCustomTable {
   readonly version?: number;
   /**
   * group_by_tag block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_custom_table#group_by_tag MeteringComputationCustomTable#group_by_tag}
   */
   readonly groupByTag?: MeteringComputationCustomTableSavedCustomTableGroupByTag[] | cdktf.IResolvable;
@@ -228,6 +259,55 @@ export function meteringComputationCustomTableSavedCustomTableToTerraform(struct
     version: cdktf.numberToTerraform(struct!.version),
     group_by_tag: cdktf.listMapper(meteringComputationCustomTableSavedCustomTableGroupByTagToTerraform, true)(struct!.groupByTag),
   }
+}
+
+
+export function meteringComputationCustomTableSavedCustomTableToHclTerraform(struct?: MeteringComputationCustomTableSavedCustomTableOutputReference | MeteringComputationCustomTableSavedCustomTable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    column_group_by: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.columnGroupBy),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    compartment_depth: {
+      value: cdktf.numberToHclTerraform(struct!.compartmentDepth),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    row_group_by: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.rowGroupBy),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    version: {
+      value: cdktf.numberToHclTerraform(struct!.version),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    group_by_tag: {
+      value: cdktf.listMapperHcl(meteringComputationCustomTableSavedCustomTableGroupByTagToHclTerraform, true)(struct!.groupByTag),
+      isBlock: true,
+      type: "list",
+      storageClassType: "MeteringComputationCustomTableSavedCustomTableGroupByTagList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MeteringComputationCustomTableSavedCustomTableOutputReference extends cdktf.ComplexObject {
@@ -412,6 +492,37 @@ export function meteringComputationCustomTableTimeoutsToTerraform(struct?: Meter
   }
 }
 
+
+export function meteringComputationCustomTableTimeoutsToHclTerraform(struct?: MeteringComputationCustomTableTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MeteringComputationCustomTableTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -524,6 +635,20 @@ export class MeteringComputationCustomTable extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_metering_computation_custom_table";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a MeteringComputationCustomTable resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the MeteringComputationCustomTable to import
+  * @param importFromId The id of the existing MeteringComputationCustomTable that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_custom_table#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the MeteringComputationCustomTable to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_metering_computation_custom_table", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -646,5 +771,43 @@ export class MeteringComputationCustomTable extends cdktf.TerraformResource {
       saved_custom_table: meteringComputationCustomTableSavedCustomTableToTerraform(this._savedCustomTable.internalValue),
       timeouts: meteringComputationCustomTableTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      saved_report_id: {
+        value: cdktf.stringToHclTerraform(this._savedReportId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      saved_custom_table: {
+        value: meteringComputationCustomTableSavedCustomTableToHclTerraform(this._savedCustomTable.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MeteringComputationCustomTableSavedCustomTableList",
+      },
+      timeouts: {
+        value: meteringComputationCustomTableTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "MeteringComputationCustomTableTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

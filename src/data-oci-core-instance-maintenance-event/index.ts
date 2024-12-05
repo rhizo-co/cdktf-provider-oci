@@ -23,6 +23,20 @@ export class DataOciCoreInstanceMaintenanceEvent extends cdktf.TerraformDataSour
   // =================
   public static readonly tfResourceType = "oci_core_instance_maintenance_event";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreInstanceMaintenanceEvent resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreInstanceMaintenanceEvent to import
+  * @param importFromId The id of the existing DataOciCoreInstanceMaintenanceEvent that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_instance_maintenance_event#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreInstanceMaintenanceEvent to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_instance_maintenance_event", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -206,5 +220,19 @@ export class DataOciCoreInstanceMaintenanceEvent extends cdktf.TerraformDataSour
     return {
       instance_maintenance_event_id: cdktf.stringToTerraform(this._instanceMaintenanceEventId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      instance_maintenance_event_id: {
+        value: cdktf.stringToHclTerraform(this._instanceMaintenanceEventId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

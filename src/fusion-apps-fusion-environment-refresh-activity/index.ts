@@ -28,7 +28,7 @@ export interface FusionAppsFusionEnvironmentRefreshActivityConfig extends cdktf.
   readonly sourceFusionEnvironmentId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment_refresh_activity#timeouts FusionAppsFusionEnvironmentRefreshActivity#timeouts}
   */
   readonly timeouts?: FusionAppsFusionEnvironmentRefreshActivityTimeouts;
@@ -43,6 +43,17 @@ export function fusionAppsFusionEnvironmentRefreshActivityRefreshIssueDetailsLis
   }
   return {
   }
+}
+
+
+export function fusionAppsFusionEnvironmentRefreshActivityRefreshIssueDetailsListStructToHclTerraform(struct?: FusionAppsFusionEnvironmentRefreshActivityRefreshIssueDetailsListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class FusionAppsFusionEnvironmentRefreshActivityRefreshIssueDetailsListStructOutputReference extends cdktf.ComplexObject {
@@ -114,6 +125,25 @@ export function fusionAppsFusionEnvironmentRefreshActivityTimeoutsToTerraform(st
   }
 }
 
+
+export function fusionAppsFusionEnvironmentRefreshActivityTimeoutsToHclTerraform(struct?: FusionAppsFusionEnvironmentRefreshActivityTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FusionAppsFusionEnvironmentRefreshActivityTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -182,6 +212,20 @@ export class FusionAppsFusionEnvironmentRefreshActivity extends cdktf.TerraformR
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fusion_apps_fusion_environment_refresh_activity";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FusionAppsFusionEnvironmentRefreshActivity resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FusionAppsFusionEnvironmentRefreshActivity to import
+  * @param importFromId The id of the existing FusionAppsFusionEnvironmentRefreshActivity that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment_refresh_activity#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FusionAppsFusionEnvironmentRefreshActivity to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fusion_apps_fusion_environment_refresh_activity", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -363,5 +407,43 @@ export class FusionAppsFusionEnvironmentRefreshActivity extends cdktf.TerraformR
       source_fusion_environment_id: cdktf.stringToTerraform(this._sourceFusionEnvironmentId),
       timeouts: fusionAppsFusionEnvironmentRefreshActivityTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      fusion_environment_id: {
+        value: cdktf.stringToHclTerraform(this._fusionEnvironmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_data_masking_opted: {
+        value: cdktf.booleanToHclTerraform(this._isDataMaskingOpted),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      source_fusion_environment_id: {
+        value: cdktf.stringToHclTerraform(this._sourceFusionEnvironmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: fusionAppsFusionEnvironmentRefreshActivityTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FusionAppsFusionEnvironmentRefreshActivityTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

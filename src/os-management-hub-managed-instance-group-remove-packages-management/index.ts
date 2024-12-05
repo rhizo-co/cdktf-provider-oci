@@ -24,13 +24,13 @@ export interface OsManagementHubManagedInstanceGroupRemovePackagesManagementConf
   readonly packageNames: string[];
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_managed_instance_group_remove_packages_management#timeouts OsManagementHubManagedInstanceGroupRemovePackagesManagement#timeouts}
   */
   readonly timeouts?: OsManagementHubManagedInstanceGroupRemovePackagesManagementTimeouts;
   /**
   * work_request_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_managed_instance_group_remove_packages_management#work_request_details OsManagementHubManagedInstanceGroupRemovePackagesManagement#work_request_details}
   */
   readonly workRequestDetails?: OsManagementHubManagedInstanceGroupRemovePackagesManagementWorkRequestDetails;
@@ -60,6 +60,37 @@ export function osManagementHubManagedInstanceGroupRemovePackagesManagementTimeo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function osManagementHubManagedInstanceGroupRemovePackagesManagementTimeoutsToHclTerraform(struct?: OsManagementHubManagedInstanceGroupRemovePackagesManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubManagedInstanceGroupRemovePackagesManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -186,6 +217,31 @@ export function osManagementHubManagedInstanceGroupRemovePackagesManagementWorkR
   }
 }
 
+
+export function osManagementHubManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsToHclTerraform(struct?: OsManagementHubManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsOutputReference | OsManagementHubManagedInstanceGroupRemovePackagesManagementWorkRequestDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OsManagementHubManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -266,6 +322,20 @@ export class OsManagementHubManagedInstanceGroupRemovePackagesManagement extends
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_managed_instance_group_remove_packages_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OsManagementHubManagedInstanceGroupRemovePackagesManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OsManagementHubManagedInstanceGroupRemovePackagesManagement to import
+  * @param importFromId The id of the existing OsManagementHubManagedInstanceGroupRemovePackagesManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_managed_instance_group_remove_packages_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OsManagementHubManagedInstanceGroupRemovePackagesManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_managed_instance_group_remove_packages_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -391,5 +461,43 @@ export class OsManagementHubManagedInstanceGroupRemovePackagesManagement extends
       timeouts: osManagementHubManagedInstanceGroupRemovePackagesManagementTimeoutsToTerraform(this._timeouts.internalValue),
       work_request_details: osManagementHubManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsToTerraform(this._workRequestDetails.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_group_id: {
+        value: cdktf.stringToHclTerraform(this._managedInstanceGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      package_names: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._packageNames),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      timeouts: {
+        value: osManagementHubManagedInstanceGroupRemovePackagesManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OsManagementHubManagedInstanceGroupRemovePackagesManagementTimeouts",
+      },
+      work_request_details: {
+        value: osManagementHubManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsToHclTerraform(this._workRequestDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OsManagementHubManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

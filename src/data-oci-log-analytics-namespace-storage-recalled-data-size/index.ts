@@ -38,6 +38,20 @@ export class DataOciLogAnalyticsNamespaceStorageRecalledDataSize extends cdktf.T
   // =================
   public static readonly tfResourceType = "oci_log_analytics_namespace_storage_recalled_data_size";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLogAnalyticsNamespaceStorageRecalledDataSize resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLogAnalyticsNamespaceStorageRecalledDataSize to import
+  * @param importFromId The id of the existing DataOciLogAnalyticsNamespaceStorageRecalledDataSize that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/log_analytics_namespace_storage_recalled_data_size#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLogAnalyticsNamespaceStorageRecalledDataSize to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_namespace_storage_recalled_data_size", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -157,5 +171,37 @@ export class DataOciLogAnalyticsNamespaceStorageRecalledDataSize extends cdktf.T
       time_data_ended: cdktf.stringToTerraform(this._timeDataEnded),
       time_data_started: cdktf.stringToTerraform(this._timeDataStarted),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_data_ended: {
+        value: cdktf.stringToHclTerraform(this._timeDataEnded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_data_started: {
+        value: cdktf.stringToHclTerraform(this._timeDataStarted),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -44,7 +44,7 @@ export interface KmsEncryptedDataConfig extends cdktf.TerraformMetaArguments {
   readonly plaintext: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_encrypted_data#timeouts KmsEncryptedData#timeouts}
   */
   readonly timeouts?: KmsEncryptedDataTimeouts;
@@ -74,6 +74,37 @@ export function kmsEncryptedDataTimeoutsToTerraform(struct?: KmsEncryptedDataTim
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function kmsEncryptedDataTimeoutsToHclTerraform(struct?: KmsEncryptedDataTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsEncryptedDataTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -188,6 +219,20 @@ export class KmsEncryptedData extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_kms_encrypted_data";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a KmsEncryptedData resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the KmsEncryptedData to import
+  * @param importFromId The id of the existing KmsEncryptedData that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_encrypted_data#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the KmsEncryptedData to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_encrypted_data", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -387,5 +432,67 @@ export class KmsEncryptedData extends cdktf.TerraformResource {
       plaintext: cdktf.stringToTerraform(this._plaintext),
       timeouts: kmsEncryptedDataTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      associated_data: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._associatedData),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      crypto_endpoint: {
+        value: cdktf.stringToHclTerraform(this._cryptoEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      encryption_algorithm: {
+        value: cdktf.stringToHclTerraform(this._encryptionAlgorithm),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_id: {
+        value: cdktf.stringToHclTerraform(this._keyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_version_id: {
+        value: cdktf.stringToHclTerraform(this._keyVersionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      logging_context: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._loggingContext),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      plaintext: {
+        value: cdktf.stringToHclTerraform(this._plaintext),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: kmsEncryptedDataTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "KmsEncryptedDataTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

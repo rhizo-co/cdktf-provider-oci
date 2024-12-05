@@ -28,6 +28,17 @@ export function dataOciLogAnalyticsNamespaceScheduledTaskActionMetricExtractionT
   }
 }
 
+
+export function dataOciLogAnalyticsNamespaceScheduledTaskActionMetricExtractionToHclTerraform(struct?: DataOciLogAnalyticsNamespaceScheduledTaskActionMetricExtraction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciLogAnalyticsNamespaceScheduledTaskActionMetricExtractionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -105,6 +116,17 @@ export function dataOciLogAnalyticsNamespaceScheduledTaskActionToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciLogAnalyticsNamespaceScheduledTaskActionToHclTerraform(struct?: DataOciLogAnalyticsNamespaceScheduledTaskAction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciLogAnalyticsNamespaceScheduledTaskActionOutputReference extends cdktf.ComplexObject {
@@ -207,6 +229,17 @@ export function dataOciLogAnalyticsNamespaceScheduledTaskSchedulesScheduleToTerr
   }
 }
 
+
+export function dataOciLogAnalyticsNamespaceScheduledTaskSchedulesScheduleToHclTerraform(struct?: DataOciLogAnalyticsNamespaceScheduledTaskSchedulesSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciLogAnalyticsNamespaceScheduledTaskSchedulesScheduleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -296,6 +329,17 @@ export function dataOciLogAnalyticsNamespaceScheduledTaskSchedulesToTerraform(st
   }
 }
 
+
+export function dataOciLogAnalyticsNamespaceScheduledTaskSchedulesToHclTerraform(struct?: DataOciLogAnalyticsNamespaceScheduledTaskSchedules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciLogAnalyticsNamespaceScheduledTaskSchedulesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -359,6 +403,20 @@ export class DataOciLogAnalyticsNamespaceScheduledTask extends cdktf.TerraformDa
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_log_analytics_namespace_scheduled_task";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLogAnalyticsNamespaceScheduledTask resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLogAnalyticsNamespaceScheduledTask to import
+  * @param importFromId The id of the existing DataOciLogAnalyticsNamespaceScheduledTask that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/log_analytics_namespace_scheduled_task#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLogAnalyticsNamespaceScheduledTask to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_namespace_scheduled_task", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -514,5 +572,25 @@ export class DataOciLogAnalyticsNamespaceScheduledTask extends cdktf.TerraformDa
       namespace: cdktf.stringToTerraform(this._namespace),
       scheduled_task_id: cdktf.stringToTerraform(this._scheduledTaskId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scheduled_task_id: {
+        value: cdktf.stringToHclTerraform(this._scheduledTaskId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

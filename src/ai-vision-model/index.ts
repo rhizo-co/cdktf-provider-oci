@@ -56,25 +56,25 @@ export interface AiVisionModelConfig extends cdktf.TerraformMetaArguments {
   readonly projectId: string;
   /**
   * testing_dataset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_vision_model#testing_dataset AiVisionModel#testing_dataset}
   */
   readonly testingDataset?: AiVisionModelTestingDataset;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_vision_model#timeouts AiVisionModel#timeouts}
   */
   readonly timeouts?: AiVisionModelTimeouts;
   /**
   * training_dataset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_vision_model#training_dataset AiVisionModel#training_dataset}
   */
   readonly trainingDataset: AiVisionModelTrainingDataset;
   /**
   * validation_dataset block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_vision_model#validation_dataset AiVisionModel#validation_dataset}
   */
   readonly validationDataset?: AiVisionModelValidationDataset;
@@ -114,6 +114,49 @@ export function aiVisionModelTestingDatasetToTerraform(struct?: AiVisionModelTes
     namespace_name: cdktf.stringToTerraform(struct!.namespaceName),
     object: cdktf.stringToTerraform(struct!.object),
   }
+}
+
+
+export function aiVisionModelTestingDatasetToHclTerraform(struct?: AiVisionModelTestingDatasetOutputReference | AiVisionModelTestingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_id: {
+      value: cdktf.stringToHclTerraform(struct!.datasetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_type: {
+      value: cdktf.stringToHclTerraform(struct!.datasetType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace_name: {
+      value: cdktf.stringToHclTerraform(struct!.namespaceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiVisionModelTestingDatasetOutputReference extends cdktf.ComplexObject {
@@ -276,6 +319,37 @@ export function aiVisionModelTimeoutsToTerraform(struct?: AiVisionModelTimeouts 
   }
 }
 
+
+export function aiVisionModelTimeoutsToHclTerraform(struct?: AiVisionModelTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiVisionModelTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -413,6 +487,49 @@ export function aiVisionModelTrainingDatasetToTerraform(struct?: AiVisionModelTr
     namespace_name: cdktf.stringToTerraform(struct!.namespaceName),
     object: cdktf.stringToTerraform(struct!.object),
   }
+}
+
+
+export function aiVisionModelTrainingDatasetToHclTerraform(struct?: AiVisionModelTrainingDatasetOutputReference | AiVisionModelTrainingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_id: {
+      value: cdktf.stringToHclTerraform(struct!.datasetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_type: {
+      value: cdktf.stringToHclTerraform(struct!.datasetType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace_name: {
+      value: cdktf.stringToHclTerraform(struct!.namespaceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiVisionModelTrainingDatasetOutputReference extends cdktf.ComplexObject {
@@ -585,6 +702,49 @@ export function aiVisionModelValidationDatasetToTerraform(struct?: AiVisionModel
   }
 }
 
+
+export function aiVisionModelValidationDatasetToHclTerraform(struct?: AiVisionModelValidationDatasetOutputReference | AiVisionModelValidationDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_id: {
+      value: cdktf.stringToHclTerraform(struct!.datasetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dataset_type: {
+      value: cdktf.stringToHclTerraform(struct!.datasetType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace_name: {
+      value: cdktf.stringToHclTerraform(struct!.namespaceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiVisionModelValidationDatasetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -728,6 +888,20 @@ export class AiVisionModel extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ai_vision_model";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a AiVisionModel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the AiVisionModel to import
+  * @param importFromId The id of the existing AiVisionModel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_vision_model#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the AiVisionModel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_vision_model", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1093,5 +1267,103 @@ export class AiVisionModel extends cdktf.TerraformResource {
       training_dataset: aiVisionModelTrainingDatasetToTerraform(this._trainingDataset.internalValue),
       validation_dataset: aiVisionModelValidationDatasetToTerraform(this._validationDataset.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_quick_mode: {
+        value: cdktf.booleanToHclTerraform(this._isQuickMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      max_training_duration_in_hours: {
+        value: cdktf.numberToHclTerraform(this._maxTrainingDurationInHours),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      model_type: {
+        value: cdktf.stringToHclTerraform(this._modelType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_version: {
+        value: cdktf.stringToHclTerraform(this._modelVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      testing_dataset: {
+        value: aiVisionModelTestingDatasetToHclTerraform(this._testingDataset.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiVisionModelTestingDatasetList",
+      },
+      timeouts: {
+        value: aiVisionModelTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "AiVisionModelTimeouts",
+      },
+      training_dataset: {
+        value: aiVisionModelTrainingDatasetToHclTerraform(this._trainingDataset.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiVisionModelTrainingDatasetList",
+      },
+      validation_dataset: {
+        value: aiVisionModelValidationDatasetToHclTerraform(this._validationDataset.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiVisionModelValidationDatasetList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

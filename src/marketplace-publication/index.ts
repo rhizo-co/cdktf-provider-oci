@@ -48,19 +48,19 @@ export interface MarketplacePublicationConfig extends cdktf.TerraformMetaArgumen
   readonly shortDescription: string;
   /**
   * package_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/marketplace_publication#package_details MarketplacePublication#package_details}
   */
   readonly packageDetails: MarketplacePublicationPackageDetails;
   /**
   * support_contacts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/marketplace_publication#support_contacts MarketplacePublication#support_contacts}
   */
   readonly supportContacts: MarketplacePublicationSupportContacts[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/marketplace_publication#timeouts MarketplacePublication#timeouts}
   */
   readonly timeouts?: MarketplacePublicationTimeouts;
@@ -75,6 +75,17 @@ export function marketplacePublicationIconToTerraform(struct?: MarketplacePublic
   }
   return {
   }
+}
+
+
+export function marketplacePublicationIconToHclTerraform(struct?: MarketplacePublicationIcon): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class MarketplacePublicationIconOutputReference extends cdktf.ComplexObject {
@@ -156,6 +167,17 @@ export function marketplacePublicationSupportedOperatingSystemsToTerraform(struc
   }
 }
 
+
+export function marketplacePublicationSupportedOperatingSystemsToHclTerraform(struct?: MarketplacePublicationSupportedOperatingSystems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class MarketplacePublicationSupportedOperatingSystemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -228,6 +250,31 @@ export function marketplacePublicationPackageDetailsEulaToTerraform(struct?: Mar
     eula_type: cdktf.stringToTerraform(struct!.eulaType),
     license_text: cdktf.stringToTerraform(struct!.licenseText),
   }
+}
+
+
+export function marketplacePublicationPackageDetailsEulaToHclTerraform(struct?: MarketplacePublicationPackageDetailsEula | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    eula_type: {
+      value: cdktf.stringToHclTerraform(struct!.eulaType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    license_text: {
+      value: cdktf.stringToHclTerraform(struct!.licenseText),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MarketplacePublicationPackageDetailsEulaOutputReference extends cdktf.ComplexObject {
@@ -346,6 +393,25 @@ export function marketplacePublicationPackageDetailsOperatingSystemToTerraform(s
   }
 }
 
+
+export function marketplacePublicationPackageDetailsOperatingSystemToHclTerraform(struct?: MarketplacePublicationPackageDetailsOperatingSystemOutputReference | MarketplacePublicationPackageDetailsOperatingSystem): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MarketplacePublicationPackageDetailsOperatingSystemOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -409,13 +475,13 @@ export interface MarketplacePublicationPackageDetails {
   readonly packageVersion: string;
   /**
   * eula block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/marketplace_publication#eula MarketplacePublication#eula}
   */
   readonly eula: MarketplacePublicationPackageDetailsEula[] | cdktf.IResolvable;
   /**
   * operating_system block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/marketplace_publication#operating_system MarketplacePublication#operating_system}
   */
   readonly operatingSystem: MarketplacePublicationPackageDetailsOperatingSystem;
@@ -433,6 +499,49 @@ export function marketplacePublicationPackageDetailsToTerraform(struct?: Marketp
     eula: cdktf.listMapper(marketplacePublicationPackageDetailsEulaToTerraform, true)(struct!.eula),
     operating_system: marketplacePublicationPackageDetailsOperatingSystemToTerraform(struct!.operatingSystem),
   }
+}
+
+
+export function marketplacePublicationPackageDetailsToHclTerraform(struct?: MarketplacePublicationPackageDetailsOutputReference | MarketplacePublicationPackageDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    image_id: {
+      value: cdktf.stringToHclTerraform(struct!.imageId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    package_type: {
+      value: cdktf.stringToHclTerraform(struct!.packageType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    package_version: {
+      value: cdktf.stringToHclTerraform(struct!.packageVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    eula: {
+      value: cdktf.listMapperHcl(marketplacePublicationPackageDetailsEulaToHclTerraform, true)(struct!.eula),
+      isBlock: true,
+      type: "set",
+      storageClassType: "MarketplacePublicationPackageDetailsEulaList",
+    },
+    operating_system: {
+      value: marketplacePublicationPackageDetailsOperatingSystemToHclTerraform(struct!.operatingSystem),
+      isBlock: true,
+      type: "list",
+      storageClassType: "MarketplacePublicationPackageDetailsOperatingSystemList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MarketplacePublicationPackageDetailsOutputReference extends cdktf.ComplexObject {
@@ -589,6 +698,43 @@ export function marketplacePublicationSupportContactsToTerraform(struct?: Market
     phone: cdktf.stringToTerraform(struct!.phone),
     subject: cdktf.stringToTerraform(struct!.subject),
   }
+}
+
+
+export function marketplacePublicationSupportContactsToHclTerraform(struct?: MarketplacePublicationSupportContacts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    email: {
+      value: cdktf.stringToHclTerraform(struct!.email),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    phone: {
+      value: cdktf.stringToHclTerraform(struct!.phone),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subject: {
+      value: cdktf.stringToHclTerraform(struct!.subject),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MarketplacePublicationSupportContactsOutputReference extends cdktf.ComplexObject {
@@ -764,6 +910,37 @@ export function marketplacePublicationTimeoutsToTerraform(struct?: MarketplacePu
   }
 }
 
+
+export function marketplacePublicationTimeoutsToHclTerraform(struct?: MarketplacePublicationTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MarketplacePublicationTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -876,6 +1053,20 @@ export class MarketplacePublication extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_marketplace_publication";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a MarketplacePublication resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the MarketplacePublication to import
+  * @param importFromId The id of the existing MarketplacePublication that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/marketplace_publication#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the MarketplacePublication to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_marketplace_publication", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1145,5 +1336,85 @@ export class MarketplacePublication extends cdktf.TerraformResource {
       support_contacts: cdktf.listMapper(marketplacePublicationSupportContactsToTerraform, true)(this._supportContacts.internalValue),
       timeouts: marketplacePublicationTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_agreement_acknowledged: {
+        value: cdktf.booleanToHclTerraform(this._isAgreementAcknowledged),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      listing_type: {
+        value: cdktf.stringToHclTerraform(this._listingType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      long_description: {
+        value: cdktf.stringToHclTerraform(this._longDescription),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      short_description: {
+        value: cdktf.stringToHclTerraform(this._shortDescription),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      package_details: {
+        value: marketplacePublicationPackageDetailsToHclTerraform(this._packageDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MarketplacePublicationPackageDetailsList",
+      },
+      support_contacts: {
+        value: cdktf.listMapperHcl(marketplacePublicationSupportContactsToHclTerraform, true)(this._supportContacts.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "MarketplacePublicationSupportContactsList",
+      },
+      timeouts: {
+        value: marketplacePublicationTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "MarketplacePublicationTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

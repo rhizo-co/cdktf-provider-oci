@@ -44,13 +44,13 @@ export interface EventsRuleConfig extends cdktf.TerraformMetaArguments {
   readonly isEnabled: boolean | cdktf.IResolvable;
   /**
   * actions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/events_rule#actions EventsRule#actions}
   */
   readonly actions: EventsRuleActions;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/events_rule#timeouts EventsRule#timeouts}
   */
   readonly timeouts?: EventsRuleTimeouts;
@@ -95,6 +95,55 @@ export function eventsRuleActionsActionsToTerraform(struct?: EventsRuleActionsAc
     stream_id: cdktf.stringToTerraform(struct!.streamId),
     topic_id: cdktf.stringToTerraform(struct!.topicId),
   }
+}
+
+
+export function eventsRuleActionsActionsToHclTerraform(struct?: EventsRuleActionsActions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    action_type: {
+      value: cdktf.stringToHclTerraform(struct!.actionType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    function_id: {
+      value: cdktf.stringToHclTerraform(struct!.functionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    stream_id: {
+      value: cdktf.stringToHclTerraform(struct!.streamId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    topic_id: {
+      value: cdktf.stringToHclTerraform(struct!.topicId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class EventsRuleActionsActionsOutputReference extends cdktf.ComplexObject {
@@ -299,7 +348,7 @@ export class EventsRuleActionsActionsList extends cdktf.ComplexList {
 export interface EventsRuleActions {
   /**
   * actions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/events_rule#actions EventsRule#actions}
   */
   readonly actions: EventsRuleActionsActions[] | cdktf.IResolvable;
@@ -313,6 +362,25 @@ export function eventsRuleActionsToTerraform(struct?: EventsRuleActionsOutputRef
   return {
     actions: cdktf.listMapper(eventsRuleActionsActionsToTerraform, true)(struct!.actions),
   }
+}
+
+
+export function eventsRuleActionsToHclTerraform(struct?: EventsRuleActionsOutputReference | EventsRuleActions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    actions: {
+      value: cdktf.listMapperHcl(eventsRuleActionsActionsToHclTerraform, true)(struct!.actions),
+      isBlock: true,
+      type: "set",
+      storageClassType: "EventsRuleActionsActionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class EventsRuleActionsOutputReference extends cdktf.ComplexObject {
@@ -385,6 +453,37 @@ export function eventsRuleTimeoutsToTerraform(struct?: EventsRuleTimeouts | cdkt
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function eventsRuleTimeoutsToHclTerraform(struct?: EventsRuleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class EventsRuleTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -499,6 +598,20 @@ export class EventsRule extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_events_rule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a EventsRule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the EventsRule to import
+  * @param importFromId The id of the existing EventsRule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/events_rule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the EventsRule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_events_rule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -720,5 +833,73 @@ export class EventsRule extends cdktf.TerraformResource {
       actions: eventsRuleActionsToTerraform(this._actions.internalValue),
       timeouts: eventsRuleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      condition: {
+        value: cdktf.stringToHclTerraform(this._condition),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      actions: {
+        value: eventsRuleActionsToHclTerraform(this._actions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "EventsRuleActionsList",
+      },
+      timeouts: {
+        value: eventsRuleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "EventsRuleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

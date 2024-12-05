@@ -28,6 +28,17 @@ export function dataOciBlockchainOsnOcpuAllocationParamToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciBlockchainOsnOcpuAllocationParamToHclTerraform(struct?: DataOciBlockchainOsnOcpuAllocationParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciBlockchainOsnOcpuAllocationParamOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -90,6 +101,20 @@ export class DataOciBlockchainOsn extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_blockchain_osn";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciBlockchainOsn resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciBlockchainOsn to import
+  * @param importFromId The id of the existing DataOciBlockchainOsn that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/blockchain_osn#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciBlockchainOsn to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_blockchain_osn", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -187,5 +212,25 @@ export class DataOciBlockchainOsn extends cdktf.TerraformDataSource {
       blockchain_platform_id: cdktf.stringToTerraform(this._blockchainPlatformId),
       osn_id: cdktf.stringToTerraform(this._osnId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      blockchain_platform_id: {
+        value: cdktf.stringToHclTerraform(this._blockchainPlatformId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      osn_id: {
+        value: cdktf.stringToHclTerraform(this._osnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

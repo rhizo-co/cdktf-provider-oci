@@ -32,7 +32,7 @@ export interface DataOciResourcemanagerPrivateEndpointsConfig extends cdktf.Terr
   readonly vcnId?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/resourcemanager_private_endpoints#filter DataOciResourcemanagerPrivateEndpoints#filter}
   */
   readonly filter?: DataOciResourcemanagerPrivateEndpointsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciResourcemanagerPrivateEndpointsPrivateEndpointCollectionI
   }
   return {
   }
+}
+
+
+export function dataOciResourcemanagerPrivateEndpointsPrivateEndpointCollectionItemsToHclTerraform(struct?: DataOciResourcemanagerPrivateEndpointsPrivateEndpointCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciResourcemanagerPrivateEndpointsPrivateEndpointCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -180,6 +191,17 @@ export function dataOciResourcemanagerPrivateEndpointsPrivateEndpointCollectionT
   }
 }
 
+
+export function dataOciResourcemanagerPrivateEndpointsPrivateEndpointCollectionToHclTerraform(struct?: DataOciResourcemanagerPrivateEndpointsPrivateEndpointCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciResourcemanagerPrivateEndpointsPrivateEndpointCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -258,6 +280,37 @@ export function dataOciResourcemanagerPrivateEndpointsFilterToTerraform(struct?:
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciResourcemanagerPrivateEndpointsFilterToHclTerraform(struct?: DataOciResourcemanagerPrivateEndpointsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciResourcemanagerPrivateEndpointsFilterOutputReference extends cdktf.ComplexObject {
@@ -388,6 +441,20 @@ export class DataOciResourcemanagerPrivateEndpoints extends cdktf.TerraformDataS
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_resourcemanager_private_endpoints";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciResourcemanagerPrivateEndpoints resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciResourcemanagerPrivateEndpoints to import
+  * @param importFromId The id of the existing DataOciResourcemanagerPrivateEndpoints that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/resourcemanager_private_endpoints#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciResourcemanagerPrivateEndpoints to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_resourcemanager_private_endpoints", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -543,5 +610,49 @@ export class DataOciResourcemanagerPrivateEndpoints extends cdktf.TerraformDataS
       vcn_id: cdktf.stringToTerraform(this._vcnId),
       filter: cdktf.listMapper(dataOciResourcemanagerPrivateEndpointsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      private_endpoint_id: {
+        value: cdktf.stringToHclTerraform(this._privateEndpointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcn_id: {
+        value: cdktf.stringToHclTerraform(this._vcnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciResourcemanagerPrivateEndpointsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciResourcemanagerPrivateEndpointsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

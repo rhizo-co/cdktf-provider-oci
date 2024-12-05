@@ -60,7 +60,7 @@ export interface RedisRedisClusterConfig extends cdktf.TerraformMetaArguments {
   readonly subnetId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/redis_redis_cluster#timeouts RedisRedisCluster#timeouts}
   */
   readonly timeouts?: RedisRedisClusterTimeouts;
@@ -75,6 +75,17 @@ export function redisRedisClusterNodeCollectionItemsToTerraform(struct?: RedisRe
   }
   return {
   }
+}
+
+
+export function redisRedisClusterNodeCollectionItemsToHclTerraform(struct?: RedisRedisClusterNodeCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class RedisRedisClusterNodeCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -149,6 +160,17 @@ export function redisRedisClusterNodeCollectionToTerraform(struct?: RedisRedisCl
   }
   return {
   }
+}
+
+
+export function redisRedisClusterNodeCollectionToHclTerraform(struct?: RedisRedisClusterNodeCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class RedisRedisClusterNodeCollectionOutputReference extends cdktf.ComplexObject {
@@ -229,6 +251,37 @@ export function redisRedisClusterTimeoutsToTerraform(struct?: RedisRedisClusterT
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function redisRedisClusterTimeoutsToHclTerraform(struct?: RedisRedisClusterTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class RedisRedisClusterTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -343,6 +396,20 @@ export class RedisRedisCluster extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_redis_redis_cluster";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a RedisRedisCluster resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the RedisRedisCluster to import
+  * @param importFromId The id of the existing RedisRedisCluster that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/redis_redis_cluster#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the RedisRedisCluster to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_redis_redis_cluster", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -652,5 +719,91 @@ export class RedisRedisCluster extends cdktf.TerraformResource {
       subnet_id: cdktf.stringToTerraform(this._subnetId),
       timeouts: redisRedisClusterTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cluster_mode: {
+        value: cdktf.stringToHclTerraform(this._clusterMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      node_count: {
+        value: cdktf.numberToHclTerraform(this._nodeCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      node_memory_in_gbs: {
+        value: cdktf.numberToHclTerraform(this._nodeMemoryInGbs),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      nsg_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._nsgIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      shard_count: {
+        value: cdktf.numberToHclTerraform(this._shardCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      software_version: {
+        value: cdktf.stringToHclTerraform(this._softwareVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: redisRedisClusterTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "RedisRedisClusterTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -32,7 +32,7 @@ export interface DataOciOptimizerProfileLevelsConfig extends cdktf.TerraformMeta
   readonly recommendationName?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/optimizer_profile_levels#filter DataOciOptimizerProfileLevels#filter}
   */
   readonly filter?: DataOciOptimizerProfileLevelsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciOptimizerProfileLevelsProfileLevelCollectionItemsMetricsT
   }
   return {
   }
+}
+
+
+export function dataOciOptimizerProfileLevelsProfileLevelCollectionItemsMetricsToHclTerraform(struct?: DataOciOptimizerProfileLevelsProfileLevelCollectionItemsMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOptimizerProfileLevelsProfileLevelCollectionItemsMetricsOutputReference extends cdktf.ComplexObject {
@@ -126,6 +137,17 @@ export function dataOciOptimizerProfileLevelsProfileLevelCollectionItemsToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciOptimizerProfileLevelsProfileLevelCollectionItemsToHclTerraform(struct?: DataOciOptimizerProfileLevelsProfileLevelCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOptimizerProfileLevelsProfileLevelCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -223,6 +245,17 @@ export function dataOciOptimizerProfileLevelsProfileLevelCollectionToTerraform(s
   }
 }
 
+
+export function dataOciOptimizerProfileLevelsProfileLevelCollectionToHclTerraform(struct?: DataOciOptimizerProfileLevelsProfileLevelCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerProfileLevelsProfileLevelCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -301,6 +334,37 @@ export function dataOciOptimizerProfileLevelsFilterToTerraform(struct?: DataOciO
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOptimizerProfileLevelsFilterToHclTerraform(struct?: DataOciOptimizerProfileLevelsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOptimizerProfileLevelsFilterOutputReference extends cdktf.ComplexObject {
@@ -431,6 +495,20 @@ export class DataOciOptimizerProfileLevels extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_optimizer_profile_levels";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOptimizerProfileLevels resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOptimizerProfileLevels to import
+  * @param importFromId The id of the existing DataOciOptimizerProfileLevels that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/optimizer_profile_levels#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOptimizerProfileLevels to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_optimizer_profile_levels", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -580,5 +658,49 @@ export class DataOciOptimizerProfileLevels extends cdktf.TerraformDataSource {
       recommendation_name: cdktf.stringToTerraform(this._recommendationName),
       filter: cdktf.listMapper(dataOciOptimizerProfileLevelsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      recommendation_name: {
+        value: cdktf.stringToHclTerraform(this._recommendationName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOptimizerProfileLevelsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOptimizerProfileLevelsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

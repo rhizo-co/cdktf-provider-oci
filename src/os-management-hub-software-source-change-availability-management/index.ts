@@ -16,13 +16,13 @@ export interface OsManagementHubSoftwareSourceChangeAvailabilityManagementConfig
   readonly id?: string;
   /**
   * software_source_availabilities block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_software_source_change_availability_management#software_source_availabilities OsManagementHubSoftwareSourceChangeAvailabilityManagement#software_source_availabilities}
   */
   readonly softwareSourceAvailabilities: OsManagementHubSoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilities[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_software_source_change_availability_management#timeouts OsManagementHubSoftwareSourceChangeAvailabilityManagement#timeouts}
   */
   readonly timeouts?: OsManagementHubSoftwareSourceChangeAvailabilityManagementTimeouts;
@@ -52,6 +52,37 @@ export function osManagementHubSoftwareSourceChangeAvailabilityManagementSoftwar
     availability_at_oci: cdktf.stringToTerraform(struct!.availabilityAtOci),
     software_source_id: cdktf.stringToTerraform(struct!.softwareSourceId),
   }
+}
+
+
+export function osManagementHubSoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilitiesToHclTerraform(struct?: OsManagementHubSoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilities | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability: {
+      value: cdktf.stringToHclTerraform(struct!.availability),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    availability_at_oci: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityAtOci),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    software_source_id: {
+      value: cdktf.stringToHclTerraform(struct!.softwareSourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubSoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilitiesOutputReference extends cdktf.ComplexObject {
@@ -202,6 +233,37 @@ export function osManagementHubSoftwareSourceChangeAvailabilityManagementTimeout
   }
 }
 
+
+export function osManagementHubSoftwareSourceChangeAvailabilityManagementTimeoutsToHclTerraform(struct?: OsManagementHubSoftwareSourceChangeAvailabilityManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OsManagementHubSoftwareSourceChangeAvailabilityManagementTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -315,6 +377,20 @@ export class OsManagementHubSoftwareSourceChangeAvailabilityManagement extends c
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_software_source_change_availability_management";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OsManagementHubSoftwareSourceChangeAvailabilityManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OsManagementHubSoftwareSourceChangeAvailabilityManagement to import
+  * @param importFromId The id of the existing OsManagementHubSoftwareSourceChangeAvailabilityManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_software_source_change_availability_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OsManagementHubSoftwareSourceChangeAvailabilityManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_software_source_change_availability_management", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -406,5 +482,31 @@ export class OsManagementHubSoftwareSourceChangeAvailabilityManagement extends c
       software_source_availabilities: cdktf.listMapper(osManagementHubSoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilitiesToTerraform, true)(this._softwareSourceAvailabilities.internalValue),
       timeouts: osManagementHubSoftwareSourceChangeAvailabilityManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      software_source_availabilities: {
+        value: cdktf.listMapperHcl(osManagementHubSoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilitiesToHclTerraform, true)(this._softwareSourceAvailabilities.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OsManagementHubSoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilitiesList",
+      },
+      timeouts: {
+        value: osManagementHubSoftwareSourceChangeAvailabilityManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OsManagementHubSoftwareSourceChangeAvailabilityManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

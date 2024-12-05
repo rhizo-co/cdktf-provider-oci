@@ -28,7 +28,7 @@ export interface DatabaseManagementExternalExadataInfrastructureExadataManagemen
   readonly licenseModel?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_external_exadata_infrastructure_exadata_management#timeouts DatabaseManagementExternalExadataInfrastructureExadataManagement#timeouts}
   */
   readonly timeouts?: DatabaseManagementExternalExadataInfrastructureExadataManagementTimeouts;
@@ -58,6 +58,37 @@ export function databaseManagementExternalExadataInfrastructureExadataManagement
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseManagementExternalExadataInfrastructureExadataManagementTimeoutsToHclTerraform(struct?: DatabaseManagementExternalExadataInfrastructureExadataManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementExternalExadataInfrastructureExadataManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -172,6 +203,20 @@ export class DatabaseManagementExternalExadataInfrastructureExadataManagement ex
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_external_exadata_infrastructure_exadata_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseManagementExternalExadataInfrastructureExadataManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseManagementExternalExadataInfrastructureExadataManagement to import
+  * @param importFromId The id of the existing DatabaseManagementExternalExadataInfrastructureExadataManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_external_exadata_infrastructure_exadata_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseManagementExternalExadataInfrastructureExadataManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_external_exadata_infrastructure_exadata_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -297,5 +342,43 @@ export class DatabaseManagementExternalExadataInfrastructureExadataManagement ex
       license_model: cdktf.stringToTerraform(this._licenseModel),
       timeouts: databaseManagementExternalExadataInfrastructureExadataManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      enable_exadata: {
+        value: cdktf.booleanToHclTerraform(this._enableExadata),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      external_exadata_infrastructure_id: {
+        value: cdktf.stringToHclTerraform(this._externalExadataInfrastructureId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      license_model: {
+        value: cdktf.stringToHclTerraform(this._licenseModel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: databaseManagementExternalExadataInfrastructureExadataManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseManagementExternalExadataInfrastructureExadataManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

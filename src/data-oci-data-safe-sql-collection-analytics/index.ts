@@ -48,7 +48,7 @@ export interface DataOciDataSafeSqlCollectionAnalyticsConfig extends cdktf.Terra
   readonly timeStarted?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sql_collection_analytics#filter DataOciDataSafeSqlCollectionAnalytics#filter}
   */
   readonly filter?: DataOciDataSafeSqlCollectionAnalyticsFilter[] | cdktf.IResolvable;
@@ -63,6 +63,17 @@ export function dataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsColle
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemsDimensionsToHclTerraform(struct?: DataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemsDimensions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemsDimensionsOutputReference extends cdktf.ComplexObject {
@@ -134,6 +145,17 @@ export function dataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsColle
   }
 }
 
+
+export function dataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemsToHclTerraform(struct?: DataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -202,6 +224,17 @@ export function dataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsColle
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionToHclTerraform(struct?: DataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSqlCollectionAnalyticsSqlCollectionAnalyticsCollectionOutputReference extends cdktf.ComplexObject {
@@ -282,6 +315,37 @@ export function dataOciDataSafeSqlCollectionAnalyticsFilterToTerraform(struct?: 
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeSqlCollectionAnalyticsFilterToHclTerraform(struct?: DataOciDataSafeSqlCollectionAnalyticsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeSqlCollectionAnalyticsFilterOutputReference extends cdktf.ComplexObject {
@@ -412,6 +476,20 @@ export class DataOciDataSafeSqlCollectionAnalytics extends cdktf.TerraformDataSo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_sql_collection_analytics";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeSqlCollectionAnalytics resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeSqlCollectionAnalytics to import
+  * @param importFromId The id of the existing DataOciDataSafeSqlCollectionAnalytics that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sql_collection_analytics#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeSqlCollectionAnalytics to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_sql_collection_analytics", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -636,5 +714,73 @@ export class DataOciDataSafeSqlCollectionAnalytics extends cdktf.TerraformDataSo
       time_started: cdktf.stringToTerraform(this._timeStarted),
       filter: cdktf.listMapper(dataOciDataSafeSqlCollectionAnalyticsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      access_level: {
+        value: cdktf.stringToHclTerraform(this._accessLevel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      group_by: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._groupBy),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_id: {
+        value: cdktf.stringToHclTerraform(this._targetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_ended: {
+        value: cdktf.stringToHclTerraform(this._timeEnded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_started: {
+        value: cdktf.stringToHclTerraform(this._timeStarted),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeSqlCollectionAnalyticsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeSqlCollectionAnalyticsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

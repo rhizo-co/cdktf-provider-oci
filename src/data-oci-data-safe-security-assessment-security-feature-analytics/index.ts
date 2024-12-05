@@ -32,7 +32,7 @@ export interface DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsConfig
   readonly targetId?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_security_assessment_security_feature_analytics#filter DataOciDataSafeSecurityAssessmentSecurityFeatureAnalytics#filter}
   */
   readonly filter?: DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurit
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemsDimensionsToHclTerraform(struct?: DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemsDimensions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemsDimensionsOutputReference extends cdktf.ComplexObject {
@@ -111,6 +122,17 @@ export function dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurit
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemsToHclTerraform(struct?: DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -186,6 +208,17 @@ export function dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurit
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionToHclTerraform(struct?: DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsSecurityFeatureAnalyticsCollectionOutputReference extends cdktf.ComplexObject {
@@ -266,6 +299,37 @@ export function dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsFilterT
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsFilterToHclTerraform(struct?: DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsFilterOutputReference extends cdktf.ComplexObject {
@@ -396,6 +460,20 @@ export class DataOciDataSafeSecurityAssessmentSecurityFeatureAnalytics extends c
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_security_assessment_security_feature_analytics";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeSecurityAssessmentSecurityFeatureAnalytics resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeSecurityAssessmentSecurityFeatureAnalytics to import
+  * @param importFromId The id of the existing DataOciDataSafeSecurityAssessmentSecurityFeatureAnalytics that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_security_assessment_security_feature_analytics#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeSecurityAssessmentSecurityFeatureAnalytics to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_security_assessment_security_feature_analytics", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -548,5 +626,49 @@ export class DataOciDataSafeSecurityAssessmentSecurityFeatureAnalytics extends c
       target_id: cdktf.stringToTerraform(this._targetId),
       filter: cdktf.listMapper(dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      access_level: {
+        value: cdktf.stringToHclTerraform(this._accessLevel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_id: {
+        value: cdktf.stringToHclTerraform(this._targetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeSecurityAssessmentSecurityFeatureAnalyticsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

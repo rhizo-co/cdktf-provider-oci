@@ -36,19 +36,19 @@ export interface AnalyticsAnalyticsInstancePrivateAccessChannelConfig extends cd
   readonly vcnId: string;
   /**
   * private_source_dns_zones block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/analytics_analytics_instance_private_access_channel#private_source_dns_zones AnalyticsAnalyticsInstancePrivateAccessChannel#private_source_dns_zones}
   */
   readonly privateSourceDnsZones: AnalyticsAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZones[] | cdktf.IResolvable;
   /**
   * private_source_scan_hosts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/analytics_analytics_instance_private_access_channel#private_source_scan_hosts AnalyticsAnalyticsInstancePrivateAccessChannel#private_source_scan_hosts}
   */
   readonly privateSourceScanHosts?: AnalyticsAnalyticsInstancePrivateAccessChannelPrivateSourceScanHosts[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/analytics_analytics_instance_private_access_channel#timeouts AnalyticsAnalyticsInstancePrivateAccessChannel#timeouts}
   */
   readonly timeouts?: AnalyticsAnalyticsInstancePrivateAccessChannelTimeouts;
@@ -73,6 +73,31 @@ export function analyticsAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZo
     description: cdktf.stringToTerraform(struct!.description),
     dns_zone: cdktf.stringToTerraform(struct!.dnsZone),
   }
+}
+
+
+export function analyticsAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZonesToHclTerraform(struct?: AnalyticsAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZones | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dns_zone: {
+      value: cdktf.stringToHclTerraform(struct!.dnsZone),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AnalyticsAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZonesOutputReference extends cdktf.ComplexObject {
@@ -199,6 +224,37 @@ export function analyticsAnalyticsInstancePrivateAccessChannelPrivateSourceScanH
     scan_hostname: cdktf.stringToTerraform(struct!.scanHostname),
     scan_port: cdktf.numberToTerraform(struct!.scanPort),
   }
+}
+
+
+export function analyticsAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostsToHclTerraform(struct?: AnalyticsAnalyticsInstancePrivateAccessChannelPrivateSourceScanHosts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scan_hostname: {
+      value: cdktf.stringToHclTerraform(struct!.scanHostname),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scan_port: {
+      value: cdktf.numberToHclTerraform(struct!.scanPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AnalyticsAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostsOutputReference extends cdktf.ComplexObject {
@@ -346,6 +402,37 @@ export function analyticsAnalyticsInstancePrivateAccessChannelTimeoutsToTerrafor
   }
 }
 
+
+export function analyticsAnalyticsInstancePrivateAccessChannelTimeoutsToHclTerraform(struct?: AnalyticsAnalyticsInstancePrivateAccessChannelTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AnalyticsAnalyticsInstancePrivateAccessChannelTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -458,6 +545,20 @@ export class AnalyticsAnalyticsInstancePrivateAccessChannel extends cdktf.Terraf
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_analytics_analytics_instance_private_access_channel";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a AnalyticsAnalyticsInstancePrivateAccessChannel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the AnalyticsAnalyticsInstancePrivateAccessChannel to import
+  * @param importFromId The id of the existing AnalyticsAnalyticsInstancePrivateAccessChannel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/analytics_analytics_instance_private_access_channel#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the AnalyticsAnalyticsInstancePrivateAccessChannel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_analytics_analytics_instance_private_access_channel", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -661,5 +762,67 @@ export class AnalyticsAnalyticsInstancePrivateAccessChannel extends cdktf.Terraf
       private_source_scan_hosts: cdktf.listMapper(analyticsAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostsToTerraform, true)(this._privateSourceScanHosts.internalValue),
       timeouts: analyticsAnalyticsInstancePrivateAccessChannelTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      analytics_instance_id: {
+        value: cdktf.stringToHclTerraform(this._analyticsInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_security_group_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._networkSecurityGroupIds),
+        isBlock: false,
+        type: "set",
+        storageClassType: "stringList",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcn_id: {
+        value: cdktf.stringToHclTerraform(this._vcnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      private_source_dns_zones: {
+        value: cdktf.listMapperHcl(analyticsAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZonesToHclTerraform, true)(this._privateSourceDnsZones.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AnalyticsAnalyticsInstancePrivateAccessChannelPrivateSourceDnsZonesList",
+      },
+      private_source_scan_hosts: {
+        value: cdktf.listMapperHcl(analyticsAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostsToHclTerraform, true)(this._privateSourceScanHosts.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AnalyticsAnalyticsInstancePrivateAccessChannelPrivateSourceScanHostsList",
+      },
+      timeouts: {
+        value: analyticsAnalyticsInstancePrivateAccessChannelTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "AnalyticsAnalyticsInstancePrivateAccessChannelTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

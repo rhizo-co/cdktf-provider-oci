@@ -52,31 +52,31 @@ export interface CloudBridgeAssetConfig extends cdktf.TerraformMetaArguments {
   readonly sourceKey: string;
   /**
   * compute block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#compute CloudBridgeAsset#compute}
   */
   readonly compute?: CloudBridgeAssetCompute;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#timeouts CloudBridgeAsset#timeouts}
   */
   readonly timeouts?: CloudBridgeAssetTimeouts;
   /**
   * vm block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#vm CloudBridgeAsset#vm}
   */
   readonly vm?: CloudBridgeAssetVm;
   /**
   * vmware_vcenter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#vmware_vcenter CloudBridgeAsset#vmware_vcenter}
   */
   readonly vmwareVcenter?: CloudBridgeAssetVmwareVcenter;
   /**
   * vmware_vm block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#vmware_vm CloudBridgeAsset#vmware_vm}
   */
   readonly vmwareVm?: CloudBridgeAssetVmwareVm;
@@ -126,6 +126,61 @@ export function cloudBridgeAssetComputeDisksToTerraform(struct?: CloudBridgeAsse
     uuid: cdktf.stringToTerraform(struct!.uuid),
     uuid_lun: cdktf.stringToTerraform(struct!.uuidLun),
   }
+}
+
+
+export function cloudBridgeAssetComputeDisksToHclTerraform(struct?: CloudBridgeAssetComputeDisks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    boot_order: {
+      value: cdktf.numberToHclTerraform(struct!.bootOrder),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    location: {
+      value: cdktf.stringToHclTerraform(struct!.location),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    persistent_mode: {
+      value: cdktf.stringToHclTerraform(struct!.persistentMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    size_in_mbs: {
+      value: cdktf.stringToHclTerraform(struct!.sizeInMbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uuid: {
+      value: cdktf.stringToHclTerraform(struct!.uuid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uuid_lun: {
+      value: cdktf.stringToHclTerraform(struct!.uuidLun),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetComputeDisksOutputReference extends cdktf.ComplexObject {
@@ -377,6 +432,49 @@ export function cloudBridgeAssetComputeGpuDevicesToTerraform(struct?: CloudBridg
   }
 }
 
+
+export function cloudBridgeAssetComputeGpuDevicesToHclTerraform(struct?: CloudBridgeAssetComputeGpuDevices | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cores_count: {
+      value: cdktf.numberToHclTerraform(struct!.coresCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    manufacturer: {
+      value: cdktf.stringToHclTerraform(struct!.manufacturer),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    memory_in_mbs: {
+      value: cdktf.stringToHclTerraform(struct!.memoryInMbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudBridgeAssetComputeGpuDevicesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -585,6 +683,55 @@ export function cloudBridgeAssetComputeNicsToTerraform(struct?: CloudBridgeAsset
     network_name: cdktf.stringToTerraform(struct!.networkName),
     switch_name: cdktf.stringToTerraform(struct!.switchName),
   }
+}
+
+
+export function cloudBridgeAssetComputeNicsToHclTerraform(struct?: CloudBridgeAssetComputeNics | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ip_addresses: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.ipAddresses),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    label: {
+      value: cdktf.stringToHclTerraform(struct!.label),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    mac_address: {
+      value: cdktf.stringToHclTerraform(struct!.macAddress),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    mac_address_type: {
+      value: cdktf.stringToHclTerraform(struct!.macAddressType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    network_name: {
+      value: cdktf.stringToHclTerraform(struct!.networkName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    switch_name: {
+      value: cdktf.stringToHclTerraform(struct!.switchName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetComputeNicsOutputReference extends cdktf.ComplexObject {
@@ -799,6 +946,31 @@ export function cloudBridgeAssetComputeNvdimmControllerToTerraform(struct?: Clou
   }
 }
 
+
+export function cloudBridgeAssetComputeNvdimmControllerToHclTerraform(struct?: CloudBridgeAssetComputeNvdimmControllerOutputReference | CloudBridgeAssetComputeNvdimmController): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bus_number: {
+      value: cdktf.numberToHclTerraform(struct!.busNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    label: {
+      value: cdktf.stringToHclTerraform(struct!.label),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudBridgeAssetComputeNvdimmControllerOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -894,6 +1066,37 @@ export function cloudBridgeAssetComputeNvdimmsToTerraform(struct?: CloudBridgeAs
     label: cdktf.stringToTerraform(struct!.label),
     unit_number: cdktf.numberToTerraform(struct!.unitNumber),
   }
+}
+
+
+export function cloudBridgeAssetComputeNvdimmsToHclTerraform(struct?: CloudBridgeAssetComputeNvdimms | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    controller_key: {
+      value: cdktf.numberToHclTerraform(struct!.controllerKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    label: {
+      value: cdktf.stringToHclTerraform(struct!.label),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    unit_number: {
+      value: cdktf.numberToHclTerraform(struct!.unitNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetComputeNvdimmsOutputReference extends cdktf.ComplexObject {
@@ -1045,6 +1248,37 @@ export function cloudBridgeAssetComputeScsiControllerToTerraform(struct?: CloudB
     shared_bus: cdktf.stringToTerraform(struct!.sharedBus),
     unit_number: cdktf.numberToTerraform(struct!.unitNumber),
   }
+}
+
+
+export function cloudBridgeAssetComputeScsiControllerToHclTerraform(struct?: CloudBridgeAssetComputeScsiControllerOutputReference | CloudBridgeAssetComputeScsiController): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    label: {
+      value: cdktf.stringToHclTerraform(struct!.label),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shared_bus: {
+      value: cdktf.stringToHclTerraform(struct!.sharedBus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    unit_number: {
+      value: cdktf.numberToHclTerraform(struct!.unitNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetComputeScsiControllerOutputReference extends cdktf.ComplexObject {
@@ -1234,37 +1468,37 @@ export interface CloudBridgeAssetCompute {
   readonly threadsPerCoreCount?: number;
   /**
   * disks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#disks CloudBridgeAsset#disks}
   */
   readonly disks?: CloudBridgeAssetComputeDisks[] | cdktf.IResolvable;
   /**
   * gpu_devices block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#gpu_devices CloudBridgeAsset#gpu_devices}
   */
   readonly gpuDevices?: CloudBridgeAssetComputeGpuDevices[] | cdktf.IResolvable;
   /**
   * nics block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#nics CloudBridgeAsset#nics}
   */
   readonly nics?: CloudBridgeAssetComputeNics[] | cdktf.IResolvable;
   /**
   * nvdimm_controller block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#nvdimm_controller CloudBridgeAsset#nvdimm_controller}
   */
   readonly nvdimmController?: CloudBridgeAssetComputeNvdimmController;
   /**
   * nvdimms block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#nvdimms CloudBridgeAsset#nvdimms}
   */
   readonly nvdimms?: CloudBridgeAssetComputeNvdimms[] | cdktf.IResolvable;
   /**
   * scsi_controller block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#scsi_controller CloudBridgeAsset#scsi_controller}
   */
   readonly scsiController?: CloudBridgeAssetComputeScsiController;
@@ -1306,6 +1540,193 @@ export function cloudBridgeAssetComputeToTerraform(struct?: CloudBridgeAssetComp
     nvdimms: cdktf.listMapper(cloudBridgeAssetComputeNvdimmsToTerraform, true)(struct!.nvdimms),
     scsi_controller: cloudBridgeAssetComputeScsiControllerToTerraform(struct!.scsiController),
   }
+}
+
+
+export function cloudBridgeAssetComputeToHclTerraform(struct?: CloudBridgeAssetComputeOutputReference | CloudBridgeAssetCompute): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    connected_networks: {
+      value: cdktf.numberToHclTerraform(struct!.connectedNetworks),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    cores_count: {
+      value: cdktf.numberToHclTerraform(struct!.coresCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    cpu_model: {
+      value: cdktf.stringToHclTerraform(struct!.cpuModel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    disks_count: {
+      value: cdktf.numberToHclTerraform(struct!.disksCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    dns_name: {
+      value: cdktf.stringToHclTerraform(struct!.dnsName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    firmware: {
+      value: cdktf.stringToHclTerraform(struct!.firmware),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    gpu_devices_count: {
+      value: cdktf.numberToHclTerraform(struct!.gpuDevicesCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    guest_state: {
+      value: cdktf.stringToHclTerraform(struct!.guestState),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    hardware_version: {
+      value: cdktf.stringToHclTerraform(struct!.hardwareVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    host_name: {
+      value: cdktf.stringToHclTerraform(struct!.hostName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_pmem_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPmemEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_tpm_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isTpmEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    latency_sensitivity: {
+      value: cdktf.stringToHclTerraform(struct!.latencySensitivity),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    memory_in_mbs: {
+      value: cdktf.stringToHclTerraform(struct!.memoryInMbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nics_count: {
+      value: cdktf.numberToHclTerraform(struct!.nicsCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    operating_system: {
+      value: cdktf.stringToHclTerraform(struct!.operatingSystem),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operating_system_version: {
+      value: cdktf.stringToHclTerraform(struct!.operatingSystemVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pmem_in_mbs: {
+      value: cdktf.stringToHclTerraform(struct!.pmemInMbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    power_state: {
+      value: cdktf.stringToHclTerraform(struct!.powerState),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    primary_ip: {
+      value: cdktf.stringToHclTerraform(struct!.primaryIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    storage_provisioned_in_mbs: {
+      value: cdktf.stringToHclTerraform(struct!.storageProvisionedInMbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    threads_per_core_count: {
+      value: cdktf.numberToHclTerraform(struct!.threadsPerCoreCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    disks: {
+      value: cdktf.listMapperHcl(cloudBridgeAssetComputeDisksToHclTerraform, true)(struct!.disks),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudBridgeAssetComputeDisksList",
+    },
+    gpu_devices: {
+      value: cdktf.listMapperHcl(cloudBridgeAssetComputeGpuDevicesToHclTerraform, true)(struct!.gpuDevices),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudBridgeAssetComputeGpuDevicesList",
+    },
+    nics: {
+      value: cdktf.listMapperHcl(cloudBridgeAssetComputeNicsToHclTerraform, true)(struct!.nics),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudBridgeAssetComputeNicsList",
+    },
+    nvdimm_controller: {
+      value: cloudBridgeAssetComputeNvdimmControllerToHclTerraform(struct!.nvdimmController),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudBridgeAssetComputeNvdimmControllerList",
+    },
+    nvdimms: {
+      value: cdktf.listMapperHcl(cloudBridgeAssetComputeNvdimmsToHclTerraform, true)(struct!.nvdimms),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudBridgeAssetComputeNvdimmsList",
+    },
+    scsi_controller: {
+      value: cloudBridgeAssetComputeScsiControllerToHclTerraform(struct!.scsiController),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudBridgeAssetComputeScsiControllerList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetComputeOutputReference extends cdktf.ComplexObject {
@@ -1999,6 +2420,37 @@ export function cloudBridgeAssetTimeoutsToTerraform(struct?: CloudBridgeAssetTim
   }
 }
 
+
+export function cloudBridgeAssetTimeoutsToHclTerraform(struct?: CloudBridgeAssetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudBridgeAssetTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2128,6 +2580,37 @@ export function cloudBridgeAssetVmToTerraform(struct?: CloudBridgeAssetVmOutputR
   }
 }
 
+
+export function cloudBridgeAssetVmToHclTerraform(struct?: CloudBridgeAssetVmOutputReference | CloudBridgeAssetVm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hypervisor_host: {
+      value: cdktf.stringToHclTerraform(struct!.hypervisorHost),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    hypervisor_vendor: {
+      value: cdktf.stringToHclTerraform(struct!.hypervisorVendor),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    hypervisor_version: {
+      value: cdktf.stringToHclTerraform(struct!.hypervisorVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudBridgeAssetVmOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2247,6 +2730,37 @@ export function cloudBridgeAssetVmwareVcenterToTerraform(struct?: CloudBridgeAss
   }
 }
 
+
+export function cloudBridgeAssetVmwareVcenterToHclTerraform(struct?: CloudBridgeAssetVmwareVcenterOutputReference | CloudBridgeAssetVmwareVcenter): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    data_center: {
+      value: cdktf.stringToHclTerraform(struct!.dataCenter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vcenter_key: {
+      value: cdktf.stringToHclTerraform(struct!.vcenterKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vcenter_version: {
+      value: cdktf.stringToHclTerraform(struct!.vcenterVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudBridgeAssetVmwareVcenterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2359,6 +2873,31 @@ export function cloudBridgeAssetVmwareVmCustomerTagsToTerraform(struct?: CloudBr
     description: cdktf.stringToTerraform(struct!.description),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function cloudBridgeAssetVmwareVmCustomerTagsToHclTerraform(struct?: CloudBridgeAssetVmwareVmCustomerTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetVmwareVmCustomerTagsOutputReference extends cdktf.ComplexObject {
@@ -2506,7 +3045,7 @@ export interface CloudBridgeAssetVmwareVm {
   readonly vmwareToolsStatus?: string;
   /**
   * customer_tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#customer_tags CloudBridgeAsset#customer_tags}
   */
   readonly customerTags?: CloudBridgeAssetVmwareVmCustomerTags[] | cdktf.IResolvable;
@@ -2530,6 +3069,85 @@ export function cloudBridgeAssetVmwareVmToTerraform(struct?: CloudBridgeAssetVmw
     vmware_tools_status: cdktf.stringToTerraform(struct!.vmwareToolsStatus),
     customer_tags: cdktf.listMapper(cloudBridgeAssetVmwareVmCustomerTagsToTerraform, true)(struct!.customerTags),
   }
+}
+
+
+export function cloudBridgeAssetVmwareVmToHclTerraform(struct?: CloudBridgeAssetVmwareVmOutputReference | CloudBridgeAssetVmwareVm): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cluster: {
+      value: cdktf.stringToHclTerraform(struct!.cluster),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    customer_fields: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.customerFields),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    fault_tolerance_bandwidth: {
+      value: cdktf.numberToHclTerraform(struct!.faultToleranceBandwidth),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    fault_tolerance_secondary_latency: {
+      value: cdktf.numberToHclTerraform(struct!.faultToleranceSecondaryLatency),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    fault_tolerance_state: {
+      value: cdktf.stringToHclTerraform(struct!.faultToleranceState),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    instance_uuid: {
+      value: cdktf.stringToHclTerraform(struct!.instanceUuid),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_disks_cbt_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isDisksCbtEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_disks_uuid_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isDisksUuidEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vmware_tools_status: {
+      value: cdktf.stringToHclTerraform(struct!.vmwareToolsStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    customer_tags: {
+      value: cdktf.listMapperHcl(cloudBridgeAssetVmwareVmCustomerTagsToHclTerraform, true)(struct!.customerTags),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudBridgeAssetVmwareVmCustomerTagsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudBridgeAssetVmwareVmOutputReference extends cdktf.ComplexObject {
@@ -2810,6 +3428,20 @@ export class CloudBridgeAsset extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_bridge_asset";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CloudBridgeAsset resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CloudBridgeAsset to import
+  * @param importFromId The id of the existing CloudBridgeAsset that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_bridge_asset#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CloudBridgeAsset to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_bridge_asset", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -3127,5 +3759,103 @@ export class CloudBridgeAsset extends cdktf.TerraformResource {
       vmware_vcenter: cloudBridgeAssetVmwareVcenterToTerraform(this._vmwareVcenter.internalValue),
       vmware_vm: cloudBridgeAssetVmwareVmToTerraform(this._vmwareVm.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      asset_source_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._assetSourceIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      asset_type: {
+        value: cdktf.stringToHclTerraform(this._assetType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_asset_key: {
+        value: cdktf.stringToHclTerraform(this._externalAssetKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      inventory_id: {
+        value: cdktf.stringToHclTerraform(this._inventoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_key: {
+        value: cdktf.stringToHclTerraform(this._sourceKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compute: {
+        value: cloudBridgeAssetComputeToHclTerraform(this._compute.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudBridgeAssetComputeList",
+      },
+      timeouts: {
+        value: cloudBridgeAssetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CloudBridgeAssetTimeouts",
+      },
+      vm: {
+        value: cloudBridgeAssetVmToHclTerraform(this._vm.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudBridgeAssetVmList",
+      },
+      vmware_vcenter: {
+        value: cloudBridgeAssetVmwareVcenterToHclTerraform(this._vmwareVcenter.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudBridgeAssetVmwareVcenterList",
+      },
+      vmware_vm: {
+        value: cloudBridgeAssetVmwareVmToHclTerraform(this._vmwareVm.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudBridgeAssetVmwareVmList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

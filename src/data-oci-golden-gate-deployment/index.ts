@@ -24,6 +24,17 @@ export function dataOciGoldenGateDeploymentDeploymentDiagnosticDataToTerraform(s
   }
 }
 
+
+export function dataOciGoldenGateDeploymentDeploymentDiagnosticDataToHclTerraform(struct?: DataOciGoldenGateDeploymentDeploymentDiagnosticData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGoldenGateDeploymentDeploymentDiagnosticDataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -113,6 +124,17 @@ export function dataOciGoldenGateDeploymentIngressIpsToTerraform(struct?: DataOc
   }
 }
 
+
+export function dataOciGoldenGateDeploymentIngressIpsToHclTerraform(struct?: DataOciGoldenGateDeploymentIngressIps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGoldenGateDeploymentIngressIpsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -175,6 +197,17 @@ export function dataOciGoldenGateDeploymentLocksToTerraform(struct?: DataOciGold
   }
   return {
   }
+}
+
+
+export function dataOciGoldenGateDeploymentLocksToHclTerraform(struct?: DataOciGoldenGateDeploymentLocks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGoldenGateDeploymentLocksOutputReference extends cdktf.ComplexObject {
@@ -254,6 +287,17 @@ export function dataOciGoldenGateDeploymentMaintenanceConfigurationToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciGoldenGateDeploymentMaintenanceConfigurationToHclTerraform(struct?: DataOciGoldenGateDeploymentMaintenanceConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGoldenGateDeploymentMaintenanceConfigurationOutputReference extends cdktf.ComplexObject {
@@ -340,6 +384,17 @@ export function dataOciGoldenGateDeploymentMaintenanceWindowToTerraform(struct?:
   }
 }
 
+
+export function dataOciGoldenGateDeploymentMaintenanceWindowToHclTerraform(struct?: DataOciGoldenGateDeploymentMaintenanceWindow): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGoldenGateDeploymentMaintenanceWindowOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -407,6 +462,17 @@ export function dataOciGoldenGateDeploymentOggDataGroupToRolesMappingToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciGoldenGateDeploymentOggDataGroupToRolesMappingToHclTerraform(struct?: DataOciGoldenGateDeploymentOggDataGroupToRolesMapping): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGoldenGateDeploymentOggDataGroupToRolesMappingOutputReference extends cdktf.ComplexObject {
@@ -486,6 +552,17 @@ export function dataOciGoldenGateDeploymentOggDataToTerraform(struct?: DataOciGo
   }
   return {
   }
+}
+
+
+export function dataOciGoldenGateDeploymentOggDataToHclTerraform(struct?: DataOciGoldenGateDeploymentOggData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGoldenGateDeploymentOggDataOutputReference extends cdktf.ComplexObject {
@@ -596,6 +673,20 @@ export class DataOciGoldenGateDeployment extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_golden_gate_deployment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGoldenGateDeployment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGoldenGateDeployment to import
+  * @param importFromId The id of the existing DataOciGoldenGateDeployment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/golden_gate_deployment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGoldenGateDeployment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_golden_gate_deployment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -881,5 +972,19 @@ export class DataOciGoldenGateDeployment extends cdktf.TerraformDataSource {
     return {
       deployment_id: cdktf.stringToTerraform(this._deploymentId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      deployment_id: {
+        value: cdktf.stringToHclTerraform(this._deploymentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

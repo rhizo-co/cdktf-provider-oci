@@ -124,7 +124,7 @@ export interface OpensearchOpensearchClusterConfig extends cdktf.TerraformMetaAr
   readonly vcnId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opensearch_opensearch_cluster#timeouts OpensearchOpensearchCluster#timeouts}
   */
   readonly timeouts?: OpensearchOpensearchClusterTimeouts;
@@ -154,6 +154,37 @@ export function opensearchOpensearchClusterTimeoutsToTerraform(struct?: Opensear
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function opensearchOpensearchClusterTimeoutsToHclTerraform(struct?: OpensearchOpensearchClusterTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OpensearchOpensearchClusterTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -268,6 +299,20 @@ export class OpensearchOpensearchCluster extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_opensearch_opensearch_cluster";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OpensearchOpensearchCluster resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OpensearchOpensearchCluster to import
+  * @param importFromId The id of the existing OpensearchOpensearchCluster that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opensearch_opensearch_cluster#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OpensearchOpensearchCluster to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opensearch_opensearch_cluster", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -834,5 +879,187 @@ export class OpensearchOpensearchCluster extends cdktf.TerraformResource {
       vcn_id: cdktf.stringToTerraform(this._vcnId),
       timeouts: opensearchOpensearchClusterTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      data_node_count: {
+        value: cdktf.numberToHclTerraform(this._dataNodeCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      data_node_host_bare_metal_shape: {
+        value: cdktf.stringToHclTerraform(this._dataNodeHostBareMetalShape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      data_node_host_memory_gb: {
+        value: cdktf.numberToHclTerraform(this._dataNodeHostMemoryGb),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      data_node_host_ocpu_count: {
+        value: cdktf.numberToHclTerraform(this._dataNodeHostOcpuCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      data_node_host_type: {
+        value: cdktf.stringToHclTerraform(this._dataNodeHostType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      data_node_storage_gb: {
+        value: cdktf.numberToHclTerraform(this._dataNodeStorageGb),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      master_node_count: {
+        value: cdktf.numberToHclTerraform(this._masterNodeCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      master_node_host_bare_metal_shape: {
+        value: cdktf.stringToHclTerraform(this._masterNodeHostBareMetalShape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      master_node_host_memory_gb: {
+        value: cdktf.numberToHclTerraform(this._masterNodeHostMemoryGb),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      master_node_host_ocpu_count: {
+        value: cdktf.numberToHclTerraform(this._masterNodeHostOcpuCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      master_node_host_type: {
+        value: cdktf.stringToHclTerraform(this._masterNodeHostType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opendashboard_node_count: {
+        value: cdktf.numberToHclTerraform(this._opendashboardNodeCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      opendashboard_node_host_memory_gb: {
+        value: cdktf.numberToHclTerraform(this._opendashboardNodeHostMemoryGb),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      opendashboard_node_host_ocpu_count: {
+        value: cdktf.numberToHclTerraform(this._opendashboardNodeHostOcpuCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      security_master_user_name: {
+        value: cdktf.stringToHclTerraform(this._securityMasterUserName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      security_master_user_password_hash: {
+        value: cdktf.stringToHclTerraform(this._securityMasterUserPasswordHash),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      security_mode: {
+        value: cdktf.stringToHclTerraform(this._securityMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      software_version: {
+        value: cdktf.stringToHclTerraform(this._softwareVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_compartment_id: {
+        value: cdktf.stringToHclTerraform(this._subnetCompartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subnet_id: {
+        value: cdktf.stringToHclTerraform(this._subnetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      system_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._systemTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      vcn_compartment_id: {
+        value: cdktf.stringToHclTerraform(this._vcnCompartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vcn_id: {
+        value: cdktf.stringToHclTerraform(this._vcnId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: opensearchOpensearchClusterTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OpensearchOpensearchClusterTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

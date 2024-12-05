@@ -40,7 +40,7 @@ export interface DataOciCapacityManagementInternalNamespaceOccOverviewsConfig ex
   readonly workloadType?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/capacity_management_internal_namespace_occ_overviews#filter DataOciCapacityManagementInternalNamespaceOccOverviews#filter}
   */
   readonly filter?: DataOciCapacityManagementInternalNamespaceOccOverviewsFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciCapacityManagementInternalNamespaceOccOverviewsOccOvervie
   }
   return {
   }
+}
+
+
+export function dataOciCapacityManagementInternalNamespaceOccOverviewsOccOverviewCollectionItemsToHclTerraform(struct?: DataOciCapacityManagementInternalNamespaceOccOverviewsOccOverviewCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCapacityManagementInternalNamespaceOccOverviewsOccOverviewCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -176,6 +187,17 @@ export function dataOciCapacityManagementInternalNamespaceOccOverviewsOccOvervie
   }
 }
 
+
+export function dataOciCapacityManagementInternalNamespaceOccOverviewsOccOverviewCollectionToHclTerraform(struct?: DataOciCapacityManagementInternalNamespaceOccOverviewsOccOverviewCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCapacityManagementInternalNamespaceOccOverviewsOccOverviewCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -254,6 +276,37 @@ export function dataOciCapacityManagementInternalNamespaceOccOverviewsFilterToTe
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCapacityManagementInternalNamespaceOccOverviewsFilterToHclTerraform(struct?: DataOciCapacityManagementInternalNamespaceOccOverviewsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCapacityManagementInternalNamespaceOccOverviewsFilterOutputReference extends cdktf.ComplexObject {
@@ -384,6 +437,20 @@ export class DataOciCapacityManagementInternalNamespaceOccOverviews extends cdkt
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_capacity_management_internal_namespace_occ_overviews";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCapacityManagementInternalNamespaceOccOverviews resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCapacityManagementInternalNamespaceOccOverviews to import
+  * @param importFromId The id of the existing DataOciCapacityManagementInternalNamespaceOccOverviews that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/capacity_management_internal_namespace_occ_overviews#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCapacityManagementInternalNamespaceOccOverviews to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_capacity_management_internal_namespace_occ_overviews", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -566,5 +633,61 @@ export class DataOciCapacityManagementInternalNamespaceOccOverviews extends cdkt
       workload_type: cdktf.stringToTerraform(this._workloadType),
       filter: cdktf.listMapper(dataOciCapacityManagementInternalNamespaceOccOverviewsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      from: {
+        value: cdktf.stringToHclTerraform(this._from),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      occ_customer_group_id: {
+        value: cdktf.stringToHclTerraform(this._occCustomerGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      to: {
+        value: cdktf.stringToHclTerraform(this._to),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      workload_type: {
+        value: cdktf.stringToHclTerraform(this._workloadType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCapacityManagementInternalNamespaceOccOverviewsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCapacityManagementInternalNamespaceOccOverviewsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

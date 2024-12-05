@@ -28,6 +28,17 @@ export function dataOciFleetAppsManagementFleetCredentialEntitySpecificsToTerraf
   }
 }
 
+
+export function dataOciFleetAppsManagementFleetCredentialEntitySpecificsToHclTerraform(struct?: DataOciFleetAppsManagementFleetCredentialEntitySpecifics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementFleetCredentialEntitySpecificsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -100,6 +111,17 @@ export function dataOciFleetAppsManagementFleetCredentialPasswordToTerraform(str
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementFleetCredentialPasswordToHclTerraform(struct?: DataOciFleetAppsManagementFleetCredentialPassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementFleetCredentialPasswordOutputReference extends cdktf.ComplexObject {
@@ -196,6 +218,17 @@ export function dataOciFleetAppsManagementFleetCredentialUserToTerraform(struct?
   }
 }
 
+
+export function dataOciFleetAppsManagementFleetCredentialUserToHclTerraform(struct?: DataOciFleetAppsManagementFleetCredentialUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementFleetCredentialUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -288,6 +321,20 @@ export class DataOciFleetAppsManagementFleetCredential extends cdktf.TerraformDa
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_fleet_credential";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFleetAppsManagementFleetCredential resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFleetAppsManagementFleetCredential to import
+  * @param importFromId The id of the existing DataOciFleetAppsManagementFleetCredential that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_fleet_credential#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFleetAppsManagementFleetCredential to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_fleet_credential", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -418,5 +465,25 @@ export class DataOciFleetAppsManagementFleetCredential extends cdktf.TerraformDa
       fleet_credential_id: cdktf.stringToTerraform(this._fleetCredentialId),
       fleet_id: cdktf.stringToTerraform(this._fleetId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      fleet_credential_id: {
+        value: cdktf.stringToHclTerraform(this._fleetCredentialId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fleet_id: {
+        value: cdktf.stringToHclTerraform(this._fleetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

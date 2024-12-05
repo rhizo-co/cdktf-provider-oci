@@ -28,7 +28,7 @@ export interface ObjectstorageNamespaceMetadataConfig extends cdktf.TerraformMet
   readonly namespace: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_namespace_metadata#timeouts ObjectstorageNamespaceMetadata#timeouts}
   */
   readonly timeouts?: ObjectstorageNamespaceMetadataTimeouts;
@@ -58,6 +58,37 @@ export function objectstorageNamespaceMetadataTimeoutsToTerraform(struct?: Objec
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function objectstorageNamespaceMetadataTimeoutsToHclTerraform(struct?: ObjectstorageNamespaceMetadataTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ObjectstorageNamespaceMetadataTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -172,6 +203,20 @@ export class ObjectstorageNamespaceMetadata extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_objectstorage_namespace_metadata";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ObjectstorageNamespaceMetadata resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ObjectstorageNamespaceMetadata to import
+  * @param importFromId The id of the existing ObjectstorageNamespaceMetadata that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/objectstorage_namespace_metadata#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ObjectstorageNamespaceMetadata to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_objectstorage_namespace_metadata", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -300,5 +345,43 @@ export class ObjectstorageNamespaceMetadata extends cdktf.TerraformResource {
       namespace: cdktf.stringToTerraform(this._namespace),
       timeouts: objectstorageNamespaceMetadataTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      default_s3compartment_id: {
+        value: cdktf.stringToHclTerraform(this._defaultS3CompartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      default_swift_compartment_id: {
+        value: cdktf.stringToHclTerraform(this._defaultSwiftCompartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: objectstorageNamespaceMetadataTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ObjectstorageNamespaceMetadataTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

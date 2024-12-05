@@ -47,6 +47,17 @@ export function dataOciApmTracesTraceServiceSummariesToTerraform(struct?: DataOc
   }
 }
 
+
+export function dataOciApmTracesTraceServiceSummariesToHclTerraform(struct?: DataOciApmTracesTraceServiceSummaries): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciApmTracesTraceServiceSummariesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -121,6 +132,17 @@ export function dataOciApmTracesTraceSpanSummaryServiceSummariesToTerraform(stru
   }
 }
 
+
+export function dataOciApmTracesTraceSpanSummaryServiceSummariesToHclTerraform(struct?: DataOciApmTracesTraceSpanSummaryServiceSummaries): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciApmTracesTraceSpanSummaryServiceSummariesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -193,6 +215,17 @@ export function dataOciApmTracesTraceSpanSummaryToTerraform(struct?: DataOciApmT
   }
   return {
   }
+}
+
+
+export function dataOciApmTracesTraceSpanSummaryToHclTerraform(struct?: DataOciApmTracesTraceSpanSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciApmTracesTraceSpanSummaryOutputReference extends cdktf.ComplexObject {
@@ -335,6 +368,17 @@ export function dataOciApmTracesTraceSpansLogsSpanLogsToTerraform(struct?: DataO
   }
 }
 
+
+export function dataOciApmTracesTraceSpansLogsSpanLogsToHclTerraform(struct?: DataOciApmTracesTraceSpansLogsSpanLogs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciApmTracesTraceSpansLogsSpanLogsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -402,6 +446,17 @@ export function dataOciApmTracesTraceSpansLogsToTerraform(struct?: DataOciApmTra
   }
   return {
   }
+}
+
+
+export function dataOciApmTracesTraceSpansLogsToHclTerraform(struct?: DataOciApmTracesTraceSpansLogs): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciApmTracesTraceSpansLogsOutputReference extends cdktf.ComplexObject {
@@ -479,6 +534,17 @@ export function dataOciApmTracesTraceSpansTagsToTerraform(struct?: DataOciApmTra
   }
 }
 
+
+export function dataOciApmTracesTraceSpansTagsToHclTerraform(struct?: DataOciApmTracesTraceSpansTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciApmTracesTraceSpansTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -546,6 +612,17 @@ export function dataOciApmTracesTraceSpansToTerraform(struct?: DataOciApmTracesT
   }
   return {
   }
+}
+
+
+export function dataOciApmTracesTraceSpansToHclTerraform(struct?: DataOciApmTracesTraceSpans): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciApmTracesTraceSpansOutputReference extends cdktf.ComplexObject {
@@ -672,6 +749,20 @@ export class DataOciApmTracesTrace extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apm_traces_trace";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciApmTracesTrace resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciApmTracesTrace to import
+  * @param importFromId The id of the existing DataOciApmTracesTrace that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/apm_traces_trace#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciApmTracesTrace to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apm_traces_trace", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -913,5 +1004,49 @@ export class DataOciApmTracesTrace extends cdktf.TerraformDataSource {
       trace_key: cdktf.stringToTerraform(this._traceKey),
       trace_namespace: cdktf.stringToTerraform(this._traceNamespace),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      apm_domain_id: {
+        value: cdktf.stringToHclTerraform(this._apmDomainId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_trace_started_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeTraceStartedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_trace_started_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeTraceStartedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      trace_key: {
+        value: cdktf.stringToHclTerraform(this._traceKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      trace_namespace: {
+        value: cdktf.stringToHclTerraform(this._traceNamespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -20,7 +20,7 @@ export interface DataOciMeteringComputationScheduledRunsConfig extends cdktf.Ter
   readonly scheduleId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/metering_computation_scheduled_runs#filter DataOciMeteringComputationScheduledRuns#filter}
   */
   readonly filter?: DataOciMeteringComputationScheduledRunsFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciMeteringComputationScheduledRunsScheduledRunCollectionIte
   }
   return {
   }
+}
+
+
+export function dataOciMeteringComputationScheduledRunsScheduledRunCollectionItemsToHclTerraform(struct?: DataOciMeteringComputationScheduledRunsScheduledRunCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciMeteringComputationScheduledRunsScheduledRunCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -126,6 +137,17 @@ export function dataOciMeteringComputationScheduledRunsScheduledRunCollectionToT
   }
 }
 
+
+export function dataOciMeteringComputationScheduledRunsScheduledRunCollectionToHclTerraform(struct?: DataOciMeteringComputationScheduledRunsScheduledRunCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciMeteringComputationScheduledRunsScheduledRunCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -204,6 +226,37 @@ export function dataOciMeteringComputationScheduledRunsFilterToTerraform(struct?
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciMeteringComputationScheduledRunsFilterToHclTerraform(struct?: DataOciMeteringComputationScheduledRunsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciMeteringComputationScheduledRunsFilterOutputReference extends cdktf.ComplexObject {
@@ -335,6 +388,20 @@ export class DataOciMeteringComputationScheduledRuns extends cdktf.TerraformData
   // =================
   public static readonly tfResourceType = "oci_metering_computation_scheduled_runs";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMeteringComputationScheduledRuns resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMeteringComputationScheduledRuns to import
+  * @param importFromId The id of the existing DataOciMeteringComputationScheduledRuns that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/metering_computation_scheduled_runs#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMeteringComputationScheduledRuns to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_metering_computation_scheduled_runs", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -432,5 +499,31 @@ export class DataOciMeteringComputationScheduledRuns extends cdktf.TerraformData
       schedule_id: cdktf.stringToTerraform(this._scheduleId),
       filter: cdktf.listMapper(dataOciMeteringComputationScheduledRunsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schedule_id: {
+        value: cdktf.stringToHclTerraform(this._scheduleId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciMeteringComputationScheduledRunsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciMeteringComputationScheduledRunsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

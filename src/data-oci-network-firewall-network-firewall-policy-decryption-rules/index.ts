@@ -28,7 +28,7 @@ export interface DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesConfi
   readonly networkFirewallPolicyId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/network_firewall_network_firewall_policy_decryption_rules#filter DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRules#filter}
   */
   readonly filter?: DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryp
   }
   return {
   }
+}
+
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemsConditionToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemsCondition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemsConditionOutputReference extends cdktf.ComplexObject {
@@ -114,6 +125,17 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryp
   }
 }
 
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemsPositionToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemsPosition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemsPositionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -181,6 +203,17 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryp
   }
   return {
   }
+}
+
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemsToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -289,6 +322,17 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryp
   }
 }
 
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesDecryptionRuleSummaryCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -367,6 +411,37 @@ export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesFilter
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesFilterToHclTerraform(struct?: DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesFilterOutputReference extends cdktf.ComplexObject {
@@ -497,6 +572,20 @@ export class DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRules extends 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_network_firewall_network_firewall_policy_decryption_rules";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRules resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRules to import
+  * @param importFromId The id of the existing DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRules that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/network_firewall_network_firewall_policy_decryption_rules#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRules to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_firewall_network_firewall_policy_decryption_rules", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -631,5 +720,43 @@ export class DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRules extends 
       network_firewall_policy_id: cdktf.stringToTerraform(this._networkFirewallPolicyId),
       filter: cdktf.listMapper(dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      decryption_rule_priority_order: {
+        value: cdktf.numberToHclTerraform(this._decryptionRulePriorityOrder),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_firewall_policy_id: {
+        value: cdktf.stringToHclTerraform(this._networkFirewallPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciNetworkFirewallNetworkFirewallPolicyDecryptionRulesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

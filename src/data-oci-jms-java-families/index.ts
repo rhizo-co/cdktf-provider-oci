@@ -28,7 +28,7 @@ export interface DataOciJmsJavaFamiliesConfig extends cdktf.TerraformMetaArgumen
   readonly isSupportedVersion?: boolean | cdktf.IResolvable;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_java_families#filter DataOciJmsJavaFamilies#filter}
   */
   readonly filter?: DataOciJmsJavaFamiliesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciJmsJavaFamiliesJavaFamilyCollectionItemsLatestReleaseArti
   }
   return {
   }
+}
+
+
+export function dataOciJmsJavaFamiliesJavaFamilyCollectionItemsLatestReleaseArtifactsToHclTerraform(struct?: DataOciJmsJavaFamiliesJavaFamilyCollectionItemsLatestReleaseArtifacts): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsJavaFamiliesJavaFamilyCollectionItemsLatestReleaseArtifactsOutputReference extends cdktf.ComplexObject {
@@ -169,6 +180,17 @@ export function dataOciJmsJavaFamiliesJavaFamilyCollectionItemsToTerraform(struc
   }
 }
 
+
+export function dataOciJmsJavaFamiliesJavaFamilyCollectionItemsToHclTerraform(struct?: DataOciJmsJavaFamiliesJavaFamilyCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsJavaFamiliesJavaFamilyCollectionItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -274,6 +296,17 @@ export function dataOciJmsJavaFamiliesJavaFamilyCollectionToTerraform(struct?: D
   }
 }
 
+
+export function dataOciJmsJavaFamiliesJavaFamilyCollectionToHclTerraform(struct?: DataOciJmsJavaFamiliesJavaFamilyCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsJavaFamiliesJavaFamilyCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -352,6 +385,37 @@ export function dataOciJmsJavaFamiliesFilterToTerraform(struct?: DataOciJmsJavaF
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciJmsJavaFamiliesFilterToHclTerraform(struct?: DataOciJmsJavaFamiliesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciJmsJavaFamiliesFilterOutputReference extends cdktf.ComplexObject {
@@ -482,6 +546,20 @@ export class DataOciJmsJavaFamilies extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_java_families";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsJavaFamilies resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsJavaFamilies to import
+  * @param importFromId The id of the existing DataOciJmsJavaFamilies that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_java_families#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsJavaFamilies to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_java_families", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -619,5 +697,43 @@ export class DataOciJmsJavaFamilies extends cdktf.TerraformDataSource {
       is_supported_version: cdktf.booleanToTerraform(this._isSupportedVersion),
       filter: cdktf.listMapper(dataOciJmsJavaFamiliesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      family_version: {
+        value: cdktf.stringToHclTerraform(this._familyVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_supported_version: {
+        value: cdktf.booleanToHclTerraform(this._isSupportedVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciJmsJavaFamiliesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciJmsJavaFamiliesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

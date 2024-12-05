@@ -43,6 +43,17 @@ export function dataOciOpsiAwrHubAwrSnapshotItemsToTerraform(struct?: DataOciOps
   }
 }
 
+
+export function dataOciOpsiAwrHubAwrSnapshotItemsToHclTerraform(struct?: DataOciOpsiAwrHubAwrSnapshotItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOpsiAwrHubAwrSnapshotItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -135,6 +146,20 @@ export class DataOciOpsiAwrHubAwrSnapshot extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_opsi_awr_hub_awr_snapshot";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOpsiAwrHubAwrSnapshot resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOpsiAwrHubAwrSnapshot to import
+  * @param importFromId The id of the existing DataOciOpsiAwrHubAwrSnapshot that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_awr_hub_awr_snapshot#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOpsiAwrHubAwrSnapshot to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_awr_hub_awr_snapshot", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -266,5 +291,43 @@ export class DataOciOpsiAwrHubAwrSnapshot extends cdktf.TerraformDataSource {
       time_greater_than_or_equal_to: cdktf.stringToTerraform(this._timeGreaterThanOrEqualTo),
       time_less_than_or_equal_to: cdktf.stringToTerraform(this._timeLessThanOrEqualTo),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      awr_hub_id: {
+        value: cdktf.stringToHclTerraform(this._awrHubId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      awr_source_database_identifier: {
+        value: cdktf.stringToHclTerraform(this._awrSourceDatabaseIdentifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_less_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeLessThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

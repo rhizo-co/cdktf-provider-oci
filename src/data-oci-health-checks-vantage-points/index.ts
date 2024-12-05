@@ -24,7 +24,7 @@ export interface DataOciHealthChecksVantagePointsConfig extends cdktf.TerraformM
   readonly name?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/health_checks_vantage_points#filter DataOciHealthChecksVantagePoints#filter}
   */
   readonly filter?: DataOciHealthChecksVantagePointsFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciHealthChecksVantagePointsHealthChecksVantagePointsGeoToTe
   }
   return {
   }
+}
+
+
+export function dataOciHealthChecksVantagePointsHealthChecksVantagePointsGeoToHclTerraform(struct?: DataOciHealthChecksVantagePointsHealthChecksVantagePointsGeo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciHealthChecksVantagePointsHealthChecksVantagePointsGeoOutputReference extends cdktf.ComplexObject {
@@ -135,6 +146,17 @@ export function dataOciHealthChecksVantagePointsHealthChecksVantagePointsRouting
   }
 }
 
+
+export function dataOciHealthChecksVantagePointsHealthChecksVantagePointsRoutingToHclTerraform(struct?: DataOciHealthChecksVantagePointsHealthChecksVantagePointsRouting): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciHealthChecksVantagePointsHealthChecksVantagePointsRoutingOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -212,6 +234,17 @@ export function dataOciHealthChecksVantagePointsHealthChecksVantagePointsToTerra
   }
   return {
   }
+}
+
+
+export function dataOciHealthChecksVantagePointsHealthChecksVantagePointsToHclTerraform(struct?: DataOciHealthChecksVantagePointsHealthChecksVantagePoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciHealthChecksVantagePointsHealthChecksVantagePointsOutputReference extends cdktf.ComplexObject {
@@ -313,6 +346,37 @@ export function dataOciHealthChecksVantagePointsFilterToTerraform(struct?: DataO
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciHealthChecksVantagePointsFilterToHclTerraform(struct?: DataOciHealthChecksVantagePointsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciHealthChecksVantagePointsFilterOutputReference extends cdktf.ComplexObject {
@@ -444,6 +508,20 @@ export class DataOciHealthChecksVantagePoints extends cdktf.TerraformDataSource 
   // =================
   public static readonly tfResourceType = "oci_health_checks_vantage_points";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciHealthChecksVantagePoints resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciHealthChecksVantagePoints to import
+  * @param importFromId The id of the existing DataOciHealthChecksVantagePoints that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/health_checks_vantage_points#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciHealthChecksVantagePoints to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_health_checks_vantage_points", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -562,5 +640,37 @@ export class DataOciHealthChecksVantagePoints extends cdktf.TerraformDataSource 
       name: cdktf.stringToTerraform(this._name),
       filter: cdktf.listMapper(dataOciHealthChecksVantagePointsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciHealthChecksVantagePointsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciHealthChecksVantagePointsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

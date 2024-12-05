@@ -24,6 +24,17 @@ export function dataOciKmsVaultExternalKeyManagerMetadataOauthMetadataToTerrafor
   }
 }
 
+
+export function dataOciKmsVaultExternalKeyManagerMetadataOauthMetadataToHclTerraform(struct?: DataOciKmsVaultExternalKeyManagerMetadataOauthMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciKmsVaultExternalKeyManagerMetadataOauthMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -96,6 +107,17 @@ export function dataOciKmsVaultExternalKeyManagerMetadataToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function dataOciKmsVaultExternalKeyManagerMetadataToHclTerraform(struct?: DataOciKmsVaultExternalKeyManagerMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsVaultExternalKeyManagerMetadataOutputReference extends cdktf.ComplexObject {
@@ -173,6 +195,17 @@ export function dataOciKmsVaultExternalKeyManagerMetadataSummaryOauthMetadataSum
   }
 }
 
+
+export function dataOciKmsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryToHclTerraform(struct?: DataOciKmsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciKmsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -240,6 +273,17 @@ export function dataOciKmsVaultExternalKeyManagerMetadataSummaryToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataOciKmsVaultExternalKeyManagerMetadataSummaryToHclTerraform(struct?: DataOciKmsVaultExternalKeyManagerMetadataSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsVaultExternalKeyManagerMetadataSummaryOutputReference extends cdktf.ComplexObject {
@@ -322,6 +366,17 @@ export function dataOciKmsVaultReplicaDetailsToTerraform(struct?: DataOciKmsVaul
   }
 }
 
+
+export function dataOciKmsVaultReplicaDetailsToHclTerraform(struct?: DataOciKmsVaultReplicaDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciKmsVaultReplicaDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -384,6 +439,17 @@ export function dataOciKmsVaultRestoreFromFileToTerraform(struct?: DataOciKmsVau
   }
   return {
   }
+}
+
+
+export function dataOciKmsVaultRestoreFromFileToHclTerraform(struct?: DataOciKmsVaultRestoreFromFile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsVaultRestoreFromFileOutputReference extends cdktf.ComplexObject {
@@ -458,6 +524,17 @@ export function dataOciKmsVaultRestoreFromObjectStoreToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciKmsVaultRestoreFromObjectStoreToHclTerraform(struct?: DataOciKmsVaultRestoreFromObjectStore): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsVaultRestoreFromObjectStoreOutputReference extends cdktf.ComplexObject {
@@ -542,6 +619,20 @@ export class DataOciKmsVault extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_kms_vault";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciKmsVault resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciKmsVault to import
+  * @param importFromId The id of the existing DataOciKmsVault that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/kms_vault#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciKmsVault to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_vault", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -705,5 +796,19 @@ export class DataOciKmsVault extends cdktf.TerraformDataSource {
     return {
       vault_id: cdktf.stringToTerraform(this._vaultId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      vault_id: {
+        value: cdktf.stringToHclTerraform(this._vaultId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

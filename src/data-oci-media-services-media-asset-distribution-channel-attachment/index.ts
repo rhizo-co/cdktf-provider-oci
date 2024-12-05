@@ -28,7 +28,7 @@ export interface DataOciMediaServicesMediaAssetDistributionChannelAttachmentConf
   readonly mediaAssetId: string;
   /**
   * locks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/media_services_media_asset_distribution_channel_attachment#locks DataOciMediaServicesMediaAssetDistributionChannelAttachment#locks}
   */
   readonly locks?: DataOciMediaServicesMediaAssetDistributionChannelAttachmentLocks[] | cdktf.IResolvable;
@@ -58,6 +58,37 @@ export function dataOciMediaServicesMediaAssetDistributionChannelAttachmentLocks
     related_resource_id: cdktf.stringToTerraform(struct!.relatedResourceId),
     time_created: cdktf.stringToTerraform(struct!.timeCreated),
   }
+}
+
+
+export function dataOciMediaServicesMediaAssetDistributionChannelAttachmentLocksToHclTerraform(struct?: DataOciMediaServicesMediaAssetDistributionChannelAttachmentLocks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    message: {
+      value: cdktf.stringToHclTerraform(struct!.message),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    related_resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.relatedResourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_created: {
+      value: cdktf.stringToHclTerraform(struct!.timeCreated),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciMediaServicesMediaAssetDistributionChannelAttachmentLocksOutputReference extends cdktf.ComplexObject {
@@ -204,6 +235,20 @@ export class DataOciMediaServicesMediaAssetDistributionChannelAttachment extends
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_media_services_media_asset_distribution_channel_attachment";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciMediaServicesMediaAssetDistributionChannelAttachment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciMediaServicesMediaAssetDistributionChannelAttachment to import
+  * @param importFromId The id of the existing DataOciMediaServicesMediaAssetDistributionChannelAttachment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/media_services_media_asset_distribution_channel_attachment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciMediaServicesMediaAssetDistributionChannelAttachment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_media_services_media_asset_distribution_channel_attachment", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -354,5 +399,43 @@ export class DataOciMediaServicesMediaAssetDistributionChannelAttachment extends
       media_asset_id: cdktf.stringToTerraform(this._mediaAssetId),
       locks: cdktf.listMapper(dataOciMediaServicesMediaAssetDistributionChannelAttachmentLocksToTerraform, true)(this._locks.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      distribution_channel_id: {
+        value: cdktf.stringToHclTerraform(this._distributionChannelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_lock_override: {
+        value: cdktf.booleanToHclTerraform(this._isLockOverride),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      media_asset_id: {
+        value: cdktf.stringToHclTerraform(this._mediaAssetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      locks: {
+        value: cdktf.listMapperHcl(dataOciMediaServicesMediaAssetDistributionChannelAttachmentLocksToHclTerraform, true)(this._locks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataOciMediaServicesMediaAssetDistributionChannelAttachmentLocksList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

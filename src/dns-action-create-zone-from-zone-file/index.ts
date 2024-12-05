@@ -32,7 +32,7 @@ export interface DnsActionCreateZoneFromZoneFileConfig extends cdktf.TerraformMe
   readonly viewId?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_action_create_zone_from_zone_file#timeouts DnsActionCreateZoneFromZoneFile#timeouts}
   */
   readonly timeouts?: DnsActionCreateZoneFromZoneFileTimeouts;
@@ -47,6 +47,17 @@ export function dnsActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionsD
   }
   return {
   }
+}
+
+
+export function dnsActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionsDsDataToHclTerraform(struct?: DnsActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionsDsData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DnsActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionsDsDataOutputReference extends cdktf.ComplexObject {
@@ -116,6 +127,17 @@ export function dnsActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionsT
   }
   return {
   }
+}
+
+
+export function dnsActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionsToHclTerraform(struct?: DnsActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DnsActionCreateZoneFromZoneFileDnssecConfigKskDnssecKeyVersionsOutputReference extends cdktf.ComplexObject {
@@ -248,6 +270,17 @@ export function dnsActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionsT
   }
 }
 
+
+export function dnsActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionsToHclTerraform(struct?: DnsActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DnsActionCreateZoneFromZoneFileDnssecConfigZskDnssecKeyVersionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -372,6 +405,17 @@ export function dnsActionCreateZoneFromZoneFileDnssecConfigToTerraform(struct?: 
   }
 }
 
+
+export function dnsActionCreateZoneFromZoneFileDnssecConfigToHclTerraform(struct?: DnsActionCreateZoneFromZoneFileDnssecConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DnsActionCreateZoneFromZoneFileDnssecConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -441,6 +485,17 @@ export function dnsActionCreateZoneFromZoneFileExternalDownstreamsToTerraform(st
   }
   return {
   }
+}
+
+
+export function dnsActionCreateZoneFromZoneFileExternalDownstreamsToHclTerraform(struct?: DnsActionCreateZoneFromZoneFileExternalDownstreams): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DnsActionCreateZoneFromZoneFileExternalDownstreamsOutputReference extends cdktf.ComplexObject {
@@ -517,6 +572,17 @@ export function dnsActionCreateZoneFromZoneFileExternalMastersToTerraform(struct
   }
 }
 
+
+export function dnsActionCreateZoneFromZoneFileExternalMastersToHclTerraform(struct?: DnsActionCreateZoneFromZoneFileExternalMasters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DnsActionCreateZoneFromZoneFileExternalMastersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -591,6 +657,17 @@ export function dnsActionCreateZoneFromZoneFileNameserversToTerraform(struct?: D
   }
 }
 
+
+export function dnsActionCreateZoneFromZoneFileNameserversToHclTerraform(struct?: DnsActionCreateZoneFromZoneFileNameservers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DnsActionCreateZoneFromZoneFileNameserversOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -653,6 +730,17 @@ export function dnsActionCreateZoneFromZoneFileZoneTransferServersToTerraform(st
   }
   return {
   }
+}
+
+
+export function dnsActionCreateZoneFromZoneFileZoneTransferServersToHclTerraform(struct?: DnsActionCreateZoneFromZoneFileZoneTransferServers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DnsActionCreateZoneFromZoneFileZoneTransferServersOutputReference extends cdktf.ComplexObject {
@@ -747,6 +835,37 @@ export function dnsActionCreateZoneFromZoneFileTimeoutsToTerraform(struct?: DnsA
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function dnsActionCreateZoneFromZoneFileTimeoutsToHclTerraform(struct?: DnsActionCreateZoneFromZoneFileTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DnsActionCreateZoneFromZoneFileTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -861,6 +980,20 @@ export class DnsActionCreateZoneFromZoneFile extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dns_action_create_zone_from_zone_file";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DnsActionCreateZoneFromZoneFile resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DnsActionCreateZoneFromZoneFile to import
+  * @param importFromId The id of the existing DnsActionCreateZoneFromZoneFile that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dns_action_create_zone_from_zone_file#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DnsActionCreateZoneFromZoneFile to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dns_action_create_zone_from_zone_file", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1091,5 +1224,49 @@ export class DnsActionCreateZoneFromZoneFile extends cdktf.TerraformResource {
       view_id: cdktf.stringToTerraform(this._viewId),
       timeouts: dnsActionCreateZoneFromZoneFileTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      create_zone_from_zone_file_details: {
+        value: cdktf.stringToHclTerraform(this._createZoneFromZoneFileDetails),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scope: {
+        value: cdktf.stringToHclTerraform(this._scope),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      view_id: {
+        value: cdktf.stringToHclTerraform(this._viewId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: dnsActionCreateZoneFromZoneFileTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DnsActionCreateZoneFromZoneFileTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

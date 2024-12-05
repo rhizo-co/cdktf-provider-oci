@@ -40,25 +40,25 @@ export interface SchServiceConnectorConfig extends cdktf.TerraformMetaArguments 
   readonly state?: string;
   /**
   * source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#source SchServiceConnector#source}
   */
   readonly source: SchServiceConnectorSource;
   /**
   * target block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#target SchServiceConnector#target}
   */
   readonly target: SchServiceConnectorTarget;
   /**
   * tasks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#tasks SchServiceConnector#tasks}
   */
   readonly tasks?: SchServiceConnectorTasks[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#timeouts SchServiceConnector#timeouts}
   */
   readonly timeouts?: SchServiceConnectorTimeouts;
@@ -78,6 +78,25 @@ export function schServiceConnectorSourceCursorToTerraform(struct?: SchServiceCo
   return {
     kind: cdktf.stringToTerraform(struct!.kind),
   }
+}
+
+
+export function schServiceConnectorSourceCursorToHclTerraform(struct?: SchServiceConnectorSourceCursorOutputReference | SchServiceConnectorSourceCursor): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class SchServiceConnectorSourceCursorOutputReference extends cdktf.ComplexObject {
@@ -153,6 +172,37 @@ export function schServiceConnectorSourceLogSourcesToTerraform(struct?: SchServi
     log_group_id: cdktf.stringToTerraform(struct!.logGroupId),
     log_id: cdktf.stringToTerraform(struct!.logId),
   }
+}
+
+
+export function schServiceConnectorSourceLogSourcesToHclTerraform(struct?: SchServiceConnectorSourceLogSources | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.logGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_id: {
+      value: cdktf.stringToHclTerraform(struct!.logId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class SchServiceConnectorSourceLogSourcesOutputReference extends cdktf.ComplexObject {
@@ -296,6 +346,25 @@ export function schServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamesp
   }
 }
 
+
+export function schServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetricsToHclTerraform(struct?: SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetricsOutputReference | SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetricsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -348,7 +417,7 @@ export interface SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNames
   readonly namespace: string;
   /**
   * metrics block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#metrics SchServiceConnector#metrics}
   */
   readonly metrics: SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetrics;
@@ -363,6 +432,31 @@ export function schServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamesp
     namespace: cdktf.stringToTerraform(struct!.namespace),
     metrics: schServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetricsToTerraform(struct!.metrics),
   }
+}
+
+
+export function schServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesToHclTerraform(struct?: SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespaces | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metrics: {
+      value: schServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetricsToHclTerraform(struct!.metrics),
+      isBlock: true,
+      type: "list",
+      storageClassType: "SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesMetricsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesOutputReference extends cdktf.ComplexObject {
@@ -468,7 +562,7 @@ export interface SchServiceConnectorSourceMonitoringSourcesNamespaceDetails {
   readonly kind: string;
   /**
   * namespaces block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#namespaces SchServiceConnector#namespaces}
   */
   readonly namespaces: SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespaces[] | cdktf.IResolvable;
@@ -483,6 +577,31 @@ export function schServiceConnectorSourceMonitoringSourcesNamespaceDetailsToTerr
     kind: cdktf.stringToTerraform(struct!.kind),
     namespaces: cdktf.listMapper(schServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesToTerraform, true)(struct!.namespaces),
   }
+}
+
+
+export function schServiceConnectorSourceMonitoringSourcesNamespaceDetailsToHclTerraform(struct?: SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsOutputReference | SchServiceConnectorSourceMonitoringSourcesNamespaceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespaces: {
+      value: cdktf.listMapperHcl(schServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesToHclTerraform, true)(struct!.namespaces),
+      isBlock: true,
+      type: "list",
+      storageClassType: "SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsNamespacesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsOutputReference extends cdktf.ComplexObject {
@@ -556,7 +675,7 @@ export interface SchServiceConnectorSourceMonitoringSources {
   readonly compartmentId?: string;
   /**
   * namespace_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#namespace_details SchServiceConnector#namespace_details}
   */
   readonly namespaceDetails?: SchServiceConnectorSourceMonitoringSourcesNamespaceDetails;
@@ -571,6 +690,31 @@ export function schServiceConnectorSourceMonitoringSourcesToTerraform(struct?: S
     compartment_id: cdktf.stringToTerraform(struct!.compartmentId),
     namespace_details: schServiceConnectorSourceMonitoringSourcesNamespaceDetailsToTerraform(struct!.namespaceDetails),
   }
+}
+
+
+export function schServiceConnectorSourceMonitoringSourcesToHclTerraform(struct?: SchServiceConnectorSourceMonitoringSources | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace_details: {
+      value: schServiceConnectorSourceMonitoringSourcesNamespaceDetailsToHclTerraform(struct!.namespaceDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "SchServiceConnectorSourceMonitoringSourcesNamespaceDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class SchServiceConnectorSourceMonitoringSourcesOutputReference extends cdktf.ComplexObject {
@@ -694,19 +838,19 @@ export interface SchServiceConnectorSource {
   readonly streamId?: string;
   /**
   * cursor block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#cursor SchServiceConnector#cursor}
   */
   readonly cursor?: SchServiceConnectorSourceCursor;
   /**
   * log_sources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#log_sources SchServiceConnector#log_sources}
   */
   readonly logSources?: SchServiceConnectorSourceLogSources[] | cdktf.IResolvable;
   /**
   * monitoring_sources block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#monitoring_sources SchServiceConnector#monitoring_sources}
   */
   readonly monitoringSources?: SchServiceConnectorSourceMonitoringSources[] | cdktf.IResolvable;
@@ -726,6 +870,61 @@ export function schServiceConnectorSourceToTerraform(struct?: SchServiceConnecto
     log_sources: cdktf.listMapper(schServiceConnectorSourceLogSourcesToTerraform, true)(struct!.logSources),
     monitoring_sources: cdktf.listMapper(schServiceConnectorSourceMonitoringSourcesToTerraform, true)(struct!.monitoringSources),
   }
+}
+
+
+export function schServiceConnectorSourceToHclTerraform(struct?: SchServiceConnectorSourceOutputReference | SchServiceConnectorSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_map: {
+      value: cdktf.stringToHclTerraform(struct!.configMap),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    plugin_name: {
+      value: cdktf.stringToHclTerraform(struct!.pluginName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stream_id: {
+      value: cdktf.stringToHclTerraform(struct!.streamId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    cursor: {
+      value: schServiceConnectorSourceCursorToHclTerraform(struct!.cursor),
+      isBlock: true,
+      type: "list",
+      storageClassType: "SchServiceConnectorSourceCursorList",
+    },
+    log_sources: {
+      value: cdktf.listMapperHcl(schServiceConnectorSourceLogSourcesToHclTerraform, true)(struct!.logSources),
+      isBlock: true,
+      type: "list",
+      storageClassType: "SchServiceConnectorSourceLogSourcesList",
+    },
+    monitoring_sources: {
+      value: cdktf.listMapperHcl(schServiceConnectorSourceMonitoringSourcesToHclTerraform, true)(struct!.monitoringSources),
+      isBlock: true,
+      type: "list",
+      storageClassType: "SchServiceConnectorSourceMonitoringSourcesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class SchServiceConnectorSourceOutputReference extends cdktf.ComplexObject {
@@ -932,6 +1131,37 @@ export function schServiceConnectorTargetDimensionsDimensionValueToTerraform(str
   }
 }
 
+
+export function schServiceConnectorTargetDimensionsDimensionValueToHclTerraform(struct?: SchServiceConnectorTargetDimensionsDimensionValueOutputReference | SchServiceConnectorTargetDimensionsDimensionValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    path: {
+      value: cdktf.stringToHclTerraform(struct!.path),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class SchServiceConnectorTargetDimensionsDimensionValueOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1028,7 +1258,7 @@ export interface SchServiceConnectorTargetDimensions {
   readonly name?: string;
   /**
   * dimension_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#dimension_value SchServiceConnector#dimension_value}
   */
   readonly dimensionValue?: SchServiceConnectorTargetDimensionsDimensionValue;
@@ -1043,6 +1273,31 @@ export function schServiceConnectorTargetDimensionsToTerraform(struct?: SchServi
     name: cdktf.stringToTerraform(struct!.name),
     dimension_value: schServiceConnectorTargetDimensionsDimensionValueToTerraform(struct!.dimensionValue),
   }
+}
+
+
+export function schServiceConnectorTargetDimensionsToHclTerraform(struct?: SchServiceConnectorTargetDimensions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dimension_value: {
+      value: schServiceConnectorTargetDimensionsDimensionValueToHclTerraform(struct!.dimensionValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "SchServiceConnectorTargetDimensionsDimensionValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class SchServiceConnectorTargetDimensionsOutputReference extends cdktf.ComplexObject {
@@ -1222,7 +1477,7 @@ export interface SchServiceConnectorTarget {
   readonly topicId?: string;
   /**
   * dimensions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#dimensions SchServiceConnector#dimensions}
   */
   readonly dimensions?: SchServiceConnectorTargetDimensions[] | cdktf.IResolvable;
@@ -1254,6 +1509,133 @@ export function schServiceConnectorTargetToTerraform(struct?: SchServiceConnecto
     topic_id: cdktf.stringToTerraform(struct!.topicId),
     dimensions: cdktf.listMapper(schServiceConnectorTargetDimensionsToTerraform, true)(struct!.dimensions),
   }
+}
+
+
+export function schServiceConnectorTargetToHclTerraform(struct?: SchServiceConnectorTargetOutputReference | SchServiceConnectorTarget): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    batch_rollover_size_in_mbs: {
+      value: cdktf.numberToHclTerraform(struct!.batchRolloverSizeInMbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    batch_rollover_time_in_ms: {
+      value: cdktf.numberToHclTerraform(struct!.batchRolloverTimeInMs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    batch_size_in_kbs: {
+      value: cdktf.numberToHclTerraform(struct!.batchSizeInKbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    batch_size_in_num: {
+      value: cdktf.numberToHclTerraform(struct!.batchSizeInNum),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    batch_time_in_sec: {
+      value: cdktf.numberToHclTerraform(struct!.batchTimeInSec),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    enable_formatted_messaging: {
+      value: cdktf.booleanToHclTerraform(struct!.enableFormattedMessaging),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    function_id: {
+      value: cdktf.stringToHclTerraform(struct!.functionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_group_id: {
+      value: cdktf.stringToHclTerraform(struct!.logGroupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    log_source_identifier: {
+      value: cdktf.stringToHclTerraform(struct!.logSourceIdentifier),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metric: {
+      value: cdktf.stringToHclTerraform(struct!.metric),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metric_namespace: {
+      value: cdktf.stringToHclTerraform(struct!.metricNamespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_name_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.objectNamePrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stream_id: {
+      value: cdktf.stringToHclTerraform(struct!.streamId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    topic_id: {
+      value: cdktf.stringToHclTerraform(struct!.topicId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dimensions: {
+      value: cdktf.listMapperHcl(schServiceConnectorTargetDimensionsToHclTerraform, true)(struct!.dimensions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "SchServiceConnectorTargetDimensionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class SchServiceConnectorTargetOutputReference extends cdktf.ComplexObject {
@@ -1734,6 +2116,49 @@ export function schServiceConnectorTasksToTerraform(struct?: SchServiceConnector
   }
 }
 
+
+export function schServiceConnectorTasksToHclTerraform(struct?: SchServiceConnectorTasks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    batch_size_in_kbs: {
+      value: cdktf.numberToHclTerraform(struct!.batchSizeInKbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    batch_time_in_sec: {
+      value: cdktf.numberToHclTerraform(struct!.batchTimeInSec),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    condition: {
+      value: cdktf.stringToHclTerraform(struct!.condition),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    function_id: {
+      value: cdktf.stringToHclTerraform(struct!.functionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class SchServiceConnectorTasksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1926,6 +2351,37 @@ export function schServiceConnectorTimeoutsToTerraform(struct?: SchServiceConnec
   }
 }
 
+
+export function schServiceConnectorTimeoutsToHclTerraform(struct?: SchServiceConnectorTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class SchServiceConnectorTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2038,6 +2494,20 @@ export class SchServiceConnector extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_sch_service_connector";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a SchServiceConnector resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the SchServiceConnector to import
+  * @param importFromId The id of the existing SchServiceConnector that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/sch_service_connector#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the SchServiceConnector to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_sch_service_connector", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2286,5 +2756,79 @@ export class SchServiceConnector extends cdktf.TerraformResource {
       tasks: cdktf.listMapper(schServiceConnectorTasksToTerraform, true)(this._tasks.internalValue),
       timeouts: schServiceConnectorTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source: {
+        value: schServiceConnectorSourceToHclTerraform(this._source.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "SchServiceConnectorSourceList",
+      },
+      target: {
+        value: schServiceConnectorTargetToHclTerraform(this._target.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "SchServiceConnectorTargetList",
+      },
+      tasks: {
+        value: cdktf.listMapperHcl(schServiceConnectorTasksToHclTerraform, true)(this._tasks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "SchServiceConnectorTasksList",
+      },
+      timeouts: {
+        value: schServiceConnectorTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "SchServiceConnectorTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

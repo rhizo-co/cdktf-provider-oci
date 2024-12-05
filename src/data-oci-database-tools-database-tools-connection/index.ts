@@ -24,6 +24,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionKeyStoresKeyStoreCont
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContentToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContent): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionKeyStoresKeyStoreContentOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -93,6 +104,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionKeyStoresKeyStorePass
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionKeyStoresKeyStorePasswordToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionKeyStoresKeyStorePassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionKeyStoresKeyStorePasswordOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -160,6 +182,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionKeyStoresToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionKeyStoresToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionKeyStores): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseToolsDatabaseToolsConnectionKeyStoresOutputReference extends cdktf.ComplexObject {
@@ -236,6 +269,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionLocksToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionLocksToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionLocks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseToolsDatabaseToolsConnectionLocksOutputReference extends cdktf.ComplexObject {
@@ -317,6 +361,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionProxyClientUserPasswo
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionProxyClientUserPasswordToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionProxyClientUserPassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionProxyClientUserPasswordOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -384,6 +439,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionProxyClientToTerrafor
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionProxyClientToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionProxyClient): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseToolsDatabaseToolsConnectionProxyClientOutputReference extends cdktf.ComplexObject {
@@ -466,6 +532,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionRelatedResourceToTerr
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionRelatedResourceToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionRelatedResource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionRelatedResourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -535,6 +612,17 @@ export function dataOciDatabaseToolsDatabaseToolsConnectionUserPasswordToTerrafo
   }
 }
 
+
+export function dataOciDatabaseToolsDatabaseToolsConnectionUserPasswordToHclTerraform(struct?: DataOciDatabaseToolsDatabaseToolsConnectionUserPassword): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseToolsDatabaseToolsConnectionUserPasswordOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -602,6 +690,20 @@ export class DataOciDatabaseToolsDatabaseToolsConnection extends cdktf.Terraform
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_tools_database_tools_connection";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseToolsDatabaseToolsConnection resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseToolsDatabaseToolsConnection to import
+  * @param importFromId The id of the existing DataOciDatabaseToolsDatabaseToolsConnection that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_tools_database_tools_connection#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseToolsDatabaseToolsConnection to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_tools_database_tools_connection", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -777,5 +879,19 @@ export class DataOciDatabaseToolsDatabaseToolsConnection extends cdktf.Terraform
     return {
       database_tools_connection_id: cdktf.stringToTerraform(this._databaseToolsConnectionId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      database_tools_connection_id: {
+        value: cdktf.stringToHclTerraform(this._databaseToolsConnectionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

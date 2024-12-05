@@ -27,6 +27,20 @@ export class DataOciCloudBridgeAgentPlugin extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_cloud_bridge_agent_plugin";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCloudBridgeAgentPlugin resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCloudBridgeAgentPlugin to import
+  * @param importFromId The id of the existing DataOciCloudBridgeAgentPlugin that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_bridge_agent_plugin#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCloudBridgeAgentPlugin to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_bridge_agent_plugin", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -155,5 +169,25 @@ export class DataOciCloudBridgeAgentPlugin extends cdktf.TerraformDataSource {
       agent_id: cdktf.stringToTerraform(this._agentId),
       plugin_name: cdktf.stringToTerraform(this._pluginName),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      agent_id: {
+        value: cdktf.stringToHclTerraform(this._agentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      plugin_name: {
+        value: cdktf.stringToHclTerraform(this._pluginName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

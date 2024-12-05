@@ -30,6 +30,20 @@ export class DataOciJmsJavaDownloadsJavaDownloadReportContent extends cdktf.Terr
   // =================
   public static readonly tfResourceType = "oci_jms_java_downloads_java_download_report_content";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsJavaDownloadsJavaDownloadReportContent resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsJavaDownloadsJavaDownloadReportContent to import
+  * @param importFromId The id of the existing DataOciJmsJavaDownloadsJavaDownloadReportContent that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_java_downloads_java_download_report_content#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsJavaDownloadsJavaDownloadReportContent to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_java_downloads_java_download_report_content", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -103,5 +117,25 @@ export class DataOciJmsJavaDownloadsJavaDownloadReportContent extends cdktf.Terr
       id: cdktf.stringToTerraform(this._id),
       java_download_report_id: cdktf.stringToTerraform(this._javaDownloadReportId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      java_download_report_id: {
+        value: cdktf.stringToHclTerraform(this._javaDownloadReportId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

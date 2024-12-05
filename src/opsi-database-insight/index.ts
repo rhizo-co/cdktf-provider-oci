@@ -92,25 +92,25 @@ export interface OpsiDatabaseInsightConfig extends cdktf.TerraformMetaArguments 
   readonly status?: string;
   /**
   * connection_credential_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_database_insight#connection_credential_details OpsiDatabaseInsight#connection_credential_details}
   */
   readonly connectionCredentialDetails?: OpsiDatabaseInsightConnectionCredentialDetails;
   /**
   * connection_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_database_insight#connection_details OpsiDatabaseInsight#connection_details}
   */
   readonly connectionDetails?: OpsiDatabaseInsightConnectionDetails;
   /**
   * credential_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_database_insight#credential_details OpsiDatabaseInsight#credential_details}
   */
   readonly credentialDetails?: OpsiDatabaseInsightCredentialDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_database_insight#timeouts OpsiDatabaseInsight#timeouts}
   */
   readonly timeouts?: OpsiDatabaseInsightTimeouts;
@@ -150,6 +150,49 @@ export function opsiDatabaseInsightConnectionCredentialDetailsToTerraform(struct
     role: cdktf.stringToTerraform(struct!.role),
     user_name: cdktf.stringToTerraform(struct!.userName),
   }
+}
+
+
+export function opsiDatabaseInsightConnectionCredentialDetailsToHclTerraform(struct?: OpsiDatabaseInsightConnectionCredentialDetailsOutputReference | OpsiDatabaseInsightConnectionCredentialDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credential_source_name: {
+      value: cdktf.stringToHclTerraform(struct!.credentialSourceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    credential_type: {
+      value: cdktf.stringToHclTerraform(struct!.credentialType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.passwordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_name: {
+      value: cdktf.stringToHclTerraform(struct!.userName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OpsiDatabaseInsightConnectionCredentialDetailsOutputReference extends cdktf.ComplexObject {
@@ -307,6 +350,31 @@ export function opsiDatabaseInsightConnectionDetailsHostsToTerraform(struct?: Op
   }
 }
 
+
+export function opsiDatabaseInsightConnectionDetailsHostsToHclTerraform(struct?: OpsiDatabaseInsightConnectionDetailsHosts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host_ip: {
+      value: cdktf.stringToHclTerraform(struct!.hostIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OpsiDatabaseInsightConnectionDetailsHostsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -428,7 +496,7 @@ export interface OpsiDatabaseInsightConnectionDetails {
   readonly serviceName?: string;
   /**
   * hosts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_database_insight#hosts OpsiDatabaseInsight#hosts}
   */
   readonly hosts?: OpsiDatabaseInsightConnectionDetailsHosts[] | cdktf.IResolvable;
@@ -446,6 +514,49 @@ export function opsiDatabaseInsightConnectionDetailsToTerraform(struct?: OpsiDat
     service_name: cdktf.stringToTerraform(struct!.serviceName),
     hosts: cdktf.listMapper(opsiDatabaseInsightConnectionDetailsHostsToTerraform, true)(struct!.hosts),
   }
+}
+
+
+export function opsiDatabaseInsightConnectionDetailsToHclTerraform(struct?: OpsiDatabaseInsightConnectionDetailsOutputReference | OpsiDatabaseInsightConnectionDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host_name: {
+      value: cdktf.stringToHclTerraform(struct!.hostName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    service_name: {
+      value: cdktf.stringToHclTerraform(struct!.serviceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    hosts: {
+      value: cdktf.listMapperHcl(opsiDatabaseInsightConnectionDetailsHostsToHclTerraform, true)(struct!.hosts),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OpsiDatabaseInsightConnectionDetailsHostsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OpsiDatabaseInsightConnectionDetailsOutputReference extends cdktf.ComplexObject {
@@ -624,6 +735,55 @@ export function opsiDatabaseInsightCredentialDetailsToTerraform(struct?: OpsiDat
     user_name: cdktf.stringToTerraform(struct!.userName),
     wallet_secret_id: cdktf.stringToTerraform(struct!.walletSecretId),
   }
+}
+
+
+export function opsiDatabaseInsightCredentialDetailsToHclTerraform(struct?: OpsiDatabaseInsightCredentialDetailsOutputReference | OpsiDatabaseInsightCredentialDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credential_source_name: {
+      value: cdktf.stringToHclTerraform(struct!.credentialSourceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    credential_type: {
+      value: cdktf.stringToHclTerraform(struct!.credentialType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.passwordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_name: {
+      value: cdktf.stringToHclTerraform(struct!.userName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    wallet_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.walletSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OpsiDatabaseInsightCredentialDetailsOutputReference extends cdktf.ComplexObject {
@@ -808,6 +968,37 @@ export function opsiDatabaseInsightTimeoutsToTerraform(struct?: OpsiDatabaseInsi
   }
 }
 
+
+export function opsiDatabaseInsightTimeoutsToHclTerraform(struct?: OpsiDatabaseInsightTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OpsiDatabaseInsightTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -920,6 +1111,20 @@ export class OpsiDatabaseInsight extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_opsi_database_insight";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OpsiDatabaseInsight resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OpsiDatabaseInsight to import
+  * @param importFromId The id of the existing OpsiDatabaseInsight that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_database_insight#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OpsiDatabaseInsight to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_database_insight", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1473,5 +1678,157 @@ export class OpsiDatabaseInsight extends cdktf.TerraformResource {
       credential_details: opsiDatabaseInsightCredentialDetailsToTerraform(this._credentialDetails.internalValue),
       timeouts: opsiDatabaseInsightTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connector_id: {
+        value: cdktf.stringToHclTerraform(this._connectorId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_connection_status_details: {
+        value: cdktf.stringToHclTerraform(this._databaseConnectionStatusDetails),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_id: {
+        value: cdktf.stringToHclTerraform(this._databaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_resource_type: {
+        value: cdktf.stringToHclTerraform(this._databaseResourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      dbm_private_endpoint_id: {
+        value: cdktf.stringToHclTerraform(this._dbmPrivateEndpointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      deployment_type: {
+        value: cdktf.stringToHclTerraform(this._deploymentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enterprise_manager_bridge_id: {
+        value: cdktf.stringToHclTerraform(this._enterpriseManagerBridgeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enterprise_manager_entity_identifier: {
+        value: cdktf.stringToHclTerraform(this._enterpriseManagerEntityIdentifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      enterprise_manager_identifier: {
+        value: cdktf.stringToHclTerraform(this._enterpriseManagerIdentifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      entity_source: {
+        value: cdktf.stringToHclTerraform(this._entitySource),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      exadata_insight_id: {
+        value: cdktf.stringToHclTerraform(this._exadataInsightId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_advanced_features_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isAdvancedFeaturesEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      management_agent_id: {
+        value: cdktf.stringToHclTerraform(this._managementAgentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opsi_private_endpoint_id: {
+        value: cdktf.stringToHclTerraform(this._opsiPrivateEndpointId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      service_name: {
+        value: cdktf.stringToHclTerraform(this._serviceName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_credential_details: {
+        value: opsiDatabaseInsightConnectionCredentialDetailsToHclTerraform(this._connectionCredentialDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OpsiDatabaseInsightConnectionCredentialDetailsList",
+      },
+      connection_details: {
+        value: opsiDatabaseInsightConnectionDetailsToHclTerraform(this._connectionDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OpsiDatabaseInsightConnectionDetailsList",
+      },
+      credential_details: {
+        value: opsiDatabaseInsightCredentialDetailsToHclTerraform(this._credentialDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OpsiDatabaseInsightCredentialDetailsList",
+      },
+      timeouts: {
+        value: opsiDatabaseInsightTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OpsiDatabaseInsightTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

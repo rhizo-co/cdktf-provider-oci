@@ -80,13 +80,13 @@ export interface OsManagementHubScheduledJobConfig extends cdktf.TerraformMetaAr
   readonly timeNextExecution: string;
   /**
   * operations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_scheduled_job#operations OsManagementHubScheduledJob#operations}
   */
   readonly operations: OsManagementHubScheduledJobOperations[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_scheduled_job#timeouts OsManagementHubScheduledJob#timeouts}
   */
   readonly timeouts?: OsManagementHubScheduledJobTimeouts;
@@ -116,6 +116,37 @@ export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsD
     software_source_id: cdktf.stringToTerraform(struct!.softwareSourceId),
     stream_name: cdktf.stringToTerraform(struct!.streamName),
   }
+}
+
+
+export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsDisableToHclTerraform(struct?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsDisable | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    module_name: {
+      value: cdktf.stringToHclTerraform(struct!.moduleName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    software_source_id: {
+      value: cdktf.stringToHclTerraform(struct!.softwareSourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stream_name: {
+      value: cdktf.stringToHclTerraform(struct!.streamName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsDisableOutputReference extends cdktf.ComplexObject {
@@ -261,6 +292,37 @@ export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsE
     software_source_id: cdktf.stringToTerraform(struct!.softwareSourceId),
     stream_name: cdktf.stringToTerraform(struct!.streamName),
   }
+}
+
+
+export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsEnableToHclTerraform(struct?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsEnable | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    module_name: {
+      value: cdktf.stringToHclTerraform(struct!.moduleName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    software_source_id: {
+      value: cdktf.stringToHclTerraform(struct!.softwareSourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stream_name: {
+      value: cdktf.stringToHclTerraform(struct!.streamName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsEnableOutputReference extends cdktf.ComplexObject {
@@ -411,6 +473,43 @@ export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsI
     software_source_id: cdktf.stringToTerraform(struct!.softwareSourceId),
     stream_name: cdktf.stringToTerraform(struct!.streamName),
   }
+}
+
+
+export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsInstallToHclTerraform(struct?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsInstall | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    module_name: {
+      value: cdktf.stringToHclTerraform(struct!.moduleName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    profile_name: {
+      value: cdktf.stringToHclTerraform(struct!.profileName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    software_source_id: {
+      value: cdktf.stringToHclTerraform(struct!.softwareSourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stream_name: {
+      value: cdktf.stringToHclTerraform(struct!.streamName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsInstallOutputReference extends cdktf.ComplexObject {
@@ -582,6 +681,43 @@ export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsR
   }
 }
 
+
+export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsRemoveToHclTerraform(struct?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsRemove | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    module_name: {
+      value: cdktf.stringToHclTerraform(struct!.moduleName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    profile_name: {
+      value: cdktf.stringToHclTerraform(struct!.profileName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    software_source_id: {
+      value: cdktf.stringToHclTerraform(struct!.softwareSourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stream_name: {
+      value: cdktf.stringToHclTerraform(struct!.streamName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsRemoveOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -722,25 +858,25 @@ export class OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsRemo
 export interface OsManagementHubScheduledJobOperationsManageModuleStreamsDetails {
   /**
   * disable block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_scheduled_job#disable OsManagementHubScheduledJob#disable}
   */
   readonly disable?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsDisable[] | cdktf.IResolvable;
   /**
   * enable block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_scheduled_job#enable OsManagementHubScheduledJob#enable}
   */
   readonly enable?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsEnable[] | cdktf.IResolvable;
   /**
   * install block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_scheduled_job#install OsManagementHubScheduledJob#install}
   */
   readonly install?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsInstall[] | cdktf.IResolvable;
   /**
   * remove block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_scheduled_job#remove OsManagementHubScheduledJob#remove}
   */
   readonly remove?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsRemove[] | cdktf.IResolvable;
@@ -757,6 +893,43 @@ export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsT
     install: cdktf.listMapper(osManagementHubScheduledJobOperationsManageModuleStreamsDetailsInstallToTerraform, true)(struct!.install),
     remove: cdktf.listMapper(osManagementHubScheduledJobOperationsManageModuleStreamsDetailsRemoveToTerraform, true)(struct!.remove),
   }
+}
+
+
+export function osManagementHubScheduledJobOperationsManageModuleStreamsDetailsToHclTerraform(struct?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsOutputReference | OsManagementHubScheduledJobOperationsManageModuleStreamsDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    disable: {
+      value: cdktf.listMapperHcl(osManagementHubScheduledJobOperationsManageModuleStreamsDetailsDisableToHclTerraform, true)(struct!.disable),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsDisableList",
+    },
+    enable: {
+      value: cdktf.listMapperHcl(osManagementHubScheduledJobOperationsManageModuleStreamsDetailsEnableToHclTerraform, true)(struct!.enable),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsEnableList",
+    },
+    install: {
+      value: cdktf.listMapperHcl(osManagementHubScheduledJobOperationsManageModuleStreamsDetailsInstallToHclTerraform, true)(struct!.install),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsInstallList",
+    },
+    remove: {
+      value: cdktf.listMapperHcl(osManagementHubScheduledJobOperationsManageModuleStreamsDetailsRemoveToHclTerraform, true)(struct!.remove),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsRemoveList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsOutputReference extends cdktf.ComplexObject {
@@ -900,6 +1073,37 @@ export function osManagementHubScheduledJobOperationsSwitchModuleStreamsDetailsT
   }
 }
 
+
+export function osManagementHubScheduledJobOperationsSwitchModuleStreamsDetailsToHclTerraform(struct?: OsManagementHubScheduledJobOperationsSwitchModuleStreamsDetailsOutputReference | OsManagementHubScheduledJobOperationsSwitchModuleStreamsDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    module_name: {
+      value: cdktf.stringToHclTerraform(struct!.moduleName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    software_source_id: {
+      value: cdktf.stringToHclTerraform(struct!.softwareSourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stream_name: {
+      value: cdktf.stringToHclTerraform(struct!.streamName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OsManagementHubScheduledJobOperationsSwitchModuleStreamsDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1005,13 +1209,13 @@ export interface OsManagementHubScheduledJobOperations {
   readonly windowsUpdateNames?: string[];
   /**
   * manage_module_streams_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_scheduled_job#manage_module_streams_details OsManagementHubScheduledJob#manage_module_streams_details}
   */
   readonly manageModuleStreamsDetails?: OsManagementHubScheduledJobOperationsManageModuleStreamsDetails;
   /**
   * switch_module_streams_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_scheduled_job#switch_module_streams_details OsManagementHubScheduledJob#switch_module_streams_details}
   */
   readonly switchModuleStreamsDetails?: OsManagementHubScheduledJobOperationsSwitchModuleStreamsDetails;
@@ -1030,6 +1234,55 @@ export function osManagementHubScheduledJobOperationsToTerraform(struct?: OsMana
     manage_module_streams_details: osManagementHubScheduledJobOperationsManageModuleStreamsDetailsToTerraform(struct!.manageModuleStreamsDetails),
     switch_module_streams_details: osManagementHubScheduledJobOperationsSwitchModuleStreamsDetailsToTerraform(struct!.switchModuleStreamsDetails),
   }
+}
+
+
+export function osManagementHubScheduledJobOperationsToHclTerraform(struct?: OsManagementHubScheduledJobOperations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    operation_type: {
+      value: cdktf.stringToHclTerraform(struct!.operationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    package_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.packageNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    software_source_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.softwareSourceIds),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    windows_update_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.windowsUpdateNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    manage_module_streams_details: {
+      value: osManagementHubScheduledJobOperationsManageModuleStreamsDetailsToHclTerraform(struct!.manageModuleStreamsDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OsManagementHubScheduledJobOperationsManageModuleStreamsDetailsList",
+    },
+    switch_module_streams_details: {
+      value: osManagementHubScheduledJobOperationsSwitchModuleStreamsDetailsToHclTerraform(struct!.switchModuleStreamsDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OsManagementHubScheduledJobOperationsSwitchModuleStreamsDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OsManagementHubScheduledJobOperationsOutputReference extends cdktf.ComplexObject {
@@ -1246,6 +1499,37 @@ export function osManagementHubScheduledJobTimeoutsToTerraform(struct?: OsManage
   }
 }
 
+
+export function osManagementHubScheduledJobTimeoutsToHclTerraform(struct?: OsManagementHubScheduledJobTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OsManagementHubScheduledJobTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1358,6 +1642,20 @@ export class OsManagementHubScheduledJob extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_scheduled_job";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OsManagementHubScheduledJob resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OsManagementHubScheduledJob to import
+  * @param importFromId The id of the existing OsManagementHubScheduledJob that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/os_management_hub_scheduled_job#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OsManagementHubScheduledJob to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_scheduled_job", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1765,5 +2063,127 @@ export class OsManagementHubScheduledJob extends cdktf.TerraformResource {
       operations: cdktf.listMapper(osManagementHubScheduledJobOperationsToTerraform, true)(this._operations.internalValue),
       timeouts: osManagementHubScheduledJobTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_managed_by_autonomous_linux: {
+        value: cdktf.booleanToHclTerraform(this._isManagedByAutonomousLinux),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_subcompartment_included: {
+        value: cdktf.booleanToHclTerraform(this._isSubcompartmentIncluded),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      lifecycle_stage_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._lifecycleStageIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      locations: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._locations),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      managed_compartment_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._managedCompartmentIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      managed_instance_group_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._managedInstanceGroupIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      managed_instance_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._managedInstanceIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      recurring_rule: {
+        value: cdktf.stringToHclTerraform(this._recurringRule),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      retry_intervals: {
+        value: cdktf.listMapperHcl(cdktf.numberToHclTerraform, false)(this._retryIntervals),
+        isBlock: false,
+        type: "list",
+        storageClassType: "numberList",
+      },
+      schedule_type: {
+        value: cdktf.stringToHclTerraform(this._scheduleType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_next_execution: {
+        value: cdktf.stringToHclTerraform(this._timeNextExecution),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      operations: {
+        value: cdktf.listMapperHcl(osManagementHubScheduledJobOperationsToHclTerraform, true)(this._operations.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OsManagementHubScheduledJobOperationsList",
+      },
+      timeouts: {
+        value: osManagementHubScheduledJobTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OsManagementHubScheduledJobTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

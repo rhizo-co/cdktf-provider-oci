@@ -28,13 +28,13 @@ export interface CoreDrgRouteDistributionStatementConfig extends cdktf.Terraform
   readonly priority: number;
   /**
   * match_criteria block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_drg_route_distribution_statement#match_criteria CoreDrgRouteDistributionStatement#match_criteria}
   */
   readonly matchCriteria: CoreDrgRouteDistributionStatementMatchCriteria;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_drg_route_distribution_statement#timeouts CoreDrgRouteDistributionStatement#timeouts}
   */
   readonly timeouts?: CoreDrgRouteDistributionStatementTimeouts;
@@ -64,6 +64,37 @@ export function coreDrgRouteDistributionStatementMatchCriteriaToTerraform(struct
     drg_attachment_id: cdktf.stringToTerraform(struct!.drgAttachmentId),
     match_type: cdktf.stringToTerraform(struct!.matchType),
   }
+}
+
+
+export function coreDrgRouteDistributionStatementMatchCriteriaToHclTerraform(struct?: CoreDrgRouteDistributionStatementMatchCriteriaOutputReference | CoreDrgRouteDistributionStatementMatchCriteria): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    attachment_type: {
+      value: cdktf.stringToHclTerraform(struct!.attachmentType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    drg_attachment_id: {
+      value: cdktf.stringToHclTerraform(struct!.drgAttachmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    match_type: {
+      value: cdktf.stringToHclTerraform(struct!.matchType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreDrgRouteDistributionStatementMatchCriteriaOutputReference extends cdktf.ComplexObject {
@@ -185,6 +216,37 @@ export function coreDrgRouteDistributionStatementTimeoutsToTerraform(struct?: Co
   }
 }
 
+
+export function coreDrgRouteDistributionStatementTimeoutsToHclTerraform(struct?: CoreDrgRouteDistributionStatementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreDrgRouteDistributionStatementTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -297,6 +359,20 @@ export class CoreDrgRouteDistributionStatement extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_drg_route_distribution_statement";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreDrgRouteDistributionStatement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreDrgRouteDistributionStatement to import
+  * @param importFromId The id of the existing CoreDrgRouteDistributionStatement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_drg_route_distribution_statement#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreDrgRouteDistributionStatement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_drg_route_distribution_statement", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -434,5 +510,49 @@ export class CoreDrgRouteDistributionStatement extends cdktf.TerraformResource {
       match_criteria: coreDrgRouteDistributionStatementMatchCriteriaToTerraform(this._matchCriteria.internalValue),
       timeouts: coreDrgRouteDistributionStatementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      action: {
+        value: cdktf.stringToHclTerraform(this._action),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      drg_route_distribution_id: {
+        value: cdktf.stringToHclTerraform(this._drgRouteDistributionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      priority: {
+        value: cdktf.numberToHclTerraform(this._priority),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      match_criteria: {
+        value: coreDrgRouteDistributionStatementMatchCriteriaToHclTerraform(this._matchCriteria.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreDrgRouteDistributionStatementMatchCriteriaList",
+      },
+      timeouts: {
+        value: coreDrgRouteDistributionStatementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreDrgRouteDistributionStatementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

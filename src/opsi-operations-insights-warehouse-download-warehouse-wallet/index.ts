@@ -24,7 +24,7 @@ export interface OpsiOperationsInsightsWarehouseDownloadWarehouseWalletConfig ex
   readonly operationsInsightsWarehouseWalletPassword: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_operations_insights_warehouse_download_warehouse_wallet#timeouts OpsiOperationsInsightsWarehouseDownloadWarehouseWallet#timeouts}
   */
   readonly timeouts?: OpsiOperationsInsightsWarehouseDownloadWarehouseWalletTimeouts;
@@ -54,6 +54,37 @@ export function opsiOperationsInsightsWarehouseDownloadWarehouseWalletTimeoutsTo
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function opsiOperationsInsightsWarehouseDownloadWarehouseWalletTimeoutsToHclTerraform(struct?: OpsiOperationsInsightsWarehouseDownloadWarehouseWalletTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OpsiOperationsInsightsWarehouseDownloadWarehouseWalletTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -169,6 +200,20 @@ export class OpsiOperationsInsightsWarehouseDownloadWarehouseWallet extends cdkt
   // =================
   public static readonly tfResourceType = "oci_opsi_operations_insights_warehouse_download_warehouse_wallet";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OpsiOperationsInsightsWarehouseDownloadWarehouseWallet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OpsiOperationsInsightsWarehouseDownloadWarehouseWallet to import
+  * @param importFromId The id of the existing OpsiOperationsInsightsWarehouseDownloadWarehouseWallet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/opsi_operations_insights_warehouse_download_warehouse_wallet#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OpsiOperationsInsightsWarehouseDownloadWarehouseWallet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_operations_insights_warehouse_download_warehouse_wallet", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -275,5 +320,37 @@ export class OpsiOperationsInsightsWarehouseDownloadWarehouseWallet extends cdkt
       operations_insights_warehouse_wallet_password: cdktf.stringToTerraform(this._operationsInsightsWarehouseWalletPassword),
       timeouts: opsiOperationsInsightsWarehouseDownloadWarehouseWalletTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      operations_insights_warehouse_id: {
+        value: cdktf.stringToHclTerraform(this._operationsInsightsWarehouseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      operations_insights_warehouse_wallet_password: {
+        value: cdktf.stringToHclTerraform(this._operationsInsightsWarehouseWalletPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: opsiOperationsInsightsWarehouseDownloadWarehouseWalletTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OpsiOperationsInsightsWarehouseDownloadWarehouseWalletTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -38,6 +38,20 @@ export class DataOciComputeinstanceagentInstanceAgentPlugin extends cdktf.Terraf
   // =================
   public static readonly tfResourceType = "oci_computeinstanceagent_instance_agent_plugin";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciComputeinstanceagentInstanceAgentPlugin resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciComputeinstanceagentInstanceAgentPlugin to import
+  * @param importFromId The id of the existing DataOciComputeinstanceagentInstanceAgentPlugin that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/computeinstanceagent_instance_agent_plugin#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciComputeinstanceagentInstanceAgentPlugin to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_computeinstanceagent_instance_agent_plugin", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -161,5 +175,37 @@ export class DataOciComputeinstanceagentInstanceAgentPlugin extends cdktf.Terraf
       instanceagent_id: cdktf.stringToTerraform(this._instanceagentId),
       plugin_name: cdktf.stringToTerraform(this._pluginName),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instanceagent_id: {
+        value: cdktf.stringToHclTerraform(this._instanceagentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      plugin_name: {
+        value: cdktf.stringToHclTerraform(this._pluginName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

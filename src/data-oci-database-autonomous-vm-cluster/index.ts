@@ -24,6 +24,17 @@ export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowDaysOfWeekToT
   }
 }
 
+
+export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowDaysOfWeekToHclTerraform(struct?: DataOciDatabaseAutonomousVmClusterMaintenanceWindowDaysOfWeek): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousVmClusterMaintenanceWindowDaysOfWeekOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -88,6 +99,17 @@ export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowMonthsToTerra
   }
 }
 
+
+export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowMonthsToHclTerraform(struct?: DataOciDatabaseAutonomousVmClusterMaintenanceWindowMonths): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousVmClusterMaintenanceWindowMonthsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -150,6 +172,17 @@ export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowToHclTerraform(struct?: DataOciDatabaseAutonomousVmClusterMaintenanceWindow): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseAutonomousVmClusterMaintenanceWindowOutputReference extends cdktf.ComplexObject {
@@ -269,6 +302,17 @@ export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsDaysOf
   }
 }
 
+
+export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekToHclTerraform(struct?: DataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeek): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -333,6 +377,17 @@ export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsMonths
   }
 }
 
+
+export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsMonthsToHclTerraform(struct?: DataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsMonths): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsMonthsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -395,6 +450,17 @@ export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsToTerr
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsToHclTerraform(struct?: DataOciDatabaseAutonomousVmClusterMaintenanceWindowDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseAutonomousVmClusterMaintenanceWindowDetailsOutputReference extends cdktf.ComplexObject {
@@ -512,6 +578,20 @@ export class DataOciDatabaseAutonomousVmCluster extends cdktf.TerraformDataSourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_vm_cluster";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseAutonomousVmCluster resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseAutonomousVmCluster to import
+  * @param importFromId The id of the existing DataOciDatabaseAutonomousVmCluster that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_autonomous_vm_cluster#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseAutonomousVmCluster to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_vm_cluster", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -827,5 +907,19 @@ export class DataOciDatabaseAutonomousVmCluster extends cdktf.TerraformDataSourc
     return {
       autonomous_vm_cluster_id: cdktf.stringToTerraform(this._autonomousVmClusterId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      autonomous_vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousVmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

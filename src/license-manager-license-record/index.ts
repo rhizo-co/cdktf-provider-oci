@@ -56,7 +56,7 @@ export interface LicenseManagerLicenseRecordConfig extends cdktf.TerraformMetaAr
   readonly supportEndDate?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/license_manager_license_record#timeouts LicenseManagerLicenseRecord#timeouts}
   */
   readonly timeouts?: LicenseManagerLicenseRecordTimeouts;
@@ -86,6 +86,37 @@ export function licenseManagerLicenseRecordTimeoutsToTerraform(struct?: LicenseM
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function licenseManagerLicenseRecordTimeoutsToHclTerraform(struct?: LicenseManagerLicenseRecordTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LicenseManagerLicenseRecordTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -200,6 +231,20 @@ export class LicenseManagerLicenseRecord extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_license_manager_license_record";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LicenseManagerLicenseRecord resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LicenseManagerLicenseRecord to import
+  * @param importFromId The id of the existing LicenseManagerLicenseRecord that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/license_manager_license_record#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LicenseManagerLicenseRecord to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_license_manager_license_record", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -481,5 +526,85 @@ export class LicenseManagerLicenseRecord extends cdktf.TerraformResource {
       support_end_date: cdktf.stringToTerraform(this._supportEndDate),
       timeouts: licenseManagerLicenseRecordTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      expiration_date: {
+        value: cdktf.stringToHclTerraform(this._expirationDate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_perpetual: {
+        value: cdktf.booleanToHclTerraform(this._isPerpetual),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_unlimited: {
+        value: cdktf.booleanToHclTerraform(this._isUnlimited),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      license_count: {
+        value: cdktf.numberToHclTerraform(this._licenseCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      product_id: {
+        value: cdktf.stringToHclTerraform(this._productId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      product_license_id: {
+        value: cdktf.stringToHclTerraform(this._productLicenseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      support_end_date: {
+        value: cdktf.stringToHclTerraform(this._supportEndDate),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: licenseManagerLicenseRecordTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LicenseManagerLicenseRecordTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

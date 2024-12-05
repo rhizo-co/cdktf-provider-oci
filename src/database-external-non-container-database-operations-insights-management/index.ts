@@ -28,7 +28,7 @@ export interface DatabaseExternalNonContainerDatabaseOperationsInsightsManagemen
   readonly id?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_external_non_container_database_operations_insights_management#timeouts DatabaseExternalNonContainerDatabaseOperationsInsightsManagement#timeouts}
   */
   readonly timeouts?: DatabaseExternalNonContainerDatabaseOperationsInsightsManagementTimeouts;
@@ -58,6 +58,37 @@ export function databaseExternalNonContainerDatabaseOperationsInsightsManagement
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseExternalNonContainerDatabaseOperationsInsightsManagementTimeoutsToHclTerraform(struct?: DatabaseExternalNonContainerDatabaseOperationsInsightsManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseExternalNonContainerDatabaseOperationsInsightsManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -172,6 +203,20 @@ export class DatabaseExternalNonContainerDatabaseOperationsInsightsManagement ex
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_external_non_container_database_operations_insights_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseExternalNonContainerDatabaseOperationsInsightsManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseExternalNonContainerDatabaseOperationsInsightsManagement to import
+  * @param importFromId The id of the existing DatabaseExternalNonContainerDatabaseOperationsInsightsManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_external_non_container_database_operations_insights_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseExternalNonContainerDatabaseOperationsInsightsManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_external_non_container_database_operations_insights_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -294,5 +339,43 @@ export class DatabaseExternalNonContainerDatabaseOperationsInsightsManagement ex
       id: cdktf.stringToTerraform(this._id),
       timeouts: databaseExternalNonContainerDatabaseOperationsInsightsManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      enable_operations_insights: {
+        value: cdktf.booleanToHclTerraform(this._enableOperationsInsights),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      external_database_connector_id: {
+        value: cdktf.stringToHclTerraform(this._externalDatabaseConnectorId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_non_container_database_id: {
+        value: cdktf.stringToHclTerraform(this._externalNonContainerDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: databaseExternalNonContainerDatabaseOperationsInsightsManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseExternalNonContainerDatabaseOperationsInsightsManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

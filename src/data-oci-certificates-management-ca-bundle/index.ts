@@ -23,6 +23,20 @@ export class DataOciCertificatesManagementCaBundle extends cdktf.TerraformDataSo
   // =================
   public static readonly tfResourceType = "oci_certificates_management_ca_bundle";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCertificatesManagementCaBundle resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCertificatesManagementCaBundle to import
+  * @param importFromId The id of the existing DataOciCertificatesManagementCaBundle that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/certificates_management_ca_bundle#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCertificatesManagementCaBundle to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_certificates_management_ca_bundle", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -130,5 +144,19 @@ export class DataOciCertificatesManagementCaBundle extends cdktf.TerraformDataSo
     return {
       ca_bundle_id: cdktf.stringToTerraform(this._caBundleId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ca_bundle_id: {
+        value: cdktf.stringToHclTerraform(this._caBundleId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

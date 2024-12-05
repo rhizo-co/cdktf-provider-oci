@@ -55,6 +55,17 @@ export function dataOciDataSafeMaskingReportsMaskedColumnItemsToTerraform(struct
   }
 }
 
+
+export function dataOciDataSafeMaskingReportsMaskedColumnItemsToHclTerraform(struct?: DataOciDataSafeMaskingReportsMaskedColumnItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeMaskingReportsMaskedColumnItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -162,6 +173,20 @@ export class DataOciDataSafeMaskingReportsMaskedColumn extends cdktf.TerraformDa
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_masking_reports_masked_column";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeMaskingReportsMaskedColumn resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeMaskingReportsMaskedColumn to import
+  * @param importFromId The id of the existing DataOciDataSafeMaskingReportsMaskedColumn that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_masking_reports_masked_column#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeMaskingReportsMaskedColumn to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_masking_reports_masked_column", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -350,5 +375,61 @@ export class DataOciDataSafeMaskingReportsMaskedColumn extends cdktf.TerraformDa
       schema_name: cdktf.listMapper(cdktf.stringToTerraform, false)(this._schemaName),
       sensitive_type_id: cdktf.stringToTerraform(this._sensitiveTypeId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      column_name: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._columnName),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      masking_column_group: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._maskingColumnGroup),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      masking_report_id: {
+        value: cdktf.stringToHclTerraform(this._maskingReportId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._object),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      object_type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._objectType),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      schema_name: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemaName),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      sensitive_type_id: {
+        value: cdktf.stringToHclTerraform(this._sensitiveTypeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

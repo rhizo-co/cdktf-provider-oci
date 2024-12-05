@@ -42,6 +42,20 @@ export class DataOciOsmanagementManagedInstanceEventReport extends cdktf.Terrafo
   // =================
   public static readonly tfResourceType = "oci_osmanagement_managed_instance_event_report";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOsmanagementManagedInstanceEventReport resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOsmanagementManagedInstanceEventReport to import
+  * @param importFromId The id of the existing DataOciOsmanagementManagedInstanceEventReport that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/osmanagement_managed_instance_event_report#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOsmanagementManagedInstanceEventReport to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_osmanagement_managed_instance_event_report", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -171,5 +185,43 @@ export class DataOciOsmanagementManagedInstanceEventReport extends cdktf.Terrafo
       latest_timestamp_less_than: cdktf.stringToTerraform(this._latestTimestampLessThan),
       managed_instance_id: cdktf.stringToTerraform(this._managedInstanceId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      latest_timestamp_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._latestTimestampGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      latest_timestamp_less_than: {
+        value: cdktf.stringToHclTerraform(this._latestTimestampLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_id: {
+        value: cdktf.stringToHclTerraform(this._managedInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

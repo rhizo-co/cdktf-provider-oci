@@ -24,6 +24,17 @@ export function dataOciFleetSoftwareUpdateFsuCycleApplyActionScheduleToTerraform
   }
 }
 
+
+export function dataOciFleetSoftwareUpdateFsuCycleApplyActionScheduleToHclTerraform(struct?: DataOciFleetSoftwareUpdateFsuCycleApplyActionSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetSoftwareUpdateFsuCycleApplyActionScheduleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciFleetSoftwareUpdateFsuCycleBatchingStrategyToTerraform(st
   }
   return {
   }
+}
+
+
+export function dataOciFleetSoftwareUpdateFsuCycleBatchingStrategyToHclTerraform(struct?: DataOciFleetSoftwareUpdateFsuCycleBatchingStrategy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetSoftwareUpdateFsuCycleBatchingStrategyOutputReference extends cdktf.ComplexObject {
@@ -172,6 +194,17 @@ export function dataOciFleetSoftwareUpdateFsuCycleDiagnosticsCollectionToTerrafo
   }
 }
 
+
+export function dataOciFleetSoftwareUpdateFsuCycleDiagnosticsCollectionToHclTerraform(struct?: DataOciFleetSoftwareUpdateFsuCycleDiagnosticsCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetSoftwareUpdateFsuCycleDiagnosticsCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -234,6 +267,17 @@ export function dataOciFleetSoftwareUpdateFsuCycleGoalVersionDetailsToTerraform(
   }
   return {
   }
+}
+
+
+export function dataOciFleetSoftwareUpdateFsuCycleGoalVersionDetailsToHclTerraform(struct?: DataOciFleetSoftwareUpdateFsuCycleGoalVersionDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetSoftwareUpdateFsuCycleGoalVersionDetailsOutputReference extends cdktf.ComplexObject {
@@ -320,6 +364,17 @@ export function dataOciFleetSoftwareUpdateFsuCycleNextActionToExecuteToTerraform
   }
 }
 
+
+export function dataOciFleetSoftwareUpdateFsuCycleNextActionToExecuteToHclTerraform(struct?: DataOciFleetSoftwareUpdateFsuCycleNextActionToExecute): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetSoftwareUpdateFsuCycleNextActionToExecuteOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -389,6 +444,17 @@ export function dataOciFleetSoftwareUpdateFsuCycleStageActionScheduleToTerraform
   }
 }
 
+
+export function dataOciFleetSoftwareUpdateFsuCycleStageActionScheduleToHclTerraform(struct?: DataOciFleetSoftwareUpdateFsuCycleStageActionSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetSoftwareUpdateFsuCycleStageActionScheduleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -456,6 +522,20 @@ export class DataOciFleetSoftwareUpdateFsuCycle extends cdktf.TerraformDataSourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_software_update_fsu_cycle";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFleetSoftwareUpdateFsuCycle resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFleetSoftwareUpdateFsuCycle to import
+  * @param importFromId The id of the existing DataOciFleetSoftwareUpdateFsuCycle that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_software_update_fsu_cycle#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFleetSoftwareUpdateFsuCycle to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_software_update_fsu_cycle", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -651,5 +731,19 @@ export class DataOciFleetSoftwareUpdateFsuCycle extends cdktf.TerraformDataSourc
     return {
       fsu_cycle_id: cdktf.stringToTerraform(this._fsuCycleId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      fsu_cycle_id: {
+        value: cdktf.stringToHclTerraform(this._fsuCycleId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

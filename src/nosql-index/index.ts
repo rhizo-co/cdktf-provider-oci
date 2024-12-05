@@ -32,13 +32,13 @@ export interface NosqlIndexConfig extends cdktf.TerraformMetaArguments {
   readonly tableNameOrId: string;
   /**
   * keys block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/nosql_index#keys NosqlIndex#keys}
   */
   readonly keys: NosqlIndexKeys[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/nosql_index#timeouts NosqlIndex#timeouts}
   */
   readonly timeouts?: NosqlIndexTimeouts;
@@ -68,6 +68,37 @@ export function nosqlIndexKeysToTerraform(struct?: NosqlIndexKeys | cdktf.IResol
     json_field_type: cdktf.stringToTerraform(struct!.jsonFieldType),
     json_path: cdktf.stringToTerraform(struct!.jsonPath),
   }
+}
+
+
+export function nosqlIndexKeysToHclTerraform(struct?: NosqlIndexKeys | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    column_name: {
+      value: cdktf.stringToHclTerraform(struct!.columnName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    json_field_type: {
+      value: cdktf.stringToHclTerraform(struct!.jsonFieldType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    json_path: {
+      value: cdktf.stringToHclTerraform(struct!.jsonPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NosqlIndexKeysOutputReference extends cdktf.ComplexObject {
@@ -218,6 +249,37 @@ export function nosqlIndexTimeoutsToTerraform(struct?: NosqlIndexTimeouts | cdkt
   }
 }
 
+
+export function nosqlIndexTimeoutsToHclTerraform(struct?: NosqlIndexTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class NosqlIndexTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -330,6 +392,20 @@ export class NosqlIndex extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_nosql_index";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NosqlIndex resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NosqlIndex to import
+  * @param importFromId The id of the existing NosqlIndex that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/nosql_index#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NosqlIndex to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_nosql_index", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -508,5 +584,55 @@ export class NosqlIndex extends cdktf.TerraformResource {
       keys: cdktf.listMapper(nosqlIndexKeysToTerraform, true)(this._keys.internalValue),
       timeouts: nosqlIndexTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_if_not_exists: {
+        value: cdktf.booleanToHclTerraform(this._isIfNotExists),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      table_name_or_id: {
+        value: cdktf.stringToHclTerraform(this._tableNameOrId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      keys: {
+        value: cdktf.listMapperHcl(nosqlIndexKeysToHclTerraform, true)(this._keys.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NosqlIndexKeysList",
+      },
+      timeouts: {
+        value: nosqlIndexTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NosqlIndexTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,7 +24,7 @@ export interface DataOciStackMonitoringProcessSetsConfig extends cdktf.Terraform
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_process_sets#filter DataOciStackMonitoringProcessSets#filter}
   */
   readonly filter?: DataOciStackMonitoringProcessSetsFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciStackMonitoringProcessSetsProcessSetCollectionItemsSpecif
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringProcessSetsProcessSetCollectionItemsSpecificationItemsToHclTerraform(struct?: DataOciStackMonitoringProcessSetsProcessSetCollectionItemsSpecificationItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringProcessSetsProcessSetCollectionItemsSpecificationItemsOutputReference extends cdktf.ComplexObject {
@@ -120,6 +131,17 @@ export function dataOciStackMonitoringProcessSetsProcessSetCollectionItemsSpecif
   }
 }
 
+
+export function dataOciStackMonitoringProcessSetsProcessSetCollectionItemsSpecificationToHclTerraform(struct?: DataOciStackMonitoringProcessSetsProcessSetCollectionItemsSpecification): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciStackMonitoringProcessSetsProcessSetCollectionItemsSpecificationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -183,6 +205,17 @@ export function dataOciStackMonitoringProcessSetsProcessSetCollectionItemsToTerr
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringProcessSetsProcessSetCollectionItemsToHclTerraform(struct?: DataOciStackMonitoringProcessSetsProcessSetCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringProcessSetsProcessSetCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -303,6 +336,17 @@ export function dataOciStackMonitoringProcessSetsProcessSetCollectionToTerraform
   }
 }
 
+
+export function dataOciStackMonitoringProcessSetsProcessSetCollectionToHclTerraform(struct?: DataOciStackMonitoringProcessSetsProcessSetCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciStackMonitoringProcessSetsProcessSetCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -381,6 +425,37 @@ export function dataOciStackMonitoringProcessSetsFilterToTerraform(struct?: Data
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciStackMonitoringProcessSetsFilterToHclTerraform(struct?: DataOciStackMonitoringProcessSetsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciStackMonitoringProcessSetsFilterOutputReference extends cdktf.ComplexObject {
@@ -512,6 +587,20 @@ export class DataOciStackMonitoringProcessSets extends cdktf.TerraformDataSource
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_process_sets";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciStackMonitoringProcessSets resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciStackMonitoringProcessSets to import
+  * @param importFromId The id of the existing DataOciStackMonitoringProcessSets that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_process_sets#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciStackMonitoringProcessSets to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_process_sets", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -627,5 +716,37 @@ export class DataOciStackMonitoringProcessSets extends cdktf.TerraformDataSource
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciStackMonitoringProcessSetsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciStackMonitoringProcessSetsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciStackMonitoringProcessSetsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

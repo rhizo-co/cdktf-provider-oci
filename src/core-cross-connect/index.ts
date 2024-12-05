@@ -60,13 +60,13 @@ export interface CoreCrossConnectConfig extends cdktf.TerraformMetaArguments {
   readonly portSpeedShapeName: string;
   /**
   * macsec_properties block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_cross_connect#macsec_properties CoreCrossConnect#macsec_properties}
   */
   readonly macsecProperties?: CoreCrossConnectMacsecProperties;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_cross_connect#timeouts CoreCrossConnect#timeouts}
   */
   readonly timeouts?: CoreCrossConnectTimeouts;
@@ -91,6 +91,31 @@ export function coreCrossConnectMacsecPropertiesPrimaryKeyToTerraform(struct?: C
     connectivity_association_key_secret_id: cdktf.stringToTerraform(struct!.connectivityAssociationKeySecretId),
     connectivity_association_name_secret_id: cdktf.stringToTerraform(struct!.connectivityAssociationNameSecretId),
   }
+}
+
+
+export function coreCrossConnectMacsecPropertiesPrimaryKeyToHclTerraform(struct?: CoreCrossConnectMacsecPropertiesPrimaryKeyOutputReference | CoreCrossConnectMacsecPropertiesPrimaryKey): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    connectivity_association_key_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.connectivityAssociationKeySecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connectivity_association_name_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.connectivityAssociationNameSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreCrossConnectMacsecPropertiesPrimaryKeyOutputReference extends cdktf.ComplexObject {
@@ -182,7 +207,7 @@ export interface CoreCrossConnectMacsecProperties {
   readonly state: string;
   /**
   * primary_key block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_cross_connect#primary_key CoreCrossConnect#primary_key}
   */
   readonly primaryKey?: CoreCrossConnectMacsecPropertiesPrimaryKey;
@@ -199,6 +224,43 @@ export function coreCrossConnectMacsecPropertiesToTerraform(struct?: CoreCrossCo
     state: cdktf.stringToTerraform(struct!.state),
     primary_key: coreCrossConnectMacsecPropertiesPrimaryKeyToTerraform(struct!.primaryKey),
   }
+}
+
+
+export function coreCrossConnectMacsecPropertiesToHclTerraform(struct?: CoreCrossConnectMacsecPropertiesOutputReference | CoreCrossConnectMacsecProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    encryption_cipher: {
+      value: cdktf.stringToHclTerraform(struct!.encryptionCipher),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_unprotected_traffic_allowed: {
+      value: cdktf.booleanToHclTerraform(struct!.isUnprotectedTrafficAllowed),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    state: {
+      value: cdktf.stringToHclTerraform(struct!.state),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    primary_key: {
+      value: coreCrossConnectMacsecPropertiesPrimaryKeyToHclTerraform(struct!.primaryKey),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCrossConnectMacsecPropertiesPrimaryKeyList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreCrossConnectMacsecPropertiesOutputReference extends cdktf.ComplexObject {
@@ -339,6 +401,37 @@ export function coreCrossConnectTimeoutsToTerraform(struct?: CoreCrossConnectTim
   }
 }
 
+
+export function coreCrossConnectTimeoutsToHclTerraform(struct?: CoreCrossConnectTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCrossConnectTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -451,6 +544,20 @@ export class CoreCrossConnect extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_cross_connect";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreCrossConnect resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreCrossConnect to import
+  * @param importFromId The id of the existing CoreCrossConnect that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_cross_connect#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreCrossConnect to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_cross_connect", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -760,5 +867,97 @@ export class CoreCrossConnect extends cdktf.TerraformResource {
       macsec_properties: coreCrossConnectMacsecPropertiesToTerraform(this._macsecProperties.internalValue),
       timeouts: coreCrossConnectTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cross_connect_group_id: {
+        value: cdktf.stringToHclTerraform(this._crossConnectGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      customer_reference_name: {
+        value: cdktf.stringToHclTerraform(this._customerReferenceName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      far_cross_connect_or_cross_connect_group_id: {
+        value: cdktf.stringToHclTerraform(this._farCrossConnectOrCrossConnectGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_active: {
+        value: cdktf.booleanToHclTerraform(this._isActive),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      location_name: {
+        value: cdktf.stringToHclTerraform(this._locationName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      near_cross_connect_or_cross_connect_group_id: {
+        value: cdktf.stringToHclTerraform(this._nearCrossConnectOrCrossConnectGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      port_speed_shape_name: {
+        value: cdktf.stringToHclTerraform(this._portSpeedShapeName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      macsec_properties: {
+        value: coreCrossConnectMacsecPropertiesToHclTerraform(this._macsecProperties.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreCrossConnectMacsecPropertiesList",
+      },
+      timeouts: {
+        value: coreCrossConnectTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreCrossConnectTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

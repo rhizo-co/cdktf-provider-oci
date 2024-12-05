@@ -36,13 +36,13 @@ export interface KmsGeneratedKeyConfig extends cdktf.TerraformMetaArguments {
   readonly loggingContext?: { [key: string]: string };
   /**
   * key_shape block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_generated_key#key_shape KmsGeneratedKey#key_shape}
   */
   readonly keyShape: KmsGeneratedKeyKeyShape;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_generated_key#timeouts KmsGeneratedKey#timeouts}
   */
   readonly timeouts?: KmsGeneratedKeyTimeouts;
@@ -72,6 +72,37 @@ export function kmsGeneratedKeyKeyShapeToTerraform(struct?: KmsGeneratedKeyKeySh
     curve_id: cdktf.stringToTerraform(struct!.curveId),
     length: cdktf.numberToTerraform(struct!.length),
   }
+}
+
+
+export function kmsGeneratedKeyKeyShapeToHclTerraform(struct?: KmsGeneratedKeyKeyShapeOutputReference | KmsGeneratedKeyKeyShape): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    algorithm: {
+      value: cdktf.stringToHclTerraform(struct!.algorithm),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    curve_id: {
+      value: cdktf.stringToHclTerraform(struct!.curveId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    length: {
+      value: cdktf.numberToHclTerraform(struct!.length),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsGeneratedKeyKeyShapeOutputReference extends cdktf.ComplexObject {
@@ -187,6 +218,37 @@ export function kmsGeneratedKeyTimeoutsToTerraform(struct?: KmsGeneratedKeyTimeo
   }
 }
 
+
+export function kmsGeneratedKeyTimeoutsToHclTerraform(struct?: KmsGeneratedKeyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class KmsGeneratedKeyTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -299,6 +361,20 @@ export class KmsGeneratedKey extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_kms_generated_key";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a KmsGeneratedKey resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the KmsGeneratedKey to import
+  * @param importFromId The id of the existing KmsGeneratedKey that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_generated_key#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the KmsGeneratedKey to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_generated_key", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -487,5 +563,61 @@ export class KmsGeneratedKey extends cdktf.TerraformResource {
       key_shape: kmsGeneratedKeyKeyShapeToTerraform(this._keyShape.internalValue),
       timeouts: kmsGeneratedKeyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      associated_data: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._associatedData),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      crypto_endpoint: {
+        value: cdktf.stringToHclTerraform(this._cryptoEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      include_plaintext_key: {
+        value: cdktf.booleanToHclTerraform(this._includePlaintextKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      key_id: {
+        value: cdktf.stringToHclTerraform(this._keyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      logging_context: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._loggingContext),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      key_shape: {
+        value: kmsGeneratedKeyKeyShapeToHclTerraform(this._keyShape.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KmsGeneratedKeyKeyShapeList",
+      },
+      timeouts: {
+        value: kmsGeneratedKeyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "KmsGeneratedKeyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

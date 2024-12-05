@@ -28,7 +28,7 @@ export interface DataOciDatabaseManagementExternalListenerServicesConfig extends
   readonly opcNamedCredentialId?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_external_listener_services#filter DataOciDatabaseManagementExternalListenerServices#filter}
   */
   readonly filter?: DataOciDatabaseManagementExternalListenerServicesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciDatabaseManagementExternalListenerServicesExternalListene
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalListenerServicesExternalListenerServiceCollectionItemsToHclTerraform(struct?: DataOciDatabaseManagementExternalListenerServicesExternalListenerServiceCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalListenerServicesExternalListenerServiceCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -117,6 +128,17 @@ export function dataOciDatabaseManagementExternalListenerServicesExternalListene
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementExternalListenerServicesExternalListenerServiceCollectionToHclTerraform(struct?: DataOciDatabaseManagementExternalListenerServicesExternalListenerServiceCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementExternalListenerServicesExternalListenerServiceCollectionOutputReference extends cdktf.ComplexObject {
@@ -197,6 +219,37 @@ export function dataOciDatabaseManagementExternalListenerServicesFilterToTerrafo
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDatabaseManagementExternalListenerServicesFilterToHclTerraform(struct?: DataOciDatabaseManagementExternalListenerServicesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatabaseManagementExternalListenerServicesFilterOutputReference extends cdktf.ComplexObject {
@@ -328,6 +381,20 @@ export class DataOciDatabaseManagementExternalListenerServices extends cdktf.Ter
   // =================
   public static readonly tfResourceType = "oci_database_management_external_listener_services";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementExternalListenerServices resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementExternalListenerServices to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementExternalListenerServices that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_external_listener_services#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementExternalListenerServices to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_external_listener_services", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -458,5 +525,43 @@ export class DataOciDatabaseManagementExternalListenerServices extends cdktf.Ter
       opc_named_credential_id: cdktf.stringToTerraform(this._opcNamedCredentialId),
       filter: cdktf.listMapper(dataOciDatabaseManagementExternalListenerServicesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      external_listener_id: {
+        value: cdktf.stringToHclTerraform(this._externalListenerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      opc_named_credential_id: {
+        value: cdktf.stringToHclTerraform(this._opcNamedCredentialId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatabaseManagementExternalListenerServicesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatabaseManagementExternalListenerServicesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

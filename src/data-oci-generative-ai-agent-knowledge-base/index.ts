@@ -24,6 +24,17 @@ export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigDatabaseConnecti
   }
 }
 
+
+export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigDatabaseConnectionToHclTerraform(struct?: DataOciGenerativeAiAgentKnowledgeBaseIndexConfigDatabaseConnection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGenerativeAiAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -93,6 +104,17 @@ export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigDatabaseFunction
   }
 }
 
+
+export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctionsToHclTerraform(struct?: DataOciGenerativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGenerativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -155,6 +177,17 @@ export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaToT
   }
   return {
   }
+}
+
+
+export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaToHclTerraform(struct?: DataOciGenerativeAiAgentKnowledgeBaseIndexConfigIndexesSchema): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGenerativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaOutputReference extends cdktf.ComplexObject {
@@ -236,6 +269,17 @@ export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigIndexesToTerrafo
   }
 }
 
+
+export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigIndexesToHclTerraform(struct?: DataOciGenerativeAiAgentKnowledgeBaseIndexConfigIndexes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGenerativeAiAgentKnowledgeBaseIndexConfigIndexesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -304,6 +348,17 @@ export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigSecretDetailToTe
   }
   return {
   }
+}
+
+
+export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigSecretDetailToHclTerraform(struct?: DataOciGenerativeAiAgentKnowledgeBaseIndexConfigSecretDetail): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGenerativeAiAgentKnowledgeBaseIndexConfigSecretDetailOutputReference extends cdktf.ComplexObject {
@@ -388,6 +443,17 @@ export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataOciGenerativeAiAgentKnowledgeBaseIndexConfigToHclTerraform(struct?: DataOciGenerativeAiAgentKnowledgeBaseIndexConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGenerativeAiAgentKnowledgeBaseIndexConfigOutputReference extends cdktf.ComplexObject {
@@ -486,6 +552,20 @@ export class DataOciGenerativeAiAgentKnowledgeBase extends cdktf.TerraformDataSo
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_generative_ai_agent_knowledge_base";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGenerativeAiAgentKnowledgeBase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGenerativeAiAgentKnowledgeBase to import
+  * @param importFromId The id of the existing DataOciGenerativeAiAgentKnowledgeBase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/generative_ai_agent_knowledge_base#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGenerativeAiAgentKnowledgeBase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_generative_ai_agent_knowledge_base", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -606,5 +686,19 @@ export class DataOciGenerativeAiAgentKnowledgeBase extends cdktf.TerraformDataSo
     return {
       knowledge_base_id: cdktf.stringToTerraform(this._knowledgeBaseId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      knowledge_base_id: {
+        value: cdktf.stringToHclTerraform(this._knowledgeBaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

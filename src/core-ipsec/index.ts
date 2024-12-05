@@ -52,13 +52,13 @@ export interface CoreIpsecConfig extends cdktf.TerraformMetaArguments {
   readonly staticRoutes: string[];
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_ipsec#timeouts CoreIpsec#timeouts}
   */
   readonly timeouts?: CoreIpsecTimeouts;
   /**
   * tunnel_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_ipsec#tunnel_configuration CoreIpsec#tunnel_configuration}
   */
   readonly tunnelConfiguration?: CoreIpsecTunnelConfiguration[] | cdktf.IResolvable;
@@ -88,6 +88,37 @@ export function coreIpsecTimeoutsToTerraform(struct?: CoreIpsecTimeouts | cdktf.
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function coreIpsecTimeoutsToHclTerraform(struct?: CoreIpsecTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreIpsecTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -217,6 +248,37 @@ export function coreIpsecTunnelConfigurationToTerraform(struct?: CoreIpsecTunnel
     drg_route_table_id: cdktf.stringToTerraform(struct!.drgRouteTableId),
     oracle_tunnel_ip: cdktf.stringToTerraform(struct!.oracleTunnelIp),
   }
+}
+
+
+export function coreIpsecTunnelConfigurationToHclTerraform(struct?: CoreIpsecTunnelConfiguration | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    associated_virtual_circuits: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.associatedVirtualCircuits),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    drg_route_table_id: {
+      value: cdktf.stringToHclTerraform(struct!.drgRouteTableId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    oracle_tunnel_ip: {
+      value: cdktf.stringToHclTerraform(struct!.oracleTunnelIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreIpsecTunnelConfigurationOutputReference extends cdktf.ComplexObject {
@@ -353,6 +415,20 @@ export class CoreIpsec extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_ipsec";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreIpsec resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreIpsec to import
+  * @param importFromId The id of the existing CoreIpsec that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_ipsec#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreIpsec to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_ipsec", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -613,5 +689,85 @@ export class CoreIpsec extends cdktf.TerraformResource {
       timeouts: coreIpsecTimeoutsToTerraform(this._timeouts.internalValue),
       tunnel_configuration: cdktf.listMapper(coreIpsecTunnelConfigurationToTerraform, true)(this._tunnelConfiguration.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cpe_id: {
+        value: cdktf.stringToHclTerraform(this._cpeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cpe_local_identifier: {
+        value: cdktf.stringToHclTerraform(this._cpeLocalIdentifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cpe_local_identifier_type: {
+        value: cdktf.stringToHclTerraform(this._cpeLocalIdentifierType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      drg_id: {
+        value: cdktf.stringToHclTerraform(this._drgId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      static_routes: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._staticRoutes),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      timeouts: {
+        value: coreIpsecTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreIpsecTimeouts",
+      },
+      tunnel_configuration: {
+        value: cdktf.listMapperHcl(coreIpsecTunnelConfigurationToHclTerraform, true)(this._tunnelConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreIpsecTunnelConfigurationList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -32,7 +32,7 @@ export interface DataOciDataSafeSensitiveDataModelSensitiveObjectsConfig extends
   readonly sensitiveDataModelId: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sensitive_data_model_sensitive_objects#filter DataOciDataSafeSensitiveDataModelSensitiveObjects#filter}
   */
   readonly filter?: DataOciDataSafeSensitiveDataModelSensitiveObjectsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciDataSafeSensitiveDataModelSensitiveObjectsSensitiveObject
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemsToHclTerraform(struct?: DataOciDataSafeSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -121,6 +132,17 @@ export function dataOciDataSafeSensitiveDataModelSensitiveObjectsSensitiveObject
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionToHclTerraform(struct?: DataOciDataSafeSensitiveDataModelSensitiveObjectsSensitiveObjectCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSensitiveDataModelSensitiveObjectsSensitiveObjectCollectionOutputReference extends cdktf.ComplexObject {
@@ -201,6 +223,37 @@ export function dataOciDataSafeSensitiveDataModelSensitiveObjectsFilterToTerrafo
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeSensitiveDataModelSensitiveObjectsFilterToHclTerraform(struct?: DataOciDataSafeSensitiveDataModelSensitiveObjectsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeSensitiveDataModelSensitiveObjectsFilterOutputReference extends cdktf.ComplexObject {
@@ -331,6 +384,20 @@ export class DataOciDataSafeSensitiveDataModelSensitiveObjects extends cdktf.Ter
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_sensitive_data_model_sensitive_objects";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeSensitiveDataModelSensitiveObjects resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeSensitiveDataModelSensitiveObjects to import
+  * @param importFromId The id of the existing DataOciDataSafeSensitiveDataModelSensitiveObjects that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sensitive_data_model_sensitive_objects#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeSensitiveDataModelSensitiveObjects to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_sensitive_data_model_sensitive_objects", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -483,5 +550,49 @@ export class DataOciDataSafeSensitiveDataModelSensitiveObjects extends cdktf.Ter
       sensitive_data_model_id: cdktf.stringToTerraform(this._sensitiveDataModelId),
       filter: cdktf.listMapper(dataOciDataSafeSensitiveDataModelSensitiveObjectsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._object),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      object_type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._objectType),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      schema_name: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemaName),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      sensitive_data_model_id: {
+        value: cdktf.stringToHclTerraform(this._sensitiveDataModelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeSensitiveDataModelSensitiveObjectsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeSensitiveDataModelSensitiveObjectsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

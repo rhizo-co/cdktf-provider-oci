@@ -52,7 +52,7 @@ export interface JmsJavaDownloadsJavaDownloadTokenConfig extends cdktf.Terraform
   readonly timeExpires: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_java_downloads_java_download_token#timeouts JmsJavaDownloadsJavaDownloadToken#timeouts}
   */
   readonly timeouts?: JmsJavaDownloadsJavaDownloadTokenTimeouts;
@@ -67,6 +67,17 @@ export function jmsJavaDownloadsJavaDownloadTokenCreatedByToTerraform(struct?: J
   }
   return {
   }
+}
+
+
+export function jmsJavaDownloadsJavaDownloadTokenCreatedByToHclTerraform(struct?: JmsJavaDownloadsJavaDownloadTokenCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class JmsJavaDownloadsJavaDownloadTokenCreatedByOutputReference extends cdktf.ComplexObject {
@@ -141,6 +152,17 @@ export function jmsJavaDownloadsJavaDownloadTokenLastUpdatedByToTerraform(struct
   }
   return {
   }
+}
+
+
+export function jmsJavaDownloadsJavaDownloadTokenLastUpdatedByToHclTerraform(struct?: JmsJavaDownloadsJavaDownloadTokenLastUpdatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class JmsJavaDownloadsJavaDownloadTokenLastUpdatedByOutputReference extends cdktf.ComplexObject {
@@ -230,6 +252,37 @@ export function jmsJavaDownloadsJavaDownloadTokenTimeoutsToTerraform(struct?: Jm
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function jmsJavaDownloadsJavaDownloadTokenTimeoutsToHclTerraform(struct?: JmsJavaDownloadsJavaDownloadTokenTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class JmsJavaDownloadsJavaDownloadTokenTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -344,6 +397,20 @@ export class JmsJavaDownloadsJavaDownloadToken extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_java_downloads_java_download_token";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a JmsJavaDownloadsJavaDownloadToken resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the JmsJavaDownloadsJavaDownloadToken to import
+  * @param importFromId The id of the existing JmsJavaDownloadsJavaDownloadToken that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/jms_java_downloads_java_download_token#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the JmsJavaDownloadsJavaDownloadToken to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_java_downloads_java_download_token", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -613,5 +680,79 @@ export class JmsJavaDownloadsJavaDownloadToken extends cdktf.TerraformResource {
       time_expires: cdktf.stringToTerraform(this._timeExpires),
       timeouts: jmsJavaDownloadsJavaDownloadTokenTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_default: {
+        value: cdktf.booleanToHclTerraform(this._isDefault),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      java_version: {
+        value: cdktf.stringToHclTerraform(this._javaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      license_type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._licenseType),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      time_expires: {
+        value: cdktf.stringToHclTerraform(this._timeExpires),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: jmsJavaDownloadsJavaDownloadTokenTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "JmsJavaDownloadsJavaDownloadTokenTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

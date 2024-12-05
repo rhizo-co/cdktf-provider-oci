@@ -48,19 +48,19 @@ export interface LogAnalyticsNamespaceScheduledTaskConfig extends cdktf.Terrafor
   readonly taskType: string;
   /**
   * action block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_scheduled_task#action LogAnalyticsNamespaceScheduledTask#action}
   */
   readonly action: LogAnalyticsNamespaceScheduledTaskAction;
   /**
   * schedules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_scheduled_task#schedules LogAnalyticsNamespaceScheduledTask#schedules}
   */
   readonly schedules: LogAnalyticsNamespaceScheduledTaskSchedules;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_scheduled_task#timeouts LogAnalyticsNamespaceScheduledTask#timeouts}
   */
   readonly timeouts?: LogAnalyticsNamespaceScheduledTaskTimeouts;
@@ -95,6 +95,43 @@ export function logAnalyticsNamespaceScheduledTaskActionMetricExtractionToTerraf
     namespace: cdktf.stringToTerraform(struct!.namespace),
     resource_group: cdktf.stringToTerraform(struct!.resourceGroup),
   }
+}
+
+
+export function logAnalyticsNamespaceScheduledTaskActionMetricExtractionToHclTerraform(struct?: LogAnalyticsNamespaceScheduledTaskActionMetricExtractionOutputReference | LogAnalyticsNamespaceScheduledTaskActionMetricExtraction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metric_name: {
+      value: cdktf.stringToHclTerraform(struct!.metricName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_group: {
+      value: cdktf.stringToHclTerraform(struct!.resourceGroup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsNamespaceScheduledTaskActionMetricExtractionOutputReference extends cdktf.ComplexObject {
@@ -242,7 +279,7 @@ export interface LogAnalyticsNamespaceScheduledTaskAction {
   readonly type: string;
   /**
   * metric_extraction block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_scheduled_task#metric_extraction LogAnalyticsNamespaceScheduledTask#metric_extraction}
   */
   readonly metricExtraction?: LogAnalyticsNamespaceScheduledTaskActionMetricExtraction;
@@ -263,6 +300,67 @@ export function logAnalyticsNamespaceScheduledTaskActionToTerraform(struct?: Log
     type: cdktf.stringToTerraform(struct!.type),
     metric_extraction: logAnalyticsNamespaceScheduledTaskActionMetricExtractionToTerraform(struct!.metricExtraction),
   }
+}
+
+
+export function logAnalyticsNamespaceScheduledTaskActionToHclTerraform(struct?: LogAnalyticsNamespaceScheduledTaskActionOutputReference | LogAnalyticsNamespaceScheduledTaskAction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id_in_subtree: {
+      value: cdktf.booleanToHclTerraform(struct!.compartmentIdInSubtree),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    data_type: {
+      value: cdktf.stringToHclTerraform(struct!.dataType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    purge_compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.purgeCompartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    purge_duration: {
+      value: cdktf.stringToHclTerraform(struct!.purgeDuration),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query_string: {
+      value: cdktf.stringToHclTerraform(struct!.queryString),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    saved_search_id: {
+      value: cdktf.stringToHclTerraform(struct!.savedSearchId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    metric_extraction: {
+      value: logAnalyticsNamespaceScheduledTaskActionMetricExtractionToHclTerraform(struct!.metricExtraction),
+      isBlock: true,
+      type: "list",
+      storageClassType: "LogAnalyticsNamespaceScheduledTaskActionMetricExtractionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsNamespaceScheduledTaskActionOutputReference extends cdktf.ComplexObject {
@@ -506,6 +604,55 @@ export function logAnalyticsNamespaceScheduledTaskSchedulesScheduleToTerraform(s
   }
 }
 
+
+export function logAnalyticsNamespaceScheduledTaskSchedulesScheduleToHclTerraform(struct?: LogAnalyticsNamespaceScheduledTaskSchedulesSchedule | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    expression: {
+      value: cdktf.stringToHclTerraform(struct!.expression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    misfire_policy: {
+      value: cdktf.stringToHclTerraform(struct!.misfirePolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    recurring_interval: {
+      value: cdktf.stringToHclTerraform(struct!.recurringInterval),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repeat_count: {
+      value: cdktf.numberToHclTerraform(struct!.repeatCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    time_zone: {
+      value: cdktf.stringToHclTerraform(struct!.timeZone),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class LogAnalyticsNamespaceScheduledTaskSchedulesScheduleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -696,7 +843,7 @@ export class LogAnalyticsNamespaceScheduledTaskSchedulesScheduleList extends cdk
 export interface LogAnalyticsNamespaceScheduledTaskSchedules {
   /**
   * schedule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_scheduled_task#schedule LogAnalyticsNamespaceScheduledTask#schedule}
   */
   readonly schedule: LogAnalyticsNamespaceScheduledTaskSchedulesSchedule[] | cdktf.IResolvable;
@@ -710,6 +857,25 @@ export function logAnalyticsNamespaceScheduledTaskSchedulesToTerraform(struct?: 
   return {
     schedule: cdktf.listMapper(logAnalyticsNamespaceScheduledTaskSchedulesScheduleToTerraform, true)(struct!.schedule),
   }
+}
+
+
+export function logAnalyticsNamespaceScheduledTaskSchedulesToHclTerraform(struct?: LogAnalyticsNamespaceScheduledTaskSchedulesOutputReference | LogAnalyticsNamespaceScheduledTaskSchedules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    schedule: {
+      value: cdktf.listMapperHcl(logAnalyticsNamespaceScheduledTaskSchedulesScheduleToHclTerraform, true)(struct!.schedule),
+      isBlock: true,
+      type: "set",
+      storageClassType: "LogAnalyticsNamespaceScheduledTaskSchedulesScheduleList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsNamespaceScheduledTaskSchedulesOutputReference extends cdktf.ComplexObject {
@@ -782,6 +948,37 @@ export function logAnalyticsNamespaceScheduledTaskTimeoutsToTerraform(struct?: L
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function logAnalyticsNamespaceScheduledTaskTimeoutsToHclTerraform(struct?: LogAnalyticsNamespaceScheduledTaskTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class LogAnalyticsNamespaceScheduledTaskTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -896,6 +1093,20 @@ export class LogAnalyticsNamespaceScheduledTask extends cdktf.TerraformResource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_log_analytics_namespace_scheduled_task";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a LogAnalyticsNamespaceScheduledTask resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the LogAnalyticsNamespaceScheduledTask to import
+  * @param importFromId The id of the existing LogAnalyticsNamespaceScheduledTask that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/log_analytics_namespace_scheduled_task#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the LogAnalyticsNamespaceScheduledTask to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_log_analytics_namespace_scheduled_task", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1170,5 +1381,85 @@ export class LogAnalyticsNamespaceScheduledTask extends cdktf.TerraformResource 
       schedules: logAnalyticsNamespaceScheduledTaskSchedulesToTerraform(this._schedules.internalValue),
       timeouts: logAnalyticsNamespaceScheduledTaskTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kind: {
+        value: cdktf.stringToHclTerraform(this._kind),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      saved_search_id: {
+        value: cdktf.stringToHclTerraform(this._savedSearchId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      task_type: {
+        value: cdktf.stringToHclTerraform(this._taskType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      action: {
+        value: logAnalyticsNamespaceScheduledTaskActionToHclTerraform(this._action.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LogAnalyticsNamespaceScheduledTaskActionList",
+      },
+      schedules: {
+        value: logAnalyticsNamespaceScheduledTaskSchedulesToHclTerraform(this._schedules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "LogAnalyticsNamespaceScheduledTaskSchedulesList",
+      },
+      timeouts: {
+        value: logAnalyticsNamespaceScheduledTaskTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "LogAnalyticsNamespaceScheduledTaskTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

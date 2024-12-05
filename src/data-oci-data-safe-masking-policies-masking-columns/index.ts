@@ -76,7 +76,7 @@ export interface DataOciDataSafeMaskingPoliciesMaskingColumnsConfig extends cdkt
   readonly timeUpdatedLessThan?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_masking_policies_masking_columns#filter DataOciDataSafeMaskingPoliciesMaskingColumns#filter}
   */
   readonly filter?: DataOciDataSafeMaskingPoliciesMaskingColumnsFilter[] | cdktf.IResolvable;
@@ -91,6 +91,17 @@ export function dataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollect
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemsMaskingFormatsFormatEntriesToHclTerraform(struct?: DataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemsMaskingFormatsFormatEntries): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemsMaskingFormatsFormatEntriesOutputReference extends cdktf.ComplexObject {
@@ -272,6 +283,17 @@ export function dataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollect
   }
 }
 
+
+export function dataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemsMaskingFormatsToHclTerraform(struct?: DataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemsMaskingFormats): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemsMaskingFormatsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -345,6 +367,17 @@ export function dataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollect
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemsToHclTerraform(struct?: DataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -487,6 +520,17 @@ export function dataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollect
   }
 }
 
+
+export function dataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionToHclTerraform(struct?: DataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeMaskingPoliciesMaskingColumnsMaskingColumnCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -565,6 +609,37 @@ export function dataOciDataSafeMaskingPoliciesMaskingColumnsFilterToTerraform(st
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeMaskingPoliciesMaskingColumnsFilterToHclTerraform(struct?: DataOciDataSafeMaskingPoliciesMaskingColumnsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeMaskingPoliciesMaskingColumnsFilterOutputReference extends cdktf.ComplexObject {
@@ -695,6 +770,20 @@ export class DataOciDataSafeMaskingPoliciesMaskingColumns extends cdktf.Terrafor
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_masking_policies_masking_columns";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeMaskingPoliciesMaskingColumns resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeMaskingPoliciesMaskingColumns to import
+  * @param importFromId The id of the existing DataOciDataSafeMaskingPoliciesMaskingColumns that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_masking_policies_masking_columns#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeMaskingPoliciesMaskingColumns to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_masking_policies_masking_columns", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1045,5 +1134,115 @@ export class DataOciDataSafeMaskingPoliciesMaskingColumns extends cdktf.Terrafor
       time_updated_less_than: cdktf.stringToTerraform(this._timeUpdatedLessThan),
       filter: cdktf.listMapper(dataOciDataSafeMaskingPoliciesMaskingColumnsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      column_name: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._columnName),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      data_type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._dataType),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_masking_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isMaskingEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_seed_required: {
+        value: cdktf.booleanToHclTerraform(this._isSeedRequired),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      masking_column_group: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._maskingColumnGroup),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      masking_column_lifecycle_state: {
+        value: cdktf.stringToHclTerraform(this._maskingColumnLifecycleState),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      masking_policy_id: {
+        value: cdktf.stringToHclTerraform(this._maskingPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._object),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      object_type: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._objectType),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      schema_name: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._schemaName),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      sensitive_type_id: {
+        value: cdktf.stringToHclTerraform(this._sensitiveTypeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_updated_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeUpdatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_updated_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeUpdatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeMaskingPoliciesMaskingColumnsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeMaskingPoliciesMaskingColumnsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

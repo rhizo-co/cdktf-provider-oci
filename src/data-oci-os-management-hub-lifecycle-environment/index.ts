@@ -24,6 +24,17 @@ export function dataOciOsManagementHubLifecycleEnvironmentManagedInstanceIdsToTe
   }
 }
 
+
+export function dataOciOsManagementHubLifecycleEnvironmentManagedInstanceIdsToHclTerraform(struct?: DataOciOsManagementHubLifecycleEnvironmentManagedInstanceIds): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOsManagementHubLifecycleEnvironmentManagedInstanceIdsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -93,6 +104,17 @@ export function dataOciOsManagementHubLifecycleEnvironmentStagesManagedInstanceI
   }
 }
 
+
+export function dataOciOsManagementHubLifecycleEnvironmentStagesManagedInstanceIdsToHclTerraform(struct?: DataOciOsManagementHubLifecycleEnvironmentStagesManagedInstanceIds): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOsManagementHubLifecycleEnvironmentStagesManagedInstanceIdsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -160,6 +182,17 @@ export function dataOciOsManagementHubLifecycleEnvironmentStagesSoftwareSourceId
   }
   return {
   }
+}
+
+
+export function dataOciOsManagementHubLifecycleEnvironmentStagesSoftwareSourceIdToHclTerraform(struct?: DataOciOsManagementHubLifecycleEnvironmentStagesSoftwareSourceId): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOsManagementHubLifecycleEnvironmentStagesSoftwareSourceIdOutputReference extends cdktf.ComplexObject {
@@ -244,6 +277,17 @@ export function dataOciOsManagementHubLifecycleEnvironmentStagesToTerraform(stru
   }
   return {
   }
+}
+
+
+export function dataOciOsManagementHubLifecycleEnvironmentStagesToHclTerraform(struct?: DataOciOsManagementHubLifecycleEnvironmentStages): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOsManagementHubLifecycleEnvironmentStagesOutputReference extends cdktf.ComplexObject {
@@ -394,6 +438,20 @@ export class DataOciOsManagementHubLifecycleEnvironment extends cdktf.TerraformD
   // =================
   public static readonly tfResourceType = "oci_os_management_hub_lifecycle_environment";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOsManagementHubLifecycleEnvironment resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOsManagementHubLifecycleEnvironment to import
+  * @param importFromId The id of the existing DataOciOsManagementHubLifecycleEnvironment that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/os_management_hub_lifecycle_environment#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOsManagementHubLifecycleEnvironment to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_os_management_hub_lifecycle_environment", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -534,5 +592,19 @@ export class DataOciOsManagementHubLifecycleEnvironment extends cdktf.TerraformD
     return {
       lifecycle_environment_id: cdktf.stringToTerraform(this._lifecycleEnvironmentId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      lifecycle_environment_id: {
+        value: cdktf.stringToHclTerraform(this._lifecycleEnvironmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

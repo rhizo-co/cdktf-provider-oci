@@ -28,13 +28,13 @@ export interface UsageProxySubscriptionRedeemableUserConfig extends cdktf.Terraf
   readonly userId?: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/usage_proxy_subscription_redeemable_user#items UsageProxySubscriptionRedeemableUser#items}
   */
   readonly items: UsageProxySubscriptionRedeemableUserItems[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/usage_proxy_subscription_redeemable_user#timeouts UsageProxySubscriptionRedeemableUser#timeouts}
   */
   readonly timeouts?: UsageProxySubscriptionRedeemableUserTimeouts;
@@ -64,6 +64,37 @@ export function usageProxySubscriptionRedeemableUserItemsToTerraform(struct?: Us
     first_name: cdktf.stringToTerraform(struct!.firstName),
     last_name: cdktf.stringToTerraform(struct!.lastName),
   }
+}
+
+
+export function usageProxySubscriptionRedeemableUserItemsToHclTerraform(struct?: UsageProxySubscriptionRedeemableUserItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    email_id: {
+      value: cdktf.stringToHclTerraform(struct!.emailId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    first_name: {
+      value: cdktf.stringToHclTerraform(struct!.firstName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    last_name: {
+      value: cdktf.stringToHclTerraform(struct!.lastName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class UsageProxySubscriptionRedeemableUserItemsOutputReference extends cdktf.ComplexObject {
@@ -214,6 +245,37 @@ export function usageProxySubscriptionRedeemableUserTimeoutsToTerraform(struct?:
   }
 }
 
+
+export function usageProxySubscriptionRedeemableUserTimeoutsToHclTerraform(struct?: UsageProxySubscriptionRedeemableUserTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class UsageProxySubscriptionRedeemableUserTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -326,6 +388,20 @@ export class UsageProxySubscriptionRedeemableUser extends cdktf.TerraformResourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_usage_proxy_subscription_redeemable_user";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a UsageProxySubscriptionRedeemableUser resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the UsageProxySubscriptionRedeemableUser to import
+  * @param importFromId The id of the existing UsageProxySubscriptionRedeemableUser that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/usage_proxy_subscription_redeemable_user#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the UsageProxySubscriptionRedeemableUser to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_usage_proxy_subscription_redeemable_user", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -466,5 +542,49 @@ export class UsageProxySubscriptionRedeemableUser extends cdktf.TerraformResourc
       items: cdktf.listMapper(usageProxySubscriptionRedeemableUserItemsToTerraform, true)(this._items.internalValue),
       timeouts: usageProxySubscriptionRedeemableUserTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subscription_id: {
+        value: cdktf.stringToHclTerraform(this._subscriptionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      tenancy_id: {
+        value: cdktf.stringToHclTerraform(this._tenancyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_id: {
+        value: cdktf.stringToHclTerraform(this._userId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      items: {
+        value: cdktf.listMapperHcl(usageProxySubscriptionRedeemableUserItemsToHclTerraform, true)(this._items.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "UsageProxySubscriptionRedeemableUserItemsList",
+      },
+      timeouts: {
+        value: usageProxySubscriptionRedeemableUserTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "UsageProxySubscriptionRedeemableUserTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

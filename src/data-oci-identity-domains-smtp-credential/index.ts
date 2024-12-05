@@ -44,6 +44,17 @@ export function dataOciIdentityDomainsSmtpCredentialIdcsCreatedByToTerraform(str
   }
 }
 
+
+export function dataOciIdentityDomainsSmtpCredentialIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsSmtpCredentialIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsSmtpCredentialIdcsCreatedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -126,6 +137,17 @@ export function dataOciIdentityDomainsSmtpCredentialIdcsLastModifiedByToTerrafor
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsSmtpCredentialIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsSmtpCredentialIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsSmtpCredentialIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
@@ -212,6 +234,17 @@ export function dataOciIdentityDomainsSmtpCredentialMetaToTerraform(struct?: Dat
   }
 }
 
+
+export function dataOciIdentityDomainsSmtpCredentialMetaToHclTerraform(struct?: DataOciIdentityDomainsSmtpCredentialMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsSmtpCredentialMetaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -296,6 +329,17 @@ export function dataOciIdentityDomainsSmtpCredentialTagsToTerraform(struct?: Dat
   }
 }
 
+
+export function dataOciIdentityDomainsSmtpCredentialTagsToHclTerraform(struct?: DataOciIdentityDomainsSmtpCredentialTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsSmtpCredentialTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -365,6 +409,17 @@ export function dataOciIdentityDomainsSmtpCredentialUrnietfparamsscimschemasorac
   }
 }
 
+
+export function dataOciIdentityDomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserToHclTerraform(struct?: DataOciIdentityDomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -427,6 +482,17 @@ export function dataOciIdentityDomainsSmtpCredentialUserToTerraform(struct?: Dat
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsSmtpCredentialUserToHclTerraform(struct?: DataOciIdentityDomainsSmtpCredentialUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsSmtpCredentialUserOutputReference extends cdktf.ComplexObject {
@@ -511,6 +577,20 @@ export class DataOciIdentityDomainsSmtpCredential extends cdktf.TerraformDataSou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_smtp_credential";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsSmtpCredential resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsSmtpCredential to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsSmtpCredential that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_smtp_credential#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsSmtpCredential to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_smtp_credential", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -760,5 +840,49 @@ export class DataOciIdentityDomainsSmtpCredential extends cdktf.TerraformDataSou
       resource_type_schema_version: cdktf.stringToTerraform(this._resourceTypeSchemaVersion),
       smtp_credential_id: cdktf.stringToTerraform(this._smtpCredentialId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      smtp_credential_id: {
+        value: cdktf.stringToHclTerraform(this._smtpCredentialId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

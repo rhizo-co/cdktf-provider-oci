@@ -60,7 +60,7 @@ export interface DataOciOptimizerResourceActionsConfig extends cdktf.TerraformMe
   readonly status?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/optimizer_resource_actions#filter DataOciOptimizerResourceActions#filter}
   */
   readonly filter?: DataOciOptimizerResourceActionsFilter[] | cdktf.IResolvable;
@@ -75,6 +75,17 @@ export function dataOciOptimizerResourceActionsResourceActionCollectionItemsActi
   }
   return {
   }
+}
+
+
+export function dataOciOptimizerResourceActionsResourceActionCollectionItemsActionToHclTerraform(struct?: DataOciOptimizerResourceActionsResourceActionCollectionItemsAction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOptimizerResourceActionsResourceActionCollectionItemsActionOutputReference extends cdktf.ComplexObject {
@@ -149,6 +160,17 @@ export function dataOciOptimizerResourceActionsResourceActionCollectionItemsToTe
   }
   return {
   }
+}
+
+
+export function dataOciOptimizerResourceActionsResourceActionCollectionItemsToHclTerraform(struct?: DataOciOptimizerResourceActionsResourceActionCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOptimizerResourceActionsResourceActionCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -308,6 +330,17 @@ export function dataOciOptimizerResourceActionsResourceActionCollectionToTerrafo
   }
 }
 
+
+export function dataOciOptimizerResourceActionsResourceActionCollectionToHclTerraform(struct?: DataOciOptimizerResourceActionsResourceActionCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOptimizerResourceActionsResourceActionCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -386,6 +419,37 @@ export function dataOciOptimizerResourceActionsFilterToTerraform(struct?: DataOc
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOptimizerResourceActionsFilterToHclTerraform(struct?: DataOciOptimizerResourceActionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOptimizerResourceActionsFilterOutputReference extends cdktf.ComplexObject {
@@ -516,6 +580,20 @@ export class DataOciOptimizerResourceActions extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_optimizer_resource_actions";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOptimizerResourceActions resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOptimizerResourceActions to import
+  * @param importFromId The id of the existing DataOciOptimizerResourceActions that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/optimizer_resource_actions#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOptimizerResourceActions to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_optimizer_resource_actions", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -791,5 +869,91 @@ export class DataOciOptimizerResourceActions extends cdktf.TerraformDataSource {
       status: cdktf.stringToTerraform(this._status),
       filter: cdktf.listMapper(dataOciOptimizerResourceActionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      child_tenancy_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._childTenancyIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      include_organization: {
+        value: cdktf.booleanToHclTerraform(this._includeOrganization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      include_resource_metadata: {
+        value: cdktf.booleanToHclTerraform(this._includeResourceMetadata),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      recommendation_id: {
+        value: cdktf.stringToHclTerraform(this._recommendationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      recommendation_name: {
+        value: cdktf.stringToHclTerraform(this._recommendationName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type: {
+        value: cdktf.stringToHclTerraform(this._resourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOptimizerResourceActionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOptimizerResourceActionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

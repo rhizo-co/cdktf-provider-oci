@@ -32,19 +32,19 @@ export interface DataSafeTargetDatabasePeerTargetDatabaseConfig extends cdktf.Te
   readonly targetDatabaseId: string;
   /**
   * database_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_target_database_peer_target_database#database_details DataSafeTargetDatabasePeerTargetDatabase#database_details}
   */
   readonly databaseDetails: DataSafeTargetDatabasePeerTargetDatabaseDatabaseDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_target_database_peer_target_database#timeouts DataSafeTargetDatabasePeerTargetDatabase#timeouts}
   */
   readonly timeouts?: DataSafeTargetDatabasePeerTargetDatabaseTimeouts;
   /**
   * tls_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_target_database_peer_target_database#tls_config DataSafeTargetDatabasePeerTargetDatabase#tls_config}
   */
   readonly tlsConfig?: DataSafeTargetDatabasePeerTargetDatabaseTlsConfig;
@@ -104,6 +104,73 @@ export function dataSafeTargetDatabasePeerTargetDatabaseDatabaseDetailsToTerrafo
     service_name: cdktf.stringToTerraform(struct!.serviceName),
     vm_cluster_id: cdktf.stringToTerraform(struct!.vmClusterId),
   }
+}
+
+
+export function dataSafeTargetDatabasePeerTargetDatabaseDatabaseDetailsToHclTerraform(struct?: DataSafeTargetDatabasePeerTargetDatabaseDatabaseDetailsOutputReference | DataSafeTargetDatabasePeerTargetDatabaseDatabaseDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    autonomous_database_id: {
+      value: cdktf.stringToHclTerraform(struct!.autonomousDatabaseId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    database_type: {
+      value: cdktf.stringToHclTerraform(struct!.databaseType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    db_system_id: {
+      value: cdktf.stringToHclTerraform(struct!.dbSystemId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    infrastructure_type: {
+      value: cdktf.stringToHclTerraform(struct!.infrastructureType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    instance_id: {
+      value: cdktf.stringToHclTerraform(struct!.instanceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ip_addresses: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.ipAddresses),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    listener_port: {
+      value: cdktf.numberToHclTerraform(struct!.listenerPort),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    service_name: {
+      value: cdktf.stringToHclTerraform(struct!.serviceName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vm_cluster_id: {
+      value: cdktf.stringToHclTerraform(struct!.vmClusterId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeTargetDatabasePeerTargetDatabaseDatabaseDetailsOutputReference extends cdktf.ComplexObject {
@@ -351,6 +418,37 @@ export function dataSafeTargetDatabasePeerTargetDatabaseTimeoutsToTerraform(stru
   }
 }
 
+
+export function dataSafeTargetDatabasePeerTargetDatabaseTimeoutsToHclTerraform(struct?: DataSafeTargetDatabasePeerTargetDatabaseTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataSafeTargetDatabasePeerTargetDatabaseTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -488,6 +586,49 @@ export function dataSafeTargetDatabasePeerTargetDatabaseTlsConfigToTerraform(str
     store_password: cdktf.stringToTerraform(struct!.storePassword),
     trust_store_content: cdktf.stringToTerraform(struct!.trustStoreContent),
   }
+}
+
+
+export function dataSafeTargetDatabasePeerTargetDatabaseTlsConfigToHclTerraform(struct?: DataSafeTargetDatabasePeerTargetDatabaseTlsConfigOutputReference | DataSafeTargetDatabasePeerTargetDatabaseTlsConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    certificate_store_type: {
+      value: cdktf.stringToHclTerraform(struct!.certificateStoreType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key_store_content: {
+      value: cdktf.stringToHclTerraform(struct!.keyStoreContent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    status: {
+      value: cdktf.stringToHclTerraform(struct!.status),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    store_password: {
+      value: cdktf.stringToHclTerraform(struct!.storePassword),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    trust_store_content: {
+      value: cdktf.stringToHclTerraform(struct!.trustStoreContent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeTargetDatabasePeerTargetDatabaseTlsConfigOutputReference extends cdktf.ComplexObject {
@@ -633,6 +774,20 @@ export class DataSafeTargetDatabasePeerTargetDatabase extends cdktf.TerraformRes
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_target_database_peer_target_database";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeTargetDatabasePeerTargetDatabase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeTargetDatabasePeerTargetDatabase to import
+  * @param importFromId The id of the existing DataSafeTargetDatabasePeerTargetDatabase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_target_database_peer_target_database#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeTargetDatabasePeerTargetDatabase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_target_database_peer_target_database", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -842,5 +997,61 @@ export class DataSafeTargetDatabasePeerTargetDatabase extends cdktf.TerraformRes
       timeouts: dataSafeTargetDatabasePeerTargetDatabaseTimeoutsToTerraform(this._timeouts.internalValue),
       tls_config: dataSafeTargetDatabasePeerTargetDatabaseTlsConfigToTerraform(this._tlsConfig.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      dataguard_association_id: {
+        value: cdktf.stringToHclTerraform(this._dataguardAssociationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_database_id: {
+        value: cdktf.stringToHclTerraform(this._targetDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      database_details: {
+        value: dataSafeTargetDatabasePeerTargetDatabaseDatabaseDetailsToHclTerraform(this._databaseDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataSafeTargetDatabasePeerTargetDatabaseDatabaseDetailsList",
+      },
+      timeouts: {
+        value: dataSafeTargetDatabasePeerTargetDatabaseTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeTargetDatabasePeerTargetDatabaseTimeouts",
+      },
+      tls_config: {
+        value: dataSafeTargetDatabasePeerTargetDatabaseTlsConfigToHclTerraform(this._tlsConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataSafeTargetDatabasePeerTargetDatabaseTlsConfigList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

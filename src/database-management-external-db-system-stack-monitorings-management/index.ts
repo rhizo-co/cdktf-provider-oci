@@ -32,7 +32,7 @@ export interface DatabaseManagementExternalDbSystemStackMonitoringsManagementCon
   readonly metadata?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_external_db_system_stack_monitorings_management#timeouts DatabaseManagementExternalDbSystemStackMonitoringsManagement#timeouts}
   */
   readonly timeouts?: DatabaseManagementExternalDbSystemStackMonitoringsManagementTimeouts;
@@ -62,6 +62,37 @@ export function databaseManagementExternalDbSystemStackMonitoringsManagementTime
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseManagementExternalDbSystemStackMonitoringsManagementTimeoutsToHclTerraform(struct?: DatabaseManagementExternalDbSystemStackMonitoringsManagementTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementExternalDbSystemStackMonitoringsManagementTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -176,6 +207,20 @@ export class DatabaseManagementExternalDbSystemStackMonitoringsManagement extend
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_external_db_system_stack_monitorings_management";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseManagementExternalDbSystemStackMonitoringsManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseManagementExternalDbSystemStackMonitoringsManagement to import
+  * @param importFromId The id of the existing DatabaseManagementExternalDbSystemStackMonitoringsManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_external_db_system_stack_monitorings_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseManagementExternalDbSystemStackMonitoringsManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_external_db_system_stack_monitorings_management", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -319,5 +364,49 @@ export class DatabaseManagementExternalDbSystemStackMonitoringsManagement extend
       metadata: cdktf.stringToTerraform(this._metadata),
       timeouts: databaseManagementExternalDbSystemStackMonitoringsManagementTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      enable_stack_monitoring: {
+        value: cdktf.booleanToHclTerraform(this._enableStackMonitoring),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      external_db_system_id: {
+        value: cdktf.stringToHclTerraform(this._externalDbSystemId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      metadata: {
+        value: cdktf.stringToHclTerraform(this._metadata),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: databaseManagementExternalDbSystemStackMonitoringsManagementTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseManagementExternalDbSystemStackMonitoringsManagementTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

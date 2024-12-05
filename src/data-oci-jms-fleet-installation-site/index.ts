@@ -75,6 +75,17 @@ export function dataOciJmsFleetInstallationSiteItemsBlocklistStructToTerraform(s
   }
 }
 
+
+export function dataOciJmsFleetInstallationSiteItemsBlocklistStructToHclTerraform(struct?: DataOciJmsFleetInstallationSiteItemsBlocklistStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciJmsFleetInstallationSiteItemsBlocklistStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -142,6 +153,17 @@ export function dataOciJmsFleetInstallationSiteItemsJreToTerraform(struct?: Data
   }
   return {
   }
+}
+
+
+export function dataOciJmsFleetInstallationSiteItemsJreToHclTerraform(struct?: DataOciJmsFleetInstallationSiteItemsJre): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsFleetInstallationSiteItemsJreOutputReference extends cdktf.ComplexObject {
@@ -221,6 +243,17 @@ export function dataOciJmsFleetInstallationSiteItemsOperatingSystemToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciJmsFleetInstallationSiteItemsOperatingSystemToHclTerraform(struct?: DataOciJmsFleetInstallationSiteItemsOperatingSystem): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsFleetInstallationSiteItemsOperatingSystemOutputReference extends cdktf.ComplexObject {
@@ -305,6 +338,17 @@ export function dataOciJmsFleetInstallationSiteItemsToTerraform(struct?: DataOci
   }
   return {
   }
+}
+
+
+export function dataOciJmsFleetInstallationSiteItemsToHclTerraform(struct?: DataOciJmsFleetInstallationSiteItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsFleetInstallationSiteItemsOutputReference extends cdktf.ComplexObject {
@@ -417,6 +461,20 @@ export class DataOciJmsFleetInstallationSite extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_fleet_installation_site";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsFleetInstallationSite resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsFleetInstallationSite to import
+  * @param importFromId The id of the existing DataOciJmsFleetInstallationSite that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_fleet_installation_site#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsFleetInstallationSite to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_fleet_installation_site", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -695,5 +753,91 @@ export class DataOciJmsFleetInstallationSite extends cdktf.TerraformDataSource {
       time_end: cdktf.stringToTerraform(this._timeEnd),
       time_start: cdktf.stringToTerraform(this._timeStart),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      application_id: {
+        value: cdktf.stringToHclTerraform(this._applicationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fleet_id: {
+        value: cdktf.stringToHclTerraform(this._fleetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      installation_path: {
+        value: cdktf.stringToHclTerraform(this._installationPath),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      jre_distribution: {
+        value: cdktf.stringToHclTerraform(this._jreDistribution),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      jre_security_status: {
+        value: cdktf.stringToHclTerraform(this._jreSecurityStatus),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      jre_vendor: {
+        value: cdktf.stringToHclTerraform(this._jreVendor),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      jre_version: {
+        value: cdktf.stringToHclTerraform(this._jreVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_id: {
+        value: cdktf.stringToHclTerraform(this._managedInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      os_family: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._osFamily),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      path_contains: {
+        value: cdktf.stringToHclTerraform(this._pathContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_end: {
+        value: cdktf.stringToHclTerraform(this._timeEnd),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_start: {
+        value: cdktf.stringToHclTerraform(this._timeStart),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

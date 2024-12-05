@@ -36,13 +36,13 @@ export interface GenerativeAiAgentKnowledgeBaseConfig extends cdktf.TerraformMet
   readonly id?: string;
   /**
   * index_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_knowledge_base#index_config GenerativeAiAgentKnowledgeBase#index_config}
   */
   readonly indexConfig: GenerativeAiAgentKnowledgeBaseIndexConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_knowledge_base#timeouts GenerativeAiAgentKnowledgeBase#timeouts}
   */
   readonly timeouts?: GenerativeAiAgentKnowledgeBaseTimeouts;
@@ -67,6 +67,31 @@ export function generativeAiAgentKnowledgeBaseIndexConfigDatabaseConnectionToTer
     connection_id: cdktf.stringToTerraform(struct!.connectionId),
     connection_type: cdktf.stringToTerraform(struct!.connectionType),
   }
+}
+
+
+export function generativeAiAgentKnowledgeBaseIndexConfigDatabaseConnectionToHclTerraform(struct?: GenerativeAiAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputReference | GenerativeAiAgentKnowledgeBaseIndexConfigDatabaseConnection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    connection_id: {
+      value: cdktf.stringToHclTerraform(struct!.connectionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    connection_type: {
+      value: cdktf.stringToHclTerraform(struct!.connectionType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GenerativeAiAgentKnowledgeBaseIndexConfigDatabaseConnectionOutputReference extends cdktf.ComplexObject {
@@ -148,6 +173,25 @@ export function generativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctionsToTerr
   return {
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function generativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctionsToHclTerraform(struct?: GenerativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GenerativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctionsOutputReference extends cdktf.ComplexObject {
@@ -260,6 +304,43 @@ export function generativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaToTerrafor
     title_key: cdktf.stringToTerraform(struct!.titleKey),
     url_key: cdktf.stringToTerraform(struct!.urlKey),
   }
+}
+
+
+export function generativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaToHclTerraform(struct?: GenerativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaOutputReference | GenerativeAiAgentKnowledgeBaseIndexConfigIndexesSchema): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    body_key: {
+      value: cdktf.stringToHclTerraform(struct!.bodyKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    embedding_body_key: {
+      value: cdktf.stringToHclTerraform(struct!.embeddingBodyKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    title_key: {
+      value: cdktf.stringToHclTerraform(struct!.titleKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    url_key: {
+      value: cdktf.stringToHclTerraform(struct!.urlKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GenerativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaOutputReference extends cdktf.ComplexObject {
@@ -383,7 +464,7 @@ export interface GenerativeAiAgentKnowledgeBaseIndexConfigIndexes {
   readonly name?: string;
   /**
   * schema block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_knowledge_base#schema GenerativeAiAgentKnowledgeBase#schema}
   */
   readonly schema?: GenerativeAiAgentKnowledgeBaseIndexConfigIndexesSchema;
@@ -398,6 +479,31 @@ export function generativeAiAgentKnowledgeBaseIndexConfigIndexesToTerraform(stru
     name: cdktf.stringToTerraform(struct!.name),
     schema: generativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaToTerraform(struct!.schema),
   }
+}
+
+
+export function generativeAiAgentKnowledgeBaseIndexConfigIndexesToHclTerraform(struct?: GenerativeAiAgentKnowledgeBaseIndexConfigIndexes | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    schema: {
+      value: generativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaToHclTerraform(struct!.schema),
+      isBlock: true,
+      type: "list",
+      storageClassType: "GenerativeAiAgentKnowledgeBaseIndexConfigIndexesSchemaList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GenerativeAiAgentKnowledgeBaseIndexConfigIndexesOutputReference extends cdktf.ComplexObject {
@@ -537,6 +643,49 @@ export function generativeAiAgentKnowledgeBaseIndexConfigSecretDetailToTerraform
     type: cdktf.stringToTerraform(struct!.type),
     vault_secret_id: cdktf.stringToTerraform(struct!.vaultSecretId),
   }
+}
+
+
+export function generativeAiAgentKnowledgeBaseIndexConfigSecretDetailToHclTerraform(struct?: GenerativeAiAgentKnowledgeBaseIndexConfigSecretDetailOutputReference | GenerativeAiAgentKnowledgeBaseIndexConfigSecretDetail): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    client_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    idcs_url: {
+      value: cdktf.stringToHclTerraform(struct!.idcsUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scope_url: {
+      value: cdktf.stringToHclTerraform(struct!.scopeUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vault_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.vaultSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GenerativeAiAgentKnowledgeBaseIndexConfigSecretDetailOutputReference extends cdktf.ComplexObject {
@@ -684,25 +833,25 @@ export interface GenerativeAiAgentKnowledgeBaseIndexConfig {
   readonly shouldEnableHybridSearch?: boolean | cdktf.IResolvable;
   /**
   * database_connection block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_knowledge_base#database_connection GenerativeAiAgentKnowledgeBase#database_connection}
   */
   readonly databaseConnection?: GenerativeAiAgentKnowledgeBaseIndexConfigDatabaseConnection;
   /**
   * database_functions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_knowledge_base#database_functions GenerativeAiAgentKnowledgeBase#database_functions}
   */
   readonly databaseFunctions?: GenerativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctions[] | cdktf.IResolvable;
   /**
   * indexes block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_knowledge_base#indexes GenerativeAiAgentKnowledgeBase#indexes}
   */
   readonly indexes?: GenerativeAiAgentKnowledgeBaseIndexConfigIndexes[] | cdktf.IResolvable;
   /**
   * secret_detail block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_knowledge_base#secret_detail GenerativeAiAgentKnowledgeBase#secret_detail}
   */
   readonly secretDetail?: GenerativeAiAgentKnowledgeBaseIndexConfigSecretDetail;
@@ -722,6 +871,61 @@ export function generativeAiAgentKnowledgeBaseIndexConfigToTerraform(struct?: Ge
     indexes: cdktf.listMapper(generativeAiAgentKnowledgeBaseIndexConfigIndexesToTerraform, true)(struct!.indexes),
     secret_detail: generativeAiAgentKnowledgeBaseIndexConfigSecretDetailToTerraform(struct!.secretDetail),
   }
+}
+
+
+export function generativeAiAgentKnowledgeBaseIndexConfigToHclTerraform(struct?: GenerativeAiAgentKnowledgeBaseIndexConfigOutputReference | GenerativeAiAgentKnowledgeBaseIndexConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cluster_id: {
+      value: cdktf.stringToHclTerraform(struct!.clusterId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    index_config_type: {
+      value: cdktf.stringToHclTerraform(struct!.indexConfigType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    should_enable_hybrid_search: {
+      value: cdktf.booleanToHclTerraform(struct!.shouldEnableHybridSearch),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    database_connection: {
+      value: generativeAiAgentKnowledgeBaseIndexConfigDatabaseConnectionToHclTerraform(struct!.databaseConnection),
+      isBlock: true,
+      type: "list",
+      storageClassType: "GenerativeAiAgentKnowledgeBaseIndexConfigDatabaseConnectionList",
+    },
+    database_functions: {
+      value: cdktf.listMapperHcl(generativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctionsToHclTerraform, true)(struct!.databaseFunctions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "GenerativeAiAgentKnowledgeBaseIndexConfigDatabaseFunctionsList",
+    },
+    indexes: {
+      value: cdktf.listMapperHcl(generativeAiAgentKnowledgeBaseIndexConfigIndexesToHclTerraform, true)(struct!.indexes),
+      isBlock: true,
+      type: "list",
+      storageClassType: "GenerativeAiAgentKnowledgeBaseIndexConfigIndexesList",
+    },
+    secret_detail: {
+      value: generativeAiAgentKnowledgeBaseIndexConfigSecretDetailToHclTerraform(struct!.secretDetail),
+      isBlock: true,
+      type: "list",
+      storageClassType: "GenerativeAiAgentKnowledgeBaseIndexConfigSecretDetailList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GenerativeAiAgentKnowledgeBaseIndexConfigOutputReference extends cdktf.ComplexObject {
@@ -928,6 +1132,37 @@ export function generativeAiAgentKnowledgeBaseTimeoutsToTerraform(struct?: Gener
   }
 }
 
+
+export function generativeAiAgentKnowledgeBaseTimeoutsToHclTerraform(struct?: GenerativeAiAgentKnowledgeBaseTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class GenerativeAiAgentKnowledgeBaseTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1040,6 +1275,20 @@ export class GenerativeAiAgentKnowledgeBase extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_generative_ai_agent_knowledge_base";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a GenerativeAiAgentKnowledgeBase resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the GenerativeAiAgentKnowledgeBase to import
+  * @param importFromId The id of the existing GenerativeAiAgentKnowledgeBase that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_knowledge_base#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the GenerativeAiAgentKnowledgeBase to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_generative_ai_agent_knowledge_base", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1245,5 +1494,61 @@ export class GenerativeAiAgentKnowledgeBase extends cdktf.TerraformResource {
       index_config: generativeAiAgentKnowledgeBaseIndexConfigToTerraform(this._indexConfig.internalValue),
       timeouts: generativeAiAgentKnowledgeBaseTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      index_config: {
+        value: generativeAiAgentKnowledgeBaseIndexConfigToHclTerraform(this._indexConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GenerativeAiAgentKnowledgeBaseIndexConfigList",
+      },
+      timeouts: {
+        value: generativeAiAgentKnowledgeBaseTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "GenerativeAiAgentKnowledgeBaseTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

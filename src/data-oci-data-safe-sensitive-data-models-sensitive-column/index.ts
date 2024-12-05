@@ -27,6 +27,20 @@ export class DataOciDataSafeSensitiveDataModelsSensitiveColumn extends cdktf.Ter
   // =================
   public static readonly tfResourceType = "oci_data_safe_sensitive_data_models_sensitive_column";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeSensitiveDataModelsSensitiveColumn resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeSensitiveDataModelsSensitiveColumn to import
+  * @param importFromId The id of the existing DataOciDataSafeSensitiveDataModelsSensitiveColumn that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sensitive_data_models_sensitive_column#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeSensitiveDataModelsSensitiveColumn to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_sensitive_data_models_sensitive_column", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -207,5 +221,25 @@ export class DataOciDataSafeSensitiveDataModelsSensitiveColumn extends cdktf.Ter
       sensitive_column_key: cdktf.stringToTerraform(this._sensitiveColumnKey),
       sensitive_data_model_id: cdktf.stringToTerraform(this._sensitiveDataModelId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      sensitive_column_key: {
+        value: cdktf.stringToHclTerraform(this._sensitiveColumnKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sensitive_data_model_id: {
+        value: cdktf.stringToHclTerraform(this._sensitiveDataModelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

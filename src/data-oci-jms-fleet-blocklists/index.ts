@@ -28,7 +28,7 @@ export interface DataOciJmsFleetBlocklistsConfig extends cdktf.TerraformMetaArgu
   readonly operation?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_fleet_blocklists#filter DataOciJmsFleetBlocklists#filter}
   */
   readonly filter?: DataOciJmsFleetBlocklistsFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciJmsFleetBlocklistsItemsTargetToTerraform(struct?: DataOci
   }
   return {
   }
+}
+
+
+export function dataOciJmsFleetBlocklistsItemsTargetToHclTerraform(struct?: DataOciJmsFleetBlocklistsItemsTarget): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsFleetBlocklistsItemsTargetOutputReference extends cdktf.ComplexObject {
@@ -117,6 +128,17 @@ export function dataOciJmsFleetBlocklistsItemsToTerraform(struct?: DataOciJmsFle
   }
   return {
   }
+}
+
+
+export function dataOciJmsFleetBlocklistsItemsToHclTerraform(struct?: DataOciJmsFleetBlocklistsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciJmsFleetBlocklistsItemsOutputReference extends cdktf.ComplexObject {
@@ -212,6 +234,37 @@ export function dataOciJmsFleetBlocklistsFilterToTerraform(struct?: DataOciJmsFl
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciJmsFleetBlocklistsFilterToHclTerraform(struct?: DataOciJmsFleetBlocklistsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciJmsFleetBlocklistsFilterOutputReference extends cdktf.ComplexObject {
@@ -342,6 +395,20 @@ export class DataOciJmsFleetBlocklists extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_jms_fleet_blocklists";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciJmsFleetBlocklists resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciJmsFleetBlocklists to import
+  * @param importFromId The id of the existing DataOciJmsFleetBlocklists that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/jms_fleet_blocklists#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciJmsFleetBlocklists to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_jms_fleet_blocklists", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -476,5 +543,43 @@ export class DataOciJmsFleetBlocklists extends cdktf.TerraformDataSource {
       operation: cdktf.stringToTerraform(this._operation),
       filter: cdktf.listMapper(dataOciJmsFleetBlocklistsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      fleet_id: {
+        value: cdktf.stringToHclTerraform(this._fleetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_instance_id: {
+        value: cdktf.stringToHclTerraform(this._managedInstanceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      operation: {
+        value: cdktf.stringToHclTerraform(this._operation),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciJmsFleetBlocklistsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciJmsFleetBlocklistsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -28,7 +28,7 @@ export interface DataOciCoreByoipRangesConfig extends cdktf.TerraformMetaArgumen
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_byoip_ranges#filter DataOciCoreByoipRanges#filter}
   */
   readonly filter?: DataOciCoreByoipRangesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciCoreByoipRangesByoipRangeCollectionItemsByoipRangeVcnIpv6
   }
   return {
   }
+}
+
+
+export function dataOciCoreByoipRangesByoipRangeCollectionItemsByoipRangeVcnIpv6AllocationsToHclTerraform(struct?: DataOciCoreByoipRangesByoipRangeCollectionItemsByoipRangeVcnIpv6Allocations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreByoipRangesByoipRangeCollectionItemsByoipRangeVcnIpv6AllocationsOutputReference extends cdktf.ComplexObject {
@@ -122,6 +133,17 @@ export function dataOciCoreByoipRangesByoipRangeCollectionItemsToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciCoreByoipRangesByoipRangeCollectionItemsToHclTerraform(struct?: DataOciCoreByoipRangesByoipRangeCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreByoipRangesByoipRangeCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -261,6 +283,17 @@ export function dataOciCoreByoipRangesByoipRangeCollectionToTerraform(struct?: D
   }
 }
 
+
+export function dataOciCoreByoipRangesByoipRangeCollectionToHclTerraform(struct?: DataOciCoreByoipRangesByoipRangeCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreByoipRangesByoipRangeCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -339,6 +372,37 @@ export function dataOciCoreByoipRangesFilterToTerraform(struct?: DataOciCoreByoi
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciCoreByoipRangesFilterToHclTerraform(struct?: DataOciCoreByoipRangesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciCoreByoipRangesFilterOutputReference extends cdktf.ComplexObject {
@@ -469,6 +533,20 @@ export class DataOciCoreByoipRanges extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_byoip_ranges";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreByoipRanges resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreByoipRanges to import
+  * @param importFromId The id of the existing DataOciCoreByoipRanges that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_byoip_ranges#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreByoipRanges to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_byoip_ranges", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -603,5 +681,43 @@ export class DataOciCoreByoipRanges extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciCoreByoipRangesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCoreByoipRangesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCoreByoipRangesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

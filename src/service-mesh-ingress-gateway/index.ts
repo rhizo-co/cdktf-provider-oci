@@ -40,25 +40,25 @@ export interface ServiceMeshIngressGatewayConfig extends cdktf.TerraformMetaArgu
   readonly name: string;
   /**
   * access_logging block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#access_logging ServiceMeshIngressGateway#access_logging}
   */
   readonly accessLogging?: ServiceMeshIngressGatewayAccessLogging;
   /**
   * hosts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#hosts ServiceMeshIngressGateway#hosts}
   */
   readonly hosts: ServiceMeshIngressGatewayHosts[] | cdktf.IResolvable;
   /**
   * mtls block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#mtls ServiceMeshIngressGateway#mtls}
   */
   readonly mtls?: ServiceMeshIngressGatewayMtls;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#timeouts ServiceMeshIngressGateway#timeouts}
   */
   readonly timeouts?: ServiceMeshIngressGatewayTimeouts;
@@ -78,6 +78,25 @@ export function serviceMeshIngressGatewayAccessLoggingToTerraform(struct?: Servi
   return {
     is_enabled: cdktf.booleanToTerraform(struct!.isEnabled),
   }
+}
+
+
+export function serviceMeshIngressGatewayAccessLoggingToHclTerraform(struct?: ServiceMeshIngressGatewayAccessLoggingOutputReference | ServiceMeshIngressGatewayAccessLogging): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshIngressGatewayAccessLoggingOutputReference extends cdktf.ComplexObject {
@@ -153,6 +172,37 @@ export function serviceMeshIngressGatewayHostsListenersTlsClientValidationTruste
     secret_name: cdktf.stringToTerraform(struct!.secretName),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function serviceMeshIngressGatewayHostsListenersTlsClientValidationTrustedCaBundleToHclTerraform(struct?: ServiceMeshIngressGatewayHostsListenersTlsClientValidationTrustedCaBundleOutputReference | ServiceMeshIngressGatewayHostsListenersTlsClientValidationTrustedCaBundle): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ca_bundle_id: {
+      value: cdktf.stringToHclTerraform(struct!.caBundleId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_name: {
+      value: cdktf.stringToHclTerraform(struct!.secretName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshIngressGatewayHostsListenersTlsClientValidationTrustedCaBundleOutputReference extends cdktf.ComplexObject {
@@ -251,7 +301,7 @@ export interface ServiceMeshIngressGatewayHostsListenersTlsClientValidation {
   readonly subjectAlternateNames?: string[];
   /**
   * trusted_ca_bundle block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#trusted_ca_bundle ServiceMeshIngressGateway#trusted_ca_bundle}
   */
   readonly trustedCaBundle?: ServiceMeshIngressGatewayHostsListenersTlsClientValidationTrustedCaBundle;
@@ -266,6 +316,31 @@ export function serviceMeshIngressGatewayHostsListenersTlsClientValidationToTerr
     subject_alternate_names: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.subjectAlternateNames),
     trusted_ca_bundle: serviceMeshIngressGatewayHostsListenersTlsClientValidationTrustedCaBundleToTerraform(struct!.trustedCaBundle),
   }
+}
+
+
+export function serviceMeshIngressGatewayHostsListenersTlsClientValidationToHclTerraform(struct?: ServiceMeshIngressGatewayHostsListenersTlsClientValidationOutputReference | ServiceMeshIngressGatewayHostsListenersTlsClientValidation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    subject_alternate_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.subjectAlternateNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    trusted_ca_bundle: {
+      value: serviceMeshIngressGatewayHostsListenersTlsClientValidationTrustedCaBundleToHclTerraform(struct!.trustedCaBundle),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ServiceMeshIngressGatewayHostsListenersTlsClientValidationTrustedCaBundleList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshIngressGatewayHostsListenersTlsClientValidationOutputReference extends cdktf.ComplexObject {
@@ -365,6 +440,37 @@ export function serviceMeshIngressGatewayHostsListenersTlsServerCertificateToTer
   }
 }
 
+
+export function serviceMeshIngressGatewayHostsListenersTlsServerCertificateToHclTerraform(struct?: ServiceMeshIngressGatewayHostsListenersTlsServerCertificateOutputReference | ServiceMeshIngressGatewayHostsListenersTlsServerCertificate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    certificate_id: {
+      value: cdktf.stringToHclTerraform(struct!.certificateId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_name: {
+      value: cdktf.stringToHclTerraform(struct!.secretName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ServiceMeshIngressGatewayHostsListenersTlsServerCertificateOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -461,13 +567,13 @@ export interface ServiceMeshIngressGatewayHostsListenersTls {
   readonly mode: string;
   /**
   * client_validation block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#client_validation ServiceMeshIngressGateway#client_validation}
   */
   readonly clientValidation?: ServiceMeshIngressGatewayHostsListenersTlsClientValidation;
   /**
   * server_certificate block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#server_certificate ServiceMeshIngressGateway#server_certificate}
   */
   readonly serverCertificate?: ServiceMeshIngressGatewayHostsListenersTlsServerCertificate;
@@ -483,6 +589,37 @@ export function serviceMeshIngressGatewayHostsListenersTlsToTerraform(struct?: S
     client_validation: serviceMeshIngressGatewayHostsListenersTlsClientValidationToTerraform(struct!.clientValidation),
     server_certificate: serviceMeshIngressGatewayHostsListenersTlsServerCertificateToTerraform(struct!.serverCertificate),
   }
+}
+
+
+export function serviceMeshIngressGatewayHostsListenersTlsToHclTerraform(struct?: ServiceMeshIngressGatewayHostsListenersTlsOutputReference | ServiceMeshIngressGatewayHostsListenersTls): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    mode: {
+      value: cdktf.stringToHclTerraform(struct!.mode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_validation: {
+      value: serviceMeshIngressGatewayHostsListenersTlsClientValidationToHclTerraform(struct!.clientValidation),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ServiceMeshIngressGatewayHostsListenersTlsClientValidationList",
+    },
+    server_certificate: {
+      value: serviceMeshIngressGatewayHostsListenersTlsServerCertificateToHclTerraform(struct!.serverCertificate),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ServiceMeshIngressGatewayHostsListenersTlsServerCertificateList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshIngressGatewayHostsListenersTlsOutputReference extends cdktf.ComplexObject {
@@ -585,7 +722,7 @@ export interface ServiceMeshIngressGatewayHostsListeners {
   readonly protocol: string;
   /**
   * tls block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#tls ServiceMeshIngressGateway#tls}
   */
   readonly tls?: ServiceMeshIngressGatewayHostsListenersTls;
@@ -601,6 +738,37 @@ export function serviceMeshIngressGatewayHostsListenersToTerraform(struct?: Serv
     protocol: cdktf.stringToTerraform(struct!.protocol),
     tls: serviceMeshIngressGatewayHostsListenersTlsToTerraform(struct!.tls),
   }
+}
+
+
+export function serviceMeshIngressGatewayHostsListenersToHclTerraform(struct?: ServiceMeshIngressGatewayHostsListeners | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tls: {
+      value: serviceMeshIngressGatewayHostsListenersTlsToHclTerraform(struct!.tls),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ServiceMeshIngressGatewayHostsListenersTlsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshIngressGatewayHostsListenersOutputReference extends cdktf.ComplexObject {
@@ -732,7 +900,7 @@ export interface ServiceMeshIngressGatewayHosts {
   readonly name: string;
   /**
   * listeners block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#listeners ServiceMeshIngressGateway#listeners}
   */
   readonly listeners: ServiceMeshIngressGatewayHostsListeners[] | cdktf.IResolvable;
@@ -748,6 +916,37 @@ export function serviceMeshIngressGatewayHostsToTerraform(struct?: ServiceMeshIn
     name: cdktf.stringToTerraform(struct!.name),
     listeners: cdktf.listMapper(serviceMeshIngressGatewayHostsListenersToTerraform, true)(struct!.listeners),
   }
+}
+
+
+export function serviceMeshIngressGatewayHostsToHclTerraform(struct?: ServiceMeshIngressGatewayHosts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hostnames: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.hostnames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    listeners: {
+      value: cdktf.listMapperHcl(serviceMeshIngressGatewayHostsListenersToHclTerraform, true)(struct!.listeners),
+      isBlock: true,
+      type: "list",
+      storageClassType: "ServiceMeshIngressGatewayHostsListenersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshIngressGatewayHostsOutputReference extends cdktf.ComplexObject {
@@ -885,6 +1084,25 @@ export function serviceMeshIngressGatewayMtlsToTerraform(struct?: ServiceMeshIng
   }
 }
 
+
+export function serviceMeshIngressGatewayMtlsToHclTerraform(struct?: ServiceMeshIngressGatewayMtlsOutputReference | ServiceMeshIngressGatewayMtls): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    maximum_validity: {
+      value: cdktf.numberToHclTerraform(struct!.maximumValidity),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class ServiceMeshIngressGatewayMtlsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -963,6 +1181,37 @@ export function serviceMeshIngressGatewayTimeoutsToTerraform(struct?: ServiceMes
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function serviceMeshIngressGatewayTimeoutsToHclTerraform(struct?: ServiceMeshIngressGatewayTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ServiceMeshIngressGatewayTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -1077,6 +1326,20 @@ export class ServiceMeshIngressGateway extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_service_mesh_ingress_gateway";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ServiceMeshIngressGateway resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ServiceMeshIngressGateway to import
+  * @param importFromId The id of the existing ServiceMeshIngressGateway that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/service_mesh_ingress_gateway#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ServiceMeshIngressGateway to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_service_mesh_ingress_gateway", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1330,5 +1593,79 @@ export class ServiceMeshIngressGateway extends cdktf.TerraformResource {
       mtls: serviceMeshIngressGatewayMtlsToTerraform(this._mtls.internalValue),
       timeouts: serviceMeshIngressGatewayTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      mesh_id: {
+        value: cdktf.stringToHclTerraform(this._meshId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      access_logging: {
+        value: serviceMeshIngressGatewayAccessLoggingToHclTerraform(this._accessLogging.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ServiceMeshIngressGatewayAccessLoggingList",
+      },
+      hosts: {
+        value: cdktf.listMapperHcl(serviceMeshIngressGatewayHostsToHclTerraform, true)(this._hosts.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ServiceMeshIngressGatewayHostsList",
+      },
+      mtls: {
+        value: serviceMeshIngressGatewayMtlsToHclTerraform(this._mtls.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "ServiceMeshIngressGatewayMtlsList",
+      },
+      timeouts: {
+        value: serviceMeshIngressGatewayTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ServiceMeshIngressGatewayTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

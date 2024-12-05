@@ -34,6 +34,20 @@ export class DataOciLicenseManagerLicenseMetric extends cdktf.TerraformDataSourc
   // =================
   public static readonly tfResourceType = "oci_license_manager_license_metric";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciLicenseManagerLicenseMetric resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciLicenseManagerLicenseMetric to import
+  * @param importFromId The id of the existing DataOciLicenseManagerLicenseMetric that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/license_manager_license_metric#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciLicenseManagerLicenseMetric to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_license_manager_license_metric", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -145,5 +159,31 @@ export class DataOciLicenseManagerLicenseMetric extends cdktf.TerraformDataSourc
       id: cdktf.stringToTerraform(this._id),
       is_compartment_id_in_subtree: cdktf.booleanToTerraform(this._isCompartmentIdInSubtree),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._isCompartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

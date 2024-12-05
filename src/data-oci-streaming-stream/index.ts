@@ -23,6 +23,20 @@ export class DataOciStreamingStream extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_streaming_stream";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciStreamingStream resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciStreamingStream to import
+  * @param importFromId The id of the existing DataOciStreamingStream that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/streaming_stream#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciStreamingStream to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_streaming_stream", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -140,5 +154,19 @@ export class DataOciStreamingStream extends cdktf.TerraformDataSource {
     return {
       stream_id: cdktf.stringToTerraform(this._streamId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      stream_id: {
+        value: cdktf.stringToHclTerraform(this._streamId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,6 +24,17 @@ export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureInve
   }
 }
 
+
+export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureInventoryToHclTerraform(struct?: DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureInventory): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureInventoryOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -108,6 +119,17 @@ export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetw
   }
 }
 
+
+export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationToHclTerraform(struct?: DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicPeerInformationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -175,6 +197,17 @@ export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetw
   }
   return {
   }
+}
+
+
+export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicToHclTerraform(struct?: DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamic): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingDynamicOutputReference extends cdktf.ComplexObject {
@@ -252,6 +285,17 @@ export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetw
   }
 }
 
+
+export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticToHclTerraform(struct?: DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStatic): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationInfrastructureRoutingStaticOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -321,6 +365,17 @@ export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetw
   }
 }
 
+
+export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodesToHclTerraform(struct?: DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationManagementNodesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -388,6 +443,17 @@ export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetw
   }
   return {
   }
+}
+
+
+export function dataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationToHclTerraform(struct?: DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciComputeCloudAtCustomerCccInfrastructureInfrastructureNetworkConfigurationOutputReference extends cdktf.ComplexObject {
@@ -527,6 +593,17 @@ export function dataOciComputeCloudAtCustomerCccInfrastructureUpgradeInformation
   }
 }
 
+
+export function dataOciComputeCloudAtCustomerCccInfrastructureUpgradeInformationToHclTerraform(struct?: DataOciComputeCloudAtCustomerCccInfrastructureUpgradeInformation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciComputeCloudAtCustomerCccInfrastructureUpgradeInformationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -604,6 +681,20 @@ export class DataOciComputeCloudAtCustomerCccInfrastructure extends cdktf.Terraf
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_compute_cloud_at_customer_ccc_infrastructure";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciComputeCloudAtCustomerCccInfrastructure resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciComputeCloudAtCustomerCccInfrastructure to import
+  * @param importFromId The id of the existing DataOciComputeCloudAtCustomerCccInfrastructure that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/compute_cloud_at_customer_ccc_infrastructure#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciComputeCloudAtCustomerCccInfrastructure to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_compute_cloud_at_customer_ccc_infrastructure", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -771,5 +862,19 @@ export class DataOciComputeCloudAtCustomerCccInfrastructure extends cdktf.Terraf
     return {
       ccc_infrastructure_id: cdktf.stringToTerraform(this._cccInfrastructureId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      ccc_infrastructure_id: {
+        value: cdktf.stringToHclTerraform(this._cccInfrastructureId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

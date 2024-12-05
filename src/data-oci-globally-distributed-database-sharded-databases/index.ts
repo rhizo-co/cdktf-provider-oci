@@ -28,7 +28,7 @@ export interface DataOciGloballyDistributedDatabaseShardedDatabasesConfig extend
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/globally_distributed_database_sharded_databases#filter DataOciGloballyDistributedDatabaseShardedDatabases#filter}
   */
   readonly filter?: DataOciGloballyDistributedDatabaseShardedDatabasesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciGloballyDistributedDatabaseShardedDatabasesShardedDatabas
   }
   return {
   }
+}
+
+
+export function dataOciGloballyDistributedDatabaseShardedDatabasesShardedDatabaseCollectionItemsToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabasesShardedDatabaseCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciGloballyDistributedDatabaseShardedDatabasesShardedDatabaseCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -252,6 +263,17 @@ export function dataOciGloballyDistributedDatabaseShardedDatabasesShardedDatabas
   }
 }
 
+
+export function dataOciGloballyDistributedDatabaseShardedDatabasesShardedDatabaseCollectionToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabasesShardedDatabaseCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGloballyDistributedDatabaseShardedDatabasesShardedDatabaseCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -330,6 +352,37 @@ export function dataOciGloballyDistributedDatabaseShardedDatabasesFilterToTerraf
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciGloballyDistributedDatabaseShardedDatabasesFilterToHclTerraform(struct?: DataOciGloballyDistributedDatabaseShardedDatabasesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciGloballyDistributedDatabaseShardedDatabasesFilterOutputReference extends cdktf.ComplexObject {
@@ -460,6 +513,20 @@ export class DataOciGloballyDistributedDatabaseShardedDatabases extends cdktf.Te
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_globally_distributed_database_sharded_databases";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGloballyDistributedDatabaseShardedDatabases resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGloballyDistributedDatabaseShardedDatabases to import
+  * @param importFromId The id of the existing DataOciGloballyDistributedDatabaseShardedDatabases that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/globally_distributed_database_sharded_databases#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGloballyDistributedDatabaseShardedDatabases to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_globally_distributed_database_sharded_databases", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -594,5 +661,43 @@ export class DataOciGloballyDistributedDatabaseShardedDatabases extends cdktf.Te
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciGloballyDistributedDatabaseShardedDatabasesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciGloballyDistributedDatabaseShardedDatabasesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciGloballyDistributedDatabaseShardedDatabasesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -40,7 +40,7 @@ export interface DataOciFleetAppsManagementSchedulerDefinitionsConfig extends cd
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_scheduler_definitions#filter DataOciFleetAppsManagementSchedulerDefinitions#filter}
   */
   readonly filter?: DataOciFleetAppsManagementSchedulerDefinitionsFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitio
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsActionGroupsToHclTerraform(struct?: DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsActionGroups): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsActionGroupsOutputReference extends cdktf.ComplexObject {
@@ -156,6 +167,17 @@ export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitio
   }
 }
 
+
+export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsRunBooksInputParametersArgumentsToHclTerraform(struct?: DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsRunBooksInputParametersArguments): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsRunBooksInputParametersArgumentsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -223,6 +245,17 @@ export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitio
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsRunBooksInputParametersToHclTerraform(struct?: DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsRunBooksInputParameters): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsRunBooksInputParametersOutputReference extends cdktf.ComplexObject {
@@ -295,6 +328,17 @@ export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitio
   }
 }
 
+
+export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsRunBooksToHclTerraform(struct?: DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsRunBooks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsRunBooksOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -363,6 +407,17 @@ export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitio
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsScheduleToHclTerraform(struct?: DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsScheduleOutputReference extends cdktf.ComplexObject {
@@ -447,6 +502,17 @@ export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitio
   }
   return {
   }
+}
+
+
+export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsToHclTerraform(struct?: DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -634,6 +700,17 @@ export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitio
   }
 }
 
+
+export function dataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionToHclTerraform(struct?: DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciFleetAppsManagementSchedulerDefinitionsSchedulerDefinitionCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -712,6 +789,37 @@ export function dataOciFleetAppsManagementSchedulerDefinitionsFilterToTerraform(
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciFleetAppsManagementSchedulerDefinitionsFilterToHclTerraform(struct?: DataOciFleetAppsManagementSchedulerDefinitionsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciFleetAppsManagementSchedulerDefinitionsFilterOutputReference extends cdktf.ComplexObject {
@@ -842,6 +950,20 @@ export class DataOciFleetAppsManagementSchedulerDefinitions extends cdktf.Terraf
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_apps_management_scheduler_definitions";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciFleetAppsManagementSchedulerDefinitions resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciFleetAppsManagementSchedulerDefinitions to import
+  * @param importFromId The id of the existing DataOciFleetAppsManagementSchedulerDefinitions that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/fleet_apps_management_scheduler_definitions#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciFleetAppsManagementSchedulerDefinitions to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_apps_management_scheduler_definitions", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1033,5 +1155,61 @@ export class DataOciFleetAppsManagementSchedulerDefinitions extends cdktf.Terraf
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciFleetAppsManagementSchedulerDefinitionsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fleet_id: {
+        value: cdktf.stringToHclTerraform(this._fleetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      maintenance_window_id: {
+        value: cdktf.stringToHclTerraform(this._maintenanceWindowId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      product: {
+        value: cdktf.stringToHclTerraform(this._product),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciFleetAppsManagementSchedulerDefinitionsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciFleetAppsManagementSchedulerDefinitionsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

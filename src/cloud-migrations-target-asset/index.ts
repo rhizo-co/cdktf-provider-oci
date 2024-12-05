@@ -40,13 +40,13 @@ export interface CloudMigrationsTargetAssetConfig extends cdktf.TerraformMetaArg
   readonly type: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#timeouts CloudMigrationsTargetAsset#timeouts}
   */
   readonly timeouts?: CloudMigrationsTargetAssetTimeouts;
   /**
   * user_spec block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#user_spec CloudMigrationsTargetAsset#user_spec}
   */
   readonly userSpec: CloudMigrationsTargetAssetUserSpec;
@@ -61,6 +61,17 @@ export function cloudMigrationsTargetAssetCompatibilityMessagesToTerraform(struc
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetCompatibilityMessagesToHclTerraform(struct?: CloudMigrationsTargetAssetCompatibilityMessages): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetCompatibilityMessagesOutputReference extends cdktf.ComplexObject {
@@ -135,6 +146,17 @@ export function cloudMigrationsTargetAssetEstimatedCostComputeToTerraform(struct
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetEstimatedCostComputeToHclTerraform(struct?: CloudMigrationsTargetAssetEstimatedCostCompute): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetEstimatedCostComputeOutputReference extends cdktf.ComplexObject {
@@ -251,6 +273,17 @@ export function cloudMigrationsTargetAssetEstimatedCostOsImageToTerraform(struct
   }
 }
 
+
+export function cloudMigrationsTargetAssetEstimatedCostOsImageToHclTerraform(struct?: CloudMigrationsTargetAssetEstimatedCostOsImage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsTargetAssetEstimatedCostOsImageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -318,6 +351,17 @@ export function cloudMigrationsTargetAssetEstimatedCostStorageVolumesToTerraform
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetEstimatedCostStorageVolumesToHclTerraform(struct?: CloudMigrationsTargetAssetEstimatedCostStorageVolumes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetEstimatedCostStorageVolumesOutputReference extends cdktf.ComplexObject {
@@ -399,6 +443,17 @@ export function cloudMigrationsTargetAssetEstimatedCostStorageToTerraform(struct
   }
 }
 
+
+export function cloudMigrationsTargetAssetEstimatedCostStorageToHclTerraform(struct?: CloudMigrationsTargetAssetEstimatedCostStorage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsTargetAssetEstimatedCostStorageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -472,6 +527,17 @@ export function cloudMigrationsTargetAssetEstimatedCostToTerraform(struct?: Clou
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetEstimatedCostToHclTerraform(struct?: CloudMigrationsTargetAssetEstimatedCost): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetEstimatedCostOutputReference extends cdktf.ComplexObject {
@@ -569,6 +635,17 @@ export function cloudMigrationsTargetAssetMigrationAssetToTerraform(struct?: Clo
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetMigrationAssetToHclTerraform(struct?: CloudMigrationsTargetAssetMigrationAsset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetMigrationAssetOutputReference extends cdktf.ComplexObject {
@@ -737,6 +814,17 @@ export function cloudMigrationsTargetAssetRecommendedSpecAgentConfigPluginsConfi
   }
 }
 
+
+export function cloudMigrationsTargetAssetRecommendedSpecAgentConfigPluginsConfigToHclTerraform(struct?: CloudMigrationsTargetAssetRecommendedSpecAgentConfigPluginsConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsTargetAssetRecommendedSpecAgentConfigPluginsConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -804,6 +892,17 @@ export function cloudMigrationsTargetAssetRecommendedSpecAgentConfigToTerraform(
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetRecommendedSpecAgentConfigToHclTerraform(struct?: CloudMigrationsTargetAssetRecommendedSpecAgentConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetRecommendedSpecAgentConfigOutputReference extends cdktf.ComplexObject {
@@ -884,6 +983,17 @@ export function cloudMigrationsTargetAssetRecommendedSpecCreateVnicDetailsToTerr
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetRecommendedSpecCreateVnicDetailsToHclTerraform(struct?: CloudMigrationsTargetAssetRecommendedSpecCreateVnicDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetRecommendedSpecCreateVnicDetailsOutputReference extends cdktf.ComplexObject {
@@ -1002,6 +1112,17 @@ export function cloudMigrationsTargetAssetRecommendedSpecInstanceOptionsToTerraf
   }
 }
 
+
+export function cloudMigrationsTargetAssetRecommendedSpecInstanceOptionsToHclTerraform(struct?: CloudMigrationsTargetAssetRecommendedSpecInstanceOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsTargetAssetRecommendedSpecInstanceOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1064,6 +1185,17 @@ export function cloudMigrationsTargetAssetRecommendedSpecPreemptibleInstanceConf
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionToHclTerraform(struct?: CloudMigrationsTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionActionOutputReference extends cdktf.ComplexObject {
@@ -1135,6 +1267,17 @@ export function cloudMigrationsTargetAssetRecommendedSpecPreemptibleInstanceConf
   }
 }
 
+
+export function cloudMigrationsTargetAssetRecommendedSpecPreemptibleInstanceConfigToHclTerraform(struct?: CloudMigrationsTargetAssetRecommendedSpecPreemptibleInstanceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsTargetAssetRecommendedSpecPreemptibleInstanceConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1198,6 +1341,17 @@ export function cloudMigrationsTargetAssetRecommendedSpecShapeConfigToTerraform(
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetRecommendedSpecShapeConfigToHclTerraform(struct?: CloudMigrationsTargetAssetRecommendedSpecShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetRecommendedSpecShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -1272,6 +1426,17 @@ export function cloudMigrationsTargetAssetRecommendedSpecSourceDetailsToTerrafor
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetRecommendedSpecSourceDetailsToHclTerraform(struct?: CloudMigrationsTargetAssetRecommendedSpecSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetRecommendedSpecSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -1361,6 +1526,17 @@ export function cloudMigrationsTargetAssetRecommendedSpecToTerraform(struct?: Cl
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetRecommendedSpecToHclTerraform(struct?: CloudMigrationsTargetAssetRecommendedSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetRecommendedSpecOutputReference extends cdktf.ComplexObject {
@@ -1520,6 +1696,17 @@ export function cloudMigrationsTargetAssetTestSpecAgentConfigPluginsConfigToTerr
   }
 }
 
+
+export function cloudMigrationsTargetAssetTestSpecAgentConfigPluginsConfigToHclTerraform(struct?: CloudMigrationsTargetAssetTestSpecAgentConfigPluginsConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsTargetAssetTestSpecAgentConfigPluginsConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1587,6 +1774,17 @@ export function cloudMigrationsTargetAssetTestSpecAgentConfigToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetTestSpecAgentConfigToHclTerraform(struct?: CloudMigrationsTargetAssetTestSpecAgentConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetTestSpecAgentConfigOutputReference extends cdktf.ComplexObject {
@@ -1667,6 +1865,17 @@ export function cloudMigrationsTargetAssetTestSpecCreateVnicDetailsToTerraform(s
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetTestSpecCreateVnicDetailsToHclTerraform(struct?: CloudMigrationsTargetAssetTestSpecCreateVnicDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetTestSpecCreateVnicDetailsOutputReference extends cdktf.ComplexObject {
@@ -1785,6 +1994,17 @@ export function cloudMigrationsTargetAssetTestSpecInstanceOptionsToTerraform(str
   }
 }
 
+
+export function cloudMigrationsTargetAssetTestSpecInstanceOptionsToHclTerraform(struct?: CloudMigrationsTargetAssetTestSpecInstanceOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsTargetAssetTestSpecInstanceOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1847,6 +2067,17 @@ export function cloudMigrationsTargetAssetTestSpecPreemptibleInstanceConfigPreem
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionToHclTerraform(struct?: CloudMigrationsTargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionOutputReference extends cdktf.ComplexObject {
@@ -1918,6 +2149,17 @@ export function cloudMigrationsTargetAssetTestSpecPreemptibleInstanceConfigToTer
   }
 }
 
+
+export function cloudMigrationsTargetAssetTestSpecPreemptibleInstanceConfigToHclTerraform(struct?: CloudMigrationsTargetAssetTestSpecPreemptibleInstanceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class CloudMigrationsTargetAssetTestSpecPreemptibleInstanceConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1981,6 +2223,17 @@ export function cloudMigrationsTargetAssetTestSpecShapeConfigToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetTestSpecShapeConfigToHclTerraform(struct?: CloudMigrationsTargetAssetTestSpecShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetTestSpecShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -2055,6 +2308,17 @@ export function cloudMigrationsTargetAssetTestSpecSourceDetailsToTerraform(struc
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetTestSpecSourceDetailsToHclTerraform(struct?: CloudMigrationsTargetAssetTestSpecSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetTestSpecSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -2144,6 +2408,17 @@ export function cloudMigrationsTargetAssetTestSpecToTerraform(struct?: CloudMigr
   }
   return {
   }
+}
+
+
+export function cloudMigrationsTargetAssetTestSpecToHclTerraform(struct?: CloudMigrationsTargetAssetTestSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CloudMigrationsTargetAssetTestSpecOutputReference extends cdktf.ComplexObject {
@@ -2318,6 +2593,37 @@ export function cloudMigrationsTargetAssetTimeoutsToTerraform(struct?: CloudMigr
   }
 }
 
+
+export function cloudMigrationsTargetAssetTimeoutsToHclTerraform(struct?: CloudMigrationsTargetAssetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudMigrationsTargetAssetTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2442,6 +2748,31 @@ export function cloudMigrationsTargetAssetUserSpecAgentConfigPluginsConfigToTerr
   }
 }
 
+
+export function cloudMigrationsTargetAssetUserSpecAgentConfigPluginsConfigToHclTerraform(struct?: CloudMigrationsTargetAssetUserSpecAgentConfigPluginsConfig | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    desired_state: {
+      value: cdktf.stringToHclTerraform(struct!.desiredState),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudMigrationsTargetAssetUserSpecAgentConfigPluginsConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2553,7 +2884,7 @@ export interface CloudMigrationsTargetAssetUserSpecAgentConfig {
   readonly isMonitoringDisabled?: boolean | cdktf.IResolvable;
   /**
   * plugins_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#plugins_config CloudMigrationsTargetAsset#plugins_config}
   */
   readonly pluginsConfig?: CloudMigrationsTargetAssetUserSpecAgentConfigPluginsConfig[] | cdktf.IResolvable;
@@ -2570,6 +2901,43 @@ export function cloudMigrationsTargetAssetUserSpecAgentConfigToTerraform(struct?
     is_monitoring_disabled: cdktf.booleanToTerraform(struct!.isMonitoringDisabled),
     plugins_config: cdktf.listMapper(cloudMigrationsTargetAssetUserSpecAgentConfigPluginsConfigToTerraform, true)(struct!.pluginsConfig),
   }
+}
+
+
+export function cloudMigrationsTargetAssetUserSpecAgentConfigToHclTerraform(struct?: CloudMigrationsTargetAssetUserSpecAgentConfigOutputReference | CloudMigrationsTargetAssetUserSpecAgentConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    are_all_plugins_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.areAllPluginsDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_management_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isManagementDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_monitoring_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isMonitoringDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    plugins_config: {
+      value: cdktf.listMapperHcl(cloudMigrationsTargetAssetUserSpecAgentConfigPluginsConfigToHclTerraform, true)(struct!.pluginsConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudMigrationsTargetAssetUserSpecAgentConfigPluginsConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudMigrationsTargetAssetUserSpecAgentConfigOutputReference extends cdktf.ComplexObject {
@@ -2751,6 +3119,85 @@ export function cloudMigrationsTargetAssetUserSpecCreateVnicDetailsToTerraform(s
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     vlan_id: cdktf.stringToTerraform(struct!.vlanId),
   }
+}
+
+
+export function cloudMigrationsTargetAssetUserSpecCreateVnicDetailsToHclTerraform(struct?: CloudMigrationsTargetAssetUserSpecCreateVnicDetailsOutputReference | CloudMigrationsTargetAssetUserSpecCreateVnicDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    assign_private_dns_record: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPrivateDnsRecord),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    assign_public_ip: {
+      value: cdktf.booleanToHclTerraform(struct!.assignPublicIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    hostname_label: {
+      value: cdktf.stringToHclTerraform(struct!.hostnameLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    skip_source_dest_check: {
+      value: cdktf.booleanToHclTerraform(struct!.skipSourceDestCheck),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vlan_id: {
+      value: cdktf.stringToHclTerraform(struct!.vlanId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudMigrationsTargetAssetUserSpecCreateVnicDetailsOutputReference extends cdktf.ComplexObject {
@@ -3038,6 +3485,25 @@ export function cloudMigrationsTargetAssetUserSpecInstanceOptionsToTerraform(str
   }
 }
 
+
+export function cloudMigrationsTargetAssetUserSpecInstanceOptionsToHclTerraform(struct?: CloudMigrationsTargetAssetUserSpecInstanceOptionsOutputReference | CloudMigrationsTargetAssetUserSpecInstanceOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    are_legacy_imds_endpoints_disabled: {
+      value: cdktf.booleanToHclTerraform(struct!.areLegacyImdsEndpointsDisabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CloudMigrationsTargetAssetUserSpecInstanceOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3106,6 +3572,31 @@ export function cloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreem
     preserve_boot_volume: cdktf.booleanToTerraform(struct!.preserveBootVolume),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function cloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionToHclTerraform(struct?: CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutputReference | CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    preserve_boot_volume: {
+      value: cdktf.booleanToHclTerraform(struct!.preserveBootVolume),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionOutputReference extends cdktf.ComplexObject {
@@ -3178,7 +3669,7 @@ export class CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreempti
 export interface CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfig {
   /**
   * preemption_action block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#preemption_action CloudMigrationsTargetAsset#preemption_action}
   */
   readonly preemptionAction: CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreemptionAction;
@@ -3192,6 +3683,25 @@ export function cloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigToTer
   return {
     preemption_action: cloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionToTerraform(struct!.preemptionAction),
   }
+}
+
+
+export function cloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigToHclTerraform(struct?: CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigOutputReference | CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    preemption_action: {
+      value: cloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionToHclTerraform(struct!.preemptionAction),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigPreemptionActionList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigOutputReference extends cdktf.ComplexObject {
@@ -3264,6 +3774,37 @@ export function cloudMigrationsTargetAssetUserSpecShapeConfigToTerraform(struct?
     memory_in_gbs: cdktf.numberToTerraform(struct!.memoryInGbs),
     ocpus: cdktf.numberToTerraform(struct!.ocpus),
   }
+}
+
+
+export function cloudMigrationsTargetAssetUserSpecShapeConfigToHclTerraform(struct?: CloudMigrationsTargetAssetUserSpecShapeConfigOutputReference | CloudMigrationsTargetAssetUserSpecShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    baseline_ocpu_utilization: {
+      value: cdktf.stringToHclTerraform(struct!.baselineOcpuUtilization),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudMigrationsTargetAssetUserSpecShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -3398,6 +3939,55 @@ export function cloudMigrationsTargetAssetUserSpecSourceDetailsToTerraform(struc
     kms_key_id: cdktf.stringToTerraform(struct!.kmsKeyId),
     source_type: cdktf.stringToTerraform(struct!.sourceType),
   }
+}
+
+
+export function cloudMigrationsTargetAssetUserSpecSourceDetailsToHclTerraform(struct?: CloudMigrationsTargetAssetUserSpecSourceDetailsOutputReference | CloudMigrationsTargetAssetUserSpecSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    boot_volume_id: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    boot_volume_size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    boot_volume_vpus_per_gb: {
+      value: cdktf.stringToHclTerraform(struct!.bootVolumeVpusPerGb),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_id: {
+      value: cdktf.stringToHclTerraform(struct!.imageId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    kms_key_id: {
+      value: cdktf.stringToHclTerraform(struct!.kmsKeyId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudMigrationsTargetAssetUserSpecSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -3606,37 +4196,37 @@ export interface CloudMigrationsTargetAssetUserSpec {
   readonly shape?: string;
   /**
   * agent_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#agent_config CloudMigrationsTargetAsset#agent_config}
   */
   readonly agentConfig?: CloudMigrationsTargetAssetUserSpecAgentConfig;
   /**
   * create_vnic_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#create_vnic_details CloudMigrationsTargetAsset#create_vnic_details}
   */
   readonly createVnicDetails?: CloudMigrationsTargetAssetUserSpecCreateVnicDetails;
   /**
   * instance_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#instance_options CloudMigrationsTargetAsset#instance_options}
   */
   readonly instanceOptions?: CloudMigrationsTargetAssetUserSpecInstanceOptions;
   /**
   * preemptible_instance_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#preemptible_instance_config CloudMigrationsTargetAsset#preemptible_instance_config}
   */
   readonly preemptibleInstanceConfig?: CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfig;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#shape_config CloudMigrationsTargetAsset#shape_config}
   */
   readonly shapeConfig?: CloudMigrationsTargetAssetUserSpecShapeConfig;
   /**
   * source_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#source_details CloudMigrationsTargetAsset#source_details}
   */
   readonly sourceDetails?: CloudMigrationsTargetAssetUserSpecSourceDetails;
@@ -3667,6 +4257,127 @@ export function cloudMigrationsTargetAssetUserSpecToTerraform(struct?: CloudMigr
     shape_config: cloudMigrationsTargetAssetUserSpecShapeConfigToTerraform(struct!.shapeConfig),
     source_details: cloudMigrationsTargetAssetUserSpecSourceDetailsToTerraform(struct!.sourceDetails),
   }
+}
+
+
+export function cloudMigrationsTargetAssetUserSpecToHclTerraform(struct?: CloudMigrationsTargetAssetUserSpecOutputReference | CloudMigrationsTargetAssetUserSpec): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability_domain: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    capacity_reservation_id: {
+      value: cdktf.stringToHclTerraform(struct!.capacityReservationId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dedicated_vm_host_id: {
+      value: cdktf.stringToHclTerraform(struct!.dedicatedVmHostId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    defined_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.definedTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    fault_domain: {
+      value: cdktf.stringToHclTerraform(struct!.faultDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    freeform_tags: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.freeformTags),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    hostname_label: {
+      value: cdktf.stringToHclTerraform(struct!.hostnameLabel),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ipxe_script: {
+      value: cdktf.stringToHclTerraform(struct!.ipxeScript),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_pv_encryption_in_transit_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isPvEncryptionInTransitEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    agent_config: {
+      value: cloudMigrationsTargetAssetUserSpecAgentConfigToHclTerraform(struct!.agentConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudMigrationsTargetAssetUserSpecAgentConfigList",
+    },
+    create_vnic_details: {
+      value: cloudMigrationsTargetAssetUserSpecCreateVnicDetailsToHclTerraform(struct!.createVnicDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudMigrationsTargetAssetUserSpecCreateVnicDetailsList",
+    },
+    instance_options: {
+      value: cloudMigrationsTargetAssetUserSpecInstanceOptionsToHclTerraform(struct!.instanceOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudMigrationsTargetAssetUserSpecInstanceOptionsList",
+    },
+    preemptible_instance_config: {
+      value: cloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigToHclTerraform(struct!.preemptibleInstanceConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudMigrationsTargetAssetUserSpecPreemptibleInstanceConfigList",
+    },
+    shape_config: {
+      value: cloudMigrationsTargetAssetUserSpecShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudMigrationsTargetAssetUserSpecShapeConfigList",
+    },
+    source_details: {
+      value: cloudMigrationsTargetAssetUserSpecSourceDetailsToHclTerraform(struct!.sourceDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CloudMigrationsTargetAssetUserSpecSourceDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CloudMigrationsTargetAssetUserSpecOutputReference extends cdktf.ComplexObject {
@@ -4102,6 +4813,20 @@ export class CloudMigrationsTargetAsset extends cdktf.TerraformResource {
   // =================
   public static readonly tfResourceType = "oci_cloud_migrations_target_asset";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CloudMigrationsTargetAsset resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CloudMigrationsTargetAsset to import
+  * @param importFromId The id of the existing CloudMigrationsTargetAsset that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/cloud_migrations_target_asset#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CloudMigrationsTargetAsset to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_migrations_target_asset", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -4359,5 +5084,67 @@ export class CloudMigrationsTargetAsset extends cdktf.TerraformResource {
       timeouts: cloudMigrationsTargetAssetTimeoutsToTerraform(this._timeouts.internalValue),
       user_spec: cloudMigrationsTargetAssetUserSpecToTerraform(this._userSpec.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      block_volumes_performance: {
+        value: cdktf.numberToHclTerraform(this._blockVolumesPerformance),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_excluded_from_execution: {
+        value: cdktf.booleanToHclTerraform(this._isExcludedFromExecution),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      migration_plan_id: {
+        value: cdktf.stringToHclTerraform(this._migrationPlanId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ms_license: {
+        value: cdktf.stringToHclTerraform(this._msLicense),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      preferred_shape_type: {
+        value: cdktf.stringToHclTerraform(this._preferredShapeType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: cloudMigrationsTargetAssetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CloudMigrationsTargetAssetTimeouts",
+      },
+      user_spec: {
+        value: cloudMigrationsTargetAssetUserSpecToHclTerraform(this._userSpec.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CloudMigrationsTargetAssetUserSpecList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

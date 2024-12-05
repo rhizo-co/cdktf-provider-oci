@@ -64,79 +64,79 @@ export interface DataintegrationWorkspaceTaskConfig extends cdktf.TerraformMetaA
   readonly workspaceId: string;
   /**
   * auth_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#auth_config DataintegrationWorkspaceTask#auth_config}
   */
   readonly authConfig?: DataintegrationWorkspaceTaskAuthConfig;
   /**
   * cancel_rest_call_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#cancel_rest_call_config DataintegrationWorkspaceTask#cancel_rest_call_config}
   */
   readonly cancelRestCallConfig?: DataintegrationWorkspaceTaskCancelRestCallConfig;
   /**
   * config_provider_delegate block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_provider_delegate DataintegrationWorkspaceTask#config_provider_delegate}
   */
   readonly configProviderDelegate?: DataintegrationWorkspaceTaskConfigProviderDelegate;
   /**
   * execute_rest_call_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#execute_rest_call_config DataintegrationWorkspaceTask#execute_rest_call_config}
   */
   readonly executeRestCallConfig?: DataintegrationWorkspaceTaskExecuteRestCallConfig;
   /**
   * input_ports block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#input_ports DataintegrationWorkspaceTask#input_ports}
   */
   readonly inputPorts?: DataintegrationWorkspaceTaskInputPorts[] | cdktf.IResolvable;
   /**
   * op_config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#op_config_values DataintegrationWorkspaceTask#op_config_values}
   */
   readonly opConfigValues?: DataintegrationWorkspaceTaskOpConfigValues;
   /**
   * output_ports block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#output_ports DataintegrationWorkspaceTask#output_ports}
   */
   readonly outputPorts?: DataintegrationWorkspaceTaskOutputPorts[] | cdktf.IResolvable;
   /**
   * parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parameters DataintegrationWorkspaceTask#parameters}
   */
   readonly parameters?: DataintegrationWorkspaceTaskParameters[] | cdktf.IResolvable;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskParentRef;
   /**
   * poll_rest_call_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#poll_rest_call_config DataintegrationWorkspaceTask#poll_rest_call_config}
   */
   readonly pollRestCallConfig?: DataintegrationWorkspaceTaskPollRestCallConfig;
   /**
   * registry_metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#registry_metadata DataintegrationWorkspaceTask#registry_metadata}
   */
   readonly registryMetadata: DataintegrationWorkspaceTaskRegistryMetadata;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#timeouts DataintegrationWorkspaceTask#timeouts}
   */
   readonly timeouts?: DataintegrationWorkspaceTaskTimeouts;
   /**
   * typed_expressions block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#typed_expressions DataintegrationWorkspaceTask#typed_expressions}
   */
   readonly typedExpressions?: DataintegrationWorkspaceTaskTypedExpressions[] | cdktf.IResolvable;
@@ -151,6 +151,17 @@ export function dataintegrationWorkspaceTaskMetadataAggregatorToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataintegrationWorkspaceTaskMetadataAggregatorToHclTerraform(struct?: DataintegrationWorkspaceTaskMetadataAggregator): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataintegrationWorkspaceTaskMetadataAggregatorOutputReference extends cdktf.ComplexObject {
@@ -237,6 +248,17 @@ export function dataintegrationWorkspaceTaskMetadataCountStatisticsObjectTypeCou
   }
 }
 
+
+export function dataintegrationWorkspaceTaskMetadataCountStatisticsObjectTypeCountListStructToHclTerraform(struct?: DataintegrationWorkspaceTaskMetadataCountStatisticsObjectTypeCountListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataintegrationWorkspaceTaskMetadataCountStatisticsObjectTypeCountListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -306,6 +328,17 @@ export function dataintegrationWorkspaceTaskMetadataCountStatisticsToTerraform(s
   }
 }
 
+
+export function dataintegrationWorkspaceTaskMetadataCountStatisticsToHclTerraform(struct?: DataintegrationWorkspaceTaskMetadataCountStatistics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataintegrationWorkspaceTaskMetadataCountStatisticsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -369,6 +402,17 @@ export function dataintegrationWorkspaceTaskMetadataToTerraform(struct?: Dataint
   }
   return {
   }
+}
+
+
+export function dataintegrationWorkspaceTaskMetadataToHclTerraform(struct?: DataintegrationWorkspaceTaskMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataintegrationWorkspaceTaskMetadataOutputReference extends cdktf.ComplexObject {
@@ -513,6 +557,31 @@ export function dataintegrationWorkspaceTaskAuthConfigParentRefToTerraform(struc
   }
 }
 
+
+export function dataintegrationWorkspaceTaskAuthConfigParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskAuthConfigParentRefOutputReference | DataintegrationWorkspaceTaskAuthConfigParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskAuthConfigParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -602,7 +671,7 @@ export interface DataintegrationWorkspaceTaskAuthConfig {
   readonly resourcePrincipalSource?: string;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskAuthConfigParentRef;
@@ -620,6 +689,49 @@ export function dataintegrationWorkspaceTaskAuthConfigToTerraform(struct?: Datai
     resource_principal_source: cdktf.stringToTerraform(struct!.resourcePrincipalSource),
     parent_ref: dataintegrationWorkspaceTaskAuthConfigParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskAuthConfigToHclTerraform(struct?: DataintegrationWorkspaceTaskAuthConfigOutputReference | DataintegrationWorkspaceTaskAuthConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    resource_principal_source: {
+      value: cdktf.stringToHclTerraform(struct!.resourcePrincipalSource),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskAuthConfigParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskAuthConfigParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskAuthConfigOutputReference extends cdktf.ComplexObject {
@@ -775,6 +887,25 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConf
   }
 }
 
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -826,7 +957,7 @@ export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigP
 export interface DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
   /**
   * data_param block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#data_param DataintegrationWorkspaceTask#data_param}
   */
   readonly dataParam?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam;
@@ -840,6 +971,25 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConf
   return {
     data_param: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamToTerraform(struct!.dataParam),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    data_param: {
+      value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamToHclTerraform(struct!.dataParam),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -893,7 +1043,7 @@ export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigP
 export interface DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues;
@@ -907,6 +1057,25 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConf
   return {
     config_param_values: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -968,7 +1137,7 @@ export interface DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesCon
   readonly modelType?: string;
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues;
@@ -984,6 +1153,37 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConf
     model_type: cdktf.stringToTerraform(struct!.modelType),
     config_values: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesToTerraform(struct!.configValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutputReference extends cdktf.ComplexObject {
@@ -1085,7 +1285,7 @@ export interface DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesCon
   readonly parameterValue?: string;
   /**
   * ref_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#ref_value DataintegrationWorkspaceTask#ref_value}
   */
   readonly refValue?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue;
@@ -1100,6 +1300,31 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConf
     parameter_value: cdktf.stringToTerraform(struct!.parameterValue),
     ref_value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueToTerraform(struct!.refValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parameter_value: {
+      value: cdktf.stringToHclTerraform(struct!.parameterValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ref_value: {
+      value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueToHclTerraform(struct!.refValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutputReference extends cdktf.ComplexObject {
@@ -1189,6 +1414,25 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConf
   }
 }
 
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1240,13 +1484,13 @@ export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigP
 export interface DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues {
   /**
   * request_payload block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#request_payload DataintegrationWorkspaceTask#request_payload}
   */
   readonly requestPayload?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayload;
   /**
   * request_url block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#request_url DataintegrationWorkspaceTask#request_url}
   */
   readonly requestUrl?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrl;
@@ -1261,6 +1505,31 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConf
     request_payload: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadToTerraform(struct!.requestPayload),
     request_url: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlToTerraform(struct!.requestUrl),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    request_payload: {
+      value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadToHclTerraform(struct!.requestPayload),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadList",
+    },
+    request_url: {
+      value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlToHclTerraform(struct!.requestUrl),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -1355,6 +1624,31 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesPare
   }
 }
 
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesParentRefOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1428,13 +1722,13 @@ export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesParentR
 export interface DataintegrationWorkspaceTaskCancelRestCallConfigConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesParentRef;
@@ -1449,6 +1743,31 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesToTe
     config_param_values: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
     parent_ref: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfigConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -1540,7 +1859,7 @@ export interface DataintegrationWorkspaceTaskCancelRestCallConfig {
   readonly requestHeaders?: { [key: string]: string };
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskCancelRestCallConfigConfigValues;
@@ -1558,6 +1877,49 @@ export function dataintegrationWorkspaceTaskCancelRestCallConfigToTerraform(stru
     request_headers: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.requestHeaders),
     config_values: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesToTerraform(struct!.configValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskCancelRestCallConfigToHclTerraform(struct?: DataintegrationWorkspaceTaskCancelRestCallConfigOutputReference | DataintegrationWorkspaceTaskCancelRestCallConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    method_type: {
+      value: cdktf.stringToHclTerraform(struct!.methodType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    request_headers: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.requestHeaders),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigConfigValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskCancelRestCallConfigOutputReference extends cdktf.ComplexObject {
@@ -1728,6 +2090,43 @@ export function dataintegrationWorkspaceTaskConfigProviderDelegateBindingsParame
   }
 }
 
+
+export function dataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesRootObjectValueToHclTerraform(struct?: DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesRootObjectValueOutputReference | DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesRootObjectValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_status: {
+      value: cdktf.numberToHclTerraform(struct!.objectStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesRootObjectValueOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1849,7 +2248,7 @@ export interface DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParam
   readonly simpleValue?: string;
   /**
   * root_object_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#root_object_value DataintegrationWorkspaceTask#root_object_value}
   */
   readonly rootObjectValue?: DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesRootObjectValue;
@@ -1864,6 +2263,31 @@ export function dataintegrationWorkspaceTaskConfigProviderDelegateBindingsParame
     simple_value: cdktf.stringToTerraform(struct!.simpleValue),
     root_object_value: dataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesRootObjectValueToTerraform(struct!.rootObjectValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesOutputReference | DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    simple_value: {
+      value: cdktf.stringToHclTerraform(struct!.simpleValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_object_value: {
+      value: dataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesRootObjectValueToHclTerraform(struct!.rootObjectValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesRootObjectValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesOutputReference extends cdktf.ComplexObject {
@@ -1943,7 +2367,7 @@ export interface DataintegrationWorkspaceTaskConfigProviderDelegateBindings {
   readonly key?: string;
   /**
   * parameter_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parameter_values DataintegrationWorkspaceTask#parameter_values}
   */
   readonly parameterValues?: DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValues;
@@ -1958,6 +2382,31 @@ export function dataintegrationWorkspaceTaskConfigProviderDelegateBindingsToTerr
     key: cdktf.stringToTerraform(struct!.key),
     parameter_values: dataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesToTerraform(struct!.parameterValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskConfigProviderDelegateBindingsToHclTerraform(struct?: DataintegrationWorkspaceTaskConfigProviderDelegateBindings | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parameter_values: {
+      value: dataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesToHclTerraform(struct!.parameterValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskConfigProviderDelegateBindingsParameterValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskConfigProviderDelegateBindingsOutputReference extends cdktf.ComplexObject {
@@ -2065,7 +2514,7 @@ export class DataintegrationWorkspaceTaskConfigProviderDelegateBindingsList exte
 export interface DataintegrationWorkspaceTaskConfigProviderDelegate {
   /**
   * bindings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#bindings DataintegrationWorkspaceTask#bindings}
   */
   readonly bindings?: DataintegrationWorkspaceTaskConfigProviderDelegateBindings[] | cdktf.IResolvable;
@@ -2079,6 +2528,25 @@ export function dataintegrationWorkspaceTaskConfigProviderDelegateToTerraform(st
   return {
     bindings: cdktf.listMapper(dataintegrationWorkspaceTaskConfigProviderDelegateBindingsToTerraform, true)(struct!.bindings),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskConfigProviderDelegateToHclTerraform(struct?: DataintegrationWorkspaceTaskConfigProviderDelegateOutputReference | DataintegrationWorkspaceTaskConfigProviderDelegate): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bindings: {
+      value: cdktf.listMapperHcl(dataintegrationWorkspaceTaskConfigProviderDelegateBindingsToHclTerraform, true)(struct!.bindings),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskConfigProviderDelegateBindingsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskConfigProviderDelegateOutputReference extends cdktf.ComplexObject {
@@ -2146,6 +2614,25 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesCon
   }
 }
 
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2197,7 +2684,7 @@ export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfig
 export interface DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
   /**
   * data_param block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#data_param DataintegrationWorkspaceTask#data_param}
   */
   readonly dataParam?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam;
@@ -2211,6 +2698,25 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesCon
   return {
     data_param: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamToTerraform(struct!.dataParam),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    data_param: {
+      value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamToHclTerraform(struct!.dataParam),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -2264,7 +2770,7 @@ export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfig
 export interface DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues;
@@ -2278,6 +2784,25 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesCon
   return {
     config_param_values: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -2339,7 +2864,7 @@ export interface DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesCo
   readonly modelType?: string;
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues;
@@ -2355,6 +2880,37 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesCon
     model_type: cdktf.stringToTerraform(struct!.modelType),
     config_values: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesToTerraform(struct!.configValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutputReference extends cdktf.ComplexObject {
@@ -2456,7 +3012,7 @@ export interface DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesCo
   readonly parameterValue?: string;
   /**
   * ref_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#ref_value DataintegrationWorkspaceTask#ref_value}
   */
   readonly refValue?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue;
@@ -2471,6 +3027,31 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesCon
     parameter_value: cdktf.stringToTerraform(struct!.parameterValue),
     ref_value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueToTerraform(struct!.refValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parameter_value: {
+      value: cdktf.stringToHclTerraform(struct!.parameterValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ref_value: {
+      value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueToHclTerraform(struct!.refValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutputReference extends cdktf.ComplexObject {
@@ -2560,6 +3141,25 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesCon
   }
 }
 
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2611,13 +3211,13 @@ export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfig
 export interface DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues {
   /**
   * request_payload block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#request_payload DataintegrationWorkspaceTask#request_payload}
   */
   readonly requestPayload?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayload;
   /**
   * request_url block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#request_url DataintegrationWorkspaceTask#request_url}
   */
   readonly requestUrl?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrl;
@@ -2632,6 +3232,31 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesCon
     request_payload: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadToTerraform(struct!.requestPayload),
     request_url: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlToTerraform(struct!.requestUrl),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    request_payload: {
+      value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadToHclTerraform(struct!.requestPayload),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadList",
+    },
+    request_url: {
+      value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlToHclTerraform(struct!.requestUrl),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -2726,6 +3351,31 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesPar
   }
 }
 
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesParentRefOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2799,13 +3449,13 @@ export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesParent
 export interface DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesParentRef;
@@ -2820,6 +3470,31 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesToT
     config_param_values: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
     parent_ref: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -2911,7 +3586,7 @@ export interface DataintegrationWorkspaceTaskExecuteRestCallConfig {
   readonly requestHeaders?: { [key: string]: string };
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValues;
@@ -2929,6 +3604,49 @@ export function dataintegrationWorkspaceTaskExecuteRestCallConfigToTerraform(str
     request_headers: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.requestHeaders),
     config_values: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesToTerraform(struct!.configValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskExecuteRestCallConfigToHclTerraform(struct?: DataintegrationWorkspaceTaskExecuteRestCallConfigOutputReference | DataintegrationWorkspaceTaskExecuteRestCallConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    method_type: {
+      value: cdktf.stringToHclTerraform(struct!.methodType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    request_headers: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.requestHeaders),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigConfigValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskExecuteRestCallConfigOutputReference extends cdktf.ComplexObject {
@@ -3107,6 +3825,55 @@ export function dataintegrationWorkspaceTaskInputPortsConfigValuesConfigParamVal
     root_object_value: cdktf.stringToTerraform(struct!.rootObjectValue),
     string_value: cdktf.stringToTerraform(struct!.stringValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskInputPortsConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskInputPortsConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskInputPortsConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    int_value: {
+      value: cdktf.numberToHclTerraform(struct!.intValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    object_value: {
+      value: cdktf.stringToHclTerraform(struct!.objectValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parameter_value: {
+      value: cdktf.stringToHclTerraform(struct!.parameterValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ref_value: {
+      value: cdktf.stringToHclTerraform(struct!.refValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_object_value: {
+      value: cdktf.stringToHclTerraform(struct!.rootObjectValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskInputPortsConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -3289,6 +4056,31 @@ export function dataintegrationWorkspaceTaskInputPortsConfigValuesParentRefToTer
   }
 }
 
+
+export function dataintegrationWorkspaceTaskInputPortsConfigValuesParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskInputPortsConfigValuesParentRefOutputReference | DataintegrationWorkspaceTaskInputPortsConfigValuesParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskInputPortsConfigValuesParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -3362,13 +4154,13 @@ export class DataintegrationWorkspaceTaskInputPortsConfigValuesParentRefOutputRe
 export interface DataintegrationWorkspaceTaskInputPortsConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskInputPortsConfigValuesConfigParamValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskInputPortsConfigValuesParentRef;
@@ -3383,6 +4175,31 @@ export function dataintegrationWorkspaceTaskInputPortsConfigValuesToTerraform(st
     config_param_values: dataintegrationWorkspaceTaskInputPortsConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
     parent_ref: dataintegrationWorkspaceTaskInputPortsConfigValuesParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskInputPortsConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskInputPortsConfigValuesOutputReference | DataintegrationWorkspaceTaskInputPortsConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskInputPortsConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskInputPortsConfigValuesConfigParamValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskInputPortsConfigValuesParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskInputPortsConfigValuesParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskInputPortsConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -3475,6 +4292,31 @@ export function dataintegrationWorkspaceTaskInputPortsParentRefToTerraform(struc
     parent: cdktf.stringToTerraform(struct!.parent),
     root_doc_id: cdktf.stringToTerraform(struct!.rootDocId),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskInputPortsParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskInputPortsParentRefOutputReference | DataintegrationWorkspaceTaskInputPortsParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskInputPortsParentRefOutputReference extends cdktf.ComplexObject {
@@ -3582,13 +4424,13 @@ export interface DataintegrationWorkspaceTaskInputPorts {
   readonly portType?: string;
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskInputPortsConfigValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskInputPortsParentRef;
@@ -3611,6 +4453,79 @@ export function dataintegrationWorkspaceTaskInputPortsToTerraform(struct?: Datai
     config_values: dataintegrationWorkspaceTaskInputPortsConfigValuesToTerraform(struct!.configValues),
     parent_ref: dataintegrationWorkspaceTaskInputPortsParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskInputPortsToHclTerraform(struct?: DataintegrationWorkspaceTaskInputPorts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    fields: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.fields),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_status: {
+      value: cdktf.numberToHclTerraform(struct!.objectStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    port_type: {
+      value: cdktf.stringToHclTerraform(struct!.portType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskInputPortsConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskInputPortsConfigValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskInputPortsParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskInputPortsParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskInputPortsOutputReference extends cdktf.ComplexObject {
@@ -3925,6 +4840,49 @@ export function dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfi
   }
 }
 
+
+export function dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueToHclTerraform(struct?: DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueOutputReference | DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_status: {
+      value: cdktf.numberToHclTerraform(struct!.objectStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4093,6 +5051,43 @@ export function dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfi
   }
 }
 
+
+export function dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueToHclTerraform(struct?: DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutputReference | DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_status: {
+      value: cdktf.numberToHclTerraform(struct!.objectStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4226,13 +5221,13 @@ export interface DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConf
   readonly stringValue?: string;
   /**
   * ref_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#ref_value DataintegrationWorkspaceTask#ref_value}
   */
   readonly refValue?: DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue;
   /**
   * root_object_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#root_object_value DataintegrationWorkspaceTask#root_object_value}
   */
   readonly rootObjectValue?: DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue;
@@ -4251,6 +5246,55 @@ export function dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfi
     ref_value: dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueToTerraform(struct!.refValue),
     root_object_value: dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueToTerraform(struct!.rootObjectValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueToHclTerraform(struct?: DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutputReference | DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    int_value: {
+      value: cdktf.numberToHclTerraform(struct!.intValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    object_value: {
+      value: cdktf.stringToHclTerraform(struct!.objectValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parameter_value: {
+      value: cdktf.stringToHclTerraform(struct!.parameterValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ref_value: {
+      value: dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueToHclTerraform(struct!.refValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueList",
+    },
+    root_object_value: {
+      value: dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueToHclTerraform(struct!.rootObjectValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueOutputReference extends cdktf.ComplexObject {
@@ -4418,7 +5462,7 @@ export interface DataintegrationWorkspaceTaskOpConfigValuesConfigParamValues {
   readonly key?: string;
   /**
   * config_param_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_value DataintegrationWorkspaceTask#config_param_value}
   */
   readonly configParamValue?: DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue;
@@ -4433,6 +5477,31 @@ export function dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesToTer
     key: cdktf.stringToTerraform(struct!.key),
     config_param_value: dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueToTerraform(struct!.configParamValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskOpConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_param_value: {
+      value: dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueToHclTerraform(struct!.configParamValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -4527,6 +5596,31 @@ export function dataintegrationWorkspaceTaskOpConfigValuesParentRefToTerraform(s
   }
 }
 
+
+export function dataintegrationWorkspaceTaskOpConfigValuesParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskOpConfigValuesParentRefOutputReference | DataintegrationWorkspaceTaskOpConfigValuesParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskOpConfigValuesParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4600,13 +5694,13 @@ export class DataintegrationWorkspaceTaskOpConfigValuesParentRefOutputReference 
 export interface DataintegrationWorkspaceTaskOpConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskOpConfigValuesConfigParamValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskOpConfigValuesParentRef;
@@ -4621,6 +5715,31 @@ export function dataintegrationWorkspaceTaskOpConfigValuesToTerraform(struct?: D
     config_param_values: dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
     parent_ref: dataintegrationWorkspaceTaskOpConfigValuesParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskOpConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskOpConfigValuesOutputReference | DataintegrationWorkspaceTaskOpConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskOpConfigValuesConfigParamValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskOpConfigValuesParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskOpConfigValuesParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskOpConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -4733,6 +5852,55 @@ export function dataintegrationWorkspaceTaskOutputPortsConfigValuesConfigParamVa
     root_object_value: cdktf.stringToTerraform(struct!.rootObjectValue),
     string_value: cdktf.stringToTerraform(struct!.stringValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskOutputPortsConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskOutputPortsConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskOutputPortsConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    int_value: {
+      value: cdktf.numberToHclTerraform(struct!.intValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    object_value: {
+      value: cdktf.stringToHclTerraform(struct!.objectValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parameter_value: {
+      value: cdktf.stringToHclTerraform(struct!.parameterValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ref_value: {
+      value: cdktf.stringToHclTerraform(struct!.refValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_object_value: {
+      value: cdktf.stringToHclTerraform(struct!.rootObjectValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskOutputPortsConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -4915,6 +6083,31 @@ export function dataintegrationWorkspaceTaskOutputPortsConfigValuesParentRefToTe
   }
 }
 
+
+export function dataintegrationWorkspaceTaskOutputPortsConfigValuesParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskOutputPortsConfigValuesParentRefOutputReference | DataintegrationWorkspaceTaskOutputPortsConfigValuesParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskOutputPortsConfigValuesParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -4988,13 +6181,13 @@ export class DataintegrationWorkspaceTaskOutputPortsConfigValuesParentRefOutputR
 export interface DataintegrationWorkspaceTaskOutputPortsConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskOutputPortsConfigValuesConfigParamValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskOutputPortsConfigValuesParentRef;
@@ -5009,6 +6202,31 @@ export function dataintegrationWorkspaceTaskOutputPortsConfigValuesToTerraform(s
     config_param_values: dataintegrationWorkspaceTaskOutputPortsConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
     parent_ref: dataintegrationWorkspaceTaskOutputPortsConfigValuesParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskOutputPortsConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskOutputPortsConfigValuesOutputReference | DataintegrationWorkspaceTaskOutputPortsConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskOutputPortsConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskOutputPortsConfigValuesConfigParamValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskOutputPortsConfigValuesParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskOutputPortsConfigValuesParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskOutputPortsConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -5101,6 +6319,31 @@ export function dataintegrationWorkspaceTaskOutputPortsParentRefToTerraform(stru
     parent: cdktf.stringToTerraform(struct!.parent),
     root_doc_id: cdktf.stringToTerraform(struct!.rootDocId),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskOutputPortsParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskOutputPortsParentRefOutputReference | DataintegrationWorkspaceTaskOutputPortsParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskOutputPortsParentRefOutputReference extends cdktf.ComplexObject {
@@ -5208,13 +6451,13 @@ export interface DataintegrationWorkspaceTaskOutputPorts {
   readonly portType?: string;
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskOutputPortsConfigValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskOutputPortsParentRef;
@@ -5237,6 +6480,79 @@ export function dataintegrationWorkspaceTaskOutputPortsToTerraform(struct?: Data
     config_values: dataintegrationWorkspaceTaskOutputPortsConfigValuesToTerraform(struct!.configValues),
     parent_ref: dataintegrationWorkspaceTaskOutputPortsParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskOutputPortsToHclTerraform(struct?: DataintegrationWorkspaceTaskOutputPorts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    fields: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.fields),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_status: {
+      value: cdktf.numberToHclTerraform(struct!.objectStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    port_type: {
+      value: cdktf.stringToHclTerraform(struct!.portType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskOutputPortsConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskOutputPortsConfigValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskOutputPortsParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskOutputPortsParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskOutputPortsOutputReference extends cdktf.ComplexObject {
@@ -5551,6 +6867,49 @@ export function dataintegrationWorkspaceTaskParametersConfigValuesConfigParamVal
   }
 }
 
+
+export function dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRefValueToHclTerraform(struct?: DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRefValueOutputReference | DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRefValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_status: {
+      value: cdktf.numberToHclTerraform(struct!.objectStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRefValueOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5719,6 +7078,43 @@ export function dataintegrationWorkspaceTaskParametersConfigValuesConfigParamVal
   }
 }
 
+
+export function dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRootObjectValueToHclTerraform(struct?: DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutputReference | DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRootObjectValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_status: {
+      value: cdktf.numberToHclTerraform(struct!.objectStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRootObjectValueOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -5852,13 +7248,13 @@ export interface DataintegrationWorkspaceTaskParametersConfigValuesConfigParamVa
   readonly stringValue?: string;
   /**
   * ref_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#ref_value DataintegrationWorkspaceTask#ref_value}
   */
   readonly refValue?: DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRefValue;
   /**
   * root_object_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#root_object_value DataintegrationWorkspaceTask#root_object_value}
   */
   readonly rootObjectValue?: DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRootObjectValue;
@@ -5877,6 +7273,55 @@ export function dataintegrationWorkspaceTaskParametersConfigValuesConfigParamVal
     ref_value: dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRefValueToTerraform(struct!.refValue),
     root_object_value: dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRootObjectValueToTerraform(struct!.rootObjectValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueToHclTerraform(struct?: DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueOutputReference | DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    int_value: {
+      value: cdktf.numberToHclTerraform(struct!.intValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    object_value: {
+      value: cdktf.stringToHclTerraform(struct!.objectValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    parameter_value: {
+      value: cdktf.stringToHclTerraform(struct!.parameterValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ref_value: {
+      value: dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRefValueToHclTerraform(struct!.refValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRefValueList",
+    },
+    root_object_value: {
+      value: dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRootObjectValueToHclTerraform(struct!.rootObjectValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueRootObjectValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueOutputReference extends cdktf.ComplexObject {
@@ -6044,7 +7489,7 @@ export interface DataintegrationWorkspaceTaskParametersConfigValuesConfigParamVa
   readonly key?: string;
   /**
   * config_param_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_value DataintegrationWorkspaceTask#config_param_value}
   */
   readonly configParamValue?: DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValue;
@@ -6059,6 +7504,31 @@ export function dataintegrationWorkspaceTaskParametersConfigValuesConfigParamVal
     key: cdktf.stringToTerraform(struct!.key),
     config_param_value: dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueToTerraform(struct!.configParamValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_param_value: {
+      value: dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueToHclTerraform(struct!.configParamValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesConfigParamValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -6153,6 +7623,31 @@ export function dataintegrationWorkspaceTaskParametersConfigValuesParentRefToTer
   }
 }
 
+
+export function dataintegrationWorkspaceTaskParametersConfigValuesParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskParametersConfigValuesParentRefOutputReference | DataintegrationWorkspaceTaskParametersConfigValuesParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskParametersConfigValuesParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -6226,13 +7721,13 @@ export class DataintegrationWorkspaceTaskParametersConfigValuesParentRefOutputRe
 export interface DataintegrationWorkspaceTaskParametersConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskParametersConfigValuesParentRef;
@@ -6247,6 +7742,31 @@ export function dataintegrationWorkspaceTaskParametersConfigValuesToTerraform(st
     config_param_values: dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
     parent_ref: dataintegrationWorkspaceTaskParametersConfigValuesParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskParametersConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskParametersConfigValuesOutputReference | DataintegrationWorkspaceTaskParametersConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskParametersConfigValuesConfigParamValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskParametersConfigValuesParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskParametersConfigValuesParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskParametersConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -6339,6 +7859,31 @@ export function dataintegrationWorkspaceTaskParametersParentRefToTerraform(struc
     parent: cdktf.stringToTerraform(struct!.parent),
     root_doc_id: cdktf.stringToTerraform(struct!.rootDocId),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskParametersParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskParametersParentRefOutputReference | DataintegrationWorkspaceTaskParametersParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskParametersParentRefOutputReference extends cdktf.ComplexObject {
@@ -6470,13 +8015,13 @@ export interface DataintegrationWorkspaceTaskParameters {
   readonly usedFor?: string;
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskParametersConfigValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskParametersParentRef;
@@ -6505,6 +8050,115 @@ export function dataintegrationWorkspaceTaskParametersToTerraform(struct?: Datai
     config_values: dataintegrationWorkspaceTaskParametersConfigValuesToTerraform(struct!.configValues),
     parent_ref: dataintegrationWorkspaceTaskParametersParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskParametersToHclTerraform(struct?: DataintegrationWorkspaceTaskParameters | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    default_value: {
+      value: cdktf.stringToHclTerraform(struct!.defaultValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_input: {
+      value: cdktf.booleanToHclTerraform(struct!.isInput),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_output: {
+      value: cdktf.booleanToHclTerraform(struct!.isOutput),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_status: {
+      value: cdktf.numberToHclTerraform(struct!.objectStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    output_aggregation_type: {
+      value: cdktf.stringToHclTerraform(struct!.outputAggregationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_object_default_value: {
+      value: cdktf.stringToHclTerraform(struct!.rootObjectDefaultValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type_name: {
+      value: cdktf.stringToHclTerraform(struct!.typeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    used_for: {
+      value: cdktf.stringToHclTerraform(struct!.usedFor),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskParametersConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskParametersConfigValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskParametersParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskParametersParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskParametersOutputReference extends cdktf.ComplexObject {
@@ -6936,6 +8590,31 @@ export function dataintegrationWorkspaceTaskParentRefToTerraform(struct?: Datain
   }
 }
 
+
+export function dataintegrationWorkspaceTaskParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskParentRefOutputReference | DataintegrationWorkspaceTaskParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -7036,6 +8715,43 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
     model_type: cdktf.stringToTerraform(struct!.modelType),
     name: cdktf.stringToTerraform(struct!.name),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    expr_string: {
+      value: cdktf.stringToHclTerraform(struct!.exprString),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueOutputReference extends cdktf.ComplexObject {
@@ -7159,7 +8875,7 @@ export interface DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfi
   readonly parameterValue?: string;
   /**
   * ref_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#ref_value DataintegrationWorkspaceTask#ref_value}
   */
   readonly refValue?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValue;
@@ -7174,6 +8890,31 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
     parameter_value: cdktf.stringToTerraform(struct!.parameterValue),
     ref_value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueToTerraform(struct!.refValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parameter_value: {
+      value: cdktf.stringToHclTerraform(struct!.parameterValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ref_value: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueToHclTerraform(struct!.refValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionOutputReference extends cdktf.ComplexObject {
@@ -7263,6 +9004,25 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
   }
 }
 
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    object_value: {
+      value: cdktf.numberToHclTerraform(struct!.objectValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -7326,6 +9086,25 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
   return {
     string_value: cdktf.stringToTerraform(struct!.stringValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitOutputReference extends cdktf.ComplexObject {
@@ -7393,6 +9172,25 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
   }
 }
 
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    object_value: {
+      value: cdktf.numberToHclTerraform(struct!.objectValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -7456,6 +9254,25 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
   return {
     string_value: cdktf.stringToTerraform(struct!.stringValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitOutputReference extends cdktf.ComplexObject {
@@ -7523,6 +9340,25 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
   }
 }
 
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -7574,7 +9410,7 @@ export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigPar
 export interface DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues {
   /**
   * data_param block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#data_param DataintegrationWorkspaceTask#data_param}
   */
   readonly dataParam?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam;
@@ -7588,6 +9424,25 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
   return {
     data_param: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamToTerraform(struct!.dataParam),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    data_param: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamToHclTerraform(struct!.dataParam),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -7641,7 +9496,7 @@ export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigPar
 export interface DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues;
@@ -7655,6 +9510,25 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
   return {
     config_param_values: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -7720,7 +9594,7 @@ export interface DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfi
   readonly name?: string;
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues;
@@ -7737,6 +9611,43 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
     name: cdktf.stringToTerraform(struct!.name),
     config_values: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesToTerraform(struct!.configValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueOutputReference extends cdktf.ComplexObject {
@@ -7860,7 +9771,7 @@ export interface DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfi
   readonly parameterValue?: string;
   /**
   * ref_value block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#ref_value DataintegrationWorkspaceTask#ref_value}
   */
   readonly refValue?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValue;
@@ -7875,6 +9786,31 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
     parameter_value: cdktf.stringToTerraform(struct!.parameterValue),
     ref_value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueToTerraform(struct!.refValue),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parameter_value: {
+      value: cdktf.stringToHclTerraform(struct!.parameterValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ref_value: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueToHclTerraform(struct!.refValue),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadOutputReference extends cdktf.ComplexObject {
@@ -7964,6 +9900,25 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
   }
 }
 
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    string_value: {
+      value: cdktf.stringToHclTerraform(struct!.stringValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -8015,43 +9970,43 @@ export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigPar
 export interface DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues {
   /**
   * poll_condition block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#poll_condition DataintegrationWorkspaceTask#poll_condition}
   */
   readonly pollCondition?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollCondition;
   /**
   * poll_interval block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#poll_interval DataintegrationWorkspaceTask#poll_interval}
   */
   readonly pollInterval?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollInterval;
   /**
   * poll_interval_unit block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#poll_interval_unit DataintegrationWorkspaceTask#poll_interval_unit}
   */
   readonly pollIntervalUnit?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnit;
   /**
   * poll_max_duration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#poll_max_duration DataintegrationWorkspaceTask#poll_max_duration}
   */
   readonly pollMaxDuration?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration;
   /**
   * poll_max_duration_unit block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#poll_max_duration_unit DataintegrationWorkspaceTask#poll_max_duration_unit}
   */
   readonly pollMaxDurationUnit?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnit;
   /**
   * request_payload block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#request_payload DataintegrationWorkspaceTask#request_payload}
   */
   readonly requestPayload?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload;
   /**
   * request_url block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#request_url DataintegrationWorkspaceTask#request_url}
   */
   readonly requestUrl?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrl;
@@ -8071,6 +10026,61 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfig
     request_payload: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadToTerraform(struct!.requestPayload),
     request_url: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlToTerraform(struct!.requestUrl),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    poll_condition: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionToHclTerraform(struct!.pollCondition),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionList",
+    },
+    poll_interval: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalToHclTerraform(struct!.pollInterval),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalList",
+    },
+    poll_interval_unit: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitToHclTerraform(struct!.pollIntervalUnit),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUnitList",
+    },
+    poll_max_duration: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationToHclTerraform(struct!.pollMaxDuration),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationList",
+    },
+    poll_max_duration_unit: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitToHclTerraform(struct!.pollMaxDurationUnit),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDurationUnitList",
+    },
+    request_payload: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadToHclTerraform(struct!.requestPayload),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadList",
+    },
+    request_url: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlToHclTerraform(struct!.requestUrl),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -8275,6 +10285,31 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParent
   }
 }
 
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParentRefOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -8348,13 +10383,13 @@ export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParentRef
 export interface DataintegrationWorkspaceTaskPollRestCallConfigConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParentRef;
@@ -8369,6 +10404,31 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesToTerr
     config_param_values: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
     parent_ref: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesOutputReference | DataintegrationWorkspaceTaskPollRestCallConfigConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -8460,7 +10520,7 @@ export interface DataintegrationWorkspaceTaskPollRestCallConfig {
   readonly requestHeaders?: { [key: string]: string };
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskPollRestCallConfigConfigValues;
@@ -8478,6 +10538,49 @@ export function dataintegrationWorkspaceTaskPollRestCallConfigToTerraform(struct
     request_headers: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.requestHeaders),
     config_values: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesToTerraform(struct!.configValues),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskPollRestCallConfigToHclTerraform(struct?: DataintegrationWorkspaceTaskPollRestCallConfigOutputReference | DataintegrationWorkspaceTaskPollRestCallConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    method_type: {
+      value: cdktf.stringToHclTerraform(struct!.methodType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    request_headers: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.requestHeaders),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskPollRestCallConfigConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigConfigValuesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskPollRestCallConfigOutputReference extends cdktf.ComplexObject {
@@ -8653,6 +10756,49 @@ export function dataintegrationWorkspaceTaskRegistryMetadataToTerraform(struct?:
   }
 }
 
+
+export function dataintegrationWorkspaceTaskRegistryMetadataToHclTerraform(struct?: DataintegrationWorkspaceTaskRegistryMetadataOutputReference | DataintegrationWorkspaceTaskRegistryMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    aggregator_key: {
+      value: cdktf.stringToHclTerraform(struct!.aggregatorKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_favorite: {
+      value: cdktf.booleanToHclTerraform(struct!.isFavorite),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.labels),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    registry_version: {
+      value: cdktf.numberToHclTerraform(struct!.registryVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskRegistryMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -8813,6 +10959,37 @@ export function dataintegrationWorkspaceTaskTimeoutsToTerraform(struct?: Dataint
   }
 }
 
+
+export function dataintegrationWorkspaceTaskTimeoutsToHclTerraform(struct?: DataintegrationWorkspaceTaskTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -8932,6 +11109,25 @@ export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigPa
   }
 }
 
+
+export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesLengthToHclTerraform(struct?: DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesLengthOutputReference | DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesLength): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    int_value: {
+      value: cdktf.numberToHclTerraform(struct!.intValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesLengthOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -8997,6 +11193,25 @@ export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigPa
   }
 }
 
+
+export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesScaleToHclTerraform(struct?: DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesScaleOutputReference | DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesScale): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    int_value: {
+      value: cdktf.numberToHclTerraform(struct!.intValue),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesScaleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -9048,13 +11263,13 @@ export class DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParam
 export interface DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValues {
   /**
   * length block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#length DataintegrationWorkspaceTask#length}
   */
   readonly length?: DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesLength;
   /**
   * scale block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#scale DataintegrationWorkspaceTask#scale}
   */
   readonly scale?: DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesScale;
@@ -9069,6 +11284,31 @@ export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigPa
     length: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesLengthToTerraform(struct!.length),
     scale: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesScaleToTerraform(struct!.scale),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesOutputReference | DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    length: {
+      value: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesLengthToHclTerraform(struct!.length),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesLengthList",
+    },
+    scale: {
+      value: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesScaleToHclTerraform(struct!.scale),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesScaleList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesOutputReference extends cdktf.ComplexObject {
@@ -9163,6 +11403,31 @@ export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRe
   }
 }
 
+
+export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRefOutputReference | DataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -9236,13 +11501,13 @@ export class DataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRefOu
 export interface DataintegrationWorkspaceTaskTypedExpressionsConfigValues {
   /**
   * config_param_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_param_values DataintegrationWorkspaceTask#config_param_values}
   */
   readonly configParamValues?: DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRef;
@@ -9257,6 +11522,31 @@ export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesToTerraf
     config_param_values: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesToTerraform(struct!.configParamValues),
     parent_ref: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskTypedExpressionsConfigValuesToHclTerraform(struct?: DataintegrationWorkspaceTaskTypedExpressionsConfigValuesOutputReference | DataintegrationWorkspaceTaskTypedExpressionsConfigValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    config_param_values: {
+      value: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesToHclTerraform(struct!.configParamValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskTypedExpressionsConfigValuesConfigParamValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskTypedExpressionsConfigValuesParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskTypedExpressionsConfigValuesOutputReference extends cdktf.ComplexObject {
@@ -9349,6 +11639,31 @@ export function dataintegrationWorkspaceTaskTypedExpressionsParentRefToTerraform
     parent: cdktf.stringToTerraform(struct!.parent),
     root_doc_id: cdktf.stringToTerraform(struct!.rootDocId),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskTypedExpressionsParentRefToHclTerraform(struct?: DataintegrationWorkspaceTaskTypedExpressionsParentRefOutputReference | DataintegrationWorkspaceTaskTypedExpressionsParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    parent: {
+      value: cdktf.stringToHclTerraform(struct!.parent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    root_doc_id: {
+      value: cdktf.stringToHclTerraform(struct!.rootDocId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskTypedExpressionsParentRefOutputReference extends cdktf.ComplexObject {
@@ -9456,13 +11771,13 @@ export interface DataintegrationWorkspaceTaskTypedExpressions {
   readonly type?: string;
   /**
   * config_values block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#config_values DataintegrationWorkspaceTask#config_values}
   */
   readonly configValues?: DataintegrationWorkspaceTaskTypedExpressionsConfigValues;
   /**
   * parent_ref block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#parent_ref DataintegrationWorkspaceTask#parent_ref}
   */
   readonly parentRef?: DataintegrationWorkspaceTaskTypedExpressionsParentRef;
@@ -9485,6 +11800,79 @@ export function dataintegrationWorkspaceTaskTypedExpressionsToTerraform(struct?:
     config_values: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesToTerraform(struct!.configValues),
     parent_ref: dataintegrationWorkspaceTaskTypedExpressionsParentRefToTerraform(struct!.parentRef),
   }
+}
+
+
+export function dataintegrationWorkspaceTaskTypedExpressionsToHclTerraform(struct?: DataintegrationWorkspaceTaskTypedExpressions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    expression: {
+      value: cdktf.stringToHclTerraform(struct!.expression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    model_version: {
+      value: cdktf.stringToHclTerraform(struct!.modelVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object_status: {
+      value: cdktf.numberToHclTerraform(struct!.objectStatus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    config_values: {
+      value: dataintegrationWorkspaceTaskTypedExpressionsConfigValuesToHclTerraform(struct!.configValues),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskTypedExpressionsConfigValuesList",
+    },
+    parent_ref: {
+      value: dataintegrationWorkspaceTaskTypedExpressionsParentRefToHclTerraform(struct!.parentRef),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceTaskTypedExpressionsParentRefList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceTaskTypedExpressionsOutputReference extends cdktf.ComplexObject {
@@ -9775,6 +12163,20 @@ export class DataintegrationWorkspaceTask extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataintegration_workspace_task";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataintegrationWorkspaceTask resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataintegrationWorkspaceTask to import
+  * @param importFromId The id of the existing DataintegrationWorkspaceTask that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_task#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataintegrationWorkspaceTask to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataintegration_workspace_task", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -10286,5 +12688,169 @@ export class DataintegrationWorkspaceTask extends cdktf.TerraformResource {
       timeouts: dataintegrationWorkspaceTaskTimeoutsToTerraform(this._timeouts.internalValue),
       typed_expressions: cdktf.listMapper(dataintegrationWorkspaceTaskTypedExpressionsToTerraform, true)(this._typedExpressions.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      api_call_mode: {
+        value: cdktf.stringToHclTerraform(this._apiCallMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      identifier: {
+        value: cdktf.stringToHclTerraform(this._identifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_single_load: {
+        value: cdktf.booleanToHclTerraform(this._isSingleLoad),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      key: {
+        value: cdktf.stringToHclTerraform(this._key),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_type: {
+        value: cdktf.stringToHclTerraform(this._modelType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_version: {
+        value: cdktf.stringToHclTerraform(this._modelVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_status: {
+        value: cdktf.numberToHclTerraform(this._objectStatus),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      operation: {
+        value: cdktf.stringToHclTerraform(this._operation),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      parallel_load_limit: {
+        value: cdktf.numberToHclTerraform(this._parallelLoadLimit),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      workspace_id: {
+        value: cdktf.stringToHclTerraform(this._workspaceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      auth_config: {
+        value: dataintegrationWorkspaceTaskAuthConfigToHclTerraform(this._authConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskAuthConfigList",
+      },
+      cancel_rest_call_config: {
+        value: dataintegrationWorkspaceTaskCancelRestCallConfigToHclTerraform(this._cancelRestCallConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskCancelRestCallConfigList",
+      },
+      config_provider_delegate: {
+        value: dataintegrationWorkspaceTaskConfigProviderDelegateToHclTerraform(this._configProviderDelegate.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskConfigProviderDelegateList",
+      },
+      execute_rest_call_config: {
+        value: dataintegrationWorkspaceTaskExecuteRestCallConfigToHclTerraform(this._executeRestCallConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskExecuteRestCallConfigList",
+      },
+      input_ports: {
+        value: cdktf.listMapperHcl(dataintegrationWorkspaceTaskInputPortsToHclTerraform, true)(this._inputPorts.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskInputPortsList",
+      },
+      op_config_values: {
+        value: dataintegrationWorkspaceTaskOpConfigValuesToHclTerraform(this._opConfigValues.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskOpConfigValuesList",
+      },
+      output_ports: {
+        value: cdktf.listMapperHcl(dataintegrationWorkspaceTaskOutputPortsToHclTerraform, true)(this._outputPorts.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskOutputPortsList",
+      },
+      parameters: {
+        value: cdktf.listMapperHcl(dataintegrationWorkspaceTaskParametersToHclTerraform, true)(this._parameters.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskParametersList",
+      },
+      parent_ref: {
+        value: dataintegrationWorkspaceTaskParentRefToHclTerraform(this._parentRef.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskParentRefList",
+      },
+      poll_rest_call_config: {
+        value: dataintegrationWorkspaceTaskPollRestCallConfigToHclTerraform(this._pollRestCallConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskPollRestCallConfigList",
+      },
+      registry_metadata: {
+        value: dataintegrationWorkspaceTaskRegistryMetadataToHclTerraform(this._registryMetadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskRegistryMetadataList",
+      },
+      timeouts: {
+        value: dataintegrationWorkspaceTaskTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataintegrationWorkspaceTaskTimeouts",
+      },
+      typed_expressions: {
+        value: cdktf.listMapperHcl(dataintegrationWorkspaceTaskTypedExpressionsToHclTerraform, true)(this._typedExpressions.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceTaskTypedExpressionsList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

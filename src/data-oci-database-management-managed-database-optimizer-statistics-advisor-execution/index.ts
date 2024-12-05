@@ -39,6 +39,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabase): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionDatabaseOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -133,6 +144,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsDetailsSchemasToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsDetailsSchemas): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsDetailsSchemasOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -200,6 +222,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsDetailsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsDetailsOutputReference extends cdktf.ComplexObject {
@@ -272,6 +305,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsExampleLinesToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsExampleLines): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsExampleLinesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -341,6 +385,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsExampleToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsExample): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsExampleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -406,6 +461,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsRationalesToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsRationales): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsRationalesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -468,6 +534,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsRecommendationsOutputReference extends cdktf.ComplexObject {
@@ -546,6 +623,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesFindingsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -620,6 +708,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportRulesOutputReference extends cdktf.ComplexObject {
@@ -697,6 +796,17 @@ export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvis
   }
 }
 
+
+export function dataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportToHclTerraform(struct?: DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReport): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecutionReportOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -765,6 +875,20 @@ export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorE
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_database_optimizer_statistics_advisor_execution";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecution resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecution to import
+  * @param importFromId The id of the existing DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecution that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_management_managed_database_optimizer_statistics_advisor_execution#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorExecution to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_database_optimizer_statistics_advisor_execution", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -911,5 +1035,37 @@ export class DataOciDatabaseManagementManagedDatabaseOptimizerStatisticsAdvisorE
       managed_database_id: cdktf.stringToTerraform(this._managedDatabaseId),
       task_name: cdktf.stringToTerraform(this._taskName),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      execution_name: {
+        value: cdktf.stringToHclTerraform(this._executionName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      task_name: {
+        value: cdktf.stringToHclTerraform(this._taskName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

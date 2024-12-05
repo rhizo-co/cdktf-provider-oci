@@ -40,7 +40,7 @@ export interface DataOciKmsKeysConfig extends cdktf.TerraformMetaArguments {
   readonly protectionMode?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/kms_keys#filter DataOciKmsKeys#filter}
   */
   readonly filter?: DataOciKmsKeysFilter[] | cdktf.IResolvable;
@@ -55,6 +55,17 @@ export function dataOciKmsKeysKeysAutoKeyRotationDetailsToTerraform(struct?: Dat
   }
   return {
   }
+}
+
+
+export function dataOciKmsKeysKeysAutoKeyRotationDetailsToHclTerraform(struct?: DataOciKmsKeysKeysAutoKeyRotationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsKeysKeysAutoKeyRotationDetailsOutputReference extends cdktf.ComplexObject {
@@ -146,6 +157,17 @@ export function dataOciKmsKeysKeysExternalKeyReferenceToTerraform(struct?: DataO
   }
 }
 
+
+export function dataOciKmsKeysKeysExternalKeyReferenceToHclTerraform(struct?: DataOciKmsKeysKeysExternalKeyReference): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciKmsKeysKeysExternalKeyReferenceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -208,6 +230,17 @@ export function dataOciKmsKeysKeysExternalKeyReferenceDetailsToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function dataOciKmsKeysKeysExternalKeyReferenceDetailsToHclTerraform(struct?: DataOciKmsKeysKeysExternalKeyReferenceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsKeysKeysExternalKeyReferenceDetailsOutputReference extends cdktf.ComplexObject {
@@ -277,6 +310,17 @@ export function dataOciKmsKeysKeysKeyShapeToTerraform(struct?: DataOciKmsKeysKey
   }
   return {
   }
+}
+
+
+export function dataOciKmsKeysKeysKeyShapeToHclTerraform(struct?: DataOciKmsKeysKeysKeyShape): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsKeysKeysKeyShapeOutputReference extends cdktf.ComplexObject {
@@ -353,6 +397,17 @@ export function dataOciKmsKeysKeysReplicaDetailsToTerraform(struct?: DataOciKmsK
   }
 }
 
+
+export function dataOciKmsKeysKeysReplicaDetailsToHclTerraform(struct?: DataOciKmsKeysKeysReplicaDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciKmsKeysKeysReplicaDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -415,6 +470,17 @@ export function dataOciKmsKeysKeysRestoreFromFileToTerraform(struct?: DataOciKms
   }
   return {
   }
+}
+
+
+export function dataOciKmsKeysKeysRestoreFromFileToHclTerraform(struct?: DataOciKmsKeysKeysRestoreFromFile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsKeysKeysRestoreFromFileOutputReference extends cdktf.ComplexObject {
@@ -489,6 +555,17 @@ export function dataOciKmsKeysKeysRestoreFromObjectStoreToTerraform(struct?: Dat
   }
   return {
   }
+}
+
+
+export function dataOciKmsKeysKeysRestoreFromObjectStoreToHclTerraform(struct?: DataOciKmsKeysKeysRestoreFromObjectStore): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsKeysKeysRestoreFromObjectStoreOutputReference extends cdktf.ComplexObject {
@@ -573,6 +650,17 @@ export function dataOciKmsKeysKeysToTerraform(struct?: DataOciKmsKeysKeys): any 
   }
   return {
   }
+}
+
+
+export function dataOciKmsKeysKeysToHclTerraform(struct?: DataOciKmsKeysKeys): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciKmsKeysKeysOutputReference extends cdktf.ComplexObject {
@@ -778,6 +866,37 @@ export function dataOciKmsKeysFilterToTerraform(struct?: DataOciKmsKeysFilter | 
   }
 }
 
+
+export function dataOciKmsKeysFilterToHclTerraform(struct?: DataOciKmsKeysFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciKmsKeysFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -906,6 +1025,20 @@ export class DataOciKmsKeys extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_kms_keys";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciKmsKeys resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciKmsKeys to import
+  * @param importFromId The id of the existing DataOciKmsKeys that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/kms_keys#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciKmsKeys to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_keys", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1091,5 +1224,61 @@ export class DataOciKmsKeys extends cdktf.TerraformDataSource {
       protection_mode: cdktf.stringToTerraform(this._protectionMode),
       filter: cdktf.listMapper(dataOciKmsKeysFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      algorithm: {
+        value: cdktf.stringToHclTerraform(this._algorithm),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      curve_id: {
+        value: cdktf.stringToHclTerraform(this._curveId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      length: {
+        value: cdktf.numberToHclTerraform(this._length),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      management_endpoint: {
+        value: cdktf.stringToHclTerraform(this._managementEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      protection_mode: {
+        value: cdktf.stringToHclTerraform(this._protectionMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciKmsKeysFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciKmsKeysFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

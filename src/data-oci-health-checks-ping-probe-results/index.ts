@@ -32,7 +32,7 @@ export interface DataOciHealthChecksPingProbeResultsConfig extends cdktf.Terrafo
   readonly target?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/health_checks_ping_probe_results#filter DataOciHealthChecksPingProbeResults#filter}
   */
   readonly filter?: DataOciHealthChecksPingProbeResultsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciHealthChecksPingProbeResultsPingProbeResultsConnectionToT
   }
   return {
   }
+}
+
+
+export function dataOciHealthChecksPingProbeResultsPingProbeResultsConnectionToHclTerraform(struct?: DataOciHealthChecksPingProbeResultsPingProbeResultsConnection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciHealthChecksPingProbeResultsPingProbeResultsConnectionOutputReference extends cdktf.ComplexObject {
@@ -118,6 +129,17 @@ export function dataOciHealthChecksPingProbeResultsPingProbeResultsDnsToTerrafor
   }
 }
 
+
+export function dataOciHealthChecksPingProbeResultsPingProbeResultsDnsToHclTerraform(struct?: DataOciHealthChecksPingProbeResultsPingProbeResultsDns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciHealthChecksPingProbeResultsPingProbeResultsDnsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -185,6 +207,17 @@ export function dataOciHealthChecksPingProbeResultsPingProbeResultsToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataOciHealthChecksPingProbeResultsPingProbeResultsToHclTerraform(struct?: DataOciHealthChecksPingProbeResultsPingProbeResults): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciHealthChecksPingProbeResultsPingProbeResultsOutputReference extends cdktf.ComplexObject {
@@ -343,6 +376,37 @@ export function dataOciHealthChecksPingProbeResultsFilterToTerraform(struct?: Da
   }
 }
 
+
+export function dataOciHealthChecksPingProbeResultsFilterToHclTerraform(struct?: DataOciHealthChecksPingProbeResultsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciHealthChecksPingProbeResultsFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -471,6 +535,20 @@ export class DataOciHealthChecksPingProbeResults extends cdktf.TerraformDataSour
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_health_checks_ping_probe_results";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciHealthChecksPingProbeResults resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciHealthChecksPingProbeResults to import
+  * @param importFromId The id of the existing DataOciHealthChecksPingProbeResults that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/health_checks_ping_probe_results#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciHealthChecksPingProbeResults to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_health_checks_ping_probe_results", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -623,5 +701,49 @@ export class DataOciHealthChecksPingProbeResults extends cdktf.TerraformDataSour
       target: cdktf.stringToTerraform(this._target),
       filter: cdktf.listMapper(dataOciHealthChecksPingProbeResultsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      probe_configuration_id: {
+        value: cdktf.stringToHclTerraform(this._probeConfigurationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      start_time_greater_than_or_equal_to: {
+        value: cdktf.numberToHclTerraform(this._startTimeGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      start_time_less_than_or_equal_to: {
+        value: cdktf.numberToHclTerraform(this._startTimeLessThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      target: {
+        value: cdktf.stringToHclTerraform(this._target),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciHealthChecksPingProbeResultsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciHealthChecksPingProbeResultsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

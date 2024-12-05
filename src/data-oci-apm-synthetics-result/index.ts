@@ -51,6 +51,17 @@ export function dataOciApmSyntheticsResultResultDataSetToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciApmSyntheticsResultResultDataSetToHclTerraform(struct?: DataOciApmSyntheticsResultResultDataSet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciApmSyntheticsResultResultDataSetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -128,6 +139,20 @@ export class DataOciApmSyntheticsResult extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_apm_synthetics_result";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciApmSyntheticsResult resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciApmSyntheticsResult to import
+  * @param importFromId The id of the existing DataOciApmSyntheticsResult that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/apm_synthetics_result#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciApmSyntheticsResult to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_apm_synthetics_result", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -283,5 +308,55 @@ export class DataOciApmSyntheticsResult extends cdktf.TerraformDataSource {
       result_type: cdktf.stringToTerraform(this._resultType),
       vantage_point: cdktf.stringToTerraform(this._vantagePoint),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      apm_domain_id: {
+        value: cdktf.stringToHclTerraform(this._apmDomainId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      execution_time: {
+        value: cdktf.stringToHclTerraform(this._executionTime),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      monitor_id: {
+        value: cdktf.stringToHclTerraform(this._monitorId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      result_content_type: {
+        value: cdktf.stringToHclTerraform(this._resultContentType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      result_type: {
+        value: cdktf.stringToHclTerraform(this._resultType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vantage_point: {
+        value: cdktf.stringToHclTerraform(this._vantagePoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

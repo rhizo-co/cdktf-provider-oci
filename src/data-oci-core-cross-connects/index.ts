@@ -32,7 +32,7 @@ export interface DataOciCoreCrossConnectsConfig extends cdktf.TerraformMetaArgum
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_cross_connects#filter DataOciCoreCrossConnects#filter}
   */
   readonly filter?: DataOciCoreCrossConnectsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciCoreCrossConnectsCrossConnectsMacsecPropertiesPrimaryKeyT
   }
   return {
   }
+}
+
+
+export function dataOciCoreCrossConnectsCrossConnectsMacsecPropertiesPrimaryKeyToHclTerraform(struct?: DataOciCoreCrossConnectsCrossConnectsMacsecPropertiesPrimaryKey): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCrossConnectsCrossConnectsMacsecPropertiesPrimaryKeyOutputReference extends cdktf.ComplexObject {
@@ -128,6 +139,17 @@ export function dataOciCoreCrossConnectsCrossConnectsMacsecPropertiesToTerraform
   }
 }
 
+
+export function dataOciCoreCrossConnectsCrossConnectsMacsecPropertiesToHclTerraform(struct?: DataOciCoreCrossConnectsCrossConnectsMacsecProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreCrossConnectsCrossConnectsMacsecPropertiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -206,6 +228,17 @@ export function dataOciCoreCrossConnectsCrossConnectsToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciCoreCrossConnectsCrossConnectsToHclTerraform(struct?: DataOciCoreCrossConnectsCrossConnects): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreCrossConnectsCrossConnectsOutputReference extends cdktf.ComplexObject {
@@ -375,6 +408,37 @@ export function dataOciCoreCrossConnectsFilterToTerraform(struct?: DataOciCoreCr
   }
 }
 
+
+export function dataOciCoreCrossConnectsFilterToHclTerraform(struct?: DataOciCoreCrossConnectsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciCoreCrossConnectsFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -503,6 +567,20 @@ export class DataOciCoreCrossConnects extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_cross_connects";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreCrossConnects resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreCrossConnects to import
+  * @param importFromId The id of the existing DataOciCoreCrossConnects that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_cross_connects#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreCrossConnects to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_cross_connects", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -655,5 +733,49 @@ export class DataOciCoreCrossConnects extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciCoreCrossConnectsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cross_connect_group_id: {
+        value: cdktf.stringToHclTerraform(this._crossConnectGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciCoreCrossConnectsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciCoreCrossConnectsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

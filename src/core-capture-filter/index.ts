@@ -36,19 +36,19 @@ export interface CoreCaptureFilterConfig extends cdktf.TerraformMetaArguments {
   readonly id?: string;
   /**
   * flow_log_capture_filter_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#flow_log_capture_filter_rules CoreCaptureFilter#flow_log_capture_filter_rules}
   */
   readonly flowLogCaptureFilterRules?: CoreCaptureFilterFlowLogCaptureFilterRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#timeouts CoreCaptureFilter#timeouts}
   */
   readonly timeouts?: CoreCaptureFilterTimeouts;
   /**
   * vtap_capture_filter_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#vtap_capture_filter_rules CoreCaptureFilter#vtap_capture_filter_rules}
   */
   readonly vtapCaptureFilterRules?: CoreCaptureFilterVtapCaptureFilterRules[] | cdktf.IResolvable;
@@ -73,6 +73,31 @@ export function coreCaptureFilterFlowLogCaptureFilterRulesIcmpOptionsToTerraform
     code: cdktf.numberToTerraform(struct!.code),
     type: cdktf.numberToTerraform(struct!.type),
   }
+}
+
+
+export function coreCaptureFilterFlowLogCaptureFilterRulesIcmpOptionsToHclTerraform(struct?: CoreCaptureFilterFlowLogCaptureFilterRulesIcmpOptionsOutputReference | CoreCaptureFilterFlowLogCaptureFilterRulesIcmpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    code: {
+      value: cdktf.numberToHclTerraform(struct!.code),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.numberToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreCaptureFilterFlowLogCaptureFilterRulesIcmpOptionsOutputReference extends cdktf.ComplexObject {
@@ -164,6 +189,31 @@ export function coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationP
   }
 }
 
+
+export function coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeToHclTerraform(struct?: CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeOutputReference | CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -250,6 +300,31 @@ export function coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRa
   }
 }
 
+
+export function coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeToHclTerraform(struct?: CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeOutputReference | CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -317,13 +392,13 @@ export class CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRange
 export interface CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptions {
   /**
   * destination_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#destination_port_range CoreCaptureFilter#destination_port_range}
   */
   readonly destinationPortRange?: CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRange;
   /**
   * source_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#source_port_range CoreCaptureFilter#source_port_range}
   */
   readonly sourcePortRange?: CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRange;
@@ -338,6 +413,31 @@ export function coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsToTerraform(
     destination_port_range: coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeToTerraform(struct!.destinationPortRange),
     source_port_range: coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeToTerraform(struct!.sourcePortRange),
   }
+}
+
+
+export function coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsToHclTerraform(struct?: CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsOutputReference | CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination_port_range: {
+      value: coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeToHclTerraform(struct!.destinationPortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsDestinationPortRangeList",
+    },
+    source_port_range: {
+      value: coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeToHclTerraform(struct!.sourcePortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsSourcePortRangeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsOutputReference extends cdktf.ComplexObject {
@@ -432,6 +532,31 @@ export function coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationP
   }
 }
 
+
+export function coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeToHclTerraform(struct?: CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeOutputReference | CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -518,6 +643,31 @@ export function coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRa
   }
 }
 
+
+export function coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeToHclTerraform(struct?: CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeOutputReference | CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -585,13 +735,13 @@ export class CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRange
 export interface CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptions {
   /**
   * destination_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#destination_port_range CoreCaptureFilter#destination_port_range}
   */
   readonly destinationPortRange?: CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRange;
   /**
   * source_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#source_port_range CoreCaptureFilter#source_port_range}
   */
   readonly sourcePortRange?: CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRange;
@@ -606,6 +756,31 @@ export function coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsToTerraform(
     destination_port_range: coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeToTerraform(struct!.destinationPortRange),
     source_port_range: coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeToTerraform(struct!.sourcePortRange),
   }
+}
+
+
+export function coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsToHclTerraform(struct?: CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsOutputReference | CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination_port_range: {
+      value: coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeToHclTerraform(struct!.destinationPortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsDestinationPortRangeList",
+    },
+    source_port_range: {
+      value: coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeToHclTerraform(struct!.sourcePortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsSourcePortRangeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsOutputReference extends cdktf.ComplexObject {
@@ -713,19 +888,19 @@ export interface CoreCaptureFilterFlowLogCaptureFilterRules {
   readonly sourceCidr?: string;
   /**
   * icmp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#icmp_options CoreCaptureFilter#icmp_options}
   */
   readonly icmpOptions?: CoreCaptureFilterFlowLogCaptureFilterRulesIcmpOptions;
   /**
   * tcp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#tcp_options CoreCaptureFilter#tcp_options}
   */
   readonly tcpOptions?: CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptions;
   /**
   * udp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#udp_options CoreCaptureFilter#udp_options}
   */
   readonly udpOptions?: CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptions;
@@ -749,6 +924,85 @@ export function coreCaptureFilterFlowLogCaptureFilterRulesToTerraform(struct?: C
     tcp_options: coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsToTerraform(struct!.tcpOptions),
     udp_options: coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsToTerraform(struct!.udpOptions),
   }
+}
+
+
+export function coreCaptureFilterFlowLogCaptureFilterRulesToHclTerraform(struct?: CoreCaptureFilterFlowLogCaptureFilterRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.destinationCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    flow_log_type: {
+      value: cdktf.stringToHclTerraform(struct!.flowLogType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    priority: {
+      value: cdktf.numberToHclTerraform(struct!.priority),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rule_action: {
+      value: cdktf.stringToHclTerraform(struct!.ruleAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    sampling_rate: {
+      value: cdktf.numberToHclTerraform(struct!.samplingRate),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    source_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.sourceCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    icmp_options: {
+      value: coreCaptureFilterFlowLogCaptureFilterRulesIcmpOptionsToHclTerraform(struct!.icmpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterFlowLogCaptureFilterRulesIcmpOptionsList",
+    },
+    tcp_options: {
+      value: coreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsToHclTerraform(struct!.tcpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterFlowLogCaptureFilterRulesTcpOptionsList",
+    },
+    udp_options: {
+      value: coreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsToHclTerraform(struct!.udpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterFlowLogCaptureFilterRulesUdpOptionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreCaptureFilterFlowLogCaptureFilterRulesOutputReference extends cdktf.ComplexObject {
@@ -1078,6 +1332,37 @@ export function coreCaptureFilterTimeoutsToTerraform(struct?: CoreCaptureFilterT
   }
 }
 
+
+export function coreCaptureFilterTimeoutsToHclTerraform(struct?: CoreCaptureFilterTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1202,6 +1487,31 @@ export function coreCaptureFilterVtapCaptureFilterRulesIcmpOptionsToTerraform(st
   }
 }
 
+
+export function coreCaptureFilterVtapCaptureFilterRulesIcmpOptionsToHclTerraform(struct?: CoreCaptureFilterVtapCaptureFilterRulesIcmpOptionsOutputReference | CoreCaptureFilterVtapCaptureFilterRulesIcmpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    code: {
+      value: cdktf.numberToHclTerraform(struct!.code),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.numberToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterVtapCaptureFilterRulesIcmpOptionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1291,6 +1601,31 @@ export function coreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPort
   }
 }
 
+
+export function coreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeToHclTerraform(struct?: CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeOutputReference | CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1377,6 +1712,31 @@ export function coreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRange
   }
 }
 
+
+export function coreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeToHclTerraform(struct?: CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeOutputReference | CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1444,13 +1804,13 @@ export class CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeOut
 export interface CoreCaptureFilterVtapCaptureFilterRulesTcpOptions {
   /**
   * destination_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#destination_port_range CoreCaptureFilter#destination_port_range}
   */
   readonly destinationPortRange?: CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRange;
   /**
   * source_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#source_port_range CoreCaptureFilter#source_port_range}
   */
   readonly sourcePortRange?: CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRange;
@@ -1465,6 +1825,31 @@ export function coreCaptureFilterVtapCaptureFilterRulesTcpOptionsToTerraform(str
     destination_port_range: coreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeToTerraform(struct!.destinationPortRange),
     source_port_range: coreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeToTerraform(struct!.sourcePortRange),
   }
+}
+
+
+export function coreCaptureFilterVtapCaptureFilterRulesTcpOptionsToHclTerraform(struct?: CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsOutputReference | CoreCaptureFilterVtapCaptureFilterRulesTcpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination_port_range: {
+      value: coreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeToHclTerraform(struct!.destinationPortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsDestinationPortRangeList",
+    },
+    source_port_range: {
+      value: coreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeToHclTerraform(struct!.sourcePortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsSourcePortRangeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsOutputReference extends cdktf.ComplexObject {
@@ -1559,6 +1944,31 @@ export function coreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPort
   }
 }
 
+
+export function coreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeToHclTerraform(struct?: CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeOutputReference | CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1645,6 +2055,31 @@ export function coreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRange
   }
 }
 
+
+export function coreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeToHclTerraform(struct?: CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeOutputReference | CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    max: {
+      value: cdktf.numberToHclTerraform(struct!.max),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    min: {
+      value: cdktf.numberToHclTerraform(struct!.min),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1712,13 +2147,13 @@ export class CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeOut
 export interface CoreCaptureFilterVtapCaptureFilterRulesUdpOptions {
   /**
   * destination_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#destination_port_range CoreCaptureFilter#destination_port_range}
   */
   readonly destinationPortRange?: CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRange;
   /**
   * source_port_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#source_port_range CoreCaptureFilter#source_port_range}
   */
   readonly sourcePortRange?: CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRange;
@@ -1733,6 +2168,31 @@ export function coreCaptureFilterVtapCaptureFilterRulesUdpOptionsToTerraform(str
     destination_port_range: coreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeToTerraform(struct!.destinationPortRange),
     source_port_range: coreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeToTerraform(struct!.sourcePortRange),
   }
+}
+
+
+export function coreCaptureFilterVtapCaptureFilterRulesUdpOptionsToHclTerraform(struct?: CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsOutputReference | CoreCaptureFilterVtapCaptureFilterRulesUdpOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination_port_range: {
+      value: coreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeToHclTerraform(struct!.destinationPortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsDestinationPortRangeList",
+    },
+    source_port_range: {
+      value: coreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeToHclTerraform(struct!.sourcePortRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsSourcePortRangeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsOutputReference extends cdktf.ComplexObject {
@@ -1828,19 +2288,19 @@ export interface CoreCaptureFilterVtapCaptureFilterRules {
   readonly trafficDirection: string;
   /**
   * icmp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#icmp_options CoreCaptureFilter#icmp_options}
   */
   readonly icmpOptions?: CoreCaptureFilterVtapCaptureFilterRulesIcmpOptions;
   /**
   * tcp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#tcp_options CoreCaptureFilter#tcp_options}
   */
   readonly tcpOptions?: CoreCaptureFilterVtapCaptureFilterRulesTcpOptions;
   /**
   * udp_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#udp_options CoreCaptureFilter#udp_options}
   */
   readonly udpOptions?: CoreCaptureFilterVtapCaptureFilterRulesUdpOptions;
@@ -1861,6 +2321,67 @@ export function coreCaptureFilterVtapCaptureFilterRulesToTerraform(struct?: Core
     tcp_options: coreCaptureFilterVtapCaptureFilterRulesTcpOptionsToTerraform(struct!.tcpOptions),
     udp_options: coreCaptureFilterVtapCaptureFilterRulesUdpOptionsToTerraform(struct!.udpOptions),
   }
+}
+
+
+export function coreCaptureFilterVtapCaptureFilterRulesToHclTerraform(struct?: CoreCaptureFilterVtapCaptureFilterRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.destinationCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rule_action: {
+      value: cdktf.stringToHclTerraform(struct!.ruleAction),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    source_cidr: {
+      value: cdktf.stringToHclTerraform(struct!.sourceCidr),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    traffic_direction: {
+      value: cdktf.stringToHclTerraform(struct!.trafficDirection),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    icmp_options: {
+      value: coreCaptureFilterVtapCaptureFilterRulesIcmpOptionsToHclTerraform(struct!.icmpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterVtapCaptureFilterRulesIcmpOptionsList",
+    },
+    tcp_options: {
+      value: coreCaptureFilterVtapCaptureFilterRulesTcpOptionsToHclTerraform(struct!.tcpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterVtapCaptureFilterRulesTcpOptionsList",
+    },
+    udp_options: {
+      value: coreCaptureFilterVtapCaptureFilterRulesUdpOptionsToHclTerraform(struct!.udpOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "CoreCaptureFilterVtapCaptureFilterRulesUdpOptionsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CoreCaptureFilterVtapCaptureFilterRulesOutputReference extends cdktf.ComplexObject {
@@ -2105,6 +2626,20 @@ export class CoreCaptureFilter extends cdktf.TerraformResource {
   // =================
   public static readonly tfResourceType = "oci_core_capture_filter";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CoreCaptureFilter resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CoreCaptureFilter to import
+  * @param importFromId The id of the existing CoreCaptureFilter that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/core_capture_filter#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CoreCaptureFilter to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_capture_filter", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -2311,5 +2846,67 @@ export class CoreCaptureFilter extends cdktf.TerraformResource {
       timeouts: coreCaptureFilterTimeoutsToTerraform(this._timeouts.internalValue),
       vtap_capture_filter_rules: cdktf.listMapper(coreCaptureFilterVtapCaptureFilterRulesToTerraform, true)(this._vtapCaptureFilterRules.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter_type: {
+        value: cdktf.stringToHclTerraform(this._filterType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      flow_log_capture_filter_rules: {
+        value: cdktf.listMapperHcl(coreCaptureFilterFlowLogCaptureFilterRulesToHclTerraform, true)(this._flowLogCaptureFilterRules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreCaptureFilterFlowLogCaptureFilterRulesList",
+      },
+      timeouts: {
+        value: coreCaptureFilterTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CoreCaptureFilterTimeouts",
+      },
+      vtap_capture_filter_rules: {
+        value: cdktf.listMapperHcl(coreCaptureFilterVtapCaptureFilterRulesToHclTerraform, true)(this._vtapCaptureFilterRules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CoreCaptureFilterVtapCaptureFilterRulesList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

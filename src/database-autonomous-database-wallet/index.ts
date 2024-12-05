@@ -36,7 +36,7 @@ export interface DatabaseAutonomousDatabaseWalletConfig extends cdktf.TerraformM
   readonly password: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_database_wallet#timeouts DatabaseAutonomousDatabaseWallet#timeouts}
   */
   readonly timeouts?: DatabaseAutonomousDatabaseWalletTimeouts;
@@ -66,6 +66,37 @@ export function databaseAutonomousDatabaseWalletTimeoutsToTerraform(struct?: Dat
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function databaseAutonomousDatabaseWalletTimeoutsToHclTerraform(struct?: DatabaseAutonomousDatabaseWalletTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseAutonomousDatabaseWalletTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -180,6 +211,20 @@ export class DatabaseAutonomousDatabaseWallet extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_database_wallet";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseAutonomousDatabaseWallet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseAutonomousDatabaseWallet to import
+  * @param importFromId The id of the existing DatabaseAutonomousDatabaseWallet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_database_wallet#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseAutonomousDatabaseWallet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_database_wallet", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -346,5 +391,55 @@ export class DatabaseAutonomousDatabaseWallet extends cdktf.TerraformResource {
       password: cdktf.stringToTerraform(this._password),
       timeouts: databaseAutonomousDatabaseWalletTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      autonomous_database_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      base64_encode_content: {
+        value: cdktf.booleanToHclTerraform(this._base64EncodeContent),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      generate_type: {
+        value: cdktf.stringToHclTerraform(this._generateType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_regional: {
+        value: cdktf.booleanToHclTerraform(this._isRegional),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      password: {
+        value: cdktf.stringToHclTerraform(this._password),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: databaseAutonomousDatabaseWalletTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseAutonomousDatabaseWalletTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

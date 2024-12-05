@@ -23,6 +23,20 @@ export class DataOciWafWebAppFirewall extends cdktf.TerraformDataSource {
   // =================
   public static readonly tfResourceType = "oci_waf_web_app_firewall";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciWafWebAppFirewall resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciWafWebAppFirewall to import
+  * @param importFromId The id of the existing DataOciWafWebAppFirewall that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/waf_web_app_firewall#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciWafWebAppFirewall to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_waf_web_app_firewall", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -146,5 +160,19 @@ export class DataOciWafWebAppFirewall extends cdktf.TerraformDataSource {
     return {
       web_app_firewall_id: cdktf.stringToTerraform(this._webAppFirewallId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      web_app_firewall_id: {
+        value: cdktf.stringToHclTerraform(this._webAppFirewallId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

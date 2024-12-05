@@ -63,6 +63,17 @@ export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsApproval
   }
 }
 
+
+export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsApprovalWorkflowStepsToHclTerraform(struct?: DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsApprovalWorkflowSteps): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsApprovalWorkflowStepsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -145,6 +156,17 @@ export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsIdcsCrea
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsIdcsCreatedByOutputReference extends cdktf.ComplexObject {
@@ -231,6 +253,17 @@ export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsIdcsLast
   }
 }
 
+
+export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -315,6 +348,17 @@ export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsMaxDurat
   }
 }
 
+
+export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsMaxDurationToHclTerraform(struct?: DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsMaxDuration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsMaxDurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -382,6 +426,17 @@ export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsMetaToTe
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsMetaToHclTerraform(struct?: DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsMetaOutputReference extends cdktf.ComplexObject {
@@ -468,6 +523,17 @@ export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsTagsToTe
   }
 }
 
+
+export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsTagsToHclTerraform(struct?: DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -535,6 +601,17 @@ export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsToHclTerraform(struct?: DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflows): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsApprovalWorkflowsApprovalWorkflowsOutputReference extends cdktf.ComplexObject {
@@ -710,6 +787,20 @@ export class DataOciIdentityDomainsApprovalWorkflows extends cdktf.TerraformData
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_approval_workflows";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsApprovalWorkflows resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsApprovalWorkflows to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsApprovalWorkflows that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_approval_workflows#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsApprovalWorkflows to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_approval_workflows", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -949,5 +1040,73 @@ export class DataOciIdentityDomainsApprovalWorkflows extends cdktf.TerraformData
       resource_type_schema_version: cdktf.stringToTerraform(this._resourceTypeSchemaVersion),
       start_index: cdktf.numberToTerraform(this._startIndex),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      approval_workflow_count: {
+        value: cdktf.numberToHclTerraform(this._approvalWorkflowCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      approval_workflow_filter: {
+        value: cdktf.stringToHclTerraform(this._approvalWorkflowFilter),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      attribute_sets: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._attributeSets),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      attributes: {
+        value: cdktf.stringToHclTerraform(this._attributes),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      start_index: {
+        value: cdktf.numberToHclTerraform(this._startIndex),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -44,25 +44,25 @@ export interface KmsVaultConfig extends cdktf.TerraformMetaArguments {
   readonly vaultType: string;
   /**
   * external_key_manager_metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_vault#external_key_manager_metadata KmsVault#external_key_manager_metadata}
   */
   readonly externalKeyManagerMetadata?: KmsVaultExternalKeyManagerMetadata;
   /**
   * restore_from_file block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_vault#restore_from_file KmsVault#restore_from_file}
   */
   readonly restoreFromFile?: KmsVaultRestoreFromFile;
   /**
   * restore_from_object_store block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_vault#restore_from_object_store KmsVault#restore_from_object_store}
   */
   readonly restoreFromObjectStore?: KmsVaultRestoreFromObjectStore;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_vault#timeouts KmsVault#timeouts}
   */
   readonly timeouts?: KmsVaultTimeouts;
@@ -77,6 +77,17 @@ export function kmsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryToT
   }
   return {
   }
+}
+
+
+export function kmsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryToHclTerraform(struct?: KmsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class KmsVaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryOutputReference extends cdktf.ComplexObject {
@@ -146,6 +157,17 @@ export function kmsVaultExternalKeyManagerMetadataSummaryToTerraform(struct?: Km
   }
   return {
   }
+}
+
+
+export function kmsVaultExternalKeyManagerMetadataSummaryToHclTerraform(struct?: KmsVaultExternalKeyManagerMetadataSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class KmsVaultExternalKeyManagerMetadataSummaryOutputReference extends cdktf.ComplexObject {
@@ -228,6 +250,17 @@ export function kmsVaultReplicaDetailsToTerraform(struct?: KmsVaultReplicaDetail
   }
 }
 
+
+export function kmsVaultReplicaDetailsToHclTerraform(struct?: KmsVaultReplicaDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class KmsVaultReplicaDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -305,6 +338,37 @@ export function kmsVaultExternalKeyManagerMetadataOauthMetadataToTerraform(struc
     client_app_secret: cdktf.stringToTerraform(struct!.clientAppSecret),
     idcs_account_name_url: cdktf.stringToTerraform(struct!.idcsAccountNameUrl),
   }
+}
+
+
+export function kmsVaultExternalKeyManagerMetadataOauthMetadataToHclTerraform(struct?: KmsVaultExternalKeyManagerMetadataOauthMetadataOutputReference | KmsVaultExternalKeyManagerMetadataOauthMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    client_app_id: {
+      value: cdktf.stringToHclTerraform(struct!.clientAppId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    client_app_secret: {
+      value: cdktf.stringToHclTerraform(struct!.clientAppSecret),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    idcs_account_name_url: {
+      value: cdktf.stringToHclTerraform(struct!.idcsAccountNameUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsVaultExternalKeyManagerMetadataOauthMetadataOutputReference extends cdktf.ComplexObject {
@@ -401,7 +465,7 @@ export interface KmsVaultExternalKeyManagerMetadata {
   readonly privateEndpointId: string;
   /**
   * oauth_metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_vault#oauth_metadata KmsVault#oauth_metadata}
   */
   readonly oauthMetadata: KmsVaultExternalKeyManagerMetadataOauthMetadata;
@@ -417,6 +481,37 @@ export function kmsVaultExternalKeyManagerMetadataToTerraform(struct?: KmsVaultE
     private_endpoint_id: cdktf.stringToTerraform(struct!.privateEndpointId),
     oauth_metadata: kmsVaultExternalKeyManagerMetadataOauthMetadataToTerraform(struct!.oauthMetadata),
   }
+}
+
+
+export function kmsVaultExternalKeyManagerMetadataToHclTerraform(struct?: KmsVaultExternalKeyManagerMetadataOutputReference | KmsVaultExternalKeyManagerMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    external_vault_endpoint_url: {
+      value: cdktf.stringToHclTerraform(struct!.externalVaultEndpointUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    private_endpoint_id: {
+      value: cdktf.stringToHclTerraform(struct!.privateEndpointId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    oauth_metadata: {
+      value: kmsVaultExternalKeyManagerMetadataOauthMetadataToHclTerraform(struct!.oauthMetadata),
+      isBlock: true,
+      type: "list",
+      storageClassType: "KmsVaultExternalKeyManagerMetadataOauthMetadataList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsVaultExternalKeyManagerMetadataOutputReference extends cdktf.ComplexObject {
@@ -527,6 +622,37 @@ export function kmsVaultRestoreFromFileToTerraform(struct?: KmsVaultRestoreFromF
     content_md5: cdktf.stringToTerraform(struct!.contentMd5),
     restore_vault_from_file_details: cdktf.stringToTerraform(struct!.restoreVaultFromFileDetails),
   }
+}
+
+
+export function kmsVaultRestoreFromFileToHclTerraform(struct?: KmsVaultRestoreFromFileOutputReference | KmsVaultRestoreFromFile): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    content_length: {
+      value: cdktf.stringToHclTerraform(struct!.contentLength),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    content_md5: {
+      value: cdktf.stringToHclTerraform(struct!.contentMd5),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    restore_vault_from_file_details: {
+      value: cdktf.stringToHclTerraform(struct!.restoreVaultFromFileDetails),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsVaultRestoreFromFileOutputReference extends cdktf.ComplexObject {
@@ -650,6 +776,49 @@ export function kmsVaultRestoreFromObjectStoreToTerraform(struct?: KmsVaultResto
     object: cdktf.stringToTerraform(struct!.object),
     uri: cdktf.stringToTerraform(struct!.uri),
   }
+}
+
+
+export function kmsVaultRestoreFromObjectStoreToHclTerraform(struct?: KmsVaultRestoreFromObjectStoreOutputReference | KmsVaultRestoreFromObjectStore): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    destination: {
+      value: cdktf.stringToHclTerraform(struct!.destination),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    uri: {
+      value: cdktf.stringToHclTerraform(struct!.uri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class KmsVaultRestoreFromObjectStoreOutputReference extends cdktf.ComplexObject {
@@ -812,6 +981,37 @@ export function kmsVaultTimeoutsToTerraform(struct?: KmsVaultTimeouts | cdktf.IR
   }
 }
 
+
+export function kmsVaultTimeoutsToHclTerraform(struct?: KmsVaultTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class KmsVaultTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -924,6 +1124,20 @@ export class KmsVault extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_kms_vault";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a KmsVault resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the KmsVault to import
+  * @param importFromId The id of the existing KmsVault that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/kms_vault#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the KmsVault to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_kms_vault", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1219,5 +1433,85 @@ export class KmsVault extends cdktf.TerraformResource {
       restore_from_object_store: kmsVaultRestoreFromObjectStoreToTerraform(this._restoreFromObjectStore.internalValue),
       timeouts: kmsVaultTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      restore_trigger: {
+        value: cdktf.booleanToHclTerraform(this._restoreTrigger),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      time_of_deletion: {
+        value: cdktf.stringToHclTerraform(this._timeOfDeletion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vault_type: {
+        value: cdktf.stringToHclTerraform(this._vaultType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      external_key_manager_metadata: {
+        value: kmsVaultExternalKeyManagerMetadataToHclTerraform(this._externalKeyManagerMetadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KmsVaultExternalKeyManagerMetadataList",
+      },
+      restore_from_file: {
+        value: kmsVaultRestoreFromFileToHclTerraform(this._restoreFromFile.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KmsVaultRestoreFromFileList",
+      },
+      restore_from_object_store: {
+        value: kmsVaultRestoreFromObjectStoreToHclTerraform(this._restoreFromObjectStore.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "KmsVaultRestoreFromObjectStoreList",
+      },
+      timeouts: {
+        value: kmsVaultTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "KmsVaultTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

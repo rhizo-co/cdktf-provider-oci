@@ -24,7 +24,7 @@ export interface DataOciStackMonitoringBaselineableMetricsEvaluateConfig extends
   readonly resourceId: string;
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_baselineable_metrics_evaluate#items DataOciStackMonitoringBaselineableMetricsEvaluate#items}
   */
   readonly items: DataOciStackMonitoringBaselineableMetricsEvaluateItems[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciStackMonitoringBaselineableMetricsEvaluateDataPointsToTer
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringBaselineableMetricsEvaluateDataPointsToHclTerraform(struct?: DataOciStackMonitoringBaselineableMetricsEvaluateDataPoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringBaselineableMetricsEvaluateDataPointsOutputReference extends cdktf.ComplexObject {
@@ -123,6 +134,17 @@ export function dataOciStackMonitoringBaselineableMetricsEvaluateItemsDataPoints
   }
   return {
   }
+}
+
+
+export function dataOciStackMonitoringBaselineableMetricsEvaluateItemsDataPointsToHclTerraform(struct?: DataOciStackMonitoringBaselineableMetricsEvaluateItemsDataPoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciStackMonitoringBaselineableMetricsEvaluateItemsDataPointsOutputReference extends cdktf.ComplexObject {
@@ -217,6 +239,31 @@ export function dataOciStackMonitoringBaselineableMetricsEvaluateItemsEvaluation
     timestamp: cdktf.stringToTerraform(struct!.timestamp),
     value: cdktf.numberToTerraform(struct!.value),
   }
+}
+
+
+export function dataOciStackMonitoringBaselineableMetricsEvaluateItemsEvaluationDataPointsToHclTerraform(struct?: DataOciStackMonitoringBaselineableMetricsEvaluateItemsEvaluationDataPoints | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    timestamp: {
+      value: cdktf.stringToHclTerraform(struct!.timestamp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.numberToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciStackMonitoringBaselineableMetricsEvaluateItemsEvaluationDataPointsOutputReference extends cdktf.ComplexObject {
@@ -337,6 +384,31 @@ export function dataOciStackMonitoringBaselineableMetricsEvaluateItemsTrainingDa
   }
 }
 
+
+export function dataOciStackMonitoringBaselineableMetricsEvaluateItemsTrainingDataPointsToHclTerraform(struct?: DataOciStackMonitoringBaselineableMetricsEvaluateItemsTrainingDataPoints | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    timestamp: {
+      value: cdktf.stringToHclTerraform(struct!.timestamp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.numberToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciStackMonitoringBaselineableMetricsEvaluateItemsTrainingDataPointsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -440,13 +512,13 @@ export interface DataOciStackMonitoringBaselineableMetricsEvaluateItems {
   readonly dimensions?: { [key: string]: string };
   /**
   * evaluation_data_points block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_baselineable_metrics_evaluate#evaluation_data_points DataOciStackMonitoringBaselineableMetricsEvaluate#evaluation_data_points}
   */
   readonly evaluationDataPoints: DataOciStackMonitoringBaselineableMetricsEvaluateItemsEvaluationDataPoints[] | cdktf.IResolvable;
   /**
   * training_data_points block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_baselineable_metrics_evaluate#training_data_points DataOciStackMonitoringBaselineableMetricsEvaluate#training_data_points}
   */
   readonly trainingDataPoints: DataOciStackMonitoringBaselineableMetricsEvaluateItemsTrainingDataPoints[] | cdktf.IResolvable;
@@ -462,6 +534,37 @@ export function dataOciStackMonitoringBaselineableMetricsEvaluateItemsToTerrafor
     evaluation_data_points: cdktf.listMapper(dataOciStackMonitoringBaselineableMetricsEvaluateItemsEvaluationDataPointsToTerraform, true)(struct!.evaluationDataPoints),
     training_data_points: cdktf.listMapper(dataOciStackMonitoringBaselineableMetricsEvaluateItemsTrainingDataPointsToTerraform, true)(struct!.trainingDataPoints),
   }
+}
+
+
+export function dataOciStackMonitoringBaselineableMetricsEvaluateItemsToHclTerraform(struct?: DataOciStackMonitoringBaselineableMetricsEvaluateItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    dimensions: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.dimensions),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    evaluation_data_points: {
+      value: cdktf.listMapperHcl(dataOciStackMonitoringBaselineableMetricsEvaluateItemsEvaluationDataPointsToHclTerraform, true)(struct!.evaluationDataPoints),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataOciStackMonitoringBaselineableMetricsEvaluateItemsEvaluationDataPointsList",
+    },
+    training_data_points: {
+      value: cdktf.listMapperHcl(dataOciStackMonitoringBaselineableMetricsEvaluateItemsTrainingDataPointsToHclTerraform, true)(struct!.trainingDataPoints),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataOciStackMonitoringBaselineableMetricsEvaluateItemsTrainingDataPointsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciStackMonitoringBaselineableMetricsEvaluateItemsOutputReference extends cdktf.ComplexObject {
@@ -599,6 +702,20 @@ export class DataOciStackMonitoringBaselineableMetricsEvaluate extends cdktf.Ter
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_baselineable_metrics_evaluate";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciStackMonitoringBaselineableMetricsEvaluate resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciStackMonitoringBaselineableMetricsEvaluate to import
+  * @param importFromId The id of the existing DataOciStackMonitoringBaselineableMetricsEvaluate that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/stack_monitoring_baselineable_metrics_evaluate#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciStackMonitoringBaselineableMetricsEvaluate to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_baselineable_metrics_evaluate", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -708,5 +825,37 @@ export class DataOciStackMonitoringBaselineableMetricsEvaluate extends cdktf.Ter
       resource_id: cdktf.stringToTerraform(this._resourceId),
       items: cdktf.listMapper(dataOciStackMonitoringBaselineableMetricsEvaluateItemsToTerraform, true)(this._items.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      baselineable_metric_id: {
+        value: cdktf.stringToHclTerraform(this._baselineableMetricId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_id: {
+        value: cdktf.stringToHclTerraform(this._resourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      items: {
+        value: cdktf.listMapperHcl(dataOciStackMonitoringBaselineableMetricsEvaluateItemsToHclTerraform, true)(this._items.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataOciStackMonitoringBaselineableMetricsEvaluateItemsList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

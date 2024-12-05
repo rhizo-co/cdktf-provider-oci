@@ -60,19 +60,19 @@ export interface DataintegrationWorkspaceApplicationScheduleConfig extends cdktf
   readonly workspaceId: string;
   /**
   * frequency_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_application_schedule#frequency_details DataintegrationWorkspaceApplicationSchedule#frequency_details}
   */
   readonly frequencyDetails?: DataintegrationWorkspaceApplicationScheduleFrequencyDetails;
   /**
   * registry_metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_application_schedule#registry_metadata DataintegrationWorkspaceApplicationSchedule#registry_metadata}
   */
   readonly registryMetadata?: DataintegrationWorkspaceApplicationScheduleRegistryMetadata;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_application_schedule#timeouts DataintegrationWorkspaceApplicationSchedule#timeouts}
   */
   readonly timeouts?: DataintegrationWorkspaceApplicationScheduleTimeouts;
@@ -87,6 +87,17 @@ export function dataintegrationWorkspaceApplicationScheduleMetadataAggregatorToT
   }
   return {
   }
+}
+
+
+export function dataintegrationWorkspaceApplicationScheduleMetadataAggregatorToHclTerraform(struct?: DataintegrationWorkspaceApplicationScheduleMetadataAggregator): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataintegrationWorkspaceApplicationScheduleMetadataAggregatorOutputReference extends cdktf.ComplexObject {
@@ -173,6 +184,17 @@ export function dataintegrationWorkspaceApplicationScheduleMetadataCountStatisti
   }
 }
 
+
+export function dataintegrationWorkspaceApplicationScheduleMetadataCountStatisticsObjectTypeCountListStructToHclTerraform(struct?: DataintegrationWorkspaceApplicationScheduleMetadataCountStatisticsObjectTypeCountListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataintegrationWorkspaceApplicationScheduleMetadataCountStatisticsObjectTypeCountListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -242,6 +264,17 @@ export function dataintegrationWorkspaceApplicationScheduleMetadataCountStatisti
   }
 }
 
+
+export function dataintegrationWorkspaceApplicationScheduleMetadataCountStatisticsToHclTerraform(struct?: DataintegrationWorkspaceApplicationScheduleMetadataCountStatistics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataintegrationWorkspaceApplicationScheduleMetadataCountStatisticsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -305,6 +338,17 @@ export function dataintegrationWorkspaceApplicationScheduleMetadataToTerraform(s
   }
   return {
   }
+}
+
+
+export function dataintegrationWorkspaceApplicationScheduleMetadataToHclTerraform(struct?: DataintegrationWorkspaceApplicationScheduleMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataintegrationWorkspaceApplicationScheduleMetadataOutputReference extends cdktf.ComplexObject {
@@ -439,6 +483,17 @@ export function dataintegrationWorkspaceApplicationScheduleParentRefToTerraform(
   }
 }
 
+
+export function dataintegrationWorkspaceApplicationScheduleParentRefToHclTerraform(struct?: DataintegrationWorkspaceApplicationScheduleParentRef): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataintegrationWorkspaceApplicationScheduleParentRefOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -521,6 +576,37 @@ export function dataintegrationWorkspaceApplicationScheduleFrequencyDetailsTimeT
     minute: cdktf.numberToTerraform(struct!.minute),
     second: cdktf.numberToTerraform(struct!.second),
   }
+}
+
+
+export function dataintegrationWorkspaceApplicationScheduleFrequencyDetailsTimeToHclTerraform(struct?: DataintegrationWorkspaceApplicationScheduleFrequencyDetailsTimeOutputReference | DataintegrationWorkspaceApplicationScheduleFrequencyDetailsTime): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    hour: {
+      value: cdktf.numberToHclTerraform(struct!.hour),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    minute: {
+      value: cdktf.numberToHclTerraform(struct!.minute),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    second: {
+      value: cdktf.numberToHclTerraform(struct!.second),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceApplicationScheduleFrequencyDetailsTimeOutputReference extends cdktf.ComplexObject {
@@ -646,7 +732,7 @@ export interface DataintegrationWorkspaceApplicationScheduleFrequencyDetails {
   readonly weekOfMonth?: string;
   /**
   * time block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_application_schedule#time DataintegrationWorkspaceApplicationSchedule#time}
   */
   readonly time?: DataintegrationWorkspaceApplicationScheduleFrequencyDetailsTime;
@@ -667,6 +753,67 @@ export function dataintegrationWorkspaceApplicationScheduleFrequencyDetailsToTer
     week_of_month: cdktf.stringToTerraform(struct!.weekOfMonth),
     time: dataintegrationWorkspaceApplicationScheduleFrequencyDetailsTimeToTerraform(struct!.time),
   }
+}
+
+
+export function dataintegrationWorkspaceApplicationScheduleFrequencyDetailsToHclTerraform(struct?: DataintegrationWorkspaceApplicationScheduleFrequencyDetailsOutputReference | DataintegrationWorkspaceApplicationScheduleFrequencyDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    custom_expression: {
+      value: cdktf.stringToHclTerraform(struct!.customExpression),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    day_of_week: {
+      value: cdktf.stringToHclTerraform(struct!.dayOfWeek),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    days: {
+      value: cdktf.listMapperHcl(cdktf.numberToHclTerraform, false)(struct!.days),
+      isBlock: false,
+      type: "list",
+      storageClassType: "numberList",
+    },
+    frequency: {
+      value: cdktf.stringToHclTerraform(struct!.frequency),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    interval: {
+      value: cdktf.numberToHclTerraform(struct!.interval),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    model_type: {
+      value: cdktf.stringToHclTerraform(struct!.modelType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    week_of_month: {
+      value: cdktf.stringToHclTerraform(struct!.weekOfMonth),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time: {
+      value: dataintegrationWorkspaceApplicationScheduleFrequencyDetailsTimeToHclTerraform(struct!.time),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataintegrationWorkspaceApplicationScheduleFrequencyDetailsTimeList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataintegrationWorkspaceApplicationScheduleFrequencyDetailsOutputReference extends cdktf.ComplexObject {
@@ -905,6 +1052,49 @@ export function dataintegrationWorkspaceApplicationScheduleRegistryMetadataToTer
   }
 }
 
+
+export function dataintegrationWorkspaceApplicationScheduleRegistryMetadataToHclTerraform(struct?: DataintegrationWorkspaceApplicationScheduleRegistryMetadataOutputReference | DataintegrationWorkspaceApplicationScheduleRegistryMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    aggregator_key: {
+      value: cdktf.stringToHclTerraform(struct!.aggregatorKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_favorite: {
+      value: cdktf.booleanToHclTerraform(struct!.isFavorite),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    labels: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.labels),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    registry_version: {
+      value: cdktf.numberToHclTerraform(struct!.registryVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceApplicationScheduleRegistryMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1068,6 +1258,37 @@ export function dataintegrationWorkspaceApplicationScheduleTimeoutsToTerraform(s
   }
 }
 
+
+export function dataintegrationWorkspaceApplicationScheduleTimeoutsToHclTerraform(struct?: DataintegrationWorkspaceApplicationScheduleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataintegrationWorkspaceApplicationScheduleTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1180,6 +1401,20 @@ export class DataintegrationWorkspaceApplicationSchedule extends cdktf.Terraform
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataintegration_workspace_application_schedule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataintegrationWorkspaceApplicationSchedule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataintegrationWorkspaceApplicationSchedule to import
+  * @param importFromId The id of the existing DataintegrationWorkspaceApplicationSchedule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataintegration_workspace_application_schedule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataintegrationWorkspaceApplicationSchedule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataintegration_workspace_application_schedule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1496,5 +1731,103 @@ export class DataintegrationWorkspaceApplicationSchedule extends cdktf.Terraform
       registry_metadata: dataintegrationWorkspaceApplicationScheduleRegistryMetadataToTerraform(this._registryMetadata.internalValue),
       timeouts: dataintegrationWorkspaceApplicationScheduleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      application_key: {
+        value: cdktf.stringToHclTerraform(this._applicationKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      identifier: {
+        value: cdktf.stringToHclTerraform(this._identifier),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_daylight_adjustment_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isDaylightAdjustmentEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      key: {
+        value: cdktf.stringToHclTerraform(this._key),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_version: {
+        value: cdktf.stringToHclTerraform(this._modelVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_status: {
+        value: cdktf.numberToHclTerraform(this._objectStatus),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      object_version: {
+        value: cdktf.numberToHclTerraform(this._objectVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      timezone: {
+        value: cdktf.stringToHclTerraform(this._timezone),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      workspace_id: {
+        value: cdktf.stringToHclTerraform(this._workspaceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      frequency_details: {
+        value: dataintegrationWorkspaceApplicationScheduleFrequencyDetailsToHclTerraform(this._frequencyDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceApplicationScheduleFrequencyDetailsList",
+      },
+      registry_metadata: {
+        value: dataintegrationWorkspaceApplicationScheduleRegistryMetadataToHclTerraform(this._registryMetadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataintegrationWorkspaceApplicationScheduleRegistryMetadataList",
+      },
+      timeouts: {
+        value: dataintegrationWorkspaceApplicationScheduleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataintegrationWorkspaceApplicationScheduleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -68,25 +68,25 @@ export interface DataflowSqlEndpointConfig extends cdktf.TerraformMetaArguments 
   readonly state?: string;
   /**
   * driver_shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_sql_endpoint#driver_shape_config DataflowSqlEndpoint#driver_shape_config}
   */
   readonly driverShapeConfig?: DataflowSqlEndpointDriverShapeConfig;
   /**
   * executor_shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_sql_endpoint#executor_shape_config DataflowSqlEndpoint#executor_shape_config}
   */
   readonly executorShapeConfig?: DataflowSqlEndpointExecutorShapeConfig;
   /**
   * network_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_sql_endpoint#network_configuration DataflowSqlEndpoint#network_configuration}
   */
   readonly networkConfiguration: DataflowSqlEndpointNetworkConfiguration;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_sql_endpoint#timeouts DataflowSqlEndpoint#timeouts}
   */
   readonly timeouts?: DataflowSqlEndpointTimeouts;
@@ -111,6 +111,31 @@ export function dataflowSqlEndpointDriverShapeConfigToTerraform(struct?: Dataflo
     memory_in_gbs: cdktf.numberToTerraform(struct!.memoryInGbs),
     ocpus: cdktf.numberToTerraform(struct!.ocpus),
   }
+}
+
+
+export function dataflowSqlEndpointDriverShapeConfigToHclTerraform(struct?: DataflowSqlEndpointDriverShapeConfigOutputReference | DataflowSqlEndpointDriverShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataflowSqlEndpointDriverShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -203,6 +228,31 @@ export function dataflowSqlEndpointExecutorShapeConfigToTerraform(struct?: Dataf
     memory_in_gbs: cdktf.numberToTerraform(struct!.memoryInGbs),
     ocpus: cdktf.numberToTerraform(struct!.ocpus),
   }
+}
+
+
+export function dataflowSqlEndpointExecutorShapeConfigToHclTerraform(struct?: DataflowSqlEndpointExecutorShapeConfigOutputReference | DataflowSqlEndpointExecutorShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataflowSqlEndpointExecutorShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -300,6 +350,37 @@ export function dataflowSqlEndpointNetworkConfigurationAccessControlRulesToTerra
     value: cdktf.stringToTerraform(struct!.value),
     vcn_ips: cdktf.stringToTerraform(struct!.vcnIps),
   }
+}
+
+
+export function dataflowSqlEndpointNetworkConfigurationAccessControlRulesToHclTerraform(struct?: DataflowSqlEndpointNetworkConfigurationAccessControlRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ip_notation: {
+      value: cdktf.stringToHclTerraform(struct!.ipNotation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vcn_ips: {
+      value: cdktf.stringToHclTerraform(struct!.vcnIps),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataflowSqlEndpointNetworkConfigurationAccessControlRulesOutputReference extends cdktf.ComplexObject {
@@ -445,7 +526,7 @@ export interface DataflowSqlEndpointNetworkConfiguration {
   readonly vcnId?: string;
   /**
   * access_control_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_sql_endpoint#access_control_rules DataflowSqlEndpoint#access_control_rules}
   */
   readonly accessControlRules?: DataflowSqlEndpointNetworkConfigurationAccessControlRules[] | cdktf.IResolvable;
@@ -463,6 +544,49 @@ export function dataflowSqlEndpointNetworkConfigurationToTerraform(struct?: Data
     vcn_id: cdktf.stringToTerraform(struct!.vcnId),
     access_control_rules: cdktf.listMapper(dataflowSqlEndpointNetworkConfigurationAccessControlRulesToTerraform, true)(struct!.accessControlRules),
   }
+}
+
+
+export function dataflowSqlEndpointNetworkConfigurationToHclTerraform(struct?: DataflowSqlEndpointNetworkConfigurationOutputReference | DataflowSqlEndpointNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    host_name_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.hostNamePrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    network_type: {
+      value: cdktf.stringToHclTerraform(struct!.networkType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vcn_id: {
+      value: cdktf.stringToHclTerraform(struct!.vcnId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    access_control_rules: {
+      value: cdktf.listMapperHcl(dataflowSqlEndpointNetworkConfigurationAccessControlRulesToHclTerraform, true)(struct!.accessControlRules),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DataflowSqlEndpointNetworkConfigurationAccessControlRulesList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataflowSqlEndpointNetworkConfigurationOutputReference extends cdktf.ComplexObject {
@@ -635,6 +759,37 @@ export function dataflowSqlEndpointTimeoutsToTerraform(struct?: DataflowSqlEndpo
   }
 }
 
+
+export function dataflowSqlEndpointTimeoutsToHclTerraform(struct?: DataflowSqlEndpointTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataflowSqlEndpointTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -747,6 +902,20 @@ export class DataflowSqlEndpoint extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_dataflow_sql_endpoint";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataflowSqlEndpoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataflowSqlEndpoint to import
+  * @param importFromId The id of the existing DataflowSqlEndpoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/dataflow_sql_endpoint#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataflowSqlEndpoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_dataflow_sql_endpoint", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1121,5 +1290,121 @@ export class DataflowSqlEndpoint extends cdktf.TerraformResource {
       network_configuration: dataflowSqlEndpointNetworkConfigurationToTerraform(this._networkConfiguration.internalValue),
       timeouts: dataflowSqlEndpointTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      driver_shape: {
+        value: cdktf.stringToHclTerraform(this._driverShape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      executor_shape: {
+        value: cdktf.stringToHclTerraform(this._executorShape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      max_executor_count: {
+        value: cdktf.numberToHclTerraform(this._maxExecutorCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      metastore_id: {
+        value: cdktf.stringToHclTerraform(this._metastoreId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      min_executor_count: {
+        value: cdktf.numberToHclTerraform(this._minExecutorCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      spark_advanced_configurations: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._sparkAdvancedConfigurations),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      sql_endpoint_version: {
+        value: cdktf.stringToHclTerraform(this._sqlEndpointVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      driver_shape_config: {
+        value: dataflowSqlEndpointDriverShapeConfigToHclTerraform(this._driverShapeConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataflowSqlEndpointDriverShapeConfigList",
+      },
+      executor_shape_config: {
+        value: dataflowSqlEndpointExecutorShapeConfigToHclTerraform(this._executorShapeConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataflowSqlEndpointExecutorShapeConfigList",
+      },
+      network_configuration: {
+        value: dataflowSqlEndpointNetworkConfigurationToHclTerraform(this._networkConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DataflowSqlEndpointNetworkConfigurationList",
+      },
+      timeouts: {
+        value: dataflowSqlEndpointTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataflowSqlEndpointTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

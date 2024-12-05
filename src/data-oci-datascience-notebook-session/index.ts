@@ -24,6 +24,17 @@ export function dataOciDatascienceNotebookSessionNotebookSessionConfigDetailsNot
   }
 }
 
+
+export function dataOciDatascienceNotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsToHclTerraform(struct?: DataOciDatascienceNotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceNotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciDatascienceNotebookSessionNotebookSessionConfigDetailsToT
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceNotebookSessionNotebookSessionConfigDetailsToHclTerraform(struct?: DataOciDatascienceNotebookSessionNotebookSessionConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceNotebookSessionNotebookSessionConfigDetailsOutputReference extends cdktf.ComplexObject {
@@ -178,6 +200,17 @@ export function dataOciDatascienceNotebookSessionNotebookSessionConfigurationDet
   }
 }
 
+
+export function dataOciDatascienceNotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsToHclTerraform(struct?: DataOciDatascienceNotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceNotebookSessionNotebookSessionConfigurationDetailsNotebookSessionShapeConfigDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -245,6 +278,17 @@ export function dataOciDatascienceNotebookSessionNotebookSessionConfigurationDet
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceNotebookSessionNotebookSessionConfigurationDetailsToHclTerraform(struct?: DataOciDatascienceNotebookSessionNotebookSessionConfigurationDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceNotebookSessionNotebookSessionConfigurationDetailsOutputReference extends cdktf.ComplexObject {
@@ -332,6 +376,17 @@ export function dataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDet
   }
 }
 
+
+export function dataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionToHclTerraform(struct?: DataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsNotebookSessionGitRepoConfigCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -394,6 +449,17 @@ export function dataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDet
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsToHclTerraform(struct?: DataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDetailsNotebookSessionGitConfigDetailsOutputReference extends cdktf.ComplexObject {
@@ -459,6 +525,17 @@ export function dataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDet
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDetailsToHclTerraform(struct?: DataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceNotebookSessionNotebookSessionRuntimeConfigDetailsOutputReference extends cdktf.ComplexObject {
@@ -530,6 +607,17 @@ export function dataOciDatascienceNotebookSessionNotebookSessionStorageMountConf
   }
   return {
   }
+}
+
+
+export function dataOciDatascienceNotebookSessionNotebookSessionStorageMountConfigurationDetailsListStructToHclTerraform(struct?: DataOciDatascienceNotebookSessionNotebookSessionStorageMountConfigurationDetailsListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatascienceNotebookSessionNotebookSessionStorageMountConfigurationDetailsListStructOutputReference extends cdktf.ComplexObject {
@@ -629,6 +717,20 @@ export class DataOciDatascienceNotebookSession extends cdktf.TerraformDataSource
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_datascience_notebook_session";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatascienceNotebookSession resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatascienceNotebookSession to import
+  * @param importFromId The id of the existing DataOciDatascienceNotebookSession that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/datascience_notebook_session#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatascienceNotebookSession to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_datascience_notebook_session", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -766,5 +868,19 @@ export class DataOciDatascienceNotebookSession extends cdktf.TerraformDataSource
     return {
       notebook_session_id: cdktf.stringToTerraform(this._notebookSessionId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      notebook_session_id: {
+        value: cdktf.stringToHclTerraform(this._notebookSessionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

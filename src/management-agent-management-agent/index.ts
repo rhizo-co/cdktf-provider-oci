@@ -36,7 +36,7 @@ export interface ManagementAgentManagementAgentConfig extends cdktf.TerraformMet
   readonly managedAgentId: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/management_agent_management_agent#timeouts ManagementAgentManagementAgent#timeouts}
   */
   readonly timeouts?: ManagementAgentManagementAgentTimeouts;
@@ -51,6 +51,17 @@ export function managementAgentManagementAgentDataSourceListMetricDimensionsToTe
   }
   return {
   }
+}
+
+
+export function managementAgentManagementAgentDataSourceListMetricDimensionsToHclTerraform(struct?: ManagementAgentManagementAgentDataSourceListMetricDimensions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ManagementAgentManagementAgentDataSourceListMetricDimensionsOutputReference extends cdktf.ComplexObject {
@@ -120,6 +131,17 @@ export function managementAgentManagementAgentDataSourceListStructToTerraform(st
   }
   return {
   }
+}
+
+
+export function managementAgentManagementAgentDataSourceListStructToHclTerraform(struct?: ManagementAgentManagementAgentDataSourceListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ManagementAgentManagementAgentDataSourceListStructOutputReference extends cdktf.ComplexObject {
@@ -272,6 +294,17 @@ export function managementAgentManagementAgentDataSourceSummaryListStructToTerra
   }
 }
 
+
+export function managementAgentManagementAgentDataSourceSummaryListStructToHclTerraform(struct?: ManagementAgentManagementAgentDataSourceSummaryListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class ManagementAgentManagementAgentDataSourceSummaryListStructOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -351,6 +384,17 @@ export function managementAgentManagementAgentManagementAgentPropertiesToTerrafo
   }
 }
 
+
+export function managementAgentManagementAgentManagementAgentPropertiesToHclTerraform(struct?: ManagementAgentManagementAgentManagementAgentProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class ManagementAgentManagementAgentManagementAgentPropertiesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -423,6 +467,17 @@ export function managementAgentManagementAgentPluginListStructToTerraform(struct
   }
   return {
   }
+}
+
+
+export function managementAgentManagementAgentPluginListStructToHclTerraform(struct?: ManagementAgentManagementAgentPluginListStruct): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class ManagementAgentManagementAgentPluginListStructOutputReference extends cdktf.ComplexObject {
@@ -532,6 +587,37 @@ export function managementAgentManagementAgentTimeoutsToTerraform(struct?: Manag
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function managementAgentManagementAgentTimeoutsToHclTerraform(struct?: ManagementAgentManagementAgentTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ManagementAgentManagementAgentTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -646,6 +732,20 @@ export class ManagementAgentManagementAgent extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_management_agent_management_agent";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ManagementAgentManagementAgent resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ManagementAgentManagementAgent to import
+  * @param importFromId The id of the existing ManagementAgentManagementAgent that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/management_agent_management_agent#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ManagementAgentManagementAgent to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_management_agent_management_agent", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -929,5 +1029,55 @@ export class ManagementAgentManagementAgent extends cdktf.TerraformResource {
       managed_agent_id: cdktf.stringToTerraform(this._managedAgentId),
       timeouts: managementAgentManagementAgentTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      deploy_plugins_id: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._deployPluginsId),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_agent_id: {
+        value: cdktf.stringToHclTerraform(this._managedAgentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: managementAgentManagementAgentTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ManagementAgentManagementAgentTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

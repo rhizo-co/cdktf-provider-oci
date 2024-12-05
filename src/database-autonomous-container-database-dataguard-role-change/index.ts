@@ -32,7 +32,7 @@ export interface DatabaseAutonomousContainerDatabaseDataguardRoleChangeConfig ex
   readonly role: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_container_database_dataguard_role_change#timeouts DatabaseAutonomousContainerDatabaseDataguardRoleChange#timeouts}
   */
   readonly timeouts?: DatabaseAutonomousContainerDatabaseDataguardRoleChangeTimeouts;
@@ -57,6 +57,31 @@ export function databaseAutonomousContainerDatabaseDataguardRoleChangeTimeoutsTo
     create: cdktf.stringToTerraform(struct!.create),
     delete: cdktf.stringToTerraform(struct!.delete),
   }
+}
+
+
+export function databaseAutonomousContainerDatabaseDataguardRoleChangeTimeoutsToHclTerraform(struct?: DatabaseAutonomousContainerDatabaseDataguardRoleChangeTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseAutonomousContainerDatabaseDataguardRoleChangeTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -149,6 +174,20 @@ export class DatabaseAutonomousContainerDatabaseDataguardRoleChange extends cdkt
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_container_database_dataguard_role_change";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseAutonomousContainerDatabaseDataguardRoleChange resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseAutonomousContainerDatabaseDataguardRoleChange to import
+  * @param importFromId The id of the existing DatabaseAutonomousContainerDatabaseDataguardRoleChange that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_autonomous_container_database_dataguard_role_change#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseAutonomousContainerDatabaseDataguardRoleChange to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_container_database_dataguard_role_change", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -289,5 +328,49 @@ export class DatabaseAutonomousContainerDatabaseDataguardRoleChange extends cdkt
       role: cdktf.stringToTerraform(this._role),
       timeouts: databaseAutonomousContainerDatabaseDataguardRoleChangeTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      autonomous_container_database_dataguard_association_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousContainerDatabaseDataguardAssociationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      autonomous_container_database_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousContainerDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      connection_strings_type: {
+        value: cdktf.stringToHclTerraform(this._connectionStringsType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      role: {
+        value: cdktf.stringToHclTerraform(this._role),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: databaseAutonomousContainerDatabaseDataguardRoleChangeTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseAutonomousContainerDatabaseDataguardRoleChangeTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

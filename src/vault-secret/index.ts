@@ -48,25 +48,25 @@ export interface VaultSecretConfig extends cdktf.TerraformMetaArguments {
   readonly vaultId: string;
   /**
   * rotation_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vault_secret#rotation_config VaultSecret#rotation_config}
   */
   readonly rotationConfig?: VaultSecretRotationConfig;
   /**
   * secret_content block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vault_secret#secret_content VaultSecret#secret_content}
   */
   readonly secretContent?: VaultSecretSecretContent;
   /**
   * secret_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vault_secret#secret_rules VaultSecret#secret_rules}
   */
   readonly secretRules?: VaultSecretSecretRules[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vault_secret#timeouts VaultSecret#timeouts}
   */
   readonly timeouts?: VaultSecretTimeouts;
@@ -96,6 +96,37 @@ export function vaultSecretRotationConfigTargetSystemDetailsToTerraform(struct?:
     function_id: cdktf.stringToTerraform(struct!.functionId),
     target_system_type: cdktf.stringToTerraform(struct!.targetSystemType),
   }
+}
+
+
+export function vaultSecretRotationConfigTargetSystemDetailsToHclTerraform(struct?: VaultSecretRotationConfigTargetSystemDetailsOutputReference | VaultSecretRotationConfigTargetSystemDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    adb_id: {
+      value: cdktf.stringToHclTerraform(struct!.adbId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    function_id: {
+      value: cdktf.stringToHclTerraform(struct!.functionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    target_system_type: {
+      value: cdktf.stringToHclTerraform(struct!.targetSystemType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class VaultSecretRotationConfigTargetSystemDetailsOutputReference extends cdktf.ComplexObject {
@@ -198,7 +229,7 @@ export interface VaultSecretRotationConfig {
   readonly rotationInterval?: string;
   /**
   * target_system_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vault_secret#target_system_details VaultSecret#target_system_details}
   */
   readonly targetSystemDetails: VaultSecretRotationConfigTargetSystemDetails;
@@ -214,6 +245,37 @@ export function vaultSecretRotationConfigToTerraform(struct?: VaultSecretRotatio
     rotation_interval: cdktf.stringToTerraform(struct!.rotationInterval),
     target_system_details: vaultSecretRotationConfigTargetSystemDetailsToTerraform(struct!.targetSystemDetails),
   }
+}
+
+
+export function vaultSecretRotationConfigToHclTerraform(struct?: VaultSecretRotationConfigOutputReference | VaultSecretRotationConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_scheduled_rotation_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isScheduledRotationEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    rotation_interval: {
+      value: cdktf.stringToHclTerraform(struct!.rotationInterval),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    target_system_details: {
+      value: vaultSecretRotationConfigTargetSystemDetailsToHclTerraform(struct!.targetSystemDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "VaultSecretRotationConfigTargetSystemDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class VaultSecretRotationConfigOutputReference extends cdktf.ComplexObject {
@@ -335,6 +397,43 @@ export function vaultSecretSecretContentToTerraform(struct?: VaultSecretSecretCo
     name: cdktf.stringToTerraform(struct!.name),
     stage: cdktf.stringToTerraform(struct!.stage),
   }
+}
+
+
+export function vaultSecretSecretContentToHclTerraform(struct?: VaultSecretSecretContentOutputReference | VaultSecretSecretContent): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    content: {
+      value: cdktf.stringToHclTerraform(struct!.content),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    content_type: {
+      value: cdktf.stringToHclTerraform(struct!.contentType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    stage: {
+      value: cdktf.stringToHclTerraform(struct!.stage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class VaultSecretSecretContentOutputReference extends cdktf.ComplexObject {
@@ -483,6 +582,49 @@ export function vaultSecretSecretRulesToTerraform(struct?: VaultSecretSecretRule
     secret_version_expiry_interval: cdktf.stringToTerraform(struct!.secretVersionExpiryInterval),
     time_of_absolute_expiry: cdktf.stringToTerraform(struct!.timeOfAbsoluteExpiry),
   }
+}
+
+
+export function vaultSecretSecretRulesToHclTerraform(struct?: VaultSecretSecretRules | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_enforced_on_deleted_secret_versions: {
+      value: cdktf.booleanToHclTerraform(struct!.isEnforcedOnDeletedSecretVersions),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_secret_content_retrieval_blocked_on_expiry: {
+      value: cdktf.booleanToHclTerraform(struct!.isSecretContentRetrievalBlockedOnExpiry),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    rule_type: {
+      value: cdktf.stringToHclTerraform(struct!.ruleType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_version_expiry_interval: {
+      value: cdktf.stringToHclTerraform(struct!.secretVersionExpiryInterval),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_of_absolute_expiry: {
+      value: cdktf.stringToHclTerraform(struct!.timeOfAbsoluteExpiry),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class VaultSecretSecretRulesOutputReference extends cdktf.ComplexObject {
@@ -677,6 +819,37 @@ export function vaultSecretTimeoutsToTerraform(struct?: VaultSecretTimeouts | cd
   }
 }
 
+
+export function vaultSecretTimeoutsToHclTerraform(struct?: VaultSecretTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class VaultSecretTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -789,6 +962,20 @@ export class VaultSecret extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_vault_secret";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a VaultSecret resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the VaultSecret to import
+  * @param importFromId The id of the existing VaultSecret that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/vault_secret#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the VaultSecret to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_vault_secret", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1097,5 +1284,91 @@ export class VaultSecret extends cdktf.TerraformResource {
       secret_rules: cdktf.listMapper(vaultSecretSecretRulesToTerraform, true)(this._secretRules.internalValue),
       timeouts: vaultSecretTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      key_id: {
+        value: cdktf.stringToHclTerraform(this._keyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._metadata),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      secret_name: {
+        value: cdktf.stringToHclTerraform(this._secretName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      vault_id: {
+        value: cdktf.stringToHclTerraform(this._vaultId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      rotation_config: {
+        value: vaultSecretRotationConfigToHclTerraform(this._rotationConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "VaultSecretRotationConfigList",
+      },
+      secret_content: {
+        value: vaultSecretSecretContentToHclTerraform(this._secretContent.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "VaultSecretSecretContentList",
+      },
+      secret_rules: {
+        value: cdktf.listMapperHcl(vaultSecretSecretRulesToHclTerraform, true)(this._secretRules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "VaultSecretSecretRulesList",
+      },
+      timeouts: {
+        value: vaultSecretTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "VaultSecretTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

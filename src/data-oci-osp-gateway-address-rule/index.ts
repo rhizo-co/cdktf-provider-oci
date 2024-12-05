@@ -39,6 +39,17 @@ export function dataOciOspGatewayAddressRuleAddressFieldsFormatToTerraform(struc
   }
 }
 
+
+export function dataOciOspGatewayAddressRuleAddressFieldsFormatToHclTerraform(struct?: DataOciOspGatewayAddressRuleAddressFieldsFormat): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayAddressRuleAddressFieldsFormatOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -108,6 +119,17 @@ export function dataOciOspGatewayAddressRuleAddressFieldsLabelToTerraform(struct
   }
 }
 
+
+export function dataOciOspGatewayAddressRuleAddressFieldsLabelToHclTerraform(struct?: DataOciOspGatewayAddressRuleAddressFieldsLabel): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayAddressRuleAddressFieldsLabelOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -175,6 +197,17 @@ export function dataOciOspGatewayAddressRuleAddressFieldsToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayAddressRuleAddressFieldsToHclTerraform(struct?: DataOciOspGatewayAddressRuleAddressFields): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayAddressRuleAddressFieldsOutputReference extends cdktf.ComplexObject {
@@ -263,6 +296,17 @@ export function dataOciOspGatewayAddressRuleAddressToTerraform(struct?: DataOciO
   }
 }
 
+
+export function dataOciOspGatewayAddressRuleAddressToHclTerraform(struct?: DataOciOspGatewayAddressRuleAddress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayAddressRuleAddressOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -331,6 +375,17 @@ export function dataOciOspGatewayAddressRuleContactFieldsFormatToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayAddressRuleContactFieldsFormatToHclTerraform(struct?: DataOciOspGatewayAddressRuleContactFieldsFormat): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayAddressRuleContactFieldsFormatOutputReference extends cdktf.ComplexObject {
@@ -402,6 +457,17 @@ export function dataOciOspGatewayAddressRuleContactFieldsLabelToTerraform(struct
   }
 }
 
+
+export function dataOciOspGatewayAddressRuleContactFieldsLabelToHclTerraform(struct?: DataOciOspGatewayAddressRuleContactFieldsLabel): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayAddressRuleContactFieldsLabelOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -469,6 +535,17 @@ export function dataOciOspGatewayAddressRuleContactFieldsToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayAddressRuleContactFieldsToHclTerraform(struct?: DataOciOspGatewayAddressRuleContactFields): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayAddressRuleContactFieldsOutputReference extends cdktf.ComplexObject {
@@ -557,6 +634,17 @@ export function dataOciOspGatewayAddressRuleContactToTerraform(struct?: DataOciO
   }
 }
 
+
+export function dataOciOspGatewayAddressRuleContactToHclTerraform(struct?: DataOciOspGatewayAddressRuleContact): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayAddressRuleContactOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -620,6 +708,17 @@ export function dataOciOspGatewayAddressRuleTaxFieldsFormatToTerraform(struct?: 
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayAddressRuleTaxFieldsFormatToHclTerraform(struct?: DataOciOspGatewayAddressRuleTaxFieldsFormat): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayAddressRuleTaxFieldsFormatOutputReference extends cdktf.ComplexObject {
@@ -691,6 +790,17 @@ export function dataOciOspGatewayAddressRuleTaxFieldsLabelToTerraform(struct?: D
   }
 }
 
+
+export function dataOciOspGatewayAddressRuleTaxFieldsLabelToHclTerraform(struct?: DataOciOspGatewayAddressRuleTaxFieldsLabel): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayAddressRuleTaxFieldsLabelOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -758,6 +868,17 @@ export function dataOciOspGatewayAddressRuleTaxFieldsToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayAddressRuleTaxFieldsToHclTerraform(struct?: DataOciOspGatewayAddressRuleTaxFields): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayAddressRuleTaxFieldsOutputReference extends cdktf.ComplexObject {
@@ -846,6 +967,17 @@ export function dataOciOspGatewayAddressRuleTaxValueSetToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciOspGatewayAddressRuleTaxValueSetToHclTerraform(struct?: DataOciOspGatewayAddressRuleTaxValueSet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayAddressRuleTaxValueSetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -913,6 +1045,17 @@ export function dataOciOspGatewayAddressRuleTaxToTerraform(struct?: DataOciOspGa
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayAddressRuleTaxToHclTerraform(struct?: DataOciOspGatewayAddressRuleTax): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayAddressRuleTaxOutputReference extends cdktf.ComplexObject {
@@ -984,6 +1127,20 @@ export class DataOciOspGatewayAddressRule extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_osp_gateway_address_rule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOspGatewayAddressRule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOspGatewayAddressRule to import
+  * @param importFromId The id of the existing DataOciOspGatewayAddressRule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/osp_gateway_address_rule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOspGatewayAddressRule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_osp_gateway_address_rule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1106,5 +1263,37 @@ export class DataOciOspGatewayAddressRule extends cdktf.TerraformDataSource {
       id: cdktf.stringToTerraform(this._id),
       osp_home_region: cdktf.stringToTerraform(this._ospHomeRegion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      country_code: {
+        value: cdktf.stringToHclTerraform(this._countryCode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      osp_home_region: {
+        value: cdktf.stringToHclTerraform(this._ospHomeRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

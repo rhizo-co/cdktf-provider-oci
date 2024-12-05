@@ -32,7 +32,7 @@ export interface DataOciOpsiAwrHubsConfig extends cdktf.TerraformMetaArguments {
   readonly state?: string[];
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_awr_hubs#filter DataOciOpsiAwrHubs#filter}
   */
   readonly filter?: DataOciOpsiAwrHubsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciOpsiAwrHubsAwrHubSummaryCollectionItemsToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciOpsiAwrHubsAwrHubSummaryCollectionItemsToHclTerraform(struct?: DataOciOpsiAwrHubsAwrHubSummaryCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOpsiAwrHubsAwrHubSummaryCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -181,6 +192,17 @@ export function dataOciOpsiAwrHubsAwrHubSummaryCollectionToTerraform(struct?: Da
   }
 }
 
+
+export function dataOciOpsiAwrHubsAwrHubSummaryCollectionToHclTerraform(struct?: DataOciOpsiAwrHubsAwrHubSummaryCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOpsiAwrHubsAwrHubSummaryCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -259,6 +281,37 @@ export function dataOciOpsiAwrHubsFilterToTerraform(struct?: DataOciOpsiAwrHubsF
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciOpsiAwrHubsFilterToHclTerraform(struct?: DataOciOpsiAwrHubsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciOpsiAwrHubsFilterOutputReference extends cdktf.ComplexObject {
@@ -389,6 +442,20 @@ export class DataOciOpsiAwrHubs extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_opsi_awr_hubs";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOpsiAwrHubs resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOpsiAwrHubs to import
+  * @param importFromId The id of the existing DataOciOpsiAwrHubs that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_awr_hubs#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOpsiAwrHubs to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_awr_hubs", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -541,5 +608,49 @@ export class DataOciOpsiAwrHubs extends cdktf.TerraformDataSource {
       state: cdktf.listMapper(cdktf.stringToTerraform, false)(this._state),
       filter: cdktf.listMapper(dataOciOpsiAwrHubsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      operations_insights_warehouse_id: {
+        value: cdktf.stringToHclTerraform(this._operationsInsightsWarehouseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._state),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciOpsiAwrHubsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciOpsiAwrHubsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

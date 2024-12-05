@@ -92,55 +92,55 @@ export interface BdsBdsInstanceConfig extends cdktf.TerraformMetaArguments {
   readonly state?: string;
   /**
   * cloud_sql_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#cloud_sql_details BdsBdsInstance#cloud_sql_details}
   */
   readonly cloudSqlDetails?: BdsBdsInstanceCloudSqlDetails[] | cdktf.IResolvable;
   /**
   * compute_only_worker_node block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#compute_only_worker_node BdsBdsInstance#compute_only_worker_node}
   */
   readonly computeOnlyWorkerNode?: BdsBdsInstanceComputeOnlyWorkerNode;
   /**
   * edge_node block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#edge_node BdsBdsInstance#edge_node}
   */
   readonly edgeNode?: BdsBdsInstanceEdgeNode;
   /**
   * kafka_broker_node block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#kafka_broker_node BdsBdsInstance#kafka_broker_node}
   */
   readonly kafkaBrokerNode?: BdsBdsInstanceKafkaBrokerNode;
   /**
   * master_node block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#master_node BdsBdsInstance#master_node}
   */
   readonly masterNode: BdsBdsInstanceMasterNode;
   /**
   * network_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#network_config BdsBdsInstance#network_config}
   */
   readonly networkConfig?: BdsBdsInstanceNetworkConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#timeouts BdsBdsInstance#timeouts}
   */
   readonly timeouts?: BdsBdsInstanceTimeouts;
   /**
   * util_node block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#util_node BdsBdsInstance#util_node}
   */
   readonly utilNode: BdsBdsInstanceUtilNode;
   /**
   * worker_node block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#worker_node BdsBdsInstance#worker_node}
   */
   readonly workerNode: BdsBdsInstanceWorkerNode;
@@ -155,6 +155,17 @@ export function bdsBdsInstanceClusterDetailsToTerraform(struct?: BdsBdsInstanceC
   }
   return {
   }
+}
+
+
+export function bdsBdsInstanceClusterDetailsToHclTerraform(struct?: BdsBdsInstanceClusterDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class BdsBdsInstanceClusterDetailsOutputReference extends cdktf.ComplexObject {
@@ -291,6 +302,17 @@ export function bdsBdsInstanceNodesAttachedBlockVolumesToTerraform(struct?: BdsB
   }
 }
 
+
+export function bdsBdsInstanceNodesAttachedBlockVolumesToHclTerraform(struct?: BdsBdsInstanceNodesAttachedBlockVolumes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class BdsBdsInstanceNodesAttachedBlockVolumesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -358,6 +380,17 @@ export function bdsBdsInstanceNodesToTerraform(struct?: BdsBdsInstanceNodes): an
   }
   return {
   }
+}
+
+
+export function bdsBdsInstanceNodesToHclTerraform(struct?: BdsBdsInstanceNodes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class BdsBdsInstanceNodesOutputReference extends cdktf.ComplexObject {
@@ -525,6 +558,17 @@ export function bdsBdsInstanceCloudSqlDetailsKerberosDetailsToTerraform(struct?:
   }
 }
 
+
+export function bdsBdsInstanceCloudSqlDetailsKerberosDetailsToHclTerraform(struct?: BdsBdsInstanceCloudSqlDetailsKerberosDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class BdsBdsInstanceCloudSqlDetailsKerberosDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -597,6 +641,25 @@ export function bdsBdsInstanceCloudSqlDetailsToTerraform(struct?: BdsBdsInstance
   return {
     shape: cdktf.stringToTerraform(struct!.shape),
   }
+}
+
+
+export function bdsBdsInstanceCloudSqlDetailsToHclTerraform(struct?: BdsBdsInstanceCloudSqlDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceCloudSqlDetailsOutputReference extends cdktf.ComplexObject {
@@ -739,6 +802,37 @@ export function bdsBdsInstanceComputeOnlyWorkerNodeShapeConfigToTerraform(struct
   }
 }
 
+
+export function bdsBdsInstanceComputeOnlyWorkerNodeShapeConfigToHclTerraform(struct?: BdsBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputReference | BdsBdsInstanceComputeOnlyWorkerNodeShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    nvmes: {
+      value: cdktf.numberToHclTerraform(struct!.nvmes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BdsBdsInstanceComputeOnlyWorkerNodeShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -850,7 +944,7 @@ export interface BdsBdsInstanceComputeOnlyWorkerNode {
   readonly subnetId: string;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#shape_config BdsBdsInstance#shape_config}
   */
   readonly shapeConfig?: BdsBdsInstanceComputeOnlyWorkerNodeShapeConfig;
@@ -868,6 +962,49 @@ export function bdsBdsInstanceComputeOnlyWorkerNodeToTerraform(struct?: BdsBdsIn
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     shape_config: bdsBdsInstanceComputeOnlyWorkerNodeShapeConfigToTerraform(struct!.shapeConfig),
   }
+}
+
+
+export function bdsBdsInstanceComputeOnlyWorkerNodeToHclTerraform(struct?: BdsBdsInstanceComputeOnlyWorkerNodeOutputReference | BdsBdsInstanceComputeOnlyWorkerNode): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_volume_size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.blockVolumeSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    number_of_nodes: {
+      value: cdktf.numberToHclTerraform(struct!.numberOfNodes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_config: {
+      value: bdsBdsInstanceComputeOnlyWorkerNodeShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "BdsBdsInstanceComputeOnlyWorkerNodeShapeConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceComputeOnlyWorkerNodeOutputReference extends cdktf.ComplexObject {
@@ -1024,6 +1161,37 @@ export function bdsBdsInstanceEdgeNodeShapeConfigToTerraform(struct?: BdsBdsInst
   }
 }
 
+
+export function bdsBdsInstanceEdgeNodeShapeConfigToHclTerraform(struct?: BdsBdsInstanceEdgeNodeShapeConfigOutputReference | BdsBdsInstanceEdgeNodeShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    nvmes: {
+      value: cdktf.numberToHclTerraform(struct!.nvmes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BdsBdsInstanceEdgeNodeShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1135,7 +1303,7 @@ export interface BdsBdsInstanceEdgeNode {
   readonly subnetId: string;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#shape_config BdsBdsInstance#shape_config}
   */
   readonly shapeConfig?: BdsBdsInstanceEdgeNodeShapeConfig;
@@ -1153,6 +1321,49 @@ export function bdsBdsInstanceEdgeNodeToTerraform(struct?: BdsBdsInstanceEdgeNod
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     shape_config: bdsBdsInstanceEdgeNodeShapeConfigToTerraform(struct!.shapeConfig),
   }
+}
+
+
+export function bdsBdsInstanceEdgeNodeToHclTerraform(struct?: BdsBdsInstanceEdgeNodeOutputReference | BdsBdsInstanceEdgeNode): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_volume_size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.blockVolumeSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    number_of_nodes: {
+      value: cdktf.numberToHclTerraform(struct!.numberOfNodes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_config: {
+      value: bdsBdsInstanceEdgeNodeShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "BdsBdsInstanceEdgeNodeShapeConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceEdgeNodeOutputReference extends cdktf.ComplexObject {
@@ -1309,6 +1520,37 @@ export function bdsBdsInstanceKafkaBrokerNodeShapeConfigToTerraform(struct?: Bds
   }
 }
 
+
+export function bdsBdsInstanceKafkaBrokerNodeShapeConfigToHclTerraform(struct?: BdsBdsInstanceKafkaBrokerNodeShapeConfigOutputReference | BdsBdsInstanceKafkaBrokerNodeShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    nvmes: {
+      value: cdktf.numberToHclTerraform(struct!.nvmes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BdsBdsInstanceKafkaBrokerNodeShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1420,7 +1662,7 @@ export interface BdsBdsInstanceKafkaBrokerNode {
   readonly subnetId: string;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#shape_config BdsBdsInstance#shape_config}
   */
   readonly shapeConfig?: BdsBdsInstanceKafkaBrokerNodeShapeConfig;
@@ -1438,6 +1680,49 @@ export function bdsBdsInstanceKafkaBrokerNodeToTerraform(struct?: BdsBdsInstance
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     shape_config: bdsBdsInstanceKafkaBrokerNodeShapeConfigToTerraform(struct!.shapeConfig),
   }
+}
+
+
+export function bdsBdsInstanceKafkaBrokerNodeToHclTerraform(struct?: BdsBdsInstanceKafkaBrokerNodeOutputReference | BdsBdsInstanceKafkaBrokerNode): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_volume_size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.blockVolumeSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    number_of_kafka_nodes: {
+      value: cdktf.numberToHclTerraform(struct!.numberOfKafkaNodes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_config: {
+      value: bdsBdsInstanceKafkaBrokerNodeShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "BdsBdsInstanceKafkaBrokerNodeShapeConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceKafkaBrokerNodeOutputReference extends cdktf.ComplexObject {
@@ -1594,6 +1879,37 @@ export function bdsBdsInstanceMasterNodeShapeConfigToTerraform(struct?: BdsBdsIn
   }
 }
 
+
+export function bdsBdsInstanceMasterNodeShapeConfigToHclTerraform(struct?: BdsBdsInstanceMasterNodeShapeConfigOutputReference | BdsBdsInstanceMasterNodeShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    nvmes: {
+      value: cdktf.numberToHclTerraform(struct!.nvmes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BdsBdsInstanceMasterNodeShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1705,7 +2021,7 @@ export interface BdsBdsInstanceMasterNode {
   readonly subnetId: string;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#shape_config BdsBdsInstance#shape_config}
   */
   readonly shapeConfig?: BdsBdsInstanceMasterNodeShapeConfig;
@@ -1723,6 +2039,49 @@ export function bdsBdsInstanceMasterNodeToTerraform(struct?: BdsBdsInstanceMaste
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     shape_config: bdsBdsInstanceMasterNodeShapeConfigToTerraform(struct!.shapeConfig),
   }
+}
+
+
+export function bdsBdsInstanceMasterNodeToHclTerraform(struct?: BdsBdsInstanceMasterNodeOutputReference | BdsBdsInstanceMasterNode): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_volume_size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.blockVolumeSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    number_of_nodes: {
+      value: cdktf.numberToHclTerraform(struct!.numberOfNodes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_config: {
+      value: bdsBdsInstanceMasterNodeShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "BdsBdsInstanceMasterNodeShapeConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceMasterNodeOutputReference extends cdktf.ComplexObject {
@@ -1874,6 +2233,31 @@ export function bdsBdsInstanceNetworkConfigToTerraform(struct?: BdsBdsInstanceNe
   }
 }
 
+
+export function bdsBdsInstanceNetworkConfigToHclTerraform(struct?: BdsBdsInstanceNetworkConfigOutputReference | BdsBdsInstanceNetworkConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cidr_block: {
+      value: cdktf.stringToHclTerraform(struct!.cidrBlock),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_nat_gateway_required: {
+      value: cdktf.booleanToHclTerraform(struct!.isNatGatewayRequired),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BdsBdsInstanceNetworkConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1969,6 +2353,37 @@ export function bdsBdsInstanceTimeoutsToTerraform(struct?: BdsBdsInstanceTimeout
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function bdsBdsInstanceTimeoutsToHclTerraform(struct?: BdsBdsInstanceTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -2100,6 +2515,37 @@ export function bdsBdsInstanceUtilNodeShapeConfigToTerraform(struct?: BdsBdsInst
   }
 }
 
+
+export function bdsBdsInstanceUtilNodeShapeConfigToHclTerraform(struct?: BdsBdsInstanceUtilNodeShapeConfigOutputReference | BdsBdsInstanceUtilNodeShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    nvmes: {
+      value: cdktf.numberToHclTerraform(struct!.nvmes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BdsBdsInstanceUtilNodeShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2211,7 +2657,7 @@ export interface BdsBdsInstanceUtilNode {
   readonly subnetId: string;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#shape_config BdsBdsInstance#shape_config}
   */
   readonly shapeConfig?: BdsBdsInstanceUtilNodeShapeConfig;
@@ -2229,6 +2675,49 @@ export function bdsBdsInstanceUtilNodeToTerraform(struct?: BdsBdsInstanceUtilNod
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     shape_config: bdsBdsInstanceUtilNodeShapeConfigToTerraform(struct!.shapeConfig),
   }
+}
+
+
+export function bdsBdsInstanceUtilNodeToHclTerraform(struct?: BdsBdsInstanceUtilNodeOutputReference | BdsBdsInstanceUtilNode): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_volume_size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.blockVolumeSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    number_of_nodes: {
+      value: cdktf.numberToHclTerraform(struct!.numberOfNodes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_config: {
+      value: bdsBdsInstanceUtilNodeShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "BdsBdsInstanceUtilNodeShapeConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceUtilNodeOutputReference extends cdktf.ComplexObject {
@@ -2385,6 +2874,37 @@ export function bdsBdsInstanceWorkerNodeShapeConfigToTerraform(struct?: BdsBdsIn
   }
 }
 
+
+export function bdsBdsInstanceWorkerNodeShapeConfigToHclTerraform(struct?: BdsBdsInstanceWorkerNodeShapeConfigOutputReference | BdsBdsInstanceWorkerNodeShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    memory_in_gbs: {
+      value: cdktf.numberToHclTerraform(struct!.memoryInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    nvmes: {
+      value: cdktf.numberToHclTerraform(struct!.nvmes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    ocpus: {
+      value: cdktf.numberToHclTerraform(struct!.ocpus),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class BdsBdsInstanceWorkerNodeShapeConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2496,7 +3016,7 @@ export interface BdsBdsInstanceWorkerNode {
   readonly subnetId: string;
   /**
   * shape_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#shape_config BdsBdsInstance#shape_config}
   */
   readonly shapeConfig?: BdsBdsInstanceWorkerNodeShapeConfig;
@@ -2514,6 +3034,49 @@ export function bdsBdsInstanceWorkerNodeToTerraform(struct?: BdsBdsInstanceWorke
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
     shape_config: bdsBdsInstanceWorkerNodeShapeConfigToTerraform(struct!.shapeConfig),
   }
+}
+
+
+export function bdsBdsInstanceWorkerNodeToHclTerraform(struct?: BdsBdsInstanceWorkerNodeOutputReference | BdsBdsInstanceWorkerNode): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    block_volume_size_in_gbs: {
+      value: cdktf.stringToHclTerraform(struct!.blockVolumeSizeInGbs),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    number_of_nodes: {
+      value: cdktf.numberToHclTerraform(struct!.numberOfNodes),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    shape: {
+      value: cdktf.stringToHclTerraform(struct!.shape),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_config: {
+      value: bdsBdsInstanceWorkerNodeShapeConfigToHclTerraform(struct!.shapeConfig),
+      isBlock: true,
+      type: "list",
+      storageClassType: "BdsBdsInstanceWorkerNodeShapeConfigList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class BdsBdsInstanceWorkerNodeOutputReference extends cdktf.ComplexObject {
@@ -2653,6 +3216,20 @@ export class BdsBdsInstance extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_bds_bds_instance";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a BdsBdsInstance resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the BdsBdsInstance to import
+  * @param importFromId The id of the existing BdsBdsInstance that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/bds_bds_instance#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the BdsBdsInstance to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_bds_bds_instance", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -3223,5 +3800,187 @@ export class BdsBdsInstance extends cdktf.TerraformResource {
       util_node: bdsBdsInstanceUtilNodeToTerraform(this._utilNode.internalValue),
       worker_node: bdsBdsInstanceWorkerNodeToTerraform(this._workerNode.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bootstrap_script_url: {
+        value: cdktf.stringToHclTerraform(this._bootstrapScriptUrl),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_admin_password: {
+        value: cdktf.stringToHclTerraform(this._clusterAdminPassword),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_profile: {
+        value: cdktf.stringToHclTerraform(this._clusterProfile),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_public_key: {
+        value: cdktf.stringToHclTerraform(this._clusterPublicKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cluster_version: {
+        value: cdktf.stringToHclTerraform(this._clusterVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ignore_existing_nodes_shape: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._ignoreExistingNodesShape),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      is_cloud_sql_configured: {
+        value: cdktf.booleanToHclTerraform(this._isCloudSqlConfigured),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_force_stop_jobs: {
+        value: cdktf.booleanToHclTerraform(this._isForceStopJobs),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_high_availability: {
+        value: cdktf.booleanToHclTerraform(this._isHighAvailability),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_kafka_configured: {
+        value: cdktf.booleanToHclTerraform(this._isKafkaConfigured),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_secure: {
+        value: cdktf.booleanToHclTerraform(this._isSecure),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      kerberos_realm_name: {
+        value: cdktf.stringToHclTerraform(this._kerberosRealmName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      kms_key_id: {
+        value: cdktf.stringToHclTerraform(this._kmsKeyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      os_patch_version: {
+        value: cdktf.stringToHclTerraform(this._osPatchVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      cloud_sql_details: {
+        value: cdktf.listMapperHcl(bdsBdsInstanceCloudSqlDetailsToHclTerraform, true)(this._cloudSqlDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstanceCloudSqlDetailsList",
+      },
+      compute_only_worker_node: {
+        value: bdsBdsInstanceComputeOnlyWorkerNodeToHclTerraform(this._computeOnlyWorkerNode.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstanceComputeOnlyWorkerNodeList",
+      },
+      edge_node: {
+        value: bdsBdsInstanceEdgeNodeToHclTerraform(this._edgeNode.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstanceEdgeNodeList",
+      },
+      kafka_broker_node: {
+        value: bdsBdsInstanceKafkaBrokerNodeToHclTerraform(this._kafkaBrokerNode.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstanceKafkaBrokerNodeList",
+      },
+      master_node: {
+        value: bdsBdsInstanceMasterNodeToHclTerraform(this._masterNode.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstanceMasterNodeList",
+      },
+      network_config: {
+        value: bdsBdsInstanceNetworkConfigToHclTerraform(this._networkConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstanceNetworkConfigList",
+      },
+      timeouts: {
+        value: bdsBdsInstanceTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "BdsBdsInstanceTimeouts",
+      },
+      util_node: {
+        value: bdsBdsInstanceUtilNodeToHclTerraform(this._utilNode.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstanceUtilNodeList",
+      },
+      worker_node: {
+        value: bdsBdsInstanceWorkerNodeToHclTerraform(this._workerNode.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "BdsBdsInstanceWorkerNodeList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

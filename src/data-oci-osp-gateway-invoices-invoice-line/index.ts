@@ -39,6 +39,17 @@ export function dataOciOspGatewayInvoicesInvoiceLineItemsCurrencyToTerraform(str
   }
 }
 
+
+export function dataOciOspGatewayInvoicesInvoiceLineItemsCurrencyToHclTerraform(struct?: DataOciOspGatewayInvoicesInvoiceLineItemsCurrency): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOspGatewayInvoicesInvoiceLineItemsCurrencyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -121,6 +132,17 @@ export function dataOciOspGatewayInvoicesInvoiceLineItemsToTerraform(struct?: Da
   }
   return {
   }
+}
+
+
+export function dataOciOspGatewayInvoicesInvoiceLineItemsToHclTerraform(struct?: DataOciOspGatewayInvoicesInvoiceLineItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOspGatewayInvoicesInvoiceLineItemsOutputReference extends cdktf.ComplexObject {
@@ -226,6 +248,20 @@ export class DataOciOspGatewayInvoicesInvoiceLine extends cdktf.TerraformDataSou
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_osp_gateway_invoices_invoice_line";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOspGatewayInvoicesInvoiceLine resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOspGatewayInvoicesInvoiceLine to import
+  * @param importFromId The id of the existing DataOciOspGatewayInvoicesInvoiceLine that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/osp_gateway_invoices_invoice_line#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOspGatewayInvoicesInvoiceLine to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_osp_gateway_invoices_invoice_line", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -336,5 +372,37 @@ export class DataOciOspGatewayInvoicesInvoiceLine extends cdktf.TerraformDataSou
       internal_invoice_id: cdktf.stringToTerraform(this._internalInvoiceId),
       osp_home_region: cdktf.stringToTerraform(this._ospHomeRegion),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      internal_invoice_id: {
+        value: cdktf.stringToHclTerraform(this._internalInvoiceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      osp_home_region: {
+        value: cdktf.stringToHclTerraform(this._ospHomeRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

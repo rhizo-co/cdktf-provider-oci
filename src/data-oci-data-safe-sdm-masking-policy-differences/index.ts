@@ -44,7 +44,7 @@ export interface DataOciDataSafeSdmMaskingPolicyDifferencesConfig extends cdktf.
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sdm_masking_policy_differences#filter DataOciDataSafeSdmMaskingPolicyDifferences#filter}
   */
   readonly filter?: DataOciDataSafeSdmMaskingPolicyDifferencesFilter[] | cdktf.IResolvable;
@@ -59,6 +59,17 @@ export function dataOciDataSafeSdmMaskingPolicyDifferencesSdmMaskingPolicyDiffer
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemsToHclTerraform(struct?: DataOciDataSafeSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -183,6 +194,17 @@ export function dataOciDataSafeSdmMaskingPolicyDifferencesSdmMaskingPolicyDiffer
   }
 }
 
+
+export function dataOciDataSafeSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionToHclTerraform(struct?: DataOciDataSafeSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataSafeSdmMaskingPolicyDifferencesSdmMaskingPolicyDifferenceCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -261,6 +283,37 @@ export function dataOciDataSafeSdmMaskingPolicyDifferencesFilterToTerraform(stru
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeSdmMaskingPolicyDifferencesFilterToHclTerraform(struct?: DataOciDataSafeSdmMaskingPolicyDifferencesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeSdmMaskingPolicyDifferencesFilterOutputReference extends cdktf.ComplexObject {
@@ -391,6 +444,20 @@ export class DataOciDataSafeSdmMaskingPolicyDifferences extends cdktf.TerraformD
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_sdm_masking_policy_differences";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeSdmMaskingPolicyDifferences resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeSdmMaskingPolicyDifferences to import
+  * @param importFromId The id of the existing DataOciDataSafeSdmMaskingPolicyDifferences that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_sdm_masking_policy_differences#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeSdmMaskingPolicyDifferences to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_sdm_masking_policy_differences", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -597,5 +664,67 @@ export class DataOciDataSafeSdmMaskingPolicyDifferences extends cdktf.TerraformD
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciDataSafeSdmMaskingPolicyDifferencesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      difference_access_level: {
+        value: cdktf.stringToHclTerraform(this._differenceAccessLevel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      masking_policy_id: {
+        value: cdktf.stringToHclTerraform(this._maskingPolicyId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sensitive_data_model_id: {
+        value: cdktf.stringToHclTerraform(this._sensitiveDataModelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeSdmMaskingPolicyDifferencesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeSdmMaskingPolicyDifferencesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

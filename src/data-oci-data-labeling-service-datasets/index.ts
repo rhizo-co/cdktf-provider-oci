@@ -32,7 +32,7 @@ export interface DataOciDataLabelingServiceDatasetsConfig extends cdktf.Terrafor
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_labeling_service_datasets#filter DataOciDataLabelingServiceDatasets#filter}
   */
   readonly filter?: DataOciDataLabelingServiceDatasetsFilter[] | cdktf.IResolvable;
@@ -47,6 +47,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetF
   }
   return {
   }
+}
+
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetFormatDetailsTextFileTypeMetadataToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetFormatDetailsTextFileTypeMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetFormatDetailsTextFileTypeMetadataOutputReference extends cdktf.ComplexObject {
@@ -138,6 +149,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetF
   }
 }
 
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetFormatDetailsToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetFormatDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetFormatDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -206,6 +228,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetS
   }
   return {
   }
+}
+
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetSourceDetailsToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsDatasetSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -287,6 +320,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialI
   }
 }
 
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialImportDatasetConfigurationImportFormatToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialImportDatasetConfigurationImportFormat): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialImportDatasetConfigurationImportFormatOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -354,6 +398,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialI
   }
   return {
   }
+}
+
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialImportDatasetConfigurationImportMetadataPathToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialImportDatasetConfigurationImportMetadataPath): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialImportDatasetConfigurationImportMetadataPathOutputReference extends cdktf.ComplexObject {
@@ -435,6 +490,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialI
   }
 }
 
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialImportDatasetConfigurationToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialImportDatasetConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialImportDatasetConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -506,6 +572,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialR
   }
 }
 
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialRecordGenerationConfigurationToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialRecordGenerationConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsInitialRecordGenerationConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -563,6 +640,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsLabelSet
   }
   return {
   }
+}
+
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsLabelSetItemsToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItemsLabelSetItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsLabelSetItemsOutputReference extends cdktf.ComplexObject {
@@ -629,6 +717,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsLabelSet
   }
 }
 
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsLabelSetToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItemsLabelSet): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsLabelSetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -692,6 +791,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionItemsToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -856,6 +966,17 @@ export function dataOciDataLabelingServiceDatasetsDatasetCollectionToTerraform(s
   }
 }
 
+
+export function dataOciDataLabelingServiceDatasetsDatasetCollectionToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsDatasetCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDataLabelingServiceDatasetsDatasetCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -934,6 +1055,37 @@ export function dataOciDataLabelingServiceDatasetsFilterToTerraform(struct?: Dat
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataLabelingServiceDatasetsFilterToHclTerraform(struct?: DataOciDataLabelingServiceDatasetsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataLabelingServiceDatasetsFilterOutputReference extends cdktf.ComplexObject {
@@ -1064,6 +1216,20 @@ export class DataOciDataLabelingServiceDatasets extends cdktf.TerraformDataSourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_labeling_service_datasets";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataLabelingServiceDatasets resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataLabelingServiceDatasets to import
+  * @param importFromId The id of the existing DataOciDataLabelingServiceDatasets that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_labeling_service_datasets#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataLabelingServiceDatasets to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_labeling_service_datasets", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1216,5 +1382,49 @@ export class DataOciDataLabelingServiceDatasets extends cdktf.TerraformDataSourc
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciDataLabelingServiceDatasetsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      annotation_format: {
+        value: cdktf.stringToHclTerraform(this._annotationFormat),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataLabelingServiceDatasetsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataLabelingServiceDatasetsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

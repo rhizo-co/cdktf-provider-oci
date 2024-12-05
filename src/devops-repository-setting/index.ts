@@ -20,25 +20,25 @@ export interface DevopsRepositorySettingConfig extends cdktf.TerraformMetaArgume
   readonly repositoryId: string;
   /**
   * approval_rules block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository_setting#approval_rules DevopsRepositorySetting#approval_rules}
   */
   readonly approvalRules?: DevopsRepositorySettingApprovalRules;
   /**
   * merge_checks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository_setting#merge_checks DevopsRepositorySetting#merge_checks}
   */
   readonly mergeChecks?: DevopsRepositorySettingMergeChecks;
   /**
   * merge_settings block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository_setting#merge_settings DevopsRepositorySetting#merge_settings}
   */
   readonly mergeSettings?: DevopsRepositorySettingMergeSettings;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository_setting#timeouts DevopsRepositorySetting#timeouts}
   */
   readonly timeouts?: DevopsRepositorySettingTimeouts;
@@ -58,6 +58,25 @@ export function devopsRepositorySettingApprovalRulesItemsReviewersToTerraform(st
   return {
     principal_id: cdktf.stringToTerraform(struct!.principalId),
   }
+}
+
+
+export function devopsRepositorySettingApprovalRulesItemsReviewersToHclTerraform(struct?: DevopsRepositorySettingApprovalRulesItemsReviewers | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    principal_id: {
+      value: cdktf.stringToHclTerraform(struct!.principalId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsRepositorySettingApprovalRulesItemsReviewersOutputReference extends cdktf.ComplexObject {
@@ -167,7 +186,7 @@ export interface DevopsRepositorySettingApprovalRulesItems {
   readonly name: string;
   /**
   * reviewers block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository_setting#reviewers DevopsRepositorySetting#reviewers}
   */
   readonly reviewers?: DevopsRepositorySettingApprovalRulesItemsReviewers[] | cdktf.IResolvable;
@@ -184,6 +203,43 @@ export function devopsRepositorySettingApprovalRulesItemsToTerraform(struct?: De
     name: cdktf.stringToTerraform(struct!.name),
     reviewers: cdktf.listMapper(devopsRepositorySettingApprovalRulesItemsReviewersToTerraform, true)(struct!.reviewers),
   }
+}
+
+
+export function devopsRepositorySettingApprovalRulesItemsToHclTerraform(struct?: DevopsRepositorySettingApprovalRulesItems | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    destination_branch: {
+      value: cdktf.stringToHclTerraform(struct!.destinationBranch),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    min_approvals_count: {
+      value: cdktf.numberToHclTerraform(struct!.minApprovalsCount),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    reviewers: {
+      value: cdktf.listMapperHcl(devopsRepositorySettingApprovalRulesItemsReviewersToHclTerraform, true)(struct!.reviewers),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsRepositorySettingApprovalRulesItemsReviewersList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsRepositorySettingApprovalRulesItemsOutputReference extends cdktf.ComplexObject {
@@ -329,7 +385,7 @@ export class DevopsRepositorySettingApprovalRulesItemsList extends cdktf.Complex
 export interface DevopsRepositorySettingApprovalRules {
   /**
   * items block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository_setting#items DevopsRepositorySetting#items}
   */
   readonly items: DevopsRepositorySettingApprovalRulesItems[] | cdktf.IResolvable;
@@ -343,6 +399,25 @@ export function devopsRepositorySettingApprovalRulesToTerraform(struct?: DevopsR
   return {
     items: cdktf.listMapper(devopsRepositorySettingApprovalRulesItemsToTerraform, true)(struct!.items),
   }
+}
+
+
+export function devopsRepositorySettingApprovalRulesToHclTerraform(struct?: DevopsRepositorySettingApprovalRulesOutputReference | DevopsRepositorySettingApprovalRules): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    items: {
+      value: cdktf.listMapperHcl(devopsRepositorySettingApprovalRulesItemsToHclTerraform, true)(struct!.items),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsRepositorySettingApprovalRulesItemsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsRepositorySettingApprovalRulesOutputReference extends cdktf.ComplexObject {
@@ -405,6 +480,25 @@ export function devopsRepositorySettingMergeChecksToTerraform(struct?: DevopsRep
   return {
     last_build_succeeded: cdktf.stringToTerraform(struct!.lastBuildSucceeded),
   }
+}
+
+
+export function devopsRepositorySettingMergeChecksToHclTerraform(struct?: DevopsRepositorySettingMergeChecksOutputReference | DevopsRepositorySettingMergeChecks): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    last_build_succeeded: {
+      value: cdktf.stringToHclTerraform(struct!.lastBuildSucceeded),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsRepositorySettingMergeChecksOutputReference extends cdktf.ComplexObject {
@@ -472,6 +566,31 @@ export function devopsRepositorySettingMergeSettingsToTerraform(struct?: DevopsR
     allowed_merge_strategies: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.allowedMergeStrategies),
     default_merge_strategy: cdktf.stringToTerraform(struct!.defaultMergeStrategy),
   }
+}
+
+
+export function devopsRepositorySettingMergeSettingsToHclTerraform(struct?: DevopsRepositorySettingMergeSettingsOutputReference | DevopsRepositorySettingMergeSettings): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    allowed_merge_strategies: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.allowedMergeStrategies),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    default_merge_strategy: {
+      value: cdktf.stringToHclTerraform(struct!.defaultMergeStrategy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsRepositorySettingMergeSettingsOutputReference extends cdktf.ComplexObject {
@@ -563,6 +682,37 @@ export function devopsRepositorySettingTimeoutsToTerraform(struct?: DevopsReposi
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function devopsRepositorySettingTimeoutsToHclTerraform(struct?: DevopsRepositorySettingTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsRepositorySettingTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -677,6 +827,20 @@ export class DevopsRepositorySetting extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_repository_setting";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DevopsRepositorySetting resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DevopsRepositorySetting to import
+  * @param importFromId The id of the existing DevopsRepositorySetting that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository_setting#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DevopsRepositorySetting to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_repository_setting", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -823,5 +987,49 @@ export class DevopsRepositorySetting extends cdktf.TerraformResource {
       merge_settings: devopsRepositorySettingMergeSettingsToTerraform(this._mergeSettings.internalValue),
       timeouts: devopsRepositorySettingTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      repository_id: {
+        value: cdktf.stringToHclTerraform(this._repositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      approval_rules: {
+        value: devopsRepositorySettingApprovalRulesToHclTerraform(this._approvalRules.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsRepositorySettingApprovalRulesList",
+      },
+      merge_checks: {
+        value: devopsRepositorySettingMergeChecksToHclTerraform(this._mergeChecks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsRepositorySettingMergeChecksList",
+      },
+      merge_settings: {
+        value: devopsRepositorySettingMergeSettingsToHclTerraform(this._mergeSettings.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsRepositorySettingMergeSettingsList",
+      },
+      timeouts: {
+        value: devopsRepositorySettingTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DevopsRepositorySettingTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

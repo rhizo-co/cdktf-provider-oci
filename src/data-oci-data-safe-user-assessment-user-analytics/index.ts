@@ -76,7 +76,7 @@ export interface DataOciDataSafeUserAssessmentUserAnalyticsConfig extends cdktf.
   readonly userName?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_user_assessment_user_analytics#filter DataOciDataSafeUserAssessmentUserAnalytics#filter}
   */
   readonly filter?: DataOciDataSafeUserAssessmentUserAnalyticsFilter[] | cdktf.IResolvable;
@@ -91,6 +91,17 @@ export function dataOciDataSafeUserAssessmentUserAnalyticsUserAggregationsItemsT
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeUserAssessmentUserAnalyticsUserAggregationsItemsToHclTerraform(struct?: DataOciDataSafeUserAssessmentUserAnalyticsUserAggregationsItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeUserAssessmentUserAnalyticsUserAggregationsItemsOutputReference extends cdktf.ComplexObject {
@@ -150,6 +161,17 @@ export function dataOciDataSafeUserAssessmentUserAnalyticsUserAggregationsToTerr
   }
   return {
   }
+}
+
+
+export function dataOciDataSafeUserAssessmentUserAnalyticsUserAggregationsToHclTerraform(struct?: DataOciDataSafeUserAssessmentUserAnalyticsUserAggregations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDataSafeUserAssessmentUserAnalyticsUserAggregationsOutputReference extends cdktf.ComplexObject {
@@ -230,6 +252,37 @@ export function dataOciDataSafeUserAssessmentUserAnalyticsFilterToTerraform(stru
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDataSafeUserAssessmentUserAnalyticsFilterToHclTerraform(struct?: DataOciDataSafeUserAssessmentUserAnalyticsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDataSafeUserAssessmentUserAnalyticsFilterOutputReference extends cdktf.ComplexObject {
@@ -360,6 +413,20 @@ export class DataOciDataSafeUserAssessmentUserAnalytics extends cdktf.TerraformD
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_user_assessment_user_analytics";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDataSafeUserAssessmentUserAnalytics resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDataSafeUserAssessmentUserAnalytics to import
+  * @param importFromId The id of the existing DataOciDataSafeUserAssessmentUserAnalytics that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/data_safe_user_assessment_user_analytics#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDataSafeUserAssessmentUserAnalytics to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_user_assessment_user_analytics", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -710,5 +777,115 @@ export class DataOciDataSafeUserAssessmentUserAnalytics extends cdktf.TerraformD
       user_name: cdktf.stringToTerraform(this._userName),
       filter: cdktf.listMapper(dataOciDataSafeUserAssessmentUserAnalyticsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      access_level: {
+        value: cdktf.stringToHclTerraform(this._accessLevel),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      account_status: {
+        value: cdktf.stringToHclTerraform(this._accountStatus),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      authentication_type: {
+        value: cdktf.stringToHclTerraform(this._authenticationType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id_in_subtree: {
+        value: cdktf.booleanToHclTerraform(this._compartmentIdInSubtree),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_id: {
+        value: cdktf.stringToHclTerraform(this._targetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_last_login_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeLastLoginGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_last_login_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeLastLoginLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_password_last_changed_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timePasswordLastChangedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_password_last_changed_less_than: {
+        value: cdktf.stringToHclTerraform(this._timePasswordLastChangedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_user_created_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeUserCreatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_user_created_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeUserCreatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_assessment_id: {
+        value: cdktf.stringToHclTerraform(this._userAssessmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_category: {
+        value: cdktf.stringToHclTerraform(this._userCategory),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_key: {
+        value: cdktf.stringToHclTerraform(this._userKey),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      user_name: {
+        value: cdktf.stringToHclTerraform(this._userName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDataSafeUserAssessmentUserAnalyticsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDataSafeUserAssessmentUserAnalyticsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

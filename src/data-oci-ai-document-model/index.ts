@@ -24,6 +24,17 @@ export function dataOciAiDocumentModelComponentModelsToTerraform(struct?: DataOc
   }
 }
 
+
+export function dataOciAiDocumentModelComponentModelsToHclTerraform(struct?: DataOciAiDocumentModelComponentModels): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiDocumentModelComponentModelsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -86,6 +97,17 @@ export function dataOciAiDocumentModelMetricsDatasetSummaryToTerraform(struct?: 
   }
   return {
   }
+}
+
+
+export function dataOciAiDocumentModelMetricsDatasetSummaryToHclTerraform(struct?: DataOciAiDocumentModelMetricsDatasetSummary): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiDocumentModelMetricsDatasetSummaryOutputReference extends cdktf.ComplexObject {
@@ -160,6 +182,17 @@ export function dataOciAiDocumentModelMetricsLabelMetricsReportConfidenceEntries
   }
   return {
   }
+}
+
+
+export function dataOciAiDocumentModelMetricsLabelMetricsReportConfidenceEntriesToHclTerraform(struct?: DataOciAiDocumentModelMetricsLabelMetricsReportConfidenceEntries): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiDocumentModelMetricsLabelMetricsReportConfidenceEntriesOutputReference extends cdktf.ComplexObject {
@@ -246,6 +279,17 @@ export function dataOciAiDocumentModelMetricsLabelMetricsReportToTerraform(struc
   }
 }
 
+
+export function dataOciAiDocumentModelMetricsLabelMetricsReportToHclTerraform(struct?: DataOciAiDocumentModelMetricsLabelMetricsReport): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiDocumentModelMetricsLabelMetricsReportOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -324,6 +368,17 @@ export function dataOciAiDocumentModelMetricsOverallMetricsReportConfidenceEntri
   }
   return {
   }
+}
+
+
+export function dataOciAiDocumentModelMetricsOverallMetricsReportConfidenceEntriesToHclTerraform(struct?: DataOciAiDocumentModelMetricsOverallMetricsReportConfidenceEntries): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiDocumentModelMetricsOverallMetricsReportConfidenceEntriesOutputReference extends cdktf.ComplexObject {
@@ -410,6 +465,17 @@ export function dataOciAiDocumentModelMetricsOverallMetricsReportToTerraform(str
   }
 }
 
+
+export function dataOciAiDocumentModelMetricsOverallMetricsReportToHclTerraform(struct?: DataOciAiDocumentModelMetricsOverallMetricsReport): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiDocumentModelMetricsOverallMetricsReportOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -483,6 +549,17 @@ export function dataOciAiDocumentModelMetricsToTerraform(struct?: DataOciAiDocum
   }
   return {
   }
+}
+
+
+export function dataOciAiDocumentModelMetricsToHclTerraform(struct?: DataOciAiDocumentModelMetrics): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiDocumentModelMetricsOutputReference extends cdktf.ComplexObject {
@@ -565,6 +642,17 @@ export function dataOciAiDocumentModelTestingDatasetToTerraform(struct?: DataOci
   }
   return {
   }
+}
+
+
+export function dataOciAiDocumentModelTestingDatasetToHclTerraform(struct?: DataOciAiDocumentModelTestingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiDocumentModelTestingDatasetOutputReference extends cdktf.ComplexObject {
@@ -651,6 +739,17 @@ export function dataOciAiDocumentModelTrainingDatasetToTerraform(struct?: DataOc
   }
 }
 
+
+export function dataOciAiDocumentModelTrainingDatasetToHclTerraform(struct?: DataOciAiDocumentModelTrainingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiDocumentModelTrainingDatasetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -735,6 +834,17 @@ export function dataOciAiDocumentModelValidationDatasetToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciAiDocumentModelValidationDatasetToHclTerraform(struct?: DataOciAiDocumentModelValidationDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiDocumentModelValidationDatasetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -817,6 +927,20 @@ export class DataOciAiDocumentModel extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ai_document_model";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciAiDocumentModel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciAiDocumentModel to import
+  * @param importFromId The id of the existing DataOciAiDocumentModel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_document_model#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciAiDocumentModel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_document_model", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1006,5 +1130,19 @@ export class DataOciAiDocumentModel extends cdktf.TerraformDataSource {
     return {
       model_id: cdktf.stringToTerraform(this._modelId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      model_id: {
+        value: cdktf.stringToHclTerraform(this._modelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

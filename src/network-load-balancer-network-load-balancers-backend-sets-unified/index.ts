@@ -44,19 +44,19 @@ export interface NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedConfig
   readonly policy: string;
   /**
   * backends block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_network_load_balancers_backend_sets_unified#backends NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified#backends}
   */
   readonly backends?: NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedBackends[] | cdktf.IResolvable;
   /**
   * health_checker block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_network_load_balancers_backend_sets_unified#health_checker NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified#health_checker}
   */
   readonly healthChecker: NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthChecker;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_network_load_balancers_backend_sets_unified#timeouts NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified#timeouts}
   */
   readonly timeouts?: NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedTimeouts;
@@ -111,6 +111,67 @@ export function networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedBackend
     target_id: cdktf.stringToTerraform(struct!.targetId),
     weight: cdktf.numberToTerraform(struct!.weight),
   }
+}
+
+
+export function networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedBackendsToHclTerraform(struct?: NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedBackends | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    ip_address: {
+      value: cdktf.stringToHclTerraform(struct!.ipAddress),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_backup: {
+      value: cdktf.booleanToHclTerraform(struct!.isBackup),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_drain: {
+      value: cdktf.booleanToHclTerraform(struct!.isDrain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_offline: {
+      value: cdktf.booleanToHclTerraform(struct!.isOffline),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    target_id: {
+      value: cdktf.stringToHclTerraform(struct!.targetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    weight: {
+      value: cdktf.numberToHclTerraform(struct!.weight),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedBackendsOutputReference extends cdktf.ComplexObject {
@@ -381,6 +442,49 @@ export function networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthC
   }
 }
 
+
+export function networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsToHclTerraform(struct?: NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutputReference | NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    domain_name: {
+      value: cdktf.stringToHclTerraform(struct!.domainName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query_class: {
+      value: cdktf.stringToHclTerraform(struct!.queryClass),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    query_type: {
+      value: cdktf.stringToHclTerraform(struct!.queryType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    rcodes: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.rcodes),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    transport_protocol: {
+      value: cdktf.stringToHclTerraform(struct!.transportProtocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -557,7 +661,7 @@ export interface NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealth
   readonly urlPath?: string;
   /**
   * dns block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_network_load_balancers_backend_sets_unified#dns NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified#dns}
   */
   readonly dns?: NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDns;
@@ -581,6 +685,85 @@ export function networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthC
     url_path: cdktf.stringToTerraform(struct!.urlPath),
     dns: networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsToTerraform(struct!.dns),
   }
+}
+
+
+export function networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerToHclTerraform(struct?: NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutputReference | NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthChecker): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    interval_in_millis: {
+      value: cdktf.numberToHclTerraform(struct!.intervalInMillis),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    port: {
+      value: cdktf.numberToHclTerraform(struct!.port),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    protocol: {
+      value: cdktf.stringToHclTerraform(struct!.protocol),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    request_data: {
+      value: cdktf.stringToHclTerraform(struct!.requestData),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    response_body_regex: {
+      value: cdktf.stringToHclTerraform(struct!.responseBodyRegex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    response_data: {
+      value: cdktf.stringToHclTerraform(struct!.responseData),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    retries: {
+      value: cdktf.numberToHclTerraform(struct!.retries),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    return_code: {
+      value: cdktf.numberToHclTerraform(struct!.returnCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    timeout_in_millis: {
+      value: cdktf.numberToHclTerraform(struct!.timeoutInMillis),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    url_path: {
+      value: cdktf.stringToHclTerraform(struct!.urlPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dns: {
+      value: networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsToHclTerraform(struct!.dns),
+      isBlock: true,
+      type: "list",
+      storageClassType: "NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerDnsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerOutputReference extends cdktf.ComplexObject {
@@ -875,6 +1058,37 @@ export function networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedTimeout
   }
 }
 
+
+export function networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedTimeoutsToHclTerraform(struct?: NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -987,6 +1201,20 @@ export class NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified extends c
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_network_load_balancer_network_load_balancers_backend_sets_unified";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified to import
+  * @param importFromId The id of the existing NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/network_load_balancer_network_load_balancers_backend_sets_unified#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_network_load_balancer_network_load_balancers_backend_sets_unified", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1214,5 +1442,79 @@ export class NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnified extends c
       health_checker: networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerToTerraform(this._healthChecker.internalValue),
       timeouts: networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      ip_version: {
+        value: cdktf.stringToHclTerraform(this._ipVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_fail_open: {
+        value: cdktf.booleanToHclTerraform(this._isFailOpen),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_instant_failover_enabled: {
+        value: cdktf.booleanToHclTerraform(this._isInstantFailoverEnabled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_preserve_source: {
+        value: cdktf.booleanToHclTerraform(this._isPreserveSource),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      network_load_balancer_id: {
+        value: cdktf.stringToHclTerraform(this._networkLoadBalancerId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      policy: {
+        value: cdktf.stringToHclTerraform(this._policy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      backends: {
+        value: cdktf.listMapperHcl(networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedBackendsToHclTerraform, true)(this._backends.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedBackendsList",
+      },
+      health_checker: {
+        value: networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerToHclTerraform(this._healthChecker.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedHealthCheckerList",
+      },
+      timeouts: {
+        value: networkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "NetworkLoadBalancerNetworkLoadBalancersBackendSetsUnifiedTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

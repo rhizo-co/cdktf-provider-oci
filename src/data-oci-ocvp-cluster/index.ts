@@ -24,6 +24,17 @@ export function dataOciOcvpClusterDatastoresToTerraform(struct?: DataOciOcvpClus
   }
 }
 
+
+export function dataOciOcvpClusterDatastoresToHclTerraform(struct?: DataOciOcvpClusterDatastores): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOcvpClusterDatastoresOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -96,6 +107,17 @@ export function dataOciOcvpClusterNetworkConfigurationToTerraform(struct?: DataO
   }
   return {
   }
+}
+
+
+export function dataOciOcvpClusterNetworkConfigurationToHclTerraform(struct?: DataOciOcvpClusterNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOcvpClusterNetworkConfigurationOutputReference extends cdktf.ComplexObject {
@@ -212,6 +234,17 @@ export function dataOciOcvpClusterUpgradeLicensesToTerraform(struct?: DataOciOcv
   }
 }
 
+
+export function dataOciOcvpClusterUpgradeLicensesToHclTerraform(struct?: DataOciOcvpClusterUpgradeLicenses): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOcvpClusterUpgradeLicensesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -281,6 +314,17 @@ export function dataOciOcvpClusterVsphereUpgradeObjectsToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciOcvpClusterVsphereUpgradeObjectsToHclTerraform(struct?: DataOciOcvpClusterVsphereUpgradeObjects): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOcvpClusterVsphereUpgradeObjectsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -348,6 +392,20 @@ export class DataOciOcvpCluster extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ocvp_cluster";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOcvpCluster resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOcvpCluster to import
+  * @param importFromId The id of the existing DataOciOcvpCluster that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ocvp_cluster#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOcvpCluster to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ocvp_cluster", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -540,5 +598,19 @@ export class DataOciOcvpCluster extends cdktf.TerraformDataSource {
     return {
       cluster_id: cdktf.stringToTerraform(this._clusterId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      cluster_id: {
+        value: cdktf.stringToHclTerraform(this._clusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

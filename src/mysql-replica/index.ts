@@ -40,13 +40,13 @@ export interface MysqlReplicaConfig extends cdktf.TerraformMetaArguments {
   readonly isDeleteProtected?: boolean | cdktf.IResolvable;
   /**
   * replica_overrides block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/mysql_replica#replica_overrides MysqlReplica#replica_overrides}
   */
   readonly replicaOverrides?: MysqlReplicaReplicaOverrides;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/mysql_replica#timeouts MysqlReplica#timeouts}
   */
   readonly timeouts?: MysqlReplicaTimeouts;
@@ -61,6 +61,17 @@ export function mysqlReplicaSecureConnectionsToTerraform(struct?: MysqlReplicaSe
   }
   return {
   }
+}
+
+
+export function mysqlReplicaSecureConnectionsToHclTerraform(struct?: MysqlReplicaSecureConnections): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class MysqlReplicaSecureConnectionsOutputReference extends cdktf.ComplexObject {
@@ -145,6 +156,37 @@ export function mysqlReplicaReplicaOverridesToTerraform(struct?: MysqlReplicaRep
     mysql_version: cdktf.stringToTerraform(struct!.mysqlVersion),
     shape_name: cdktf.stringToTerraform(struct!.shapeName),
   }
+}
+
+
+export function mysqlReplicaReplicaOverridesToHclTerraform(struct?: MysqlReplicaReplicaOverridesOutputReference | MysqlReplicaReplicaOverrides): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    configuration_id: {
+      value: cdktf.stringToHclTerraform(struct!.configurationId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    mysql_version: {
+      value: cdktf.stringToHclTerraform(struct!.mysqlVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    shape_name: {
+      value: cdktf.stringToHclTerraform(struct!.shapeName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MysqlReplicaReplicaOverridesOutputReference extends cdktf.ComplexObject {
@@ -266,6 +308,37 @@ export function mysqlReplicaTimeoutsToTerraform(struct?: MysqlReplicaTimeouts | 
   }
 }
 
+
+export function mysqlReplicaTimeoutsToHclTerraform(struct?: MysqlReplicaTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MysqlReplicaTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -378,6 +451,20 @@ export class MysqlReplica extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_mysql_replica";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a MysqlReplica resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the MysqlReplica to import
+  * @param importFromId The id of the existing MysqlReplica that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/mysql_replica#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the MysqlReplica to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_mysql_replica", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -649,5 +736,67 @@ export class MysqlReplica extends cdktf.TerraformResource {
       replica_overrides: mysqlReplicaReplicaOverridesToTerraform(this._replicaOverrides.internalValue),
       timeouts: mysqlReplicaTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      db_system_id: {
+        value: cdktf.stringToHclTerraform(this._dbSystemId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_delete_protected: {
+        value: cdktf.booleanToHclTerraform(this._isDeleteProtected),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      replica_overrides: {
+        value: mysqlReplicaReplicaOverridesToHclTerraform(this._replicaOverrides.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MysqlReplicaReplicaOverridesList",
+      },
+      timeouts: {
+        value: mysqlReplicaTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "MysqlReplicaTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

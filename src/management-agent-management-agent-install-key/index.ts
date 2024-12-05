@@ -36,7 +36,7 @@ export interface ManagementAgentManagementAgentInstallKeyConfig extends cdktf.Te
   readonly timeExpires?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/management_agent_management_agent_install_key#timeouts ManagementAgentManagementAgentInstallKey#timeouts}
   */
   readonly timeouts?: ManagementAgentManagementAgentInstallKeyTimeouts;
@@ -66,6 +66,37 @@ export function managementAgentManagementAgentInstallKeyTimeoutsToTerraform(stru
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function managementAgentManagementAgentInstallKeyTimeoutsToHclTerraform(struct?: ManagementAgentManagementAgentInstallKeyTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class ManagementAgentManagementAgentInstallKeyTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -180,6 +211,20 @@ export class ManagementAgentManagementAgentInstallKey extends cdktf.TerraformRes
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_management_agent_management_agent_install_key";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a ManagementAgentManagementAgentInstallKey resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the ManagementAgentManagementAgentInstallKey to import
+  * @param importFromId The id of the existing ManagementAgentManagementAgentInstallKey that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/management_agent_management_agent_install_key#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the ManagementAgentManagementAgentInstallKey to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_management_agent_management_agent_install_key", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -376,5 +421,55 @@ export class ManagementAgentManagementAgentInstallKey extends cdktf.TerraformRes
       time_expires: cdktf.stringToTerraform(this._timeExpires),
       timeouts: managementAgentManagementAgentInstallKeyTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      allowed_key_install_count: {
+        value: cdktf.numberToHclTerraform(this._allowedKeyInstallCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_unlimited: {
+        value: cdktf.booleanToHclTerraform(this._isUnlimited),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      time_expires: {
+        value: cdktf.stringToHclTerraform(this._timeExpires),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: managementAgentManagementAgentInstallKeyTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "ManagementAgentManagementAgentInstallKeyTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

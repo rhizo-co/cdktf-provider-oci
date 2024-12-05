@@ -104,7 +104,7 @@ export interface StackMonitoringMonitoredResourcesSearchConfig extends cdktf.Ter
   readonly type?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resources_search#timeouts StackMonitoringMonitoredResourcesSearch#timeouts}
   */
   readonly timeouts?: StackMonitoringMonitoredResourcesSearchTimeouts;
@@ -119,6 +119,17 @@ export function stackMonitoringMonitoredResourcesSearchItemsPropertiesToTerrafor
   }
   return {
   }
+}
+
+
+export function stackMonitoringMonitoredResourcesSearchItemsPropertiesToHclTerraform(struct?: StackMonitoringMonitoredResourcesSearchItemsProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class StackMonitoringMonitoredResourcesSearchItemsPropertiesOutputReference extends cdktf.ComplexObject {
@@ -188,6 +199,17 @@ export function stackMonitoringMonitoredResourcesSearchItemsToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function stackMonitoringMonitoredResourcesSearchItemsToHclTerraform(struct?: StackMonitoringMonitoredResourcesSearchItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class StackMonitoringMonitoredResourcesSearchItemsOutputReference extends cdktf.ComplexObject {
@@ -358,6 +380,37 @@ export function stackMonitoringMonitoredResourcesSearchTimeoutsToTerraform(struc
   }
 }
 
+
+export function stackMonitoringMonitoredResourcesSearchTimeoutsToHclTerraform(struct?: StackMonitoringMonitoredResourcesSearchTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class StackMonitoringMonitoredResourcesSearchTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -470,6 +523,20 @@ export class StackMonitoringMonitoredResourcesSearch extends cdktf.TerraformReso
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_stack_monitoring_monitored_resources_search";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a StackMonitoringMonitoredResourcesSearch resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the StackMonitoringMonitoredResourcesSearch to import
+  * @param importFromId The id of the existing StackMonitoringMonitoredResourcesSearch that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/stack_monitoring_monitored_resources_search#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the StackMonitoringMonitoredResourcesSearch to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_stack_monitoring_monitored_resources_search", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -946,5 +1013,157 @@ export class StackMonitoringMonitoredResourcesSearch extends cdktf.TerraformReso
       type: cdktf.stringToTerraform(this._type),
       timeouts: stackMonitoringMonitoredResourcesSearchTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_ids: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._compartmentIds),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      exclude_fields: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._excludeFields),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      external_id: {
+        value: cdktf.stringToHclTerraform(this._externalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      fields: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._fields),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      host_name: {
+        value: cdktf.stringToHclTerraform(this._hostName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      host_name_contains: {
+        value: cdktf.stringToHclTerraform(this._hostNameContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      license: {
+        value: cdktf.stringToHclTerraform(this._license),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      lifecycle_states: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._lifecycleStates),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      management_agent_id: {
+        value: cdktf.stringToHclTerraform(this._managementAgentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name_contains: {
+        value: cdktf.stringToHclTerraform(this._nameContains),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      property_equals: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._propertyEquals),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      resource_category: {
+        value: cdktf.stringToHclTerraform(this._resourceCategory),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_time_zone: {
+        value: cdktf.stringToHclTerraform(this._resourceTimeZone),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_type: {
+        value: cdktf.stringToHclTerraform(this._sourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_created_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeCreatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_updated_greater_than_or_equal_to: {
+        value: cdktf.stringToHclTerraform(this._timeUpdatedGreaterThanOrEqualTo),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_updated_less_than: {
+        value: cdktf.stringToHclTerraform(this._timeUpdatedLessThan),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: stackMonitoringMonitoredResourcesSearchTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "StackMonitoringMonitoredResourcesSearchTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

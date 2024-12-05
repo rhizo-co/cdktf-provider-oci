@@ -24,6 +24,17 @@ export function dataOciDemandSignalOccDemandSignalOccDemandSignalsValuesToTerraf
   }
 }
 
+
+export function dataOciDemandSignalOccDemandSignalOccDemandSignalsValuesToHclTerraform(struct?: DataOciDemandSignalOccDemandSignalOccDemandSignalsValues): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDemandSignalOccDemandSignalOccDemandSignalsValuesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -96,6 +107,17 @@ export function dataOciDemandSignalOccDemandSignalOccDemandSignalsToTerraform(st
   }
   return {
   }
+}
+
+
+export function dataOciDemandSignalOccDemandSignalOccDemandSignalsToHclTerraform(struct?: DataOciDemandSignalOccDemandSignalOccDemandSignals): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDemandSignalOccDemandSignalOccDemandSignalsOutputReference extends cdktf.ComplexObject {
@@ -171,6 +193,17 @@ export function dataOciDemandSignalOccDemandSignalPatchOperationsToTerraform(str
   }
   return {
   }
+}
+
+
+export function dataOciDemandSignalOccDemandSignalPatchOperationsToHclTerraform(struct?: DataOciDemandSignalOccDemandSignalPatchOperations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDemandSignalOccDemandSignalPatchOperationsOutputReference extends cdktf.ComplexObject {
@@ -261,6 +294,20 @@ export class DataOciDemandSignalOccDemandSignal extends cdktf.TerraformDataSourc
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_demand_signal_occ_demand_signal";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDemandSignalOccDemandSignal resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDemandSignalOccDemandSignal to import
+  * @param importFromId The id of the existing DataOciDemandSignalOccDemandSignal that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/demand_signal_occ_demand_signal#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDemandSignalOccDemandSignal to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_demand_signal_occ_demand_signal", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -387,5 +434,19 @@ export class DataOciDemandSignalOccDemandSignal extends cdktf.TerraformDataSourc
     return {
       occ_demand_signal_id: cdktf.stringToTerraform(this._occDemandSignalId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      occ_demand_signal_id: {
+        value: cdktf.stringToHclTerraform(this._occDemandSignalId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

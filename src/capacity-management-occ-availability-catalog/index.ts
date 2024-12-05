@@ -48,13 +48,13 @@ export interface CapacityManagementOccAvailabilityCatalogConfig extends cdktf.Te
   readonly occCustomerGroupId: string;
   /**
   * metadata_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/capacity_management_occ_availability_catalog#metadata_details CapacityManagementOccAvailabilityCatalog#metadata_details}
   */
   readonly metadataDetails?: CapacityManagementOccAvailabilityCatalogMetadataDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/capacity_management_occ_availability_catalog#timeouts CapacityManagementOccAvailabilityCatalog#timeouts}
   */
   readonly timeouts?: CapacityManagementOccAvailabilityCatalogTimeouts;
@@ -69,6 +69,17 @@ export function capacityManagementOccAvailabilityCatalogDetailsToTerraform(struc
   }
   return {
   }
+}
+
+
+export function capacityManagementOccAvailabilityCatalogDetailsToHclTerraform(struct?: CapacityManagementOccAvailabilityCatalogDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class CapacityManagementOccAvailabilityCatalogDetailsOutputReference extends cdktf.ComplexObject {
@@ -196,6 +207,25 @@ export function capacityManagementOccAvailabilityCatalogMetadataDetailsToTerrafo
   }
 }
 
+
+export function capacityManagementOccAvailabilityCatalogMetadataDetailsToHclTerraform(struct?: CapacityManagementOccAvailabilityCatalogMetadataDetailsOutputReference | CapacityManagementOccAvailabilityCatalogMetadataDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    format_version: {
+      value: cdktf.stringToHclTerraform(struct!.formatVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class CapacityManagementOccAvailabilityCatalogMetadataDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -266,6 +296,37 @@ export function capacityManagementOccAvailabilityCatalogTimeoutsToTerraform(stru
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function capacityManagementOccAvailabilityCatalogTimeoutsToHclTerraform(struct?: CapacityManagementOccAvailabilityCatalogTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class CapacityManagementOccAvailabilityCatalogTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -380,6 +441,20 @@ export class CapacityManagementOccAvailabilityCatalog extends cdktf.TerraformRes
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_capacity_management_occ_availability_catalog";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a CapacityManagementOccAvailabilityCatalog resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the CapacityManagementOccAvailabilityCatalog to import
+  * @param importFromId The id of the existing CapacityManagementOccAvailabilityCatalog that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/capacity_management_occ_availability_catalog#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the CapacityManagementOccAvailabilityCatalog to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_capacity_management_occ_availability_catalog", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -641,5 +716,79 @@ export class CapacityManagementOccAvailabilityCatalog extends cdktf.TerraformRes
       metadata_details: capacityManagementOccAvailabilityCatalogMetadataDetailsToTerraform(this._metadataDetails.internalValue),
       timeouts: capacityManagementOccAvailabilityCatalogTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      base64encoded_catalog_details: {
+        value: cdktf.stringToHclTerraform(this._base64EncodedCatalogDetails),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      occ_customer_group_id: {
+        value: cdktf.stringToHclTerraform(this._occCustomerGroupId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      metadata_details: {
+        value: capacityManagementOccAvailabilityCatalogMetadataDetailsToHclTerraform(this._metadataDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "CapacityManagementOccAvailabilityCatalogMetadataDetailsList",
+      },
+      timeouts: {
+        value: capacityManagementOccAvailabilityCatalogTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "CapacityManagementOccAvailabilityCatalogTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

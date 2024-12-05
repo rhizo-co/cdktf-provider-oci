@@ -20,7 +20,7 @@ export interface DataOciIdentityAvailabilityDomainsConfig extends cdktf.Terrafor
   readonly id?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_availability_domains#filter DataOciIdentityAvailabilityDomains#filter}
   */
   readonly filter?: DataOciIdentityAvailabilityDomainsFilter[] | cdktf.IResolvable;
@@ -35,6 +35,17 @@ export function dataOciIdentityAvailabilityDomainsAvailabilityDomainsToTerraform
   }
   return {
   }
+}
+
+
+export function dataOciIdentityAvailabilityDomainsAvailabilityDomainsToHclTerraform(struct?: DataOciIdentityAvailabilityDomainsAvailabilityDomains): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityAvailabilityDomainsAvailabilityDomainsOutputReference extends cdktf.ComplexObject {
@@ -124,6 +135,37 @@ export function dataOciIdentityAvailabilityDomainsFilterToTerraform(struct?: Dat
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciIdentityAvailabilityDomainsFilterToHclTerraform(struct?: DataOciIdentityAvailabilityDomainsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciIdentityAvailabilityDomainsFilterOutputReference extends cdktf.ComplexObject {
@@ -255,6 +297,20 @@ export class DataOciIdentityAvailabilityDomains extends cdktf.TerraformDataSourc
   // =================
   public static readonly tfResourceType = "oci_identity_availability_domains";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityAvailabilityDomains resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityAvailabilityDomains to import
+  * @param importFromId The id of the existing DataOciIdentityAvailabilityDomains that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_availability_domains#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityAvailabilityDomains to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_availability_domains", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -352,5 +408,31 @@ export class DataOciIdentityAvailabilityDomains extends cdktf.TerraformDataSourc
       id: cdktf.stringToTerraform(this._id),
       filter: cdktf.listMapper(dataOciIdentityAvailabilityDomainsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciIdentityAvailabilityDomainsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciIdentityAvailabilityDomainsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

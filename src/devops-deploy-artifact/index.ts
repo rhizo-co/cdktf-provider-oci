@@ -44,13 +44,13 @@ export interface DevopsDeployArtifactConfig extends cdktf.TerraformMetaArguments
   readonly projectId: string;
   /**
   * deploy_artifact_source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_deploy_artifact#deploy_artifact_source DevopsDeployArtifact#deploy_artifact_source}
   */
   readonly deployArtifactSource: DevopsDeployArtifactDeployArtifactSource;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_deploy_artifact#timeouts DevopsDeployArtifact#timeouts}
   */
   readonly timeouts?: DevopsDeployArtifactTimeouts;
@@ -85,6 +85,43 @@ export function devopsDeployArtifactDeployArtifactSourceHelmVerificationKeySourc
     vault_secret_id: cdktf.stringToTerraform(struct!.vaultSecretId),
     verification_key_source_type: cdktf.stringToTerraform(struct!.verificationKeySourceType),
   }
+}
+
+
+export function devopsDeployArtifactDeployArtifactSourceHelmVerificationKeySourceToHclTerraform(struct?: DevopsDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputReference | DevopsDeployArtifactDeployArtifactSourceHelmVerificationKeySource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    current_public_key: {
+      value: cdktf.stringToHclTerraform(struct!.currentPublicKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    previous_public_key: {
+      value: cdktf.stringToHclTerraform(struct!.previousPublicKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    vault_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.vaultSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    verification_key_source_type: {
+      value: cdktf.stringToHclTerraform(struct!.verificationKeySourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsDeployArtifactDeployArtifactSourceHelmVerificationKeySourceOutputReference extends cdktf.ComplexObject {
@@ -237,7 +274,7 @@ export interface DevopsDeployArtifactDeployArtifactSource {
   readonly repositoryId?: string;
   /**
   * helm_verification_key_source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_deploy_artifact#helm_verification_key_source DevopsDeployArtifact#helm_verification_key_source}
   */
   readonly helmVerificationKeySource?: DevopsDeployArtifactDeployArtifactSourceHelmVerificationKeySource;
@@ -260,6 +297,79 @@ export function devopsDeployArtifactDeployArtifactSourceToTerraform(struct?: Dev
     repository_id: cdktf.stringToTerraform(struct!.repositoryId),
     helm_verification_key_source: devopsDeployArtifactDeployArtifactSourceHelmVerificationKeySourceToTerraform(struct!.helmVerificationKeySource),
   }
+}
+
+
+export function devopsDeployArtifactDeployArtifactSourceToHclTerraform(struct?: DevopsDeployArtifactDeployArtifactSourceOutputReference | DevopsDeployArtifactDeployArtifactSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    base64encoded_content: {
+      value: cdktf.stringToHclTerraform(struct!.base64EncodedContent),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    chart_url: {
+      value: cdktf.stringToHclTerraform(struct!.chartUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    deploy_artifact_path: {
+      value: cdktf.stringToHclTerraform(struct!.deployArtifactPath),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    deploy_artifact_source_type: {
+      value: cdktf.stringToHclTerraform(struct!.deployArtifactSourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    deploy_artifact_version: {
+      value: cdktf.stringToHclTerraform(struct!.deployArtifactVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    helm_artifact_source_type: {
+      value: cdktf.stringToHclTerraform(struct!.helmArtifactSourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_digest: {
+      value: cdktf.stringToHclTerraform(struct!.imageDigest),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    image_uri: {
+      value: cdktf.stringToHclTerraform(struct!.imageUri),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repository_id: {
+      value: cdktf.stringToHclTerraform(struct!.repositoryId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    helm_verification_key_source: {
+      value: devopsDeployArtifactDeployArtifactSourceHelmVerificationKeySourceToHclTerraform(struct!.helmVerificationKeySource),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsDeployArtifactDeployArtifactSourceHelmVerificationKeySourceList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsDeployArtifactDeployArtifactSourceOutputReference extends cdktf.ComplexObject {
@@ -532,6 +642,37 @@ export function devopsDeployArtifactTimeoutsToTerraform(struct?: DevopsDeployArt
   }
 }
 
+
+export function devopsDeployArtifactTimeoutsToHclTerraform(struct?: DevopsDeployArtifactTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DevopsDeployArtifactTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -644,6 +785,20 @@ export class DevopsDeployArtifact extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_deploy_artifact";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DevopsDeployArtifact resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DevopsDeployArtifact to import
+  * @param importFromId The id of the existing DevopsDeployArtifact that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_deploy_artifact#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DevopsDeployArtifact to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_deploy_artifact", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -884,5 +1039,73 @@ export class DevopsDeployArtifact extends cdktf.TerraformResource {
       deploy_artifact_source: devopsDeployArtifactDeployArtifactSourceToTerraform(this._deployArtifactSource.internalValue),
       timeouts: devopsDeployArtifactTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      argument_substitution_mode: {
+        value: cdktf.stringToHclTerraform(this._argumentSubstitutionMode),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      deploy_artifact_type: {
+        value: cdktf.stringToHclTerraform(this._deployArtifactType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      deploy_artifact_source: {
+        value: devopsDeployArtifactDeployArtifactSourceToHclTerraform(this._deployArtifactSource.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsDeployArtifactDeployArtifactSourceList",
+      },
+      timeouts: {
+        value: devopsDeployArtifactTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DevopsDeployArtifactTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

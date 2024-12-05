@@ -24,6 +24,17 @@ export function dataOciCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsT
   }
 }
 
+
+export function dataOciCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsToHclTerraform(struct?: DataOciCloudGuardDataSourceDataSourceDetailsLoggingQueryDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -93,6 +104,17 @@ export function dataOciCloudGuardDataSourceDataSourceDetailsQueryStartTimeToTerr
   }
 }
 
+
+export function dataOciCloudGuardDataSourceDataSourceDetailsQueryStartTimeToHclTerraform(struct?: DataOciCloudGuardDataSourceDataSourceDetailsQueryStartTime): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudGuardDataSourceDataSourceDetailsQueryStartTimeOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -160,6 +182,17 @@ export function dataOciCloudGuardDataSourceDataSourceDetailsScheduledQueryScopeD
   }
   return {
   }
+}
+
+
+export function dataOciCloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailsToHclTerraform(struct?: DataOciCloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailsOutputReference extends cdktf.ComplexObject {
@@ -234,6 +267,17 @@ export function dataOciCloudGuardDataSourceDataSourceDetailsToTerraform(struct?:
   }
   return {
   }
+}
+
+
+export function dataOciCloudGuardDataSourceDataSourceDetailsToHclTerraform(struct?: DataOciCloudGuardDataSourceDataSourceDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCloudGuardDataSourceDataSourceDetailsOutputReference extends cdktf.ComplexObject {
@@ -363,6 +407,17 @@ export function dataOciCloudGuardDataSourceDataSourceDetectorMappingInfoToTerraf
   }
 }
 
+
+export function dataOciCloudGuardDataSourceDataSourceDetectorMappingInfoToHclTerraform(struct?: DataOciCloudGuardDataSourceDataSourceDetectorMappingInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudGuardDataSourceDataSourceDetectorMappingInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -432,6 +487,17 @@ export function dataOciCloudGuardDataSourceRegionStatusDetailToTerraform(struct?
   }
 }
 
+
+export function dataOciCloudGuardDataSourceRegionStatusDetailToHclTerraform(struct?: DataOciCloudGuardDataSourceRegionStatusDetail): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCloudGuardDataSourceRegionStatusDetailOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -499,6 +565,20 @@ export class DataOciCloudGuardDataSource extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_cloud_guard_data_source";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCloudGuardDataSource resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCloudGuardDataSource to import
+  * @param importFromId The id of the existing DataOciCloudGuardDataSource that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/cloud_guard_data_source#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCloudGuardDataSource to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_cloud_guard_data_source", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -631,5 +711,19 @@ export class DataOciCloudGuardDataSource extends cdktf.TerraformDataSource {
     return {
       data_source_id: cdktf.stringToTerraform(this._dataSourceId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      data_source_id: {
+        value: cdktf.stringToHclTerraform(this._dataSourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

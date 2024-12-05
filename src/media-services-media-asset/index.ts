@@ -84,25 +84,25 @@ export interface MediaServicesMediaAssetConfig extends cdktf.TerraformMetaArgume
   readonly type: string;
   /**
   * locks block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/media_services_media_asset#locks MediaServicesMediaAsset#locks}
   */
   readonly locks?: MediaServicesMediaAssetLocks[] | cdktf.IResolvable;
   /**
   * media_asset_tags block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/media_services_media_asset#media_asset_tags MediaServicesMediaAsset#media_asset_tags}
   */
   readonly mediaAssetTags?: MediaServicesMediaAssetMediaAssetTags[] | cdktf.IResolvable;
   /**
   * metadata block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/media_services_media_asset#metadata MediaServicesMediaAsset#metadata}
   */
   readonly metadata?: MediaServicesMediaAssetMetadata[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/media_services_media_asset#timeouts MediaServicesMediaAsset#timeouts}
   */
   readonly timeouts?: MediaServicesMediaAssetTimeouts;
@@ -142,6 +142,49 @@ export function mediaServicesMediaAssetLocksToTerraform(struct?: MediaServicesMe
     time_created: cdktf.stringToTerraform(struct!.timeCreated),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function mediaServicesMediaAssetLocksToHclTerraform(struct?: MediaServicesMediaAssetLocks | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_id: {
+      value: cdktf.stringToHclTerraform(struct!.compartmentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    message: {
+      value: cdktf.stringToHclTerraform(struct!.message),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    related_resource_id: {
+      value: cdktf.stringToHclTerraform(struct!.relatedResourceId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_created: {
+      value: cdktf.stringToHclTerraform(struct!.timeCreated),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MediaServicesMediaAssetLocksOutputReference extends cdktf.ComplexObject {
@@ -328,6 +371,31 @@ export function mediaServicesMediaAssetMediaAssetTagsToTerraform(struct?: MediaS
   }
 }
 
+
+export function mediaServicesMediaAssetMediaAssetTagsToHclTerraform(struct?: MediaServicesMediaAssetMediaAssetTags | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MediaServicesMediaAssetMediaAssetTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -444,6 +512,25 @@ export function mediaServicesMediaAssetMetadataToTerraform(struct?: MediaService
   }
 }
 
+
+export function mediaServicesMediaAssetMetadataToHclTerraform(struct?: MediaServicesMediaAssetMetadata | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    metadata: {
+      value: cdktf.stringToHclTerraform(struct!.metadata),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MediaServicesMediaAssetMetadataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -546,6 +633,37 @@ export function mediaServicesMediaAssetTimeoutsToTerraform(struct?: MediaService
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function mediaServicesMediaAssetTimeoutsToHclTerraform(struct?: MediaServicesMediaAssetTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MediaServicesMediaAssetTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -660,6 +778,20 @@ export class MediaServicesMediaAsset extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_media_services_media_asset";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a MediaServicesMediaAsset resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the MediaServicesMediaAsset to import
+  * @param importFromId The id of the existing MediaServicesMediaAsset that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/media_services_media_asset#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the MediaServicesMediaAsset to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_media_services_media_asset", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1112,5 +1244,145 @@ export class MediaServicesMediaAsset extends cdktf.TerraformResource {
       metadata: cdktf.listMapper(mediaServicesMediaAssetMetadataToTerraform, true)(this._metadata.internalValue),
       timeouts: mediaServicesMediaAssetTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      bucket: {
+        value: cdktf.stringToHclTerraform(this._bucket),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_lock_override: {
+        value: cdktf.booleanToHclTerraform(this._isLockOverride),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      master_media_asset_id: {
+        value: cdktf.stringToHclTerraform(this._masterMediaAssetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      media_workflow_job_id: {
+        value: cdktf.stringToHclTerraform(this._mediaWorkflowJobId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      namespace: {
+        value: cdktf.stringToHclTerraform(this._namespace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object: {
+        value: cdktf.stringToHclTerraform(this._object),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_etag: {
+        value: cdktf.stringToHclTerraform(this._objectEtag),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      parent_media_asset_id: {
+        value: cdktf.stringToHclTerraform(this._parentMediaAssetId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      segment_range_end_index: {
+        value: cdktf.stringToHclTerraform(this._segmentRangeEndIndex),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      segment_range_start_index: {
+        value: cdktf.stringToHclTerraform(this._segmentRangeStartIndex),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_media_workflow_id: {
+        value: cdktf.stringToHclTerraform(this._sourceMediaWorkflowId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      source_media_workflow_version: {
+        value: cdktf.stringToHclTerraform(this._sourceMediaWorkflowVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      locks: {
+        value: cdktf.listMapperHcl(mediaServicesMediaAssetLocksToHclTerraform, true)(this._locks.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MediaServicesMediaAssetLocksList",
+      },
+      media_asset_tags: {
+        value: cdktf.listMapperHcl(mediaServicesMediaAssetMediaAssetTagsToHclTerraform, true)(this._mediaAssetTags.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MediaServicesMediaAssetMediaAssetTagsList",
+      },
+      metadata: {
+        value: cdktf.listMapperHcl(mediaServicesMediaAssetMetadataToHclTerraform, true)(this._metadata.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MediaServicesMediaAssetMetadataList",
+      },
+      timeouts: {
+        value: mediaServicesMediaAssetTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "MediaServicesMediaAssetTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -24,7 +24,7 @@ export interface DataOciDatabaseExadbVmClusterUpdateHistoryEntriesConfig extends
   readonly updateType?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_exadb_vm_cluster_update_history_entries#filter DataOciDatabaseExadbVmClusterUpdateHistoryEntries#filter}
   */
   readonly filter?: DataOciDatabaseExadbVmClusterUpdateHistoryEntriesFilter[] | cdktf.IResolvable;
@@ -39,6 +39,17 @@ export function dataOciDatabaseExadbVmClusterUpdateHistoryEntriesExadbVmClusterU
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseExadbVmClusterUpdateHistoryEntriesExadbVmClusterUpdateHistoryEntriesToHclTerraform(struct?: DataOciDatabaseExadbVmClusterUpdateHistoryEntriesExadbVmClusterUpdateHistoryEntries): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseExadbVmClusterUpdateHistoryEntriesExadbVmClusterUpdateHistoryEntriesOutputReference extends cdktf.ComplexObject {
@@ -158,6 +169,37 @@ export function dataOciDatabaseExadbVmClusterUpdateHistoryEntriesFilterToTerrafo
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciDatabaseExadbVmClusterUpdateHistoryEntriesFilterToHclTerraform(struct?: DataOciDatabaseExadbVmClusterUpdateHistoryEntriesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciDatabaseExadbVmClusterUpdateHistoryEntriesFilterOutputReference extends cdktf.ComplexObject {
@@ -289,6 +331,20 @@ export class DataOciDatabaseExadbVmClusterUpdateHistoryEntries extends cdktf.Ter
   // =================
   public static readonly tfResourceType = "oci_database_exadb_vm_cluster_update_history_entries";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseExadbVmClusterUpdateHistoryEntries resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseExadbVmClusterUpdateHistoryEntries to import
+  * @param importFromId The id of the existing DataOciDatabaseExadbVmClusterUpdateHistoryEntries that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_exadb_vm_cluster_update_history_entries#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseExadbVmClusterUpdateHistoryEntries to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_exadb_vm_cluster_update_history_entries", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -404,5 +460,37 @@ export class DataOciDatabaseExadbVmClusterUpdateHistoryEntries extends cdktf.Ter
       update_type: cdktf.stringToTerraform(this._updateType),
       filter: cdktf.listMapper(dataOciDatabaseExadbVmClusterUpdateHistoryEntriesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      exadb_vm_cluster_id: {
+        value: cdktf.stringToHclTerraform(this._exadbVmClusterId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      update_type: {
+        value: cdktf.stringToHclTerraform(this._updateType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatabaseExadbVmClusterUpdateHistoryEntriesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatabaseExadbVmClusterUpdateHistoryEntriesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

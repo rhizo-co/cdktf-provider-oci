@@ -42,6 +42,20 @@ export class DataOciDatabaseAutonomousDatabaseWallet extends cdktf.TerraformData
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_database_wallet";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseAutonomousDatabaseWallet resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseAutonomousDatabaseWallet to import
+  * @param importFromId The id of the existing DataOciDatabaseAutonomousDatabaseWallet that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_autonomous_database_wallet#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseAutonomousDatabaseWallet to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_database_wallet", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -171,5 +185,43 @@ export class DataOciDatabaseAutonomousDatabaseWallet extends cdktf.TerraformData
       id: cdktf.stringToTerraform(this._id),
       password: cdktf.stringToTerraform(this._password),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      autonomous_database_id: {
+        value: cdktf.stringToHclTerraform(this._autonomousDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      base64_encode_content: {
+        value: cdktf.booleanToHclTerraform(this._base64EncodeContent),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      generate_type: {
+        value: cdktf.stringToHclTerraform(this._generateType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      password: {
+        value: cdktf.stringToHclTerraform(this._password),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

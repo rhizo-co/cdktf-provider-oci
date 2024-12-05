@@ -40,6 +40,17 @@ export function dataOciOpsiOpsiConfigurationConfigItemsMetadataUnitDetailsToTerr
   }
 }
 
+
+export function dataOciOpsiOpsiConfigurationConfigItemsMetadataUnitDetailsToHclTerraform(struct?: DataOciOpsiOpsiConfigurationConfigItemsMetadataUnitDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOpsiOpsiConfigurationConfigItemsMetadataUnitDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -107,6 +118,17 @@ export function dataOciOpsiOpsiConfigurationConfigItemsMetadataValueInputDetails
   }
   return {
   }
+}
+
+
+export function dataOciOpsiOpsiConfigurationConfigItemsMetadataValueInputDetailsToHclTerraform(struct?: DataOciOpsiOpsiConfigurationConfigItemsMetadataValueInputDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOpsiOpsiConfigurationConfigItemsMetadataValueInputDetailsOutputReference extends cdktf.ComplexObject {
@@ -186,6 +208,17 @@ export function dataOciOpsiOpsiConfigurationConfigItemsMetadataToTerraform(struc
   }
   return {
   }
+}
+
+
+export function dataOciOpsiOpsiConfigurationConfigItemsMetadataToHclTerraform(struct?: DataOciOpsiOpsiConfigurationConfigItemsMetadata): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciOpsiOpsiConfigurationConfigItemsMetadataOutputReference extends cdktf.ComplexObject {
@@ -279,6 +312,17 @@ export function dataOciOpsiOpsiConfigurationConfigItemsToTerraform(struct?: Data
   }
 }
 
+
+export function dataOciOpsiOpsiConfigurationConfigItemsToHclTerraform(struct?: DataOciOpsiOpsiConfigurationConfigItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciOpsiOpsiConfigurationConfigItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -367,6 +411,20 @@ export class DataOciOpsiOpsiConfiguration extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_opsi_opsi_configuration";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciOpsiOpsiConfiguration resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciOpsiOpsiConfiguration to import
+  * @param importFromId The id of the existing DataOciOpsiOpsiConfiguration that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/opsi_opsi_configuration#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciOpsiOpsiConfiguration to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_opsi_opsi_configuration", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -552,5 +610,43 @@ export class DataOciOpsiOpsiConfiguration extends cdktf.TerraformDataSource {
       opsi_config_field: cdktf.listMapper(cdktf.stringToTerraform, false)(this._opsiConfigField),
       opsi_configuration_id: cdktf.stringToTerraform(this._opsiConfigurationId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      config_item_custom_status: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._configItemCustomStatus),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      config_item_field: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._configItemField),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      config_items_applicable_context: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._configItemsApplicableContext),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      opsi_config_field: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._opsiConfigField),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      opsi_configuration_id: {
+        value: cdktf.stringToHclTerraform(this._opsiConfigurationId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

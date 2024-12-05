@@ -24,7 +24,7 @@ export interface FusionAppsFusionEnvironmentDataMaskingActivityConfig extends cd
   readonly isResumeDataMasking?: boolean | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment_data_masking_activity#timeouts FusionAppsFusionEnvironmentDataMaskingActivity#timeouts}
   */
   readonly timeouts?: FusionAppsFusionEnvironmentDataMaskingActivityTimeouts;
@@ -54,6 +54,37 @@ export function fusionAppsFusionEnvironmentDataMaskingActivityTimeoutsToTerrafor
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function fusionAppsFusionEnvironmentDataMaskingActivityTimeoutsToHclTerraform(struct?: FusionAppsFusionEnvironmentDataMaskingActivityTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FusionAppsFusionEnvironmentDataMaskingActivityTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -168,6 +199,20 @@ export class FusionAppsFusionEnvironmentDataMaskingActivity extends cdktf.Terraf
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fusion_apps_fusion_environment_data_masking_activity";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FusionAppsFusionEnvironmentDataMaskingActivity resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FusionAppsFusionEnvironmentDataMaskingActivity to import
+  * @param importFromId The id of the existing FusionAppsFusionEnvironmentDataMaskingActivity that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fusion_apps_fusion_environment_data_masking_activity#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FusionAppsFusionEnvironmentDataMaskingActivity to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fusion_apps_fusion_environment_data_masking_activity", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -293,5 +338,37 @@ export class FusionAppsFusionEnvironmentDataMaskingActivity extends cdktf.Terraf
       is_resume_data_masking: cdktf.booleanToTerraform(this._isResumeDataMasking),
       timeouts: fusionAppsFusionEnvironmentDataMaskingActivityTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      fusion_environment_id: {
+        value: cdktf.stringToHclTerraform(this._fusionEnvironmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_resume_data_masking: {
+        value: cdktf.booleanToHclTerraform(this._isResumeDataMasking),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      timeouts: {
+        value: fusionAppsFusionEnvironmentDataMaskingActivityTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FusionAppsFusionEnvironmentDataMaskingActivityTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

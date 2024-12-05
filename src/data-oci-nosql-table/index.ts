@@ -28,6 +28,17 @@ export function dataOciNosqlTableReplicasToTerraform(struct?: DataOciNosqlTableR
   }
 }
 
+
+export function dataOciNosqlTableReplicasToHclTerraform(struct?: DataOciNosqlTableReplicas): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciNosqlTableReplicasOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -115,6 +126,17 @@ export function dataOciNosqlTableSchemaColumnsToTerraform(struct?: DataOciNosqlT
   }
   return {
   }
+}
+
+
+export function dataOciNosqlTableSchemaColumnsToHclTerraform(struct?: DataOciNosqlTableSchemaColumns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciNosqlTableSchemaColumnsOutputReference extends cdktf.ComplexObject {
@@ -206,6 +228,17 @@ export function dataOciNosqlTableSchemaIdentityToTerraform(struct?: DataOciNosql
   }
 }
 
+
+export function dataOciNosqlTableSchemaIdentityToHclTerraform(struct?: DataOciNosqlTableSchemaIdentity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciNosqlTableSchemaIdentityOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -278,6 +311,17 @@ export function dataOciNosqlTableSchemaToTerraform(struct?: DataOciNosqlTableSch
   }
   return {
   }
+}
+
+
+export function dataOciNosqlTableSchemaToHclTerraform(struct?: DataOciNosqlTableSchema): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciNosqlTableSchemaOutputReference extends cdktf.ComplexObject {
@@ -366,6 +410,17 @@ export function dataOciNosqlTableTableLimitsToTerraform(struct?: DataOciNosqlTab
   }
 }
 
+
+export function dataOciNosqlTableTableLimitsToHclTerraform(struct?: DataOciNosqlTableTableLimits): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciNosqlTableTableLimitsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -443,6 +498,20 @@ export class DataOciNosqlTable extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_nosql_table";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciNosqlTable resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciNosqlTable to import
+  * @param importFromId The id of the existing DataOciNosqlTable that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/nosql_table#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciNosqlTable to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_nosql_table", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -610,5 +679,25 @@ export class DataOciNosqlTable extends cdktf.TerraformDataSource {
       compartment_id: cdktf.stringToTerraform(this._compartmentId),
       table_name_or_id: cdktf.stringToTerraform(this._tableNameOrId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      table_name_or_id: {
+        value: cdktf.stringToHclTerraform(this._tableNameOrId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -48,13 +48,13 @@ export interface DevopsRepositoryConfig extends cdktf.TerraformMetaArguments {
   readonly repositoryType: string;
   /**
   * mirror_repository_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository#mirror_repository_config DevopsRepository#mirror_repository_config}
   */
   readonly mirrorRepositoryConfig?: DevopsRepositoryMirrorRepositoryConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository#timeouts DevopsRepository#timeouts}
   */
   readonly timeouts?: DevopsRepositoryTimeouts;
@@ -79,6 +79,31 @@ export function devopsRepositoryMirrorRepositoryConfigTriggerScheduleToTerraform
     custom_schedule: cdktf.stringToTerraform(struct!.customSchedule),
     schedule_type: cdktf.stringToTerraform(struct!.scheduleType),
   }
+}
+
+
+export function devopsRepositoryMirrorRepositoryConfigTriggerScheduleToHclTerraform(struct?: DevopsRepositoryMirrorRepositoryConfigTriggerScheduleOutputReference | DevopsRepositoryMirrorRepositoryConfigTriggerSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    custom_schedule: {
+      value: cdktf.stringToHclTerraform(struct!.customSchedule),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    schedule_type: {
+      value: cdktf.stringToHclTerraform(struct!.scheduleType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsRepositoryMirrorRepositoryConfigTriggerScheduleOutputReference extends cdktf.ComplexObject {
@@ -159,7 +184,7 @@ export interface DevopsRepositoryMirrorRepositoryConfig {
   readonly repositoryUrl?: string;
   /**
   * trigger_schedule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository#trigger_schedule DevopsRepository#trigger_schedule}
   */
   readonly triggerSchedule?: DevopsRepositoryMirrorRepositoryConfigTriggerSchedule;
@@ -175,6 +200,37 @@ export function devopsRepositoryMirrorRepositoryConfigToTerraform(struct?: Devop
     repository_url: cdktf.stringToTerraform(struct!.repositoryUrl),
     trigger_schedule: devopsRepositoryMirrorRepositoryConfigTriggerScheduleToTerraform(struct!.triggerSchedule),
   }
+}
+
+
+export function devopsRepositoryMirrorRepositoryConfigToHclTerraform(struct?: DevopsRepositoryMirrorRepositoryConfigOutputReference | DevopsRepositoryMirrorRepositoryConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    connector_id: {
+      value: cdktf.stringToHclTerraform(struct!.connectorId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repository_url: {
+      value: cdktf.stringToHclTerraform(struct!.repositoryUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    trigger_schedule: {
+      value: devopsRepositoryMirrorRepositoryConfigTriggerScheduleToHclTerraform(struct!.triggerSchedule),
+      isBlock: true,
+      type: "list",
+      storageClassType: "DevopsRepositoryMirrorRepositoryConfigTriggerScheduleList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DevopsRepositoryMirrorRepositoryConfigOutputReference extends cdktf.ComplexObject {
@@ -296,6 +352,37 @@ export function devopsRepositoryTimeoutsToTerraform(struct?: DevopsRepositoryTim
   }
 }
 
+
+export function devopsRepositoryTimeoutsToHclTerraform(struct?: DevopsRepositoryTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DevopsRepositoryTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -408,6 +495,20 @@ export class DevopsRepository extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_devops_repository";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DevopsRepository resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DevopsRepository to import
+  * @param importFromId The id of the existing DevopsRepository that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/devops_repository#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DevopsRepository to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_devops_repository", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -709,5 +810,79 @@ export class DevopsRepository extends cdktf.TerraformResource {
       mirror_repository_config: devopsRepositoryMirrorRepositoryConfigToTerraform(this._mirrorRepositoryConfig.internalValue),
       timeouts: devopsRepositoryTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      default_branch: {
+        value: cdktf.stringToHclTerraform(this._defaultBranch),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      parent_repository_id: {
+        value: cdktf.stringToHclTerraform(this._parentRepositoryId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      project_id: {
+        value: cdktf.stringToHclTerraform(this._projectId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      repository_type: {
+        value: cdktf.stringToHclTerraform(this._repositoryType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      mirror_repository_config: {
+        value: devopsRepositoryMirrorRepositoryConfigToHclTerraform(this._mirrorRepositoryConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DevopsRepositoryMirrorRepositoryConfigList",
+      },
+      timeouts: {
+        value: devopsRepositoryTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DevopsRepositoryTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

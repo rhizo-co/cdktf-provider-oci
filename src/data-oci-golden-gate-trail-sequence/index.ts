@@ -43,6 +43,17 @@ export function dataOciGoldenGateTrailSequenceItemsToTerraform(struct?: DataOciG
   }
 }
 
+
+export function dataOciGoldenGateTrailSequenceItemsToHclTerraform(struct?: DataOciGoldenGateTrailSequenceItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciGoldenGateTrailSequenceItemsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -120,6 +131,20 @@ export class DataOciGoldenGateTrailSequence extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_golden_gate_trail_sequence";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciGoldenGateTrailSequence resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciGoldenGateTrailSequence to import
+  * @param importFromId The id of the existing DataOciGoldenGateTrailSequence that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/golden_gate_trail_sequence#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciGoldenGateTrailSequence to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_golden_gate_trail_sequence", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -250,5 +275,43 @@ export class DataOciGoldenGateTrailSequence extends cdktf.TerraformDataSource {
       trail_file_id: cdktf.stringToTerraform(this._trailFileId),
       trail_sequence_id: cdktf.stringToTerraform(this._trailSequenceId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      deployment_id: {
+        value: cdktf.stringToHclTerraform(this._deploymentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      trail_file_id: {
+        value: cdktf.stringToHclTerraform(this._trailFileId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      trail_sequence_id: {
+        value: cdktf.stringToHclTerraform(this._trailSequenceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

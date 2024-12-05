@@ -63,6 +63,17 @@ export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCre
   }
 }
 
+
+export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsIdcsCreatedByToHclTerraform(struct?: DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsIdcsCreatedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsIdcsCreatedByOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -145,6 +156,17 @@ export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCre
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsIdcsLastModifiedByToHclTerraform(struct?: DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsIdcsLastModifiedBy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsIdcsLastModifiedByOutputReference extends cdktf.ComplexObject {
@@ -231,6 +253,17 @@ export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCre
   }
 }
 
+
+export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsMetaToHclTerraform(struct?: DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsMeta): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsMetaOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -315,6 +348,17 @@ export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCre
   }
 }
 
+
+export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsScopesToHclTerraform(struct?: DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsScopes): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsScopesOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -384,6 +428,17 @@ export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCre
   }
 }
 
+
+export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsTagsToHclTerraform(struct?: DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsTags): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsTagsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -451,6 +506,17 @@ export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCre
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsUserToHclTerraform(struct?: DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsUser): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsUserOutputReference extends cdktf.ComplexObject {
@@ -535,6 +601,17 @@ export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCre
   }
   return {
   }
+}
+
+
+export function dataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsToHclTerraform(struct?: DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciIdentityDomainsMyOauth2ClientCredentialsMyOauth2ClientCredentialsOutputReference extends cdktf.ComplexObject {
@@ -715,6 +792,20 @@ export class DataOciIdentityDomainsMyOauth2ClientCredentials extends cdktf.Terra
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_identity_domains_my_oauth2client_credentials";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciIdentityDomainsMyOauth2ClientCredentials resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciIdentityDomainsMyOauth2ClientCredentials to import
+  * @param importFromId The id of the existing DataOciIdentityDomainsMyOauth2ClientCredentials that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/identity_domains_my_oauth2client_credentials#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciIdentityDomainsMyOauth2ClientCredentials to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_identity_domains_my_oauth2client_credentials", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -954,5 +1045,73 @@ export class DataOciIdentityDomainsMyOauth2ClientCredentials extends cdktf.Terra
       sort_order: cdktf.stringToTerraform(this._sortOrder),
       start_index: cdktf.numberToTerraform(this._startIndex),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      authorization: {
+        value: cdktf.stringToHclTerraform(this._authorization),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      idcs_endpoint: {
+        value: cdktf.stringToHclTerraform(this._idcsEndpoint),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      my_oauth2client_credential_count: {
+        value: cdktf.numberToHclTerraform(this._myOauth2ClientCredentialCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      my_oauth2client_credential_filter: {
+        value: cdktf.stringToHclTerraform(this._myOauth2ClientCredentialFilter),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      resource_type_schema_version: {
+        value: cdktf.stringToHclTerraform(this._resourceTypeSchemaVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sort_by: {
+        value: cdktf.stringToHclTerraform(this._sortBy),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sort_order: {
+        value: cdktf.stringToHclTerraform(this._sortOrder),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      start_index: {
+        value: cdktf.numberToHclTerraform(this._startIndex),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

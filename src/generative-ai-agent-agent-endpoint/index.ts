@@ -52,19 +52,19 @@ export interface GenerativeAiAgentAgentEndpointConfig extends cdktf.TerraformMet
   readonly shouldEnableTrace?: boolean | cdktf.IResolvable;
   /**
   * content_moderation_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_agent_endpoint#content_moderation_config GenerativeAiAgentAgentEndpoint#content_moderation_config}
   */
   readonly contentModerationConfig?: GenerativeAiAgentAgentEndpointContentModerationConfig;
   /**
   * session_config block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_agent_endpoint#session_config GenerativeAiAgentAgentEndpoint#session_config}
   */
   readonly sessionConfig?: GenerativeAiAgentAgentEndpointSessionConfig;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_agent_endpoint#timeouts GenerativeAiAgentAgentEndpoint#timeouts}
   */
   readonly timeouts?: GenerativeAiAgentAgentEndpointTimeouts;
@@ -89,6 +89,31 @@ export function generativeAiAgentAgentEndpointContentModerationConfigToTerraform
     should_enable_on_input: cdktf.booleanToTerraform(struct!.shouldEnableOnInput),
     should_enable_on_output: cdktf.booleanToTerraform(struct!.shouldEnableOnOutput),
   }
+}
+
+
+export function generativeAiAgentAgentEndpointContentModerationConfigToHclTerraform(struct?: GenerativeAiAgentAgentEndpointContentModerationConfigOutputReference | GenerativeAiAgentAgentEndpointContentModerationConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    should_enable_on_input: {
+      value: cdktf.booleanToHclTerraform(struct!.shouldEnableOnInput),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    should_enable_on_output: {
+      value: cdktf.booleanToHclTerraform(struct!.shouldEnableOnOutput),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GenerativeAiAgentAgentEndpointContentModerationConfigOutputReference extends cdktf.ComplexObject {
@@ -178,6 +203,25 @@ export function generativeAiAgentAgentEndpointSessionConfigToTerraform(struct?: 
   }
 }
 
+
+export function generativeAiAgentAgentEndpointSessionConfigToHclTerraform(struct?: GenerativeAiAgentAgentEndpointSessionConfigOutputReference | GenerativeAiAgentAgentEndpointSessionConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    idle_timeout_in_seconds: {
+      value: cdktf.numberToHclTerraform(struct!.idleTimeoutInSeconds),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class GenerativeAiAgentAgentEndpointSessionConfigOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -251,6 +295,37 @@ export function generativeAiAgentAgentEndpointTimeoutsToTerraform(struct?: Gener
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function generativeAiAgentAgentEndpointTimeoutsToHclTerraform(struct?: GenerativeAiAgentAgentEndpointTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class GenerativeAiAgentAgentEndpointTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -365,6 +440,20 @@ export class GenerativeAiAgentAgentEndpoint extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_generative_ai_agent_agent_endpoint";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a GenerativeAiAgentAgentEndpoint resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the GenerativeAiAgentAgentEndpoint to import
+  * @param importFromId The id of the existing GenerativeAiAgentAgentEndpoint that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/generative_ai_agent_agent_endpoint#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the GenerativeAiAgentAgentEndpoint to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_generative_ai_agent_agent_endpoint", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -660,5 +749,91 @@ export class GenerativeAiAgentAgentEndpoint extends cdktf.TerraformResource {
       session_config: generativeAiAgentAgentEndpointSessionConfigToTerraform(this._sessionConfig.internalValue),
       timeouts: generativeAiAgentAgentEndpointTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      agent_id: {
+        value: cdktf.stringToHclTerraform(this._agentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      should_enable_citation: {
+        value: cdktf.booleanToHclTerraform(this._shouldEnableCitation),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      should_enable_session: {
+        value: cdktf.booleanToHclTerraform(this._shouldEnableSession),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      should_enable_trace: {
+        value: cdktf.booleanToHclTerraform(this._shouldEnableTrace),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      content_moderation_config: {
+        value: generativeAiAgentAgentEndpointContentModerationConfigToHclTerraform(this._contentModerationConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GenerativeAiAgentAgentEndpointContentModerationConfigList",
+      },
+      session_config: {
+        value: generativeAiAgentAgentEndpointSessionConfigToHclTerraform(this._sessionConfig.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "GenerativeAiAgentAgentEndpointSessionConfigList",
+      },
+      timeouts: {
+        value: generativeAiAgentAgentEndpointTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "GenerativeAiAgentAgentEndpointTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

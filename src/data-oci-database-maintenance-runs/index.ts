@@ -44,7 +44,7 @@ export interface DataOciDatabaseMaintenanceRunsConfig extends cdktf.TerraformMet
   readonly targetResourceType?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_maintenance_runs#filter DataOciDatabaseMaintenanceRuns#filter}
   */
   readonly filter?: DataOciDatabaseMaintenanceRunsFilter[] | cdktf.IResolvable;
@@ -59,6 +59,17 @@ export function dataOciDatabaseMaintenanceRunsMaintenanceRunsEstimatedPatchingTi
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseMaintenanceRunsMaintenanceRunsEstimatedPatchingTimeToHclTerraform(struct?: DataOciDatabaseMaintenanceRunsMaintenanceRunsEstimatedPatchingTime): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseMaintenanceRunsMaintenanceRunsEstimatedPatchingTimeOutputReference extends cdktf.ComplexObject {
@@ -138,6 +149,17 @@ export function dataOciDatabaseMaintenanceRunsMaintenanceRunsToTerraform(struct?
   }
   return {
   }
+}
+
+
+export function dataOciDatabaseMaintenanceRunsMaintenanceRunsToHclTerraform(struct?: DataOciDatabaseMaintenanceRunsMaintenanceRuns): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDatabaseMaintenanceRunsMaintenanceRunsOutputReference extends cdktf.ComplexObject {
@@ -370,6 +392,37 @@ export function dataOciDatabaseMaintenanceRunsFilterToTerraform(struct?: DataOci
   }
 }
 
+
+export function dataOciDatabaseMaintenanceRunsFilterToHclTerraform(struct?: DataOciDatabaseMaintenanceRunsFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DataOciDatabaseMaintenanceRunsFilterOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -498,6 +551,20 @@ export class DataOciDatabaseMaintenanceRuns extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_maintenance_runs";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseMaintenanceRuns resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseMaintenanceRuns to import
+  * @param importFromId The id of the existing DataOciDatabaseMaintenanceRuns that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_maintenance_runs#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseMaintenanceRuns to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_maintenance_runs", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -704,5 +771,67 @@ export class DataOciDatabaseMaintenanceRuns extends cdktf.TerraformDataSource {
       target_resource_type: cdktf.stringToTerraform(this._targetResourceType),
       filter: cdktf.listMapper(dataOciDatabaseMaintenanceRunsFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      availability_domain: {
+        value: cdktf.stringToHclTerraform(this._availabilityDomain),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      maintenance_subtype: {
+        value: cdktf.stringToHclTerraform(this._maintenanceSubtype),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      maintenance_type: {
+        value: cdktf.stringToHclTerraform(this._maintenanceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_resource_id: {
+        value: cdktf.stringToHclTerraform(this._targetResourceId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      target_resource_type: {
+        value: cdktf.stringToHclTerraform(this._targetResourceType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciDatabaseMaintenanceRunsFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciDatabaseMaintenanceRunsFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

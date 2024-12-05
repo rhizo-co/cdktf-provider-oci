@@ -68,7 +68,7 @@ export interface DataSafeSensitiveDataModelsSensitiveColumnConfig extends cdktf.
   readonly status?: string;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_sensitive_data_models_sensitive_column#timeouts DataSafeSensitiveDataModelsSensitiveColumn#timeouts}
   */
   readonly timeouts?: DataSafeSensitiveDataModelsSensitiveColumnTimeouts;
@@ -98,6 +98,37 @@ export function dataSafeSensitiveDataModelsSensitiveColumnTimeoutsToTerraform(st
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function dataSafeSensitiveDataModelsSensitiveColumnTimeoutsToHclTerraform(struct?: DataSafeSensitiveDataModelsSensitiveColumnTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataSafeSensitiveDataModelsSensitiveColumnTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -212,6 +243,20 @@ export class DataSafeSensitiveDataModelsSensitiveColumn extends cdktf.TerraformR
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_data_safe_sensitive_data_models_sensitive_column";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataSafeSensitiveDataModelsSensitiveColumn resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataSafeSensitiveDataModelsSensitiveColumn to import
+  * @param importFromId The id of the existing DataSafeSensitiveDataModelsSensitiveColumn that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/data_safe_sensitive_data_models_sensitive_column#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataSafeSensitiveDataModelsSensitiveColumn to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_data_safe_sensitive_data_models_sensitive_column", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -556,5 +601,103 @@ export class DataSafeSensitiveDataModelsSensitiveColumn extends cdktf.TerraformR
       status: cdktf.stringToTerraform(this._status),
       timeouts: dataSafeSensitiveDataModelsSensitiveColumnTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      app_defined_child_column_keys: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._appDefinedChildColumnKeys),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      app_name: {
+        value: cdktf.stringToHclTerraform(this._appName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      column_name: {
+        value: cdktf.stringToHclTerraform(this._columnName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      data_type: {
+        value: cdktf.stringToHclTerraform(this._dataType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_defined_child_column_keys: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._dbDefinedChildColumnKeys),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object: {
+        value: cdktf.stringToHclTerraform(this._object),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      object_type: {
+        value: cdktf.stringToHclTerraform(this._objectType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      parent_column_keys: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._parentColumnKeys),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      relation_type: {
+        value: cdktf.stringToHclTerraform(this._relationType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schema_name: {
+        value: cdktf.stringToHclTerraform(this._schemaName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sensitive_data_model_id: {
+        value: cdktf.stringToHclTerraform(this._sensitiveDataModelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sensitive_type_id: {
+        value: cdktf.stringToHclTerraform(this._sensitiveTypeId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      status: {
+        value: cdktf.stringToHclTerraform(this._status),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      timeouts: {
+        value: dataSafeSensitiveDataModelsSensitiveColumnTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DataSafeSensitiveDataModelsSensitiveColumnTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

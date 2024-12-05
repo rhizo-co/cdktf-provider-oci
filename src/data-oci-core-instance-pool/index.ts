@@ -24,6 +24,17 @@ export function dataOciCoreInstancePoolLoadBalancersToTerraform(struct?: DataOci
   }
 }
 
+
+export function dataOciCoreInstancePoolLoadBalancersToHclTerraform(struct?: DataOciCoreInstancePoolLoadBalancers): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreInstancePoolLoadBalancersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -118,6 +129,17 @@ export function dataOciCoreInstancePoolPlacementConfigurationsPrimaryVnicSubnets
   }
 }
 
+
+export function dataOciCoreInstancePoolPlacementConfigurationsPrimaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: DataOciCoreInstancePoolPlacementConfigurationsPrimaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreInstancePoolPlacementConfigurationsPrimaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -180,6 +202,17 @@ export function dataOciCoreInstancePoolPlacementConfigurationsPrimaryVnicSubnets
   }
   return {
   }
+}
+
+
+export function dataOciCoreInstancePoolPlacementConfigurationsPrimaryVnicSubnetsToHclTerraform(struct?: DataOciCoreInstancePoolPlacementConfigurationsPrimaryVnicSubnets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreInstancePoolPlacementConfigurationsPrimaryVnicSubnetsOutputReference extends cdktf.ComplexObject {
@@ -257,6 +290,17 @@ export function dataOciCoreInstancePoolPlacementConfigurationsSecondaryVnicSubne
   }
 }
 
+
+export function dataOciCoreInstancePoolPlacementConfigurationsSecondaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsToHclTerraform(struct?: DataOciCoreInstancePoolPlacementConfigurationsSecondaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciCoreInstancePoolPlacementConfigurationsSecondaryVnicSubnetsIpv6AddressIpv6SubnetCidrPairDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -319,6 +363,17 @@ export function dataOciCoreInstancePoolPlacementConfigurationsSecondaryVnicSubne
   }
   return {
   }
+}
+
+
+export function dataOciCoreInstancePoolPlacementConfigurationsSecondaryVnicSubnetsToHclTerraform(struct?: DataOciCoreInstancePoolPlacementConfigurationsSecondaryVnicSubnets): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreInstancePoolPlacementConfigurationsSecondaryVnicSubnetsOutputReference extends cdktf.ComplexObject {
@@ -399,6 +454,17 @@ export function dataOciCoreInstancePoolPlacementConfigurationsToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciCoreInstancePoolPlacementConfigurationsToHclTerraform(struct?: DataOciCoreInstancePoolPlacementConfigurations): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciCoreInstancePoolPlacementConfigurationsOutputReference extends cdktf.ComplexObject {
@@ -485,6 +551,20 @@ export class DataOciCoreInstancePool extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_core_instance_pool";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciCoreInstancePool resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciCoreInstancePool to import
+  * @param importFromId The id of the existing DataOciCoreInstancePool that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/core_instance_pool#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciCoreInstancePool to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_core_instance_pool", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -615,5 +695,19 @@ export class DataOciCoreInstancePool extends cdktf.TerraformDataSource {
     return {
       instance_pool_id: cdktf.stringToTerraform(this._instancePoolId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      instance_pool_id: {
+        value: cdktf.stringToHclTerraform(this._instancePoolId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

@@ -19,6 +19,20 @@ export class DataOciDatabaseAutonomousDatabaseRegionalWalletManagement extends c
   // =================
   public static readonly tfResourceType = "oci_database_autonomous_database_regional_wallet_management";
 
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDatabaseAutonomousDatabaseRegionalWalletManagement resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDatabaseAutonomousDatabaseRegionalWalletManagement to import
+  * @param importFromId The id of the existing DataOciDatabaseAutonomousDatabaseRegionalWalletManagement that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/database_autonomous_database_regional_wallet_management#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDatabaseAutonomousDatabaseRegionalWalletManagement to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_autonomous_database_regional_wallet_management", importId: importFromId, provider });
+      }
+
   // ===========
   // INITIALIZER
   // ===========
@@ -84,5 +98,11 @@ export class DataOciDatabaseAutonomousDatabaseRegionalWalletManagement extends c
   protected synthesizeAttributes(): { [name: string]: any } {
     return {
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+    };
+    return attrs;
   }
 }

@@ -28,7 +28,7 @@ export interface DataOciVisualBuilderVbInstancesConfig extends cdktf.TerraformMe
   readonly state?: string;
   /**
   * filter block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/visual_builder_vb_instances#filter DataOciVisualBuilderVbInstances#filter}
   */
   readonly filter?: DataOciVisualBuilderVbInstancesFilter[] | cdktf.IResolvable;
@@ -43,6 +43,17 @@ export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsA
   }
   return {
   }
+}
+
+
+export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsAlternateCustomEndpointsToHclTerraform(struct?: DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsAlternateCustomEndpoints): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsAlternateCustomEndpointsOutputReference extends cdktf.ComplexObject {
@@ -117,6 +128,17 @@ export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsA
   }
   return {
   }
+}
+
+
+export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsAttachmentsToHclTerraform(struct?: DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsAttachments): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsAttachmentsOutputReference extends cdktf.ComplexObject {
@@ -203,6 +225,17 @@ export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsC
   }
 }
 
+
+export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsCustomEndpointToHclTerraform(struct?: DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsCustomEndpoint): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsCustomEndpointOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -275,6 +308,17 @@ export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsI
   }
   return {
   }
+}
+
+
+export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsIdcsInfoToHclTerraform(struct?: DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsIdcsInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsIdcsInfoOutputReference extends cdktf.ComplexObject {
@@ -359,6 +403,17 @@ export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsT
   }
   return {
   }
+}
+
+
+export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsToHclTerraform(struct?: DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItems): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionItemsOutputReference extends cdktf.ComplexObject {
@@ -542,6 +597,17 @@ export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionToTerr
   }
 }
 
+
+export function dataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionToHclTerraform(struct?: DataOciVisualBuilderVbInstancesVbInstanceSummaryCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciVisualBuilderVbInstancesVbInstanceSummaryCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -620,6 +686,37 @@ export function dataOciVisualBuilderVbInstancesFilterToTerraform(struct?: DataOc
     regex: cdktf.booleanToTerraform(struct!.regex),
     values: cdktf.listMapper(cdktf.stringToTerraform, false)(struct!.values),
   }
+}
+
+
+export function dataOciVisualBuilderVbInstancesFilterToHclTerraform(struct?: DataOciVisualBuilderVbInstancesFilter | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    regex: {
+      value: cdktf.booleanToHclTerraform(struct!.regex),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DataOciVisualBuilderVbInstancesFilterOutputReference extends cdktf.ComplexObject {
@@ -750,6 +847,20 @@ export class DataOciVisualBuilderVbInstances extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_visual_builder_vb_instances";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciVisualBuilderVbInstances resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciVisualBuilderVbInstances to import
+  * @param importFromId The id of the existing DataOciVisualBuilderVbInstances that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/visual_builder_vb_instances#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciVisualBuilderVbInstances to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_visual_builder_vb_instances", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -884,5 +995,43 @@ export class DataOciVisualBuilderVbInstances extends cdktf.TerraformDataSource {
       state: cdktf.stringToTerraform(this._state),
       filter: cdktf.listMapper(dataOciVisualBuilderVbInstancesFilterToTerraform, true)(this._filter.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      filter: {
+        value: cdktf.listMapperHcl(dataOciVisualBuilderVbInstancesFilterToHclTerraform, true)(this._filter.internalValue),
+        isBlock: true,
+        type: "set",
+        storageClassType: "DataOciVisualBuilderVbInstancesFilterList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

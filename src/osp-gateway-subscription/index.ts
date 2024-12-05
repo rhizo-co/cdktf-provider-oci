@@ -32,13 +32,13 @@ export interface OspGatewaySubscriptionConfig extends cdktf.TerraformMetaArgumen
   readonly subscriptionId: string;
   /**
   * subscription block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_subscription#subscription OspGatewaySubscription#subscription}
   */
   readonly subscription: OspGatewaySubscriptionSubscription;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_subscription#timeouts OspGatewaySubscription#timeouts}
   */
   readonly timeouts?: OspGatewaySubscriptionTimeouts;
@@ -53,6 +53,17 @@ export function ospGatewaySubscriptionBillingAddressToTerraform(struct?: OspGate
   }
   return {
   }
+}
+
+
+export function ospGatewaySubscriptionBillingAddressToHclTerraform(struct?: OspGatewaySubscriptionBillingAddress): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OspGatewaySubscriptionBillingAddressOutputReference extends cdktf.ComplexObject {
@@ -244,6 +255,17 @@ export function ospGatewaySubscriptionPaymentGatewayMerchantDefinedDataToTerrafo
   }
 }
 
+
+export function ospGatewaySubscriptionPaymentGatewayMerchantDefinedDataToHclTerraform(struct?: OspGatewaySubscriptionPaymentGatewayMerchantDefinedData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class OspGatewaySubscriptionPaymentGatewayMerchantDefinedDataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -313,6 +335,17 @@ export function ospGatewaySubscriptionPaymentGatewayToTerraform(struct?: OspGate
   }
 }
 
+
+export function ospGatewaySubscriptionPaymentGatewayToHclTerraform(struct?: OspGatewaySubscriptionPaymentGateway): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class OspGatewaySubscriptionPaymentGatewayOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -376,6 +409,17 @@ export function ospGatewaySubscriptionPaymentOptionsToTerraform(struct?: OspGate
   }
   return {
   }
+}
+
+
+export function ospGatewaySubscriptionPaymentOptionsToHclTerraform(struct?: OspGatewaySubscriptionPaymentOptions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OspGatewaySubscriptionPaymentOptionsOutputReference extends cdktf.ComplexObject {
@@ -490,6 +534,17 @@ export function ospGatewaySubscriptionTaxInfoToTerraform(struct?: OspGatewaySubs
   }
   return {
   }
+}
+
+
+export function ospGatewaySubscriptionTaxInfoToHclTerraform(struct?: OspGatewaySubscriptionTaxInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class OspGatewaySubscriptionTaxInfoOutputReference extends cdktf.ComplexObject {
@@ -709,6 +764,175 @@ export function ospGatewaySubscriptionSubscriptionBillingAddressToTerraform(stru
     street_name: cdktf.stringToTerraform(struct!.streetName),
     street_number: cdktf.stringToTerraform(struct!.streetNumber),
   }
+}
+
+
+export function ospGatewaySubscriptionSubscriptionBillingAddressToHclTerraform(struct?: OspGatewaySubscriptionSubscriptionBillingAddress | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    address_key: {
+      value: cdktf.stringToHclTerraform(struct!.addressKey),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    city: {
+      value: cdktf.stringToHclTerraform(struct!.city),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    company_name: {
+      value: cdktf.stringToHclTerraform(struct!.companyName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    contributor_class: {
+      value: cdktf.stringToHclTerraform(struct!.contributorClass),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    country: {
+      value: cdktf.stringToHclTerraform(struct!.country),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    county: {
+      value: cdktf.stringToHclTerraform(struct!.county),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    department_name: {
+      value: cdktf.stringToHclTerraform(struct!.departmentName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    email_address: {
+      value: cdktf.stringToHclTerraform(struct!.emailAddress),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    first_name: {
+      value: cdktf.stringToHclTerraform(struct!.firstName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    internal_number: {
+      value: cdktf.stringToHclTerraform(struct!.internalNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    job_title: {
+      value: cdktf.stringToHclTerraform(struct!.jobTitle),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    last_name: {
+      value: cdktf.stringToHclTerraform(struct!.lastName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    line1: {
+      value: cdktf.stringToHclTerraform(struct!.line1),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    line2: {
+      value: cdktf.stringToHclTerraform(struct!.line2),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    line3: {
+      value: cdktf.stringToHclTerraform(struct!.line3),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    line4: {
+      value: cdktf.stringToHclTerraform(struct!.line4),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    middle_name: {
+      value: cdktf.stringToHclTerraform(struct!.middleName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    municipal_inscription: {
+      value: cdktf.stringToHclTerraform(struct!.municipalInscription),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    phone_country_code: {
+      value: cdktf.stringToHclTerraform(struct!.phoneCountryCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    phone_number: {
+      value: cdktf.stringToHclTerraform(struct!.phoneNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    postal_code: {
+      value: cdktf.stringToHclTerraform(struct!.postalCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    province: {
+      value: cdktf.stringToHclTerraform(struct!.province),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    state: {
+      value: cdktf.stringToHclTerraform(struct!.state),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    state_inscription: {
+      value: cdktf.stringToHclTerraform(struct!.stateInscription),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    street_name: {
+      value: cdktf.stringToHclTerraform(struct!.streetName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    street_number: {
+      value: cdktf.stringToHclTerraform(struct!.streetNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OspGatewaySubscriptionSubscriptionBillingAddressOutputReference extends cdktf.ComplexObject {
@@ -1363,6 +1587,31 @@ export function ospGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedD
   }
 }
 
+
+export function ospGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedDataToHclTerraform(struct?: OspGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutputReference | OspGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedData): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    cloud_account_name: {
+      value: cdktf.stringToHclTerraform(struct!.cloudAccountName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    promo_type: {
+      value: cdktf.stringToHclTerraform(struct!.promoType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OspGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedDataOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1436,7 +1685,7 @@ export class OspGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedData
 export interface OspGatewaySubscriptionSubscriptionPaymentGateway {
   /**
   * merchant_defined_data block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_subscription#merchant_defined_data OspGatewaySubscription#merchant_defined_data}
   */
   readonly merchantDefinedData?: OspGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedData;
@@ -1450,6 +1699,25 @@ export function ospGatewaySubscriptionSubscriptionPaymentGatewayToTerraform(stru
   return {
     merchant_defined_data: ospGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedDataToTerraform(struct!.merchantDefinedData),
   }
+}
+
+
+export function ospGatewaySubscriptionSubscriptionPaymentGatewayToHclTerraform(struct?: OspGatewaySubscriptionSubscriptionPaymentGatewayOutputReference | OspGatewaySubscriptionSubscriptionPaymentGateway): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    merchant_defined_data: {
+      value: ospGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedDataToHclTerraform(struct!.merchantDefinedData),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OspGatewaySubscriptionSubscriptionPaymentGatewayMerchantDefinedDataList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OspGatewaySubscriptionSubscriptionPaymentGatewayOutputReference extends cdktf.ComplexObject {
@@ -1565,6 +1833,85 @@ export function ospGatewaySubscriptionSubscriptionPaymentOptionsToTerraform(stru
     wallet_instrument_id: cdktf.stringToTerraform(struct!.walletInstrumentId),
     wallet_transaction_id: cdktf.stringToTerraform(struct!.walletTransactionId),
   }
+}
+
+
+export function ospGatewaySubscriptionSubscriptionPaymentOptionsToHclTerraform(struct?: OspGatewaySubscriptionSubscriptionPaymentOptions | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credit_card_type: {
+      value: cdktf.stringToHclTerraform(struct!.creditCardType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    email_address: {
+      value: cdktf.stringToHclTerraform(struct!.emailAddress),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ext_billing_agreement_id: {
+      value: cdktf.stringToHclTerraform(struct!.extBillingAgreementId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    first_name: {
+      value: cdktf.stringToHclTerraform(struct!.firstName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    last_digits: {
+      value: cdktf.stringToHclTerraform(struct!.lastDigits),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    last_name: {
+      value: cdktf.stringToHclTerraform(struct!.lastName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    name_on_card: {
+      value: cdktf.stringToHclTerraform(struct!.nameOnCard),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    payment_method: {
+      value: cdktf.stringToHclTerraform(struct!.paymentMethod),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_expiration: {
+      value: cdktf.stringToHclTerraform(struct!.timeExpiration),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    wallet_instrument_id: {
+      value: cdktf.stringToHclTerraform(struct!.walletInstrumentId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    wallet_transaction_id: {
+      value: cdktf.stringToHclTerraform(struct!.walletTransactionId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OspGatewaySubscriptionSubscriptionPaymentOptionsOutputReference extends cdktf.ComplexObject {
@@ -1901,6 +2248,49 @@ export function ospGatewaySubscriptionSubscriptionTaxInfoToTerraform(struct?: Os
   }
 }
 
+
+export function ospGatewaySubscriptionSubscriptionTaxInfoToHclTerraform(struct?: OspGatewaySubscriptionSubscriptionTaxInfoOutputReference | OspGatewaySubscriptionSubscriptionTaxInfo): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    no_tax_reason_code: {
+      value: cdktf.stringToHclTerraform(struct!.noTaxReasonCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    no_tax_reason_code_details: {
+      value: cdktf.stringToHclTerraform(struct!.noTaxReasonCodeDetails),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tax_cnpj: {
+      value: cdktf.stringToHclTerraform(struct!.taxCnpj),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tax_payer_id: {
+      value: cdktf.stringToHclTerraform(struct!.taxPayerId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    tax_reg_number: {
+      value: cdktf.stringToHclTerraform(struct!.taxRegNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OspGatewaySubscriptionSubscriptionTaxInfoOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -2111,25 +2501,25 @@ export interface OspGatewaySubscriptionSubscription {
   readonly upgradeStateDetails?: string;
   /**
   * billing_address block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_subscription#billing_address OspGatewaySubscription#billing_address}
   */
   readonly billingAddress?: OspGatewaySubscriptionSubscriptionBillingAddress[] | cdktf.IResolvable;
   /**
   * payment_gateway block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_subscription#payment_gateway OspGatewaySubscription#payment_gateway}
   */
   readonly paymentGateway?: OspGatewaySubscriptionSubscriptionPaymentGateway;
   /**
   * payment_options block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_subscription#payment_options OspGatewaySubscription#payment_options}
   */
   readonly paymentOptions?: OspGatewaySubscriptionSubscriptionPaymentOptions[] | cdktf.IResolvable;
   /**
   * tax_info block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_subscription#tax_info OspGatewaySubscription#tax_info}
   */
   readonly taxInfo?: OspGatewaySubscriptionSubscriptionTaxInfo;
@@ -2163,6 +2553,145 @@ export function ospGatewaySubscriptionSubscriptionToTerraform(struct?: OspGatewa
     payment_options: cdktf.listMapper(ospGatewaySubscriptionSubscriptionPaymentOptionsToTerraform, true)(struct!.paymentOptions),
     tax_info: ospGatewaySubscriptionSubscriptionTaxInfoToTerraform(struct!.taxInfo),
   }
+}
+
+
+export function ospGatewaySubscriptionSubscriptionToHclTerraform(struct?: OspGatewaySubscriptionSubscriptionOutputReference | OspGatewaySubscriptionSubscription): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    account_type: {
+      value: cdktf.stringToHclTerraform(struct!.accountType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    bill_to_cust_account_id: {
+      value: cdktf.stringToHclTerraform(struct!.billToCustAccountId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    currency_code: {
+      value: cdktf.stringToHclTerraform(struct!.currencyCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    gsi_org_code: {
+      value: cdktf.stringToHclTerraform(struct!.gsiOrgCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    id: {
+      value: cdktf.stringToHclTerraform(struct!.id),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_intent_to_pay: {
+      value: cdktf.booleanToHclTerraform(struct!.isIntentToPay),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    language_code: {
+      value: cdktf.stringToHclTerraform(struct!.languageCode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    organization_id: {
+      value: cdktf.stringToHclTerraform(struct!.organizationId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    plan_type: {
+      value: cdktf.stringToHclTerraform(struct!.planType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ship_to_cust_acct_role_id: {
+      value: cdktf.stringToHclTerraform(struct!.shipToCustAcctRoleId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    ship_to_cust_acct_site_id: {
+      value: cdktf.stringToHclTerraform(struct!.shipToCustAcctSiteId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subscription_plan_number: {
+      value: cdktf.stringToHclTerraform(struct!.subscriptionPlanNumber),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_personal_to_corporate_conv: {
+      value: cdktf.stringToHclTerraform(struct!.timePersonalToCorporateConv),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_plan_upgrade: {
+      value: cdktf.stringToHclTerraform(struct!.timePlanUpgrade),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_start: {
+      value: cdktf.stringToHclTerraform(struct!.timeStart),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    upgrade_state: {
+      value: cdktf.stringToHclTerraform(struct!.upgradeState),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    upgrade_state_details: {
+      value: cdktf.stringToHclTerraform(struct!.upgradeStateDetails),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    billing_address: {
+      value: cdktf.listMapperHcl(ospGatewaySubscriptionSubscriptionBillingAddressToHclTerraform, true)(struct!.billingAddress),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OspGatewaySubscriptionSubscriptionBillingAddressList",
+    },
+    payment_gateway: {
+      value: ospGatewaySubscriptionSubscriptionPaymentGatewayToHclTerraform(struct!.paymentGateway),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OspGatewaySubscriptionSubscriptionPaymentGatewayList",
+    },
+    payment_options: {
+      value: cdktf.listMapperHcl(ospGatewaySubscriptionSubscriptionPaymentOptionsToHclTerraform, true)(struct!.paymentOptions),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OspGatewaySubscriptionSubscriptionPaymentOptionsList",
+    },
+    tax_info: {
+      value: ospGatewaySubscriptionSubscriptionTaxInfoToHclTerraform(struct!.taxInfo),
+      isBlock: true,
+      type: "list",
+      storageClassType: "OspGatewaySubscriptionSubscriptionTaxInfoList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class OspGatewaySubscriptionSubscriptionOutputReference extends cdktf.ComplexObject {
@@ -2677,6 +3206,37 @@ export function ospGatewaySubscriptionTimeoutsToTerraform(struct?: OspGatewaySub
   }
 }
 
+
+export function ospGatewaySubscriptionTimeoutsToHclTerraform(struct?: OspGatewaySubscriptionTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class OspGatewaySubscriptionTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -2789,6 +3349,20 @@ export class OspGatewaySubscription extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_osp_gateway_subscription";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a OspGatewaySubscription resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the OspGatewaySubscription to import
+  * @param importFromId The id of the existing OspGatewaySubscription that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/osp_gateway_subscription#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the OspGatewaySubscription to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_osp_gateway_subscription", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -3045,5 +3619,55 @@ export class OspGatewaySubscription extends cdktf.TerraformResource {
       subscription: ospGatewaySubscriptionSubscriptionToTerraform(this._subscription.internalValue),
       timeouts: ospGatewaySubscriptionTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      email: {
+        value: cdktf.stringToHclTerraform(this._email),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      osp_home_region: {
+        value: cdktf.stringToHclTerraform(this._ospHomeRegion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subscription_id: {
+        value: cdktf.stringToHclTerraform(this._subscriptionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      subscription: {
+        value: ospGatewaySubscriptionSubscriptionToHclTerraform(this._subscription.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "OspGatewaySubscriptionSubscriptionList",
+      },
+      timeouts: {
+        value: ospGatewaySubscriptionTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "OspGatewaySubscriptionTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

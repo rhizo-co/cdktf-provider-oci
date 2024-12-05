@@ -24,6 +24,17 @@ export function dataOciDesktopsDesktopPoolAvailabilityPolicyStartScheduleToTerra
   }
 }
 
+
+export function dataOciDesktopsDesktopPoolAvailabilityPolicyStartScheduleToHclTerraform(struct?: DataOciDesktopsDesktopPoolAvailabilityPolicyStartSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDesktopsDesktopPoolAvailabilityPolicyStartScheduleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -91,6 +102,17 @@ export function dataOciDesktopsDesktopPoolAvailabilityPolicyStopScheduleToTerraf
   }
   return {
   }
+}
+
+
+export function dataOciDesktopsDesktopPoolAvailabilityPolicyStopScheduleToHclTerraform(struct?: DataOciDesktopsDesktopPoolAvailabilityPolicyStopSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDesktopsDesktopPoolAvailabilityPolicyStopScheduleOutputReference extends cdktf.ComplexObject {
@@ -162,6 +184,17 @@ export function dataOciDesktopsDesktopPoolAvailabilityPolicyToTerraform(struct?:
   }
 }
 
+
+export function dataOciDesktopsDesktopPoolAvailabilityPolicyToHclTerraform(struct?: DataOciDesktopsDesktopPoolAvailabilityPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDesktopsDesktopPoolAvailabilityPolicyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -231,6 +264,17 @@ export function dataOciDesktopsDesktopPoolDevicePolicyToTerraform(struct?: DataO
   }
   return {
   }
+}
+
+
+export function dataOciDesktopsDesktopPoolDevicePolicyToHclTerraform(struct?: DataOciDesktopsDesktopPoolDevicePolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDesktopsDesktopPoolDevicePolicyOutputReference extends cdktf.ComplexObject {
@@ -327,6 +371,17 @@ export function dataOciDesktopsDesktopPoolImageToTerraform(struct?: DataOciDeskt
   }
 }
 
+
+export function dataOciDesktopsDesktopPoolImageToHclTerraform(struct?: DataOciDesktopsDesktopPoolImage): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDesktopsDesktopPoolImageOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -401,6 +456,17 @@ export function dataOciDesktopsDesktopPoolNetworkConfigurationToTerraform(struct
   }
 }
 
+
+export function dataOciDesktopsDesktopPoolNetworkConfigurationToHclTerraform(struct?: DataOciDesktopsDesktopPoolNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDesktopsDesktopPoolNetworkConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -468,6 +534,17 @@ export function dataOciDesktopsDesktopPoolPrivateAccessDetailsToTerraform(struct
   }
   return {
   }
+}
+
+
+export function dataOciDesktopsDesktopPoolPrivateAccessDetailsToHclTerraform(struct?: DataOciDesktopsDesktopPoolPrivateAccessDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDesktopsDesktopPoolPrivateAccessDetailsOutputReference extends cdktf.ComplexObject {
@@ -554,6 +631,17 @@ export function dataOciDesktopsDesktopPoolSessionLifecycleActionsDisconnectToTer
   }
 }
 
+
+export function dataOciDesktopsDesktopPoolSessionLifecycleActionsDisconnectToHclTerraform(struct?: DataOciDesktopsDesktopPoolSessionLifecycleActionsDisconnect): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDesktopsDesktopPoolSessionLifecycleActionsDisconnectOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -621,6 +709,17 @@ export function dataOciDesktopsDesktopPoolSessionLifecycleActionsInactivityToTer
   }
   return {
   }
+}
+
+
+export function dataOciDesktopsDesktopPoolSessionLifecycleActionsInactivityToHclTerraform(struct?: DataOciDesktopsDesktopPoolSessionLifecycleActionsInactivity): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDesktopsDesktopPoolSessionLifecycleActionsInactivityOutputReference extends cdktf.ComplexObject {
@@ -692,6 +791,17 @@ export function dataOciDesktopsDesktopPoolSessionLifecycleActionsToTerraform(str
   }
 }
 
+
+export function dataOciDesktopsDesktopPoolSessionLifecycleActionsToHclTerraform(struct?: DataOciDesktopsDesktopPoolSessionLifecycleActions): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciDesktopsDesktopPoolSessionLifecycleActionsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -761,6 +871,17 @@ export function dataOciDesktopsDesktopPoolShapeConfigToTerraform(struct?: DataOc
   }
   return {
   }
+}
+
+
+export function dataOciDesktopsDesktopPoolShapeConfigToHclTerraform(struct?: DataOciDesktopsDesktopPoolShapeConfig): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciDesktopsDesktopPoolShapeConfigOutputReference extends cdktf.ComplexObject {
@@ -835,6 +956,20 @@ export class DataOciDesktopsDesktopPool extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_desktops_desktop_pool";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciDesktopsDesktopPool resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciDesktopsDesktopPool to import
+  * @param importFromId The id of the existing DataOciDesktopsDesktopPool that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/desktops_desktop_pool#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciDesktopsDesktopPool to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_desktops_desktop_pool", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1045,5 +1180,19 @@ export class DataOciDesktopsDesktopPool extends cdktf.TerraformDataSource {
     return {
       desktop_pool_id: cdktf.stringToTerraform(this._desktopPoolId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      desktop_pool_id: {
+        value: cdktf.stringToHclTerraform(this._desktopPoolId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

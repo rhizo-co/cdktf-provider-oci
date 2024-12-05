@@ -36,19 +36,19 @@ export interface AiAnomalyDetectionDetectAnomalyJobConfig extends cdktf.Terrafor
   readonly sensitivity?: number;
   /**
   * input_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_detect_anomaly_job#input_details AiAnomalyDetectionDetectAnomalyJob#input_details}
   */
   readonly inputDetails: AiAnomalyDetectionDetectAnomalyJobInputDetails;
   /**
   * output_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_detect_anomaly_job#output_details AiAnomalyDetectionDetectAnomalyJob#output_details}
   */
   readonly outputDetails: AiAnomalyDetectionDetectAnomalyJobOutputDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_detect_anomaly_job#timeouts AiAnomalyDetectionDetectAnomalyJob#timeouts}
   */
   readonly timeouts?: AiAnomalyDetectionDetectAnomalyJobTimeouts;
@@ -73,6 +73,31 @@ export function aiAnomalyDetectionDetectAnomalyJobInputDetailsDataToTerraform(st
     timestamp: cdktf.stringToTerraform(struct!.timestamp),
     values: cdktf.listMapper(cdktf.numberToTerraform, false)(struct!.values),
   }
+}
+
+
+export function aiAnomalyDetectionDetectAnomalyJobInputDetailsDataToHclTerraform(struct?: AiAnomalyDetectionDetectAnomalyJobInputDetailsData | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    timestamp: {
+      value: cdktf.stringToHclTerraform(struct!.timestamp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    values: {
+      value: cdktf.listMapperHcl(cdktf.numberToHclTerraform, false)(struct!.values),
+      isBlock: false,
+      type: "list",
+      storageClassType: "numberList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiAnomalyDetectionDetectAnomalyJobInputDetailsDataOutputReference extends cdktf.ComplexObject {
@@ -202,6 +227,37 @@ export function aiAnomalyDetectionDetectAnomalyJobInputDetailsObjectLocationsToT
     namespace: cdktf.stringToTerraform(struct!.namespace),
     object: cdktf.stringToTerraform(struct!.object),
   }
+}
+
+
+export function aiAnomalyDetectionDetectAnomalyJobInputDetailsObjectLocationsToHclTerraform(struct?: AiAnomalyDetectionDetectAnomalyJobInputDetailsObjectLocations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    object: {
+      value: cdktf.stringToHclTerraform(struct!.object),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiAnomalyDetectionDetectAnomalyJobInputDetailsObjectLocationsOutputReference extends cdktf.ComplexObject {
@@ -347,13 +403,13 @@ export interface AiAnomalyDetectionDetectAnomalyJobInputDetails {
   readonly signalNames?: string[];
   /**
   * data block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_detect_anomaly_job#data AiAnomalyDetectionDetectAnomalyJob#data}
   */
   readonly data?: AiAnomalyDetectionDetectAnomalyJobInputDetailsData[] | cdktf.IResolvable;
   /**
   * object_locations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_detect_anomaly_job#object_locations AiAnomalyDetectionDetectAnomalyJob#object_locations}
   */
   readonly objectLocations?: AiAnomalyDetectionDetectAnomalyJobInputDetailsObjectLocations[] | cdktf.IResolvable;
@@ -372,6 +428,55 @@ export function aiAnomalyDetectionDetectAnomalyJobInputDetailsToTerraform(struct
     data: cdktf.listMapper(aiAnomalyDetectionDetectAnomalyJobInputDetailsDataToTerraform, true)(struct!.data),
     object_locations: cdktf.listMapper(aiAnomalyDetectionDetectAnomalyJobInputDetailsObjectLocationsToTerraform, true)(struct!.objectLocations),
   }
+}
+
+
+export function aiAnomalyDetectionDetectAnomalyJobInputDetailsToHclTerraform(struct?: AiAnomalyDetectionDetectAnomalyJobInputDetailsOutputReference | AiAnomalyDetectionDetectAnomalyJobInputDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    content: {
+      value: cdktf.stringToHclTerraform(struct!.content),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    content_type: {
+      value: cdktf.stringToHclTerraform(struct!.contentType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    input_type: {
+      value: cdktf.stringToHclTerraform(struct!.inputType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    signal_names: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.signalNames),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    data: {
+      value: cdktf.listMapperHcl(aiAnomalyDetectionDetectAnomalyJobInputDetailsDataToHclTerraform, true)(struct!.data),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiAnomalyDetectionDetectAnomalyJobInputDetailsDataList",
+    },
+    object_locations: {
+      value: cdktf.listMapperHcl(aiAnomalyDetectionDetectAnomalyJobInputDetailsObjectLocationsToHclTerraform, true)(struct!.objectLocations),
+      isBlock: true,
+      type: "list",
+      storageClassType: "AiAnomalyDetectionDetectAnomalyJobInputDetailsObjectLocationsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AiAnomalyDetectionDetectAnomalyJobInputDetailsOutputReference extends cdktf.ComplexObject {
@@ -566,6 +671,43 @@ export function aiAnomalyDetectionDetectAnomalyJobOutputDetailsToTerraform(struc
   }
 }
 
+
+export function aiAnomalyDetectionDetectAnomalyJobOutputDetailsToHclTerraform(struct?: AiAnomalyDetectionDetectAnomalyJobOutputDetailsOutputReference | AiAnomalyDetectionDetectAnomalyJobOutputDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    output_type: {
+      value: cdktf.stringToHclTerraform(struct!.outputType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    prefix: {
+      value: cdktf.stringToHclTerraform(struct!.prefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiAnomalyDetectionDetectAnomalyJobOutputDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -698,6 +840,37 @@ export function aiAnomalyDetectionDetectAnomalyJobTimeoutsToTerraform(struct?: A
   }
 }
 
+
+export function aiAnomalyDetectionDetectAnomalyJobTimeoutsToHclTerraform(struct?: AiAnomalyDetectionDetectAnomalyJobTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AiAnomalyDetectionDetectAnomalyJobTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -810,6 +983,20 @@ export class AiAnomalyDetectionDetectAnomalyJob extends cdktf.TerraformResource 
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ai_anomaly_detection_detect_anomaly_job";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a AiAnomalyDetectionDetectAnomalyJob resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the AiAnomalyDetectionDetectAnomalyJob to import
+  * @param importFromId The id of the existing AiAnomalyDetectionDetectAnomalyJob that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/ai_anomaly_detection_detect_anomaly_job#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the AiAnomalyDetectionDetectAnomalyJob to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_anomaly_detection_detect_anomaly_job", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1049,5 +1236,67 @@ export class AiAnomalyDetectionDetectAnomalyJob extends cdktf.TerraformResource 
       output_details: aiAnomalyDetectionDetectAnomalyJobOutputDetailsToTerraform(this._outputDetails.internalValue),
       timeouts: aiAnomalyDetectionDetectAnomalyJobTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      model_id: {
+        value: cdktf.stringToHclTerraform(this._modelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      sensitivity: {
+        value: cdktf.numberToHclTerraform(this._sensitivity),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      input_details: {
+        value: aiAnomalyDetectionDetectAnomalyJobInputDetailsToHclTerraform(this._inputDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiAnomalyDetectionDetectAnomalyJobInputDetailsList",
+      },
+      output_details: {
+        value: aiAnomalyDetectionDetectAnomalyJobOutputDetailsToHclTerraform(this._outputDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AiAnomalyDetectionDetectAnomalyJobOutputDetailsList",
+      },
+      timeouts: {
+        value: aiAnomalyDetectionDetectAnomalyJobTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "AiAnomalyDetectionDetectAnomalyJobTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

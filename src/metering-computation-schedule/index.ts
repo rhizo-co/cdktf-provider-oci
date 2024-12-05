@@ -52,19 +52,19 @@ export interface MeteringComputationScheduleConfig extends cdktf.TerraformMetaAr
   readonly timeScheduled: string;
   /**
   * query_properties block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_schedule#query_properties MeteringComputationSchedule#query_properties}
   */
   readonly queryProperties?: MeteringComputationScheduleQueryProperties;
   /**
   * result_location block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_schedule#result_location MeteringComputationSchedule#result_location}
   */
   readonly resultLocation: MeteringComputationScheduleResultLocation;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_schedule#timeouts MeteringComputationSchedule#timeouts}
   */
   readonly timeouts?: MeteringComputationScheduleTimeouts;
@@ -99,6 +99,43 @@ export function meteringComputationScheduleQueryPropertiesDateRangeToTerraform(s
     time_usage_ended: cdktf.stringToTerraform(struct!.timeUsageEnded),
     time_usage_started: cdktf.stringToTerraform(struct!.timeUsageStarted),
   }
+}
+
+
+export function meteringComputationScheduleQueryPropertiesDateRangeToHclTerraform(struct?: MeteringComputationScheduleQueryPropertiesDateRangeOutputReference | MeteringComputationScheduleQueryPropertiesDateRange): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    date_range_type: {
+      value: cdktf.stringToHclTerraform(struct!.dateRangeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    dynamic_date_range_type: {
+      value: cdktf.stringToHclTerraform(struct!.dynamicDateRangeType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_usage_ended: {
+      value: cdktf.stringToHclTerraform(struct!.timeUsageEnded),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    time_usage_started: {
+      value: cdktf.stringToHclTerraform(struct!.timeUsageStarted),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MeteringComputationScheduleQueryPropertiesDateRangeOutputReference extends cdktf.ComplexObject {
@@ -237,6 +274,37 @@ export function meteringComputationScheduleQueryPropertiesGroupByTagToTerraform(
     namespace: cdktf.stringToTerraform(struct!.namespace),
     value: cdktf.stringToTerraform(struct!.value),
   }
+}
+
+
+export function meteringComputationScheduleQueryPropertiesGroupByTagToHclTerraform(struct?: MeteringComputationScheduleQueryPropertiesGroupByTag | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    key: {
+      value: cdktf.stringToHclTerraform(struct!.key),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MeteringComputationScheduleQueryPropertiesGroupByTagOutputReference extends cdktf.ComplexObject {
@@ -390,13 +458,13 @@ export interface MeteringComputationScheduleQueryProperties {
   readonly queryType?: string;
   /**
   * date_range block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_schedule#date_range MeteringComputationSchedule#date_range}
   */
   readonly dateRange: MeteringComputationScheduleQueryPropertiesDateRange;
   /**
   * group_by_tag block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_schedule#group_by_tag MeteringComputationSchedule#group_by_tag}
   */
   readonly groupByTag?: MeteringComputationScheduleQueryPropertiesGroupByTag[] | cdktf.IResolvable;
@@ -417,6 +485,67 @@ export function meteringComputationScheduleQueryPropertiesToTerraform(struct?: M
     date_range: meteringComputationScheduleQueryPropertiesDateRangeToTerraform(struct!.dateRange),
     group_by_tag: cdktf.listMapper(meteringComputationScheduleQueryPropertiesGroupByTagToTerraform, true)(struct!.groupByTag),
   }
+}
+
+
+export function meteringComputationScheduleQueryPropertiesToHclTerraform(struct?: MeteringComputationScheduleQueryPropertiesOutputReference | MeteringComputationScheduleQueryProperties): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    compartment_depth: {
+      value: cdktf.numberToHclTerraform(struct!.compartmentDepth),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    filter: {
+      value: cdktf.stringToHclTerraform(struct!.filter),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    granularity: {
+      value: cdktf.stringToHclTerraform(struct!.granularity),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    group_by: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.groupBy),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    is_aggregate_by_time: {
+      value: cdktf.booleanToHclTerraform(struct!.isAggregateByTime),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    query_type: {
+      value: cdktf.stringToHclTerraform(struct!.queryType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    date_range: {
+      value: meteringComputationScheduleQueryPropertiesDateRangeToHclTerraform(struct!.dateRange),
+      isBlock: true,
+      type: "list",
+      storageClassType: "MeteringComputationScheduleQueryPropertiesDateRangeList",
+    },
+    group_by_tag: {
+      value: cdktf.listMapperHcl(meteringComputationScheduleQueryPropertiesGroupByTagToHclTerraform, true)(struct!.groupByTag),
+      isBlock: true,
+      type: "list",
+      storageClassType: "MeteringComputationScheduleQueryPropertiesGroupByTagList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class MeteringComputationScheduleQueryPropertiesOutputReference extends cdktf.ComplexObject {
@@ -647,6 +776,43 @@ export function meteringComputationScheduleResultLocationToTerraform(struct?: Me
   }
 }
 
+
+export function meteringComputationScheduleResultLocationToHclTerraform(struct?: MeteringComputationScheduleResultLocationOutputReference | MeteringComputationScheduleResultLocation): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    bucket: {
+      value: cdktf.stringToHclTerraform(struct!.bucket),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    location_type: {
+      value: cdktf.stringToHclTerraform(struct!.locationType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    namespace: {
+      value: cdktf.stringToHclTerraform(struct!.namespace),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    region: {
+      value: cdktf.stringToHclTerraform(struct!.region),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MeteringComputationScheduleResultLocationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -776,6 +942,37 @@ export function meteringComputationScheduleTimeoutsToTerraform(struct?: Metering
   }
 }
 
+
+export function meteringComputationScheduleTimeoutsToHclTerraform(struct?: MeteringComputationScheduleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class MeteringComputationScheduleTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -888,6 +1085,20 @@ export class MeteringComputationSchedule extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_metering_computation_schedule";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a MeteringComputationSchedule resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the MeteringComputationSchedule to import
+  * @param importFromId The id of the existing MeteringComputationSchedule that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/metering_computation_schedule#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the MeteringComputationSchedule to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_metering_computation_schedule", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1169,5 +1380,91 @@ export class MeteringComputationSchedule extends cdktf.TerraformResource {
       result_location: meteringComputationScheduleResultLocationToTerraform(this._resultLocation.internalValue),
       timeouts: meteringComputationScheduleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      name: {
+        value: cdktf.stringToHclTerraform(this._name),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      output_file_format: {
+        value: cdktf.stringToHclTerraform(this._outputFileFormat),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      saved_report_id: {
+        value: cdktf.stringToHclTerraform(this._savedReportId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      schedule_recurrences: {
+        value: cdktf.stringToHclTerraform(this._scheduleRecurrences),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      time_scheduled: {
+        value: cdktf.stringToHclTerraform(this._timeScheduled),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      query_properties: {
+        value: meteringComputationScheduleQueryPropertiesToHclTerraform(this._queryProperties.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MeteringComputationScheduleQueryPropertiesList",
+      },
+      result_location: {
+        value: meteringComputationScheduleResultLocationToHclTerraform(this._resultLocation.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "MeteringComputationScheduleResultLocationList",
+      },
+      timeouts: {
+        value: meteringComputationScheduleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "MeteringComputationScheduleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

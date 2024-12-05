@@ -68,49 +68,49 @@ export interface PsqlDbSystemConfig extends cdktf.TerraformMetaArguments {
   readonly systemType?: string;
   /**
   * credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#credentials PsqlDbSystem#credentials}
   */
   readonly credentials?: PsqlDbSystemCredentials;
   /**
   * instances_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#instances_details PsqlDbSystem#instances_details}
   */
   readonly instancesDetails?: PsqlDbSystemInstancesDetails[] | cdktf.IResolvable;
   /**
   * management_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#management_policy PsqlDbSystem#management_policy}
   */
   readonly managementPolicy?: PsqlDbSystemManagementPolicy;
   /**
   * network_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#network_details PsqlDbSystem#network_details}
   */
   readonly networkDetails: PsqlDbSystemNetworkDetails;
   /**
   * patch_operations block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#patch_operations PsqlDbSystem#patch_operations}
   */
   readonly patchOperations?: PsqlDbSystemPatchOperations[] | cdktf.IResolvable;
   /**
   * source block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#source PsqlDbSystem#source}
   */
   readonly source?: PsqlDbSystemSource;
   /**
   * storage_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#storage_details PsqlDbSystem#storage_details}
   */
   readonly storageDetails: PsqlDbSystemStorageDetails;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#timeouts PsqlDbSystem#timeouts}
   */
   readonly timeouts?: PsqlDbSystemTimeouts;
@@ -125,6 +125,17 @@ export function psqlDbSystemInstancesToTerraform(struct?: PsqlDbSystemInstances)
   }
   return {
   }
+}
+
+
+export function psqlDbSystemInstancesToHclTerraform(struct?: PsqlDbSystemInstances): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class PsqlDbSystemInstancesOutputReference extends cdktf.ComplexObject {
@@ -246,6 +257,43 @@ export function psqlDbSystemCredentialsPasswordDetailsToTerraform(struct?: PsqlD
   }
 }
 
+
+export function psqlDbSystemCredentialsPasswordDetailsToHclTerraform(struct?: PsqlDbSystemCredentialsPasswordDetailsOutputReference | PsqlDbSystemCredentialsPasswordDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_type: {
+      value: cdktf.stringToHclTerraform(struct!.passwordType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_version: {
+      value: cdktf.stringToHclTerraform(struct!.secretVersion),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class PsqlDbSystemCredentialsPasswordDetailsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -364,7 +412,7 @@ export interface PsqlDbSystemCredentials {
   readonly username: string;
   /**
   * password_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#password_details PsqlDbSystem#password_details}
   */
   readonly passwordDetails: PsqlDbSystemCredentialsPasswordDetails;
@@ -379,6 +427,31 @@ export function psqlDbSystemCredentialsToTerraform(struct?: PsqlDbSystemCredenti
     username: cdktf.stringToTerraform(struct!.username),
     password_details: psqlDbSystemCredentialsPasswordDetailsToTerraform(struct!.passwordDetails),
   }
+}
+
+
+export function psqlDbSystemCredentialsToHclTerraform(struct?: PsqlDbSystemCredentialsOutputReference | PsqlDbSystemCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_details: {
+      value: psqlDbSystemCredentialsPasswordDetailsToHclTerraform(struct!.passwordDetails),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PsqlDbSystemCredentialsPasswordDetailsList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class PsqlDbSystemCredentialsOutputReference extends cdktf.ComplexObject {
@@ -470,6 +543,37 @@ export function psqlDbSystemInstancesDetailsToTerraform(struct?: PsqlDbSystemIns
     display_name: cdktf.stringToTerraform(struct!.displayName),
     private_ip: cdktf.stringToTerraform(struct!.privateIp),
   }
+}
+
+
+export function psqlDbSystemInstancesDetailsToHclTerraform(struct?: PsqlDbSystemInstancesDetails | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    description: {
+      value: cdktf.stringToHclTerraform(struct!.description),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    display_name: {
+      value: cdktf.stringToHclTerraform(struct!.displayName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.privateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class PsqlDbSystemInstancesDetailsOutputReference extends cdktf.ComplexObject {
@@ -633,6 +737,49 @@ export function psqlDbSystemManagementPolicyBackupPolicyToTerraform(struct?: Psq
   }
 }
 
+
+export function psqlDbSystemManagementPolicyBackupPolicyToHclTerraform(struct?: PsqlDbSystemManagementPolicyBackupPolicyOutputReference | PsqlDbSystemManagementPolicyBackupPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    backup_start: {
+      value: cdktf.stringToHclTerraform(struct!.backupStart),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    days_of_the_month: {
+      value: cdktf.listMapperHcl(cdktf.numberToHclTerraform, false)(struct!.daysOfTheMonth),
+      isBlock: false,
+      type: "list",
+      storageClassType: "numberList",
+    },
+    days_of_the_week: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.daysOfTheWeek),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    kind: {
+      value: cdktf.stringToHclTerraform(struct!.kind),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    retention_days: {
+      value: cdktf.numberToHclTerraform(struct!.retentionDays),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class PsqlDbSystemManagementPolicyBackupPolicyOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -776,7 +923,7 @@ export interface PsqlDbSystemManagementPolicy {
   readonly maintenanceWindowStart?: string;
   /**
   * backup_policy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#backup_policy PsqlDbSystem#backup_policy}
   */
   readonly backupPolicy?: PsqlDbSystemManagementPolicyBackupPolicy;
@@ -791,6 +938,31 @@ export function psqlDbSystemManagementPolicyToTerraform(struct?: PsqlDbSystemMan
     maintenance_window_start: cdktf.stringToTerraform(struct!.maintenanceWindowStart),
     backup_policy: psqlDbSystemManagementPolicyBackupPolicyToTerraform(struct!.backupPolicy),
   }
+}
+
+
+export function psqlDbSystemManagementPolicyToHclTerraform(struct?: PsqlDbSystemManagementPolicyOutputReference | PsqlDbSystemManagementPolicy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    maintenance_window_start: {
+      value: cdktf.stringToHclTerraform(struct!.maintenanceWindowStart),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    backup_policy: {
+      value: psqlDbSystemManagementPolicyBackupPolicyToHclTerraform(struct!.backupPolicy),
+      isBlock: true,
+      type: "list",
+      storageClassType: "PsqlDbSystemManagementPolicyBackupPolicyList",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class PsqlDbSystemManagementPolicyOutputReference extends cdktf.ComplexObject {
@@ -888,6 +1060,37 @@ export function psqlDbSystemNetworkDetailsToTerraform(struct?: PsqlDbSystemNetwo
     primary_db_endpoint_private_ip: cdktf.stringToTerraform(struct!.primaryDbEndpointPrivateIp),
     subnet_id: cdktf.stringToTerraform(struct!.subnetId),
   }
+}
+
+
+export function psqlDbSystemNetworkDetailsToHclTerraform(struct?: PsqlDbSystemNetworkDetailsOutputReference | PsqlDbSystemNetworkDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    primary_db_endpoint_private_ip: {
+      value: cdktf.stringToHclTerraform(struct!.primaryDbEndpointPrivateIp),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class PsqlDbSystemNetworkDetailsOutputReference extends cdktf.ComplexObject {
@@ -1019,6 +1222,55 @@ export function psqlDbSystemPatchOperationsToTerraform(struct?: PsqlDbSystemPatc
     selection: cdktf.stringToTerraform(struct!.selection),
     value: cdktf.hashMapper(cdktf.stringToTerraform)(struct!.value),
   }
+}
+
+
+export function psqlDbSystemPatchOperationsToHclTerraform(struct?: PsqlDbSystemPatchOperations | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    from: {
+      value: cdktf.stringToHclTerraform(struct!.from),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    operation: {
+      value: cdktf.stringToHclTerraform(struct!.operation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    position: {
+      value: cdktf.stringToHclTerraform(struct!.position),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    selected_item: {
+      value: cdktf.stringToHclTerraform(struct!.selectedItem),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    selection: {
+      value: cdktf.stringToHclTerraform(struct!.selection),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.value),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class PsqlDbSystemPatchOperationsOutputReference extends cdktf.ComplexObject {
@@ -1232,6 +1484,37 @@ export function psqlDbSystemSourceToTerraform(struct?: PsqlDbSystemSourceOutputR
   }
 }
 
+
+export function psqlDbSystemSourceToHclTerraform(struct?: PsqlDbSystemSourceOutputReference | PsqlDbSystemSource): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    backup_id: {
+      value: cdktf.stringToHclTerraform(struct!.backupId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_having_restore_config_overrides: {
+      value: cdktf.booleanToHclTerraform(struct!.isHavingRestoreConfigOverrides),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    source_type: {
+      value: cdktf.stringToHclTerraform(struct!.sourceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class PsqlDbSystemSourceOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -1351,6 +1634,43 @@ export function psqlDbSystemStorageDetailsToTerraform(struct?: PsqlDbSystemStora
     is_regionally_durable: cdktf.booleanToTerraform(struct!.isRegionallyDurable),
     system_type: cdktf.stringToTerraform(struct!.systemType),
   }
+}
+
+
+export function psqlDbSystemStorageDetailsToHclTerraform(struct?: PsqlDbSystemStorageDetailsOutputReference | PsqlDbSystemStorageDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    availability_domain: {
+      value: cdktf.stringToHclTerraform(struct!.availabilityDomain),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    iops: {
+      value: cdktf.stringToHclTerraform(struct!.iops),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_regionally_durable: {
+      value: cdktf.booleanToHclTerraform(struct!.isRegionallyDurable),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    system_type: {
+      value: cdktf.stringToHclTerraform(struct!.systemType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class PsqlDbSystemStorageDetailsOutputReference extends cdktf.ComplexObject {
@@ -1488,6 +1808,37 @@ export function psqlDbSystemTimeoutsToTerraform(struct?: PsqlDbSystemTimeouts | 
   }
 }
 
+
+export function psqlDbSystemTimeoutsToHclTerraform(struct?: PsqlDbSystemTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class PsqlDbSystemTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -1600,6 +1951,20 @@ export class PsqlDbSystem extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_psql_db_system";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a PsqlDbSystem resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the PsqlDbSystem to import
+  * @param importFromId The id of the existing PsqlDbSystem that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/psql_db_system#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the PsqlDbSystem to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_psql_db_system", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -2056,5 +2421,145 @@ export class PsqlDbSystem extends cdktf.TerraformResource {
       storage_details: psqlDbSystemStorageDetailsToTerraform(this._storageDetails.internalValue),
       timeouts: psqlDbSystemTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      apply_config: {
+        value: cdktf.stringToHclTerraform(this._applyConfig),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      config_id: {
+        value: cdktf.stringToHclTerraform(this._configId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      db_version: {
+        value: cdktf.stringToHclTerraform(this._dbVersion),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      description: {
+        value: cdktf.stringToHclTerraform(this._description),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      instance_count: {
+        value: cdktf.numberToHclTerraform(this._instanceCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      instance_memory_size_in_gbs: {
+        value: cdktf.numberToHclTerraform(this._instanceMemorySizeInGbs),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      instance_ocpu_count: {
+        value: cdktf.numberToHclTerraform(this._instanceOcpuCount),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      shape: {
+        value: cdktf.stringToHclTerraform(this._shape),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      system_type: {
+        value: cdktf.stringToHclTerraform(this._systemType),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      credentials: {
+        value: psqlDbSystemCredentialsToHclTerraform(this._credentials.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PsqlDbSystemCredentialsList",
+      },
+      instances_details: {
+        value: cdktf.listMapperHcl(psqlDbSystemInstancesDetailsToHclTerraform, true)(this._instancesDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PsqlDbSystemInstancesDetailsList",
+      },
+      management_policy: {
+        value: psqlDbSystemManagementPolicyToHclTerraform(this._managementPolicy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PsqlDbSystemManagementPolicyList",
+      },
+      network_details: {
+        value: psqlDbSystemNetworkDetailsToHclTerraform(this._networkDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PsqlDbSystemNetworkDetailsList",
+      },
+      patch_operations: {
+        value: cdktf.listMapperHcl(psqlDbSystemPatchOperationsToHclTerraform, true)(this._patchOperations.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PsqlDbSystemPatchOperationsList",
+      },
+      source: {
+        value: psqlDbSystemSourceToHclTerraform(this._source.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PsqlDbSystemSourceList",
+      },
+      storage_details: {
+        value: psqlDbSystemStorageDetailsToHclTerraform(this._storageDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "PsqlDbSystemStorageDetailsList",
+      },
+      timeouts: {
+        value: psqlDbSystemTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "PsqlDbSystemTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

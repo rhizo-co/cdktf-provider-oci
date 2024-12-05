@@ -56,37 +56,37 @@ export interface FleetSoftwareUpdateFsuCycleConfig extends cdktf.TerraformMetaAr
   readonly type: string;
   /**
   * apply_action_schedule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_software_update_fsu_cycle#apply_action_schedule FleetSoftwareUpdateFsuCycle#apply_action_schedule}
   */
   readonly applyActionSchedule?: FleetSoftwareUpdateFsuCycleApplyActionSchedule;
   /**
   * batching_strategy block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_software_update_fsu_cycle#batching_strategy FleetSoftwareUpdateFsuCycle#batching_strategy}
   */
   readonly batchingStrategy?: FleetSoftwareUpdateFsuCycleBatchingStrategy;
   /**
   * diagnostics_collection block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_software_update_fsu_cycle#diagnostics_collection FleetSoftwareUpdateFsuCycle#diagnostics_collection}
   */
   readonly diagnosticsCollection?: FleetSoftwareUpdateFsuCycleDiagnosticsCollection;
   /**
   * goal_version_details block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_software_update_fsu_cycle#goal_version_details FleetSoftwareUpdateFsuCycle#goal_version_details}
   */
   readonly goalVersionDetails: FleetSoftwareUpdateFsuCycleGoalVersionDetails;
   /**
   * stage_action_schedule block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_software_update_fsu_cycle#stage_action_schedule FleetSoftwareUpdateFsuCycle#stage_action_schedule}
   */
   readonly stageActionSchedule?: FleetSoftwareUpdateFsuCycleStageActionSchedule;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_software_update_fsu_cycle#timeouts FleetSoftwareUpdateFsuCycle#timeouts}
   */
   readonly timeouts?: FleetSoftwareUpdateFsuCycleTimeouts;
@@ -101,6 +101,17 @@ export function fleetSoftwareUpdateFsuCycleNextActionToExecuteToTerraform(struct
   }
   return {
   }
+}
+
+
+export function fleetSoftwareUpdateFsuCycleNextActionToExecuteToHclTerraform(struct?: FleetSoftwareUpdateFsuCycleNextActionToExecute): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class FleetSoftwareUpdateFsuCycleNextActionToExecuteOutputReference extends cdktf.ComplexObject {
@@ -180,6 +191,31 @@ export function fleetSoftwareUpdateFsuCycleApplyActionScheduleToTerraform(struct
     time_to_start: cdktf.stringToTerraform(struct!.timeToStart),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function fleetSoftwareUpdateFsuCycleApplyActionScheduleToHclTerraform(struct?: FleetSoftwareUpdateFsuCycleApplyActionScheduleOutputReference | FleetSoftwareUpdateFsuCycleApplyActionSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    time_to_start: {
+      value: cdktf.stringToHclTerraform(struct!.timeToStart),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetSoftwareUpdateFsuCycleApplyActionScheduleOutputReference extends cdktf.ComplexObject {
@@ -276,6 +312,43 @@ export function fleetSoftwareUpdateFsuCycleBatchingStrategyToTerraform(struct?: 
     percentage: cdktf.numberToTerraform(struct!.percentage),
     type: cdktf.stringToTerraform(struct!.type),
   }
+}
+
+
+export function fleetSoftwareUpdateFsuCycleBatchingStrategyToHclTerraform(struct?: FleetSoftwareUpdateFsuCycleBatchingStrategyOutputReference | FleetSoftwareUpdateFsuCycleBatchingStrategy): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    is_force_rolling: {
+      value: cdktf.booleanToHclTerraform(struct!.isForceRolling),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    is_wait_for_batch_resume: {
+      value: cdktf.booleanToHclTerraform(struct!.isWaitForBatchResume),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    percentage: {
+      value: cdktf.numberToHclTerraform(struct!.percentage),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetSoftwareUpdateFsuCycleBatchingStrategyOutputReference extends cdktf.ComplexObject {
@@ -409,6 +482,25 @@ export function fleetSoftwareUpdateFsuCycleDiagnosticsCollectionToTerraform(stru
   }
 }
 
+
+export function fleetSoftwareUpdateFsuCycleDiagnosticsCollectionToHclTerraform(struct?: FleetSoftwareUpdateFsuCycleDiagnosticsCollectionOutputReference | FleetSoftwareUpdateFsuCycleDiagnosticsCollection): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    log_collection_mode: {
+      value: cdktf.stringToHclTerraform(struct!.logCollectionMode),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FleetSoftwareUpdateFsuCycleDiagnosticsCollectionOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -492,6 +584,49 @@ export function fleetSoftwareUpdateFsuCycleGoalVersionDetailsToTerraform(struct?
     type: cdktf.stringToTerraform(struct!.type),
     version: cdktf.stringToTerraform(struct!.version),
   }
+}
+
+
+export function fleetSoftwareUpdateFsuCycleGoalVersionDetailsToHclTerraform(struct?: FleetSoftwareUpdateFsuCycleGoalVersionDetailsOutputReference | FleetSoftwareUpdateFsuCycleGoalVersionDetails): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    home_policy: {
+      value: cdktf.stringToHclTerraform(struct!.homePolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    new_home_prefix: {
+      value: cdktf.stringToHclTerraform(struct!.newHomePrefix),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    software_image_id: {
+      value: cdktf.stringToHclTerraform(struct!.softwareImageId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    version: {
+      value: cdktf.stringToHclTerraform(struct!.version),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetSoftwareUpdateFsuCycleGoalVersionDetailsOutputReference extends cdktf.ComplexObject {
@@ -649,6 +784,31 @@ export function fleetSoftwareUpdateFsuCycleStageActionScheduleToTerraform(struct
   }
 }
 
+
+export function fleetSoftwareUpdateFsuCycleStageActionScheduleToHclTerraform(struct?: FleetSoftwareUpdateFsuCycleStageActionScheduleOutputReference | FleetSoftwareUpdateFsuCycleStageActionSchedule): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    time_to_start: {
+      value: cdktf.stringToHclTerraform(struct!.timeToStart),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    type: {
+      value: cdktf.stringToHclTerraform(struct!.type),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class FleetSoftwareUpdateFsuCycleStageActionScheduleOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -738,6 +898,37 @@ export function fleetSoftwareUpdateFsuCycleTimeoutsToTerraform(struct?: FleetSof
     delete: cdktf.stringToTerraform(struct!.delete),
     update: cdktf.stringToTerraform(struct!.update),
   }
+}
+
+
+export function fleetSoftwareUpdateFsuCycleTimeoutsToHclTerraform(struct?: FleetSoftwareUpdateFsuCycleTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class FleetSoftwareUpdateFsuCycleTimeoutsOutputReference extends cdktf.ComplexObject {
@@ -852,6 +1043,20 @@ export class FleetSoftwareUpdateFsuCycle extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_fleet_software_update_fsu_cycle";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a FleetSoftwareUpdateFsuCycle resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the FleetSoftwareUpdateFsuCycle to import
+  * @param importFromId The id of the existing FleetSoftwareUpdateFsuCycle that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/fleet_software_update_fsu_cycle#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the FleetSoftwareUpdateFsuCycle to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_fleet_software_update_fsu_cycle", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1239,5 +1444,115 @@ export class FleetSoftwareUpdateFsuCycle extends cdktf.TerraformResource {
       stage_action_schedule: fleetSoftwareUpdateFsuCycleStageActionScheduleToTerraform(this._stageActionSchedule.internalValue),
       timeouts: fleetSoftwareUpdateFsuCycleTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      fsu_collection_id: {
+        value: cdktf.stringToHclTerraform(this._fsuCollectionId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_ignore_missing_patches: {
+        value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(this._isIgnoreMissingPatches),
+        isBlock: false,
+        type: "list",
+        storageClassType: "stringList",
+      },
+      is_ignore_patches: {
+        value: cdktf.booleanToHclTerraform(this._isIgnorePatches),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      is_keep_placement: {
+        value: cdktf.booleanToHclTerraform(this._isKeepPlacement),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      max_drain_timeout_in_seconds: {
+        value: cdktf.numberToHclTerraform(this._maxDrainTimeoutInSeconds),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "number",
+      },
+      type: {
+        value: cdktf.stringToHclTerraform(this._type),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      apply_action_schedule: {
+        value: fleetSoftwareUpdateFsuCycleApplyActionScheduleToHclTerraform(this._applyActionSchedule.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetSoftwareUpdateFsuCycleApplyActionScheduleList",
+      },
+      batching_strategy: {
+        value: fleetSoftwareUpdateFsuCycleBatchingStrategyToHclTerraform(this._batchingStrategy.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetSoftwareUpdateFsuCycleBatchingStrategyList",
+      },
+      diagnostics_collection: {
+        value: fleetSoftwareUpdateFsuCycleDiagnosticsCollectionToHclTerraform(this._diagnosticsCollection.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetSoftwareUpdateFsuCycleDiagnosticsCollectionList",
+      },
+      goal_version_details: {
+        value: fleetSoftwareUpdateFsuCycleGoalVersionDetailsToHclTerraform(this._goalVersionDetails.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetSoftwareUpdateFsuCycleGoalVersionDetailsList",
+      },
+      stage_action_schedule: {
+        value: fleetSoftwareUpdateFsuCycleStageActionScheduleToHclTerraform(this._stageActionSchedule.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "FleetSoftwareUpdateFsuCycleStageActionScheduleList",
+      },
+      timeouts: {
+        value: fleetSoftwareUpdateFsuCycleTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "FleetSoftwareUpdateFsuCycleTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

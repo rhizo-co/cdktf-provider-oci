@@ -44,31 +44,31 @@ export interface AdmRemediationRecipeConfig extends cdktf.TerraformMetaArguments
   readonly state?: string;
   /**
   * detect_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/adm_remediation_recipe#detect_configuration AdmRemediationRecipe#detect_configuration}
   */
   readonly detectConfiguration: AdmRemediationRecipeDetectConfiguration;
   /**
   * network_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/adm_remediation_recipe#network_configuration AdmRemediationRecipe#network_configuration}
   */
   readonly networkConfiguration: AdmRemediationRecipeNetworkConfiguration;
   /**
   * scm_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/adm_remediation_recipe#scm_configuration AdmRemediationRecipe#scm_configuration}
   */
   readonly scmConfiguration: AdmRemediationRecipeScmConfiguration;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/adm_remediation_recipe#timeouts AdmRemediationRecipe#timeouts}
   */
   readonly timeouts?: AdmRemediationRecipeTimeouts;
   /**
   * verify_configuration block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/adm_remediation_recipe#verify_configuration AdmRemediationRecipe#verify_configuration}
   */
   readonly verifyConfiguration: AdmRemediationRecipeVerifyConfiguration;
@@ -108,6 +108,49 @@ export function admRemediationRecipeDetectConfigurationToTerraform(struct?: AdmR
     max_permissible_severity: cdktf.stringToTerraform(struct!.maxPermissibleSeverity),
     upgrade_policy: cdktf.stringToTerraform(struct!.upgradePolicy),
   }
+}
+
+
+export function admRemediationRecipeDetectConfigurationToHclTerraform(struct?: AdmRemediationRecipeDetectConfigurationOutputReference | AdmRemediationRecipeDetectConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    exclusions: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.exclusions),
+      isBlock: false,
+      type: "list",
+      storageClassType: "stringList",
+    },
+    max_permissible_cvss_v2score: {
+      value: cdktf.numberToHclTerraform(struct!.maxPermissibleCvssV2Score),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_permissible_cvss_v3score: {
+      value: cdktf.numberToHclTerraform(struct!.maxPermissibleCvssV3Score),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "number",
+    },
+    max_permissible_severity: {
+      value: cdktf.stringToHclTerraform(struct!.maxPermissibleSeverity),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    upgrade_policy: {
+      value: cdktf.stringToHclTerraform(struct!.upgradePolicy),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AdmRemediationRecipeDetectConfigurationOutputReference extends cdktf.ComplexObject {
@@ -268,6 +311,31 @@ export function admRemediationRecipeNetworkConfigurationToTerraform(struct?: Adm
   }
 }
 
+
+export function admRemediationRecipeNetworkConfigurationToHclTerraform(struct?: AdmRemediationRecipeNetworkConfigurationOutputReference | AdmRemediationRecipeNetworkConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    nsg_ids: {
+      value: cdktf.listMapperHcl(cdktf.stringToHclTerraform, false)(struct!.nsgIds),
+      isBlock: false,
+      type: "set",
+      storageClassType: "stringList",
+    },
+    subnet_id: {
+      value: cdktf.stringToHclTerraform(struct!.subnetId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AdmRemediationRecipeNetworkConfigurationOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -390,6 +458,73 @@ export function admRemediationRecipeScmConfigurationToTerraform(struct?: AdmReme
     scm_type: cdktf.stringToTerraform(struct!.scmType),
     username: cdktf.stringToTerraform(struct!.username),
   }
+}
+
+
+export function admRemediationRecipeScmConfigurationToHclTerraform(struct?: AdmRemediationRecipeScmConfigurationOutputReference | AdmRemediationRecipeScmConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    branch: {
+      value: cdktf.stringToHclTerraform(struct!.branch),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    build_file_location: {
+      value: cdktf.stringToHclTerraform(struct!.buildFileLocation),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    external_scm_type: {
+      value: cdktf.stringToHclTerraform(struct!.externalScmType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    is_automerge_enabled: {
+      value: cdktf.booleanToHclTerraform(struct!.isAutomergeEnabled),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "boolean",
+    },
+    oci_code_repository_id: {
+      value: cdktf.stringToHclTerraform(struct!.ociCodeRepositoryId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pat_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.patSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repository_url: {
+      value: cdktf.stringToHclTerraform(struct!.repositoryUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    scm_type: {
+      value: cdktf.stringToHclTerraform(struct!.scmType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AdmRemediationRecipeScmConfigurationOutputReference extends cdktf.ComplexObject {
@@ -634,6 +769,37 @@ export function admRemediationRecipeTimeoutsToTerraform(struct?: AdmRemediationR
   }
 }
 
+
+export function admRemediationRecipeTimeoutsToHclTerraform(struct?: AdmRemediationRecipeTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class AdmRemediationRecipeTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -796,6 +962,79 @@ export function admRemediationRecipeVerifyConfigurationToTerraform(struct?: AdmR
     username: cdktf.stringToTerraform(struct!.username),
     workflow_name: cdktf.stringToTerraform(struct!.workflowName),
   }
+}
+
+
+export function admRemediationRecipeVerifyConfigurationToHclTerraform(struct?: AdmRemediationRecipeVerifyConfigurationOutputReference | AdmRemediationRecipeVerifyConfiguration): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    additional_parameters: {
+      value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(struct!.additionalParameters),
+      isBlock: false,
+      type: "map",
+      storageClassType: "stringMap",
+    },
+    build_service_type: {
+      value: cdktf.stringToHclTerraform(struct!.buildServiceType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    jenkins_url: {
+      value: cdktf.stringToHclTerraform(struct!.jenkinsUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    job_name: {
+      value: cdktf.stringToHclTerraform(struct!.jobName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pat_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.patSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    pipeline_id: {
+      value: cdktf.stringToHclTerraform(struct!.pipelineId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    repository_url: {
+      value: cdktf.stringToHclTerraform(struct!.repositoryUrl),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    trigger_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.triggerSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    workflow_name: {
+      value: cdktf.stringToHclTerraform(struct!.workflowName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class AdmRemediationRecipeVerifyConfigurationOutputReference extends cdktf.ComplexObject {
@@ -1051,6 +1290,20 @@ export class AdmRemediationRecipe extends cdktf.TerraformResource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_adm_remediation_recipe";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a AdmRemediationRecipe resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the AdmRemediationRecipe to import
+  * @param importFromId The id of the existing AdmRemediationRecipe that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/adm_remediation_recipe#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the AdmRemediationRecipe to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_adm_remediation_recipe", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -1321,5 +1574,91 @@ export class AdmRemediationRecipe extends cdktf.TerraformResource {
       timeouts: admRemediationRecipeTimeoutsToTerraform(this._timeouts.internalValue),
       verify_configuration: admRemediationRecipeVerifyConfigurationToTerraform(this._verifyConfiguration.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      compartment_id: {
+        value: cdktf.stringToHclTerraform(this._compartmentId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      defined_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._definedTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      display_name: {
+        value: cdktf.stringToHclTerraform(this._displayName),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      freeform_tags: {
+        value: cdktf.hashMapperHcl(cdktf.stringToHclTerraform)(this._freeformTags),
+        isBlock: false,
+        type: "map",
+        storageClassType: "stringMap",
+      },
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      is_run_triggered_on_kb_change: {
+        value: cdktf.booleanToHclTerraform(this._isRunTriggeredOnKbChange),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "boolean",
+      },
+      knowledge_base_id: {
+        value: cdktf.stringToHclTerraform(this._knowledgeBaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      state: {
+        value: cdktf.stringToHclTerraform(this._state),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      detect_configuration: {
+        value: admRemediationRecipeDetectConfigurationToHclTerraform(this._detectConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AdmRemediationRecipeDetectConfigurationList",
+      },
+      network_configuration: {
+        value: admRemediationRecipeNetworkConfigurationToHclTerraform(this._networkConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AdmRemediationRecipeNetworkConfigurationList",
+      },
+      scm_configuration: {
+        value: admRemediationRecipeScmConfigurationToHclTerraform(this._scmConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AdmRemediationRecipeScmConfigurationList",
+      },
+      timeouts: {
+        value: admRemediationRecipeTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "AdmRemediationRecipeTimeouts",
+      },
+      verify_configuration: {
+        value: admRemediationRecipeVerifyConfigurationToHclTerraform(this._verifyConfiguration.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "AdmRemediationRecipeVerifyConfigurationList",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

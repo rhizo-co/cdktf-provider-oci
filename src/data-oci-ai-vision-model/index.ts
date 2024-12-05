@@ -24,6 +24,17 @@ export function dataOciAiVisionModelTestingDatasetToTerraform(struct?: DataOciAi
   }
 }
 
+
+export function dataOciAiVisionModelTestingDatasetToHclTerraform(struct?: DataOciAiVisionModelTestingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiVisionModelTestingDatasetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -106,6 +117,17 @@ export function dataOciAiVisionModelTrainingDatasetToTerraform(struct?: DataOciA
   }
   return {
   }
+}
+
+
+export function dataOciAiVisionModelTrainingDatasetToHclTerraform(struct?: DataOciAiVisionModelTrainingDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
 }
 
 export class DataOciAiVisionModelTrainingDatasetOutputReference extends cdktf.ComplexObject {
@@ -192,6 +214,17 @@ export function dataOciAiVisionModelValidationDatasetToTerraform(struct?: DataOc
   }
 }
 
+
+export function dataOciAiVisionModelValidationDatasetToHclTerraform(struct?: DataOciAiVisionModelValidationDataset): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+  };
+  return attrs;
+}
+
 export class DataOciAiVisionModelValidationDatasetOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
 
@@ -274,6 +307,20 @@ export class DataOciAiVisionModel extends cdktf.TerraformDataSource {
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_ai_vision_model";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DataOciAiVisionModel resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DataOciAiVisionModel to import
+  * @param importFromId The id of the existing DataOciAiVisionModel that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/data-sources/ai_vision_model#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DataOciAiVisionModel to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_ai_vision_model", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -471,5 +518,19 @@ export class DataOciAiVisionModel extends cdktf.TerraformDataSource {
     return {
       model_id: cdktf.stringToTerraform(this._modelId),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      model_id: {
+        value: cdktf.stringToHclTerraform(this._modelId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }

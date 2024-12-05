@@ -24,25 +24,25 @@ export interface DatabaseManagementManagedDatabasesChangeDatabaseParameterConfig
   readonly scope: string;
   /**
   * credentials block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_managed_databases_change_database_parameter#credentials DatabaseManagementManagedDatabasesChangeDatabaseParameter#credentials}
   */
   readonly credentials?: DatabaseManagementManagedDatabasesChangeDatabaseParameterCredentials;
   /**
   * database_credential block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_managed_databases_change_database_parameter#database_credential DatabaseManagementManagedDatabasesChangeDatabaseParameter#database_credential}
   */
   readonly databaseCredential?: DatabaseManagementManagedDatabasesChangeDatabaseParameterDatabaseCredential;
   /**
   * parameters block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_managed_databases_change_database_parameter#parameters DatabaseManagementManagedDatabasesChangeDatabaseParameter#parameters}
   */
   readonly parameters: DatabaseManagementManagedDatabasesChangeDatabaseParameterParameters[] | cdktf.IResolvable;
   /**
   * timeouts block
-  * 
+  *
   * Docs at Terraform Registry: {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_managed_databases_change_database_parameter#timeouts DatabaseManagementManagedDatabasesChangeDatabaseParameter#timeouts}
   */
   readonly timeouts?: DatabaseManagementManagedDatabasesChangeDatabaseParameterTimeouts;
@@ -77,6 +77,43 @@ export function databaseManagementManagedDatabasesChangeDatabaseParameterCredent
     secret_id: cdktf.stringToTerraform(struct!.secretId),
     user_name: cdktf.stringToTerraform(struct!.userName),
   }
+}
+
+
+export function databaseManagementManagedDatabasesChangeDatabaseParameterCredentialsToHclTerraform(struct?: DatabaseManagementManagedDatabasesChangeDatabaseParameterCredentialsOutputReference | DatabaseManagementManagedDatabasesChangeDatabaseParameterCredentials): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.secretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    user_name: {
+      value: cdktf.stringToHclTerraform(struct!.userName),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementManagedDatabasesChangeDatabaseParameterCredentialsOutputReference extends cdktf.ComplexObject {
@@ -233,6 +270,55 @@ export function databaseManagementManagedDatabasesChangeDatabaseParameterDatabas
     role: cdktf.stringToTerraform(struct!.role),
     username: cdktf.stringToTerraform(struct!.username),
   }
+}
+
+
+export function databaseManagementManagedDatabasesChangeDatabaseParameterDatabaseCredentialToHclTerraform(struct?: DatabaseManagementManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutputReference | DatabaseManagementManagedDatabasesChangeDatabaseParameterDatabaseCredential): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    credential_type: {
+      value: cdktf.stringToHclTerraform(struct!.credentialType),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    named_credential_id: {
+      value: cdktf.stringToHclTerraform(struct!.namedCredentialId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password: {
+      value: cdktf.stringToHclTerraform(struct!.password),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    password_secret_id: {
+      value: cdktf.stringToHclTerraform(struct!.passwordSecretId),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    role: {
+      value: cdktf.stringToHclTerraform(struct!.role),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    username: {
+      value: cdktf.stringToHclTerraform(struct!.username),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
 }
 
 export class DatabaseManagementManagedDatabasesChangeDatabaseParameterDatabaseCredentialOutputReference extends cdktf.ComplexObject {
@@ -417,6 +503,37 @@ export function databaseManagementManagedDatabasesChangeDatabaseParameterParamet
   }
 }
 
+
+export function databaseManagementManagedDatabasesChangeDatabaseParameterParametersToHclTerraform(struct?: DatabaseManagementManagedDatabasesChangeDatabaseParameterParameters | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    name: {
+      value: cdktf.stringToHclTerraform(struct!.name),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update_comment: {
+      value: cdktf.stringToHclTerraform(struct!.updateComment),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    value: {
+      value: cdktf.stringToHclTerraform(struct!.value),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseManagementManagedDatabasesChangeDatabaseParameterParametersOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -562,6 +679,37 @@ export function databaseManagementManagedDatabasesChangeDatabaseParameterTimeout
   }
 }
 
+
+export function databaseManagementManagedDatabasesChangeDatabaseParameterTimeoutsToHclTerraform(struct?: DatabaseManagementManagedDatabasesChangeDatabaseParameterTimeouts | cdktf.IResolvable): any {
+  if (!cdktf.canInspect(struct) || cdktf.Tokenization.isResolvable(struct)) { return struct; }
+  if (cdktf.isComplexElement(struct)) {
+    throw new Error("A complex element was used as configuration, this is not supported: https://cdk.tf/complex-object-as-configuration");
+  }
+  const attrs = {
+    create: {
+      value: cdktf.stringToHclTerraform(struct!.create),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    delete: {
+      value: cdktf.stringToHclTerraform(struct!.delete),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+    update: {
+      value: cdktf.stringToHclTerraform(struct!.update),
+      isBlock: false,
+      type: "simple",
+      storageClassType: "string",
+    },
+  };
+
+  // remove undefined attributes
+  return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined));
+}
+
 export class DatabaseManagementManagedDatabasesChangeDatabaseParameterTimeoutsOutputReference extends cdktf.ComplexObject {
   private isEmptyObject = false;
   private resolvableValue?: cdktf.IResolvable;
@@ -674,6 +822,20 @@ export class DatabaseManagementManagedDatabasesChangeDatabaseParameter extends c
   // STATIC PROPERTIES
   // =================
   public static readonly tfResourceType = "oci_database_management_managed_databases_change_database_parameter";
+
+  // ==============
+  // STATIC Methods
+  // ==============
+  /**
+  * Generates CDKTF code for importing a DatabaseManagementManagedDatabasesChangeDatabaseParameter resource upon running "cdktf plan <stack-name>"
+  * @param scope The scope in which to define this construct
+  * @param importToId The construct id used in the generated config for the DatabaseManagementManagedDatabasesChangeDatabaseParameter to import
+  * @param importFromId The id of the existing DatabaseManagementManagedDatabasesChangeDatabaseParameter that should be imported. Refer to the {@link https://registry.terraform.io/providers/oracle/oci/6.18.0/docs/resources/database_management_managed_databases_change_database_parameter#import import section} in the documentation of this resource for the id to use
+  * @param provider? Optional instance of the provider where the DatabaseManagementManagedDatabasesChangeDatabaseParameter to import is found
+  */
+  public static generateConfigForImport(scope: Construct, importToId: string, importFromId: string, provider?: cdktf.TerraformProvider) {
+        return new cdktf.ImportableResource(scope, importToId, { terraformResourceType: "oci_database_management_managed_databases_change_database_parameter", importId: importFromId, provider });
+      }
 
   // ===========
   // INITIALIZER
@@ -832,5 +994,55 @@ export class DatabaseManagementManagedDatabasesChangeDatabaseParameter extends c
       parameters: cdktf.listMapper(databaseManagementManagedDatabasesChangeDatabaseParameterParametersToTerraform, true)(this._parameters.internalValue),
       timeouts: databaseManagementManagedDatabasesChangeDatabaseParameterTimeoutsToTerraform(this._timeouts.internalValue),
     };
+  }
+
+  protected synthesizeHclAttributes(): { [name: string]: any } {
+    const attrs = {
+      id: {
+        value: cdktf.stringToHclTerraform(this._id),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      managed_database_id: {
+        value: cdktf.stringToHclTerraform(this._managedDatabaseId),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      scope: {
+        value: cdktf.stringToHclTerraform(this._scope),
+        isBlock: false,
+        type: "simple",
+        storageClassType: "string",
+      },
+      credentials: {
+        value: databaseManagementManagedDatabasesChangeDatabaseParameterCredentialsToHclTerraform(this._credentials.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseManagementManagedDatabasesChangeDatabaseParameterCredentialsList",
+      },
+      database_credential: {
+        value: databaseManagementManagedDatabasesChangeDatabaseParameterDatabaseCredentialToHclTerraform(this._databaseCredential.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseManagementManagedDatabasesChangeDatabaseParameterDatabaseCredentialList",
+      },
+      parameters: {
+        value: cdktf.listMapperHcl(databaseManagementManagedDatabasesChangeDatabaseParameterParametersToHclTerraform, true)(this._parameters.internalValue),
+        isBlock: true,
+        type: "list",
+        storageClassType: "DatabaseManagementManagedDatabasesChangeDatabaseParameterParametersList",
+      },
+      timeouts: {
+        value: databaseManagementManagedDatabasesChangeDatabaseParameterTimeoutsToHclTerraform(this._timeouts.internalValue),
+        isBlock: true,
+        type: "struct",
+        storageClassType: "DatabaseManagementManagedDatabasesChangeDatabaseParameterTimeouts",
+      },
+    };
+
+    // remove undefined attributes
+    return Object.fromEntries(Object.entries(attrs).filter(([_, value]) => value !== undefined && value.value !== undefined ))
   }
 }
